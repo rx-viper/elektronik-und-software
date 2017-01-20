@@ -1,0 +1,4 @@
+# KiCAD
+*.bak
+*.kicad_pcb-bak
+*.net
