@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTC2984
+D Multi-Sensor High Accuracy Digital Temperature Measurement System
+K LTC2984 Temperature Measurement Multi
+F http://cds.linear.com/docs/en/datasheet/2984fb.pdf
+$ENDCMP
+#
+#End Doc Library
