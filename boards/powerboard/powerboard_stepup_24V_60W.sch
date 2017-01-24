@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:TI-LMZ1xxxx
 LIBS:DRV8816
+LIBS:ACS711
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END

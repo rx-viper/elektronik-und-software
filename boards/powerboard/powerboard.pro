@@ -1,4 +1,4 @@
-update=Tue Jan 24 01:25:13 2017
+update=Tue Jan 24 02:10:24 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -70,3 +70,4 @@ LibName28=contrib
 LibName29=valves
 LibName30=lib/TI-LMZ1xxxx
 LibName31=lib/DRV8816
+LibName32=lib/ACS711
