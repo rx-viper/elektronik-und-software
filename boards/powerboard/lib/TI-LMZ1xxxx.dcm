@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LMZ14203
+D LMZ14202 SIMPLE SWITCHER® 6V to 42V, 2A Power Module 
+K Regulator, Switcher, Power, LMZ1
+F http://www.ti.com/lit/ds/symlink/lmz14202.pdf
+$ENDCMP
+#
+#End Doc Library
