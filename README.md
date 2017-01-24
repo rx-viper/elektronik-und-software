@@ -9,13 +9,13 @@ Rexus Viper Elektronik Projekt
 
 
 ## Mainboard
-* -> Pressure sensor SPI
-* -> Force sensor
+* -> Pressure sensor (SPI/I2C)
+* -> Force sensor (analog/SPI/I2C)
 * -> 5x Temperature sensor SPI (LTC2984 Board)
 * -> Heat probe voltage and current sensing
 * -> DS18B20 Temperature sensors (bus)
 * 3V3 regualtor
-* STM32F??? etc.
+* STM32F429 etc.
 * Data Storgae (Flash)
 * <-> RXSM communication
 * <- RasPi UART
