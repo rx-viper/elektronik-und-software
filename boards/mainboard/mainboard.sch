@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:stm32
 LIBS:xo53
+LIBS:sst26vf064b
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END

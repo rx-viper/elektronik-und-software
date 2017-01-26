@@ -1,4 +1,4 @@
-update=Thu 26 Jan 2017 02:07:00 AM CET
+update=Thu 26 Jan 2017 10:55:29 PM CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,4 @@ LibName28=contrib
 LibName29=valves
 LibName30=stm32
 LibName31=lib/xo53
+LibName32=lib/sst26vf064b
