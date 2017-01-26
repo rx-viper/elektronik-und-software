@@ -303,12 +303,180 @@ Connection ~ 1450 4150
 Wire Wire Line
 	1600 4450 1550 4450
 Wire Wire Line
-	1550 4600 1550 4450
+	1550 4450 1550 4600
 Wire Wire Line
-	1350 4600 1550 4600
+	1550 4600 1350 4600
 Wire Wire Line
 	1450 4600 1450 4650
 Wire Wire Line
 	1350 4600 1350 4500
 Connection ~ 1450 4600
+$Comp
+L CP C?
+U 1 1 588A31AA
+P 3200 4000
+F 0 "C?" H 3225 4100 50  0000 L CNN
+F 1 "2µ2" H 3225 3900 50  0000 L CNN
+F 2 "" H 3238 3850 50  0000 C CNN
+F 3 "" H 3200 4000 50  0000 C CNN
+	1    3200 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C?
+U 1 1 588A31EC
+P 2800 4000
+F 0 "C?" H 2825 4100 50  0000 L CNN
+F 1 "2µ2" H 2825 3900 50  0000 L CNN
+F 2 "" H 2838 3850 50  0000 C CNN
+F 3 "" H 2800 4000 50  0000 C CNN
+	1    2800 4000
+	1    0    0    -1  
+$EndComp
+Text Notes 3150 3850 2    39   ~ 0
+Low ESR\n(<2Ohms)
+Wire Wire Line
+	3200 3850 3200 3750
+Wire Wire Line
+	3200 3750 3300 3750
+Wire Wire Line
+	3300 3650 2800 3650
+Wire Wire Line
+	2800 3650 2800 3850
+$Comp
+L GND #PWR?
+U 1 1 588A32F9
+P 3000 4250
+F 0 "#PWR?" H 3000 4000 50  0001 C CNN
+F 1 "GND" H 3000 4100 50  0000 C CNN
+F 2 "" H 3000 4250 50  0000 C CNN
+F 3 "" H 3000 4250 50  0000 C CNN
+	1    3000 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 4150 2800 4200
+Wire Wire Line
+	2800 4200 3200 4200
+Wire Wire Line
+	3000 4200 3000 4250
+Wire Wire Line
+	3200 4200 3200 4150
+Connection ~ 3000 4200
+Text HLabel 12800 5750 2    59   Input ~ 0
+debug_TX
+Text HLabel 12800 5850 2    59   Input ~ 0
+debug_RX
+Wire Wire Line
+	12800 5750 12700 5750
+Wire Wire Line
+	12700 5850 12800 5850
+Text HLabel 12800 7450 2    59   Input ~ 0
+1wire_TX
+Text HLabel 12800 7550 2    59   Input ~ 0
+1wire_RX
+Wire Wire Line
+	12800 7450 12700 7450
+Wire Wire Line
+	12700 7550 12800 7550
+Text HLabel 12800 5350 2    59   Input ~ 0
+pressure_SCL
+Text HLabel 12800 5450 2    59   Input ~ 0
+pressure_SDA
+Wire Wire Line
+	12800 5450 12700 5450
+Wire Wire Line
+	12700 5350 12800 5350
+Text HLabel 3200 6750 0    59   Input ~ 0
+RXSM_CTS
+Text HLabel 3200 6850 0    59   Input ~ 0
+RXSM_RTS
+Text HLabel 3200 6950 0    59   Input ~ 0
+RXSM_TX
+Text HLabel 3200 7050 0    59   Input ~ 0
+RXSM_RX
+Wire Wire Line
+	3200 6750 3300 6750
+Wire Wire Line
+	3300 6850 3200 6850
+Wire Wire Line
+	3200 6950 3300 6950
+Wire Wire Line
+	3300 7050 3200 7050
+Text HLabel 3200 4950 0    59   Input ~ 0
+CtrlPnl_LED1
+Text HLabel 3200 5050 0    59   Input ~ 0
+CtrlPnl_LED2
+Text HLabel 3200 5150 0    59   Input ~ 0
+CtrlPnl_SW1
+Text HLabel 3200 5250 0    59   Input ~ 0
+CtrlPnl_SW2
+Wire Wire Line
+	3200 4950 3300 4950
+Wire Wire Line
+	3300 5050 3200 5050
+Wire Wire Line
+	3200 5150 3300 5150
+Wire Wire Line
+	3300 5250 3200 5250
+Text HLabel 12800 7050 2    59   Input ~ 0
+RasPi_TX
+Text HLabel 12800 7150 2    59   Input ~ 0
+RasPi_RX
+Wire Wire Line
+	12800 7050 12700 7050
+Wire Wire Line
+	12700 7150 12800 7150
+Text HLabel 12800 6050 2    59   Input ~ 0
+temp_SPI_SCK
+Text HLabel 12800 6150 2    59   Input ~ 0
+temp_SPI_MISO
+Text HLabel 12800 6250 2    59   Input ~ 0
+temp_SPI_MOSI
+Wire Wire Line
+	12800 6050 12700 6050
+Wire Wire Line
+	12700 6150 12800 6150
+Wire Wire Line
+	12800 6250 12700 6250
+Text HLabel 3200 7250 0    59   Input ~ 0
+temp1_INT
+Text HLabel 3200 7450 0    59   Input ~ 0
+temp2_INT
+Text HLabel 3200 7650 0    59   Input ~ 0
+temp3_INT
+Text HLabel 3200 7850 0    59   Input ~ 0
+temp4_INT
+Text HLabel 3200 7350 0    59   Input ~ 0
+temp1_CS
+Text HLabel 3200 7550 0    59   Input ~ 0
+temp2_CS
+Text HLabel 3200 7750 0    59   Input ~ 0
+temp3_CS
+Text HLabel 3200 7950 0    59   Input ~ 0
+temp4_CS
+Wire Wire Line
+	3200 7250 3300 7250
+Wire Wire Line
+	3300 7350 3200 7350
+Wire Wire Line
+	3200 7450 3300 7450
+Wire Wire Line
+	3300 7550 3200 7550
+Wire Wire Line
+	3200 7650 3300 7650
+Wire Wire Line
+	3300 7750 3200 7750
+Wire Wire Line
+	3200 7850 3300 7850
+Wire Wire Line
+	3300 7950 3200 7950
+Text HLabel 12800 7250 2    59   Input ~ 0
+temp5_INT
+Text HLabel 12800 7350 2    59   Input ~ 0
+temp5_CS
+Wire Wire Line
+	12800 7250 12700 7250
+Wire Wire Line
+	12700 7350 12800 7350
 $EndSCHEMATC

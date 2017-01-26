@@ -46,10 +46,39 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 4400 2500 3900 3250
+S 5050 2100 2850 3950
 U 5889F4B8
 F0 "Mainboard microcontroller" 60
 F1 "mainboard_microcontroller.sch" 60
+F2 "debug_TX" I L 5050 5250 59 
+F3 "debug_RX" I L 5050 5350 59 
+F4 "1wire_TX" I L 5050 3300 59 
+F5 "1wire_RX" I L 5050 3400 59 
+F6 "pressure_SCL" I L 5050 3050 59 
+F7 "pressure_SDA" I L 5050 3150 59 
+F8 "RXSM_CTS" I R 7900 3850 59 
+F9 "RXSM_RTS" I R 7900 3350 59 
+F10 "RXSM_TX" I R 7900 3650 59 
+F11 "RXSM_RX" I R 7900 3150 59 
+F12 "CtrlPnl_LED1" I R 7900 5450 59 
+F13 "CtrlPnl_LED2" I R 7900 5550 59 
+F14 "CtrlPnl_SW1" I R 7900 5650 59 
+F15 "CtrlPnl_SW2" I R 7900 5750 59 
+F16 "RasPi_TX" I R 7900 2200 59 
+F17 "RasPi_RX" I R 7900 2300 59 
+F18 "temp_SPI_SCK" I L 5050 2200 59 
+F19 "temp_SPI_MISO" I L 5050 2300 59 
+F20 "temp_SPI_MOSI" I L 5050 2400 59 
+F21 "temp1_INT" I R 7900 4250 59 
+F22 "temp2_INT" I R 7900 4350 59 
+F23 "temp3_INT" I R 7900 4450 59 
+F24 "temp4_INT" I R 7900 4550 59 
+F25 "temp1_CS" I R 7900 4750 59 
+F26 "temp2_CS" I R 7900 4850 59 
+F27 "temp3_CS" I R 7900 4950 59 
+F28 "temp4_CS" I R 7900 5050 59 
+F29 "temp5_INT" I R 7900 4650 59 
+F30 "temp5_CS" I R 7900 5150 59 
 $EndSheet
 $Comp
 L CONN_01X02 P?
@@ -518,18 +547,12 @@ Wire Wire Line
 	10100 1050 9550 1050
 Wire Wire Line
 	10100 1150 9550 1150
-Text Label 6100 1150 2    60   ~ 0
+Text Label 4450 2400 0    60   ~ 0
 temp_sdi
-Text Label 6100 1050 2    60   ~ 0
+Text Label 4450 2300 0    60   ~ 0
 temp_sdo
-Text Label 6100 950  2    60   ~ 0
+Text Label 4450 2200 0    60   ~ 0
 temp_sck
-Wire Wire Line
-	6100 950  5550 950 
-Wire Wire Line
-	6100 1050 5550 1050
-Wire Wire Line
-	6100 1150 5550 1150
 Text Label 7100 1150 2    60   ~ 0
 temp_sdi
 Text Label 7100 1050 2    60   ~ 0
@@ -897,9 +920,9 @@ RasPi_TX
 Text Label 10000 2150 0    60   ~ 0
 RasPi_RX
 Wire Wire Line
-	10000 2150 10450 2150
+	9550 2150 10450 2150
 Wire Wire Line
-	10450 2050 10000 2050
+	9450 2050 10450 2050
 $Comp
 L CONN_01X05 P?
 U 1 1 58898121
@@ -992,13 +1015,13 @@ Wire Wire Line
 Wire Wire Line
 	10450 5750 10350 5750
 Wire Wire Line
-	9050 5750 10050 5750
+	7900 5750 10050 5750
 Wire Wire Line
-	9050 5650 9850 5650
+	7900 5650 9850 5650
 Wire Wire Line
-	9050 5550 10050 5550
+	7900 5550 10050 5550
 Wire Wire Line
-	9050 5450 9850 5450
+	7900 5450 9850 5450
 Text Label 9050 5450 0    60   ~ 0
 CtrlPnl_LED1
 Text Label 9050 5550 0    60   ~ 0
@@ -1208,13 +1231,13 @@ Wire Wire Line
 Wire Wire Line
 	3550 3800 3550 3400
 Wire Wire Line
-	3550 3400 4150 3400
+	3550 3400 5050 3400
 Wire Wire Line
-	3550 3300 4150 3300
+	3550 3300 5050 3300
 Text Label 4150 3300 2    60   ~ 0
-OneWire_TX
+1wire_TX
 Text Label 4150 3400 2    60   ~ 0
-OneWire_RX
+1wire_RX
 Text Notes 1550 2950 0    39   ~ 0
 OneWire via UART\nhttps://www.maximintegrated.com/\nen/app-notes/index.mvp/id/214
 Text Notes 9450 5300 0    39   ~ 0
@@ -1285,13 +1308,131 @@ Connection ~ 9550 4250
 Text Notes 2750 1750 0    59   ~ 0
 3x Force sensor: I2C, SPI or analog
 Wire Wire Line
-	1350 2200 2400 2200
+	1350 2200 3600 2200
 Wire Wire Line
-	2400 2100 1350 2100
+	1350 2100 3700 2100
 Text Label 2400 2100 2    59   ~ 0
 pressure_SCL
 Text Label 2400 2200 2    59   ~ 0
 pressure_SDA
 Text Notes 2800 850  0    118  ~ 0
 TODO
+$Comp
+L CONN_01X03 P?
+U 1 1 588A3A71
+P 1050 6150
+F 0 "P?" H 1050 6350 50  0000 C CNN
+F 1 "DEBUG" V 1150 6150 50  0000 C CNN
+F 2 "" H 1050 6150 50  0000 C CNN
+F 3 "" H 1050 6150 50  0000 C CNN
+	1    1050 6150
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 588A3DCB
+P 1350 6150
+F 0 "#PWR?" H 1350 5900 50  0001 C CNN
+F 1 "GND" H 1350 6000 50  0000 C CNN
+F 2 "" H 1350 6150 50  0000 C CNN
+F 3 "" H 1350 6150 50  0000 C CNN
+	1    1350 6150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1350 6150 1250 6150
+Wire Wire Line
+	1250 6050 4550 6050
+Wire Wire Line
+	1250 6250 4650 6250
+Text Label 1750 6050 2    59   ~ 0
+debug_TX
+Text Label 1750 6250 2    59   ~ 0
+debug_RX
+Wire Wire Line
+	4450 2200 5050 2200
+Wire Wire Line
+	5050 2300 4450 2300
+Wire Wire Line
+	4450 2400 5050 2400
+Text Label 6100 1150 2    60   ~ 0
+temp_sdi
+Text Label 6100 1050 2    60   ~ 0
+temp_sdo
+Text Label 6100 950  2    60   ~ 0
+temp_sck
+Wire Wire Line
+	6100 950  5550 950 
+Wire Wire Line
+	6100 1050 5550 1050
+Wire Wire Line
+	6100 1150 5550 1150
+Wire Wire Line
+	5050 5250 4550 5250
+Wire Wire Line
+	4550 5250 4550 6050
+Wire Wire Line
+	4650 6250 4650 5350
+Wire Wire Line
+	4650 5350 5050 5350
+Wire Wire Line
+	5050 3050 3700 3050
+Wire Wire Line
+	3700 3050 3700 2100
+Wire Wire Line
+	3600 2200 3600 3150
+Wire Wire Line
+	3600 3150 5050 3150
+Wire Wire Line
+	7900 3150 8950 3150
+Wire Wire Line
+	8950 3650 7900 3650
+Wire Wire Line
+	7900 2200 9450 2200
+Wire Wire Line
+	9450 2200 9450 2050
+Wire Wire Line
+	9550 2150 9550 2300
+Wire Wire Line
+	9550 2300 7900 2300
+Text Label 8400 4250 2    60   ~ 0
+temp1_int
+Text Label 8400 4350 2    60   ~ 0
+temp2_int
+Text Label 8400 4450 2    60   ~ 0
+temp3_int
+Text Label 8400 4550 2    60   ~ 0
+temp4_int
+Text Label 8400 4650 2    60   ~ 0
+temp5_int
+Text Label 8400 4750 2    60   ~ 0
+temp1_nCS
+Text Label 8400 4850 2    60   ~ 0
+temp2_nCS
+Text Label 8400 4950 2    60   ~ 0
+temp3_nCS
+Text Label 8400 5050 2    60   ~ 0
+temp4_nCS
+Text Label 8400 5150 2    60   ~ 0
+temp5_nCS
+Wire Wire Line
+	8400 4250 7900 4250
+Wire Wire Line
+	7900 4350 8400 4350
+Wire Wire Line
+	8400 4450 7900 4450
+Wire Wire Line
+	7900 4550 8400 4550
+Wire Wire Line
+	8400 4650 7900 4650
+Wire Wire Line
+	7900 4750 8400 4750
+Wire Wire Line
+	8400 4850 7900 4850
+Wire Wire Line
+	7900 4950 8400 4950
+Wire Wire Line
+	8400 5050 7900 5050
+Wire Wire Line
+	7900 5150 8400 5150
 $EndSCHEMATC
