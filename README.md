@@ -2,7 +2,8 @@
 Rexus Viper Elektronik Projekt
 
 
-## LTC2984 Board
+## Temperature Sensor Board
+* LTC2984
 * <-> 6x PT-100 4-wire
 * -> 5V power supply
 * <- SPI data out
@@ -11,31 +12,31 @@ Rexus Viper Elektronik Projekt
 ## Mainboard
 * -> Pressure sensor (SPI/I2C)
 * -> Force sensor (analog/SPI/I2C)
-* -> 5x Temperature sensor SPI (LTC2984 Board)
+* -> 5x Temperature sensor SPI (Temperature Sensor Board)
 * -> Heat probe voltage and current sensing
-* -> DS18B20 Temperature sensors (bus)
-* 3V3 regualtor
-* STM32F429 etc.
-* Data Storgae (Flash)
+* -> DS18B20 Temperature sensors (1-wire bus)
+* 3.3V regulator
+* STM32F429VI microcontroller
+* Data storage (flash memory chip)
 * <-> RXSM communication
-* <- RasPi UART
-* -> 5V Power supply
+* <- Raspberry Pi (UART)
+* -> 5V power supply
 * -> Status LEDs
-* <- Control Panel
+* <- Control panel
 
 
 ## Powerboard
 * -> Battery
-* -> RXSM Power
-* 3x 60W 24V Step-Up Wandler
-* <- Heat Probe
-* <- Motor Power
-* -> Motor Ctrl
-* <- Battery Heater
-* <- Mainboard Power
-* <- RasPi Power
-* <- Camera Power
-* <- Camera Light
-* -> Camera Ctrl.
-* -> Heat Probe Ctrl.
+* -> RXSM power
+* 3x 60W 24V step-up converter
+* <- Heat probe
+* <- Motor power
+* -> Motor control
+* <- Battery heater
+* <- Mainboard power
+* <- Raspbery Pi power
+* <- Camera power
+* <- Camera light
+* -> Camera control
+* -> Heat probe control
 * <- Heat probe voltage and current sensing
