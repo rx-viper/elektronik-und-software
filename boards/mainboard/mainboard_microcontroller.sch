@@ -479,4 +479,218 @@ Wire Wire Line
 	12800 7250 12700 7250
 Wire Wire Line
 	12700 7350 12800 7350
+Text HLabel 12800 3050 2    60   Input ~ 0
+probe1_volt
+Text HLabel 12800 3150 2    60   Input ~ 0
+probe2_volt
+Text HLabel 12800 3250 2    60   Input ~ 0
+probe3_volt
+Text HLabel 12800 3350 2    60   Input ~ 0
+probe1_curr
+Text HLabel 12800 3450 2    60   Input ~ 0
+probe2_curr
+Text HLabel 12800 3550 2    60   Input ~ 0
+probe3_curr
+Text HLabel 12800 3650 2    60   Input ~ 0
+batt_volt
+Text HLabel 12800 3750 2    60   Input ~ 0
+rxsm_volt
+Text HLabel 12800 3850 2    60   Input ~ 0
+motor1_curr
+Text HLabel 12800 3950 2    60   Input ~ 0
+motor2_curr
+Text HLabel 12800 4050 2    60   Input ~ 0
+probe1_EN
+Text HLabel 12800 4150 2    60   Input ~ 0
+probe2_EN
+Text HLabel 12800 4250 2    60   Input ~ 0
+probe3_EN
+Text HLabel 12800 4350 2    60   Input ~ 0
+cam_light_EN
+Text HLabel 12800 4450 2    60   Input ~ 0
+batt_heater_EN
+Text HLabel 12800 4750 2    60   Input ~ 0
+motor1_EN
+Text HLabel 12800 4850 2    60   Input ~ 0
+motor1_DIR
+Text HLabel 12800 4950 2    60   Input ~ 0
+motor1_PWM
+Text HLabel 12800 5050 2    60   Input ~ 0
+motor2_EN
+Text HLabel 12800 5150 2    60   Input ~ 0
+motor2_DIR
+Text HLabel 12800 5250 2    60   Input ~ 0
+motor2_PWM
+Wire Wire Line
+	12800 4750 12700 4750
+Wire Wire Line
+	12700 4850 12800 4850
+Wire Wire Line
+	12800 4950 12700 4950
+Wire Wire Line
+	12700 5050 12800 5050
+Wire Wire Line
+	12800 5150 12700 5150
+Wire Wire Line
+	12700 5250 12800 5250
+Wire Wire Line
+	12800 4450 12700 4450
+Wire Wire Line
+	12700 4350 12800 4350
+Wire Wire Line
+	12800 4250 12700 4250
+Wire Wire Line
+	12700 4150 12800 4150
+Wire Wire Line
+	12800 4050 12700 4050
+Wire Wire Line
+	12700 3950 12800 3950
+Wire Wire Line
+	12800 3850 12700 3850
+Wire Wire Line
+	12700 3750 12800 3750
+Wire Wire Line
+	12800 3650 12700 3650
+Wire Wire Line
+	12700 3550 12800 3550
+Wire Wire Line
+	12800 3450 12700 3450
+Wire Wire Line
+	12700 3350 12800 3350
+Wire Wire Line
+	12800 3250 12700 3250
+Wire Wire Line
+	12700 3150 12800 3150
+Wire Wire Line
+	12800 3050 12700 3050
+$Comp
+L C C?
+U 1 1 589026F7
+P 7500 9450
+F 0 "C?" H 7525 9550 50  0000 L CNN
+F 1 "100n" H 7525 9350 50  0000 L CNN
+F 2 "" H 7538 9300 50  0000 C CNN
+F 3 "" H 7500 9450 50  0000 C CNN
+	1    7500 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 58902762
+P 7800 9450
+F 0 "C?" H 7825 9550 50  0000 L CNN
+F 1 "100n" H 7825 9350 50  0000 L CNN
+F 2 "" H 7838 9300 50  0000 C CNN
+F 3 "" H 7800 9450 50  0000 C CNN
+	1    7800 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 589027A2
+P 8100 9450
+F 0 "C?" H 8125 9550 50  0000 L CNN
+F 1 "100n" H 8125 9350 50  0000 L CNN
+F 2 "" H 8138 9300 50  0000 C CNN
+F 3 "" H 8100 9450 50  0000 C CNN
+	1    8100 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 589027E5
+P 8400 9450
+F 0 "C?" H 8425 9550 50  0000 L CNN
+F 1 "100n" H 8425 9350 50  0000 L CNN
+F 2 "" H 8438 9300 50  0000 C CNN
+F 3 "" H 8400 9450 50  0000 C CNN
+	1    8400 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 58902827
+P 8700 9450
+F 0 "C?" H 8725 9550 50  0000 L CNN
+F 1 "100n" H 8725 9350 50  0000 L CNN
+F 2 "" H 8738 9300 50  0000 C CNN
+F 3 "" H 8700 9450 50  0000 C CNN
+	1    8700 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 58902870
+P 9000 9450
+F 0 "C?" H 9025 9550 50  0000 L CNN
+F 1 "100n" H 9025 9350 50  0000 L CNN
+F 2 "" H 9038 9300 50  0000 C CNN
+F 3 "" H 9000 9450 50  0000 C CNN
+	1    9000 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 589028B8
+P 8250 9800
+F 0 "#PWR?" H 8250 9550 50  0001 C CNN
+F 1 "GND" H 8250 9650 50  0000 C CNN
+F 2 "" H 8250 9800 50  0000 C CNN
+F 3 "" H 8250 9800 50  0000 C CNN
+	1    8250 9800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 9800 8250 9700
+Wire Wire Line
+	9000 9700 7500 9700
+Wire Wire Line
+	7500 9600 7500 9700
+Wire Wire Line
+	7800 9600 7800 9700
+Connection ~ 7800 9700
+Wire Wire Line
+	8100 9600 8100 9700
+Connection ~ 8100 9700
+Wire Wire Line
+	9000 9600 9000 9700
+Connection ~ 8250 9700
+Wire Wire Line
+	8700 9600 8700 9700
+Connection ~ 8700 9700
+Wire Wire Line
+	8400 9600 8400 9700
+Connection ~ 8400 9700
+$Comp
+L +3V3 #PWR?
+U 1 1 58902D50
+P 8250 9100
+F 0 "#PWR?" H 8250 8950 50  0001 C CNN
+F 1 "+3V3" H 8250 9240 50  0000 C CNN
+F 2 "" H 8250 9100 50  0000 C CNN
+F 3 "" H 8250 9100 50  0000 C CNN
+	1    8250 9100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 9100 8250 9200
+Wire Wire Line
+	7500 9200 9000 9200
+Wire Wire Line
+	7500 9200 7500 9300
+Wire Wire Line
+	7800 9300 7800 9200
+Connection ~ 7800 9200
+Wire Wire Line
+	8100 9200 8100 9300
+Connection ~ 8100 9200
+Wire Wire Line
+	9000 9200 9000 9300
+Connection ~ 8250 9200
+Wire Wire Line
+	8700 9300 8700 9200
+Connection ~ 8700 9200
+Wire Wire Line
+	8400 9200 8400 9300
+Connection ~ 8400 9200
 $EndSCHEMATC
