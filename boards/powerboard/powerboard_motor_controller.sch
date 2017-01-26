@@ -60,7 +60,7 @@ Motor+
 Text HLabel 7350 4100 2    60   Input ~ 0
 Motor-
 Text HLabel 5200 4200 0    60   Input ~ 0
-Current
+Current_measure
 $Comp
 L DRV8816 U?
 U 1 1 5889C518
@@ -86,32 +86,6 @@ F 2 "" H 4150 3150 50  0000 C CNN
 F 3 "" H 4150 3150 50  0000 C CNN
 	1    4150 3150
 	1    0    0    -1  
-$EndComp
-$Comp
-L +36V #PWR034
-U 1 1 5889C588
-P 4150 2650
-AR Path="/588899D1/5889C588" Ref="#PWR034"  Part="1" 
-AR Path="/5888DA23/5889C588" Ref="#PWR026"  Part="1" 
-F 0 "#PWR034" H 4150 2500 50  0001 C CNN
-F 1 "+36V" H 4150 2790 50  0000 C CNN
-F 2 "" H 4150 2650 50  0000 C CNN
-F 3 "" H 4150 2650 50  0000 C CNN
-	1    4150 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L +36V #PWR027
-U 1 1 5889C5A9
-P 7350 3900
-AR Path="/5888DA23/5889C5A9" Ref="#PWR027"  Part="1" 
-AR Path="/588899D1/5889C5A9" Ref="#PWR035"  Part="1" 
-F 0 "#PWR035" H 7350 3750 50  0001 C CNN
-F 1 "+36V" H 7350 4040 50  0000 C CNN
-F 2 "" H 7350 3900 50  0000 C CNN
-F 3 "" H 7350 3900 50  0000 C CNN
-	1    7350 3900
-	0    1    1    0   
 $EndComp
 $Comp
 L GND #PWR036
@@ -141,7 +115,7 @@ Wire Wire Line
 Wire Wire Line
 	4050 2750 4950 2750
 Wire Wire Line
-	7350 3900 7250 3900
+	7250 3900 7750 3900
 Wire Wire Line
 	6550 4500 6550 4700
 Wire Wire Line
@@ -233,19 +207,6 @@ Wire Wire Line
 Wire Wire Line
 	7650 3700 7250 3700
 $Comp
-L +36V #PWR031
-U 1 1 5889C919
-P 7350 3000
-AR Path="/5888DA23/5889C919" Ref="#PWR031"  Part="1" 
-AR Path="/588899D1/5889C919" Ref="#PWR039"  Part="1" 
-F 0 "#PWR039" H 7350 2850 50  0001 C CNN
-F 1 "+36V" H 7350 3140 50  0000 C CNN
-F 2 "" H 7350 3000 50  0000 C CNN
-F 3 "" H 7350 3000 50  0000 C CNN
-	1    7350 3000
-	1    0    0    -1  
-$EndComp
-$Comp
 L C C?
 U 1 1 5889C930
 P 7350 3250
@@ -284,8 +245,6 @@ F 3 "" H 4400 2900 50  0000 C CNN
 	1    4400 2900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4150 2750 4150 2650
 Connection ~ 4150 2750
 Connection ~ 4400 2750
 Connection ~ 4150 3050
@@ -310,7 +269,7 @@ Wire Wire Line
 Wire Wire Line
 	7350 3500 7350 3400
 Wire Wire Line
-	7350 3100 7350 3000
+	7350 2850 7350 3100
 $Comp
 L R R?
 U 1 1 5889D770
@@ -368,4 +327,15 @@ F 3 "" H 5750 3050 50  0000 C CNN
 	1    5750 3050
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	4150 2750 4150 2650
+Wire Wire Line
+	4150 2650 4850 2650
+Text Label 4850 2650 2    59   ~ 0
+28V
+Text Label 7750 3900 2    59   ~ 0
+28V
+Text Label 7350 2850 3    59   ~ 0
+28V
+NoConn ~ 5850 4100
 $EndSCHEMATC
