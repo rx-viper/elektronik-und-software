@@ -28,6 +28,8 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:stm32
+LIBS:xo53
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
@@ -704,23 +706,23 @@ $EndComp
 $Comp
 L CP C?
 U 1 1 588947E8
-P 2800 6950
-F 0 "C?" H 2825 7050 50  0000 L CNN
-F 1 "10µ" H 2825 6850 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 2838 6800 50  0001 C CNN
-F 3 "" H 2800 6950 50  0000 C CNN
-	1    2800 6950
+P 2500 6950
+F 0 "C?" H 2525 7050 50  0000 L CNN
+F 1 "10µ" H 2525 6850 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 2538 6800 50  0001 C CNN
+F 3 "" H 2500 6950 50  0000 C CNN
+	1    2500 6950
 	1    0    0    -1  
 $EndComp
 $Comp
 L CP C?
 U 1 1 588947EF
-P 3700 6950
-F 0 "C?" H 3725 7050 50  0000 L CNN
-F 1 "10µ" H 3725 6850 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 3738 6800 50  0001 C CNN
-F 3 "" H 3700 6950 50  0000 C CNN
-	1    3700 6950
+P 4000 6950
+F 0 "C?" H 4025 7050 50  0000 L CNN
+F 1 "10µ" H 4025 6850 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4038 6800 50  0001 C CNN
+F 3 "" H 4000 6950 50  0000 C CNN
+	1    4000 6950
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -739,7 +741,7 @@ L C C?
 U 1 1 588947FD
 P 2050 6900
 F 0 "C?" H 2075 7000 50  0000 L CNN
-F 1 "10µ" H 2075 6800 50  0000 L CNN
+F 1 "1µ" H 2075 6800 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 2088 6750 50  0001 C CNN
 F 3 "" H 2050 6900 50  0000 C CNN
 	1    2050 6900
@@ -771,7 +773,7 @@ Wire Wire Line
 	2050 6750 2050 6650
 Connection ~ 2050 6650
 Wire Wire Line
-	2050 7150 3700 7150
+	2050 7150 4000 7150
 $Comp
 L +5V #PWR?
 U 1 1 5889504A
@@ -843,7 +845,7 @@ $EndComp
 Wire Wire Line
 	9550 4150 9550 4250
 Wire Wire Line
-	9550 4250 9650 4250
+	9450 4250 9650 4250
 Wire Wire Line
 	9650 4250 9650 4150
 Wire Wire Line
@@ -1213,4 +1215,83 @@ Text Label 4150 3300 2    60   ~ 0
 OneWire_TX
 Text Label 4150 3400 2    60   ~ 0
 OneWire_RX
+Text Notes 1550 2950 0    39   ~ 0
+OneWire via UART\nhttps://www.maximintegrated.com/\nen/app-notes/index.mvp/id/214
+Text Notes 9450 5300 0    39   ~ 0
+short circuit protection\n(for control panel)
+Text Notes 10100 2300 0    39   ~ 0
+RasPi voltage 3.3V
+Text Notes 1300 7050 0    39   ~ 0
+LC power input filter
+$Comp
+L C C?
+U 1 1 588A230B
+P 3700 6950
+F 0 "C?" H 3725 7050 50  0000 L CNN
+F 1 "100n" H 3725 6850 50  0000 L CNN
+F 2 "" H 3738 6800 50  0000 C CNN
+F 3 "" H 3700 6950 50  0000 C CNN
+	1    3700 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 7150 4000 7100
+Connection ~ 3700 7150
+Wire Wire Line
+	4000 6800 4000 6650
+Connection ~ 4000 6650
+$Comp
+L C C?
+U 1 1 588A2CE0
+P 2800 6950
+F 0 "C?" H 2825 7050 50  0000 L CNN
+F 1 "100n" H 2825 6850 50  0000 L CNN
+F 2 "" H 2838 6800 50  0000 C CNN
+F 3 "" H 2800 6950 50  0000 C CNN
+	1    2800 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 7150 2500 7100
+Connection ~ 2500 7150
+Wire Wire Line
+	2500 6800 2500 6650
+Connection ~ 2500 6650
+$Comp
+L C C?
+U 1 1 588A2F2A
+P 9300 4250
+F 0 "C?" H 9325 4350 50  0000 L CNN
+F 1 "100n" H 9325 4150 50  0000 L CNN
+F 2 "" H 9338 4100 50  0000 C CNN
+F 3 "" H 9300 4250 50  0000 C CNN
+	1    9300 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 588A3FE9
+P 9050 4250
+F 0 "#PWR?" H 9050 4100 50  0001 C CNN
+F 1 "+3V3" H 9050 4390 50  0000 C CNN
+F 2 "" H 9050 4250 50  0000 C CNN
+F 3 "" H 9050 4250 50  0000 C CNN
+	1    9050 4250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9050 4250 9150 4250
+Connection ~ 9550 4250
+Text Notes 2750 1750 0    59   ~ 0
+3x Force sensor: I2C, SPI or analog
+Wire Wire Line
+	1350 2200 2400 2200
+Wire Wire Line
+	2400 2100 1350 2100
+Text Label 2400 2100 2    59   ~ 0
+pressure_SCL
+Text Label 2400 2200 2    59   ~ 0
+pressure_SDA
+Text Notes 2800 850  0    118  ~ 0
+TODO
 $EndSCHEMATC
