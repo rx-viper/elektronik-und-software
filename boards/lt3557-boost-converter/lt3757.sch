@@ -107,7 +107,7 @@ F 1 "2m" V 5900 2650 50  0000 C CNN
 F 2 "resistor-power-shunt:WSLP2726" V 5830 2650 50  0001 C CNN
 F 3 "" H 5900 2650 50  0000 C CNN
 	1    5900 2650
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L R R3
@@ -439,7 +439,7 @@ U 1 1 58924E09
 P 8600 2150
 F 0 "C5" H 8625 2250 50  0000 L CNN
 F 1 "120µ" H 8625 2050 50  0000 L CNN
-F 2 "Capacitors_SMD:c_elec_10x10.5" H 8638 2000 50  0001 C CNN
+F 2 "Capacitors_SMD:c_elec_8x10.5" H 8638 2000 50  0001 C CNN
 F 3 "" H 8600 2150 50  0000 C CNN
 	1    8600 2150
 	1    0    0    -1  
