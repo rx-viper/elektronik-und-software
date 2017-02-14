@@ -281,7 +281,7 @@
         <rect class="BoundingBox" stroke="none" fill="none" x="17517" y="6976" width="6623" height="1543"/>
         <path fill="rgb(114,159,207)" stroke="none" d="M 20828,8509 L 17526,8509 17526,6985 24130,6985 24130,8509 20828,8509 Z"/>
         <path fill="none" stroke="rgb(0,0,0)" stroke-width="18" stroke-linejoin="round" d="M 20828,8509 L 17526,8509 17526,6985 24130,6985 24130,8509 20828,8509 Z"/>
-        <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="19033" y="7612"><tspan fill="rgb(0,0,0)" stroke="none">Camera light</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="18487" y="8323"><tspan fill="rgb(0,0,0)" stroke="none">power connector</tspan></tspan></tspan></text>
+        <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="19702" y="7612"><tspan fill="rgb(0,0,0)" stroke="none">Camera</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="18487" y="8323"><tspan fill="rgb(0,0,0)" stroke="none">power connector</tspan></tspan></tspan></text>
        </g>
       </g>
       <g class="com.sun.star.drawing.ConnectorShape">
