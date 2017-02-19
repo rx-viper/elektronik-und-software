@@ -88,17 +88,6 @@ F 3 "" H 5200 1300 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L D_Schottky D1
-U 1 1 588F9DE1
-P 6550 1300
-F 0 "D1" H 6550 1400 50  0000 C CNN
-F 1 "VS-42CTQ030S-M3" H 6550 1200 50  0000 C CNN
-F 2 "Diodes_SMD:DD-PAK_TO263_DualDiode_ThermalVias" H 6550 1300 50  0001 C CNN
-F 3 "" H 6550 1300 50  0000 C CNN
-	1    6550 1300
-	-1   0    0    -1  
-$EndComp
-$Comp
 L R R6
 U 1 1 588F9F5B
 P 5900 2650
@@ -252,9 +241,7 @@ Wire Wire Line
 Connection ~ 3300 1900
 Connection ~ 4600 1300
 Wire Wire Line
-	5500 1300 6400 1300
-Wire Wire Line
-	5900 1800 5900 1300
+	5900 1300 5900 1800
 Connection ~ 5900 1300
 Wire Wire Line
 	5600 2000 5200 2000
@@ -267,8 +254,6 @@ Wire Wire Line
 Connection ~ 7050 2400
 Wire Wire Line
 	7050 2000 7050 1300
-Wire Wire Line
-	6700 1300 8700 1300
 Wire Wire Line
 	8250 1300 8250 2000
 Connection ~ 7050 1300
@@ -418,7 +403,7 @@ Wire Wire Line
 Connection ~ 5400 3450
 Text Notes 4150 1100 0    39   ~ 0
 Würth 7443556082\nL=0.82µH I_R=41.5A I_SAT=65A R_DC=0.54mOhm L_R=0.72µH
-Text Notes 6300 1100 0    39   ~ 0
+Text Notes 5950 850  0    39   ~ 0
 Vishay VS-42CTQ030S-M3\n30V 2x20A D²PAK (TO-263AB) V_F=0.38V
 $Comp
 L CP C1
@@ -479,4 +464,26 @@ Text Label 3900 2250 0    39   ~ 0
 SS
 Text Label 5800 1300 0    39   ~ 0
 L_D_FET
+$Comp
+L D_Schottky_x2_KCom_AKA D1
+U 1 1 58A9C328
+P 6450 1300
+F 0 "D1" V 6350 1150 50  0000 C CNN
+F 1 "VS-42CTQ030S-M3" V 6100 1300 50  0000 C CNN
+F 2 "Diodes_SMD:DD-PAK_TO263_DualDiode_ThermalVias" H 6450 1300 50  0001 C CNN
+F 3 "" H 6450 1300 50  0000 C CNN
+	1    6450 1300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5500 1300 6250 1300
+Wire Wire Line
+	6250 1000 6250 1600
+Wire Wire Line
+	6250 1000 6450 1000
+Wire Wire Line
+	6250 1600 6450 1600
+Connection ~ 6250 1300
+Wire Wire Line
+	6650 1300 8700 1300
 $EndSCHEMATC
