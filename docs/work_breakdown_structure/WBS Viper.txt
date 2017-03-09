@@ -1,0 +1,50 @@
+-Design Requirement
+	-Sensors
+	-Aktuatoren
+	-Akkus
+	-PUs
+	-Software
+	-Data Aquisition
+-Part Selection
+-Test-Assembly
+	-Sensors
+		-Temperatursensoren
+		-Drucksensoren
+		-Kraftsensoren
+		-Kamera
+		-Vakuum
+	-Akkus
+		-Vakuum
+		-Temperaturentwicklung bei Belastung
+		-Kapazität unter Last
+		-Spannung, Strom bei unteschiedlichen Tmp
+	-Aktuatoren
+		-Motoren
+		-Heizsonden
+-Software Development
+	-Ground Station
+		-telemetry Data
+			-Storage
+			-process
+			-visualize
+		-telecommand
+	-Onboard 
+		-Datamanagement
+			-Aquisition
+			-Storage
+			-Transmission
+		-Ground Commands
+		-Control
+			-Aktuatoren
+				-Range-Limiter 
+			-Heizsonden
+				-Überhitzungsschutz
+			-Arretierung
+			-Start/Stop Data Aquirement & Experiment
+			-Camera
+
+-Final Assembly 
+	-Temperatursensoren
+	-Kabellegung
+	-Kamera justieren
+-Testing
