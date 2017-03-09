@@ -1,4 +1,4 @@
-# Rexus project VIPER: Elektronik and Software
+# REXUS project VIPER: Elektronik and Software
 
 ### Structure of this repository
 
@@ -9,7 +9,7 @@
 * Code files of microcontroller software inside the rexus module.
 
 #### *software/groundstation*
-* Code files for the groundstation soaftware (C++/Qt).
+* Code files for the groundstation software (C++/Qt).
 
 #### *docs*
 * Documentation for all above.
