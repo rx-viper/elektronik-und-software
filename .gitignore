@@ -3,3 +3,6 @@
 *.kicad_pcb-bak
 *.net
 *.bck
+
+# Linux
+.directory
