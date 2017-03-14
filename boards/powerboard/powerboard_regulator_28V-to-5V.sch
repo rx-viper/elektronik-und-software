@@ -32,16 +32,17 @@ LIBS:TI-LMZ1xxxx
 LIBS:DRV8816
 LIBS:ACS711
 LIBS:lt1370
+LIBS:lt3757
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 7
-Title ""
-Date ""
-Rev ""
-Comp ""
+Sheet 2 5
+Title "Powerboard 5V regulator"
+Date "2017-03-14"
+Rev "01"
+Comp "VIPER"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -114,10 +115,10 @@ F 3 "" H 4800 4100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR018
+L GND #PWR?
 U 1 1 5886836B
 P 5750 4450
-F 0 "#PWR018" H 5750 4200 50  0001 C CNN
+F 0 "#PWR?" H 5750 4200 50  0001 C CNN
 F 1 "GND" H 5750 4300 50  0000 C CNN
 F 2 "" H 5750 4450 50  0000 C CNN
 F 3 "" H 5750 4450 50  0000 C CNN

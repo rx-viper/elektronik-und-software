@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LT3757
+D Boost, Flyback, SEPIC and Inverting Controller
+K LT3757, boost, flyback, SEPIC, stepup, inverter, regulator
+F http://cds.linear.com/docs/en/datasheet/3757Afd.pdf
+$ENDCMP
+#
+#End Doc Library
