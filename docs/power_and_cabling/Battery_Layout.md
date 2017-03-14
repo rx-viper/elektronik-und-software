@@ -1,6 +1,6 @@
 # Battery Power and Energy Calculation
 ```
-Heatprobes:     P = 3 * 60W = 180W
+Heatprobes:     P = 35W + 70W + 70W + 5W margin = 180W
                 V = 24V
 Experiment:     t = 3min = 180s = 0,05h
 Efficienty:     Step Up = 0,93
@@ -9,7 +9,7 @@ BK250 SCH       Q = 2800mAh
 ```				
 ## Calculation:
 ```			
-                    Waste:	180W * 0,07 = 12,6W
+                    Conversation losses: 180W * 0,07 = 12,6W
                     E_Heatprobe = 180W * 0,05h = 9Wh
                     E_Cell = 1,2V * 2800mAh = 3,36Wh per Cell
                     E_Waste = 12,6W * 0,05h = 0,63Wh
@@ -19,7 +19,7 @@ BK250 SCH       Q = 2800mAh
 
     1,1V at 20A     P_Cell = 1,1V * 20A = 22W
     (Batterychart)  P_Heatprobe = 180W
-                    P_Waste = 12,6W
+                    P_Loss = 12,6W
                     P_Total = P_Heatprobe + P_Waste = 180W + 12,6W = 192,6W
     Amount Cells:   P_Total/P_Cells = 192,6W/22W = 8,75 Cells
                     => 9 Cells
