@@ -33,6 +33,7 @@ LIBS:DRV8816
 LIBS:ACS711
 LIBS:lt1370
 LIBS:lt3757
+LIBS:common_mode_choke
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
@@ -60,23 +61,23 @@ $EndSheet
 $Comp
 L GND #PWR?
 U 1 1 5886D3D2
-P 1500 1600
-F 0 "#PWR?" H 1500 1350 50  0001 C CNN
-F 1 "GND" H 1500 1450 50  0000 C CNN
-F 2 "" H 1500 1600 50  0000 C CNN
-F 3 "" H 1500 1600 50  0000 C CNN
-	1    1500 1600
+P 1800 1700
+F 0 "#PWR?" H 1800 1450 50  0001 C CNN
+F 1 "GND" H 1800 1550 50  0000 C CNN
+F 2 "" H 1800 1700 50  0000 C CNN
+F 3 "" H 1800 1700 50  0000 C CNN
+	1    1800 1700
 	1    0    0    -1  
 $EndComp
 $Comp
 L CONN_01X02 P?
 U 1 1 5886D3FA
-P 1050 1250
-F 0 "P?" H 1050 1400 50  0000 C CNN
-F 1 "RXSM_POWER" V 1150 1250 50  0000 C CNN
-F 2 "" H 1050 1250 50  0000 C CNN
-F 3 "" H 1050 1250 50  0000 C CNN
-	1    1050 1250
+P 650 1250
+F 0 "P?" H 650 1400 50  0000 C CNN
+F 1 "RXSM_POWER" V 750 1250 50  0000 C CNN
+F 2 "" H 650 1250 50  0000 C CNN
+F 3 "" H 650 1250 50  0000 C CNN
+	1    650  1250
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -264,7 +265,7 @@ F 3 "" H 6700 1200 50  0000 C CNN
 	1    6700 1200
 	0    -1   -1   0   
 $EndComp
-Text Label 1300 1200 0    60   ~ 0
+Text Label 1300 1150 0    60   ~ 0
 RXSM_28V
 Text Label 1150 3000 0    60   ~ 0
 BAT_10V
@@ -309,15 +310,6 @@ F 3 "" H 10150 1750 50  0000 C CNN
 $EndComp
 Text Label 9750 1050 0    60   ~ 0
 RXSM_28V
-Wire Wire Line
-	1250 1300 1500 1300
-Wire Wire Line
-	1500 1300 1500 1600
-Wire Wire Line
-	1500 1400 1900 1400
-Connection ~ 1500 1400
-Wire Wire Line
-	1250 1200 1900 1200
 Wire Wire Line
 	3850 1300 3250 1300
 Wire Wire Line
@@ -372,12 +364,6 @@ Text Label 2300 6250 2    60   ~ 0
 Motor1_DIR
 Text Label 2300 6350 2    60   ~ 0
 Motor1_PWM
-Text Label 2300 6550 2    60   ~ 0
-Motor2_EN
-Text Label 2300 6650 2    60   ~ 0
-Motor2_DIR
-Text Label 2300 6750 2    60   ~ 0
-Motor2_PWM
 Text Label 2300 6950 2    60   ~ 0
 RXSM_28V_sense
 Text Label 2800 6000 3    60   ~ 0
@@ -470,8 +456,6 @@ Wire Wire Line
 	8450 3000 8300 3000
 Wire Wire Line
 	8300 3000 8300 3050
-Wire Wire Line
-	7150 2900 8450 2900
 Text Label 7800 3300 0    60   ~ 0
 Motor1_EN
 Text Label 7800 3400 0    60   ~ 0
@@ -499,66 +483,8 @@ Wire Wire Line
 	10650 3150 10350 3150
 Wire Wire Line
 	10350 3250 10650 3250
-$Sheet
-S 8450 4000 1900 900 
-U 5888DA23
-F0 "Powerboard Motor Controller" 60
-F1 "powerboard_motor_controller.sch" 60
-F2 "V_IN" I L 8450 4100 60 
-F3 "Enable" I L 8450 4500 60 
-F4 "Direction" I L 8450 4600 60 
-F5 "Pwm" I L 8450 4700 60 
-F6 "GND" I L 8450 4200 60 
-F7 "Motor+" I R 10350 4350 60 
-F8 "Motor-" I R 10350 4450 60 
-F9 "Current_measure" I L 8450 4800 59 
-$EndSheet
-$Comp
-L GND #PWR?
-U 1 1 5888DA29
-P 8300 4250
-F 0 "#PWR?" H 8300 4000 50  0001 C CNN
-F 1 "GND" H 8300 4100 50  0000 C CNN
-F 2 "" H 8300 4250 50  0000 C CNN
-F 3 "" H 8300 4250 50  0000 C CNN
-	1    8300 4250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8450 4200 8300 4200
-Wire Wire Line
-	8300 4200 8300 4250
-Wire Wire Line
-	7500 4100 8450 4100
-Text Label 6150 2900 0    60   ~ 0
+Text Label 6450 2900 0    60   ~ 0
 RXSM_28V
-Text Label 7800 4500 0    60   ~ 0
-Motor2_EN
-Text Label 7800 4600 0    60   ~ 0
-Motor2_DIR
-Text Label 7800 4700 0    60   ~ 0
-Motor2_PWM
-Wire Wire Line
-	7800 4500 8450 4500
-Wire Wire Line
-	8450 4600 7800 4600
-Wire Wire Line
-	7800 4700 8450 4700
-$Comp
-L CONN_01X02 P?
-U 1 1 5888DA39
-P 10850 4400
-F 0 "P?" H 10850 4550 50  0000 C CNN
-F 1 "Motor2" V 10950 4400 50  0000 C CNN
-F 2 "" H 10850 4400 50  0000 C CNN
-F 3 "" H 10850 4400 50  0000 C CNN
-	1    10850 4400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10650 4350 10350 4350
-Wire Wire Line
-	10350 4450 10650 4450
 $Comp
 L GND #PWR?
 U 1 1 5888E6D4
@@ -610,16 +536,10 @@ F9 "Current_measure" I L 8450 3600 59
 $EndSheet
 Text Label 7800 3600 0    60   ~ 0
 Motor1_Current
-Text Label 7800 4800 0    60   ~ 0
-Motor2_Current
-Wire Wire Line
-	7800 4800 8450 4800
 Wire Wire Line
 	8450 3600 7800 3600
 Text Label 2300 6450 2    60   ~ 0
 Motor1_Current
-Text Label 2300 6850 2    60   ~ 0
-Motor2_Current
 Wire Wire Line
 	2300 6850 1350 6850
 Wire Wire Line
@@ -1019,48 +939,42 @@ Wire Wire Line
 $Comp
 L INDUCTOR_SMALL L?
 U 1 1 588AFDA8
-P 6900 2900
-F 0 "L?" H 6900 3000 50  0000 C CNN
-F 1 "ToDo" H 6900 2850 50  0000 C CNN
-F 2 "" H 6900 2900 50  0000 C CNN
-F 3 "" H 6900 2900 50  0000 C CNN
-	1    6900 2900
+P 7200 2900
+F 0 "L?" H 7200 3000 50  0000 C CNN
+F 1 "10µH" H 7200 2850 50  0000 C CNN
+F 2 "" H 7200 2900 50  0000 C CNN
+F 3 "" H 7200 2900 50  0000 C CNN
+	1    7200 2900
 	1    0    0    -1  
 $EndComp
 $Comp
 L CP C?
 U 1 1 588B171D
-P 7250 3150
-F 0 "C?" H 7275 3250 50  0000 L CNN
-F 1 "47µ" H 7275 3050 50  0000 L CNN
-F 2 "" H 7288 3000 50  0000 C CNN
-F 3 "" H 7250 3150 50  0000 C CNN
-	1    7250 3150
+P 7550 3150
+F 0 "C?" H 7575 3250 50  0000 L CNN
+F 1 "10µ" H 7575 3050 50  0000 L CNN
+F 2 "" H 7588 3000 50  0000 C CNN
+F 3 "" H 7550 3150 50  0000 C CNN
+	1    7550 3150
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR?
 U 1 1 588B1908
-P 7250 3400
-F 0 "#PWR?" H 7250 3150 50  0001 C CNN
-F 1 "GND" H 7250 3250 50  0000 C CNN
-F 2 "" H 7250 3400 50  0000 C CNN
-F 3 "" H 7250 3400 50  0000 C CNN
-	1    7250 3400
+P 7200 3500
+F 0 "#PWR?" H 7200 3250 50  0001 C CNN
+F 1 "GND" H 7200 3350 50  0000 C CNN
+F 2 "" H 7200 3500 50  0000 C CNN
+F 3 "" H 7200 3500 50  0000 C CNN
+	1    7200 3500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7250 3000 7250 2900
-Connection ~ 7250 2900
+	7550 3400 7550 3300
 Wire Wire Line
-	7250 3300 7250 3400
-Wire Wire Line
-	7500 2900 7500 4100
-Connection ~ 7500 2900
-Wire Wire Line
-	6650 2900 6150 2900
-Text Notes 6800 3150 0    43   ~ 0
-LC filter
+	6950 2900 6450 2900
+Text Notes 7000 2750 0    49   ~ 0
+PI filter\nf_g = ~~15kHz
 $Comp
 L CONN_01X22 P?
 U 1 1 5892C225
@@ -1440,4 +1354,95 @@ Connection ~ 3000 4600
 Wire Wire Line
 	3000 4900 3050 4900
 Connection ~ 3400 4900
+Wire Wire Line
+	1900 1400 1800 1400
+Wire Wire Line
+	1800 1400 1800 1700
+$Comp
+L CMC FL?
+U 1 1 58C8D036
+P 1100 1250
+F 0 "FL?" H 1100 1405 60  0000 C CNB
+F 1 "10µH 1.5A" H 1050 1100 45  0000 C CNN
+F 2 "" H 1100 1025 40  0001 C CNN
+F 3 "" H 1100 1400 60  0000 C CNN
+F 4 "-" H 1100 1485 45  0001 C CNN "PART"
+F 5 "Passive" H 1330 1540 50  0001 C CNN "Family"
+	1    1100 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  1300 900  1300
+Wire Wire Line
+	900  1300 900  1350
+Wire Wire Line
+	900  1350 1000 1350
+Wire Wire Line
+	850  1200 900  1200
+Wire Wire Line
+	900  1200 900  1150
+Wire Wire Line
+	900  1150 1000 1150
+$Comp
+L CP C?
+U 1 1 58C8D570
+P 1450 1350
+F 0 "C?" H 1475 1450 50  0000 L CNN
+F 1 "47µ" H 1475 1250 50  0000 L CNN
+F 2 "" H 1488 1200 50  0000 C CNN
+F 3 "" H 1450 1350 50  0000 C CNN
+	1    1450 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 1150 1800 1150
+Wire Wire Line
+	1450 1150 1450 1200
+Wire Wire Line
+	1800 1150 1800 1200
+Wire Wire Line
+	1800 1200 1900 1200
+Connection ~ 1450 1150
+Wire Wire Line
+	1200 1350 1250 1350
+Wire Wire Line
+	1250 1350 1250 1600
+Wire Wire Line
+	1250 1600 1800 1600
+Connection ~ 1800 1600
+Wire Wire Line
+	1450 1500 1450 1600
+Connection ~ 1450 1600
+Text Notes 700  2100 0    49   ~ 0
+Max. input capacity on \nRXSM 28V: 100µF\n\nDon't assemble input \ncapacitors >1µF in voltage \nregulator sub-schematics!
+$Comp
+L CP C?
+U 1 1 58CAB676
+P 6850 3150
+F 0 "C?" H 6875 3250 50  0000 L CNN
+F 1 "1µ" H 6875 3050 50  0000 L CNN
+F 2 "" H 6888 3000 50  0000 C CNN
+F 3 "" H 6850 3150 50  0000 C CNN
+	1    6850 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 3000 6850 2900
+Connection ~ 6850 2900
+Wire Wire Line
+	6850 3400 7550 3400
+Wire Wire Line
+	7200 3400 7200 3500
+Wire Wire Line
+	6850 3400 6850 3300
+Connection ~ 7200 3400
+Wire Wire Line
+	7450 2900 8450 2900
+Wire Wire Line
+	7550 2900 7550 3000
+Connection ~ 7550 2900
+NoConn ~ 2300 6550
+NoConn ~ 2300 6650
+NoConn ~ 2300 6750
+NoConn ~ 2300 6850
 $EndSCHEMATC

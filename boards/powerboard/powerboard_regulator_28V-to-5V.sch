@@ -33,6 +33,7 @@ LIBS:DRV8816
 LIBS:ACS711
 LIBS:lt1370
 LIBS:lt3757
+LIBS:common_mode_choke
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
