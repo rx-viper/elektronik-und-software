@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PC3H7
+D SOP4, General Purpose Optocoupler, Vce 80V, CTR 20-400%
+K NPN Optocoupler
+F http://www.sharpsma.com/download/pc3h7-epdf
+$ENDCMP
+#
+#End Doc Library
