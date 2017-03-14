@@ -1,4 +1,4 @@
-update=Tue Mar 14 06:06:10 2017
+update=Tue 14 Mar 2017 02:07:06 PM CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -65,3 +65,13 @@ LibName33=lib/pc3h7
 LibName34=maxim
 LibName35=lib/common_mode_choke
 LibName36=lib/esd_diode_dual
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/mainboard/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
