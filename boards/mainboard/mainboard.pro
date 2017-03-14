@@ -1,4 +1,4 @@
-update=Thu 26 Jan 2017 10:55:29 PM CET
+update=Tue Mar 14 06:06:10 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,3 +61,7 @@ LibName29=valves
 LibName30=stm32
 LibName31=lib/xo53
 LibName32=lib/sst26vf064b
+LibName33=lib/pc3h7
+LibName34=maxim
+LibName35=lib/common_mode_choke
+LibName36=lib/esd_diode_dual

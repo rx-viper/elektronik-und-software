@@ -31,6 +31,10 @@ LIBS:valves
 LIBS:stm32
 LIBS:xo53
 LIBS:sst26vf064b
+LIBS:pc3h7
+LIBS:maxim
+LIBS:common_mode_choke
+LIBS:esd_diode_dual
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
@@ -816,4 +820,16 @@ F 3 "" H 1100 6050 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	1100 6050 1200 6050
+Text HLabel 12800 7750 2    60   Input ~ 0
+RXSM_LO
+Text HLabel 12800 7850 2    60   Input ~ 0
+RXSM_SOE
+Text HLabel 12800 7950 2    60   Input ~ 0
+RXSM_SODS
+Wire Wire Line
+	12800 7750 12700 7750
+Wire Wire Line
+	12700 7850 12800 7850
+Wire Wire Line
+	12800 7950 12700 7950
 $EndSCHEMATC
