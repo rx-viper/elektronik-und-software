@@ -32,4 +32,4 @@ BK250 SCH       Q = 2800mAh
                     => 7 Cells
 
     => Amount Cells chosen: 8 Cells
-    ```
+```
