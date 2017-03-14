@@ -1,7 +1,7 @@
 # Battery Power and Energy Calculation
 ```
 Heatprobes:     P = 35W + 70W + 70W + 5W margin = 180W
-                V = 24V
+                U = 24V
 Experiment:     t = 3min = 180s = 0,05h
 Efficienty:     Step Up = 0,93
 BK250 SCH       Q = 2800mAh
