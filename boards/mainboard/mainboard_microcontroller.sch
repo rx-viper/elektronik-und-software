@@ -503,7 +503,7 @@ rxsm_volt
 Text HLabel 12800 3850 2    60   Input ~ 0
 motor1_curr
 Text HLabel 12800 3950 2    60   Input ~ 0
-motor2_curr
+unused
 Text HLabel 12800 4050 2    60   Input ~ 0
 probe1_EN
 Text HLabel 12800 4150 2    60   Input ~ 0
@@ -521,11 +521,11 @@ motor1_DIR
 Text HLabel 12800 4950 2    60   Input ~ 0
 motor1_PWM
 Text HLabel 12800 5050 2    60   Input ~ 0
-motor2_EN
+bat_charge_status
 Text HLabel 12800 5150 2    60   Input ~ 0
-motor2_DIR
+bat_boost_EN
 Text HLabel 12800 5250 2    60   Input ~ 0
-motor2_PWM
+bat_charge_EN
 Wire Wire Line
 	12800 4750 12700 4750
 Wire Wire Line

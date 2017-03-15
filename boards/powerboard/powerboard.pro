@@ -1,4 +1,4 @@
-update=Tue 14 Mar 2017 03:21:09 PM CET
+update=Wed 15 Mar 2017 03:39:31 PM CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -74,3 +74,4 @@ LibName32=lib/ACS711
 LibName33=lib/lt1370
 LibName34=lib/lt3757
 LibName35=lib/common_mode_choke
+LibName36=lib/ltc4010

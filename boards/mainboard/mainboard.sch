@@ -93,7 +93,7 @@ F36 "probe3_curr" I L 5050 4250 60
 F37 "batt_volt" I L 5050 5750 60 
 F38 "rxsm_volt" I L 5050 5650 60 
 F39 "motor1_curr" I L 5050 5150 60 
-F40 "motor2_curr" I L 5050 5550 60 
+F40 "unused" I L 5050 5550 60 
 F41 "probe1_EN" I L 5050 4550 60 
 F42 "probe2_EN" I L 5050 4650 60 
 F43 "probe3_EN" I L 5050 4750 60 
@@ -102,9 +102,9 @@ F45 "batt_heater_EN" I L 5050 4450 60
 F46 "motor1_EN" I L 5050 4850 60 
 F47 "motor1_DIR" I L 5050 4950 60 
 F48 "motor1_PWM" I L 5050 5050 60 
-F49 "motor2_EN" I L 5050 5250 60 
-F50 "motor2_DIR" I L 5050 5350 60 
-F51 "motor2_PWM" I L 5050 5450 60 
+F49 "bat_charge_status" I L 5050 5250 60 
+F50 "bat_boost_EN" I L 5050 5350 60 
+F51 "bat_charge_EN" I L 5050 5450 60 
 F52 "RXSM_LO" I R 7900 5350 60 
 F53 "RXSM_SOE" I R 7900 5450 60 
 F54 "RXSM_SODS" I R 7900 5550 60 
@@ -509,11 +509,11 @@ Motor1_DIR
 Text Label 2200 5050 2    60   ~ 0
 Motor1_PWM
 Text Label 2200 5250 2    60   ~ 0
-Motor2_EN
+Charge_status
 Text Label 2200 5350 2    60   ~ 0
-Motor2_DIR
+Boost24V_EN
 Text Label 2200 5450 2    60   ~ 0
-Motor2_PWM
+Charge_EN
 Text Label 2200 5650 2    60   ~ 0
 RXSM_28V_sense
 Text Label 2200 4350 2    60   ~ 0
@@ -531,8 +531,6 @@ F 3 "" H 2200 5850 50  0000 C CNN
 $EndComp
 Text Label 2200 5150 2    60   ~ 0
 Motor1_Current
-Text Label 2200 5550 2    60   ~ 0
-Motor2_Current
 Text Label 2200 4250 2    60   ~ 0
 Probe3_Current
 Text Label 2200 4150 2    60   ~ 0
