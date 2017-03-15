@@ -1,4 +1,4 @@
-update=Thu 26 Jan 2017 07:39:44 PM CET
+update=Tue 14 Mar 2017 03:21:09 PM CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -28,7 +28,7 @@ version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=
+PlotDirectoryName=../../docs/boards/powerboard/schematic/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=
@@ -72,3 +72,5 @@ LibName30=lib/TI-LMZ1xxxx
 LibName31=lib/DRV8816
 LibName32=lib/ACS711
 LibName33=lib/lt1370
+LibName34=lib/lt3757
+LibName35=lib/common_mode_choke
