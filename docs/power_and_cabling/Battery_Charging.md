@@ -18,5 +18,5 @@ R_sense = 100mV / I_charge
 
 ### Battery cut-off
 The battery is always disconnected from the load while RXSM power is not available.
-For technical reasons the charging circuit is not disconnected, but is only charging circuit only enabled and connected while the RXSM charge line is powered.
+For technical reasons the charging circuit is not disconnected, but is only enabled and active while the RXSM charge line is powered.
 To charge the battery both RXSM power line and charge line have to be powered on because the microcontroller must enable the battery charging circuit.
