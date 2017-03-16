@@ -1,15 +1,18 @@
-* Specify design
-    * Sensors
+* Specify hardware design
+    * Sensors
     * Actuators
     * Batteries
     * Processing units
-    * Software
-    * Data Acquisition
+    * Data acquisition
+    * Developing schematics
+        * Calculate
+        * Draw
+* Specify software design
+    * Requirements
+    * Flow charts
 * Select parts
 * Develop hardware
     * Design board layouts
-    * Assemble boards
-    * Assemble cables
 * Develop software
     * Ground Station
         * Telemetry data
@@ -32,7 +35,10 @@
             * Store data
             * Pack and format data
             * Send to RXSM for transmission
-* Test hardware
+* Assemble hardware
+    * Assemble boards
+    * Assemble cables
+* Testing hardware components
     * Sensors
         * Temperature
         * Pressure
@@ -50,4 +56,4 @@
     * Temperature sensors
     * Wiring
     * Adjust camera
-* Testing
+* Final testing
