@@ -2,7 +2,7 @@
 
 * Sensors
     * 100x Temperature sensors      500..3000 €
-    * 2x Pressure sensor            80 €
+    * 2x Pressure sensor            55 €
     * 6x Force sensor               500 € ????????? JUSTIFY!
 * Electronic components
     * Cameras
