@@ -14,3 +14,5 @@
     * 2x Raspberry Pi CM3           60 €
     * Battery charger               60 €
     * Microcontroller programmer and logic analyzer    15 €
+    * Cables                        150 €
+    * Connectors                    350 €
