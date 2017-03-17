@@ -1,0 +1,29 @@
+\documentclass[12pt, a4paper]{scrreprt}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\begin{tabular}{|c|c|c|c|c|}
+	\hline 
+	Sensor & Number & Frequency / $Hz$ & Resolution / $Byte$ & Datarate / $B/s$ \\ 
+	\hline 
+	Ice temperature & 27 & 1.5 & 3 & 121.5 \\ 
+	\hline 
+	Other temperature & 5 & $\frac{1}{10}$ & 2 & 1 \\ 
+	\hline 
+	HPPM force & 3 & 2 & 3 & 18 \\ 
+	\hline 
+	Pressure & 1 & 20 & 3 (?) & 60 \\ 
+	\hline 
+	Heat probe temperature & 3 & 1.5 & 3 & 13.5 \\ 
+	\hline 
+	\textbf{Total} & & & & 214 \\ 
+	\hline 
+\end{tabular} 
+\\[0.5em]
+Experiment duration: $120\,s \rightarrow 214B/s * 120s = 25.68kB$
+\\[0.5em]
+Flight duration: $600\,s \rightarrow 214B/s * 600s = 128.4kB$
+
+\end{document}          
