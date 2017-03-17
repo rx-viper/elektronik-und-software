@@ -1,4 +1,4 @@
-update=Tue 14 Mar 2017 02:07:06 PM CET
+update=Fri Mar 17 04:21:29 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,6 +25,16 @@ version=1
 NetIExt=net
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/mainboard/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [eeschema]
 version=1
 LibDir=lib
@@ -65,13 +75,4 @@ LibName33=lib/pc3h7
 LibName34=maxim
 LibName35=lib/common_mode_choke
 LibName36=lib/esd_diode_dual
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=../../docs/boards/mainboard/schematic/
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
+LibName37=lib/max6126
