@@ -3,7 +3,7 @@
 * Sensors
     * 100x Temperature sensors      500..3000 €
     * 2x Pressure sensor            55 €
-    * 6x Force sensor               500 € ????????? JUSTIFY!
+    * 6x Force sensor (Omega LCMKD) 3660 €
 * Electronic components
     * Cameras
         * Visible light             150 €
