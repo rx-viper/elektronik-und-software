@@ -45,7 +45,6 @@
    <glyph unicode="L" horiz-adv-x="927" d="M 168,0 L 168,1409 359,1409 359,156 1071,156 1071,0 168,0 Z"/>
    <glyph unicode="I" horiz-adv-x="213" d="M 189,0 L 189,1409 380,1409 380,0 189,0 Z"/>
    <glyph unicode="H" horiz-adv-x="1165" d="M 1121,0 L 1121,653 359,653 359,0 168,0 168,1409 359,1409 359,813 1121,813 1121,1409 1312,1409 1312,0 1121,0 Z"/>
-   <glyph unicode="G" horiz-adv-x="1377" d="M 103,711 C 103,821 118,920 148,1009 177,1098 222,1173 281,1236 340,1298 413,1346 500,1380 587,1413 689,1430 804,1430 891,1430 967,1422 1032,1407 1097,1392 1154,1370 1202,1341 1250,1312 1291,1278 1324,1237 1357,1196 1386,1149 1409,1098 L 1227,1044 C 1210,1079 1189,1110 1165,1139 1140,1167 1111,1191 1076,1211 1041,1231 1001,1247 956,1258 910,1269 858,1274 799,1274 714,1274 640,1261 577,1234 514,1207 461,1169 420,1120 379,1071 348,1011 328,942 307,873 297,796 297,711 297,626 308,549 330,479 352,408 385,348 428,297 471,246 525,206 590,178 654,149 728,135 813,135 868,135 919,140 966,149 1013,158 1055,171 1093,186 1130,201 1163,217 1192,236 1221,254 1245,272 1264,291 L 1264,545 843,545 843,705 1440,705 1440,219 C 1409,187 1372,157 1330,128 1287,99 1240,73 1187,51 1134,29 1077,12 1014,-1 951,-14 884,-20 813,-20 694,-20 591,-2 502,35 413,71 340,122 281,187 222,252 177,329 148,418 118,507 103,605 103,711 Z"/>
    <glyph unicode="F" horiz-adv-x="1006" d="M 359,1253 L 359,729 1145,729 1145,571 359,571 359,0 168,0 168,1409 1169,1409 1169,1253 359,1253 Z"/>
    <glyph unicode="E" horiz-adv-x="1138" d="M 168,0 L 168,1409 1237,1409 1237,1253 359,1253 359,801 1177,801 1177,647 359,647 359,156 1278,156 1278,0 168,0 Z"/>
    <glyph unicode="D" horiz-adv-x="1218" d="M 1381,719 C 1381,602 1363,498 1328,409 1293,319 1244,244 1183,184 1122,123 1049,78 966,47 882,16 792,0 695,0 L 168,0 168,1409 634,1409 C 743,1409 843,1396 935,1369 1026,1342 1105,1300 1171,1244 1237,1187 1289,1116 1326,1029 1363,942 1381,839 1381,719 Z M 1189,719 C 1189,814 1175,896 1148,964 1121,1031 1082,1087 1033,1130 984,1173 925,1205 856,1226 787,1246 712,1256 630,1256 L 359,1256 359,153 673,153 C 747,153 816,165 879,189 942,213 996,249 1042,296 1088,343 1124,402 1150,473 1176,544 1189,626 1189,719 Z"/>
@@ -317,28 +316,27 @@
       </g>
       <g class="com.sun.star.drawing.ConnectorShape">
        <g id="id31">
-        <rect class="BoundingBox" stroke="none" fill="none" x="13309" y="13835" width="3355" height="733"/>
-        <path fill="none" stroke="rgb(0,0,0)" stroke-width="51" stroke-linejoin="round" d="M 13335,14541 C 15811,14541 14161,14287 16637,14287"/>
+        <rect class="BoundingBox" stroke="none" fill="none" x="13308" y="13835" width="3357" height="734"/>
+        <path fill="none" stroke="rgb(102,102,102)" stroke-width="53" stroke-linejoin="round" d="M 13335,14541 C 15811,14541 14161,14287 16637,14287"/>
         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="14237" y="14279"><tspan fill="rgb(0,0,0)" stroke="none">+24V</tspan></tspan></tspan></text>
        </g>
       </g>
       <g class="com.sun.star.drawing.ConnectorShape">
        <g id="id32">
-        <rect class="BoundingBox" stroke="none" fill="none" x="20167" y="14258" width="815" height="56"/>
-        <path fill="none" stroke="rgb(0,0,0)" stroke-width="51" stroke-linejoin="round" d="M 20193,14287 C 20764,14287 20384,14284 20955,14284"/>
+        <rect class="BoundingBox" stroke="none" fill="none" x="20166" y="14257" width="817" height="58"/>
+        <path fill="none" stroke="rgb(102,102,102)" stroke-width="53" stroke-linejoin="round" d="M 20193,14287 C 20764,14287 20384,14284 20955,14284"/>
        </g>
       </g>
       <g class="com.sun.star.drawing.ConnectorShape">
        <g id="id33">
-        <rect class="BoundingBox" stroke="none" fill="none" x="23596" y="14258" width="815" height="56"/>
-        <path fill="none" stroke="rgb(0,0,0)" stroke-width="51" stroke-linejoin="round" d="M 23622,14284 C 24193,14284 23813,14287 24384,14287"/>
+        <rect class="BoundingBox" stroke="none" fill="none" x="23595" y="14257" width="817" height="58"/>
+        <path fill="none" stroke="rgb(102,102,102)" stroke-width="53" stroke-linejoin="round" d="M 23622,14284 C 24193,14284 23813,14287 24384,14287"/>
        </g>
       </g>
       <g class="com.sun.star.drawing.ConnectorShape">
        <g id="id34">
-        <rect class="BoundingBox" stroke="none" fill="none" x="13309" y="14261" width="14495" height="1768"/>
-        <path fill="none" stroke="rgb(0,0,0)" stroke-width="51" stroke-linejoin="round" d="M 27178,14287 C 28498,14287 28058,16002 21479,16002 14900,16002 15682,14541 13335,14541"/>
-        <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="19499" y="15721"><tspan fill="rgb(0,0,0)" stroke="none">Ground</tspan></tspan></tspan></text>
+        <rect class="BoundingBox" stroke="none" fill="none" x="13308" y="14260" width="14497" height="1516"/>
+        <path fill="none" stroke="rgb(102,102,102)" stroke-width="53" stroke-linejoin="round" d="M 27178,14287 C 28498,14287 28058,15748 21479,15748 14900,15748 15682,14541 13335,14541"/>
        </g>
       </g>
       <g class="com.sun.star.drawing.CustomShape">
@@ -440,8 +438,8 @@
       </g>
       <g class="com.sun.star.drawing.TextShape">
        <g id="id49">
-        <rect class="BoundingBox" stroke="none" fill="none" x="14327" y="15975" width="13398" height="1362"/>
-        <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="494px" font-weight="400"><tspan class="TextPosition" x="14577" y="16549"><tspan fill="rgb(0,0,0)" stroke="none">Heat probes: Constant power, over temperature shutdown,</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="494px" font-weight="400"><tspan class="TextPosition" x="14577" y="17104"><tspan fill="rgb(0,0,0)" stroke="none">no temperature control loop</tspan></tspan></tspan></text>
+        <rect class="BoundingBox" stroke="none" fill="none" x="14427" y="15775" width="13398" height="1362"/>
+        <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="494px" font-weight="400"><tspan class="TextPosition" x="14677" y="16349"><tspan fill="rgb(0,0,0)" stroke="none">Heat probes: Constant power, over temperature shutdown,</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="494px" font-weight="400"><tspan class="TextPosition" x="14677" y="16904"><tspan fill="rgb(0,0,0)" stroke="none">no temperature control loop</tspan></tspan></tspan></text>
        </g>
       </g>
      </g>
