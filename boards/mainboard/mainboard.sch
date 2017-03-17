@@ -35,12 +35,13 @@ LIBS:pc3h7
 LIBS:maxim
 LIBS:common_mode_choke
 LIBS:esd_diode_dual
+LIBS:max6126
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 3
 Title "Mainboard overview"
 Date "2017-03-14"
 Rev "03"
@@ -50,65 +51,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 5050 2100 2850 4400
-U 5889F4B8
-F0 "Mainboard microcontroller" 60
-F1 "mainboard_microcontroller.sch" 60
-F2 "debug_TX" I L 5050 5850 59 
-F3 "debug_RX" I L 5050 5950 59 
-F4 "1wire_TX" I L 5050 3300 59 
-F5 "1wire_RX" I L 5050 3400 59 
-F6 "pressure_SCL" I L 5050 3050 59 
-F7 "pressure_SDA" I L 5050 3150 59 
-F8 "RXSM_CTS" I R 7900 3850 59 
-F9 "RXSM_RTS" I R 7900 3350 59 
-F10 "RXSM_TX" I R 7900 3650 59 
-F11 "RXSM_RX" I R 7900 3150 59 
-F12 "CtrlPnl_LED1" I R 7900 5950 59 
-F13 "CtrlPnl_LED2" I R 7900 6050 59 
-F14 "CtrlPnl_SW1" I R 7900 6150 59 
-F15 "CtrlPnl_SW2" I R 7900 6250 59 
-F16 "RasPi_TX" I R 7900 2200 59 
-F17 "RasPi_RX" I R 7900 2300 59 
-F18 "temp_SPI_SCK" I L 5050 2200 59 
-F19 "temp_SPI_MISO" I L 5050 2300 59 
-F20 "temp_SPI_MOSI" I L 5050 2400 59 
-F21 "temp1_INT" I R 7900 4250 59 
-F22 "temp2_INT" I R 7900 4350 59 
-F23 "temp3_INT" I R 7900 4450 59 
-F24 "temp4_INT" I R 7900 4550 59 
-F25 "temp1_CS" I R 7900 4750 59 
-F26 "temp2_CS" I R 7900 4850 59 
-F27 "temp3_CS" I R 7900 4950 59 
-F28 "temp4_CS" I R 7900 5050 59 
-F29 "temp5_INT" I R 7900 4650 59 
-F30 "temp5_CS" I R 7900 5150 59 
-F31 "probe1_volt" I L 5050 3750 60 
-F32 "probe2_volt" I L 5050 3850 60 
-F33 "probe3_volt" I L 5050 3950 60 
-F34 "probe1_curr" I L 5050 4050 60 
-F35 "probe2_curr" I L 5050 4150 60 
-F36 "probe3_curr" I L 5050 4250 60 
-F37 "batt_volt" I L 5050 5750 60 
-F38 "rxsm_volt" I L 5050 5650 60 
-F39 "motor1_curr" I L 5050 5150 60 
-F40 "unused" I L 5050 5550 60 
-F41 "probe1_EN" I L 5050 4550 60 
-F42 "probe2_EN" I L 5050 4650 60 
-F43 "probe3_EN" I L 5050 4750 60 
-F44 "cam_light_EN" I L 5050 4350 60 
-F45 "batt_heater_EN" I L 5050 4450 60 
-F46 "motor1_EN" I L 5050 4850 60 
-F47 "motor1_DIR" I L 5050 4950 60 
-F48 "motor1_PWM" I L 5050 5050 60 
-F49 "bat_charge_status" I L 5050 5250 60 
-F50 "bat_boost_EN" I L 5050 5350 60 
-F51 "bat_charge_EN" I L 5050 5450 60 
-F52 "RXSM_LO" I R 7900 5350 60 
-F53 "RXSM_SOE" I R 7900 5450 60 
-F54 "RXSM_SODS" I R 7900 5550 60 
-$EndSheet
 $Comp
 L CONN_01X02 P?
 U 1 1 5889F4C3
@@ -173,105 +115,6 @@ F 1 "+3V3" H 1450 2040 50  0000 C CNN
 F 2 "" H 1450 1900 50  0000 C CNN
 F 3 "" H 1450 1900 50  0000 C CNN
 	1    1450 1900
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X05 P?
-U 1 1 588939FC
-P 2300 1150
-F 0 "P?" H 2300 1450 50  0000 C CNN
-F 1 "Force 1" V 2400 1150 50  0000 C CNN
-F 2 "" H 2300 1150 50  0000 C CNN
-F 3 "" H 2300 1150 50  0000 C CNN
-	1    2300 1150
-	-1   0    0    1   
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58893B21
-P 2600 850
-F 0 "#PWR?" H 2600 700 50  0001 C CNN
-F 1 "+3V3" H 2600 990 50  0000 C CNN
-F 2 "" H 2600 850 50  0000 C CNN
-F 3 "" H 2600 850 50  0000 C CNN
-	1    2600 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58893B42
-P 2600 1450
-F 0 "#PWR?" H 2600 1200 50  0001 C CNN
-F 1 "GND" H 2600 1300 50  0000 C CNN
-F 2 "" H 2600 1450 50  0000 C CNN
-F 3 "" H 2600 1450 50  0000 C CNN
-	1    2600 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X05 P?
-U 1 1 58893CEC
-P 3150 1150
-F 0 "P?" H 3150 1450 50  0000 C CNN
-F 1 "Force 2" V 3250 1150 50  0000 C CNN
-F 2 "" H 3150 1150 50  0000 C CNN
-F 3 "" H 3150 1150 50  0000 C CNN
-	1    3150 1150
-	-1   0    0    1   
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58893CF2
-P 3450 850
-F 0 "#PWR?" H 3450 700 50  0001 C CNN
-F 1 "+3V3" H 3450 990 50  0000 C CNN
-F 2 "" H 3450 850 50  0000 C CNN
-F 3 "" H 3450 850 50  0000 C CNN
-	1    3450 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58893CFA
-P 3450 1450
-F 0 "#PWR?" H 3450 1200 50  0001 C CNN
-F 1 "GND" H 3450 1300 50  0000 C CNN
-F 2 "" H 3450 1450 50  0000 C CNN
-F 3 "" H 3450 1450 50  0000 C CNN
-	1    3450 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X05 P?
-U 1 1 58893D46
-P 4000 1150
-F 0 "P?" H 4000 1450 50  0000 C CNN
-F 1 "Force 3" V 4100 1150 50  0000 C CNN
-F 2 "" H 4000 1150 50  0000 C CNN
-F 3 "" H 4000 1150 50  0000 C CNN
-	1    4000 1150
-	-1   0    0    1   
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58893D4C
-P 4300 850
-F 0 "#PWR?" H 4300 700 50  0001 C CNN
-F 1 "+3V3" H 4300 990 50  0000 C CNN
-F 2 "" H 4300 850 50  0000 C CNN
-F 3 "" H 4300 850 50  0000 C CNN
-	1    4300 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58893D54
-P 4300 1450
-F 0 "#PWR?" H 4300 1200 50  0001 C CNN
-F 1 "GND" H 4300 1300 50  0000 C CNN
-F 2 "" H 4300 1450 50  0000 C CNN
-F 3 "" H 4300 1450 50  0000 C CNN
-	1    4300 1450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -470,11 +313,11 @@ Text Label 10100 1050 2    60   ~ 0
 temp_sdo
 Text Label 10100 950  2    60   ~ 0
 temp_sck
-Text Label 4450 2400 0    60   ~ 0
+Text Label 4450 2900 0    60   ~ 0
 temp_sdi
-Text Label 4450 2300 0    60   ~ 0
+Text Label 4450 2800 0    60   ~ 0
 temp_sdo
-Text Label 4450 2200 0    60   ~ 0
+Text Label 4450 2700 0    60   ~ 0
 temp_sck
 Text Label 7100 1150 2    60   ~ 0
 temp_sdi
@@ -952,14 +795,12 @@ F 3 "" H 9450 2700 50  0000 C CNN
 	1    9450 2700
 	-1   0    0    1   
 $EndComp
-Text Notes 2750 1750 0    59   ~ 0
-3x Force sensor: I2C, SPI or analog
+Text Notes 2500 1850 0    59   ~ 0
+3x Force sensor: Stain gauge (analog)\nwith ADS1324 ADC
 Text Label 2400 2100 2    59   ~ 0
 pressure_SCL
 Text Label 2400 2200 2    59   ~ 0
 pressure_SDA
-Text Notes 2800 850  0    118  ~ 0
-TODO
 $Comp
 L CONN_01X03 P?
 U 1 1 588A3A71
@@ -1334,30 +1175,6 @@ Wire Wire Line
 Wire Wire Line
 	1450 2300 1350 2300
 Wire Wire Line
-	2600 850  2600 950 
-Wire Wire Line
-	2600 950  2500 950 
-Wire Wire Line
-	2600 1450 2600 1350
-Wire Wire Line
-	2600 1350 2500 1350
-Wire Wire Line
-	3450 850  3450 950 
-Wire Wire Line
-	3450 950  3350 950 
-Wire Wire Line
-	3450 1450 3450 1350
-Wire Wire Line
-	3450 1350 3350 1350
-Wire Wire Line
-	4300 850  4300 950 
-Wire Wire Line
-	4300 950  4200 950 
-Wire Wire Line
-	4300 1450 4300 1350
-Wire Wire Line
-	4300 1350 4200 1350
-Wire Wire Line
 	5600 700  5600 750 
 Wire Wire Line
 	5600 750  5550 750 
@@ -1605,11 +1422,11 @@ Wire Wire Line
 Wire Wire Line
 	1250 6250 4650 6250
 Wire Wire Line
-	4450 2200 5050 2200
+	4450 2700 5050 2700
 Wire Wire Line
-	5050 2300 4450 2300
+	5050 2800 4450 2800
 Wire Wire Line
-	4450 2400 5050 2400
+	4450 2900 5050 2900
 Wire Wire Line
 	6100 950  5550 950 
 Wire Wire Line
@@ -1871,4 +1688,109 @@ Wire Wire Line
 Connection ~ 9800 3750
 Text Notes 10400 2950 1    39   ~ 0
 2x NXP PESD1CAN
+$Sheet
+S 2550 900  1000 650 
+U 58CBE6F9
+F0 "Mainboard force sensor" 60
+F1 "mainboard_force_sensor.sch" 60
+F2 "MUX_A0" I R 3550 1450 60 
+F3 "MUX_A1" I R 3550 1350 60 
+F4 "DOUT" O R 3550 1000 60 
+F5 "SCLK" I R 3550 1100 60 
+F6 "~PWDN" I R 3550 1200 60 
+$EndSheet
+Wire Wire Line
+	5050 2150 5000 2150
+Wire Wire Line
+	5000 2150 5000 1000
+Wire Wire Line
+	5000 1000 3550 1000
+Wire Wire Line
+	3550 1100 4900 1100
+Wire Wire Line
+	4900 1100 4900 2250
+Wire Wire Line
+	4900 2250 5050 2250
+Wire Wire Line
+	5050 2350 4800 2350
+Wire Wire Line
+	4800 2350 4800 1200
+Wire Wire Line
+	4800 1200 3550 1200
+Wire Wire Line
+	3550 1350 4650 1350
+Wire Wire Line
+	4650 1350 4650 2450
+Wire Wire Line
+	4650 2450 5050 2450
+Wire Wire Line
+	5050 2550 4550 2550
+Wire Wire Line
+	4550 2550 4550 1450
+Wire Wire Line
+	4550 1450 3550 1450
+$Sheet
+S 5050 2100 2850 4400
+U 5889F4B8
+F0 "Mainboard microcontroller" 60
+F1 "mainboard_microcontroller.sch" 60
+F2 "debug_RX" I L 5050 5950 59 
+F3 "1wire_TX" I L 5050 3300 59 
+F4 "1wire_RX" I L 5050 3400 59 
+F5 "RXSM_CTS" I R 7900 3850 59 
+F6 "RXSM_RTS" I R 7900 3350 59 
+F7 "RXSM_TX" I R 7900 3650 59 
+F8 "RXSM_RX" I R 7900 3150 59 
+F9 "CtrlPnl_LED1" I R 7900 5950 59 
+F10 "CtrlPnl_LED2" I R 7900 6050 59 
+F11 "CtrlPnl_SW1" I R 7900 6150 59 
+F12 "CtrlPnl_SW2" I R 7900 6250 59 
+F13 "RasPi_TX" I R 7900 2200 59 
+F14 "RasPi_RX" I R 7900 2300 59 
+F15 "temp_SPI_SCK" I L 5050 2700 59 
+F16 "temp_SPI_MISO" I L 5050 2800 59 
+F17 "temp_SPI_MOSI" I L 5050 2900 59 
+F18 "temp1_INT" I R 7900 4250 59 
+F19 "temp2_INT" I R 7900 4350 59 
+F20 "temp3_INT" I R 7900 4450 59 
+F21 "temp4_INT" I R 7900 4550 59 
+F22 "temp1_CS" I R 7900 4750 59 
+F23 "temp2_CS" I R 7900 4850 59 
+F24 "temp3_CS" I R 7900 4950 59 
+F25 "temp4_CS" I R 7900 5050 59 
+F26 "temp5_INT" I R 7900 4650 59 
+F27 "temp5_CS" I R 7900 5150 59 
+F28 "probe1_volt" I L 5050 3750 60 
+F29 "probe2_volt" I L 5050 3850 60 
+F30 "probe3_volt" I L 5050 3950 60 
+F31 "probe1_curr" I L 5050 4050 60 
+F32 "probe2_curr" I L 5050 4150 60 
+F33 "probe3_curr" I L 5050 4250 60 
+F34 "batt_volt" I L 5050 5750 60 
+F35 "rxsm_volt" I L 5050 5650 60 
+F36 "motor1_curr" I L 5050 5150 60 
+F37 "unused" I L 5050 5550 60 
+F38 "bat_charge_status" I L 5050 5250 60 
+F39 "RXSM_LO" I R 7900 5350 60 
+F40 "RXSM_SOE" I R 7900 5450 60 
+F41 "RXSM_SODS" I R 7900 5550 60 
+F42 "lens_heater_EN" O L 5050 4450 60 
+F43 "forceAdc_SPI_SCK" O L 5050 2250 60 
+F44 "forceAdc_SPI_MISO" I L 5050 2150 60 
+F45 "forceAdc_MUX_A0" O L 5050 2550 60 
+F46 "forceAdc_MUX_A1" O L 5050 2450 60 
+F47 "forceAdc_~PWDN" O L 5050 2350 60 
+F48 "pressure_SCL" O L 5050 3050 60 
+F49 "pressure_SDA" B L 5050 3150 60 
+F50 "cam_light_EN" O L 5050 4350 60 
+F51 "probe1_EN" O L 5050 4550 60 
+F52 "probe2_EN" O L 5050 4650 60 
+F53 "probe3_EN" O L 5050 4750 60 
+F54 "motor1_EN" O L 5050 4850 60 
+F55 "motor1_DIR" O L 5050 4950 60 
+F56 "motor1_PWM" O L 5050 5050 60 
+F57 "bat_boost_EN" O L 5050 5350 60 
+F58 "bat_charge_EN" O L 5050 5450 60 
+F59 "debug_TX" O L 5050 5850 60 
+$EndSheet
 $EndSCHEMATC

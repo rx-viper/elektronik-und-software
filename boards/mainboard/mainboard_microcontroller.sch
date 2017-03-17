@@ -35,12 +35,13 @@ LIBS:pc3h7
 LIBS:maxim
 LIBS:common_mode_choke
 LIBS:esd_diode_dual
+LIBS:max6126
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 2 2
+Sheet 2 3
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
 Rev "03"
@@ -368,7 +369,7 @@ Wire Wire Line
 Wire Wire Line
 	3200 4200 3200 4150
 Connection ~ 3000 4200
-Text HLabel 12800 5750 2    59   Input ~ 0
+Text HLabel 12800 5750 2    59   Output ~ 0
 debug_TX
 Text HLabel 12800 5850 2    59   Input ~ 0
 debug_RX
@@ -384,9 +385,9 @@ Wire Wire Line
 	12800 7450 12700 7450
 Wire Wire Line
 	12700 7550 12800 7550
-Text HLabel 12800 5350 2    59   Input ~ 0
+Text HLabel 12800 5350 2    59   Output ~ 0
 pressure_SCL
-Text HLabel 12800 5450 2    59   Input ~ 0
+Text HLabel 12800 5450 2    59   BiDi ~ 0
 pressure_SDA
 Wire Wire Line
 	12800 5450 12700 5450
@@ -432,11 +433,11 @@ Wire Wire Line
 	12800 7050 12700 7050
 Wire Wire Line
 	12700 7150 12800 7150
-Text HLabel 12800 6050 2    59   Input ~ 0
+Text HLabel 12800 6050 2    59   Output ~ 0
 temp_SPI_SCK
 Text HLabel 12800 6150 2    59   Input ~ 0
 temp_SPI_MISO
-Text HLabel 12800 6250 2    59   Input ~ 0
+Text HLabel 12800 6250 2    59   Output ~ 0
 temp_SPI_MOSI
 Wire Wire Line
 	12800 6050 12700 6050
@@ -494,42 +495,42 @@ Text HLabel 12800 3350 2    60   Input ~ 0
 probe1_curr
 Text HLabel 12800 3450 2    60   Input ~ 0
 probe2_curr
-Text HLabel 12800 3550 2    60   Input ~ 0
+Text HLabel 12800 4550 2    60   Input ~ 0
 probe3_curr
-Text HLabel 12800 3650 2    60   Input ~ 0
+Text HLabel 12800 4750 2    60   Input ~ 0
 batt_volt
 Text HLabel 12800 3750 2    60   Input ~ 0
 rxsm_volt
-Text HLabel 12800 3850 2    60   Input ~ 0
-motor1_curr
-Text HLabel 12800 3950 2    60   Input ~ 0
-unused
-Text HLabel 12800 4050 2    60   Input ~ 0
-probe1_EN
-Text HLabel 12800 4150 2    60   Input ~ 0
-probe2_EN
-Text HLabel 12800 4250 2    60   Input ~ 0
-probe3_EN
-Text HLabel 12800 4350 2    60   Input ~ 0
-cam_light_EN
-Text HLabel 12800 4450 2    60   Input ~ 0
-batt_heater_EN
-Text HLabel 12800 4750 2    60   Input ~ 0
-motor1_EN
 Text HLabel 12800 4850 2    60   Input ~ 0
+motor1_curr
+Text HLabel 14350 3600 2    60   Input ~ 0
+unused
+Text HLabel 12800 4050 2    60   Output ~ 0
+probe1_EN
+Text HLabel 12800 4150 2    60   Output ~ 0
+probe2_EN
+Text HLabel 12800 4250 2    60   Output ~ 0
+probe3_EN
+Text HLabel 12800 5550 2    60   Output ~ 0
+cam_light_EN
+Text HLabel 12800 5650 2    60   Output ~ 0
+lens_heater_EN
+Text HLabel 12800 3850 2    60   Output ~ 0
+motor1_EN
+Text HLabel 12800 3950 2    60   Output ~ 0
 motor1_DIR
-Text HLabel 12800 4950 2    60   Input ~ 0
+Text HLabel 12800 4950 2    60   Output ~ 0
 motor1_PWM
 Text HLabel 12800 5050 2    60   Input ~ 0
 bat_charge_status
-Text HLabel 12800 5150 2    60   Input ~ 0
+Text HLabel 12800 5150 2    60   Output ~ 0
 bat_boost_EN
-Text HLabel 12800 5250 2    60   Input ~ 0
+Text HLabel 12800 5250 2    60   Output ~ 0
 bat_charge_EN
 Wire Wire Line
-	12800 4750 12700 4750
+	12800 3850 12700 3850
 Wire Wire Line
-	12700 4850 12800 4850
+	12700 3950 12800 3950
 Wire Wire Line
 	12800 4950 12700 4950
 Wire Wire Line
@@ -539,9 +540,9 @@ Wire Wire Line
 Wire Wire Line
 	12700 5250 12800 5250
 Wire Wire Line
-	12800 4450 12700 4450
+	12800 5650 12700 5650
 Wire Wire Line
-	12700 4350 12800 4350
+	12700 5550 12800 5550
 Wire Wire Line
 	12800 4250 12700 4250
 Wire Wire Line
@@ -549,15 +550,13 @@ Wire Wire Line
 Wire Wire Line
 	12800 4050 12700 4050
 Wire Wire Line
-	12700 3950 12800 3950
-Wire Wire Line
-	12800 3850 12700 3850
+	12800 4850 12700 4850
 Wire Wire Line
 	12700 3750 12800 3750
 Wire Wire Line
-	12800 3650 12700 3650
+	12800 4750 12700 4750
 Wire Wire Line
-	12700 3550 12800 3550
+	12700 4550 12800 4550
 Wire Wire Line
 	12800 3450 12700 3450
 Wire Wire Line
@@ -935,4 +934,65 @@ Wire Wire Line
 Wire Wire Line
 	2600 6900 2600 6150
 Connection ~ 2600 6150
+$Comp
+L CONN_01X03 P?
+U 1 1 58CF021A
+P 14450 4350
+F 0 "P?" H 14450 4550 50  0000 C CNN
+F 1 "SWD" V 14550 4350 50  0000 C CNN
+F 2 "" H 14450 4350 50  0000 C CNN
+F 3 "" H 14450 4350 50  0000 C CNN
+	1    14450 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58CF0348
+P 14150 4550
+F 0 "#PWR?" H 14150 4300 50  0001 C CNN
+F 1 "GND" H 14150 4400 50  0000 C CNN
+F 2 "" H 14150 4550 50  0000 C CNN
+F 3 "" H 14150 4550 50  0000 C CNN
+	1    14150 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14150 4550 14150 4350
+Wire Wire Line
+	14150 4350 14250 4350
+Wire Wire Line
+	14250 4450 12700 4450
+Wire Wire Line
+	12700 4350 14050 4350
+Wire Wire Line
+	14050 4350 14050 4250
+Wire Wire Line
+	14050 4250 14250 4250
+Text Label 13750 4350 0    60   ~ 0
+SWDIO
+Text Label 13750 4450 0    60   ~ 0
+SWCLK
+Text Notes 9800 2300 0    60   ~ 0
+SPI usage:\n* Flash storage: SPI4\n* Temperature sensors: SPI2\n\nUART usage:\n* RXSM communication: USART2\n* One-Wire temperature sensors: UART4\n* Raspberry Pi: USART6\n* Debuging: USART3\n\nI2C usage:\n* Pressure sensor: I2C1
+NoConn ~ 14350 3600
+Text HLabel 12800 3550 2    60   Output ~ 0
+forceAdc_SPI_SCK
+Text HLabel 12800 3650 2    60   Input ~ 0
+forceAdc_SPI_MISO
+Wire Wire Line
+	12800 3650 12700 3650
+Wire Wire Line
+	12700 3550 12800 3550
+Text HLabel 12800 6450 2    60   Output ~ 0
+forceAdc_MUX_A0
+Text HLabel 12800 6550 2    60   Output ~ 0
+forceAdc_MUX_A1
+Text HLabel 12800 6650 2    60   Output ~ 0
+forceAdc_~PWDN
+Wire Wire Line
+	12800 6650 12700 6650
+Wire Wire Line
+	12700 6550 12800 6550
+Wire Wire Line
+	12800 6450 12700 6450
 $EndSCHEMATC
