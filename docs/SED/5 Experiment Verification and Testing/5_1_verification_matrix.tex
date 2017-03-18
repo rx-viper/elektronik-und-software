@@ -1,0 +1,60 @@
+\documentclass[11pt]{scrartcl} 
+\usepackage{textcomp}
+\usepackage{longtable}
+
+\begin{document}
+ \section{Verification Matrix}
+ 
+ Verification methods: \textbf{T}est, \textbf{I}nspection, \textbf{A}nalysis / Similarity, \textbf{R}eview of design
+ 
+ \begin{center}
+	\begin{longtable}{| p{.06\textwidth} | p{.50\textwidth} | p{.14\textwidth} | p{.16\textwidth} | p{.14\textwidth} |}
+		\hline
+		ID & Requirement text & Verification & Test number & Status \\
+		\hline
+		F.9 & The experiment shall measure the temperature distribution in each block of ice. & I & - & tbd \\
+		F.10 & The pressure above each ice block shall be measured. & I & - & tbd \\
+		F.15 & The penetration depth of the heat probes shall be measured. & I & - & tbd \\
+		F.12 & All acquired data shall be stored reliably on reliable data storage devices. & A, R & - & tbd \\
+		F.16 & The power for the heat probes shall be provided by NiMH batteries. & R & - & tbd \\
+		F.17 & The power for the other electric components shall be provided by RXSM. & R & - & tbd \\
+		F.11 & All acquired data except for the camera data shall be sent to the ground station via RXSM downlink. & I & - & tbd \\
+		F.12 & The software shall be reliable, under all circumstances. & A, T & Test 3 & tbd \\
+		\hline
+		P.21 & The temperature sensors shall measure in a range of -80 to 0 \textdegree C. & R & - & tbd \\
+		P.16 & The temperature sensors shall measure with an accuracy of 0.5 \textdegree C or better. & R, T & Test 1 & tbd \\
+		P.17 & The temperature data shall be acquired with a sample rate of 1 Hz or higher. & R & - & tbd \\
+		P.18 & The pressure sensors shall measure in a range of 0 to 5 mbar. & R & - & tbd \\
+		P.19 & The pressure sensors shall measure with an accuracy of 1 mbar or better. & R, T & Test 1 & tbd \\
+		P.22 & The pressure data shall be acquired with a sample rate of 20 Hz or higher\textsl{}. & R & - & tbd \\
+		P.23 & The penetration depth shall be measured with an accuracy of 0.5 mm or lower. & T & Test 1 & tbd \\
+		P.24 & The force sensors shall measure in a range of 0 to 40 N. & R & - & tbd \\
+		P.25 & The force sensors shall measure with an accuracy of 0.039 N or better. & R, T & Test 1 & tbd \\
+		P.26 & The force data shall be acquired with a sample rate of 2 Hz or higher. & R & - & tbd \\
+		P.27 & The batteries shall provide 180 W of power for at least 3 min of experiment time. & A & - & tbd \\
+		P.20 & The total power consumption shall be below 200 W. & A & - & tbd \\
+		P.28 & There shall be enough storage for 30 min of data acquisition. & A & - & tbd \\
+		P.29 & All data shall be stored with a redundancy factor of 2 or more. & R & - & tbd \\
+		\hline
+		D.18 & The temperature distribution in each ice block shall be measured by a 3x3 temperature sensor matrix. & I & - & tbd \\
+		D.17 & The pressure shall be measured by differential pressure sensors. & I & - & tbd \\
+		D.19 & The penetration depth shall be measured indirecly using force sensors on each spring-loaded heat probe. & I & - & tbd \\
+		D.20 & There shall be no electrical connection of electronic components to the rocket structure. & R & - & tbd \\
+		D.21 & No electronics shall be enabled during radio silence. & R & - & tbd \\
+		D.22 & The power consumption of all electronics combined (except for the heat probes) shall be below the 30 W supplied by the RXSM. & R & - & tbd \\
+		D.23 & The electronic components must endure the thermal environment during the launch and flight. & A, T & Test 2 & tbd \\
+		D.24 & The electronic components must endure 20 g loads in all axis. & A, T & Test 2 & tbd \\
+		D.25 & The electronic must be able to cope with vacuum (lack of thermal convection). & A, T & Test 2 & tbd \\
+		D.16 & The data rate sent to the RXSM for downlink shall be below 20 kbit/s. & A & - & tbd \\
+		
+		\hline
+		O.4 & The battery’s temperature shall not exceed the operational window. & A & - & tbd \\
+		O.5 & The heat probes shall be turned off in case of over heating. & R & - & tbd \\
+		O.6 & The experiment shall accept a request for radio silence at any time while on the launch pad. & R & - & tbd \\
+		O.7 & The experiment shall be able to conduct measurements autonomously in case connection with the ground segment is lost. & R & - & tbd \\
+		O.8 & The experiment shall be able to enter a secure mode after landing (sensitive equipment shall be disabled, moving parts locked). & R & - & tbd \\
+		\hline
+	\end{longtable}
+\end{center}
+ 
+\end{document}
