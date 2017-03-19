@@ -9,9 +9,9 @@ The initial idea was to store the sensor data with timestamps, but this has a fe
 \begin{itemize}
 	\item Time resolution should be greater than $\frac{1}{50}s$, so we have to use milliseconds.
 	\item Flight duration is 600s, but test may last longer.
-	\item As a consequence 16bit timestamps are to short, we have to use 32bit timestamps (Our software framework \textit{xpcc} can handle both).
+	\item As a consequence 16bit timestamps are too short, we have to use 32bit timestamps (Our software framework \textit{xpcc} can handle both).
 	\item A 32bit timestamp is bigger than the actual sensor data value, so it would increase the bandwidth and storage capacity by factor two to five.
-	\item We don't have to store the time because ew use continuously sample all sensors.
+	\item We don't have to store the time because we continuously sample all sensors.
 \end{itemize}
 
 \subsubsection{Solution}
