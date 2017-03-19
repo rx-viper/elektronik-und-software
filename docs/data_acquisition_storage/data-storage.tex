@@ -1,0 +1,36 @@
+\documentclass[12pt, a4paper]{scrreprt}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\subsubsection{Sensor data storage}
+The initial idea was to store the sensor data with timestamps, but this has a few disadvantages.
+\begin{itemize}
+	\item Time resolution should be greater than $\frac{1}{50}s$, so we have to use milliseconds.
+	\item Flight duration is 600s, but test may last longer.
+	\item As a consequence 16bit timestamps are too short, we have to use 32bit timestamps (Our software framework \textit{xpcc} can handle both).
+	\item A 32bit timestamp is bigger than the actual sensor data value, so it would increase the bandwidth and storage capacity by factor two to five.
+	\item We don't have to store the time because we continuously sample all sensors.
+\end{itemize}
+
+\subsubsection{Solution}
+\begin{itemize}
+	\item Put multiple values from one unique sensor in a \textit{packet}, which also stores information about the sensor, its type and a sequence number.
+	\item The packets can be used as buffers before sensor values are written to memory and transmitted.
+\end{itemize}
+
+\subsubsection{Sensor data packet}
+\begin{tabular}{|c|c|c|c|}
+	\hline 
+	\multicolumn{3}{|c|}{\textbf{Header}} & \textbf{Payload} \\ 
+	\hline 
+	Sensor type & Sensor ID & Sequence Number  & Sensor values \\ 
+	\hline 
+	$2\,bit$ & $6\,bit$ & $4\,Byte$ & $123\,Byte$ \\ 
+	\hline 
+	\multicolumn{4}{|c|}{\textbf{Total packet size: 128 Byte}} \\ 
+	\hline 
+\end{tabular} 
+
+\end{document}          
