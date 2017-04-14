@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:powerboard-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,12 +36,13 @@ LIBS:lt1370
 LIBS:lt3757
 LIBS:common_mode_choke
 LIBS:ltc4010
+LIBS:pc3h7
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title "Powerboard overview"
 Date "2017-03-14"
 Rev "02"
@@ -844,7 +846,7 @@ $EndComp
 Text Label 2300 7050 2    60   ~ 0
 Batt_sense
 $Comp
-L LED D?
+L LED-RESCUE-powerboard D?
 U 1 1 58932CCC
 P 3300 7300
 F 0 "D?" H 3300 7400 50  0000 C CNN
@@ -855,7 +857,7 @@ F 3 "" H 3300 7300 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L LED D?
+L LED-RESCUE-powerboard D?
 U 1 1 58932DFA
 P 3600 7300
 F 0 "D?" H 3600 7400 50  0000 C CNN
@@ -1616,4 +1618,17 @@ Text Label 4050 2400 2    60   ~ 0
 Charge_EN
 Text Label 2300 6750 2    60   ~ 0
 Charge_EN
+$Sheet
+S 4800 6500 1150 500 
+U 590A1435
+F0 "RXSM_Event_Lines" 60
+F1 "rxsm-event-lines.sch" 60
+F2 "LO" O L 4800 6650 60 
+F3 "SOE" O L 4800 6750 60 
+F4 "SODS" O L 4800 6850 60 
+F5 "RXSM_28V" I R 5950 6600 60 
+F6 "RXSM_LO" I R 5950 6700 60 
+F7 "RXSM_SOE" I R 5950 6800 60 
+F8 "RXSM_SODS" I R 5950 6900 60 
+$EndSheet
 $EndSCHEMATC
