@@ -41,7 +41,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 2 3
+Sheet 2 2
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
 Rev "03"
@@ -377,14 +377,6 @@ Wire Wire Line
 	12800 5750 12700 5750
 Wire Wire Line
 	12700 5850 12800 5850
-Text HLabel 12800 7450 2    59   Input ~ 0
-1wire_TX
-Text HLabel 12800 7550 2    59   Input ~ 0
-1wire_RX
-Wire Wire Line
-	12800 7450 12700 7450
-Wire Wire Line
-	12700 7550 12800 7550
 Text HLabel 12800 5350 2    59   Output ~ 0
 pressure_SCL
 Text HLabel 12800 5450 2    59   BiDi ~ 0
@@ -393,30 +385,22 @@ Wire Wire Line
 	12800 5450 12700 5450
 Wire Wire Line
 	12700 5350 12800 5350
-Text HLabel 3200 6750 0    59   Input ~ 0
-RXSM_CTS
-Text HLabel 3200 6850 0    59   Input ~ 0
-RXSM_RTS
 Text HLabel 3200 6950 0    59   Input ~ 0
 RXSM_TX
 Text HLabel 3200 7050 0    59   Input ~ 0
 RXSM_RX
 Wire Wire Line
-	3200 6750 3300 6750
-Wire Wire Line
-	3300 6850 3200 6850
-Wire Wire Line
 	3200 6950 3300 6950
 Wire Wire Line
 	3300 7050 3200 7050
 Text HLabel 3200 4950 0    59   Input ~ 0
-CtrlPnl_LED1
+LED1
 Text HLabel 3200 5050 0    59   Input ~ 0
-CtrlPnl_LED2
+LED2
 Text HLabel 3200 5150 0    59   Input ~ 0
-CtrlPnl_SW1
+LED3
 Text HLabel 3200 5250 0    59   Input ~ 0
-CtrlPnl_SW2
+SW1
 Wire Wire Line
 	3200 4950 3300 4950
 Wire Wire Line
@@ -973,26 +957,26 @@ SWDIO
 Text Label 13750 4450 0    60   ~ 0
 SWCLK
 Text Notes 9800 2300 0    60   ~ 0
-SPI usage:\n* Flash storage: SPI4\n* Temperature sensors: SPI2\n\nUART usage:\n* RXSM communication: USART2\n* One-Wire temperature sensors: UART4\n* Raspberry Pi: USART6\n* Debuging: USART3\n\nI2C usage:\n* Pressure sensor: I2C1
+SPI usage:\n* Flash storage: SPI4\n* Temperature sensors: SPI2\n\nUART usage:\n* RXSM communication: USART2\n* Raspberry Pi: USART6\n* Debuging: USART3\n\nI2C usage:\n* Pressure sensor: I2C1\n* Batt/strcuture temperature: ?
 NoConn ~ 14350 3600
-Text HLabel 12800 3550 2    60   Output ~ 0
-forceAdc_SPI_SCK
-Text HLabel 12800 3650 2    60   Input ~ 0
-forceAdc_SPI_MISO
+Text HLabel 14050 9050 2    60   BiDi ~ 0
+temperature_SDA
+Text HLabel 14050 9150 2    60   Output ~ 0
+temperature_SCL
+Text HLabel 3200 5350 0    59   Input ~ 0
+SW2
 Wire Wire Line
-	12800 3650 12700 3650
-Wire Wire Line
-	12700 3550 12800 3550
-Text HLabel 12800 6450 2    60   Output ~ 0
-forceAdc_MUX_A0
-Text HLabel 12800 6550 2    60   Output ~ 0
-forceAdc_MUX_A1
-Text HLabel 12800 6650 2    60   Output ~ 0
-forceAdc_~PWDN
-Wire Wire Line
-	12800 6650 12700 6650
-Wire Wire Line
-	12700 6550 12800 6550
-Wire Wire Line
-	12800 6450 12700 6450
+	3200 5350 3300 5350
+Text HLabel 14050 8400 2    60   Input ~ 0
+encoder1_A
+Text HLabel 14050 8500 2    60   Input ~ 0
+encoder1_B
+Text HLabel 14050 8600 2    60   Input ~ 0
+encoder2_A
+Text HLabel 14050 8700 2    60   Input ~ 0
+encoder2_B
+Text HLabel 14050 8800 2    60   Input ~ 0
+encoder3_A
+Text HLabel 14050 8900 2    60   Input ~ 0
+encoder3_B
 $EndSCHEMATC
