@@ -41,7 +41,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 2 2
+Sheet 2 3
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
 Rev "03"
@@ -73,21 +73,6 @@ F 3 "" H 8000 8650 50  0000 C CNN
 	1    8000 8650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8000 8450 8000 8650
-Wire Wire Line
-	7800 8550 8200 8550
-Wire Wire Line
-	7800 8550 7800 8450
-Wire Wire Line
-	7900 8550 7900 8450
-Connection ~ 7900 8550
-Connection ~ 8000 8550
-Wire Wire Line
-	8200 8550 8200 8450
-Wire Wire Line
-	8100 8550 8100 8450
-Connection ~ 8100 8550
 $Comp
 L +3V3 #PWR?
 U 1 1 588A5FE2
@@ -99,27 +84,6 @@ F 3 "" H 8000 2350 50  0000 C CNN
 	1    8000 2350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8000 2350 8000 2550
-Wire Wire Line
-	7700 2450 8300 2450
-Wire Wire Line
-	7700 2450 7700 2550
-Connection ~ 8000 2450
-Wire Wire Line
-	7800 2550 7800 2450
-Connection ~ 7800 2450
-Wire Wire Line
-	7900 2550 7900 2450
-Connection ~ 7900 2450
-Wire Wire Line
-	8300 2450 8300 2550
-Wire Wire Line
-	8200 2550 8200 2450
-Connection ~ 8200 2450
-Wire Wire Line
-	8100 2450 8100 2550
-Connection ~ 8100 2450
 $Comp
 L SW_PUSH SW?
 U 1 1 58896600
@@ -142,11 +106,6 @@ F 3 "" H 2450 3450 50  0000 C CNN
 	1    2450 3450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2450 3300 2450 2850
-Wire Wire Line
-	3300 3250 2450 3250
-Connection ~ 2450 3250
 $Comp
 L SW_PUSH SW?
 U 1 1 5889673A
@@ -180,25 +139,6 @@ F 3 "" H 2300 3850 50  0000 C CNN
 	1    2300 3850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1850 3750 2200 3750
-Wire Wire Line
-	2200 3750 2200 3700
-Wire Wire Line
-	2450 3800 2450 3600
-Wire Wire Line
-	2100 3800 2450 3800
-Wire Wire Line
-	2300 3800 2300 3850
-Wire Wire Line
-	2100 3800 2100 3750
-Connection ~ 2100 3750
-Connection ~ 2300 3800
-Wire Wire Line
-	1850 3050 3300 3050
-Wire Wire Line
-	2200 2950 2200 3100
-Connection ~ 2200 3050
 $Comp
 L R R?
 U 1 1 58896929
@@ -210,12 +150,6 @@ F 3 "" H 2200 2800 50  0000 C CNN
 	1    2200 2800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2200 2650 2200 2150
-Wire Wire Line
-	2200 2150 2450 2150
-Wire Wire Line
-	2450 2150 2450 2250
 $Comp
 L +3V3 #PWR?
 U 1 1 58896A1A
@@ -227,9 +161,6 @@ F 3 "" H 2350 2050 50  0000 C CNN
 	1    2350 2050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2350 2050 2350 2150
-Connection ~ 2350 2150
 $Comp
 L +3V3 #PWR?
 U 1 1 58896B94
@@ -241,12 +172,6 @@ F 3 "" H 3200 3450 50  0000 C CNN
 	1    3200 3450
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	3200 3450 3300 3450
-Wire Wire Line
-	1850 3050 1850 3250
-Wire Wire Line
-	1850 3550 1850 3750
 NoConn ~ 3300 4550
 $Comp
 L XO53 X?
@@ -260,8 +185,6 @@ F 3 "" H 2100 4350 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 NoConn ~ 2600 4250
-Wire Wire Line
-	2600 4450 3300 4450
 $Comp
 L C C?
 U 1 1 58897627
@@ -295,28 +218,6 @@ F 3 "" H 1450 4100 50  0000 C CNN
 	1    1450 4100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1350 4200 1350 4150
-Wire Wire Line
-	1350 4150 1550 4150
-Wire Wire Line
-	1450 4150 1450 4100
-Wire Wire Line
-	1550 4150 1550 4250
-Wire Wire Line
-	1550 4250 1600 4250
-Connection ~ 1450 4150
-Wire Wire Line
-	1600 4450 1550 4450
-Wire Wire Line
-	1550 4450 1550 4600
-Wire Wire Line
-	1550 4600 1350 4600
-Wire Wire Line
-	1450 4600 1450 4650
-Wire Wire Line
-	1350 4600 1350 4500
-Connection ~ 1450 4600
 $Comp
 L CP C?
 U 1 1 588A31AA
@@ -341,14 +242,6 @@ F 3 "" H 2800 4000 50  0000 C CNN
 $EndComp
 Text Notes 3150 3850 2    39   ~ 0
 Low ESR\n(<2Ohms)
-Wire Wire Line
-	3200 3850 3200 3750
-Wire Wire Line
-	3200 3750 3300 3750
-Wire Wire Line
-	3300 3650 2800 3650
-Wire Wire Line
-	2800 3650 2800 3850
 $Comp
 L GND #PWR?
 U 1 1 588A32F9
@@ -360,75 +253,32 @@ F 3 "" H 3000 4250 50  0000 C CNN
 	1    3000 4250
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2800 4150 2800 4200
-Wire Wire Line
-	2800 4200 3200 4200
-Wire Wire Line
-	3000 4200 3000 4250
-Wire Wire Line
-	3200 4200 3200 4150
-Connection ~ 3000 4200
-Text HLabel 12800 5750 2    59   Output ~ 0
-debug_TX
-Text HLabel 12800 5850 2    59   Input ~ 0
-debug_RX
-Wire Wire Line
-	12800 5750 12700 5750
-Wire Wire Line
-	12700 5850 12800 5850
 Text HLabel 12800 5350 2    59   Output ~ 0
 pressure_SCL
 Text HLabel 12800 5450 2    59   BiDi ~ 0
 pressure_SDA
-Wire Wire Line
-	12800 5450 12700 5450
-Wire Wire Line
-	12700 5350 12800 5350
-Text HLabel 3200 6950 0    59   Input ~ 0
+Text HLabel 3200 6950 0    59   Output ~ 0
 RXSM_TX
 Text HLabel 3200 7050 0    59   Input ~ 0
 RXSM_RX
-Wire Wire Line
-	3200 6950 3300 6950
-Wire Wire Line
-	3300 7050 3200 7050
-Text HLabel 3200 4950 0    59   Input ~ 0
+Text HLabel 3200 4950 0    59   Output ~ 0
 LED1
-Text HLabel 3200 5050 0    59   Input ~ 0
+Text HLabel 3200 5050 0    59   Output ~ 0
 LED2
-Text HLabel 3200 5150 0    59   Input ~ 0
+Text HLabel 3200 5150 0    59   Output ~ 0
 LED3
 Text HLabel 3200 5250 0    59   Input ~ 0
 SW1
-Wire Wire Line
-	3200 4950 3300 4950
-Wire Wire Line
-	3300 5050 3200 5050
-Wire Wire Line
-	3200 5150 3300 5150
-Wire Wire Line
-	3300 5250 3200 5250
-Text HLabel 12800 7050 2    59   Input ~ 0
+Text HLabel 12800 7050 2    59   Output ~ 0
 RasPi_TX
 Text HLabel 12800 7150 2    59   Input ~ 0
 RasPi_RX
-Wire Wire Line
-	12800 7050 12700 7050
-Wire Wire Line
-	12700 7150 12800 7150
 Text HLabel 12800 6050 2    59   Output ~ 0
 temp_SPI_SCK
 Text HLabel 12800 6150 2    59   Input ~ 0
 temp_SPI_MISO
 Text HLabel 12800 6250 2    59   Output ~ 0
 temp_SPI_MOSI
-Wire Wire Line
-	12800 6050 12700 6050
-Wire Wire Line
-	12700 6150 12800 6150
-Wire Wire Line
-	12800 6250 12700 6250
 Text HLabel 3200 7250 0    59   Input ~ 0
 temp1_INT
 Text HLabel 3200 7450 0    59   Input ~ 0
@@ -437,58 +287,18 @@ Text HLabel 3200 7650 0    59   Input ~ 0
 temp3_INT
 Text HLabel 3200 7850 0    59   Input ~ 0
 temp4_INT
-Text HLabel 3200 7350 0    59   Input ~ 0
+Text HLabel 3200 7350 0    59   Output ~ 0
 temp1_CS
-Text HLabel 3200 7550 0    59   Input ~ 0
+Text HLabel 3200 7550 0    59   Output ~ 0
 temp2_CS
-Text HLabel 3200 7750 0    59   Input ~ 0
+Text HLabel 3200 7750 0    59   Output ~ 0
 temp3_CS
-Text HLabel 3200 7950 0    59   Input ~ 0
+Text HLabel 3200 7950 0    59   Output ~ 0
 temp4_CS
-Wire Wire Line
-	3200 7250 3300 7250
-Wire Wire Line
-	3300 7350 3200 7350
-Wire Wire Line
-	3200 7450 3300 7450
-Wire Wire Line
-	3300 7550 3200 7550
-Wire Wire Line
-	3200 7650 3300 7650
-Wire Wire Line
-	3300 7750 3200 7750
-Wire Wire Line
-	3200 7850 3300 7850
-Wire Wire Line
-	3300 7950 3200 7950
 Text HLabel 12800 7250 2    59   Input ~ 0
 temp5_INT
-Text HLabel 12800 7350 2    59   Input ~ 0
+Text HLabel 12800 7350 2    59   Output ~ 0
 temp5_CS
-Wire Wire Line
-	12800 7250 12700 7250
-Wire Wire Line
-	12700 7350 12800 7350
-Text HLabel 12800 3050 2    60   Input ~ 0
-probe1_volt
-Text HLabel 12800 3150 2    60   Input ~ 0
-probe2_volt
-Text HLabel 12800 3250 2    60   Input ~ 0
-probe3_volt
-Text HLabel 12800 3350 2    60   Input ~ 0
-probe1_curr
-Text HLabel 12800 3450 2    60   Input ~ 0
-probe2_curr
-Text HLabel 12800 4550 2    60   Input ~ 0
-probe3_curr
-Text HLabel 12800 4750 2    60   Input ~ 0
-batt_volt
-Text HLabel 12800 3750 2    60   Input ~ 0
-rxsm_volt
-Text HLabel 12800 4850 2    60   Input ~ 0
-motor1_curr
-Text HLabel 14350 3600 2    60   Input ~ 0
-unused
 Text HLabel 12800 4050 2    60   Output ~ 0
 probe1_EN
 Text HLabel 12800 4150 2    60   Output ~ 0
@@ -511,46 +321,6 @@ Text HLabel 12800 5150 2    60   Output ~ 0
 bat_boost_EN
 Text HLabel 12800 5250 2    60   Output ~ 0
 bat_charge_EN
-Wire Wire Line
-	12800 3850 12700 3850
-Wire Wire Line
-	12700 3950 12800 3950
-Wire Wire Line
-	12800 4950 12700 4950
-Wire Wire Line
-	12700 5050 12800 5050
-Wire Wire Line
-	12800 5150 12700 5150
-Wire Wire Line
-	12700 5250 12800 5250
-Wire Wire Line
-	12800 5650 12700 5650
-Wire Wire Line
-	12700 5550 12800 5550
-Wire Wire Line
-	12800 4250 12700 4250
-Wire Wire Line
-	12700 4150 12800 4150
-Wire Wire Line
-	12800 4050 12700 4050
-Wire Wire Line
-	12800 4850 12700 4850
-Wire Wire Line
-	12700 3750 12800 3750
-Wire Wire Line
-	12800 4750 12700 4750
-Wire Wire Line
-	12700 4550 12800 4550
-Wire Wire Line
-	12800 3450 12700 3450
-Wire Wire Line
-	12700 3350 12800 3350
-Wire Wire Line
-	12800 3250 12700 3250
-Wire Wire Line
-	12700 3150 12800 3150
-Wire Wire Line
-	12800 3050 12700 3050
 $Comp
 L C C?
 U 1 1 589026F7
@@ -628,27 +398,6 @@ F 3 "" H 8250 9800 50  0000 C CNN
 	1    8250 9800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8250 9800 8250 9700
-Wire Wire Line
-	9000 9700 7500 9700
-Wire Wire Line
-	7500 9700 7500 9600
-Wire Wire Line
-	7800 9600 7800 9700
-Connection ~ 7800 9700
-Wire Wire Line
-	8100 9600 8100 9700
-Connection ~ 8100 9700
-Wire Wire Line
-	9000 9600 9000 9700
-Connection ~ 8250 9700
-Wire Wire Line
-	8700 9600 8700 9700
-Connection ~ 8700 9700
-Wire Wire Line
-	8400 9600 8400 9700
-Connection ~ 8400 9700
 $Comp
 L +3V3 #PWR?
 U 1 1 58902D50
@@ -660,27 +409,6 @@ F 3 "" H 8250 9100 50  0000 C CNN
 	1    8250 9100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8250 9100 8250 9200
-Wire Wire Line
-	7500 9200 9000 9200
-Wire Wire Line
-	7500 9200 7500 9300
-Wire Wire Line
-	7800 9300 7800 9200
-Connection ~ 7800 9200
-Wire Wire Line
-	8100 9200 8100 9300
-Connection ~ 8100 9200
-Wire Wire Line
-	9000 9200 9000 9300
-Connection ~ 8250 9200
-Wire Wire Line
-	8700 9300 8700 9200
-Connection ~ 8700 9200
-Wire Wire Line
-	8400 9200 8400 9300
-Connection ~ 8400 9200
 $Comp
 L SST26VF064B U?
 U 1 1 589424A1
@@ -714,10 +442,6 @@ F 3 "" H 2400 5750 50  0000 C CNN
 	1    2400 5750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2400 5750 2400 6700
-Wire Wire Line
-	2400 5850 2300 5850
 $Comp
 L +3V3 #PWR?
 U 1 1 58942954
@@ -751,6 +475,395 @@ F 3 "" H 650 6300 50  0000 C CNN
 	1    650  6300
 	1    0    0    -1  
 $EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 58943AF8
+P 1100 6050
+F 0 "#PWR?" H 1100 5900 50  0001 C CNN
+F 1 "+3V3" H 1100 6190 50  0000 C CNN
+F 2 "" H 1100 6050 50  0000 C CNN
+F 3 "" H 1100 6050 50  0000 C CNN
+	1    1100 6050
+	0    -1   -1   0   
+$EndComp
+Text HLabel 12800 7750 2    60   Input ~ 0
+RXSM_LO
+Text HLabel 12800 7850 2    60   Input ~ 0
+RXSM_SOE
+Text HLabel 12800 7950 2    60   Input ~ 0
+RXSM_SODS
+$Comp
+L SST26VF064B U?
+U 1 1 58D04847
+P 1750 6750
+F 0 "U?" H 1750 6450 60  0000 C CNN
+F 1 "SST26VF064B" H 1750 7050 60  0000 C CNN
+F 2 "" H 1750 6750 60  0001 C CNN
+F 3 "" H 1750 6750 60  0001 C CNN
+	1    1750 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58D04E8C
+P 1100 7000
+F 0 "#PWR?" H 1100 6750 50  0001 C CNN
+F 1 "GND" H 1100 6850 50  0000 C CNN
+F 2 "" H 1100 7000 50  0000 C CNN
+F 3 "" H 1100 7000 50  0000 C CNN
+	1    1100 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 58D057B9
+P 1100 6800
+F 0 "#PWR?" H 1100 6650 50  0001 C CNN
+F 1 "+3V3" H 1100 6940 50  0000 C CNN
+F 2 "" H 1100 6800 50  0000 C CNN
+F 3 "" H 1100 6800 50  0000 C CNN
+	1    1100 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C?
+U 1 1 58D05CDA
+P 650 7150
+F 0 "C?" H 675 7250 50  0000 L CNN
+F 1 "100n" H 675 7050 50  0000 L CNN
+F 2 "" H 688 7000 50  0000 C CNN
+F 3 "" H 650 7150 50  0000 C CNN
+	1    650  7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58D05F40
+P 650 7400
+F 0 "#PWR?" H 650 7150 50  0001 C CNN
+F 1 "GND" H 650 7250 50  0000 C CNN
+F 2 "" H 650 7400 50  0000 C CNN
+F 3 "" H 650 7400 50  0000 C CNN
+	1    650  7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 58D0622F
+P 650 6900
+F 0 "#PWR?" H 650 6750 50  0001 C CNN
+F 1 "+3V3" H 650 7040 50  0000 C CNN
+F 2 "" H 650 6900 50  0000 C CNN
+F 3 "" H 650 6900 50  0000 C CNN
+	1    650  6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X03 P?
+U 1 1 58CF021A
+P 14450 4350
+F 0 "P?" H 14450 4550 50  0000 C CNN
+F 1 "SWD" V 14550 4350 50  0000 C CNN
+F 2 "" H 14450 4350 50  0000 C CNN
+F 3 "" H 14450 4350 50  0000 C CNN
+	1    14450 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58CF0348
+P 14150 4550
+F 0 "#PWR?" H 14150 4300 50  0001 C CNN
+F 1 "GND" H 14150 4400 50  0000 C CNN
+F 2 "" H 14150 4550 50  0000 C CNN
+F 3 "" H 14150 4550 50  0000 C CNN
+	1    14150 4550
+	1    0    0    -1  
+$EndComp
+Text Label 13750 4350 0    60   ~ 0
+SWDIO
+Text Label 13750 4450 0    60   ~ 0
+SWCLK
+Text Notes 9800 2300 0    60   ~ 0
+SPI usage:\n* Flash storage: SPI4\n* Temperature sensors 1-3: SPI2\n* Temperature sensors 4-6:\n* extADC\n\nUART usage:\n* RXSM communication: USART2\n* Raspberry Pi: USART6\n* Debuging: USART3\n\nI2C usage:\n* Pressure sensor: I2C1\n* Batt/strcuture temperature: ?
+Text HLabel 13050 3650 2    60   BiDi ~ 0
+temperature_SDA
+Text HLabel 13050 3750 2    60   Output ~ 0
+temperature_SCL
+Text HLabel 3200 5350 0    59   Input ~ 0
+SW2
+Text HLabel 13050 3050 2    60   Input ~ 0
+encoder1_A
+Text HLabel 13050 3150 2    60   Input ~ 0
+encoder1_B
+Text HLabel 13050 3250 2    60   Input ~ 0
+encoder2_A
+Text HLabel 13050 3350 2    60   Input ~ 0
+encoder2_B
+Text HLabel 13050 3450 2    60   Input ~ 0
+encoder3_A
+Text HLabel 13050 3550 2    60   Input ~ 0
+encoder3_B
+$Comp
+L CONN_01X03 P?
+U 1 1 590458AD
+P 14450 5850
+F 0 "P?" H 14450 6050 50  0000 C CNN
+F 1 "DEBUG" V 14550 5850 50  0000 C CNN
+F 2 "" H 14450 5850 50  0000 C CNN
+F 3 "" H 14450 5850 50  0000 C CNN
+	1    14450 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 590458B4
+P 14150 6050
+F 0 "#PWR?" H 14150 5800 50  0001 C CNN
+F 1 "GND" H 14150 5900 50  0000 C CNN
+F 2 "" H 14150 6050 50  0000 C CNN
+F 3 "" H 14150 6050 50  0000 C CNN
+	1    14150 6050
+	1    0    0    -1  
+$EndComp
+Text Label 13700 5750 0    59   ~ 0
+debug_TX
+Text Label 13700 5950 0    59   ~ 0
+debug_RX
+Wire Wire Line
+	8000 8450 8000 8650
+Wire Wire Line
+	7800 8550 8200 8550
+Wire Wire Line
+	7800 8550 7800 8450
+Wire Wire Line
+	7900 8550 7900 8450
+Connection ~ 7900 8550
+Connection ~ 8000 8550
+Wire Wire Line
+	8200 8550 8200 8450
+Wire Wire Line
+	8100 8550 8100 8450
+Connection ~ 8100 8550
+Wire Wire Line
+	8000 2350 8000 2550
+Wire Wire Line
+	7700 2450 8300 2450
+Wire Wire Line
+	7700 2450 7700 2550
+Connection ~ 8000 2450
+Wire Wire Line
+	7800 2550 7800 2450
+Connection ~ 7800 2450
+Wire Wire Line
+	7900 2550 7900 2450
+Connection ~ 7900 2450
+Wire Wire Line
+	8300 2450 8300 2550
+Wire Wire Line
+	8200 2550 8200 2450
+Connection ~ 8200 2450
+Wire Wire Line
+	8100 2450 8100 2550
+Connection ~ 8100 2450
+Wire Wire Line
+	2450 3300 2450 2850
+Wire Wire Line
+	3300 3250 2450 3250
+Connection ~ 2450 3250
+Wire Wire Line
+	1850 3750 2200 3750
+Wire Wire Line
+	2200 3750 2200 3700
+Wire Wire Line
+	2450 3800 2450 3600
+Wire Wire Line
+	2100 3800 2450 3800
+Wire Wire Line
+	2300 3800 2300 3850
+Wire Wire Line
+	2100 3800 2100 3750
+Connection ~ 2100 3750
+Connection ~ 2300 3800
+Wire Wire Line
+	1850 3050 3300 3050
+Wire Wire Line
+	2200 2950 2200 3100
+Connection ~ 2200 3050
+Wire Wire Line
+	2200 2650 2200 2150
+Wire Wire Line
+	2200 2150 2450 2150
+Wire Wire Line
+	2450 2150 2450 2250
+Wire Wire Line
+	2350 2050 2350 2150
+Connection ~ 2350 2150
+Wire Wire Line
+	3200 3450 3300 3450
+Wire Wire Line
+	1850 3050 1850 3250
+Wire Wire Line
+	1850 3550 1850 3750
+Wire Wire Line
+	2600 4450 3300 4450
+Wire Wire Line
+	1350 4200 1350 4150
+Wire Wire Line
+	1350 4150 1550 4150
+Wire Wire Line
+	1450 4150 1450 4100
+Wire Wire Line
+	1550 4150 1550 4250
+Wire Wire Line
+	1550 4250 1600 4250
+Connection ~ 1450 4150
+Wire Wire Line
+	1600 4450 1550 4450
+Wire Wire Line
+	1550 4450 1550 4600
+Wire Wire Line
+	1550 4600 1350 4600
+Wire Wire Line
+	1450 4600 1450 4650
+Wire Wire Line
+	1350 4600 1350 4500
+Connection ~ 1450 4600
+Wire Wire Line
+	3200 3850 3200 3750
+Wire Wire Line
+	3200 3750 3300 3750
+Wire Wire Line
+	3300 3650 2800 3650
+Wire Wire Line
+	2800 3650 2800 3850
+Wire Wire Line
+	2800 4150 2800 4200
+Wire Wire Line
+	2800 4200 3200 4200
+Wire Wire Line
+	3000 4200 3000 4250
+Wire Wire Line
+	3200 4200 3200 4150
+Connection ~ 3000 4200
+Wire Wire Line
+	12700 5750 14250 5750
+Wire Wire Line
+	12700 5850 13600 5850
+Wire Wire Line
+	12800 5450 12700 5450
+Wire Wire Line
+	12700 5350 12800 5350
+Wire Wire Line
+	3200 6950 3300 6950
+Wire Wire Line
+	3300 7050 3200 7050
+Wire Wire Line
+	3200 4950 3300 4950
+Wire Wire Line
+	3300 5050 3200 5050
+Wire Wire Line
+	3200 5150 3300 5150
+Wire Wire Line
+	3300 5250 3200 5250
+Wire Wire Line
+	12800 7050 12700 7050
+Wire Wire Line
+	12700 7150 12800 7150
+Wire Wire Line
+	12800 6050 12700 6050
+Wire Wire Line
+	12700 6150 12800 6150
+Wire Wire Line
+	12800 6250 12700 6250
+Wire Wire Line
+	3200 7250 3300 7250
+Wire Wire Line
+	3300 7350 3200 7350
+Wire Wire Line
+	3200 7450 3300 7450
+Wire Wire Line
+	3300 7550 3200 7550
+Wire Wire Line
+	3200 7650 3300 7650
+Wire Wire Line
+	3300 7750 3200 7750
+Wire Wire Line
+	3200 7850 3300 7850
+Wire Wire Line
+	3300 7950 3200 7950
+Wire Wire Line
+	12800 7250 12700 7250
+Wire Wire Line
+	12700 7350 12800 7350
+Wire Wire Line
+	12800 3850 12700 3850
+Wire Wire Line
+	12700 3950 12800 3950
+Wire Wire Line
+	12800 4950 12700 4950
+Wire Wire Line
+	12700 5050 12800 5050
+Wire Wire Line
+	12800 5150 12700 5150
+Wire Wire Line
+	12700 5250 12800 5250
+Wire Wire Line
+	12800 5650 12700 5650
+Wire Wire Line
+	12700 5550 12800 5550
+Wire Wire Line
+	12800 4250 12700 4250
+Wire Wire Line
+	12700 4150 12800 4150
+Wire Wire Line
+	12800 4050 12700 4050
+Wire Wire Line
+	8250 9800 8250 9700
+Wire Wire Line
+	9000 9700 7500 9700
+Wire Wire Line
+	7500 9700 7500 9600
+Wire Wire Line
+	7800 9600 7800 9700
+Connection ~ 7800 9700
+Wire Wire Line
+	8100 9600 8100 9700
+Connection ~ 8100 9700
+Wire Wire Line
+	9000 9600 9000 9700
+Connection ~ 8250 9700
+Wire Wire Line
+	8700 9600 8700 9700
+Connection ~ 8700 9700
+Wire Wire Line
+	8400 9600 8400 9700
+Connection ~ 8400 9700
+Wire Wire Line
+	8250 9100 8250 9200
+Wire Wire Line
+	7500 9200 9000 9200
+Wire Wire Line
+	7500 9200 7500 9300
+Wire Wire Line
+	7800 9300 7800 9200
+Connection ~ 7800 9200
+Wire Wire Line
+	8100 9200 8100 9300
+Connection ~ 8100 9200
+Wire Wire Line
+	9000 9200 9000 9300
+Connection ~ 8250 9200
+Wire Wire Line
+	8700 9300 8700 9200
+Connection ~ 8700 9200
+Wire Wire Line
+	8400 9200 8400 9300
+Connection ~ 8400 9200
+Wire Wire Line
+	2400 5750 2400 6700
+Wire Wire Line
+	2400 5850 2300 5850
 Wire Wire Line
 	650  6300 650  6200
 Wire Wire Line
@@ -788,42 +901,14 @@ Wire Wire Line
 	1000 5450 1000 5850
 Wire Wire Line
 	1000 5850 1200 5850
-$Comp
-L +3V3 #PWR?
-U 1 1 58943AF8
-P 1100 6050
-F 0 "#PWR?" H 1100 5900 50  0001 C CNN
-F 1 "+3V3" H 1100 6190 50  0000 C CNN
-F 2 "" H 1100 6050 50  0000 C CNN
-F 3 "" H 1100 6050 50  0000 C CNN
-	1    1100 6050
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1100 6050 1200 6050
-Text HLabel 12800 7750 2    60   Input ~ 0
-RXSM_LO
-Text HLabel 12800 7850 2    60   Input ~ 0
-RXSM_SOE
-Text HLabel 12800 7950 2    60   Input ~ 0
-RXSM_SODS
 Wire Wire Line
 	12800 7750 12700 7750
 Wire Wire Line
 	12700 7850 12800 7850
 Wire Wire Line
 	12800 7950 12700 7950
-$Comp
-L SST26VF064B U?
-U 1 1 58D04847
-P 1750 6750
-F 0 "U?" H 1750 6450 60  0000 C CNN
-F 1 "SST26VF064B" H 1750 7050 60  0000 C CNN
-F 2 "" H 1750 6750 60  0001 C CNN
-F 3 "" H 1750 6750 60  0001 C CNN
-	1    1750 6750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2500 6800 2300 6800
 Connection ~ 2500 6050
@@ -833,17 +918,6 @@ Connection ~ 2400 5950
 Wire Wire Line
 	2300 6600 2400 6600
 Connection ~ 2400 6600
-$Comp
-L GND #PWR?
-U 1 1 58D04E8C
-P 1100 7000
-F 0 "#PWR?" H 1100 6750 50  0001 C CNN
-F 1 "GND" H 1100 6850 50  0000 C CNN
-F 2 "" H 1100 7000 50  0000 C CNN
-F 3 "" H 1100 7000 50  0000 C CNN
-	1    1100 7000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1100 7000 1100 6900
 Wire Wire Line
@@ -853,17 +927,6 @@ Wire Wire Line
 Wire Wire Line
 	900  6700 1200 6700
 Connection ~ 1100 5950
-$Comp
-L +3V3 #PWR?
-U 1 1 58D057B9
-P 1100 6800
-F 0 "#PWR?" H 1100 6650 50  0001 C CNN
-F 1 "+3V3" H 1100 6940 50  0000 C CNN
-F 2 "" H 1100 6800 50  0000 C CNN
-F 3 "" H 1100 6800 50  0000 C CNN
-	1    1100 6800
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1100 6800 1200 6800
 Wire Wire Line
@@ -874,39 +937,6 @@ Wire Wire Line
 	2800 6400 1200 6400
 Wire Wire Line
 	1200 6400 1200 6600
-$Comp
-L C C?
-U 1 1 58D05CDA
-P 650 7150
-F 0 "C?" H 675 7250 50  0000 L CNN
-F 1 "100n" H 675 7050 50  0000 L CNN
-F 2 "" H 688 7000 50  0000 C CNN
-F 3 "" H 650 7150 50  0000 C CNN
-	1    650  7150
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58D05F40
-P 650 7400
-F 0 "#PWR?" H 650 7150 50  0001 C CNN
-F 1 "GND" H 650 7250 50  0000 C CNN
-F 2 "" H 650 7400 50  0000 C CNN
-F 3 "" H 650 7400 50  0000 C CNN
-	1    650  7400
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58D0622F
-P 650 6900
-F 0 "#PWR?" H 650 6750 50  0001 C CNN
-F 1 "+3V3" H 650 7040 50  0000 C CNN
-F 2 "" H 650 6900 50  0000 C CNN
-F 3 "" H 650 6900 50  0000 C CNN
-	1    650  6900
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	650  6900 650  7000
 Wire Wire Line
@@ -918,28 +948,6 @@ Wire Wire Line
 Wire Wire Line
 	2600 6900 2600 6150
 Connection ~ 2600 6150
-$Comp
-L CONN_01X03 P?
-U 1 1 58CF021A
-P 14450 4350
-F 0 "P?" H 14450 4550 50  0000 C CNN
-F 1 "SWD" V 14550 4350 50  0000 C CNN
-F 2 "" H 14450 4350 50  0000 C CNN
-F 3 "" H 14450 4350 50  0000 C CNN
-	1    14450 4350
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58CF0348
-P 14150 4550
-F 0 "#PWR?" H 14150 4300 50  0001 C CNN
-F 1 "GND" H 14150 4400 50  0000 C CNN
-F 2 "" H 14150 4550 50  0000 C CNN
-F 3 "" H 14150 4550 50  0000 C CNN
-	1    14150 4550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	14150 4550 14150 4350
 Wire Wire Line
@@ -952,31 +960,24 @@ Wire Wire Line
 	14050 4350 14050 4250
 Wire Wire Line
 	14050 4250 14250 4250
-Text Label 13750 4350 0    60   ~ 0
-SWDIO
-Text Label 13750 4450 0    60   ~ 0
-SWCLK
-Text Notes 9800 2300 0    60   ~ 0
-SPI usage:\n* Flash storage: SPI4\n* Temperature sensors: SPI2\n\nUART usage:\n* RXSM communication: USART2\n* Raspberry Pi: USART6\n* Debuging: USART3\n\nI2C usage:\n* Pressure sensor: I2C1\n* Batt/strcuture temperature: ?
-NoConn ~ 14350 3600
-Text HLabel 14050 9050 2    60   BiDi ~ 0
-temperature_SDA
-Text HLabel 14050 9150 2    60   Output ~ 0
-temperature_SCL
-Text HLabel 3200 5350 0    59   Input ~ 0
-SW2
 Wire Wire Line
 	3200 5350 3300 5350
-Text HLabel 14050 8400 2    60   Input ~ 0
-encoder1_A
-Text HLabel 14050 8500 2    60   Input ~ 0
-encoder1_B
-Text HLabel 14050 8600 2    60   Input ~ 0
-encoder2_A
-Text HLabel 14050 8700 2    60   Input ~ 0
-encoder2_B
-Text HLabel 14050 8800 2    60   Input ~ 0
-encoder3_A
-Text HLabel 14050 8900 2    60   Input ~ 0
-encoder3_B
+Wire Wire Line
+	14150 5850 14250 5850
+Wire Wire Line
+	14150 6050 14150 5850
+Wire Wire Line
+	13600 5950 14250 5950
+Wire Wire Line
+	13600 5850 13600 5950
+Text HLabel 13000 6450 2    60   Output ~ 0
+extADC_SPI_SCK
+Text HLabel 13000 6550 2    60   Input ~ 0
+extADC_SPI_MISO
+Text HLabel 13000 6650 2    60   Output ~ 0
+extADC_SPI_MOSI
+Text HLabel 13000 6750 2    60   Output ~ 0
+extADC_SPI_CS1
+Text HLabel 13000 6850 2    60   Output ~ 0
+extADC_SPI_CS2
 $EndSCHEMATC
