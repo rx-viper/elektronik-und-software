@@ -461,7 +461,7 @@ F 3 "" H 5800 2000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 6150 1950 0    39   ~ 0
-Fairchild FDB86566\n60V 110A 2.7mΩ\nG_Q=80nC  C_RSS=57pF
+Fairchild FDB86566\n60V 110A 2.7mΩ\nQ_G=80nC  C_RSS=57pF
 Text Label 5250 2100 0    39   ~ 0
 V_SENSE
 Text Label 6350 2400 0    39   ~ 0

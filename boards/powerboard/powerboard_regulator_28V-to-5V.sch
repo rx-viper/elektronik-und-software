@@ -246,7 +246,7 @@ Wire Wire Line
 Wire Wire Line
 	4950 3350 4800 3350
 Wire Wire Line
-	4800 3350 4800 3450
+	4800 3250 4800 3450
 Wire Wire Line
 	4250 3250 5350 3250
 Wire Wire Line
@@ -279,7 +279,7 @@ Connection ~ 5700 4400
 Wire Wire Line
 	5800 4400 5800 3650
 Connection ~ 5800 4400
-Text Label 4750 3250 0    60   ~ 0
+Text Label 4850 3250 0    60   ~ 0
 RXSM_28V
 Wire Wire Line
 	4350 3450 4350 3250
@@ -295,4 +295,6 @@ Wire Wire Line
 Connection ~ 5950 4400
 Text HLabel 5950 4450 3    60   Input ~ 0
 GND
+Connection ~ 4800 3250
+Connection ~ 4800 3350
 $EndSCHEMATC

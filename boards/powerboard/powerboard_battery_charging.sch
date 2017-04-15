@@ -109,8 +109,6 @@ Wire Wire Line
 Wire Wire Line
 	4000 3900 4000 3650
 Connection ~ 4050 3900
-Wire Wire Line
-	4000 3550 5550 3550
 Connection ~ 4150 3550
 $Comp
 L GND #PWR?
@@ -269,7 +267,7 @@ Text Label 6550 3350 0    60   ~ 0
 bat_tgate
 Text Label 7500 4250 0    60   ~ 0
 bat_battery
-Text HLabel 2900 2600 0    60   Input ~ 0
+Text HLabel 1750 2600 0    60   Input ~ 0
 charge_power
 Wire Wire Line
 	6600 2600 6600 3250
@@ -338,7 +336,7 @@ F 1 "10µ" H 5775 2250 50  0000 L CNN
 F 2 "" H 5788 2200 50  0000 C CNN
 F 3 "" H 5750 2350 50  0000 C CNN
 	1    5750 2350
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L R R?
@@ -445,7 +443,7 @@ F 3 "" H 3250 2700 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	2900 2600 3050 2600
+	2500 2600 3050 2600
 $Comp
 L R R?
 U 1 1 58CF537E
@@ -527,4 +525,32 @@ Text HLabel 2450 3350 0    39   Input ~ 0
 charge_enable
 Wire Wire Line
 	2450 3350 2550 3350
+Wire Wire Line
+	4000 3550 5400 3550
+$Comp
+L GND #PWR?
+U 1 1 58FD411A
+P 5950 4250
+F 0 "#PWR?" H 5950 4000 50  0001 C CNN
+F 1 "GND" H 5950 4100 50  0000 C CNN
+F 2 "" H 5950 4250 50  0000 C CNN
+F 3 "" H 5950 4250 50  0000 C CNN
+	1    5950 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 4250 5950 4150
+$Comp
+L D_Schottky D?
+U 1 1 58FD4C3D
+P 2350 2600
+F 0 "D?" H 2350 2700 50  0000 C CNN
+F 1 "Schottky 1A 50V" H 2350 2500 50  0000 C CNN
+F 2 "" H 2350 2600 50  0001 C CNN
+F 3 "" H 2350 2600 50  0001 C CNN
+	1    2350 2600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2200 2600 1750 2600
 $EndSCHEMATC

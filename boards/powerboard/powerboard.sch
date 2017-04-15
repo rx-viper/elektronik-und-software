@@ -219,19 +219,6 @@ Text Label 2300 6350 2    60   ~ 0
 Motor1_PWM
 Text Label 2300 6950 2    60   ~ 0
 RXSM_28V_sense
-Text Label 2800 6000 3    60   ~ 0
-RXSM_28V
-$Comp
-L R R?
-U 1 1 58886833
-P 2800 6750
-F 0 "R?" V 2880 6750 50  0000 C CNN
-F 1 "19k" V 2800 6750 50  0000 C CNN
-F 2 "" V 2730 6750 50  0000 C CNN
-F 3 "" H 2800 6750 50  0000 C CNN
-	1    2800 6750
-	-1   0    0    1   
-$EndComp
 Text Label 7200 1850 0    60   ~ 0
 Cam_Light_EN
 Text Label 2300 5650 2    60   ~ 0
@@ -441,109 +428,8 @@ F 3 "" H 1150 6100 50  0000 C CNN
 	1    1150 6100
 	-1   0    0    1   
 $EndComp
-$Comp
-L R R?
-U 1 1 5892D60F
-P 2800 7350
-F 0 "R?" V 2880 7350 50  0000 C CNN
-F 1 "1k" V 2800 7350 50  0000 C CNN
-F 2 "" V 2730 7350 50  0000 C CNN
-F 3 "" H 2800 7350 50  0000 C CNN
-	1    2800 7350
-	-1   0    0    1   
-$EndComp
-$Comp
-L R R?
-U 1 1 5892D73D
-P 3050 6750
-F 0 "R?" V 3130 6750 50  0000 C CNN
-F 1 "72k" V 3050 6750 50  0000 C CNN
-F 2 "" V 2980 6750 50  0000 C CNN
-F 3 "" H 3050 6750 50  0000 C CNN
-	1    3050 6750
-	-1   0    0    1   
-$EndComp
-$Comp
-L R R?
-U 1 1 5892D862
-P 3050 7350
-F 0 "R?" V 3130 7350 50  0000 C CNN
-F 1 "8k" V 3050 7350 50  0000 C CNN
-F 2 "" V 2980 7350 50  0000 C CNN
-F 3 "" H 3050 7350 50  0000 C CNN
-	1    3050 7350
-	-1   0    0    1   
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 5892DBC0
-P 2800 7600
-F 0 "#PWR?" H 2800 7350 50  0001 C CNN
-F 1 "GND" H 2800 7450 50  0000 C CNN
-F 2 "" H 2800 7600 50  0000 C CNN
-F 3 "" H 2800 7600 50  0000 C CNN
-	1    2800 7600
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 5892DCD9
-P 3050 7600
-F 0 "#PWR?" H 3050 7350 50  0001 C CNN
-F 1 "GND" H 3050 7450 50  0000 C CNN
-F 2 "" H 3050 7600 50  0000 C CNN
-F 3 "" H 3050 7600 50  0000 C CNN
-	1    3050 7600
-	1    0    0    -1  
-$EndComp
 Text Label 2300 7050 2    60   ~ 0
 Batt_sense
-$Comp
-L LED-RESCUE-powerboard D?
-U 1 1 58932CCC
-P 3300 7300
-F 0 "D?" H 3300 7400 50  0000 C CNN
-F 1 "blue" H 3300 7200 50  0000 C CNN
-F 2 "" H 3300 7300 50  0000 C CNN
-F 3 "" H 3300 7300 50  0000 C CNN
-	1    3300 7300
-	0    -1   -1   0   
-$EndComp
-$Comp
-L LED-RESCUE-powerboard D?
-U 1 1 58932DFA
-P 3600 7300
-F 0 "D?" H 3600 7400 50  0000 C CNN
-F 1 "blue" H 3600 7200 50  0000 C CNN
-F 2 "" H 3600 7300 50  0000 C CNN
-F 3 "" H 3600 7300 50  0000 C CNN
-	1    3600 7300
-	0    -1   -1   0   
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 589332FA
-P 3300 7600
-F 0 "#PWR?" H 3300 7350 50  0001 C CNN
-F 1 "GND" H 3300 7450 50  0000 C CNN
-F 2 "" H 3300 7600 50  0000 C CNN
-F 3 "" H 3300 7600 50  0000 C CNN
-	1    3300 7600
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58933917
-P 3600 7600
-F 0 "#PWR?" H 3600 7350 50  0001 C CNN
-F 1 "GND" H 3600 7450 50  0000 C CNN
-F 2 "" H 3600 7600 50  0000 C CNN
-F 3 "" H 3600 7600 50  0000 C CNN
-	1    3600 7600
-	1    0    0    -1  
-$EndComp
-Text Notes 3200 6850 0    60   ~ 0
-Blue LEDs:\nADC input protection
 $Comp
 L Q_NMOS_GDS Q?
 U 1 1 58C8B900
@@ -716,8 +602,6 @@ Text Label 2300 6550 2    60   ~ 0
 Charge_status
 Text Label 1700 2750 2    47   ~ 0
 BAT_raw
-Text Label 3050 6000 3    59   ~ 0
-BAT_raw
 Text Label 2150 3800 1    60   ~ 0
 Boost24V_EN
 Text Label 2300 6650 2    60   ~ 0
@@ -796,10 +680,6 @@ Wire Wire Line
 	8750 1350 8950 1350
 Wire Wire Line
 	7750 950  8400 950 
-Wire Wire Line
-	1350 6950 3300 6950
-Wire Wire Line
-	2800 6600 2800 6000
 Wire Wire Line
 	7200 1850 7900 1850
 Wire Wire Line
@@ -893,28 +773,6 @@ Wire Wire Line
 	7550 3400 7550 3300
 Wire Wire Line
 	6950 2900 6450 2900
-Wire Wire Line
-	2800 6900 2800 7200
-Connection ~ 2800 6950
-Wire Wire Line
-	3050 7600 3050 7500
-Wire Wire Line
-	2800 7600 2800 7500
-Wire Wire Line
-	3050 7200 3050 6900
-Wire Wire Line
-	3050 6000 3050 6600
-Wire Wire Line
-	1350 7050 3600 7050
-Connection ~ 3050 7050
-Wire Wire Line
-	3600 7600 3600 7500
-Wire Wire Line
-	3300 7500 3300 7600
-Wire Wire Line
-	3300 6950 3300 7100
-Wire Wire Line
-	3600 7050 3600 7100
 Wire Wire Line
 	850  3650 1050 3650
 Wire Wire Line
