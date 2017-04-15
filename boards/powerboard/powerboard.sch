@@ -173,7 +173,7 @@ Text Label 1900 4550 2    60   ~ 0
 Motor1_DIR
 Text Label 1900 4650 2    60   ~ 0
 Motor1_PWM
-Text Label 3500 5450 0    60   ~ 0
+Text Label 2700 5100 0    60   ~ 0
 RXSM_28V_sense
 Text Label 7200 1850 0    60   ~ 0
 Cam_Light_EN
@@ -337,8 +337,6 @@ F 3 "" H 7200 3500 50  0000 C CNN
 $EndComp
 Text Notes 7000 2750 0    49   ~ 0
 PI filter\nf_g = ~~15kHz
-Text Label 3500 5550 0    60   ~ 0
-Batt_sense
 $Comp
 L Q_NMOS_GDS Q?
 U 1 1 58C8B900
@@ -550,17 +548,6 @@ F6 "Probe1_Current" O R 5700 4050 60
 F7 "Probe2_Current" O R 5700 4150 60 
 F8 "Probe3_Current" O R 5700 4250 60 
 $EndSheet
-$Comp
-L D_Schottky D?
-U 1 1 58CA1D85
-P 2550 3000
-F 0 "D?" H 2550 3100 50  0000 C CNN
-F 1 "Schottky" H 2550 2900 50  0000 C CNN
-F 2 "" H 2550 3000 50  0000 C CNN
-F 3 "" H 2550 3000 50  0000 C CNN
-	1    2550 3000
-	-1   0    0    1   
-$EndComp
 Text Label 3650 4150 0    60   ~ 0
 Probe1_EN
 Text Label 3650 4250 0    60   ~ 0
@@ -846,8 +833,8 @@ $Comp
 L D D?
 U 1 1 590A075E
 P 9400 4700
-F 0 "D?" H 9550 4650 50  0000 C CNN
-F 1 "D" H 9400 4600 50  0000 C CNN
+F 0 "D?" H 9300 4650 50  0000 C CNN
+F 1 "D" H 9550 4650 50  0000 C CNN
 F 2 "" H 9400 4700 50  0001 C CNN
 F 3 "" H 9400 4700 50  0001 C CNN
 	1    9400 4700
@@ -1023,7 +1010,7 @@ Wire Wire Line
 Wire Wire Line
 	2700 2400 2600 2400
 Wire Wire Line
-	2700 3000 3100 3000
+	2300 3000 3100 3000
 Wire Wire Line
 	1850 2750 1850 3100
 Connection ~ 1850 3000
@@ -1032,8 +1019,6 @@ Wire Wire Line
 Wire Wire Line
 	2100 3400 2100 3300
 Connection ~ 2100 3400
-Wire Wire Line
-	2300 3000 2400 3000
 Wire Wire Line
 	2600 2400 2600 2750
 Wire Wire Line
@@ -1358,4 +1343,124 @@ Wire Wire Line
 	1350 3100 1350 3200
 Wire Wire Line
 	1350 3000 1900 3000
+$Comp
+L R R?
+U 1 1 59107368
+P 3250 5350
+F 0 "R?" V 3330 5350 50  0000 C CNN
+F 1 "91k" V 3250 5350 50  0000 C CNN
+F 2 "" V 3180 5350 50  0001 C CNN
+F 3 "" H 3250 5350 50  0001 C CNN
+	1    3250 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 59107544
+P 3450 5350
+F 0 "R?" V 3530 5350 50  0000 C CNN
+F 1 "15k" V 3450 5350 50  0000 C CNN
+F 2 "" V 3380 5350 50  0001 C CNN
+F 3 "" H 3450 5350 50  0001 C CNN
+	1    3450 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 591076EE
+P 3450 5950
+F 0 "R?" V 3530 5950 50  0000 C CNN
+F 1 "1k" V 3450 5950 50  0000 C CNN
+F 2 "" V 3380 5950 50  0001 C CNN
+F 3 "" H 3450 5950 50  0001 C CNN
+	1    3450 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 591078A5
+P 3250 5950
+F 0 "R?" V 3330 5950 50  0000 C CNN
+F 1 "13k" V 3250 5950 50  0000 C CNN
+F 2 "" V 3180 5950 50  0001 C CNN
+F 3 "" H 3250 5950 50  0001 C CNN
+	1    3250 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 5200 3250 5200
+Wire Wire Line
+	2700 5100 3450 5100
+Wire Wire Line
+	3450 5100 3450 5200
+Wire Wire Line
+	3450 5500 3450 5800
+Wire Wire Line
+	3250 5500 3250 5800
+Wire Wire Line
+	3250 6100 3250 6200
+Wire Wire Line
+	3250 6200 3650 6200
+Wire Wire Line
+	3450 6200 3450 6100
+$Comp
+L GND #PWR?
+U 1 1 591082B9
+P 3350 6300
+F 0 "#PWR?" H 3350 6050 50  0001 C CNN
+F 1 "GND" H 3350 6150 50  0000 C CNN
+F 2 "" H 3350 6300 50  0001 C CNN
+F 3 "" H 3350 6300 50  0001 C CNN
+	1    3350 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 6300 3350 6200
+Connection ~ 3350 6200
+Wire Wire Line
+	4550 5650 3450 5650
+Connection ~ 3450 5650
+Wire Wire Line
+	3250 5550 4550 5550
+Connection ~ 3250 5550
+$Comp
+L R R?
+U 1 1 5910E673
+P 3650 5350
+F 0 "R?" V 3730 5350 50  0000 C CNN
+F 1 "15k" V 3650 5350 50  0000 C CNN
+F 2 "" V 3580 5350 50  0001 C CNN
+F 3 "" H 3650 5350 50  0001 C CNN
+	1    3650 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5910E822
+P 3650 5950
+F 0 "R?" V 3730 5950 50  0000 C CNN
+F 1 "1k" V 3650 5950 50  0000 C CNN
+F 2 "" V 3580 5950 50  0001 C CNN
+F 3 "" H 3650 5950 50  0001 C CNN
+	1    3650 5950
+	1    0    0    -1  
+$EndComp
+Text Label 2700 5000 0    60   ~ 0
+24V_BAT
+Wire Wire Line
+	2700 5000 3650 5000
+Wire Wire Line
+	3650 5000 3650 5200
+Wire Wire Line
+	3650 5500 3650 5800
+Wire Wire Line
+	3650 6200 3650 6100
+Connection ~ 3450 6200
+Wire Wire Line
+	3650 5750 4550 5750
+Connection ~ 3650 5750
+Text Label 2700 5200 0    60   ~ 0
+BAT_raw
+Text Notes 3100 5250 3    60   ~ 0
+Voltage divider (E24)\n24V and 28V: v = 1/16 = 0.0625\nBattery: v = 1/8 = 0.125
 $EndSCHEMATC
