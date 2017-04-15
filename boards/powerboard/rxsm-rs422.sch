@@ -38,12 +38,14 @@ LIBS:common_mode_choke
 LIBS:ltc4010
 LIBS:pc3h7
 LIBS:esd_diode_dual
+LIBS:ad7928
+LIBS:references
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 7
+Sheet 7 9
 Title "Mainboard: RXSM RS422 connection"
 Date "2017-04-14"
 Rev "1"

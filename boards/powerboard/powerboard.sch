@@ -38,12 +38,14 @@ LIBS:common_mode_choke
 LIBS:ltc4010
 LIBS:pc3h7
 LIBS:esd_diode_dual
+LIBS:ad7928
+LIBS:references
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 7
+Sheet 1 9
 Title "Powerboard overview"
 Date "2017-03-14"
 Rev "02"
@@ -86,39 +88,6 @@ F 3 "" H 650 1250 50  0000 C CNN
 $EndComp
 $Comp
 L CONN_01X02 P?
-U 1 1 5886DA97
-P 4450 2700
-F 0 "P?" H 4450 2850 50  0000 C CNN
-F 1 "Heat probe 1" V 4550 2700 50  0000 C CNN
-F 2 "" H 4450 2700 50  0000 C CNN
-F 3 "" H 4450 2700 50  0000 C CNN
-	1    4450 2700
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X02 P?
-U 1 1 5886E440
-P 4050 3500
-F 0 "P?" H 4050 3650 50  0000 C CNN
-F 1 "Heat probe 2" V 4150 3500 50  0000 C CNN
-F 2 "" H 4050 3500 50  0000 C CNN
-F 3 "" H 4050 3500 50  0000 C CNN
-	1    4050 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X02 P?
-U 1 1 5886E7BB
-P 3650 4300
-F 0 "P?" H 3650 4450 50  0000 C CNN
-F 1 "Heat probe 3" V 3750 4300 50  0000 C CNN
-F 2 "" H 3650 4300 50  0000 C CNN
-F 3 "" H 3650 4300 50  0000 C CNN
-	1    3650 4300
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X02 P?
 U 1 1 5886EA99
 P 650 3050
 F 0 "P?" H 650 3200 50  0000 C CNN
@@ -129,12 +98,12 @@ F 3 "" H 650 3050 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Sheet
-S 2250 2900 950  400 
+S 2250 2900 1500 400 
 U 5886F238
 F0 "Powerboard Stepup 24V" 60
 F1 "powerboard_stepup_24V.sch" 60
 F2 "Bat_IN" I L 2250 3000 60 
-F3 "24V_OUT" I R 3200 3000 60 
+F3 "24V_OUT" I R 3750 3000 60 
 F4 "Enable" I L 2250 3200 60 
 $EndSheet
 $Comp
@@ -193,50 +162,6 @@ F 3 "" H 1350 4150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
-U 1 1 58872A7D
-P 5850 4900
-F 0 "#PWR?" H 5850 4650 50  0001 C CNN
-F 1 "GND" H 5850 4750 50  0000 C CNN
-F 2 "" H 5850 4900 50  0000 C CNN
-F 3 "" H 5850 4900 50  0000 C CNN
-	1    5850 4900
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_01X02 P?
-U 1 1 58873008
-P 6150 1250
-F 0 "P?" H 6150 1400 50  0000 C CNN
-F 1 "RasPi power" V 6250 1250 50  0000 C CNN
-F 2 "" H 6150 1250 50  0000 C CNN
-F 3 "" H 6150 1250 50  0000 C CNN
-	1    6150 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 5887300E
-P 5850 1400
-F 0 "#PWR?" H 5850 1150 50  0001 C CNN
-F 1 "GND" H 5850 1250 50  0000 C CNN
-F 2 "" H 5850 1400 50  0000 C CNN
-F 3 "" H 5850 1400 50  0000 C CNN
-	1    5850 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L +5V #PWR?
-U 1 1 58873014
-P 5750 1200
-F 0 "#PWR?" H 5750 1050 50  0001 C CNN
-F 1 "+5V" H 5750 1340 50  0000 C CNN
-F 2 "" H 5750 1200 50  0000 C CNN
-F 3 "" H 5750 1200 50  0000 C CNN
-	1    5750 1200
-	0    -1   -1   0   
-$EndComp
-$Comp
 L CONN_01X02 P?
 U 1 1 58873101
 P 7100 1250
@@ -273,12 +198,6 @@ Text Label 1300 1150 0    60   ~ 0
 RXSM_28V
 Text Label 1850 3000 0    60   ~ 0
 BAT_10V
-Text Label 4450 3200 0    60   ~ 0
-Probe1
-Text Label 4200 4000 0    60   ~ 0
-Probe2
-Text Label 4150 4700 0    60   ~ 0
-Probe3
 $Comp
 L CONN_01X02 P?
 U 1 1 5887C399
@@ -314,12 +233,6 @@ F 3 "" H 10150 1750 50  0000 C CNN
 $EndComp
 Text Label 9750 1050 0    60   ~ 0
 RXSM_28V
-Text Label 3550 3650 2    60   ~ 0
-Probe2_EN
-Text Label 3150 4450 2    60   ~ 0
-Probe3_EN
-Text Label 3950 2850 2    60   ~ 0
-Probe1_EN
 Text Label 9300 1450 0    60   ~ 0
 Lens_Heat_EN
 Text Label 2300 5750 2    60   ~ 0
@@ -459,94 +372,6 @@ Motor1_Current
 Text Label 2300 6450 2    60   ~ 0
 Motor1_Current
 $Comp
-L ACS711 U?
-U 1 1 588A0E37
-P 5250 3350
-F 0 "U?" H 5250 3050 60  0000 C CNN
-F 1 "ACS711" H 5250 3650 60  0000 C CNN
-F 2 "" H 5250 3350 60  0001 C CNN
-F 3 "" H 5250 3350 60  0001 C CNN
-	1    5250 3350
-	1    0    0    -1  
-$EndComp
-$Comp
-L ACS711 U?
-U 1 1 588A0FE7
-P 5250 4050
-F 0 "U?" H 5250 3750 60  0000 C CNN
-F 1 "ACS711" H 5250 4350 60  0000 C CNN
-F 2 "" H 5250 4050 60  0001 C CNN
-F 3 "" H 5250 4050 60  0001 C CNN
-	1    5250 4050
-	1    0    0    -1  
-$EndComp
-$Comp
-L ACS711 U?
-U 1 1 588A1171
-P 5250 4750
-F 0 "U?" H 5250 4450 60  0000 C CNN
-F 1 "ACS711" H 5250 5050 60  0000 C CNN
-F 2 "" H 5250 4750 60  0001 C CNN
-F 3 "" H 5250 4750 60  0001 C CNN
-	1    5250 4750
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 588A3B90
-P 4650 5000
-F 0 "#PWR?" H 4650 4750 50  0001 C CNN
-F 1 "GND" H 4650 4850 50  0000 C CNN
-F 2 "" H 4650 5000 50  0000 C CNN
-F 3 "" H 4650 5000 50  0000 C CNN
-	1    4650 5000
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 588A3C94
-P 4650 3600
-F 0 "#PWR?" H 4650 3350 50  0001 C CNN
-F 1 "GND" H 4650 3450 50  0000 C CNN
-F 2 "" H 4650 3600 50  0000 C CNN
-F 3 "" H 4650 3600 50  0000 C CNN
-	1    4650 3600
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 588A57C9
-P 4650 4300
-F 0 "#PWR?" H 4650 4050 50  0001 C CNN
-F 1 "GND" H 4650 4150 50  0000 C CNN
-F 2 "" H 4650 4300 50  0000 C CNN
-F 3 "" H 4650 4300 50  0000 C CNN
-	1    4650 4300
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 588A9A5A
-P 5850 4200
-F 0 "#PWR?" H 5850 3950 50  0001 C CNN
-F 1 "GND" H 5850 4050 50  0000 C CNN
-F 2 "" H 5850 4200 50  0000 C CNN
-F 3 "" H 5850 4200 50  0000 C CNN
-	1    5850 4200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 588A9C61
-P 5850 3500
-F 0 "#PWR?" H 5850 3250 50  0001 C CNN
-F 1 "GND" H 5850 3350 50  0000 C CNN
-F 2 "" H 5850 3500 50  0000 C CNN
-F 3 "" H 5850 3500 50  0000 C CNN
-	1    5850 3500
-	0    -1   -1   0   
-$EndComp
-$Comp
 L LM1117-3.3 U?
 U 1 1 588B332C
 P 8650 5650
@@ -634,48 +459,6 @@ F 3 "" H 9400 5650 50  0000 C CNN
 	1    9400 5650
 	0    1    1    0   
 $EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 588B5FE7
-P 5850 4600
-F 0 "#PWR?" H 5850 4450 50  0001 C CNN
-F 1 "+3V3" H 5850 4740 50  0000 C CNN
-F 2 "" H 5850 4600 50  0000 C CNN
-F 3 "" H 5850 4600 50  0000 C CNN
-	1    5850 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 588B71B6
-P 5850 3900
-F 0 "#PWR?" H 5850 3750 50  0001 C CNN
-F 1 "+3V3" H 5850 4040 50  0000 C CNN
-F 2 "" H 5850 3900 50  0000 C CNN
-F 3 "" H 5850 3900 50  0000 C CNN
-	1    5850 3900
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 588B72C9
-P 5850 3200
-F 0 "#PWR?" H 5850 3050 50  0001 C CNN
-F 1 "+3V3" H 5850 3340 50  0000 C CNN
-F 2 "" H 5850 3200 50  0000 C CNN
-F 3 "" H 5850 3200 50  0000 C CNN
-	1    5850 3200
-	1    0    0    -1  
-$EndComp
-NoConn ~ 5750 3400
-NoConn ~ 5750 4100
-NoConn ~ 5750 4800
-Text Label 6450 4700 2    60   ~ 0
-Probe3_Current
-Text Label 6450 4000 2    60   ~ 0
-Probe2_Current
-Text Label 6450 3300 2    60   ~ 0
-Probe1_Current
 Text Label 2300 5550 2    60   ~ 0
 Probe3_Current
 Text Label 2300 5450 2    60   ~ 0
@@ -688,61 +471,6 @@ Text Label 2300 5150 2    60   ~ 0
 Probe2
 Text Label 2300 5050 2    60   ~ 0
 Probe1
-$Comp
-L C C?
-U 1 1 588C640E
-P 5550 5500
-F 0 "C?" H 5575 5600 50  0000 L CNN
-F 1 "100n" H 5575 5400 50  0000 L CNN
-F 2 "" H 5588 5350 50  0000 C CNN
-F 3 "" H 5550 5500 50  0000 C CNN
-	1    5550 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 588C6732
-P 5750 5500
-F 0 "C?" H 5775 5600 50  0000 L CNN
-F 1 "100n" H 5775 5400 50  0000 L CNN
-F 2 "" H 5788 5350 50  0000 C CNN
-F 3 "" H 5750 5500 50  0000 C CNN
-	1    5750 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 588C6856
-P 5950 5500
-F 0 "C?" H 5975 5600 50  0000 L CNN
-F 1 "100n" H 5975 5400 50  0000 L CNN
-F 2 "" H 5988 5350 50  0000 C CNN
-F 3 "" H 5950 5500 50  0000 C CNN
-	1    5950 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 588C76D3
-P 5750 5250
-F 0 "#PWR?" H 5750 5100 50  0001 C CNN
-F 1 "+3V3" H 5750 5390 50  0000 C CNN
-F 2 "" H 5750 5250 50  0000 C CNN
-F 3 "" H 5750 5250 50  0000 C CNN
-	1    5750 5250
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 588C7889
-P 5750 5750
-F 0 "#PWR?" H 5750 5500 50  0001 C CNN
-F 1 "GND" H 5750 5600 50  0000 C CNN
-F 2 "" H 5750 5750 50  0000 C CNN
-F 3 "" H 5750 5750 50  0000 C CNN
-	1    5750 5750
-	1    0    0    -1  
-$EndComp
 $Comp
 L INDUCTOR_SMALL L?
 U 1 1 588AFDA8
@@ -929,107 +657,8 @@ Text Label 600  4300 1    60   ~ 0
 RXSM_28V
 Text Notes 1450 3500 0    60   ~ 0
 Battery\ncut off
-$Comp
-L Q_NMOS_GDS Q?
-U 1 1 58CA944E
-P 4100 3000
-F 0 "Q?" H 4400 3050 50  0000 R CNN
-F 1 "N-MOSFET" H 4700 2950 50  0000 R CNN
-F 2 "" H 4300 3100 50  0000 C CNN
-F 3 "" H 4100 3000 50  0000 C CNN
-	1    4100 3000
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R?
-U 1 1 58CAAD06
-P 3600 3000
-F 0 "R?" V 3680 3000 50  0000 C CNN
-F 1 "10k" V 3600 3000 50  0000 C CNN
-F 2 "" V 3530 3000 50  0000 C CNN
-F 3 "" H 3600 3000 50  0000 C CNN
-	1    3600 3000
-	0    1    1    0   
-$EndComp
-$Comp
-L Q_NMOS_GDS Q?
-U 1 1 58CAB58D
-P 3700 3800
-F 0 "Q?" H 4000 3850 50  0000 R CNN
-F 1 "N-MOSFET" H 4300 3750 50  0000 R CNN
-F 2 "" H 3900 3900 50  0000 C CNN
-F 3 "" H 3700 3800 50  0000 C CNN
-	1    3700 3800
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R?
-U 1 1 58CABAED
-P 3200 3800
-F 0 "R?" V 3280 3800 50  0000 C CNN
-F 1 "10k" V 3200 3800 50  0000 C CNN
-F 2 "" V 3130 3800 50  0000 C CNN
-F 3 "" H 3200 3800 50  0000 C CNN
-	1    3200 3800
-	0    1    1    0   
-$EndComp
-$Comp
-L Q_NMOS_GDS Q?
-U 1 1 58CB5385
-P 3300 4600
-F 0 "Q?" H 3600 4650 50  0000 R CNN
-F 1 "N-MOSFET" H 3900 4550 50  0000 R CNN
-F 2 "" H 3500 4700 50  0000 C CNN
-F 3 "" H 3300 4600 50  0000 C CNN
-	1    3300 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R?
-U 1 1 58CB6009
-P 2800 4600
-F 0 "R?" V 2880 4600 50  0000 C CNN
-F 1 "10k" V 2800 4600 50  0000 C CNN
-F 2 "" V 2730 4600 50  0000 C CNN
-F 3 "" H 2800 4600 50  0000 C CNN
-	1    2800 4600
-	0    1    1    0   
-$EndComp
-Text Label 3650 2650 0    60   ~ 0
+Text Label 3850 3000 0    60   ~ 0
 24V_BAT
-$Comp
-L R R?
-U 1 1 58CC83C0
-P 4000 3200
-F 0 "R?" V 4080 3200 50  0000 C CNN
-F 1 "100k" V 4000 3200 50  0000 C CNN
-F 2 "" V 3930 3200 50  0000 C CNN
-F 3 "" H 4000 3200 50  0000 C CNN
-	1    4000 3200
-	0    1    1    0   
-$EndComp
-$Comp
-L R R?
-U 1 1 58CC9B40
-P 3600 4000
-F 0 "R?" V 3680 4000 50  0000 C CNN
-F 1 "100k" V 3600 4000 50  0000 C CNN
-F 2 "" V 3530 4000 50  0000 C CNN
-F 3 "" H 3600 4000 50  0000 C CNN
-	1    3600 4000
-	0    1    1    0   
-$EndComp
-$Comp
-L R R?
-U 1 1 58CCB102
-P 3200 4900
-F 0 "R?" V 3280 4900 50  0000 C CNN
-F 1 "100k" V 3200 4900 50  0000 C CNN
-F 2 "" V 3130 4900 50  0000 C CNN
-F 3 "" H 3200 4900 50  0000 C CNN
-	1    3200 4900
-	0    1    1    0   
-$EndComp
 $Comp
 L CMC FL?
 U 1 1 58C8D036
@@ -1101,6 +730,174 @@ F 1 "10µ" H 1325 2150 50  0000 L CNN
 F 2 "" H 1338 2100 50  0000 C CNN
 F 3 "" H 1300 2250 50  0000 C CNN
 	1    1300 2250
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 1850 2100 1500 400 
+U 58C99165
+F0 "Powerboard Battery Charging" 60
+F1 "powerboard_battery_charging.sch" 60
+F2 "battery" I L 1850 2400 60 
+F3 "charge_power" I L 1850 2200 60 
+F4 "charge_status" I R 3350 2200 60 
+F5 "charge_enable" I R 3350 2400 60 
+$EndSheet
+$Comp
+L GND #PWR?
+U 1 1 58CA05ED
+P 1200 2500
+F 0 "#PWR?" H 1200 2250 50  0001 C CNN
+F 1 "GND" H 1200 2350 50  0000 C CNN
+F 2 "" H 1200 2500 50  0000 C CNN
+F 3 "" H 1200 2500 50  0000 C CNN
+	1    1200 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Q_PMOS_GDS Q?
+U 1 1 58CA6DDD
+P 1250 3100
+F 0 "Q?" H 1550 3150 50  0000 R CNN
+F 1 "P-FET" V 1200 3450 50  0000 R CNN
+F 2 "" H 1450 3200 50  0000 C CNN
+F 3 "" H 1250 3100 50  0000 C CNN
+	1    1250 3100
+	0    1    -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 58CAB3E4
+P 1000 3250
+F 0 "R?" V 1080 3250 50  0000 C CNN
+F 1 "10k" V 1000 3250 50  0000 C CNN
+F 2 "" V 930 3250 50  0000 C CNN
+F 3 "" H 1000 3250 50  0000 C CNN
+	1    1000 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58CABA0F
+P 850 3200
+F 0 "#PWR?" H 850 2950 50  0001 C CNN
+F 1 "GND" H 850 3050 50  0000 C CNN
+F 2 "" H 850 3200 50  0000 C CNN
+F 3 "" H 850 3200 50  0000 C CNN
+	1    850  3200
+	1    0    0    -1  
+$EndComp
+Text Label 4050 2200 2    60   ~ 0
+Charge_status
+Text Label 2300 6550 2    60   ~ 0
+Charge_status
+Text Label 1700 2750 2    47   ~ 0
+BAT_raw
+Text Label 3050 6000 3    59   ~ 0
+BAT_raw
+Text Label 2150 3800 1    60   ~ 0
+Boost24V_EN
+Text Label 2300 6650 2    60   ~ 0
+Boost24V_EN
+Text Label 4050 2400 2    60   ~ 0
+Charge_EN
+Text Label 2300 6750 2    60   ~ 0
+Charge_EN
+$Sheet
+S 4800 6500 1150 500 
+U 590A1435
+F0 "RXSM_Event_Lines" 60
+F1 "rxsm-event-lines.sch" 60
+F2 "LO" O L 4800 6650 60 
+F3 "SOE" O L 4800 6750 60 
+F4 "SODS" O L 4800 6850 60 
+F5 "RXSM_28V" I R 5950 6600 60 
+F6 "RXSM_LO" I R 5950 6700 60 
+F7 "RXSM_SOE" I R 5950 6800 60 
+F8 "RXSM_SODS" I R 5950 6900 60 
+$EndSheet
+$Sheet
+S 4800 7200 1150 500 
+U 58F29A50
+F0 "RXSM_RS422" 60
+F1 "rxsm-rs422.sch" 60
+F2 "TX" I L 4800 7400 60 
+F3 "RX" O L 4800 7500 60 
+F4 "A" B R 5950 7300 60 
+F5 "~B" B R 5950 7400 60 
+F6 "Y" B R 5950 7500 60 
+F7 "~Z" B R 5950 7600 60 
+$EndSheet
+Text Label 6550 6600 2    60   ~ 0
+RXSM_28V
+Text Label 6550 6700 2    60   ~ 0
+RXSM_LO
+Text Label 6550 6800 2    60   ~ 0
+RXSM_SOE
+Text Label 6550 6900 2    60   ~ 0
+RXSM_SODS
+Text Label 6550 7300 2    60   ~ 0
+RXSM_RX_A
+Text Label 6550 7400 2    60   ~ 0
+RXSM_RX_~B
+Text Label 6550 7500 2    60   ~ 0
+RXSM_RX_Y
+Text Label 6550 7600 2    60   ~ 0
+RXSM_RX_~Z
+$Comp
+L AD7928 U?
+U 1 1 58F465EF
+P 5850 5000
+F 0 "U?" H 5850 5700 60  0000 C CNN
+F 1 "AD7928" H 5850 4400 60  0000 C CNN
+F 2 "" H 6800 4700 60  0001 C CNN
+F 3 "" H 6800 4700 60  0001 C CNN
+	1    5850 5000
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 3350 3850 1500 600 
+U 58F4FF70
+F0 "Powerboard_Heat_Probes" 60
+F1 "heat-probes.sch" 60
+F2 "Probe1_EN" I L 3350 4150 60 
+F3 "Probe2_EN" I L 3350 4250 60 
+F4 "Probe3_EN" I L 3350 4350 60 
+F5 "24V_BAT" I L 3350 3950 60 
+F6 "Probe1_Current" O R 4850 4050 60 
+F7 "Probe2_Current" O R 4850 4150 60 
+F8 "Probe3_Current" O R 4850 4250 60 
+$EndSheet
+$Comp
+L +5V #PWR?
+U 1 1 58873014
+P 5750 1200
+F 0 "#PWR?" H 5750 1050 50  0001 C CNN
+F 1 "+5V" H 5750 1340 50  0000 C CNN
+F 2 "" H 5750 1200 50  0000 C CNN
+F 3 "" H 5750 1200 50  0000 C CNN
+	1    5750 1200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5887300E
+P 5850 1400
+F 0 "#PWR?" H 5850 1150 50  0001 C CNN
+F 1 "GND" H 5850 1250 50  0000 C CNN
+F 2 "" H 5850 1400 50  0000 C CNN
+F 3 "" H 5850 1400 50  0000 C CNN
+	1    5850 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P?
+U 1 1 58873008
+P 6150 1250
+F 0 "P?" H 6150 1400 50  0000 C CNN
+F 1 "RasPi power" V 6250 1250 50  0000 C CNN
+F 2 "" H 6150 1250 50  0000 C CNN
+F 3 "" H 6150 1250 50  0000 C CNN
+	1    6150 1250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1192,33 +989,6 @@ Wire Wire Line
 Wire Wire Line
 	1350 6450 2300 6450
 Wire Wire Line
-	4650 3600 4650 3400
-Wire Wire Line
-	4650 3400 4750 3400
-Wire Wire Line
-	4750 3500 4650 3500
-Connection ~ 4650 3500
-Wire Wire Line
-	4650 4300 4650 4100
-Wire Wire Line
-	4650 4100 4750 4100
-Wire Wire Line
-	4750 4200 4650 4200
-Connection ~ 4650 4200
-Wire Wire Line
-	4650 5000 4650 4800
-Wire Wire Line
-	4650 4800 4750 4800
-Wire Wire Line
-	4750 4900 4650 4900
-Connection ~ 4650 4900
-Wire Wire Line
-	5850 3500 5750 3500
-Wire Wire Line
-	5750 4200 5850 4200
-Wire Wire Line
-	5850 4900 5750 4900
-Wire Wire Line
 	8650 5950 8650 6250
 Wire Wire Line
 	8000 6150 9300 6150
@@ -1250,25 +1020,6 @@ Connection ~ 8250 5650
 Connection ~ 8000 5650
 Connection ~ 9300 5650
 Wire Wire Line
-	6450 4700 5750 4700
-Wire Wire Line
-	6450 3300 5750 3300
-Wire Wire Line
-	5750 4000 6450 4000
-Wire Wire Line
-	5750 3900 5850 3900
-Wire Wire Line
-	5850 3200 5750 3200
-Wire Wire Line
-	5750 4600 5850 4600
-Wire Wire Line
-	4750 3300 4650 3300
-Wire Wire Line
-	4650 3300 4650 3200
-Connection ~ 4650 3200
-Wire Wire Line
-	4150 4700 4750 4700
-Wire Wire Line
 	1350 5550 2300 5550
 Wire Wire Line
 	1350 5450 2300 5450
@@ -1280,24 +1031,6 @@ Wire Wire Line
 	1350 5150 2300 5150
 Wire Wire Line
 	1350 5050 2300 5050
-Wire Wire Line
-	5750 5650 5750 5750
-Wire Wire Line
-	5550 5700 5950 5700
-Wire Wire Line
-	5550 5700 5550 5650
-Wire Wire Line
-	5950 5700 5950 5650
-Connection ~ 5750 5700
-Wire Wire Line
-	5550 5350 5550 5300
-Wire Wire Line
-	5550 5300 5950 5300
-Wire Wire Line
-	5750 5250 5750 5350
-Connection ~ 5750 5300
-Wire Wire Line
-	5950 5300 5950 5350
 Wire Wire Line
 	7550 3400 7550 3300
 Wire Wire Line
@@ -1334,88 +1067,6 @@ Wire Wire Line
 Wire Wire Line
 	1350 3850 1350 4150
 Connection ~ 1350 4050
-Wire Wire Line
-	4150 3200 4750 3200
-Wire Wire Line
-	4200 2800 4200 2750
-Wire Wire Line
-	4200 2750 4250 2750
-Wire Wire Line
-	4250 2650 3300 2650
-Wire Wire Line
-	3300 2650 3300 3450
-Wire Wire Line
-	3300 3000 3200 3000
-Wire Wire Line
-	3850 3550 3800 3550
-Wire Wire Line
-	3800 3550 3800 3600
-Connection ~ 3300 3000
-Wire Wire Line
-	3750 4000 4750 4000
-Wire Wire Line
-	4750 3900 4650 3900
-Wire Wire Line
-	4650 3900 4650 4000
-Connection ~ 4650 4000
-Wire Wire Line
-	3050 3800 3050 3650
-Wire Wire Line
-	3050 3650 3550 3650
-Wire Wire Line
-	2650 4600 2650 4450
-Wire Wire Line
-	2650 4450 3150 4450
-Wire Wire Line
-	3450 3000 3450 2850
-Wire Wire Line
-	3450 2850 3950 2850
-Wire Wire Line
-	3750 3000 3900 3000
-Wire Wire Line
-	2950 3450 3850 3450
-Wire Wire Line
-	2950 3450 2950 4250
-Wire Wire Line
-	2950 4250 3450 4250
-Connection ~ 3300 3450
-Wire Wire Line
-	3450 4350 3400 4350
-Wire Wire Line
-	3400 4350 3400 4400
-Wire Wire Line
-	3400 4800 3400 4900
-Wire Wire Line
-	3350 4900 4150 4900
-Wire Wire Line
-	4150 4900 4150 4700
-Connection ~ 4650 4700
-Wire Wire Line
-	4650 4700 4650 4600
-Wire Wire Line
-	4650 4600 4750 4600
-Connection ~ 4200 3200
-Wire Wire Line
-	3800 3000 3800 3200
-Wire Wire Line
-	3800 3200 3850 3200
-Connection ~ 3800 3000
-Wire Wire Line
-	2950 4600 3100 4600
-Wire Wire Line
-	3350 3800 3500 3800
-Connection ~ 3800 4000
-Wire Wire Line
-	3450 4000 3400 4000
-Wire Wire Line
-	3400 4000 3400 3800
-Connection ~ 3400 3800
-Wire Wire Line
-	3000 4600 3000 4900
-Connection ~ 3000 4600
-Wire Wire Line
-	3000 4900 3050 4900
-Connection ~ 3400 4900
 Wire Wire Line
 	1900 1400 1800 1400
 Wire Wire Line
@@ -1494,33 +1145,66 @@ Wire Wire Line
 	1200 2050 1750 2050
 Wire Wire Line
 	1300 2050 1300 2100
-$Sheet
-S 1850 2100 1500 400 
-U 58C99165
-F0 "Powerboard Battery Charging" 60
-F1 "powerboard_battery_charging.sch" 60
-F2 "battery" I L 1850 2400 60 
-F3 "charge_power" I L 1850 2200 60 
-F4 "charge_status" I R 3350 2200 60 
-F5 "charge_enable" I R 3350 2400 60 
-$EndSheet
-$Comp
-L GND #PWR?
-U 1 1 58CA05ED
-P 1200 2500
-F 0 "#PWR?" H 1200 2250 50  0001 C CNN
-F 1 "GND" H 1200 2350 50  0000 C CNN
-F 2 "" H 1200 2500 50  0000 C CNN
-F 3 "" H 1200 2500 50  0000 C CNN
-	1    1200 2500
-	1    0    0    -1  
-$EndComp
 Connection ~ 1200 2450
 Wire Wire Line
 	1750 2050 1750 2200
 Wire Wire Line
 	1750 2200 1850 2200
 Connection ~ 1300 2050
+Wire Wire Line
+	1850 2400 1750 2400
+Wire Wire Line
+	1850 3000 2250 3000
+Wire Wire Line
+	550  3650 550  3800
+Wire Wire Line
+	550  3800 600  3800
+Wire Wire Line
+	600  3800 600  4300
+Wire Wire Line
+	1000 2750 1000 3100
+Wire Wire Line
+	850  3000 1050 3000
+Connection ~ 1000 3000
+Wire Wire Line
+	850  3200 850  3100
+Wire Wire Line
+	1000 3400 1350 3400
+Wire Wire Line
+	1350 3400 1350 3450
+Wire Wire Line
+	1250 3400 1250 3300
+Connection ~ 1250 3400
+Wire Wire Line
+	1450 3000 1550 3000
+Wire Wire Line
+	1750 2400 1750 2750
+Wire Wire Line
+	1750 2750 1000 2750
+Wire Wire Line
+	2250 3200 2150 3200
+Wire Wire Line
+	2150 3200 2150 3800
+Wire Wire Line
+	3350 2200 4050 2200
+Wire Wire Line
+	3350 2400 4050 2400
+Wire Wire Line
+	5950 6600 6550 6600
+Wire Wire Line
+	5950 6900 6550 6900
+Wire Wire Line
+	5950 6800 6550 6800
+Wire Wire Line
+	5950 6700 6550 6700
+Wire Wire Line
+	6550 7300 5950 7300
+Wire Wire Line
+	6550 7600 5950 7600
+Wire Wire Line
+	5950 7500 6550 7500
+Wire Wire Line
+	6550 7400 5950 7400
 $Comp
 L D_Schottky D?
 U 1 1 58CA1D85
@@ -1533,147 +1217,37 @@ F 3 "" H 1700 3000 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	1850 2400 1750 2400
-$Comp
-L Q_PMOS_GDS Q?
-U 1 1 58CA6DDD
-P 1250 3100
-F 0 "Q?" H 1550 3150 50  0000 R CNN
-F 1 "P-FET" V 1200 3450 50  0000 R CNN
-F 2 "" H 1450 3200 50  0000 C CNN
-F 3 "" H 1250 3100 50  0000 C CNN
-	1    1250 3100
-	0    1    -1   0   
-$EndComp
+	3750 3000 4300 3000
 Wire Wire Line
-	1850 3000 2250 3000
+	4300 3000 4300 3600
 Wire Wire Line
-	550  3650 550  3800
+	4300 3600 3150 3600
 Wire Wire Line
-	550  3800 600  3800
+	3150 3600 3150 3950
 Wire Wire Line
-	600  3800 600  4300
-$Comp
-L R R?
-U 1 1 58CAB3E4
-P 1000 3250
-F 0 "R?" V 1080 3250 50  0000 C CNN
-F 1 "10k" V 1000 3250 50  0000 C CNN
-F 2 "" V 930 3250 50  0000 C CNN
-F 3 "" H 1000 3250 50  0000 C CNN
-	1    1000 3250
-	1    0    0    -1  
-$EndComp
+	3150 3950 3350 3950
+Text Label 2800 4150 0    60   ~ 0
+Probe1_EN
+Text Label 2800 4250 0    60   ~ 0
+Probe2_EN
+Text Label 2800 4350 0    60   ~ 0
+Probe3_EN
 Wire Wire Line
-	1000 2750 1000 3100
+	2800 4150 3350 4150
 Wire Wire Line
-	850  3000 1050 3000
-Connection ~ 1000 3000
-$Comp
-L GND #PWR?
-U 1 1 58CABA0F
-P 850 3200
-F 0 "#PWR?" H 850 2950 50  0001 C CNN
-F 1 "GND" H 850 3050 50  0000 C CNN
-F 2 "" H 850 3200 50  0000 C CNN
-F 3 "" H 850 3200 50  0000 C CNN
-	1    850  3200
-	1    0    0    -1  
-$EndComp
+	2800 4250 3350 4250
 Wire Wire Line
-	850  3200 850  3100
-Wire Wire Line
-	1000 3400 1350 3400
-Wire Wire Line
-	1350 3400 1350 3450
-Wire Wire Line
-	1250 3400 1250 3300
-Connection ~ 1250 3400
-Wire Wire Line
-	1450 3000 1550 3000
-Text Label 4050 2200 2    60   ~ 0
-Charge_status
-Text Label 2300 6550 2    60   ~ 0
-Charge_status
-Text Label 1700 2750 2    47   ~ 0
-BAT_raw
-Text Label 3050 6000 3    59   ~ 0
-BAT_raw
-Wire Wire Line
-	1750 2400 1750 2750
-Wire Wire Line
-	1750 2750 1000 2750
-Text Label 2150 3800 1    60   ~ 0
-Boost24V_EN
-Wire Wire Line
-	2250 3200 2150 3200
-Wire Wire Line
-	2150 3200 2150 3800
-Text Label 2300 6650 2    60   ~ 0
-Boost24V_EN
-Wire Wire Line
-	3350 2200 4050 2200
-Wire Wire Line
-	3350 2400 4050 2400
-Text Label 4050 2400 2    60   ~ 0
-Charge_EN
-Text Label 2300 6750 2    60   ~ 0
-Charge_EN
+	2800 4350 3350 4350
+Text Label 5600 4050 2    60   ~ 0
+Probe1_Current
+Text Label 5600 4150 2    60   ~ 0
+Probe2_Current
+Text Label 5600 4250 2    60   ~ 0
+Probe3_Current
 $Sheet
-S 4800 6500 1150 500 
-U 590A1435
-F0 "RXSM_Event_Lines" 60
-F1 "rxsm-event-lines.sch" 60
-F2 "LO" O L 4800 6650 60 
-F3 "SOE" O L 4800 6750 60 
-F4 "SODS" O L 4800 6850 60 
-F5 "RXSM_28V" I R 5950 6600 60 
-F6 "RXSM_LO" I R 5950 6700 60 
-F7 "RXSM_SOE" I R 5950 6800 60 
-F8 "RXSM_SODS" I R 5950 6900 60 
+S 4050 5150 1200 800 
+U 58F758D3
+F0 "Powerboard_ADC" 60
+F1 "powerboard_adc.sch" 60
 $EndSheet
-$Sheet
-S 4800 7200 1150 500 
-U 58F29A50
-F0 "RXSM_RS422" 60
-F1 "rxsm-rs422.sch" 60
-F2 "TX" I L 4800 7400 60 
-F3 "RX" O L 4800 7500 60 
-F4 "A" B R 5950 7300 60 
-F5 "~B" B R 5950 7400 60 
-F6 "Y" B R 5950 7500 60 
-F7 "~Z" B R 5950 7600 60 
-$EndSheet
-Text Label 6550 6600 2    60   ~ 0
-RXSM_28V
-Wire Wire Line
-	5950 6600 6550 6600
-Text Label 6550 6700 2    60   ~ 0
-RXSM_LO
-Text Label 6550 6800 2    60   ~ 0
-RXSM_SOE
-Text Label 6550 6900 2    60   ~ 0
-RXSM_SODS
-Wire Wire Line
-	5950 6900 6550 6900
-Wire Wire Line
-	5950 6800 6550 6800
-Wire Wire Line
-	5950 6700 6550 6700
-Text Label 6550 7300 2    60   ~ 0
-RXSM_RX_A
-Wire Wire Line
-	6550 7300 5950 7300
-Text Label 6550 7400 2    60   ~ 0
-RXSM_RX_~B
-Text Label 6550 7500 2    60   ~ 0
-RXSM_RX_Y
-Text Label 6550 7600 2    60   ~ 0
-RXSM_RX_~Z
-Wire Wire Line
-	6550 7600 5950 7600
-Wire Wire Line
-	5950 7500 6550 7500
-Wire Wire Line
-	6550 7400 5950 7400
 $EndSCHEMATC

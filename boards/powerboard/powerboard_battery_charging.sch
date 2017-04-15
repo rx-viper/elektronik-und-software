@@ -38,12 +38,14 @@ LIBS:common_mode_choke
 LIBS:ltc4010
 LIBS:pc3h7
 LIBS:esd_diode_dual
+LIBS:ad7928
+LIBS:references
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 7
+Sheet 5 9
 Title "Powerboard Battery Charging"
 Date "2017-03-15"
 Rev "02"

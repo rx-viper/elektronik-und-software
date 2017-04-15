@@ -1,0 +1,597 @@
+EESchema Schematic File Version 2
+LIBS:powerboard-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:TI-LMZ1xxxx
+LIBS:DRV8816
+LIBS:ACS711
+LIBS:lt1370
+LIBS:lt3757
+LIBS:common_mode_choke
+LIBS:ltc4010
+LIBS:pc3h7
+LIBS:esd_diode_dual
+LIBS:ad7928
+LIBS:references
+LIBS:powerboard-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 8 9
+Title "Powerboard: Heat Probes"
+Date "2017-04-15"
+Rev "1"
+Comp "VIPER"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L GND #PWR?
+U 1 1 58F51ACB
+P 6250 5800
+F 0 "#PWR?" H 6250 5550 50  0001 C CNN
+F 1 "GND" H 6250 5650 50  0000 C CNN
+F 2 "" H 6250 5800 50  0000 C CNN
+F 3 "" H 6250 5800 50  0000 C CNN
+	1    6250 5800
+	0    -1   -1   0   
+$EndComp
+Text Label 4450 2750 0    60   ~ 0
+Probe1
+Text Label 4200 4200 0    60   ~ 0
+Probe2
+Text Label 4550 5600 0    60   ~ 0
+Probe3
+Text Label 2800 3900 2    60   ~ 0
+Probe2_EN
+Text Label 2800 5300 2    60   ~ 0
+Probe3_EN
+Text Label 2800 2450 2    60   ~ 0
+Probe1_EN
+$Comp
+L ACS711 U?
+U 1 1 58F51AD7
+P 5650 2800
+F 0 "U?" H 5650 2500 60  0000 C CNN
+F 1 "ACS711" H 5650 3100 60  0000 C CNN
+F 2 "" H 5650 2800 60  0001 C CNN
+F 3 "" H 5650 2800 60  0001 C CNN
+	1    5650 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ACS711 U?
+U 1 1 58F51ADE
+P 5650 4250
+F 0 "U?" H 5650 3950 60  0000 C CNN
+F 1 "ACS711" H 5650 4550 60  0000 C CNN
+F 2 "" H 5650 4250 60  0001 C CNN
+F 3 "" H 5650 4250 60  0001 C CNN
+	1    5650 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L ACS711 U?
+U 1 1 58F51AE5
+P 5650 5650
+F 0 "U?" H 5650 5350 60  0000 C CNN
+F 1 "ACS711" H 5650 5950 60  0000 C CNN
+F 2 "" H 5650 5650 60  0001 C CNN
+F 3 "" H 5650 5650 60  0001 C CNN
+	1    5650 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58F51AEC
+P 5050 5900
+F 0 "#PWR?" H 5050 5650 50  0001 C CNN
+F 1 "GND" H 5050 5750 50  0000 C CNN
+F 2 "" H 5050 5900 50  0000 C CNN
+F 3 "" H 5050 5900 50  0000 C CNN
+	1    5050 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58F51AF2
+P 5050 3050
+F 0 "#PWR?" H 5050 2800 50  0001 C CNN
+F 1 "GND" H 5050 2900 50  0000 C CNN
+F 2 "" H 5050 3050 50  0000 C CNN
+F 3 "" H 5050 3050 50  0000 C CNN
+	1    5050 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58F51AF8
+P 5050 4500
+F 0 "#PWR?" H 5050 4250 50  0001 C CNN
+F 1 "GND" H 5050 4350 50  0000 C CNN
+F 2 "" H 5050 4500 50  0000 C CNN
+F 3 "" H 5050 4500 50  0000 C CNN
+	1    5050 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58F51AFE
+P 6250 4400
+F 0 "#PWR?" H 6250 4150 50  0001 C CNN
+F 1 "GND" H 6250 4250 50  0000 C CNN
+F 2 "" H 6250 4400 50  0000 C CNN
+F 3 "" H 6250 4400 50  0000 C CNN
+	1    6250 4400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58F51B04
+P 6250 2950
+F 0 "#PWR?" H 6250 2700 50  0001 C CNN
+F 1 "GND" H 6250 2800 50  0000 C CNN
+F 2 "" H 6250 2950 50  0000 C CNN
+F 3 "" H 6250 2950 50  0000 C CNN
+	1    6250 2950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 58F51B0A
+P 6250 5500
+F 0 "#PWR?" H 6250 5350 50  0001 C CNN
+F 1 "+3V3" H 6250 5640 50  0000 C CNN
+F 2 "" H 6250 5500 50  0000 C CNN
+F 3 "" H 6250 5500 50  0000 C CNN
+	1    6250 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 58F51B10
+P 6250 4100
+F 0 "#PWR?" H 6250 3950 50  0001 C CNN
+F 1 "+3V3" H 6250 4240 50  0000 C CNN
+F 2 "" H 6250 4100 50  0000 C CNN
+F 3 "" H 6250 4100 50  0000 C CNN
+	1    6250 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 58F51B16
+P 6250 2650
+F 0 "#PWR?" H 6250 2500 50  0001 C CNN
+F 1 "+3V3" H 6250 2790 50  0000 C CNN
+F 2 "" H 6250 2650 50  0000 C CNN
+F 3 "" H 6250 2650 50  0000 C CNN
+	1    6250 2650
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6150 2850
+NoConn ~ 6150 4300
+NoConn ~ 6150 5700
+Text Label 6350 5600 0    60   ~ 0
+Probe3_Current
+Text Label 6350 4200 0    60   ~ 0
+Probe2_Current
+Text Label 6350 2750 0    60   ~ 0
+Probe1_Current
+$Comp
+L C C?
+U 1 1 58F51B22
+P 4550 6850
+F 0 "C?" H 4575 6950 50  0000 L CNN
+F 1 "100n" H 4575 6750 50  0000 L CNN
+F 2 "" H 4588 6700 50  0000 C CNN
+F 3 "" H 4550 6850 50  0000 C CNN
+	1    4550 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 58F51B29
+P 4750 6850
+F 0 "C?" H 4775 6950 50  0000 L CNN
+F 1 "100n" H 4775 6750 50  0000 L CNN
+F 2 "" H 4788 6700 50  0000 C CNN
+F 3 "" H 4750 6850 50  0000 C CNN
+	1    4750 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 58F51B30
+P 4950 6850
+F 0 "C?" H 4975 6950 50  0000 L CNN
+F 1 "100n" H 4975 6750 50  0000 L CNN
+F 2 "" H 4988 6700 50  0000 C CNN
+F 3 "" H 4950 6850 50  0000 C CNN
+	1    4950 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 58F51B37
+P 4750 6600
+F 0 "#PWR?" H 4750 6450 50  0001 C CNN
+F 1 "+3V3" H 4750 6740 50  0000 C CNN
+F 2 "" H 4750 6600 50  0000 C CNN
+F 3 "" H 4750 6600 50  0000 C CNN
+	1    4750 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58F51B3D
+P 4750 7100
+F 0 "#PWR?" H 4750 6850 50  0001 C CNN
+F 1 "GND" H 4750 6950 50  0000 C CNN
+F 2 "" H 4750 7100 50  0000 C CNN
+F 3 "" H 4750 7100 50  0000 C CNN
+	1    4750 7100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 58F51B4A
+P 3050 2450
+F 0 "R?" V 3130 2450 50  0000 C CNN
+F 1 "10k" V 3050 2450 50  0000 C CNN
+F 2 "" V 2980 2450 50  0000 C CNN
+F 3 "" H 3050 2450 50  0000 C CNN
+	1    3050 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L Q_NMOS_GDS Q?
+U 1 1 58F51B51
+P 3700 3900
+F 0 "Q?" H 4000 3950 50  0000 R CNN
+F 1 "N-MOSFET" H 4300 3850 50  0000 R CNN
+F 2 "" H 3900 4000 50  0000 C CNN
+F 3 "" H 3700 3900 50  0000 C CNN
+	1    3700 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 58F51B58
+P 3050 3900
+F 0 "R?" V 3130 3900 50  0000 C CNN
+F 1 "10k" V 3050 3900 50  0000 C CNN
+F 2 "" V 2980 3900 50  0000 C CNN
+F 3 "" H 3050 3900 50  0000 C CNN
+	1    3050 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L Q_NMOS_GDS Q?
+U 1 1 58F51B5F
+P 3700 5300
+F 0 "Q?" H 4000 5350 50  0000 R CNN
+F 1 "N-MOSFET" H 4300 5250 50  0000 R CNN
+F 2 "" H 3900 5400 50  0000 C CNN
+F 3 "" H 3700 5300 50  0000 C CNN
+	1    3700 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 58F51B66
+P 3050 5300
+F 0 "R?" V 3130 5300 50  0000 C CNN
+F 1 "10k" V 3050 5300 50  0000 C CNN
+F 2 "" V 2980 5300 50  0000 C CNN
+F 3 "" H 3050 5300 50  0000 C CNN
+	1    3050 5300
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 58F51B6E
+P 3550 2750
+F 0 "R?" V 3630 2750 50  0000 C CNN
+F 1 "100k" V 3550 2750 50  0000 C CNN
+F 2 "" V 3480 2750 50  0000 C CNN
+F 3 "" H 3550 2750 50  0000 C CNN
+	1    3550 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 58F51B75
+P 3550 4200
+F 0 "R?" V 3630 4200 50  0000 C CNN
+F 1 "100k" V 3550 4200 50  0000 C CNN
+F 2 "" V 3480 4200 50  0000 C CNN
+F 3 "" H 3550 4200 50  0000 C CNN
+	1    3550 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 58F51B7C
+P 3550 5600
+F 0 "R?" V 3630 5600 50  0000 C CNN
+F 1 "100k" V 3550 5600 50  0000 C CNN
+F 2 "" V 3480 5600 50  0000 C CNN
+F 3 "" H 3550 5600 50  0000 C CNN
+	1    3550 5600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5050 3050 5050 2850
+Wire Wire Line
+	5050 2850 5150 2850
+Wire Wire Line
+	5150 2950 5050 2950
+Connection ~ 5050 2950
+Wire Wire Line
+	5050 4500 5050 4300
+Wire Wire Line
+	5050 4300 5150 4300
+Wire Wire Line
+	5150 4400 5050 4400
+Connection ~ 5050 4400
+Wire Wire Line
+	5050 5900 5050 5700
+Wire Wire Line
+	5050 5700 5150 5700
+Wire Wire Line
+	5150 5800 5050 5800
+Connection ~ 5050 5800
+Wire Wire Line
+	6250 2950 6150 2950
+Wire Wire Line
+	6150 4400 6250 4400
+Wire Wire Line
+	6250 5800 6150 5800
+Wire Wire Line
+	6150 5600 7150 5600
+Wire Wire Line
+	6150 2750 7150 2750
+Wire Wire Line
+	6150 4200 7150 4200
+Wire Wire Line
+	6150 4100 6250 4100
+Wire Wire Line
+	6250 2650 6150 2650
+Wire Wire Line
+	6150 5500 6250 5500
+Wire Wire Line
+	4750 7000 4750 7100
+Wire Wire Line
+	4550 7050 4950 7050
+Wire Wire Line
+	4550 7050 4550 7000
+Wire Wire Line
+	4950 7050 4950 7000
+Connection ~ 4750 7050
+Wire Wire Line
+	4550 6700 4550 6650
+Wire Wire Line
+	4550 6650 4950 6650
+Wire Wire Line
+	4750 6600 4750 6700
+Connection ~ 4750 6650
+Wire Wire Line
+	4950 6650 4950 6700
+Wire Wire Line
+	5150 4100 5050 4100
+Wire Wire Line
+	5050 4100 5050 4200
+Connection ~ 5050 4200
+Connection ~ 5050 5600
+Wire Wire Line
+	5050 5600 5050 5500
+Wire Wire Line
+	5050 5500 5150 5500
+Text Notes 4100 6350 0    60   ~ 0
+3x decoupling capacitors for ACS711
+Text Label 3300 1400 0    60   ~ 0
+24V_BAT
+$Comp
+L Q_NMOS_GDS Q?
+U 1 1 58F51B43
+P 3700 2450
+F 0 "Q?" H 4000 2500 50  0000 R CNN
+F 1 "N-MOSFET" H 4300 2400 50  0000 R CNN
+F 2 "" H 3900 2550 50  0000 C CNN
+F 3 "" H 3700 2450 50  0000 C CNN
+	1    3700 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 2750 3800 2650
+Wire Wire Line
+	3500 2450 3200 2450
+Wire Wire Line
+	3400 2750 3300 2750
+Wire Wire Line
+	3300 2750 3300 2450
+Connection ~ 3300 2450
+Wire Wire Line
+	3700 4200 5150 4200
+Wire Wire Line
+	3800 4200 3800 4100
+Wire Wire Line
+	3500 3900 3200 3900
+Wire Wire Line
+	3300 3900 3300 4200
+Wire Wire Line
+	3300 4200 3400 4200
+Connection ~ 3300 3900
+Wire Wire Line
+	3700 5600 5150 5600
+Wire Wire Line
+	3800 5600 3800 5500
+Wire Wire Line
+	3500 5300 3200 5300
+Wire Wire Line
+	3300 5300 3300 5600
+Wire Wire Line
+	3300 5600 3400 5600
+Connection ~ 3300 5300
+Connection ~ 3800 5600
+Connection ~ 3800 4200
+Connection ~ 3800 2750
+Wire Wire Line
+	3700 2750 5150 2750
+Wire Wire Line
+	5150 2650 5050 2650
+Wire Wire Line
+	5050 2650 5050 2750
+Connection ~ 5050 2750
+Text HLabel 2200 2450 0    60   Input ~ 0
+Probe1_EN
+Text HLabel 2200 3900 0    60   Input ~ 0
+Probe2_EN
+Text HLabel 2200 5300 0    60   Input ~ 0
+Probe3_EN
+Wire Wire Line
+	2200 2450 2900 2450
+Wire Wire Line
+	2200 3900 2900 3900
+Wire Wire Line
+	2200 5300 2900 5300
+Text Notes 4850 2050 0    60   ~ 0
+3x ACS711: Hall Effect Linear Current Sensor
+Text HLabel 3100 1400 0    60   Input ~ 0
+24V_BAT
+Wire Wire Line
+	3100 1400 9250 1400
+Wire Wire Line
+	3800 2250 3800 2150
+Wire Wire Line
+	3800 2150 8500 2150
+Wire Wire Line
+	3800 3700 3800 3600
+Wire Wire Line
+	3800 5100 3800 5000
+Wire Wire Line
+	3800 5000 8500 5000
+$Comp
+L DB25_FEMALE J?
+U 1 1 58F5DCF8
+P 10200 3400
+F 0 "J?" H 10200 4750 50  0000 C CNN
+F 1 "Heat probe power" H 10200 2025 50  0000 C CNN
+F 2 "" H 10200 3400 50  0001 C CNN
+F 3 "" H 10200 3400 50  0001 C CNN
+	1    10200 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9250 1400 9250 4100
+Wire Wire Line
+	9250 2200 9900 2200
+Wire Wire Line
+	9250 2300 9900 2300
+Connection ~ 9250 2200
+Wire Wire Line
+	9250 2400 9900 2400
+Connection ~ 9250 2300
+Wire Wire Line
+	9250 2500 9900 2500
+Connection ~ 9250 2400
+Wire Wire Line
+	8500 2150 8500 2900
+Wire Wire Line
+	8500 2600 9900 2600
+Wire Wire Line
+	8500 2700 9900 2700
+Connection ~ 8500 2600
+Wire Wire Line
+	8500 2800 9900 2800
+Connection ~ 8500 2700
+Wire Wire Line
+	8500 2900 9900 2900
+Connection ~ 8500 2800
+Wire Wire Line
+	9250 3000 9900 3000
+Connection ~ 9250 2500
+Wire Wire Line
+	9250 3100 9900 3100
+Connection ~ 9250 3000
+Wire Wire Line
+	9250 3200 9900 3200
+Connection ~ 9250 3100
+Wire Wire Line
+	9250 3300 9900 3300
+Connection ~ 9250 3200
+Wire Wire Line
+	8500 3400 8500 3700
+Wire Wire Line
+	8500 3400 9900 3400
+Wire Wire Line
+	8500 3500 9900 3500
+Connection ~ 8500 3500
+Connection ~ 8500 3600
+Wire Wire Line
+	8500 3700 9900 3700
+Wire Wire Line
+	9250 3800 9900 3800
+Connection ~ 9250 3300
+Wire Wire Line
+	9250 3900 9900 3900
+Connection ~ 9250 3800
+Wire Wire Line
+	9250 4000 9900 4000
+Connection ~ 9250 3900
+Wire Wire Line
+	9250 4100 9900 4100
+Connection ~ 9250 4000
+Wire Wire Line
+	8500 5000 8500 4200
+Wire Wire Line
+	8500 4200 9900 4200
+Wire Wire Line
+	9900 4300 8500 4300
+Connection ~ 8500 4300
+Wire Wire Line
+	8500 4400 9900 4400
+Connection ~ 8500 4400
+Wire Wire Line
+	9900 4500 8500 4500
+Connection ~ 8500 4500
+Wire Wire Line
+	3800 3600 9900 3600
+Text HLabel 7150 2750 2    60   Output ~ 0
+Probe1_Current
+Text HLabel 7150 4200 2    60   Output ~ 0
+Probe2_Current
+Text HLabel 7150 5600 2    60   Output ~ 0
+Probe3_Current
+$EndSCHEMATC
