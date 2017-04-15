@@ -37,12 +37,13 @@ LIBS:lt3757
 LIBS:common_mode_choke
 LIBS:ltc4010
 LIBS:pc3h7
+LIBS:esd_diode_dual
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 1 7
 Title "Powerboard overview"
 Date "2017-03-14"
 Rev "02"
@@ -1631,4 +1632,48 @@ F6 "RXSM_LO" I R 5950 6700 60
 F7 "RXSM_SOE" I R 5950 6800 60 
 F8 "RXSM_SODS" I R 5950 6900 60 
 $EndSheet
+$Sheet
+S 4800 7200 1150 500 
+U 58F29A50
+F0 "RXSM_RS422" 60
+F1 "rxsm-rs422.sch" 60
+F2 "TX" I L 4800 7400 60 
+F3 "RX" O L 4800 7500 60 
+F4 "A" B R 5950 7300 60 
+F5 "~B" B R 5950 7400 60 
+F6 "Y" B R 5950 7500 60 
+F7 "~Z" B R 5950 7600 60 
+$EndSheet
+Text Label 6550 6600 2    60   ~ 0
+RXSM_28V
+Wire Wire Line
+	5950 6600 6550 6600
+Text Label 6550 6700 2    60   ~ 0
+RXSM_LO
+Text Label 6550 6800 2    60   ~ 0
+RXSM_SOE
+Text Label 6550 6900 2    60   ~ 0
+RXSM_SODS
+Wire Wire Line
+	5950 6900 6550 6900
+Wire Wire Line
+	5950 6800 6550 6800
+Wire Wire Line
+	5950 6700 6550 6700
+Text Label 6550 7300 2    60   ~ 0
+RXSM_RX_A
+Wire Wire Line
+	6550 7300 5950 7300
+Text Label 6550 7400 2    60   ~ 0
+RXSM_RX_~B
+Text Label 6550 7500 2    60   ~ 0
+RXSM_RX_Y
+Text Label 6550 7600 2    60   ~ 0
+RXSM_RX_~Z
+Wire Wire Line
+	6550 7600 5950 7600
+Wire Wire Line
+	5950 7500 6550 7500
+Wire Wire Line
+	6550 7400 5950 7400
 $EndSCHEMATC

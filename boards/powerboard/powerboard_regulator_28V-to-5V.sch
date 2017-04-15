@@ -37,12 +37,13 @@ LIBS:lt3757
 LIBS:common_mode_choke
 LIBS:ltc4010
 LIBS:pc3h7
+LIBS:esd_diode_dual
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 6
+Sheet 2 7
 Title "Powerboard 5V regulator"
 Date "2017-03-14"
 Rev "01"

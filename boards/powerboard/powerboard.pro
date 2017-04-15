@@ -1,4 +1,4 @@
-update=Fri Apr 14 23:03:05 2017
+update=Sat Apr 15 16:50:03 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -77,3 +77,4 @@ LibName35=lib/lt3757
 LibName36=lib/common_mode_choke
 LibName37=lib/ltc4010
 LibName38=lib/pc3h7
+LibName39=lib/esd_diode_dual

@@ -200,9 +200,9 @@ F 3 "" H 3250 6800 50  0000 C CNN
 	1    3250 6800
 	0    -1   -1   0   
 $EndComp
-Text Label 7950 1600 0    60   ~ 0
+Text Label 8500 1600 2    60   ~ 0
 RasPi_TX
-Text Label 7950 1700 0    60   ~ 0
+Text Label 8500 1700 2    60   ~ 0
 RasPi_RX
 $Comp
 L R R?
@@ -377,9 +377,9 @@ F6 "temp3_INT" I R 7900 4050 59
 F7 "temp4_INT" I R 7900 4150 59 
 F8 "temp5_INT" I R 7900 4250 59 
 F9 "bat_charge_status" I L 5050 4650 60 
-F10 "RXSM_LO" I R 7900 2550 60 
-F11 "RXSM_SOE" I R 7900 2650 60 
-F12 "RXSM_SODS" I R 7900 2750 60 
+F10 "RXSM_LO" I R 7900 2300 60 
+F11 "RXSM_SOE" I R 7900 2400 60 
+F12 "RXSM_SODS" I R 7900 2500 60 
 F13 "lens_heater_EN" O L 5050 3850 60 
 F14 "pressure_SCL" O L 5050 2450 60 
 F15 "pressure_SDA" B L 5050 2550 60 
@@ -801,50 +801,18 @@ Text Notes 2900 6600 0    60   ~ 0
 3.3V power supply (from 5V) for µC and periphery
 Text Notes 10000 5500 0    60   ~ 0
 status LEDs and switches\nfor testing
-$Sheet
-S 8100 1850 1100 500 
-U 58FEDA74
-F0 "RXSM_RS422" 60
-F1 "rxsm-rs422.sch" 60
-F2 "TX" I L 8100 2100 60 
-F3 "RX" O L 8100 2000 60 
-F4 "A" B R 9200 1950 60 
-F5 "~B" B R 9200 2050 60 
-F6 "Y" B R 9200 2150 60 
-F7 "~Z" B R 9200 2250 60 
-$EndSheet
-Wire Wire Line
-	8100 2000 7900 2000
-Wire Wire Line
-	7900 2100 8100 2100
-Text Label 8500 2550 2    60   ~ 0
+Text Label 8500 2300 2    60   ~ 0
 RXSM_LO
-Text Label 8500 2650 2    60   ~ 0
+Text Label 8500 2400 2    60   ~ 0
 RXSM_SOE
-Text Label 8500 2750 2    60   ~ 0
+Text Label 8500 2500 2    60   ~ 0
 RXSM_SODS
 Wire Wire Line
-	8500 2550 7900 2550
+	8500 2300 7900 2300
 Wire Wire Line
-	7900 2650 8500 2650
+	7900 2400 8500 2400
 Wire Wire Line
-	8500 2750 7900 2750
-Text Label 9800 1950 2    60   ~ 0
-rxsm_422_A
-Text Label 9800 2050 2    60   ~ 0
-rxsm_422_B
-Text Label 9800 2150 2    60   ~ 0
-rxsm_422_Y
-Text Label 9800 2250 2    60   ~ 0
-rxsm_422_Z
-Wire Wire Line
-	9800 2250 9200 2250
-Wire Wire Line
-	9200 2150 9800 2150
-Wire Wire Line
-	9800 2050 9200 2050
-Wire Wire Line
-	9200 1950 9800 1950
+	8500 2500 7900 2500
 Wire Wire Line
 	5050 3750 4300 3750
 Wire Wire Line
@@ -942,4 +910,12 @@ Wire Wire Line
 	7900 3550 8400 3550
 Text Notes 8700 4100 0    60   ~ 0
 ToDo: 6x LTC2984 sub-schematic with 2x SPI
+Text Label 8500 2000 2    60   ~ 0
+RXSM_RX
+Text Label 8500 2100 2    60   ~ 0
+RXSM_TX
+Wire Wire Line
+	7900 2000 8500 2000
+Wire Wire Line
+	7900 2100 8500 2100
 $EndSCHEMATC
