@@ -41,7 +41,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 2 3
+Sheet 2 2
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
 Rev "03"
@@ -978,6 +978,16 @@ Text HLabel 13000 6650 2    60   Output ~ 0
 extADC_SPI_MOSI
 Text HLabel 13000 6750 2    60   Output ~ 0
 extADC_SPI_CS1
-Text HLabel 13000 6850 2    60   Output ~ 0
-extADC_SPI_CS2
+Text HLabel 14200 3900 2    60   Output ~ 0
+brake_EN
+Text HLabel 13050 2750 2    60   Input ~ 0
+encoderMotor_A
+Text HLabel 13050 2850 2    60   Input ~ 0
+encoderMotor_B
+Text HLabel 13050 2650 2    60   Input ~ 0
+hall_W
+Text HLabel 13050 2550 2    60   Input ~ 0
+hall_V
+Text HLabel 13050 2450 2    60   Input ~ 0
+hall_U
 $EndSCHEMATC

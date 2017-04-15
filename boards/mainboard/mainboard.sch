@@ -41,7 +41,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 3
+Sheet 1 2
 Title "Mainboard overview"
 Date "2017-03-14"
 Rev "03"
@@ -90,25 +90,23 @@ Text Label 8400 3650 2    60   ~ 0
 temp_sdo
 Text Label 8400 3550 2    60   ~ 0
 temp_sck
-Text Label 4300 3850 0    60   ~ 0
-Bat_Heat_EN
 Text Label 4300 4150 0    60   ~ 0
 Probe3_EN
 Text Label 4300 4050 0    60   ~ 0
 Probe2_EN
 Text Label 4300 3950 0    60   ~ 0
 Probe1_EN
-Text Label 4300 4250 0    60   ~ 0
+Text Label 4300 5050 0    60   ~ 0
 Motor1_EN
-Text Label 4300 4350 0    60   ~ 0
+Text Label 4300 5150 0    60   ~ 0
 Motor1_DIR
-Text Label 4300 4450 0    60   ~ 0
+Text Label 4300 5250 0    60   ~ 0
 Motor1_PWM
-Text Label 4300 4650 0    60   ~ 0
+Text Label 4300 4350 0    60   ~ 0
 Charge_status
-Text Label 4300 4750 0    60   ~ 0
+Text Label 4300 4450 0    60   ~ 0
 Boost24V_EN
-Text Label 4300 4850 0    60   ~ 0
+Text Label 4300 4550 0    60   ~ 0
 Charge_EN
 Text Label 4300 3750 0    60   ~ 0
 Cam_Light_EN
@@ -376,7 +374,7 @@ F5 "temp2_INT" I R 7900 3950 59
 F6 "temp3_INT" I R 7900 4050 59 
 F7 "temp4_INT" I R 7900 4150 59 
 F8 "temp5_INT" I R 7900 4250 59 
-F9 "bat_charge_status" I L 5050 4650 60 
+F9 "bat_charge_status" I L 5050 4350 60 
 F10 "RXSM_LO" I R 7900 2300 60 
 F11 "RXSM_SOE" I R 7900 2400 60 
 F12 "RXSM_SODS" I R 7900 2500 60 
@@ -387,11 +385,11 @@ F16 "cam_light_EN" O L 5050 3750 60
 F17 "probe1_EN" O L 5050 3950 60 
 F18 "probe2_EN" O L 5050 4050 60 
 F19 "probe3_EN" O L 5050 4150 60 
-F20 "motor1_EN" O L 5050 4250 60 
-F21 "motor1_DIR" O L 5050 4350 60 
-F22 "motor1_PWM" O L 5050 4450 60 
-F23 "bat_boost_EN" O L 5050 4750 60 
-F24 "bat_charge_EN" O L 5050 4850 60 
+F20 "motor1_EN" O L 5050 5050 60 
+F21 "motor1_DIR" O L 5050 5150 60 
+F22 "motor1_PWM" O L 5050 5250 60 
+F23 "bat_boost_EN" O L 5050 4450 60 
+F24 "bat_charge_EN" O L 5050 4550 60 
 F25 "temperature_SDA" B L 5050 2750 60 
 F26 "temperature_SCL" O L 5050 2650 60 
 F27 "LED1" I R 7900 5250 60 
@@ -419,7 +417,12 @@ F48 "extADC_SPI_SCK" O L 5050 3050 60
 F49 "extADC_SPI_MISO" I L 5050 3150 60 
 F50 "extADC_SPI_MOSI" O L 5050 3250 60 
 F51 "extADC_SPI_CS1" O L 5050 3350 60 
-F52 "extADC_SPI_CS2" O L 5050 3450 60 
+F52 "brake_EN" O L 5050 5350 60 
+F53 "encoderMotor_A" I L 5050 4750 60 
+F54 "encoderMotor_B" I L 5050 4850 60 
+F55 "hall_W" I L 5050 5750 60 
+F56 "hall_V" I L 5050 5650 60 
+F57 "hall_U" I L 5050 5550 60 
 $EndSheet
 Text Notes 950  2000 1    60   ~ 0
 AMSYS\n5915-0010-D\n(3.3V)\nor First Sensor HCLA
@@ -801,18 +804,6 @@ Text Notes 2900 6600 0    60   ~ 0
 3.3V power supply (from 5V) for µC and periphery
 Text Notes 10000 5500 0    60   ~ 0
 status LEDs and switches\nfor testing
-Text Label 8500 2300 2    60   ~ 0
-RXSM_LO
-Text Label 8500 2400 2    60   ~ 0
-RXSM_SOE
-Text Label 8500 2500 2    60   ~ 0
-RXSM_SODS
-Wire Wire Line
-	8500 2300 7900 2300
-Wire Wire Line
-	7900 2400 8500 2400
-Wire Wire Line
-	8500 2500 7900 2500
 Wire Wire Line
 	5050 3750 4300 3750
 Wire Wire Line
@@ -824,17 +815,17 @@ Wire Wire Line
 Wire Wire Line
 	5050 4150 4300 4150
 Wire Wire Line
-	4300 4250 5050 4250
+	4300 5050 5050 5050
 Wire Wire Line
-	5050 4350 4300 4350
+	5050 5150 4300 5150
 Wire Wire Line
-	4300 4450 5050 4450
+	4300 5250 5050 5250
 Wire Wire Line
-	4300 4650 5050 4650
+	4300 4350 5050 4350
 Wire Wire Line
-	5050 4750 4300 4750
+	5050 4450 4300 4450
 Wire Wire Line
-	4300 4850 5050 4850
+	4300 4550 5050 4550
 Text Label 4300 3050 0    60   ~ 0
 extADC_SPI_SCK
 Wire Wire Line
@@ -845,16 +836,12 @@ Text Label 4300 3250 0    60   ~ 0
 extADC_SPI_MOSI
 Text Label 4300 3350 0    60   ~ 0
 extADC_SPI_CS1
-Text Label 4300 3450 0    60   ~ 0
-extADC_SPI_CS2
 Wire Wire Line
 	4300 3150 5050 3150
 Wire Wire Line
 	5050 3250 4300 3250
 Wire Wire Line
 	4300 3350 5050 3350
-Wire Wire Line
-	5050 3450 4300 3450
 $Comp
 L DB9_FEMALE J?
 U 1 1 59082736
@@ -900,22 +887,217 @@ L DB37_MALE J?
 U 1 1 5908B98D
 P 800 5500
 F 0 "J?" H 800 7500 50  0000 C CNN
-F 1 "Powerboard" H 800 3500 50  0000 C CNN
+F 1 "Powerboard <-> Mainboard" V 1000 5500 50  0000 C CNN
 F 2 "" H 800 5500 50  0001 C CNN
 F 3 "" H 800 5500 50  0001 C CNN
 	1    800  5500
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	7900 3550 8400 3550
 Text Notes 8700 4100 0    60   ~ 0
 ToDo: 6x LTC2984 sub-schematic with 2x SPI
-Text Label 8500 2000 2    60   ~ 0
-RXSM_RX
-Text Label 8500 2100 2    60   ~ 0
-RXSM_TX
+Text Label 1950 5900 2    60   ~ 0
+Lens_Heat_EN
+Text Label 1950 5000 2    60   ~ 0
+Probe3_EN
+Text Label 1950 4900 2    60   ~ 0
+Probe2_EN
+Text Label 1950 4800 2    60   ~ 0
+Probe1_EN
+Text Label 1950 4300 2    60   ~ 0
+Motor1_EN
+Text Label 1950 4400 2    60   ~ 0
+Motor1_DIR
+Text Label 1950 4500 2    60   ~ 0
+Motor1_PWM
+Text Label 1950 5800 2    60   ~ 0
+Cam_Light_EN
+Text Label 1950 5700 2    60   ~ 0
+Charge_status
+Text Label 1950 6000 2    60   ~ 0
+Boost24V_EN
+Text Label 1950 5600 2    60   ~ 0
+Charge_EN
+Text Label 1950 6500 2    60   ~ 0
+Hall_U
+Text Label 1950 6600 2    60   ~ 0
+Hall_V
+Text Label 1950 6700 2    60   ~ 0
+Hall_W
+Text Label 1950 6200 2    60   ~ 0
+Encoder_A+
+Text Label 1950 6300 2    60   ~ 0
+Encoder_B+
+Text Label 1950 6800 2    60   ~ 0
+LO
+Text Label 1950 6900 2    60   ~ 0
+SOE
+Text Label 1950 7000 2    60   ~ 0
+SODS
+Text Label 1950 7100 2    60   ~ 0
+TX
+Text Label 1950 7200 2    60   ~ 0
+RX
+$Comp
+L GND #PWR?
+U 1 1 5913059A
+P 1200 7400
+F 0 "#PWR?" H 1200 7150 50  0001 C CNN
+F 1 "GND" H 1200 7250 50  0000 C CNN
+F 2 "" H 1200 7400 50  0001 C CNN
+F 3 "" H 1200 7400 50  0001 C CNN
+	1    1200 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 591305A0
+P 1400 3600
+F 0 "#PWR?" H 1400 3450 50  0001 C CNN
+F 1 "+5V" H 1400 3740 50  0000 C CNN
+F 2 "" H 1400 3600 50  0000 C CNN
+F 3 "" H 1400 3600 50  0000 C CNN
+	1    1400 3600
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1100 4100
+Text Label 1950 4200 2    60   ~ 0
+Brake_EN
+NoConn ~ 1100 4600
 Wire Wire Line
-	7900 2000 8500 2000
+	1200 3700 1200 7400
 Wire Wire Line
-	7900 2100 8500 2100
+	1200 7300 1100 7300
+Wire Wire Line
+	1200 3700 1100 3700
+Connection ~ 1200 7300
+Wire Wire Line
+	1100 6400 1200 6400
+Connection ~ 1200 6400
+Wire Wire Line
+	1100 5500 1200 5500
+Connection ~ 1200 5500
+Wire Wire Line
+	1400 3600 1400 3900
+Wire Wire Line
+	1400 3800 1100 3800
+Wire Wire Line
+	1400 3900 1100 3900
+Connection ~ 1400 3800
+Wire Wire Line
+	1100 4000 1200 4000
+Connection ~ 1200 4000
+Wire Wire Line
+	1950 7200 1100 7200
+Wire Wire Line
+	1100 7100 1950 7100
+Wire Wire Line
+	1950 7000 1100 7000
+Wire Wire Line
+	1100 6900 1950 6900
+Wire Wire Line
+	1950 6800 1100 6800
+Wire Wire Line
+	1100 6700 1950 6700
+Wire Wire Line
+	1950 6600 1100 6600
+Wire Wire Line
+	1100 6500 1950 6500
+Wire Wire Line
+	1100 6300 1950 6300
+Wire Wire Line
+	1950 6200 1100 6200
+Wire Wire Line
+	1100 5900 1950 5900
+Wire Wire Line
+	1950 5800 1100 5800
+Wire Wire Line
+	1100 5700 1950 5700
+Wire Wire Line
+	1950 5600 1100 5600
+Wire Wire Line
+	1100 5400 1950 5400
+Wire Wire Line
+	1950 5300 1100 5300
+Wire Wire Line
+	1100 5200 1950 5200
+Wire Wire Line
+	1950 5100 1100 5100
+Wire Wire Line
+	1100 5000 1950 5000
+Wire Wire Line
+	1950 4900 1100 4900
+Wire Wire Line
+	1100 4800 1950 4800
+Wire Wire Line
+	1100 4500 1950 4500
+Wire Wire Line
+	1950 4400 1100 4400
+Wire Wire Line
+	1100 4300 1950 4300
+Wire Wire Line
+	1100 4200 1950 4200
+Wire Wire Line
+	1100 6100 1200 6100
+Connection ~ 1200 6100
+Wire Wire Line
+	1100 6000 1950 6000
+Wire Wire Line
+	1100 4700 1200 4700
+Connection ~ 1200 4700
+Text Label 8750 2300 2    60   ~ 0
+LO
+Text Label 8750 2400 2    60   ~ 0
+SOE
+Text Label 8750 2500 2    60   ~ 0
+SODS
+Text Label 8750 2100 2    60   ~ 0
+TX
+Text Label 8750 2000 2    60   ~ 0
+RX
+Wire Wire Line
+	8750 2000 7900 2000
+Wire Wire Line
+	7900 2100 8750 2100
+Wire Wire Line
+	8750 2500 7900 2500
+Wire Wire Line
+	7900 2400 8750 2400
+Wire Wire Line
+	8750 2300 7900 2300
+Text Label 4300 5350 0    60   ~ 0
+Brake_EN
+Wire Wire Line
+	4300 5350 5050 5350
+Text Label 1950 5100 2    60   ~ 0
+extADC_SPI_SCK
+Text Label 1950 5200 2    60   ~ 0
+extADC_SPI_MISO
+Text Label 1950 5300 2    60   ~ 0
+extADC_SPI_MOSI
+Text Label 1950 5400 2    60   ~ 0
+extADC_SPI_CS1
+Text Label 4300 3850 0    60   ~ 0
+Lens_Heat_EN
+Text Label 4300 5550 0    60   ~ 0
+Hall_U
+Text Label 4300 5650 0    60   ~ 0
+Hall_V
+Text Label 4300 5750 0    60   ~ 0
+Hall_W
+Wire Wire Line
+	5050 5550 4300 5550
+Wire Wire Line
+	4300 5650 5050 5650
+Wire Wire Line
+	4300 5750 5050 5750
+Wire Wire Line
+	5050 4750 4300 4750
+Wire Wire Line
+	4300 4850 5050 4850
+Text Label 4300 4750 0    60   ~ 0
+Encoder_A+
+Text Label 4300 4850 0    60   ~ 0
+Encoder_B+
 $EndSCHEMATC
