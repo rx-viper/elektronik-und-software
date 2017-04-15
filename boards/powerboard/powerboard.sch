@@ -78,24 +78,13 @@ F 3 "" H 2650 1700 50  0000 C CNN
 $EndComp
 $Comp
 L CONN_01X02 P?
-U 1 1 5886D3FA
-P 1500 1250
-F 0 "P?" H 1500 1400 50  0000 C CNN
-F 1 "RXSM_POWER" V 1600 1250 50  0000 C CNN
-F 2 "" H 1500 1250 50  0000 C CNN
-F 3 "" H 1500 1250 50  0000 C CNN
-	1    1500 1250
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_01X02 P?
 U 1 1 5886EA99
-P 1500 3050
-F 0 "P?" H 1500 3200 50  0000 C CNN
-F 1 "Battery" V 1600 3050 50  0000 C CNN
-F 2 "" H 1500 3050 50  0000 C CNN
-F 3 "" H 1500 3050 50  0000 C CNN
-	1    1500 3050
+P 1150 3050
+F 0 "P?" H 1150 3200 50  0000 C CNN
+F 1 "Battery" V 1250 3050 50  0000 C CNN
+F 2 "" H 1150 3050 50  0000 C CNN
+F 3 "" H 1150 3050 50  0000 C CNN
+	1    1150 3050
 	-1   0    0    1   
 $EndComp
 $Sheet
@@ -140,7 +129,7 @@ F 3 "" H 10100 1500 50  0000 C CNN
 	1    10100 1500
 	0    -1   -1   0   
 $EndComp
-Text Label 2150 1150 0    60   ~ 0
+Text Label 2250 1150 0    60   ~ 0
 RXSM_28V
 Text Label 2700 3000 0    60   ~ 0
 BAT_10V
@@ -392,28 +381,28 @@ Text Label 4700 3000 0    60   ~ 0
 $Comp
 L CMC FL?
 U 1 1 58C8D036
-P 1950 1250
-F 0 "FL?" H 1950 1405 60  0000 C CNB
-F 1 "10µH 1.5A" H 1900 1100 45  0000 C CNN
-F 2 "" H 1950 1025 40  0001 C CNN
-F 3 "" H 1950 1400 60  0000 C CNN
-F 4 "-" H 1950 1485 45  0001 C CNN "PART"
-F 5 "Passive" H 2180 1540 50  0001 C CNN "Family"
-	1    1950 1250
+P 2100 1250
+F 0 "FL?" H 2100 1405 60  0000 C CNB
+F 1 "10µH 1.5A" H 2100 1500 45  0000 C CNN
+F 2 "" H 2100 1025 40  0001 C CNN
+F 3 "" H 2100 1400 60  0000 C CNN
+F 4 "-" H 2100 1485 45  0001 C CNN "PART"
+F 5 "Passive" H 2330 1540 50  0001 C CNN "Family"
+	1    2100 1250
 	1    0    0    -1  
 $EndComp
 $Comp
 L CP C?
 U 1 1 58C8D570
-P 2300 1350
-F 0 "C?" H 2325 1450 50  0000 L CNN
-F 1 "47µ" H 2325 1250 50  0000 L CNN
-F 2 "" H 2338 1200 50  0000 C CNN
-F 3 "" H 2300 1350 50  0000 C CNN
-	1    2300 1350
+P 2450 1350
+F 0 "C?" H 2475 1450 50  0000 L CNN
+F 1 "47µ" H 2475 1250 50  0000 L CNN
+F 2 "" H 2488 1200 50  0000 C CNN
+F 3 "" H 2450 1350 50  0000 C CNN
+	1    2450 1350
 	1    0    0    -1  
 $EndComp
-Text Notes 1750 1000 0    49   ~ 0
+Text Notes 2450 1000 0    49   ~ 0
 Max. input capacity on \nRXSM 28V: 100µF\n\nDon't assemble input \ncapacitors >1µF in voltage \nregulator sub-schematics!
 $Comp
 L CP C?
@@ -427,38 +416,16 @@ F 3 "" H 6850 3150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X02 P?
-U 1 1 58C977C5
-P 1500 2250
-F 0 "P?" H 1500 2400 50  0000 C CNN
-F 1 "RXSM_Charge" V 1600 2250 50  0000 C CNN
-F 2 "" H 1500 2250 50  0000 C CNN
-F 3 "" H 1500 2250 50  0000 C CNN
-	1    1500 2250
-	-1   0    0    1   
-$EndComp
-$Comp
 L CMC FL?
 U 1 1 58C97BBF
-P 1900 2250
-F 0 "FL?" H 1900 2405 60  0000 C CNB
-F 1 "10µH 1A" H 1850 2100 45  0000 C CNN
-F 2 "" H 1900 2025 40  0001 C CNN
-F 3 "" H 1900 2400 60  0000 C CNN
-F 4 "-" H 1900 2485 45  0001 C CNN "PART"
-F 5 "Passive" H 2130 2540 50  0001 C CNN "Family"
-	1    1900 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L CP C?
-U 1 1 58C97CE9
-P 2150 2250
-F 0 "C?" H 2175 2350 50  0000 L CNN
-F 1 "10µ" H 2175 2150 50  0000 L CNN
-F 2 "" H 2188 2100 50  0000 C CNN
-F 3 "" H 2150 2250 50  0000 C CNN
-	1    2150 2250
+P 2100 2250
+F 0 "FL?" H 2100 2405 60  0000 C CNB
+F 1 "10µH 1A" H 2050 2100 45  0000 C CNN
+F 2 "" H 2100 2025 40  0001 C CNN
+F 3 "" H 2100 2400 60  0000 C CNN
+F 4 "-" H 2100 2485 45  0001 C CNN "PART"
+F 5 "Passive" H 2330 2540 50  0001 C CNN "Family"
+	1    2100 2250
 	1    0    0    -1  
 $EndComp
 $Sheet
@@ -474,12 +441,12 @@ $EndSheet
 $Comp
 L GND #PWR?
 U 1 1 58CA05ED
-P 2050 2500
-F 0 "#PWR?" H 2050 2250 50  0001 C CNN
-F 1 "GND" H 2050 2350 50  0000 C CNN
-F 2 "" H 2050 2500 50  0000 C CNN
-F 3 "" H 2050 2500 50  0000 C CNN
-	1    2050 2500
+P 2250 2500
+F 0 "#PWR?" H 2250 2250 50  0001 C CNN
+F 1 "GND" H 2250 2350 50  0000 C CNN
+F 2 "" H 2250 2500 50  0000 C CNN
+F 3 "" H 2250 2500 50  0000 C CNN
+	1    2250 2500
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -507,12 +474,12 @@ $EndComp
 $Comp
 L GND #PWR?
 U 1 1 58CABA0F
-P 1700 3200
-F 0 "#PWR?" H 1700 2950 50  0001 C CNN
-F 1 "GND" H 1700 3050 50  0000 C CNN
-F 2 "" H 1700 3200 50  0000 C CNN
-F 3 "" H 1700 3200 50  0000 C CNN
-	1    1700 3200
+P 1350 3200
+F 0 "#PWR?" H 1350 2950 50  0001 C CNN
+F 1 "GND" H 1350 3050 50  0000 C CNN
+F 2 "" H 1350 3200 50  0000 C CNN
+F 3 "" H 1350 3200 50  0000 C CNN
+	1    1350 3200
 	1    0    0    -1  
 $EndComp
 Text Label 4900 2200 2    60   ~ 0
@@ -825,6 +792,116 @@ Text Notes 10000 3450 0    60   ~ 0
 ToDo
 Text Label 9600 4800 0    60   ~ 0
 Brake-
+Text Label 8750 4600 0    60   ~ 0
+RXSM_28V
+$Comp
+L Q_NMOS_GSD Q?
+U 1 1 59097F47
+P 9100 5100
+F 0 "Q?" H 9050 5000 50  0000 R CNN
+F 1 "N-MOS" H 9150 5250 50  0000 R CNN
+F 2 "" H 9300 5200 50  0000 C CNN
+F 3 "" H 9100 5100 50  0000 C CNN
+	1    9100 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 59098973
+P 9200 5500
+F 0 "#PWR?" H 9200 5250 50  0001 C CNN
+F 1 "GND" H 9200 5350 50  0000 C CNN
+F 2 "" H 9200 5500 50  0001 C CNN
+F 3 "" H 9200 5500 50  0001 C CNN
+	1    9200 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 59098E08
+P 9000 5400
+F 0 "R?" V 9080 5400 50  0000 C CNN
+F 1 "100k" V 9000 5400 50  0000 C CNN
+F 2 "" V 8930 5400 50  0001 C CNN
+F 3 "" H 9000 5400 50  0001 C CNN
+	1    9000 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5909C2E9
+P 8550 5100
+F 0 "R?" V 8630 5100 50  0000 C CNN
+F 1 "1k" V 8550 5100 50  0000 C CNN
+F 2 "" V 8480 5100 50  0001 C CNN
+F 3 "" H 8550 5100 50  0001 C CNN
+	1    8550 5100
+	0    1    1    0   
+$EndComp
+Text Label 8700 5000 2    60   ~ 0
+Brake_EN
+Text Label 1900 4350 2    60   ~ 0
+Brake_EN
+$Comp
+L D D?
+U 1 1 590A075E
+P 9400 4700
+F 0 "D?" H 9550 4650 50  0000 C CNN
+F 1 "D" H 9400 4600 50  0000 C CNN
+F 2 "" H 9400 4700 50  0001 C CNN
+F 3 "" H 9400 4700 50  0001 C CNN
+	1    9400 4700
+	-1   0    0    1   
+$EndComp
+Text Notes 8500 4750 0    60   ~ 0
+snubber diode
+Text Notes 9950 6000 0    60   ~ 0
+5V power supply\nfor hall & encoder
+Text Notes 6700 6400 0    60   ~ 0
+3.3V power supply for\nADC and transceivers
+NoConn ~ 1050 4750
+$Comp
+L DB15_MALE J?
+U 1 1 590BBE7C
+P 750 1650
+F 0 "J?" H 770 2500 50  0000 C CNN
+F 1 "RXSM experiment connector" V 950 1650 50  0000 C CNN
+F 2 "" H 750 1650 50  0001 C CNN
+F 3 "" H 750 1650 50  0001 C CNN
+	1    750  1650
+	-1   0    0    1   
+$EndComp
+Text Label 1700 1050 2    51   ~ 0
+RXSM_power
+Text Label 1700 1150 2    51   ~ 0
+RXSM_charge+
+Text Label 1650 2250 2    51   ~ 0
+RXSM_Ground
+Text Label 1550 1750 2    51   ~ 0
+RXSM_LO
+Text Label 1550 1550 2    51   ~ 0
+RXSM_SOE
+Text Label 1550 1350 2    51   ~ 0
+RXSM_SODS
+Text Label 1550 2050 2    51   ~ 0
+RXSM_RX_~B
+Text Label 1550 1950 2    51   ~ 0
+RXSM_RX_Y
+Text Label 1550 2150 2    51   ~ 0
+RXSM_RX_~Z
+$Comp
+L CP C?
+U 1 1 58C97CE9
+P 2400 2250
+F 0 "C?" H 2425 2350 50  0000 L CNN
+F 1 "10µ" H 2425 2150 50  0000 L CNN
+F 2 "" H 2438 2100 50  0000 C CNN
+F 3 "" H 2400 2250 50  0000 C CNN
+	1    2400 2250
+	1    0    0    -1  
+$EndComp
+Text Label 1700 1650 2    51   ~ 0
+RXSM_charge-
 Wire Wire Line
 	4700 1300 4100 1300
 Wire Wire Line
@@ -899,36 +976,20 @@ Wire Wire Line
 Wire Wire Line
 	2650 1400 2650 1700
 Wire Wire Line
-	1700 1300 1750 1300
-Wire Wire Line
-	1750 1300 1750 1350
-Wire Wire Line
-	1750 1350 1850 1350
-Wire Wire Line
-	1700 1200 1750 1200
-Wire Wire Line
-	1750 1200 1750 1150
-Wire Wire Line
-	1750 1150 1850 1150
-Wire Wire Line
-	2050 1150 2650 1150
-Wire Wire Line
-	2300 1150 2300 1200
+	2450 1150 2450 1200
 Wire Wire Line
 	2650 1150 2650 1200
 Wire Wire Line
 	2650 1200 2750 1200
-Connection ~ 2300 1150
+Connection ~ 2450 1150
 Wire Wire Line
-	2050 1350 2100 1350
+	2200 1350 2250 1350
 Wire Wire Line
-	2100 1350 2100 1600
-Wire Wire Line
-	2100 1600 2650 1600
+	2250 1350 2250 1600
 Connection ~ 2650 1600
 Wire Wire Line
-	2300 1500 2300 1600
-Connection ~ 2300 1600
+	2450 1500 2450 1600
+Connection ~ 2450 1600
 Wire Wire Line
 	6850 3000 6850 2900
 Connection ~ 6850 2900
@@ -945,50 +1006,27 @@ Wire Wire Line
 	7550 2900 7550 3000
 Connection ~ 7550 2900
 Wire Wire Line
-	1700 2200 1750 2200
+	2200 2350 2250 2350
 Wire Wire Line
-	1750 2200 1750 2150
+	2250 2350 2250 2500
 Wire Wire Line
-	1750 2150 1800 2150
+	2250 2450 2400 2450
 Wire Wire Line
-	1700 2300 1750 2300
+	2200 2150 2250 2150
 Wire Wire Line
-	1750 2300 1750 2350
-Wire Wire Line
-	1750 2350 1800 2350
-Wire Wire Line
-	2000 2350 2050 2350
-Wire Wire Line
-	2050 2350 2050 2500
-Wire Wire Line
-	2050 2450 2150 2450
-Wire Wire Line
-	2150 2450 2150 2400
-Wire Wire Line
-	2000 2150 2050 2150
-Wire Wire Line
-	2050 2150 2050 2050
-Wire Wire Line
-	2050 2050 2600 2050
-Wire Wire Line
-	2150 2050 2150 2100
-Connection ~ 2050 2450
+	2250 2150 2250 2050
+Connection ~ 2250 2450
 Wire Wire Line
 	2600 2050 2600 2200
 Wire Wire Line
 	2600 2200 2700 2200
-Connection ~ 2150 2050
 Wire Wire Line
 	2700 2400 2600 2400
 Wire Wire Line
 	2700 3000 3100 3000
 Wire Wire Line
 	1850 2750 1850 3100
-Wire Wire Line
-	1700 3000 1900 3000
 Connection ~ 1850 3000
-Wire Wire Line
-	1700 3200 1700 3100
 Wire Wire Line
 	1850 3400 2800 3400
 Wire Wire Line
@@ -1209,56 +1247,10 @@ Wire Wire Line
 	9550 4700 10450 4700
 Wire Wire Line
 	9200 4800 10450 4800
-Text Label 8750 4600 0    60   ~ 0
-RXSM_28V
-$Comp
-L Q_NMOS_GSD Q?
-U 1 1 59097F47
-P 9100 5100
-F 0 "Q?" H 9050 5000 50  0000 R CNN
-F 1 "N-MOS" H 9150 5250 50  0000 R CNN
-F 2 "" H 9300 5200 50  0000 C CNN
-F 3 "" H 9100 5100 50  0000 C CNN
-	1    9100 5100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9200 4700 9200 4900
-$Comp
-L GND #PWR?
-U 1 1 59098973
-P 9200 5500
-F 0 "#PWR?" H 9200 5250 50  0001 C CNN
-F 1 "GND" H 9200 5350 50  0000 C CNN
-F 2 "" H 9200 5500 50  0001 C CNN
-F 3 "" H 9200 5500 50  0001 C CNN
-	1    9200 5500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9200 5500 9200 5300
-$Comp
-L R R?
-U 1 1 59098E08
-P 9000 5400
-F 0 "R?" V 9080 5400 50  0000 C CNN
-F 1 "100k" V 9000 5400 50  0000 C CNN
-F 2 "" V 8930 5400 50  0001 C CNN
-F 3 "" H 9000 5400 50  0001 C CNN
-	1    9000 5400
-	0    1    1    0   
-$EndComp
-$Comp
-L R R?
-U 1 1 5909C2E9
-P 8550 5100
-F 0 "R?" V 8630 5100 50  0000 C CNN
-F 1 "1k" V 8550 5100 50  0000 C CNN
-F 2 "" V 8480 5100 50  0001 C CNN
-F 3 "" H 8550 5100 50  0001 C CNN
-	1    8550 5100
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8700 5100 8900 5100
 Wire Wire Line
@@ -1273,26 +1265,11 @@ Wire Wire Line
 	8400 5100 8300 5100
 Wire Wire Line
 	8300 5100 8300 5000
-Text Label 8700 5000 2    60   ~ 0
-Brake_EN
-Text Label 1900 4350 2    60   ~ 0
-Brake_EN
 Wire Wire Line
 	8300 5000 8700 5000
 Wire Wire Line
 	9250 4700 9200 4700
 Connection ~ 9200 4800
-$Comp
-L D D?
-U 1 1 590A075E
-P 9400 4700
-F 0 "D?" H 9550 4650 50  0000 C CNN
-F 1 "D" H 9400 4600 50  0000 C CNN
-F 2 "" H 9400 4700 50  0001 C CNN
-F 3 "" H 9400 4700 50  0001 C CNN
-	1    9400 4700
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	10400 5600 10400 5500
 Wire Wire Line
@@ -1306,12 +1283,6 @@ Wire Wire Line
 Wire Wire Line
 	9600 4600 9600 4700
 Connection ~ 9600 4700
-Text Notes 8500 4750 0    60   ~ 0
-snubber diode
-Text Notes 9950 6000 0    60   ~ 0
-5V power supply\nfor hall & encoder
-Text Notes 6700 6400 0    60   ~ 0
-3.3V power supply for\nADC and transceivers
 Wire Wire Line
 	1050 4350 1900 4350
 Wire Wire Line
@@ -1322,5 +1293,69 @@ Wire Wire Line
 Wire Wire Line
 	1050 4850 1150 4850
 Connection ~ 1150 4850
-NoConn ~ 1050 4750
+Wire Wire Line
+	1050 950  1150 950 
+Wire Wire Line
+	1150 950  1150 1050
+Wire Wire Line
+	1050 1050 2000 1050
+Connection ~ 1150 1050
+Wire Wire Line
+	1050 1150 1800 1150
+Wire Wire Line
+	1050 2350 1150 2350
+Wire Wire Line
+	1150 2350 1150 2250
+Wire Wire Line
+	1050 2250 1900 2250
+Connection ~ 1150 2250
+Wire Wire Line
+	2400 2450 2400 2400
+Wire Wire Line
+	2250 2050 2600 2050
+Wire Wire Line
+	2400 2100 2400 2050
+Connection ~ 2400 2050
+Wire Wire Line
+	2250 1600 2650 1600
+Wire Wire Line
+	2200 1150 2650 1150
+Wire Wire Line
+	2000 1050 2000 1150
+Wire Wire Line
+	1800 1150 1800 2150
+Wire Wire Line
+	1800 2150 2000 2150
+Wire Wire Line
+	2000 1350 1900 1350
+Wire Wire Line
+	1900 1350 1900 2250
+Wire Wire Line
+	1050 1650 1700 1650
+Wire Wire Line
+	1700 1650 1700 2350
+Wire Wire Line
+	1700 2350 2000 2350
+Text Label 1550 1850 2    51   ~ 0
+RXSM_RX_A
+Wire Wire Line
+	1550 1350 1050 1350
+Wire Wire Line
+	1050 1550 1550 1550
+Wire Wire Line
+	1550 1750 1050 1750
+Wire Wire Line
+	1050 1850 1550 1850
+Wire Wire Line
+	1550 1950 1050 1950
+Wire Wire Line
+	1050 2050 1550 2050
+Wire Wire Line
+	1550 2150 1050 2150
+NoConn ~ 1050 1250
+NoConn ~ 1050 1450
+Wire Wire Line
+	1350 3100 1350 3200
+Wire Wire Line
+	1350 3000 1900 3000
 $EndSCHEMATC
