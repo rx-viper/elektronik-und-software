@@ -1,4 +1,4 @@
-update=Sat Apr 15 19:00:20 2017
+update=Sat Apr 15 19:27:22 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -80,3 +80,4 @@ LibName38=lib/pc3h7
 LibName39=lib/esd_diode_dual
 LibName40=lib/ad7928
 LibName41=references
+LibName42=lib/lt3592

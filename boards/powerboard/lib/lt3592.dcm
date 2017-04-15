@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LT3592
+D 500mA Wide Input Voltage Range Step-Down LED Driver with 10:1 Dimming
+K LED, driver, dimming, Buck, constant current
+F http://www.linear.com/docs/26388
+$ENDCMP
+#
+#End Doc Library
