@@ -36,12 +36,13 @@ LIBS:maxim
 LIBS:common_mode_choke
 LIBS:esd_diode_dual
 LIBS:max6126
+LIBS:ltc2984
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 2 2
+Sheet 2 4
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
 Rev "03"
@@ -273,31 +274,31 @@ Text HLabel 12800 7050 2    59   Output ~ 0
 RasPi_TX
 Text HLabel 12800 7150 2    59   Input ~ 0
 RasPi_RX
-Text HLabel 12800 6050 2    59   Output ~ 0
-temp_SPI_SCK
-Text HLabel 12800 6150 2    59   Input ~ 0
-temp_SPI_MISO
-Text HLabel 12800 6250 2    59   Output ~ 0
-temp_SPI_MOSI
-Text HLabel 3200 7250 0    59   Input ~ 0
+Text HLabel 14850 6250 2    59   Output ~ 0
+temp_SPI1_SCK
+Text HLabel 14850 6350 2    59   Input ~ 0
+temp_SPI1_MISO
+Text HLabel 14850 6450 2    59   Output ~ 0
+temp_SPI1_MOSI
+Text HLabel 14850 7050 2    59   Input ~ 0
 temp1_INT
-Text HLabel 3200 7450 0    59   Input ~ 0
+Text HLabel 14850 7250 2    59   Input ~ 0
 temp2_INT
-Text HLabel 3200 7650 0    59   Input ~ 0
+Text HLabel 14850 7450 2    59   Input ~ 0
 temp3_INT
-Text HLabel 3200 7850 0    59   Input ~ 0
+Text HLabel 14850 7650 2    59   Input ~ 0
 temp4_INT
-Text HLabel 3200 7350 0    59   Output ~ 0
+Text HLabel 14850 7150 2    59   Output ~ 0
 temp1_CS
-Text HLabel 3200 7550 0    59   Output ~ 0
+Text HLabel 14850 7350 2    59   Output ~ 0
 temp2_CS
-Text HLabel 3200 7750 0    59   Output ~ 0
+Text HLabel 14850 7550 2    59   Output ~ 0
 temp3_CS
-Text HLabel 3200 7950 0    59   Output ~ 0
+Text HLabel 14850 7750 2    59   Output ~ 0
 temp4_CS
-Text HLabel 12800 7250 2    59   Input ~ 0
+Text HLabel 14850 7850 2    59   Input ~ 0
 temp5_INT
-Text HLabel 12800 7350 2    59   Output ~ 0
+Text HLabel 14850 7950 2    59   Output ~ 0
 temp5_CS
 Text HLabel 12800 4050 2    60   Output ~ 0
 probe1_EN
@@ -771,32 +772,6 @@ Wire Wire Line
 Wire Wire Line
 	12700 7150 12800 7150
 Wire Wire Line
-	12800 6050 12700 6050
-Wire Wire Line
-	12700 6150 12800 6150
-Wire Wire Line
-	12800 6250 12700 6250
-Wire Wire Line
-	3200 7250 3300 7250
-Wire Wire Line
-	3300 7350 3200 7350
-Wire Wire Line
-	3200 7450 3300 7450
-Wire Wire Line
-	3300 7550 3200 7550
-Wire Wire Line
-	3200 7650 3300 7650
-Wire Wire Line
-	3300 7750 3200 7750
-Wire Wire Line
-	3200 7850 3300 7850
-Wire Wire Line
-	3300 7950 3200 7950
-Wire Wire Line
-	12800 7250 12700 7250
-Wire Wire Line
-	12700 7350 12800 7350
-Wire Wire Line
 	12800 3850 12700 3850
 Wire Wire Line
 	12700 3950 12800 3950
@@ -970,13 +945,13 @@ Wire Wire Line
 	13600 5950 14250 5950
 Wire Wire Line
 	13600 5850 13600 5950
-Text HLabel 13000 6450 2    60   Output ~ 0
+Text HLabel 14850 5750 2    60   Output ~ 0
 extADC_SPI_SCK
-Text HLabel 13000 6550 2    60   Input ~ 0
+Text HLabel 14850 5850 2    60   Input ~ 0
 extADC_SPI_MISO
-Text HLabel 13000 6650 2    60   Output ~ 0
+Text HLabel 14850 5950 2    60   Output ~ 0
 extADC_SPI_MOSI
-Text HLabel 13000 6750 2    60   Output ~ 0
+Text HLabel 14850 6050 2    60   Output ~ 0
 extADC_SPI_CS1
 Text HLabel 14200 3900 2    60   Output ~ 0
 brake_EN
@@ -990,4 +965,14 @@ Text HLabel 13050 2550 2    60   Input ~ 0
 hall_V
 Text HLabel 13050 2450 2    60   Input ~ 0
 hall_U
+Text HLabel 14850 6650 2    59   Output ~ 0
+temp_SPI2_SCK
+Text HLabel 14850 6750 2    59   Input ~ 0
+temp_SPI2_MISO
+Text HLabel 14850 6850 2    59   Output ~ 0
+temp_SPI2_MOSI
+Text HLabel 14850 8050 2    59   Input ~ 0
+temp6_INT
+Text HLabel 14850 8150 2    59   Output ~ 0
+temp6_CS
 $EndSCHEMATC

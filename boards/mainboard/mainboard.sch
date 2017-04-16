@@ -36,12 +36,13 @@ LIBS:maxim
 LIBS:common_mode_choke
 LIBS:esd_diode_dual
 LIBS:max6126
+LIBS:ltc2984
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 4
 Title "Mainboard overview"
 Date "2017-03-14"
 Rev "03"
@@ -84,12 +85,6 @@ F 3 "" H 1450 1300 50  0000 C CNN
 	1    1450 1300
 	1    0    0    -1  
 $EndComp
-Text Label 8400 3750 2    60   ~ 0
-temp_sdi
-Text Label 8400 3650 2    60   ~ 0
-temp_sdo
-Text Label 8400 3550 2    60   ~ 0
-temp_sck
 Text Label 4300 4150 0    60   ~ 0
 Probe3_EN
 Text Label 4300 4050 0    60   ~ 0
@@ -298,26 +293,6 @@ Text Label 2400 1500 2    59   ~ 0
 pressure_SCL
 Text Label 2400 1600 2    59   ~ 0
 pressure_SDA
-Text Label 8400 3850 2    60   ~ 0
-temp1_int
-Text Label 8400 3950 2    60   ~ 0
-temp2_int
-Text Label 8400 4050 2    60   ~ 0
-temp3_int
-Text Label 8400 4150 2    60   ~ 0
-temp4_int
-Text Label 8400 4250 2    60   ~ 0
-temp5_int
-Text Label 8400 4350 2    60   ~ 0
-temp1_nCS
-Text Label 8400 4450 2    60   ~ 0
-temp2_nCS
-Text Label 8400 4550 2    60   ~ 0
-temp3_nCS
-Text Label 8400 4650 2    60   ~ 0
-temp4_nCS
-Text Label 8400 4750 2    60   ~ 0
-temp5_nCS
 $Comp
 L R R?
 U 1 1 58C8FC8C
@@ -369,11 +344,11 @@ F0 "Mainboard microcontroller" 60
 F1 "mainboard_microcontroller.sch" 60
 F2 "RXSM_RX" I R 7900 2000 59 
 F3 "RasPi_RX" I R 7900 1700 59 
-F4 "temp1_INT" I R 7900 3850 59 
-F5 "temp2_INT" I R 7900 3950 59 
-F6 "temp3_INT" I R 7900 4050 59 
-F7 "temp4_INT" I R 7900 4150 59 
-F8 "temp5_INT" I R 7900 4250 59 
+F4 "temp1_INT" I R 7900 3650 59 
+F5 "temp2_INT" I R 7900 3750 59 
+F6 "temp3_INT" I R 7900 3850 59 
+F7 "temp4_INT" I R 7900 3950 59 
+F8 "temp5_INT" I R 7900 4050 59 
 F9 "bat_charge_status" I L 5050 4350 60 
 F10 "RXSM_LO" I R 7900 2300 60 
 F11 "RXSM_SOE" I R 7900 2400 60 
@@ -405,24 +380,29 @@ F36 "encoder3_A" I L 5050 2000 60
 F37 "encoder3_B" I L 5050 2100 60 
 F38 "RXSM_TX" O R 7900 2100 60 
 F39 "RasPi_TX" O R 7900 1600 60 
-F40 "temp1_CS" O R 7900 4350 60 
-F41 "temp2_CS" O R 7900 4450 60 
-F42 "temp3_CS" O R 7900 4550 60 
-F43 "temp4_CS" O R 7900 4650 60 
-F44 "temp5_CS" O R 7900 4750 60 
-F45 "temp_SPI_SCK" O R 7900 3550 60 
-F46 "temp_SPI_MISO" I R 7900 3650 60 
-F47 "temp_SPI_MOSI" O R 7900 3750 60 
-F48 "extADC_SPI_SCK" O L 5050 3050 60 
-F49 "extADC_SPI_MISO" I L 5050 3150 60 
-F50 "extADC_SPI_MOSI" O L 5050 3250 60 
-F51 "extADC_SPI_CS1" O L 5050 3350 60 
-F52 "brake_EN" O L 5050 5350 60 
-F53 "encoderMotor_A" I L 5050 4750 60 
-F54 "encoderMotor_B" I L 5050 4850 60 
-F55 "hall_W" I L 5050 5750 60 
-F56 "hall_V" I L 5050 5650 60 
-F57 "hall_U" I L 5050 5550 60 
+F40 "temp1_CS" O R 7900 4250 60 
+F41 "temp2_CS" O R 7900 4350 60 
+F42 "temp3_CS" O R 7900 4450 60 
+F43 "temp4_CS" O R 7900 4550 60 
+F44 "temp5_CS" O R 7900 4650 60 
+F45 "extADC_SPI_SCK" O L 5050 3050 60 
+F46 "extADC_SPI_MISO" I L 5050 3150 60 
+F47 "extADC_SPI_MOSI" O L 5050 3250 60 
+F48 "extADC_SPI_CS1" O L 5050 3350 60 
+F49 "brake_EN" O L 5050 5350 60 
+F50 "encoderMotor_A" I L 5050 4750 60 
+F51 "encoderMotor_B" I L 5050 4850 60 
+F52 "hall_W" I L 5050 5750 60 
+F53 "hall_V" I L 5050 5650 60 
+F54 "hall_U" I L 5050 5550 60 
+F55 "temp_SPI1_SCK" O R 7900 3050 60 
+F56 "temp_SPI1_MISO" I R 7900 3250 60 
+F57 "temp_SPI1_MOSI" O R 7900 3150 60 
+F58 "temp_SPI2_SCK" O R 7900 3350 60 
+F59 "temp_SPI2_MISO" I R 7900 3550 60 
+F60 "temp_SPI2_MOSI" O R 7900 3450 60 
+F61 "temp6_INT" I R 7900 4150 60 
+F62 "temp6_CS" O R 7900 4750 60 
 $EndSheet
 Text Notes 950  2000 1    60   ~ 0
 AMSYS\n5915-0010-D\n(3.3V)\nor First Sensor HCLA
@@ -663,26 +643,6 @@ Wire Wire Line
 Wire Wire Line
 	3600 2550 5050 2550
 Wire Wire Line
-	8400 3850 7900 3850
-Wire Wire Line
-	7900 3950 8400 3950
-Wire Wire Line
-	8400 4050 7900 4050
-Wire Wire Line
-	7900 4150 8400 4150
-Wire Wire Line
-	8400 4250 7900 4250
-Wire Wire Line
-	7900 4350 8400 4350
-Wire Wire Line
-	8400 4450 7900 4450
-Wire Wire Line
-	7900 4550 8400 4550
-Wire Wire Line
-	8400 4650 7900 4650
-Wire Wire Line
-	7900 4750 8400 4750
-Wire Wire Line
 	1850 1700 1750 1700
 Wire Wire Line
 	1750 1700 1750 1600
@@ -759,10 +719,6 @@ Wire Wire Line
 	9950 5650 9850 5650
 Wire Wire Line
 	8950 5800 8850 5800
-Wire Wire Line
-	8400 3650 7900 3650
-Wire Wire Line
-	7900 3750 8400 3750
 Wire Wire Line
 	4400 1500 4950 1500
 Wire Wire Line
@@ -893,10 +849,6 @@ F 3 "" H 800 5500 50  0001 C CNN
 	1    800  5500
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	7900 3550 8400 3550
-Text Notes 8700 4100 0    60   ~ 0
-ToDo: 6x LTC2984 sub-schematic with 2x SPI
 Text Label 1950 5900 2    60   ~ 0
 Lens_Heat_EN
 Text Label 1950 5000 2    60   ~ 0
@@ -1100,4 +1052,64 @@ Text Label 4300 4750 0    60   ~ 0
 Encoder_A+
 Text Label 4300 4850 0    60   ~ 0
 Encoder_B+
+$Sheet
+S 8850 2950 1550 1900
+U 58F3D7C6
+F0 "Mainboard_Temp_Sensors" 60
+F1 "mainboard_temp_sensors.sch" 60
+F2 "SPI1_SCK" I L 8850 3050 60 
+F3 "SPI1_MOSI" I L 8850 3150 60 
+F4 "SPI1_MISO" O L 8850 3250 60 
+F5 "SPI1_CS1" I L 8850 4250 60 
+F6 "SPI1_CS2" I L 8850 4350 60 
+F7 "SPI1_CS3" I L 8850 4450 60 
+F8 "SPI2_SCK" I L 8850 3350 60 
+F9 "SPI2_MOSI" I L 8850 3450 60 
+F10 "SPI2_MISO" O L 8850 3550 60 
+F11 "SPI2_CS1" I L 8850 4550 60 
+F12 "SPI2_CS2" I L 8850 4650 60 
+F13 "SPI2_CS3" I L 8850 4750 60 
+F14 "INT1" O L 8850 3650 60 
+F15 "INT2" O L 8850 3750 60 
+F16 "INT3" O L 8850 3850 60 
+F17 "INT4" O L 8850 3950 60 
+F18 "INT5" O L 8850 4050 60 
+F19 "INT6" O L 8850 4150 60 
+$EndSheet
+Wire Wire Line
+	7900 3050 8850 3050
+Wire Wire Line
+	8850 3150 7900 3150
+Wire Wire Line
+	7900 3250 8850 3250
+Wire Wire Line
+	8850 3350 7900 3350
+Wire Wire Line
+	7900 3450 8850 3450
+Wire Wire Line
+	8850 3550 7900 3550
+Wire Wire Line
+	7900 3650 8850 3650
+Wire Wire Line
+	8850 3750 7900 3750
+Wire Wire Line
+	7900 3850 8850 3850
+Wire Wire Line
+	8850 3950 7900 3950
+Wire Wire Line
+	7900 4050 8850 4050
+Wire Wire Line
+	8850 4150 7900 4150
+Wire Wire Line
+	7900 4250 8850 4250
+Wire Wire Line
+	8850 4350 7900 4350
+Wire Wire Line
+	7900 4450 8850 4450
+Wire Wire Line
+	8850 4550 7900 4550
+Wire Wire Line
+	7900 4650 8850 4650
+Wire Wire Line
+	8850 4750 7900 4750
 $EndSCHEMATC
