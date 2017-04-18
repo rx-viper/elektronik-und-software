@@ -46,7 +46,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 10
+Sheet 8 11
 Title "Powerboard: Heat Probes"
 Date "2017-04-15"
 Rev "1"

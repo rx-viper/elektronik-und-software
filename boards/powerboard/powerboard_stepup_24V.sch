@@ -46,7 +46,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 10
+Sheet 3 11
 Title "Powerboard 24V regulator"
 Date "2017-03-14"
 Rev "02"

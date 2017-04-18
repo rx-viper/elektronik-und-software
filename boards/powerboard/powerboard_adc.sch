@@ -46,7 +46,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 10
+Sheet 9 11
 Title "Powerboard: ADC"
 Date "2017-04-15"
 Rev "1"
@@ -256,4 +256,18 @@ F 3 "" H 4600 3150 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4600 3150 4700 3150
+$Comp
+L +2V5 #PWR?
+U 1 1 58F831C8
+P 8050 3650
+F 0 "#PWR?" H 8050 3500 50  0001 C CNN
+F 1 "+2V5" H 8050 3790 50  0000 C CNN
+F 2 "" H 8050 3650 50  0001 C CNN
+F 3 "" H 8050 3650 50  0001 C CNN
+	1    8050 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 3650 8050 3750
+Connection ~ 8050 3750
 $EndSCHEMATC
