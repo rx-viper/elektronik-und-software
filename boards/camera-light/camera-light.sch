@@ -102,8 +102,4 @@ Wire Wire Line
 	5350 2500 5550 2500
 Wire Wire Line
 	5550 2500 5550 2600
-Text Label 4700 2400 0    60   ~ 0
-GND
-Text Label 5550 2400 0    60   ~ 0
-VCC
 $EndSCHEMATC
