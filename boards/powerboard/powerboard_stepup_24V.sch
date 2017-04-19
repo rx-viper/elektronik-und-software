@@ -169,8 +169,8 @@ $Comp
 L R R?
 U 1 1 588FA451
 P 3300 2100
-F 0 "R?" V 3380 2100 50  0000 C CNN
-F 1 "43k2" V 3300 2100 50  0000 C CNN
+F 0 "R?" V 3200 2100 50  0000 C CNN
+F 1 "27k" V 3300 2100 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 3230 2100 50  0001 C CNN
 F 3 "" H 3300 2100 50  0000 C CNN
 	1    3300 2100
@@ -180,8 +180,8 @@ $Comp
 L R R?
 U 1 1 588FA49A
 P 3300 1650
-F 0 "R?" V 3380 1650 50  0000 C CNN
-F 1 "200k" V 3300 1650 50  0000 C CNN
+F 0 "R?" V 3250 1800 50  0000 C CNN
+F 1 "100k" V 3300 1650 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 3230 1650 50  0001 C CNN
 F 3 "" H 3300 1650 50  0000 C CNN
 	1    3300 1650
@@ -498,4 +498,10 @@ Wire Wire Line
 Connection ~ 6250 1300
 Wire Wire Line
 	6650 1300 8700 1300
+Text Notes 3450 2350 1    39   ~ 0
+Datasheet R4
+Text Notes 2200 3800 1    49   ~ 0
+UVLO lock-out is set by R3 and R4 (see datasheet p.8-9):\n1.22V * (100k ohm + 27k ohm)/27k ohm = 5.739V\n(Per cell: 1.22V * (100k ohm + 27k ohm)/27k ohm / 8cells = 0.773V/cell)\n-> R3 = 100k; R4 = 27k\n
+Text Notes 3450 1800 1    39   ~ 0
+Datasheet R3
 $EndSCHEMATC
