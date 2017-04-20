@@ -42,7 +42,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 9 9
+Sheet 9 11
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
 Rev "03"
@@ -242,67 +242,67 @@ F 3 "" H 3300 3550 50  0000 C CNN
 	1    3300 3550
 	1    0    0    -1  
 $EndComp
-Text HLabel 14850 5250 2    59   Output ~ 0
+Text HLabel 12900 4650 2    59   Output ~ 0
 pressure_SCL
-Text HLabel 14850 5350 2    59   BiDi ~ 0
+Text HLabel 12900 4750 2    59   BiDi ~ 0
 pressure_SDA
-Text HLabel 15750 2000 0    59   Output ~ 0
+Text HLabel 12900 6950 2    59   Output ~ 0
 RXSM_TX
-Text HLabel 15750 2100 0    59   Input ~ 0
+Text HLabel 12900 7650 2    59   Input ~ 0
 RXSM_RX
-Text HLabel 15750 2300 0    59   Output ~ 0
+Text HLabel 3500 5050 0    59   Output ~ 0
 LED1
-Text HLabel 15750 2400 0    59   Output ~ 0
+Text HLabel 3500 5150 0    59   Output ~ 0
 LED2
-Text HLabel 15750 2500 0    59   Output ~ 0
+Text HLabel 3500 5250 0    59   Output ~ 0
 LED3
-Text HLabel 15750 2600 0    59   Input ~ 0
+Text HLabel 3500 5350 0    59   Input ~ 0
 SW1
-Text HLabel 14850 9450 2    59   Output ~ 0
+Text HLabel 3500 7550 0    59   Output ~ 0
 RasPi_TX
-Text HLabel 14850 9550 2    59   Input ~ 0
+Text HLabel 3500 7450 0    59   Input ~ 0
 RasPi_RX
-Text HLabel 14850 6250 2    59   Output ~ 0
+Text HLabel 3500 7650 0    59   Output ~ 0
 temp_SPI1_SCK
-Text HLabel 14850 6350 2    59   Input ~ 0
+Text HLabel 3500 7950 0    59   Input ~ 0
 temp_SPI1_MISO
-Text HLabel 14850 6450 2    59   Output ~ 0
+Text HLabel 3500 8050 0    59   Output ~ 0
 temp_SPI1_MOSI
-Text HLabel 14850 7050 2    59   Input ~ 0
+Text HLabel 3500 5950 0    59   Input ~ 0
 temp1_INT
-Text HLabel 14850 7250 2    59   Input ~ 0
+Text HLabel 3500 6150 0    59   Input ~ 0
 temp2_INT
-Text HLabel 14850 7450 2    59   Input ~ 0
+Text HLabel 3500 6350 0    59   Input ~ 0
 temp3_INT
-Text HLabel 14850 7650 2    59   Input ~ 0
+Text HLabel 12900 7050 2    59   Input ~ 0
 temp4_INT
-Text HLabel 14850 7150 2    59   Output ~ 0
+Text HLabel 3500 6050 0    59   Output ~ 0
 temp1_CS
-Text HLabel 14850 7350 2    59   Output ~ 0
+Text HLabel 3500 6250 0    59   Output ~ 0
 temp2_CS
-Text HLabel 14850 7550 2    59   Output ~ 0
+Text HLabel 3500 6750 0    59   Output ~ 0
 temp3_CS
-Text HLabel 14850 7750 2    59   Output ~ 0
+Text HLabel 12900 7150 2    59   Output ~ 0
 temp4_CS
-Text HLabel 14850 7850 2    59   Input ~ 0
+Text HLabel 12900 7250 2    59   Input ~ 0
 temp5_INT
-Text HLabel 14850 7950 2    59   Output ~ 0
+Text HLabel 3500 3850 0    59   Output ~ 0
 temp5_CS
-Text HLabel 14850 4550 2    60   Output ~ 0
+Text HLabel 12900 5450 2    60   Output ~ 0
 probe1_EN
-Text HLabel 14850 4650 2    60   Output ~ 0
+Text HLabel 12900 5550 2    60   Output ~ 0
 probe2_EN
-Text HLabel 14850 4750 2    60   Output ~ 0
+Text HLabel 12900 2550 2    60   Output ~ 0
 probe3_EN
-Text HLabel 14850 5450 2    60   Output ~ 0
+Text HLabel 12900 4850 2    60   Output ~ 0
 cam_light_EN
-Text HLabel 14850 5550 2    60   Output ~ 0
+Text HLabel 12900 4950 2    60   Output ~ 0
 lens_heater_EN
-Text HLabel 14850 4950 2    60   Input ~ 0
+Text HLabel 3500 4250 0    60   Input ~ 0
 bat_charge_status
-Text HLabel 14850 5050 2    60   Output ~ 0
+Text HLabel 3500 4350 0    60   Output ~ 0
 bat_boost_EN
-Text HLabel 14850 5150 2    60   Output ~ 0
+Text HLabel 3500 4450 0    60   Output ~ 0
 bat_charge_EN
 $Comp
 L C C?
@@ -392,155 +392,12 @@ F 3 "" H 10250 10150 50  0000 C CNN
 	1    10250 10150
 	1    0    0    -1  
 $EndComp
-$Comp
-L SST26VF064B U?
-U 1 1 589424A1
-P 17850 1200
-F 0 "U?" H 17850 900 60  0000 C CNN
-F 1 "SST26VF064B" H 17850 1500 60  0000 C CNN
-F 2 "" H 17850 1200 60  0001 C CNN
-F 3 "" H 17850 1200 60  0001 C CNN
-	1    17850 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 5894278E
-P 16750 1250
-F 0 "C?" H 16775 1350 50  0000 L CNN
-F 1 "100n" H 16775 1150 50  0000 L CNN
-F 2 "" H 16788 1100 50  0000 C CNN
-F 3 "" H 16750 1250 50  0000 C CNN
-	1    16750 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58942828
-P 18500 950
-F 0 "#PWR?" H 18500 800 50  0001 C CNN
-F 1 "+3V3" H 18500 1090 50  0000 C CNN
-F 2 "" H 18500 950 50  0000 C CNN
-F 3 "" H 18500 950 50  0000 C CNN
-	1    18500 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58942954
-P 16750 1000
-F 0 "#PWR?" H 16750 850 50  0001 C CNN
-F 1 "+3V3" H 16750 1140 50  0000 C CNN
-F 2 "" H 16750 1000 50  0000 C CNN
-F 3 "" H 16750 1000 50  0000 C CNN
-	1    16750 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58942985
-P 17200 1450
-F 0 "#PWR?" H 17200 1200 50  0001 C CNN
-F 1 "GND" H 17200 1300 50  0000 C CNN
-F 2 "" H 17200 1450 50  0000 C CNN
-F 3 "" H 17200 1450 50  0000 C CNN
-	1    17200 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 589429CD
-P 16750 1500
-F 0 "#PWR?" H 16750 1250 50  0001 C CNN
-F 1 "GND" H 16750 1350 50  0000 C CNN
-F 2 "" H 16750 1500 50  0000 C CNN
-F 3 "" H 16750 1500 50  0000 C CNN
-	1    16750 1500
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58943AF8
-P 17200 1250
-F 0 "#PWR?" H 17200 1100 50  0001 C CNN
-F 1 "+3V3" H 17200 1390 50  0000 C CNN
-F 2 "" H 17200 1250 50  0000 C CNN
-F 3 "" H 17200 1250 50  0000 C CNN
-	1    17200 1250
-	0    -1   -1   0   
-$EndComp
-Text HLabel 14850 9050 2    60   Input ~ 0
+Text HLabel 12900 8250 2    60   Input ~ 0
 RXSM_LO
-Text HLabel 14850 9150 2    60   Input ~ 0
+Text HLabel 12900 8350 2    60   Input ~ 0
 RXSM_SOE
-Text HLabel 14850 9250 2    60   Input ~ 0
+Text HLabel 12900 8450 2    60   Input ~ 0
 RXSM_SODS
-$Comp
-L SST26VF064B U?
-U 1 1 58D04847
-P 17850 1950
-F 0 "U?" H 17850 1650 60  0000 C CNN
-F 1 "SST26VF064B" H 17850 2250 60  0000 C CNN
-F 2 "" H 17850 1950 60  0001 C CNN
-F 3 "" H 17850 1950 60  0001 C CNN
-	1    17850 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58D04E8C
-P 17200 2200
-F 0 "#PWR?" H 17200 1950 50  0001 C CNN
-F 1 "GND" H 17200 2050 50  0000 C CNN
-F 2 "" H 17200 2200 50  0000 C CNN
-F 3 "" H 17200 2200 50  0000 C CNN
-	1    17200 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58D057B9
-P 17200 2000
-F 0 "#PWR?" H 17200 1850 50  0001 C CNN
-F 1 "+3V3" H 17200 2140 50  0000 C CNN
-F 2 "" H 17200 2000 50  0000 C CNN
-F 3 "" H 17200 2000 50  0000 C CNN
-	1    17200 2000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L C C?
-U 1 1 58D05CDA
-P 16750 2350
-F 0 "C?" H 16775 2450 50  0000 L CNN
-F 1 "100n" H 16775 2250 50  0000 L CNN
-F 2 "" H 16788 2200 50  0000 C CNN
-F 3 "" H 16750 2350 50  0000 C CNN
-	1    16750 2350
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58D05F40
-P 16750 2600
-F 0 "#PWR?" H 16750 2350 50  0001 C CNN
-F 1 "GND" H 16750 2450 50  0000 C CNN
-F 2 "" H 16750 2600 50  0000 C CNN
-F 3 "" H 16750 2600 50  0000 C CNN
-	1    16750 2600
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR?
-U 1 1 58D0622F
-P 16750 2100
-F 0 "#PWR?" H 16750 1950 50  0001 C CNN
-F 1 "+3V3" H 16750 2240 50  0000 C CNN
-F 2 "" H 16750 2100 50  0000 C CNN
-F 3 "" H 16750 2100 50  0000 C CNN
-	1    16750 2100
-	1    0    0    -1  
-$EndComp
 $Comp
 L CONN_01X03 P?
 U 1 1 58CF021A
@@ -568,50 +425,39 @@ SWDIO
 Text Label 13850 3750 0    60   ~ 0
 SWCLK
 Text Notes 800  10950 0    60   ~ 0
-SPI usage:\n* Flash storage: SPI4\n* Temperature sensors 1-3: SPI2\n* Temperature sensors 4-6:\n* extADC\n\nUART usage:\n* RXSM communication: USART2\n* Raspberry Pi: USART6\n* Debuging: USART3\n\nI2C usage:\n* Pressure sensor: I2C1\n* Batt/strcuture temperature: ?\n\nTimer:\n* TIM1 (Advanced) BLDC Motor\n* TIM2 (General Purpose) Motor encoder\n* TIM3/TIM4/TIM5 (General Purpose) Heat probe encoder
-Text HLabel 14850 4150 2    60   BiDi ~ 0
+SPI usage:\n* SPI1: extADC\n* SPI2: Flash storage 1\n* SPI3: Flash storage\n* SPI4: Temperature sensors 1-3\n* SPI5: Temperature sensors 4-6\n\nUART usage:\n* UART5: RXSM communication\n* UART8: Raspberry Pi\n* USART1: Debugging\n\nI2C usage:\n* I2C1: Pressure sensor\n* I2C2: Batt/structure temperature\n\nTimer:\n* TIM1 (Advanced): BLDC Motor\n* TIM4 (General Purpose): Motor encoder\n* TIM2/TIM3/TIM5 (General Purpose): Heat probe encoder\n* TIM8 (Advanced): Hall sensor\n* TIM9 (Basic): 1x Heat probe PWM\n* TIM12 (Basic): 2x Heat probe PWM\n* TIM10 (Basic): 1x LED light\n* TIM11 (Basic): 1x Camera lens heater
+Text HLabel 3500 5750 0    60   BiDi ~ 0
 temperature_SDA
-Text HLabel 14850 4250 2    60   Output ~ 0
+Text HLabel 3500 5850 0    60   Output ~ 0
 temperature_SCL
-Text HLabel 15750 2700 0    59   Input ~ 0
+Text HLabel 3500 5450 0    59   Input ~ 0
 SW2
-Text HLabel 14850 3550 2    60   Input ~ 0
+Text HLabel 12900 3850 2    60   Input ~ 0
 encoder1_A
-Text HLabel 14850 3650 2    60   Input ~ 0
+Text HLabel 12900 4350 2    60   Input ~ 0
 encoder1_B
-Text HLabel 14850 3750 2    60   Input ~ 0
+Text HLabel 12900 4450 2    60   Input ~ 0
 encoder2_A
-Text HLabel 14850 3850 2    60   Input ~ 0
+Text HLabel 12900 4550 2    60   Input ~ 0
 encoder2_B
-Text HLabel 14850 3950 2    60   Input ~ 0
+Text HLabel 12900 2350 2    60   Input ~ 0
 encoder3_A
-Text HLabel 14850 4050 2    60   Input ~ 0
+Text HLabel 12900 2450 2    60   Input ~ 0
 encoder3_B
 $Comp
 L CONN_01X03 P?
 U 1 1 590458AD
-P 18400 3700
-F 0 "P?" H 18400 3900 50  0000 C CNN
-F 1 "DEBUG" V 18500 3700 50  0000 C CNN
-F 2 "" H 18400 3700 50  0000 C CNN
-F 3 "" H 18400 3700 50  0000 C CNN
-	1    18400 3700
+P 14550 3250
+F 0 "P?" H 14550 3450 50  0000 C CNN
+F 1 "DEBUG" V 14650 3250 50  0000 C CNN
+F 2 "" H 14550 3250 50  0000 C CNN
+F 3 "" H 14550 3250 50  0000 C CNN
+	1    14550 3250
 	1    0    0    -1  
 $EndComp
-$Comp
-L GND #PWR?
-U 1 1 590458B4
-P 18100 3900
-F 0 "#PWR?" H 18100 3650 50  0001 C CNN
-F 1 "GND" H 18100 3750 50  0000 C CNN
-F 2 "" H 18100 3900 50  0000 C CNN
-F 3 "" H 18100 3900 50  0000 C CNN
-	1    18100 3900
-	1    0    0    -1  
-$EndComp
-Text Label 17650 3600 0    59   ~ 0
+Text Label 13700 3250 0    59   ~ 0
 debug_TX
-Text Label 17650 3800 0    59   ~ 0
+Text Label 13700 3350 0    59   ~ 0
 debug_RX
 Wire Wire Line
 	8300 9450 8300 9650
@@ -715,10 +561,6 @@ Wire Wire Line
 	3300 3500 3300 3550
 Connection ~ 3300 3500
 Wire Wire Line
-	16650 3600 18200 3600
-Wire Wire Line
-	16650 3700 17550 3700
-Wire Wire Line
 	10250 10850 10250 10750
 Wire Wire Line
 	9200 10750 11300 10750
@@ -761,89 +603,7 @@ Wire Wire Line
 	10400 10250 10400 10350
 Connection ~ 10400 10250
 Wire Wire Line
-	18500 950  18500 1900
-Wire Wire Line
-	18500 1050 18400 1050
-Wire Wire Line
-	16750 1500 16750 1400
-Wire Wire Line
-	16750 1100 16750 1000
-Wire Wire Line
-	17200 1450 17200 1350
-Wire Wire Line
-	17200 1350 17300 1350
-Wire Wire Line
-	19400 1250 18700 1250
-Wire Wire Line
-	18700 750  17200 750 
-Wire Wire Line
-	17200 750  17200 1150
-Wire Wire Line
-	17000 1150 17300 1150
-Wire Wire Line
-	18400 1250 18600 1250
-Wire Wire Line
-	18700 1250 18700 750 
-Wire Wire Line
-	18600 1150 18600 2000
-Wire Wire Line
-	18600 1150 19400 1150
-Wire Wire Line
-	18500 1150 18400 1150
-Connection ~ 18500 1050
-Wire Wire Line
-	17100 650  18800 650 
-Wire Wire Line
-	18800 650  18800 1050
-Wire Wire Line
-	18800 1050 19400 1050
-Wire Wire Line
-	17100 650  17100 1050
-Wire Wire Line
-	17100 1050 17300 1050
-Wire Wire Line
-	17200 1250 17300 1250
-Wire Wire Line
-	18600 2000 18400 2000
-Connection ~ 18600 1250
-Wire Wire Line
-	18500 1900 18400 1900
-Connection ~ 18500 1150
-Wire Wire Line
-	18400 1800 18500 1800
-Connection ~ 18500 1800
-Wire Wire Line
-	17200 2200 17200 2100
-Wire Wire Line
-	17200 2100 17300 2100
-Wire Wire Line
-	17000 1150 17000 1900
-Wire Wire Line
-	17000 1900 17300 1900
-Connection ~ 17200 1150
-Wire Wire Line
-	17200 2000 17300 2000
-Wire Wire Line
-	19400 950  18900 950 
-Wire Wire Line
-	18900 950  18900 1600
-Wire Wire Line
-	18900 1600 17300 1600
-Wire Wire Line
-	17300 1600 17300 1800
-Wire Wire Line
-	16750 2100 16750 2200
-Wire Wire Line
-	16750 2600 16750 2500
-Wire Wire Line
-	18400 1350 19400 1350
-Wire Wire Line
-	18400 2100 18700 2100
-Wire Wire Line
-	18700 2100 18700 1350
-Connection ~ 18700 1350
-Wire Wire Line
-	14250 3850 14250 3650
+	14250 3250 14250 3850
 Wire Wire Line
 	14250 3650 14350 3650
 Wire Wire Line
@@ -854,88 +614,48 @@ Wire Wire Line
 	14150 3650 14150 3550
 Wire Wire Line
 	14150 3550 14350 3550
-Wire Wire Line
-	18100 3700 18200 3700
-Wire Wire Line
-	18100 3900 18100 3700
-Wire Wire Line
-	17550 3800 18200 3800
-Wire Wire Line
-	17550 3700 17550 3800
-Text HLabel 14850 5750 2    60   Output ~ 0
+Text HLabel 12900 2850 2    60   Output ~ 0
 extADC_SPI_SCK
-Text HLabel 14850 5850 2    60   Input ~ 0
+Text HLabel 12900 2950 2    60   Input ~ 0
 extADC_SPI_MISO
-Text HLabel 14850 5950 2    60   Output ~ 0
+Text HLabel 12900 3050 2    60   Output ~ 0
 extADC_SPI_MOSI
-Text HLabel 14850 6050 2    60   Output ~ 0
+Text HLabel 12900 2750 2    60   Output ~ 0
 extADC_SPI_CS1
-Text HLabel 14850 4450 2    60   Output ~ 0
+Text HLabel 12900 8950 2    60   Output ~ 0
 brake_EN
-Text HLabel 14850 3250 2    60   Input ~ 0
+Text HLabel 12900 8650 2    60   Input ~ 0
 encoderMotor_A
-Text HLabel 14850 3350 2    60   Input ~ 0
+Text HLabel 12900 8750 2    60   Input ~ 0
 encoderMotor_B
-Text HLabel 14850 3150 2    60   Input ~ 0
+Text HLabel 12900 6550 2    60   Input ~ 0
 hall_W
-Text HLabel 14850 3050 2    60   Input ~ 0
+Text HLabel 12900 6450 2    60   Input ~ 0
 hall_V
-Text HLabel 14850 2950 2    60   Input ~ 0
+Text HLabel 12900 6350 2    60   Input ~ 0
 hall_U
-Text HLabel 14850 6650 2    59   Output ~ 0
+Text HLabel 3500 6450 0    59   Output ~ 0
 temp_SPI2_SCK
-Text HLabel 14850 6750 2    59   Input ~ 0
+Text HLabel 3500 6550 0    59   Input ~ 0
 temp_SPI2_MISO
-Text HLabel 14850 6850 2    59   Output ~ 0
+Text HLabel 3500 6650 0    59   Output ~ 0
 temp_SPI2_MOSI
-Text HLabel 14850 8050 2    59   Input ~ 0
+Text HLabel 12900 5750 2    59   Input ~ 0
 temp6_INT
-Text HLabel 14850 8150 2    59   Output ~ 0
+Text HLabel 12900 5850 2    59   Output ~ 0
 temp6_CS
-Text HLabel 14850 8450 2    60   Output ~ 0
+Text HLabel 3500 8250 0    60   Output ~ 0
 Motor_U_N
-Text HLabel 14850 8350 2    60   Output ~ 0
+Text HLabel 3500 8350 0    60   Output ~ 0
 Motor_U_P
-Text HLabel 14850 8550 2    60   Output ~ 0
+Text HLabel 3500 8550 0    60   Output ~ 0
 Motor_V_P
-Text HLabel 14850 8650 2    60   Output ~ 0
+Text HLabel 3500 8450 0    60   Output ~ 0
 Motor_V_N
-Text HLabel 14850 8750 2    60   Output ~ 0
+Text HLabel 3500 8750 0    60   Output ~ 0
 Motor_W_P
-Text HLabel 14850 8850 2    60   Output ~ 0
+Text HLabel 3500 8650 0    60   Output ~ 0
 Motor_W_N
-Text Notes 15600 8650 0    197  ~ 0
-6
-Text Notes 15600 7700 0    197  ~ 0
-12
-Text Notes 15750 6650 0    197  ~ 0
-6
-Text Notes 15750 6000 0    197  ~ 0
-4
-Text Notes 15650 9250 0    197  ~ 0
-3
-Text Notes 15550 9600 0    197  ~ 0
-2
-Text Notes 17800 4100 0    197  ~ 0
-2
-Text Notes 15800 5350 0    197  ~ 0
-7
-Text Notes 14350 4000 0    197  ~ 0
-2
-Text Notes 15750 4300 0    197  ~ 0
-2
-Text Notes 15500 4700 0    197  ~ 0
-4
-Text Notes 15600 3850 0    197  ~ 0
-6
-Text Notes 15850 3250 0    197  ~ 0
-5
-Text Notes 19000 1650 0    197  ~ 0
-5
-Text Notes 15050 2150 0    197  ~ 0
-2
-Text Notes 15200 2600 0    197  ~ 0
-5
 Wire Wire Line
 	8600 9550 8600 9450
 Connection ~ 8500 9550
@@ -1103,4 +823,55 @@ Wire Wire Line
 Wire Wire Line
 	8700 10750 8700 10650
 Connection ~ 8550 10750
+Wire Wire Line
+	14250 3250 14350 3250
+Connection ~ 14250 3650
+Wire Wire Line
+	12800 3350 14350 3350
+Wire Wire Line
+	12800 3250 14150 3250
+Wire Wire Line
+	14150 3250 14150 3150
+Wire Wire Line
+	14150 3150 14350 3150
+$Sheet
+S 14700 6650 1250 500 
+U 58FCE1AC
+F0 "Mainboard_Flash_2" 60
+F1 "mainboard_flash_2.sch" 60
+F2 "CS" I L 14700 7050 60 
+F3 "SCK" I L 14700 6750 60 
+F4 "MOSI" I L 14700 6950 60 
+F5 "MISO" O L 14700 6850 60 
+$EndSheet
+Wire Wire Line
+	14700 6750 12800 6750
+Wire Wire Line
+	12800 6850 14700 6850
+Wire Wire Line
+	14700 6950 14500 6950
+Wire Wire Line
+	14500 6950 14500 8050
+Wire Wire Line
+	14500 8050 12800 8050
+$Sheet
+S 14700 5750 1250 500 
+U 58FD1F3B
+F0 "Mainboard_Flash_1" 60
+F1 "mainboard_flash_1.sch" 60
+F2 "CS" I L 14700 6150 60 
+F3 "SCK" I L 14700 5850 60 
+F4 "MOSI" I L 14700 6050 60 
+F5 "MISO" O L 14700 5950 60 
+$EndSheet
+Wire Wire Line
+	12800 5950 14700 5950
+Wire Wire Line
+	14700 6050 12800 6050
+Wire Wire Line
+	14700 5850 14600 5850
+Wire Wire Line
+	14600 5850 14600 5050
+Wire Wire Line
+	14600 5050 12800 5050
 $EndSCHEMATC

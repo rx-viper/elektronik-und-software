@@ -42,7 +42,7 @@ EELAYER 25 0
 EELAYER END
 $Descr User 12598 17717
 encoding utf-8
-Sheet 3 9
+Sheet 3 11
 Title "Mainboard Temperature Measurement Systems"
 Date "2017-04-19"
 Rev "1"
