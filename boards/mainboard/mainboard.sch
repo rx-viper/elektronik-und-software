@@ -91,12 +91,6 @@ Text Label 4300 4050 0    60   ~ 0
 Probe2_EN
 Text Label 4300 3950 0    60   ~ 0
 Probe1_EN
-Text Label 4300 5050 0    60   ~ 0
-Motor1_EN
-Text Label 4300 5150 0    60   ~ 0
-Motor1_DIR
-Text Label 4300 5250 0    60   ~ 0
-Motor1_PWM
 Text Label 4300 4350 0    60   ~ 0
 Charge_status
 Text Label 4300 4450 0    60   ~ 0
@@ -337,73 +331,6 @@ F 3 "" H 3350 7050 50  0000 C CNN
 	1    3350 7050
 	1    0    0    -1  
 $EndComp
-$Sheet
-S 5050 1500 2850 4400
-U 5889F4B8
-F0 "Mainboard microcontroller" 60
-F1 "mainboard_microcontroller.sch" 60
-F2 "RXSM_RX" I R 7900 2000 59 
-F3 "RasPi_RX" I R 7900 1700 59 
-F4 "temp1_INT" I R 7900 3650 59 
-F5 "temp2_INT" I R 7900 3750 59 
-F6 "temp3_INT" I R 7900 3850 59 
-F7 "temp4_INT" I R 7900 3950 59 
-F8 "temp5_INT" I R 7900 4050 59 
-F9 "bat_charge_status" I L 5050 4350 60 
-F10 "RXSM_LO" I R 7900 2300 60 
-F11 "RXSM_SOE" I R 7900 2400 60 
-F12 "RXSM_SODS" I R 7900 2500 60 
-F13 "lens_heater_EN" O L 5050 3850 60 
-F14 "pressure_SCL" O L 5050 2450 60 
-F15 "pressure_SDA" B L 5050 2550 60 
-F16 "cam_light_EN" O L 5050 3750 60 
-F17 "probe1_EN" O L 5050 3950 60 
-F18 "probe2_EN" O L 5050 4050 60 
-F19 "probe3_EN" O L 5050 4150 60 
-F20 "motor1_EN" O L 5050 5050 60 
-F21 "motor1_DIR" O L 5050 5150 60 
-F22 "motor1_PWM" O L 5050 5250 60 
-F23 "bat_boost_EN" O L 5050 4450 60 
-F24 "bat_charge_EN" O L 5050 4550 60 
-F25 "temperature_SDA" B L 5050 2750 60 
-F26 "temperature_SCL" O L 5050 2650 60 
-F27 "LED1" I R 7900 5250 60 
-F28 "LED2" I R 7900 5350 60 
-F29 "LED3" I R 7900 5450 60 
-F30 "SW1" I R 7900 5650 60 
-F31 "SW2" I R 7900 5800 60 
-F32 "encoder1_A" I L 5050 1600 60 
-F33 "encoder1_B" I L 5050 1700 60 
-F34 "encoder2_A" I L 5050 1800 60 
-F35 "encoder2_B" I L 5050 1900 60 
-F36 "encoder3_A" I L 5050 2000 60 
-F37 "encoder3_B" I L 5050 2100 60 
-F38 "RXSM_TX" O R 7900 2100 60 
-F39 "RasPi_TX" O R 7900 1600 60 
-F40 "temp1_CS" O R 7900 4250 60 
-F41 "temp2_CS" O R 7900 4350 60 
-F42 "temp3_CS" O R 7900 4450 60 
-F43 "temp4_CS" O R 7900 4550 60 
-F44 "temp5_CS" O R 7900 4650 60 
-F45 "extADC_SPI_SCK" O L 5050 3050 60 
-F46 "extADC_SPI_MISO" I L 5050 3150 60 
-F47 "extADC_SPI_MOSI" O L 5050 3250 60 
-F48 "extADC_SPI_CS1" O L 5050 3350 60 
-F49 "brake_EN" O L 5050 5350 60 
-F50 "encoderMotor_A" I L 5050 4750 60 
-F51 "encoderMotor_B" I L 5050 4850 60 
-F52 "hall_W" I L 5050 5750 60 
-F53 "hall_V" I L 5050 5650 60 
-F54 "hall_U" I L 5050 5550 60 
-F55 "temp_SPI1_SCK" O R 7900 3050 60 
-F56 "temp_SPI1_MISO" I R 7900 3250 60 
-F57 "temp_SPI1_MOSI" O R 7900 3150 60 
-F58 "temp_SPI2_SCK" O R 7900 3350 60 
-F59 "temp_SPI2_MISO" I R 7900 3550 60 
-F60 "temp_SPI2_MOSI" O R 7900 3450 60 
-F61 "temp6_INT" I R 7900 4150 60 
-F62 "temp6_CS" O R 7900 4750 60 
-$EndSheet
 Text Notes 950  2000 1    60   ~ 0
 AMSYS\n5915-0010-D\n(3.3V)\nor First Sensor HCLA
 $Comp
@@ -771,12 +698,6 @@ Wire Wire Line
 Wire Wire Line
 	5050 4150 4300 4150
 Wire Wire Line
-	4300 5050 5050 5050
-Wire Wire Line
-	5050 5150 4300 5150
-Wire Wire Line
-	4300 5250 5050 5250
-Wire Wire Line
 	4300 4350 5050 4350
 Wire Wire Line
 	5050 4450 4300 4450
@@ -857,12 +778,6 @@ Text Label 1950 4900 2    60   ~ 0
 Probe2_EN
 Text Label 1950 4800 2    60   ~ 0
 Probe1_EN
-Text Label 1950 4300 2    60   ~ 0
-Motor1_EN
-Text Label 1950 4400 2    60   ~ 0
-Motor1_DIR
-Text Label 1950 4500 2    60   ~ 0
-Motor1_PWM
 Text Label 1950 5800 2    60   ~ 0
 Cam_Light_EN
 Text Label 1950 5700 2    60   ~ 0
@@ -913,10 +828,8 @@ F 3 "" H 1400 3600 50  0000 C CNN
 	1    1400 3600
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1100 4100
-Text Label 1950 4200 2    60   ~ 0
+Text Label 1950 4000 2    60   ~ 0
 Brake_EN
-NoConn ~ 1100 4600
 Wire Wire Line
 	1200 3700 1200 7400
 Wire Wire Line
@@ -937,9 +850,6 @@ Wire Wire Line
 Wire Wire Line
 	1400 3900 1100 3900
 Connection ~ 1400 3800
-Wire Wire Line
-	1100 4000 1200 4000
-Connection ~ 1200 4000
 Wire Wire Line
 	1950 7200 1100 7200
 Wire Wire Line
@@ -989,7 +899,7 @@ Wire Wire Line
 Wire Wire Line
 	1100 4300 1950 4300
 Wire Wire Line
-	1100 4200 1950 4200
+	1100 4000 1950 4000
 Wire Wire Line
 	1100 6100 1200 6100
 Connection ~ 1200 6100
@@ -1018,10 +928,10 @@ Wire Wire Line
 	7900 2400 8750 2400
 Wire Wire Line
 	8750 2300 7900 2300
-Text Label 4300 5350 0    60   ~ 0
+Text Label 4300 3550 0    60   ~ 0
 Brake_EN
 Wire Wire Line
-	4300 5350 5050 5350
+	4300 3550 5050 3550
 Text Label 1950 5100 2    60   ~ 0
 extADC_SPI_SCK
 Text Label 1950 5200 2    60   ~ 0
@@ -1112,4 +1022,116 @@ Wire Wire Line
 	7900 4650 8850 4650
 Wire Wire Line
 	8850 4750 7900 4750
+$Sheet
+S 5050 1500 2850 4400
+U 5889F4B8
+F0 "Mainboard microcontroller" 60
+F1 "mainboard_microcontroller.sch" 60
+F2 "RXSM_RX" I R 7900 2000 59 
+F3 "RasPi_RX" I R 7900 1700 59 
+F4 "temp1_INT" I R 7900 3650 59 
+F5 "temp2_INT" I R 7900 3750 59 
+F6 "temp3_INT" I R 7900 3850 59 
+F7 "temp4_INT" I R 7900 3950 59 
+F8 "temp5_INT" I R 7900 4050 59 
+F9 "bat_charge_status" I L 5050 4350 60 
+F10 "RXSM_LO" I R 7900 2300 60 
+F11 "RXSM_SOE" I R 7900 2400 60 
+F12 "RXSM_SODS" I R 7900 2500 60 
+F13 "lens_heater_EN" O L 5050 3850 60 
+F14 "pressure_SCL" O L 5050 2450 60 
+F15 "pressure_SDA" B L 5050 2550 60 
+F16 "cam_light_EN" O L 5050 3750 60 
+F17 "probe1_EN" O L 5050 3950 60 
+F18 "probe2_EN" O L 5050 4050 60 
+F19 "probe3_EN" O L 5050 4150 60 
+F20 "bat_boost_EN" O L 5050 4450 60 
+F21 "bat_charge_EN" O L 5050 4550 60 
+F22 "temperature_SDA" B L 5050 2750 60 
+F23 "temperature_SCL" O L 5050 2650 60 
+F24 "LED1" I R 7900 5250 60 
+F25 "LED2" I R 7900 5350 60 
+F26 "LED3" I R 7900 5450 60 
+F27 "SW1" I R 7900 5650 60 
+F28 "SW2" I R 7900 5800 60 
+F29 "encoder1_A" I L 5050 1600 60 
+F30 "encoder1_B" I L 5050 1700 60 
+F31 "encoder2_A" I L 5050 1800 60 
+F32 "encoder2_B" I L 5050 1900 60 
+F33 "encoder3_A" I L 5050 2000 60 
+F34 "encoder3_B" I L 5050 2100 60 
+F35 "RXSM_TX" O R 7900 2100 60 
+F36 "RasPi_TX" O R 7900 1600 60 
+F37 "temp1_CS" O R 7900 4250 60 
+F38 "temp2_CS" O R 7900 4350 60 
+F39 "temp3_CS" O R 7900 4450 60 
+F40 "temp4_CS" O R 7900 4550 60 
+F41 "temp5_CS" O R 7900 4650 60 
+F42 "extADC_SPI_SCK" O L 5050 3050 60 
+F43 "extADC_SPI_MISO" I L 5050 3150 60 
+F44 "extADC_SPI_MOSI" O L 5050 3250 60 
+F45 "extADC_SPI_CS1" O L 5050 3350 60 
+F46 "brake_EN" O L 5050 3550 60 
+F47 "encoderMotor_A" I L 5050 4750 60 
+F48 "encoderMotor_B" I L 5050 4850 60 
+F49 "hall_W" I L 5050 5750 60 
+F50 "hall_V" I L 5050 5650 60 
+F51 "hall_U" I L 5050 5550 60 
+F52 "temp_SPI1_SCK" O R 7900 3050 60 
+F53 "temp_SPI1_MISO" I R 7900 3250 60 
+F54 "temp_SPI1_MOSI" O R 7900 3150 60 
+F55 "temp_SPI2_SCK" O R 7900 3350 60 
+F56 "temp_SPI2_MISO" I R 7900 3550 60 
+F57 "temp_SPI2_MOSI" O R 7900 3450 60 
+F58 "temp6_INT" I R 7900 4150 60 
+F59 "temp6_CS" O R 7900 4750 60 
+F60 "Motor_U_N" O L 5050 5050 60 
+F61 "Motor_U_P" O L 5050 4950 60 
+F62 "Motor_V_P" O L 5050 5150 60 
+F63 "Motor_V_N" O L 5050 5250 60 
+F64 "Motor_W_P" O L 5050 5350 60 
+F65 "Motor_W_N" O L 5050 5450 60 
+$EndSheet
+Wire Wire Line
+	1100 4600 1950 4600
+Wire Wire Line
+	1950 4200 1100 4200
+Wire Wire Line
+	1100 4100 1950 4100
+Text Label 1950 4100 2    60   ~ 0
+Motor_U_P
+Text Label 1950 4200 2    60   ~ 0
+Motor_U_N
+Text Label 1950 4400 2    60   ~ 0
+Motor_V_N
+Text Label 1950 4600 2    60   ~ 0
+Motor_W_N
+Text Label 1950 4300 2    60   ~ 0
+Motor_V_P
+Text Label 1950 4500 2    60   ~ 0
+Motor_W_P
+Text Label 4300 4950 0    60   ~ 0
+Motor_U_P
+Text Label 4300 5050 0    60   ~ 0
+Motor_U_N
+Text Label 4300 5250 0    60   ~ 0
+Motor_V_N
+Text Label 4300 5450 0    60   ~ 0
+Motor_W_N
+Text Label 4300 5150 0    60   ~ 0
+Motor_V_P
+Text Label 4300 5350 0    60   ~ 0
+Motor_W_P
+Wire Wire Line
+	5050 5450 4300 5450
+Wire Wire Line
+	4300 5350 5050 5350
+Wire Wire Line
+	5050 5250 4300 5250
+Wire Wire Line
+	4300 5150 5050 5150
+Wire Wire Line
+	5050 5050 4300 5050
+Wire Wire Line
+	4300 4950 5050 4950
 $EndSCHEMATC
