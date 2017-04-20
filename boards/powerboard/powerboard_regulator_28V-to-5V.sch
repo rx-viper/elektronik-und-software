@@ -49,7 +49,7 @@ encoding utf-8
 Sheet 2 11
 Title "Powerboard 5V regulator"
 Date "2017-03-14"
-Rev "01"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

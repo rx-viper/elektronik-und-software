@@ -49,7 +49,7 @@ encoding utf-8
 Sheet 4 11
 Title "Powerboard motor controller"
 Date "2017-03-14"
-Rev "01"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

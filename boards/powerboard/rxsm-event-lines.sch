@@ -49,7 +49,7 @@ encoding utf-8
 Sheet 6 11
 Title "Powerboard: RXSM Event Lines"
 Date "2017-04-14"
-Rev "1"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

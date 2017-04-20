@@ -49,8 +49,8 @@ encoding utf-8
 Sheet 10 11
 Title ""
 Date ""
-Rev ""
-Comp ""
+Rev "10"
+Comp "VIPER"
 Comment1 ""
 Comment2 ""
 Comment3 ""

@@ -49,7 +49,7 @@ encoding utf-8
 Sheet 7 11
 Title "Mainboard: RXSM RS422 connection"
 Date "2017-04-14"
-Rev "1"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

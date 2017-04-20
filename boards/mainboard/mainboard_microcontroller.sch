@@ -45,7 +45,7 @@ encoding utf-8
 Sheet 9 11
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
-Rev "03"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

@@ -49,7 +49,7 @@ encoding utf-8
 Sheet 5 11
 Title "Powerboard Battery Charging"
 Date "2017-03-15"
-Rev "02"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

@@ -45,7 +45,7 @@ encoding utf-8
 Sheet 3 11
 Title "Mainboard Temperature Measurement Systems"
 Date "2017-04-19"
-Rev "1"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

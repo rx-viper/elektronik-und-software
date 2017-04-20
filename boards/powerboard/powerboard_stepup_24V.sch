@@ -49,7 +49,7 @@ encoding utf-8
 Sheet 3 11
 Title "Powerboard 24V regulator"
 Date "2017-03-14"
-Rev "02"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

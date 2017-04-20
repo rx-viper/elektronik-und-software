@@ -49,7 +49,7 @@ encoding utf-8
 Sheet 1 11
 Title "Powerboard overview"
 Date "2017-03-14"
-Rev "02"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
