@@ -290,11 +290,6 @@ Text HLabel 4250 3250 0    60   Input ~ 0
 RXSM_28V_IN
 Text HLabel 7450 3250 2    60   Input ~ 0
 5V_3A_OUT
-Wire Wire Line
-	5950 4400 5950 4450
-Connection ~ 5950 4400
-Text HLabel 5950 4450 3    60   Input ~ 0
-GND
 Connection ~ 4800 3250
 Connection ~ 4800 3350
 $EndSCHEMATC
