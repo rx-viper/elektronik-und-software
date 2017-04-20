@@ -167,51 +167,32 @@ Text Label 1900 5050 2    60   ~ 0
 Probe2_EN
 Text Label 1900 4950 2    60   ~ 0
 Probe1_EN
-Text Label 1900 4450 2    60   ~ 0
-Motor1_EN
-Text Label 1900 4550 2    60   ~ 0
-Motor1_DIR
-Text Label 1900 4650 2    60   ~ 0
-Motor1_PWM
+Text Label 1900 4250 2    60   ~ 0
+Motor_U_P
 Text Label 2250 5100 0    60   ~ 0
 RXSM_28V_sense
 Text Label 7200 1850 0    60   ~ 0
 Cam_Light_EN
 Text Label 1900 5950 2    60   ~ 0
 Cam_Light_EN
-$Comp
-L GND #PWR?
-U 1 1 5888A7FE
-P 8300 3050
-F 0 "#PWR?" H 8300 2800 50  0001 C CNN
-F 1 "GND" H 8300 2900 50  0000 C CNN
-F 2 "" H 8300 3050 50  0000 C CNN
-F 3 "" H 8300 3050 50  0000 C CNN
-	1    8300 3050
-	1    0    0    -1  
-$EndComp
-Text Label 7800 3300 0    60   ~ 0
-Motor1_EN
-Text Label 7800 3400 0    60   ~ 0
-Motor1_DIR
-Text Label 7800 3500 0    60   ~ 0
-Motor1_PWM
 Text Label 6450 2900 0    60   ~ 0
 RXSM_28V
 $Sheet
-S 8450 2800 1900 900 
+S 8450 2800 1600 900 
 U 588899D1
 F0 "Powerboard Motor Controller" 60
 F1 "powerboard_motor_controller.sch" 60
 F2 "V_IN" I L 8450 2900 60 
-F3 "Enable" I L 8450 3300 60 
-F4 "Direction" I L 8450 3400 60 
-F5 "Pwm" I L 8450 3500 60 
-F6 "GND" I L 8450 3000 60 
-F7 "Current_measure" I L 8450 3600 59 
+F3 "Motor_U_P" I L 8450 3100 60 
+F4 "Motor_U_N" I L 8450 3200 60 
+F5 "Motor_V_P" I L 8450 3300 60 
+F6 "Motor_V_N" I L 8450 3400 60 
+F7 "Motor_W_P" I L 8450 3500 60 
+F8 "Motor_W_N" I L 8450 3600 60 
+F9 "Phase_U" O R 10050 2900 60 
+F10 "Phase_V" O R 10050 3000 60 
+F11 "Phase_W" O R 10050 3100 60 
 $EndSheet
-Text Label 7800 3600 0    60   ~ 0
-Motor1_Current
 Text Label 3350 5350 0    60   ~ 0
 Motor1_Current
 $Comp
@@ -774,9 +755,6 @@ F 3 "" H 1350 3750 50  0000 C CNN
 	1    1350 3750
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1050 4250
-Text Notes 10000 3450 0    60   ~ 0
-ToDo
 Text Label 9600 4800 0    60   ~ 0
 Brake-
 Text Label 8750 4600 0    60   ~ 0
@@ -827,7 +805,7 @@ F 3 "" H 8550 5100 50  0001 C CNN
 $EndComp
 Text Label 8700 5000 2    60   ~ 0
 Brake_EN
-Text Label 1900 4350 2    60   ~ 0
+Text Label 1900 4150 2    60   ~ 0
 Brake_EN
 $Comp
 L D D?
@@ -846,7 +824,6 @@ Text Notes 9950 6000 0    60   ~ 0
 5V power supply\nfor hall & encoder
 Text Notes 6700 6400 0    60   ~ 0
 3.3V power supply for\nADC and transceivers
-NoConn ~ 1050 4750
 $Comp
 L DB15_MALE J?
 U 1 1 590BBE7C
@@ -901,18 +878,6 @@ Wire Wire Line
 	7750 950  8400 950 
 Wire Wire Line
 	7200 1850 7900 1850
-Wire Wire Line
-	8450 3000 8300 3000
-Wire Wire Line
-	8300 3000 8300 3050
-Wire Wire Line
-	7800 3300 8450 3300
-Wire Wire Line
-	8450 3400 7800 3400
-Wire Wire Line
-	7800 3500 8450 3500
-Wire Wire Line
-	8450 3600 7800 3600
 Wire Wire Line
 	7750 6000 7750 6300
 Wire Wire Line
@@ -1170,9 +1135,6 @@ Wire Wire Line
 	1350 4050 1050 4050
 Connection ~ 1350 3950
 Wire Wire Line
-	1050 4150 1150 4150
-Connection ~ 1150 4150
-Wire Wire Line
 	1900 7350 1050 7350
 Wire Wire Line
 	1050 7250 1900 7250
@@ -1215,11 +1177,11 @@ Wire Wire Line
 Wire Wire Line
 	1050 4950 1900 4950
 Wire Wire Line
-	1050 4650 1900 4650
-Wire Wire Line
-	1900 4550 1050 4550
-Wire Wire Line
 	1050 4450 1900 4450
+Wire Wire Line
+	1900 4350 1050 4350
+Wire Wire Line
+	1050 4250 1900 4250
 Wire Wire Line
 	3000 3200 3000 3500
 Wire Wire Line
@@ -1269,7 +1231,7 @@ Wire Wire Line
 	9600 4600 9600 4700
 Connection ~ 9600 4700
 Wire Wire Line
-	1050 4350 1900 4350
+	1050 4150 1900 4150
 Wire Wire Line
 	1050 6250 1150 6250
 Connection ~ 1150 6250
@@ -1516,4 +1478,56 @@ Wire Wire Line
 	4000 5950 4000 5450
 Wire Wire Line
 	4000 5450 4100 5450
+Text Label 1900 4350 2    60   ~ 0
+Motor_U_N
+Text Label 1900 4450 2    60   ~ 0
+Motor_V_P
+Text Label 1900 4550 2    60   ~ 0
+Motor_V_N
+Text Label 1900 4650 2    60   ~ 0
+Motor_W_P
+Text Label 1900 4750 2    60   ~ 0
+Motor_W_N
+Wire Wire Line
+	1050 4750 1900 4750
+Wire Wire Line
+	1050 4650 1900 4650
+Wire Wire Line
+	1900 4550 1050 4550
+Text Label 7900 3100 0    60   ~ 0
+Motor_U_P
+Text Label 7900 3200 0    60   ~ 0
+Motor_U_N
+Text Label 7900 3300 0    60   ~ 0
+Motor_V_P
+Text Label 7900 3400 0    60   ~ 0
+Motor_V_N
+Text Label 7900 3500 0    60   ~ 0
+Motor_W_P
+Text Label 7900 3600 0    60   ~ 0
+Motor_W_N
+Wire Wire Line
+	8450 3100 7900 3100
+Wire Wire Line
+	7900 3200 8450 3200
+Wire Wire Line
+	8450 3300 7900 3300
+Wire Wire Line
+	7900 3400 8450 3400
+Wire Wire Line
+	8450 3500 7900 3500
+Wire Wire Line
+	7900 3600 8450 3600
+Text Label 10500 2900 2    60   ~ 0
+Phase_U
+Text Label 10500 3000 2    60   ~ 0
+Phase_V
+Text Label 10500 3100 2    60   ~ 0
+Phase_W
+Wire Wire Line
+	10500 2900 10050 2900
+Wire Wire Line
+	10050 3000 10500 3000
+Wire Wire Line
+	10500 3100 10050 3100
 $EndSCHEMATC
