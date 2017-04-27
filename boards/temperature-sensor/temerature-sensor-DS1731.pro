@@ -1,4 +1,4 @@
-update=25/04/2017 17:55:47
+update=26/04/2017 23:07:45
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=../temperature-sensor
+LibDir=../temperature-sensor;open-project-lib
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=rchojetzki-viper-temp-board
+LibName31=open-project-lib/open-project

@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:rchojetzki-viper-temp-board
+LIBS:open-project
 LIBS:temerature-sensor-DS1731-cache
 EELAYER 25 0
 EELAYER END
@@ -75,7 +76,7 @@ Wire Wire Line
 Wire Wire Line
 	950  1350 1900 1350
 Wire Wire Line
-	1900 1350 1900 2300
+	1900 1350 1900 2700
 Wire Wire Line
 	1900 1800 2050 1800
 Wire Wire Line
@@ -136,39 +137,6 @@ Wire Wire Line
 Connection ~ 3000 1150
 Connection ~ 3150 1150
 Connection ~ 3400 1150
-$Comp
-L R R6
-U 1 1 58FFDA16
-P 3650 2050
-F 0 "R6" V 3730 2050 50  0000 C CNN
-F 1 "R" V 3650 2050 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3580 2050 50  0001 C CNN
-F 3 "" H 3650 2050 50  0001 C CNN
-	1    3650 2050
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R4
-U 1 1 58FFDAB6
-P 3400 2050
-F 0 "R4" V 3480 2050 50  0000 C CNN
-F 1 "R" V 3400 2050 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3330 2050 50  0001 C CNN
-F 3 "" H 3400 2050 50  0001 C CNN
-	1    3400 2050
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R2
-U 1 1 58FFDAFF
-P 3150 2050
-F 0 "R2" V 3230 2050 50  0000 C CNN
-F 1 "R" V 3150 2050 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3080 2050 50  0001 C CNN
-F 3 "" H 3150 2050 50  0001 C CNN
-	1    3150 2050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3150 1550 3150 1900
 Connection ~ 3400 1700
@@ -180,17 +148,7 @@ Wire Wire Line
 Wire Wire Line
 	3150 1250 3150 1150
 Connection ~ 3150 1600
-Wire Wire Line
-	3650 2200 3650 2300
-Wire Wire Line
-	3650 2300 1900 2300
 Connection ~ 1900 1800
-Wire Wire Line
-	3400 2200 3400 2300
-Connection ~ 3400 2300
-Wire Wire Line
-	3150 2200 3150 2300
-Connection ~ 3150 2300
 Text Label 1000 1150 0    60   ~ 0
 VDD
 Text Label 1000 1350 0    60   ~ 0
@@ -199,4 +157,47 @@ Text Label 1000 1550 0    60   ~ 0
 SDA
 Text Label 1000 1750 0    60   ~ 0
 SCL
+$Comp
+L S_JUMPER S1
+U 1 1 5902065C
+P 3400 2250
+F 0 "S1" H 3400 2100 60  0000 C CNN
+F 1 "S_JUMPER" H 3400 1900 60  0000 C CNN
+F 2 "rchojetzki-temp-board-footprint-lib:S_JUMPER_2_rchojetzki" H 3400 2250 60  0001 C CNN
+F 3 "" H 3400 2250 60  0001 C CNN
+	1    3400 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L S_JUMPER S2
+U 1 1 590206E5
+P 3650 2250
+F 0 "S2" H 3650 2100 60  0000 C CNN
+F 1 "S_JUMPER" H 3650 1900 60  0000 C CNN
+F 2 "rchojetzki-temp-board-footprint-lib:S_JUMPER_2_rchojetzki" H 3650 2250 60  0001 C CNN
+F 3 "" H 3650 2250 60  0001 C CNN
+	1    3650 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L S_JUMPER S3
+U 1 1 59020746
+P 3900 2250
+F 0 "S3" H 3900 2100 60  0000 C CNN
+F 1 "S_JUMPER" H 3900 1900 60  0000 C CNN
+F 2 "rchojetzki-temp-board-footprint-lib:S_JUMPER_2_rchojetzki" H 3900 2250 60  0001 C CNN
+F 3 "" H 3900 2250 60  0001 C CNN
+	1    3900 2250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3150 2600 3150 2700
+Wire Wire Line
+	1900 2700 3650 2700
+Wire Wire Line
+	3400 2700 3400 2600
+Wire Wire Line
+	3650 2700 3650 2600
+Connection ~ 3400 2700
+Connection ~ 3150 2700
 $EndSCHEMATC
