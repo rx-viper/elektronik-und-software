@@ -1,6 +1,13 @@
 Electronics
 
-The VIPER electronic is in charge of all electronic components used in our project. These include sensors, motors, boards, cables etc.  Furthermore we have to design our own boards fitting our needs.  
+The VIPER electronic is in charge of all electronic components used in our project. These include sensors, motors, boards, cables etc.  Furthermore we have to design our own boards fitting our needs.
+
+Challenges:
 Not all components are designed to be used in space. We have to make sure that all components fulfill the special requirements in space as for example low temperatures, very little pressure and high acceleration during rocket launch.
-The melting process into the iceblocks  needs more current than the rocket module can provide. Therefore we have to use battery packs to power all parts which can't be powered by the REXUS module.
+
+Tasks:
+In this project our goal is that all electrical components will work reliable. We have to program the automatized processes which are controlled from the signal from the rocket.
+We also have to cooperate with the structure team because sometimes we have to choose which components are useful or if we have enough room for our components in the structure model.
+The melting process into the ice blocks needs more current than the rocket module can provide. Therefore we have to use battery packs to power all parts which can't be powered by the REXUS module.
 In addition the VIPER electronics is in charge of programming. This includes the ground station providing general information during the flight, drivers for the components and more.
+(Bild Groundstation)
