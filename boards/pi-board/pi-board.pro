@@ -1,4 +1,4 @@
-update=Wed Apr 26 22:48:28 2017
+update=Mo 01 Mai 2017 14:18:36 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=/home/lrapp/Programming/KiCad_footprints/rpi
+LibName31=/home/lrapp/Programmierung/rx-viper/pam2306
