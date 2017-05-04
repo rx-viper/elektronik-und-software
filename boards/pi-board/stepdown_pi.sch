@@ -44,8 +44,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 3150 4500 0    60   Input ~ 0
-GND
 Text HLabel 3150 2550 0    60   Input ~ 0
 5V
 $Comp
@@ -251,12 +249,11 @@ Wire Wire Line
 	4900 2550 4900 4000
 Wire Wire Line
 	4900 3750 5650 3750
-Connection ~ 4900 2550
 Connection ~ 4900 3750
 Wire Wire Line
 	4900 4000 6450 4000
 Wire Wire Line
-	3400 2650 3400 2550
+	3400 2400 3400 2650
 Connection ~ 3400 2550
 Wire Wire Line
 	3400 2950 3400 3550
@@ -336,4 +333,56 @@ Text HLabel 9300 2550 2    60   Input ~ 0
 1V8
 Wire Wire Line
 	3150 4500 8950 4500
+$Comp
+L GND #PWR?
+U 1 1 590BD5E5
+P 3150 4700
+F 0 "#PWR?" H 3150 4450 50  0001 C CNN
+F 1 "GND" H 3150 4550 50  0000 C CNN
+F 2 "" H 3150 4700 50  0001 C CNN
+F 3 "" H 3150 4700 50  0001 C CNN
+	1    3150 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 4700 3150 4500
+$Comp
+L TEST TP?
+U 1 1 590BEEA7
+P 9150 2450
+F 0 "TP?" H 9150 2750 50  0000 C BNN
+F 1 "TEST" H 9150 2700 50  0000 C CNN
+F 2 "" H 9150 2450 50  0001 C CNN
+F 3 "" H 9150 2450 50  0001 C CNN
+	1    9150 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST TP?
+U 1 1 590BEEFA
+P 9150 3550
+F 0 "TP?" H 9150 3850 50  0000 C BNN
+F 1 "TEST" H 9150 3800 50  0000 C CNN
+F 2 "" H 9150 3550 50  0001 C CNN
+F 3 "" H 9150 3550 50  0001 C CNN
+	1    9150 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9150 3550 9150 3650
+Connection ~ 9150 3650
+Wire Wire Line
+	9150 2450 9150 2550
+Connection ~ 9150 2550
+$Comp
+L TEST TP?
+U 1 1 590BF6C0
+P 3400 2400
+F 0 "TP?" H 3400 2700 50  0000 C BNN
+F 1 "TEST" H 3400 2650 50  0000 C CNN
+F 2 "" H 3400 2400 50  0001 C CNN
+F 3 "" H 3400 2400 50  0001 C CNN
+	1    3400 2400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
