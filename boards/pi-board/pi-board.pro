@@ -1,4 +1,4 @@
-update=Mo 01 Mai 2017 14:18:36 CEST
+update=Do 04 Mai 2017 22:50:04 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,4 @@ LibName28=contrib
 LibName29=valves
 LibName30=/home/lrapp/Programming/KiCad_footprints/rpi
 LibName31=/home/lrapp/Programmierung/rx-viper/pam2306
+LibName32=switches
