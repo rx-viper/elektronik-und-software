@@ -38,15 +38,16 @@ LIBS:esd_diode_dual
 LIBS:max6126
 LIBS:ltc2984
 LIBS:DB
+LIBS:ds26lv32at
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr User 12598 17717
 encoding utf-8
-Sheet 2 11
+Sheet 2 12
 Title "Mainboard Temperature Measurement Systems"
 Date "2017-04-19"
-Rev "10"
+Rev "11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

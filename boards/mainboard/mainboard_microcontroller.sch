@@ -38,12 +38,13 @@ LIBS:esd_diode_dual
 LIBS:max6126
 LIBS:ltc2984
 LIBS:DB
+LIBS:ds26lv32at
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 9 11
+Sheet 9 12
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
 Rev "10"

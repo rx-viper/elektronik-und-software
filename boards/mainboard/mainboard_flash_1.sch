@@ -38,12 +38,13 @@ LIBS:esd_diode_dual
 LIBS:max6126
 LIBS:ltc2984
 LIBS:DB
+LIBS:ds26lv32at
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 11
+Sheet 11 12
 Title "Mainboard Flash 1"
 Date "2017-04-20"
 Rev "10"
