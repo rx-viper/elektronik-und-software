@@ -47,7 +47,7 @@ encoding utf-8
 Sheet 1 12
 Title "Mainboard overview"
 Date "2017-03-14"
-Rev "11"
+Rev "12"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -637,12 +637,12 @@ Wire Wire Line
 $Comp
 L DB9_FEMALE J103
 U 1 1 59082736
-P 9400 1200
-F 0 "J103" H 9400 1750 50  0000 C CNN
-F 1 "Camera board" V 9600 1200 50  0000 C CNN
-F 2 "" H 9400 1200 50  0001 C CNN
-F 3 "" H 9400 1200 50  0001 C CNN
-	1    9400 1200
+P 9900 1200
+F 0 "J103" H 9900 1750 50  0000 C CNN
+F 1 "Camera board" V 10100 1200 50  0000 C CNN
+F 2 "" H 9900 1200 50  0001 C CNN
+F 3 "" H 9900 1200 50  0001 C CNN
+	1    9900 1200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -659,21 +659,21 @@ $EndComp
 Wire Wire Line
 	8600 1600 8600 800 
 Wire Wire Line
-	8600 800  9100 800 
-NoConn ~ 9100 1100
-NoConn ~ 9100 1200
-NoConn ~ 9100 1300
-NoConn ~ 9100 1400
-NoConn ~ 9100 1500
-NoConn ~ 9100 1600
+	8600 800  9600 800 
+NoConn ~ 9600 1100
+NoConn ~ 9600 1200
+NoConn ~ 9600 1300
+NoConn ~ 9600 1400
+NoConn ~ 9600 1500
+NoConn ~ 9600 1600
 Wire Wire Line
 	8750 1000 8750 900 
 Wire Wire Line
-	8750 900  9100 900 
+	9150 900  9600 900 
 Wire Wire Line
-	9100 1000 8900 1000
+	8900 1000 9600 1000
 Wire Wire Line
-	8900 1000 8900 1700
+	8900 1700 8900 1000
 $Comp
 L DB37_MALE J101
 U 1 1 5908B98D
@@ -1081,4 +1081,17 @@ Wire Wire Line
 	4650 1700 5050 1700
 Wire Wire Line
 	5050 1600 4650 1600
+$Comp
+L R R108
+U 1 1 59204DCC
+P 9000 900
+F 0 "R108" V 9080 900 50  0000 C CNN
+F 1 "NC" V 9000 900 50  0000 C CNN
+F 2 "" V 8930 900 50  0001 C CNN
+F 3 "" H 9000 900 50  0001 C CNN
+	1    9000 900 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8750 900  8850 900 
 $EndSCHEMATC
