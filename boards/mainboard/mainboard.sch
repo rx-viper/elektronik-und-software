@@ -674,18 +674,7 @@ Wire Wire Line
 	8900 1000 9600 1000
 Wire Wire Line
 	8900 1700 8900 1000
-$Comp
-L DB37_MALE J101
-U 1 1 5908B98D
-P 800 5500
-F 0 "J101" H 800 7500 50  0000 C CNN
-F 1 "Powerboard <-> Mainboard" V 1000 5500 50  0000 C CNN
-F 2 "" H 800 5500 50  0001 C CNN
-F 3 "" H 800 5500 50  0001 C CNN
-	1    800  5500
-	-1   0    0    1   
-$EndComp
-Text Label 1950 5900 2    60   ~ 0
+Text Label 1950 6100 2    60   ~ 0
 Lens_Heat_EN
 Text Label 1950 5000 2    60   ~ 0
 Probe3_EN
@@ -693,44 +682,44 @@ Text Label 1950 4900 2    60   ~ 0
 Probe2_EN
 Text Label 1950 4800 2    60   ~ 0
 Probe1_EN
-Text Label 1950 5800 2    60   ~ 0
+Text Label 1950 5900 2    60   ~ 0
 Cam_Light_EN
-Text Label 1950 5700 2    60   ~ 0
+Text Label 1950 5800 2    60   ~ 0
 Charge_status
-Text Label 1950 6000 2    60   ~ 0
-Boost24V_EN
-Text Label 1950 5600 2    60   ~ 0
-Charge_EN
-Text Label 1950 6500 2    60   ~ 0
-Hall_U
-Text Label 1950 6600 2    60   ~ 0
-Hall_V
-Text Label 1950 6700 2    60   ~ 0
-Hall_W
 Text Label 1950 6200 2    60   ~ 0
-Encoder_A+
-Text Label 1950 6300 2    60   ~ 0
-Encoder_B+
+Boost24V_EN
+Text Label 1950 5700 2    60   ~ 0
+Charge_EN
+Text Label 1950 6700 2    60   ~ 0
+Hall_U
 Text Label 1950 6800 2    60   ~ 0
-LO
+Hall_V
 Text Label 1950 6900 2    60   ~ 0
-SOE
-Text Label 1950 7000 2    60   ~ 0
-SODS
+Hall_W
+Text Label 1950 6400 2    60   ~ 0
+Encoder_A+
+Text Label 1950 6500 2    60   ~ 0
+Encoder_B+
 Text Label 1950 7100 2    60   ~ 0
-TX
+LO
 Text Label 1950 7200 2    60   ~ 0
+SOE
+Text Label 1950 7300 2    60   ~ 0
+SODS
+Text Label 1950 7400 2    60   ~ 0
+TX
+Text Label 1950 7500 2    60   ~ 0
 RX
 $Comp
 L GND #PWR101
 U 1 1 5913059A
-P 1200 7400
-F 0 "#PWR101" H 1200 7150 50  0001 C CNN
-F 1 "GND" H 1200 7250 50  0000 C CNN
-F 2 "" H 1200 7400 50  0001 C CNN
-F 3 "" H 1200 7400 50  0001 C CNN
-	1    1200 7400
-	1    0    0    -1  
+P 1300 7700
+F 0 "#PWR101" H 1300 7450 50  0001 C CNN
+F 1 "GND" H 1300 7550 50  0000 C CNN
+F 2 "" H 1300 7700 50  0001 C CNN
+F 3 "" H 1300 7700 50  0001 C CNN
+	1    1300 7700
+	0    -1   -1   0   
 $EndComp
 $Comp
 L +5V #PWR104
@@ -746,18 +735,16 @@ $EndComp
 Text Label 1950 4000 2    60   ~ 0
 Brake_EN
 Wire Wire Line
-	1200 3700 1200 7400
-Wire Wire Line
-	1200 7300 1100 7300
+	1200 7600 1100 7600
 Wire Wire Line
 	1200 3700 1100 3700
-Connection ~ 1200 7300
+Connection ~ 1200 7600
 Wire Wire Line
-	1100 6400 1200 6400
-Connection ~ 1200 6400
+	1200 6600 1100 6600
+Connection ~ 1200 6600
 Wire Wire Line
-	1100 5500 1200 5500
-Connection ~ 1200 5500
+	1200 5600 1100 5600
+Connection ~ 1200 5600
 Wire Wire Line
 	1400 3600 1400 3900
 Wire Wire Line
@@ -766,11 +753,15 @@ Wire Wire Line
 	1400 3900 1100 3900
 Connection ~ 1400 3800
 Wire Wire Line
-	1950 7200 1100 7200
+	1950 7500 1100 7500
 Wire Wire Line
-	1100 7100 1950 7100
+	1100 7400 1950 7400
 Wire Wire Line
-	1950 7000 1100 7000
+	1950 7300 1100 7300
+Wire Wire Line
+	1100 7200 1950 7200
+Wire Wire Line
+	1950 7100 1100 7100
 Wire Wire Line
 	1100 6900 1950 6900
 Wire Wire Line
@@ -778,29 +769,25 @@ Wire Wire Line
 Wire Wire Line
 	1100 6700 1950 6700
 Wire Wire Line
-	1950 6600 1100 6600
-Wire Wire Line
 	1100 6500 1950 6500
 Wire Wire Line
-	1100 6300 1950 6300
+	1950 6400 1100 6400
 Wire Wire Line
-	1950 6200 1100 6200
+	1100 6100 1950 6100
 Wire Wire Line
-	1100 5900 1950 5900
+	1950 5900 1100 5900
 Wire Wire Line
-	1950 5800 1100 5800
+	1100 5800 1950 5800
 Wire Wire Line
-	1100 5700 1950 5700
+	1950 5700 1100 5700
 Wire Wire Line
-	1950 5600 1100 5600
+	1100 5500 1950 5500
 Wire Wire Line
-	1100 5400 1950 5400
+	1950 5400 1100 5400
 Wire Wire Line
-	1950 5300 1100 5300
+	1100 5300 1950 5300
 Wire Wire Line
-	1100 5200 1950 5200
-Wire Wire Line
-	1950 5100 1100 5100
+	1950 5200 1100 5200
 Wire Wire Line
 	1100 5000 1950 5000
 Wire Wire Line
@@ -816,10 +803,10 @@ Wire Wire Line
 Wire Wire Line
 	1100 4000 1950 4000
 Wire Wire Line
-	1100 6100 1200 6100
-Connection ~ 1200 6100
+	1200 6300 1100 6300
+Connection ~ 1200 6300
 Wire Wire Line
-	1100 6000 1950 6000
+	1100 6200 1950 6200
 Wire Wire Line
 	1100 4700 1200 4700
 Connection ~ 1200 4700
@@ -847,13 +834,13 @@ Text Label 4300 3550 0    60   ~ 0
 Brake_EN
 Wire Wire Line
 	4300 3550 5050 3550
-Text Label 1950 5100 2    60   ~ 0
-extADC_SPI_SCK
 Text Label 1950 5200 2    60   ~ 0
-extADC_SPI_MISO
+extADC_SPI_SCK
 Text Label 1950 5300 2    60   ~ 0
-extADC_SPI_MOSI
+extADC_SPI_MISO
 Text Label 1950 5400 2    60   ~ 0
+extADC_SPI_MOSI
+Text Label 1950 5500 2    60   ~ 0
 extADC_SPI_CS1
 Text Label 4300 3850 0    60   ~ 0
 Lens_Heat_EN
@@ -1094,4 +1081,28 @@ F 3 "" H 9000 900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8750 900  8850 900 
+$Comp
+L CONN_01X40 J101
+U 1 1 592203A3
+P 900 5650
+F 0 "J101" H 900 7700 50  0000 C CNN
+F 1 "Powerboard <-> Mainboard" V 1000 5650 50  0000 C CNN
+F 2 "" H 900 5650 50  0001 C CNN
+F 3 "" H 900 5650 50  0001 C CNN
+	1    900  5650
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 3700 1200 7700
+Wire Wire Line
+	1200 5100 1100 5100
+Connection ~ 1200 5100
+Wire Wire Line
+	1200 6000 1100 6000
+Connection ~ 1200 6000
+Wire Wire Line
+	1200 7000 1100 7000
+Connection ~ 1200 7000
+Wire Wire Line
+	1200 7700 1300 7700
 $EndSCHEMATC
