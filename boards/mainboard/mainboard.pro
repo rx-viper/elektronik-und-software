@@ -1,4 +1,4 @@
-update=Wed Apr 19 19:06:49 2017
+update=Fri May  5 21:12:38 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -77,3 +77,5 @@ LibName35=lib/common_mode_choke
 LibName36=lib/esd_diode_dual
 LibName37=lib/max6126
 LibName38=lib/ltc2984
+LibName39=lib/DB
+LibName40=lib/ds26lv32at
