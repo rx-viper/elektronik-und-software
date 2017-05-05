@@ -37,6 +37,7 @@ LIBS:common_mode_choke
 LIBS:esd_diode_dual
 LIBS:max6126
 LIBS:ltc2984
+LIBS:DB
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
