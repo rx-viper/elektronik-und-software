@@ -1020,4 +1020,232 @@ Connection ~ 9850 12300
 Wire Wire Line
 	9850 11900 10200 11900
 Connection ~ 9850 11900
+Text Label 8700 950  0    60   ~ 0
+T1_RTD1_A
+Text Label 8700 1100 0    60   ~ 0
+T1_RTD1_B
+Text Label 8700 1200 0    60   ~ 0
+T1_RTD1_C
+Text Label 8700 1300 0    60   ~ 0
+T1_RTD1_D
+Text Label 8700 1500 0    60   ~ 0
+T1_RTD2_B
+Text Label 8700 1600 0    60   ~ 0
+T1_RTD2_C
+Text Label 8700 1700 0    60   ~ 0
+T1_RTD2_D
+Text Label 8700 1900 0    60   ~ 0
+T1_RTD3_B
+Text Label 8700 2000 0    60   ~ 0
+T1_RTD3_C
+Text Label 8700 2100 0    60   ~ 0
+T1_RTD3_D
+Text Label 8700 2300 0    60   ~ 0
+T1_RTD4_B
+Text Label 8700 2400 0    60   ~ 0
+T1_RTD4_C
+Text Label 8700 2500 0    60   ~ 0
+T1_RTD4_D
+Text Label 8700 2700 0    60   ~ 0
+T1_RTD5_B
+Text Label 8700 2800 0    60   ~ 0
+T1_RTD5_C
+Text Label 8700 2900 0    60   ~ 0
+T1_RTD5_D
+Text Label 8700 3100 0    60   ~ 0
+T1_RTD6_B
+Text Label 8700 3200 0    60   ~ 0
+T1_RTD6_C
+Text Label 8700 3300 0    60   ~ 0
+T1_RTD6_D
+Text Label 8700 3400 0    60   ~ 0
+T2_RTD1_A
+Text Label 8700 3500 0    60   ~ 0
+T2_RTD1_B
+Text Label 8700 3600 0    60   ~ 0
+T2_RTD1_C
+Text Label 8700 3700 0    60   ~ 0
+T2_RTD1_D
+Text Label 8700 3900 0    60   ~ 0
+T2_RTD2_B
+Text Label 8700 4000 0    60   ~ 0
+T2_RTD2_C
+Text Label 8700 4100 0    60   ~ 0
+T2_RTD2_D
+Text Label 8700 4300 0    60   ~ 0
+T2_RTD3_B
+Text Label 8700 4400 0    60   ~ 0
+T2_RTD3_C
+Text Label 8700 4500 0    60   ~ 0
+T2_RTD3_D
+Text Label 8700 4700 0    60   ~ 0
+T2_RTD4_B
+Text Label 8700 4800 0    60   ~ 0
+T2_RTD4_C
+Text Label 8700 4900 0    60   ~ 0
+T2_RTD4_D
+Text Label 8700 5100 0    60   ~ 0
+T2_RTD5_B
+Text Label 8700 5200 0    60   ~ 0
+T2_RTD5_C
+Text Label 8700 5300 0    60   ~ 0
+T2_RTD5_D
+Text Label 8700 5500 0    60   ~ 0
+T2_RTD6_B
+Text Label 8700 5600 0    60   ~ 0
+T2_RTD6_C
+Text Label 8700 5700 0    60   ~ 0
+T2_RTD6_D
+Text Label 8700 5800 0    60   ~ 0
+T3_RTD1_A
+Text Label 8700 5900 0    60   ~ 0
+T3_RTD1_B
+Text Label 8700 6000 0    60   ~ 0
+T3_RTD1_C
+Text Label 8700 6100 0    60   ~ 0
+T3_RTD1_D
+Text Label 8700 6300 0    60   ~ 0
+T3_RTD2_B
+Text Label 8700 6400 0    60   ~ 0
+T3_RTD2_C
+Text Label 8700 6500 0    60   ~ 0
+T3_RTD2_D
+Text Label 8700 6700 0    60   ~ 0
+T3_RTD3_B
+Text Label 8700 6800 0    60   ~ 0
+T3_RTD3_C
+Text Label 8700 6900 0    60   ~ 0
+T3_RTD3_D
+Text Label 8700 7100 0    60   ~ 0
+T3_RTD4_B
+Text Label 8700 7200 0    60   ~ 0
+T3_RTD4_C
+Text Label 8700 7300 0    60   ~ 0
+T3_RTD4_D
+Text Label 8700 7500 0    60   ~ 0
+T3_RTD5_B
+Text Label 8700 7600 0    60   ~ 0
+T3_RTD5_C
+Text Label 8700 7700 0    60   ~ 0
+T3_RTD5_D
+Text Label 8700 7900 0    60   ~ 0
+T3_RTD6_B
+Text Label 8700 8000 0    60   ~ 0
+T3_RTD6_C
+Text Label 8700 8100 0    60   ~ 0
+T3_RTD6_D
+Text Label 8700 8200 0    60   ~ 0
+T4_RTD1_A
+Text Label 8700 8300 0    60   ~ 0
+T4_RTD1_B
+Text Label 8700 8400 0    60   ~ 0
+T4_RTD1_C
+Text Label 8700 8500 0    60   ~ 0
+T4_RTD1_D
+Text Label 8700 9600 0    60   ~ 0
+T4_RTD2_B
+Text Label 8700 9700 0    60   ~ 0
+T4_RTD2_C
+Text Label 8700 9800 0    60   ~ 0
+T4_RTD2_D
+Text Label 8700 10000 0    60   ~ 0
+T4_RTD3_B
+Text Label 8700 10100 0    60   ~ 0
+T4_RTD3_C
+Text Label 8700 10200 0    60   ~ 0
+T4_RTD3_D
+Text Label 8700 10400 0    60   ~ 0
+T4_RTD4_B
+Text Label 8700 10500 0    60   ~ 0
+T4_RTD4_C
+Text Label 8700 10600 0    60   ~ 0
+T4_RTD4_D
+Text Label 8700 10800 0    60   ~ 0
+T4_RTD5_B
+Text Label 8700 10900 0    60   ~ 0
+T4_RTD5_C
+Text Label 8700 11000 0    60   ~ 0
+T4_RTD5_D
+Text Label 8700 11200 0    60   ~ 0
+T4_RTD6_B
+Text Label 8700 11300 0    60   ~ 0
+T4_RTD6_C
+Text Label 8700 11400 0    60   ~ 0
+T4_RTD6_D
+Text Label 8700 11500 0    60   ~ 0
+T5_RTD1_A
+Text Label 8700 11600 0    60   ~ 0
+T5_RTD1_B
+Text Label 8700 11700 0    60   ~ 0
+T5_RTD1_C
+Text Label 8700 11800 0    60   ~ 0
+T5_RTD1_D
+Text Label 8700 12000 0    60   ~ 0
+T5_RTD2_B
+Text Label 8700 12100 0    60   ~ 0
+T5_RTD2_C
+Text Label 8700 12200 0    60   ~ 0
+T5_RTD2_D
+Text Label 8700 12400 0    60   ~ 0
+T5_RTD3_B
+Text Label 8700 12500 0    60   ~ 0
+T5_RTD3_C
+Text Label 8700 12600 0    60   ~ 0
+T5_RTD3_D
+Text Label 8700 12800 0    60   ~ 0
+T5_RTD4_B
+Text Label 8700 12900 0    60   ~ 0
+T5_RTD4_C
+Text Label 8700 13000 0    60   ~ 0
+T5_RTD4_D
+Text Label 8700 13200 0    60   ~ 0
+T5_RTD5_B
+Text Label 8700 13300 0    60   ~ 0
+T5_RTD5_C
+Text Label 8700 13400 0    60   ~ 0
+T5_RTD5_D
+Text Label 8700 13600 0    60   ~ 0
+T5_RTD6_B
+Text Label 8700 13700 0    60   ~ 0
+T5_RTD6_C
+Text Label 8700 13800 0    60   ~ 0
+T5_RTD6_D
+Text Label 6000 14400 0    60   ~ 0
+T6_RTD1_A
+Text Label 6000 14500 0    60   ~ 0
+T6_RTD1_B
+Text Label 6000 14600 0    60   ~ 0
+T6_RTD1_C
+Text Label 6000 14700 0    60   ~ 0
+T6_RTD1_D
+Text Label 6000 14900 0    60   ~ 0
+T6_RTD2_B
+Text Label 6000 15000 0    60   ~ 0
+T6_RTD2_C
+Text Label 6000 15100 0    60   ~ 0
+T6_RTD2_D
+Text Label 6000 15300 0    60   ~ 0
+T6_RTD3_B
+Text Label 6000 15400 0    60   ~ 0
+T6_RTD3_C
+Text Label 6000 15500 0    60   ~ 0
+T6_RTD3_D
+Text Label 6000 15800 0    60   ~ 0
+T6_RTD4_B
+Text Label 6000 15900 0    60   ~ 0
+T6_RTD4_C
+Text Label 6000 16000 0    60   ~ 0
+T6_RTD4_D
+Text Label 6000 16200 0    60   ~ 0
+T6_RTD5_B
+Text Label 6000 16300 0    60   ~ 0
+T6_RTD5_C
+Text Label 6000 16400 0    60   ~ 0
+T6_RTD5_D
+Text Label 6000 16600 0    60   ~ 0
+T6_RTD6_B
+Text Label 6000 16700 0    60   ~ 0
+T6_RTD6_C
+Text Label 6000 16800 0    60   ~ 0
+T6_RTD6_D
 $EndSCHEMATC

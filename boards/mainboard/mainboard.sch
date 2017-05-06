@@ -1091,4 +1091,14 @@ Wire Wire Line
 	1350 2450 1350 2750
 Wire Wire Line
 	1350 2750 5050 2750
+Text Label 8400 5250 0    20   ~ 0
+LED1_R
+Text Label 8900 5350 0    20   ~ 0
+LED2_R
+Text Label 8400 5450 0    20   ~ 0
+LED3_R
+Text Label 4450 6800 0    60   ~ 0
+5V_filtered
+Text Label 9200 900  0    60   ~ 0
+CAM_GND
 $EndSCHEMATC
