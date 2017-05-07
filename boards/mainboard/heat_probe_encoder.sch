@@ -805,4 +805,40 @@ Wire Wire Line
 	5950 5900 6050 5900
 Text Notes 4000 2200 0    60   ~ 0
 Two assembly options:\n* Zero-R resistors\nOR\n* DS26LV32AT differential receivers
+Text Label 2600 2400 0    60   ~ 0
+ENC1_A_+
+Text Label 2600 2500 0    60   ~ 0
+ENC1_A_-
+Text Label 2600 2600 0    60   ~ 0
+ENC1_B_+
+Text Label 2600 2700 0    60   ~ 0
+ENC1_B_-
+Text Label 2600 2800 0    60   ~ 0
+ENC2_A_+
+Text Label 2600 2900 0    60   ~ 0
+ENC2_A_-
+Text Label 2600 3000 0    60   ~ 0
+ENC2_B_+
+Text Label 2600 3100 0    60   ~ 0
+ENC2_B_-
+Text Label 2600 3200 0    60   ~ 0
+ENC3_A_+
+Text Label 2600 3300 0    60   ~ 0
+ENC3_A_-
+Text Label 2600 3400 0    60   ~ 0
+ENC3_B_+
+Text Label 2600 4100 0    60   ~ 0
+ENC3_B_-
+Text Label 5250 2400 0    60   ~ 0
+ENC1_A_filter
+Text Label 5250 2600 0    60   ~ 0
+ENC1_B_filter
+Text Label 5250 2800 0    60   ~ 0
+ENC2_A_filter
+Text Label 5250 3000 0    60   ~ 0
+ENC2_B_filter
+Text Label 5250 3200 0    60   ~ 0
+ENC3_A_filter
+Text Label 5250 3400 0    60   ~ 0
+ENC3_B_filter
 $EndSCHEMATC
