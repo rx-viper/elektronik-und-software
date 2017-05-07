@@ -416,6 +416,313 @@ F 3 "" H 9950 5650 50  0000 C CNN
 	1    9950 5650
 	0    -1   -1   0   
 $EndComp
+Text Notes 2700 2550 2    60   ~ 0
+Various I2C temperature\nsensors (DS1731)\nBattery, structure, PCBs,\ncupola, camera, ...
+Text Notes 2900 6600 0    60   ~ 0
+3.3V power supply (from 5V) for µC and periphery
+Text Notes 10000 5500 0    60   ~ 0
+status LEDs and switches\nfor testing
+Text Label 4300 3050 0    60   ~ 0
+extADC_SPI_SCK
+Text Label 4300 3150 0    60   ~ 0
+extADC_SPI_MISO
+Text Label 4300 3250 0    60   ~ 0
+extADC_SPI_MOSI
+Text Label 4300 3350 0    60   ~ 0
+extADC_SPI_CS1
+$Comp
+L DB9_FEMALE J103
+U 1 1 59082736
+P 9900 1200
+F 0 "J103" H 9900 1750 50  0000 C CNN
+F 1 "Camera board" V 10100 1200 50  0000 C CNN
+F 2 "Connectors:DB9FD" H 9900 1200 50  0001 C CNN
+F 3 "" H 9900 1200 50  0001 C CNN
+	1    9900 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 59083068
+P 8750 1000
+F 0 "#PWR011" H 8750 750 50  0001 C CNN
+F 1 "GND" H 8750 850 50  0000 C CNN
+F 2 "" H 8750 1000 50  0001 C CNN
+F 3 "" H 8750 1000 50  0001 C CNN
+	1    8750 1000
+	1    0    0    -1  
+$EndComp
+NoConn ~ 9600 1100
+NoConn ~ 9600 1200
+NoConn ~ 9600 1300
+NoConn ~ 9600 1400
+NoConn ~ 9600 1500
+NoConn ~ 9600 1600
+Text Label 1950 6100 2    60   ~ 0
+Lens_Heat_EN
+Text Label 1950 5000 2    60   ~ 0
+Probe3_EN
+Text Label 1950 4900 2    60   ~ 0
+Probe2_EN
+Text Label 1950 4800 2    60   ~ 0
+Probe1_EN
+Text Label 1950 5900 2    60   ~ 0
+Cam_Light_EN
+Text Label 1950 5800 2    60   ~ 0
+Charge_status
+Text Label 1950 6200 2    60   ~ 0
+Boost24V_EN
+Text Label 1950 5700 2    60   ~ 0
+Charge_EN
+Text Label 1950 6700 2    60   ~ 0
+Hall_U
+Text Label 1950 6800 2    60   ~ 0
+Hall_V
+Text Label 1950 6900 2    60   ~ 0
+Hall_W
+Text Label 1950 6400 2    60   ~ 0
+Encoder_A+
+Text Label 1950 6500 2    60   ~ 0
+Encoder_B+
+Text Label 1950 7100 2    60   ~ 0
+LO
+Text Label 1950 7200 2    60   ~ 0
+SOE
+Text Label 1950 7300 2    60   ~ 0
+SODS
+Text Label 1950 7400 2    60   ~ 0
+TX
+Text Label 1950 7500 2    60   ~ 0
+RX
+$Comp
+L GND #PWR012
+U 1 1 5913059A
+P 1300 7700
+F 0 "#PWR012" H 1300 7450 50  0001 C CNN
+F 1 "GND" H 1300 7550 50  0000 C CNN
+F 2 "" H 1300 7700 50  0001 C CNN
+F 3 "" H 1300 7700 50  0001 C CNN
+	1    1300 7700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L +5V #PWR013
+U 1 1 591305A0
+P 1400 3600
+F 0 "#PWR013" H 1400 3450 50  0001 C CNN
+F 1 "+5V" H 1400 3740 50  0000 C CNN
+F 2 "" H 1400 3600 50  0000 C CNN
+F 3 "" H 1400 3600 50  0000 C CNN
+	1    1400 3600
+	1    0    0    -1  
+$EndComp
+Text Label 1950 4000 2    60   ~ 0
+Brake_EN
+Text Label 8750 2300 2    60   ~ 0
+LO
+Text Label 8750 2400 2    60   ~ 0
+SOE
+Text Label 8750 2500 2    60   ~ 0
+SODS
+Text Label 8750 2100 2    60   ~ 0
+TX
+Text Label 8750 2000 2    60   ~ 0
+RX
+Text Label 4300 3550 0    60   ~ 0
+Brake_EN
+Text Label 1950 5200 2    60   ~ 0
+extADC_SPI_SCK
+Text Label 1950 5300 2    60   ~ 0
+extADC_SPI_MISO
+Text Label 1950 5400 2    60   ~ 0
+extADC_SPI_MOSI
+Text Label 1950 5500 2    60   ~ 0
+extADC_SPI_CS1
+Text Label 4300 3850 0    60   ~ 0
+Lens_Heat_EN
+Text Label 4300 5550 0    60   ~ 0
+Hall_U
+Text Label 4300 5650 0    60   ~ 0
+Hall_V
+Text Label 4300 5750 0    60   ~ 0
+Hall_W
+Text Label 4300 4750 0    60   ~ 0
+Encoder_A+
+Text Label 4300 4850 0    60   ~ 0
+Encoder_B+
+$Sheet
+S 8850 2950 1550 1900
+U 58F3D7C6
+F0 "Mainboard_Temp_Sensors" 60
+F1 "mainboard_temp_sensors.sch" 60
+F2 "SPI1_SCK" I L 8850 3050 60 
+F3 "SPI1_MOSI" I L 8850 3150 60 
+F4 "SPI1_MISO" O L 8850 3250 60 
+F5 "SPI1_CS1" I L 8850 4250 60 
+F6 "SPI1_CS2" I L 8850 4350 60 
+F7 "SPI1_CS3" I L 8850 4450 60 
+F8 "SPI2_SCK" I L 8850 3350 60 
+F9 "SPI2_MOSI" I L 8850 3450 60 
+F10 "SPI2_MISO" O L 8850 3550 60 
+F11 "SPI2_CS1" I L 8850 4550 60 
+F12 "SPI2_CS2" I L 8850 4650 60 
+F13 "SPI2_CS3" I L 8850 4750 60 
+F14 "INT1" O L 8850 3650 60 
+F15 "INT2" O L 8850 3750 60 
+F16 "INT3" O L 8850 3850 60 
+F17 "INT4" O L 8850 3950 60 
+F18 "INT5" O L 8850 4050 60 
+F19 "INT6" O L 8850 4150 60 
+$EndSheet
+$Sheet
+S 5050 1500 2850 4400
+U 5889F4B8
+F0 "Mainboard microcontroller" 60
+F1 "mainboard_microcontroller.sch" 60
+F2 "RXSM_RX" I R 7900 2000 59 
+F3 "RasPi_RX" I R 7900 1700 59 
+F4 "temp1_INT" I R 7900 3650 59 
+F5 "temp2_INT" I R 7900 3750 59 
+F6 "temp3_INT" I R 7900 3850 59 
+F7 "temp4_INT" I R 7900 3950 59 
+F8 "temp5_INT" I R 7900 4050 59 
+F9 "bat_charge_status" I L 5050 4350 60 
+F10 "RXSM_LO" I R 7900 2300 60 
+F11 "RXSM_SOE" I R 7900 2400 60 
+F12 "RXSM_SODS" I R 7900 2500 60 
+F13 "lens_heater_EN" O L 5050 3850 60 
+F14 "pressure_SCL" O L 5050 2450 60 
+F15 "pressure_SDA" B L 5050 2550 60 
+F16 "cam_light_EN" O L 5050 3750 60 
+F17 "probe1_EN" O L 5050 3950 60 
+F18 "probe2_EN" O L 5050 4050 60 
+F19 "probe3_EN" O L 5050 4150 60 
+F20 "bat_boost_EN" O L 5050 4450 60 
+F21 "bat_charge_EN" O L 5050 4550 60 
+F22 "temperature_SDA" B L 5050 2750 60 
+F23 "temperature_SCL" O L 5050 2650 60 
+F24 "LED1" I R 7900 5250 60 
+F25 "LED2" I R 7900 5350 60 
+F26 "LED3" I R 7900 5450 60 
+F27 "SW1" I R 7900 5650 60 
+F28 "SW2" I R 7900 5800 60 
+F29 "encoder1_A" I L 5050 1600 60 
+F30 "encoder1_B" I L 5050 1700 60 
+F31 "encoder2_A" I L 5050 1800 60 
+F32 "encoder2_B" I L 5050 1900 60 
+F33 "encoder3_A" I L 5050 2000 60 
+F34 "encoder3_B" I L 5050 2100 60 
+F35 "RXSM_TX" O R 7900 2100 60 
+F36 "RasPi_TX" O R 7900 1600 60 
+F37 "temp1_CS" O R 7900 4250 60 
+F38 "temp2_CS" O R 7900 4350 60 
+F39 "temp3_CS" O R 7900 4450 60 
+F40 "temp4_CS" O R 7900 4550 60 
+F41 "temp5_CS" O R 7900 4650 60 
+F42 "extADC_SPI_SCK" O L 5050 3050 60 
+F43 "extADC_SPI_MISO" I L 5050 3150 60 
+F44 "extADC_SPI_MOSI" O L 5050 3250 60 
+F45 "extADC_SPI_CS1" O L 5050 3350 60 
+F46 "brake_EN" O L 5050 3550 60 
+F47 "encoderMotor_A" I L 5050 4750 60 
+F48 "encoderMotor_B" I L 5050 4850 60 
+F49 "hall_W" I L 5050 5750 60 
+F50 "hall_V" I L 5050 5650 60 
+F51 "hall_U" I L 5050 5550 60 
+F52 "temp_SPI1_SCK" O R 7900 3050 60 
+F53 "temp_SPI1_MISO" I R 7900 3250 60 
+F54 "temp_SPI1_MOSI" O R 7900 3150 60 
+F55 "temp_SPI2_SCK" O R 7900 3350 60 
+F56 "temp_SPI2_MISO" I R 7900 3550 60 
+F57 "temp_SPI2_MOSI" O R 7900 3450 60 
+F58 "temp6_INT" I R 7900 4150 60 
+F59 "temp6_CS" O R 7900 4750 60 
+F60 "Motor_U_N" O L 5050 5050 60 
+F61 "Motor_U_P" O L 5050 4950 60 
+F62 "Motor_V_P" O L 5050 5150 60 
+F63 "Motor_V_N" O L 5050 5250 60 
+F64 "Motor_W_P" O L 5050 5350 60 
+F65 "Motor_W_N" O L 5050 5450 60 
+$EndSheet
+Text Label 1950 4100 2    60   ~ 0
+Motor_U_P
+Text Label 1950 4200 2    60   ~ 0
+Motor_U_N
+Text Label 1950 4400 2    60   ~ 0
+Motor_V_N
+Text Label 1950 4600 2    60   ~ 0
+Motor_W_N
+Text Label 1950 4300 2    60   ~ 0
+Motor_V_P
+Text Label 1950 4500 2    60   ~ 0
+Motor_W_P
+Text Label 4300 4950 0    60   ~ 0
+Motor_U_P
+Text Label 4300 5050 0    60   ~ 0
+Motor_U_N
+Text Label 4300 5250 0    60   ~ 0
+Motor_V_N
+Text Label 4300 5450 0    60   ~ 0
+Motor_W_N
+Text Label 4300 5150 0    60   ~ 0
+Motor_V_P
+Text Label 4300 5350 0    60   ~ 0
+Motor_W_P
+$Sheet
+S 3300 1500 1350 700 
+U 591DE5BC
+F0 "Heat_Probe_Encoder" 60
+F1 "heat_probe_encoder.sch" 60
+F2 "ENC1_A" O R 4650 1600 60 
+F3 "ENC1_B" O R 4650 1700 60 
+F4 "ENC2_A" O R 4650 1800 60 
+F5 "ENC2_B" O R 4650 1900 60 
+F6 "ENC3_A" O R 4650 2000 60 
+F7 "ENC3_B" O R 4650 2100 60 
+$EndSheet
+$Comp
+L R R108
+U 1 1 59204DCC
+P 9000 900
+F 0 "R108" V 9080 900 50  0000 C CNN
+F 1 "NC" V 9000 900 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 8930 900 50  0001 C CNN
+F 3 "" H 9000 900 50  0001 C CNN
+	1    9000 900 
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_01X40 J101
+U 1 1 592203A3
+P 900 5650
+F 0 "J101" H 900 7700 50  0000 C CNN
+F 1 "Powerboard <-> Mainboard" V 1000 5650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x20_Pitch2.54mm" H 900 5650 50  0001 C CNN
+F 3 "" H 900 5650 50  0001 C CNN
+	1    900  5650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L DB9_FEMALE J102
+U 1 1 59285E82
+P 700 2150
+F 0 "J102" H 700 2700 50  0000 C CNN
+F 1 "Temperature & Pressure" H 400 1350 50  0000 C CNN
+F 2 "Connectors:DB9FD" H 700 2150 50  0001 C CNN
+F 3 "" H 700 2150 50  0001 C CNN
+	1    700  2150
+	-1   0    0    -1  
+$EndComp
+Text Label 8400 5250 0    20   ~ 0
+LED1_R
+Text Label 8900 5350 0    20   ~ 0
+LED2_R
+Text Label 8400 5450 0    20   ~ 0
+LED3_R
+Text Label 4450 6800 0    60   ~ 0
+5V_filtered
+Text Label 9200 900  0    60   ~ 0
+CAM_GND
 Wire Wire Line
 	5500 7100 5500 7350
 Wire Wire Line
@@ -442,7 +749,7 @@ Wire Wire Line
 	4300 6900 4300 6800
 Connection ~ 4300 6800
 Wire Wire Line
-	3350 7300 6250 7300
+	3350 7300 6350 7300
 Wire Wire Line
 	6250 7300 6250 7250
 Connection ~ 5950 7300
@@ -532,12 +839,6 @@ Wire Wire Line
 	9950 5650 9850 5650
 Wire Wire Line
 	8950 5800 8850 5800
-Text Notes 2700 2550 2    60   ~ 0
-Various I2C temperature\nsensors (DS1731)\nBattery, structure, PCBs,\ncupola, camera, ...
-Text Notes 2900 6600 0    60   ~ 0
-3.3V power supply (from 5V) for µC and periphery
-Text Notes 10000 5500 0    60   ~ 0
-status LEDs and switches\nfor testing
 Wire Wire Line
 	5050 3750 4300 3750
 Wire Wire Line
@@ -554,54 +855,18 @@ Wire Wire Line
 	5050 4450 4300 4450
 Wire Wire Line
 	4300 4550 5050 4550
-Text Label 4300 3050 0    60   ~ 0
-extADC_SPI_SCK
 Wire Wire Line
 	4300 3050 5050 3050
-Text Label 4300 3150 0    60   ~ 0
-extADC_SPI_MISO
-Text Label 4300 3250 0    60   ~ 0
-extADC_SPI_MOSI
-Text Label 4300 3350 0    60   ~ 0
-extADC_SPI_CS1
 Wire Wire Line
 	4300 3150 5050 3150
 Wire Wire Line
 	5050 3250 4300 3250
 Wire Wire Line
 	4300 3350 5050 3350
-$Comp
-L DB9_FEMALE J103
-U 1 1 59082736
-P 9900 1200
-F 0 "J103" H 9900 1750 50  0000 C CNN
-F 1 "Camera board" V 10100 1200 50  0000 C CNN
-F 2 "Connectors:DB9FD" H 9900 1200 50  0001 C CNN
-F 3 "" H 9900 1200 50  0001 C CNN
-	1    9900 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR011
-U 1 1 59083068
-P 8750 1000
-F 0 "#PWR011" H 8750 750 50  0001 C CNN
-F 1 "GND" H 8750 850 50  0000 C CNN
-F 2 "" H 8750 1000 50  0001 C CNN
-F 3 "" H 8750 1000 50  0001 C CNN
-	1    8750 1000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8600 1600 8600 800 
 Wire Wire Line
 	8600 800  9600 800 
-NoConn ~ 9600 1100
-NoConn ~ 9600 1200
-NoConn ~ 9600 1300
-NoConn ~ 9600 1400
-NoConn ~ 9600 1500
-NoConn ~ 9600 1600
 Wire Wire Line
 	8750 1000 8750 900 
 Wire Wire Line
@@ -610,66 +875,6 @@ Wire Wire Line
 	8900 1000 9600 1000
 Wire Wire Line
 	8900 1700 8900 1000
-Text Label 1950 6100 2    60   ~ 0
-Lens_Heat_EN
-Text Label 1950 5000 2    60   ~ 0
-Probe3_EN
-Text Label 1950 4900 2    60   ~ 0
-Probe2_EN
-Text Label 1950 4800 2    60   ~ 0
-Probe1_EN
-Text Label 1950 5900 2    60   ~ 0
-Cam_Light_EN
-Text Label 1950 5800 2    60   ~ 0
-Charge_status
-Text Label 1950 6200 2    60   ~ 0
-Boost24V_EN
-Text Label 1950 5700 2    60   ~ 0
-Charge_EN
-Text Label 1950 6700 2    60   ~ 0
-Hall_U
-Text Label 1950 6800 2    60   ~ 0
-Hall_V
-Text Label 1950 6900 2    60   ~ 0
-Hall_W
-Text Label 1950 6400 2    60   ~ 0
-Encoder_A+
-Text Label 1950 6500 2    60   ~ 0
-Encoder_B+
-Text Label 1950 7100 2    60   ~ 0
-LO
-Text Label 1950 7200 2    60   ~ 0
-SOE
-Text Label 1950 7300 2    60   ~ 0
-SODS
-Text Label 1950 7400 2    60   ~ 0
-TX
-Text Label 1950 7500 2    60   ~ 0
-RX
-$Comp
-L GND #PWR012
-U 1 1 5913059A
-P 1300 7700
-F 0 "#PWR012" H 1300 7450 50  0001 C CNN
-F 1 "GND" H 1300 7550 50  0000 C CNN
-F 2 "" H 1300 7700 50  0001 C CNN
-F 3 "" H 1300 7700 50  0001 C CNN
-	1    1300 7700
-	0    -1   -1   0   
-$EndComp
-$Comp
-L +5V #PWR013
-U 1 1 591305A0
-P 1400 3600
-F 0 "#PWR013" H 1400 3450 50  0001 C CNN
-F 1 "+5V" H 1400 3740 50  0000 C CNN
-F 2 "" H 1400 3600 50  0000 C CNN
-F 3 "" H 1400 3600 50  0000 C CNN
-	1    1400 3600
-	1    0    0    -1  
-$EndComp
-Text Label 1950 4000 2    60   ~ 0
-Brake_EN
 Wire Wire Line
 	1200 7600 1100 7600
 Wire Wire Line
@@ -746,16 +951,6 @@ Wire Wire Line
 Wire Wire Line
 	1100 4700 1200 4700
 Connection ~ 1200 4700
-Text Label 8750 2300 2    60   ~ 0
-LO
-Text Label 8750 2400 2    60   ~ 0
-SOE
-Text Label 8750 2500 2    60   ~ 0
-SODS
-Text Label 8750 2100 2    60   ~ 0
-TX
-Text Label 8750 2000 2    60   ~ 0
-RX
 Wire Wire Line
 	8750 2000 7900 2000
 Wire Wire Line
@@ -766,26 +961,8 @@ Wire Wire Line
 	7900 2400 8750 2400
 Wire Wire Line
 	8750 2300 7900 2300
-Text Label 4300 3550 0    60   ~ 0
-Brake_EN
 Wire Wire Line
 	4300 3550 5050 3550
-Text Label 1950 5200 2    60   ~ 0
-extADC_SPI_SCK
-Text Label 1950 5300 2    60   ~ 0
-extADC_SPI_MISO
-Text Label 1950 5400 2    60   ~ 0
-extADC_SPI_MOSI
-Text Label 1950 5500 2    60   ~ 0
-extADC_SPI_CS1
-Text Label 4300 3850 0    60   ~ 0
-Lens_Heat_EN
-Text Label 4300 5550 0    60   ~ 0
-Hall_U
-Text Label 4300 5650 0    60   ~ 0
-Hall_V
-Text Label 4300 5750 0    60   ~ 0
-Hall_W
 Wire Wire Line
 	5050 5550 4300 5550
 Wire Wire Line
@@ -796,34 +973,6 @@ Wire Wire Line
 	5050 4750 4300 4750
 Wire Wire Line
 	4300 4850 5050 4850
-Text Label 4300 4750 0    60   ~ 0
-Encoder_A+
-Text Label 4300 4850 0    60   ~ 0
-Encoder_B+
-$Sheet
-S 8850 2950 1550 1900
-U 58F3D7C6
-F0 "Mainboard_Temp_Sensors" 60
-F1 "mainboard_temp_sensors.sch" 60
-F2 "SPI1_SCK" I L 8850 3050 60 
-F3 "SPI1_MOSI" I L 8850 3150 60 
-F4 "SPI1_MISO" O L 8850 3250 60 
-F5 "SPI1_CS1" I L 8850 4250 60 
-F6 "SPI1_CS2" I L 8850 4350 60 
-F7 "SPI1_CS3" I L 8850 4450 60 
-F8 "SPI2_SCK" I L 8850 3350 60 
-F9 "SPI2_MOSI" I L 8850 3450 60 
-F10 "SPI2_MISO" O L 8850 3550 60 
-F11 "SPI2_CS1" I L 8850 4550 60 
-F12 "SPI2_CS2" I L 8850 4650 60 
-F13 "SPI2_CS3" I L 8850 4750 60 
-F14 "INT1" O L 8850 3650 60 
-F15 "INT2" O L 8850 3750 60 
-F16 "INT3" O L 8850 3850 60 
-F17 "INT4" O L 8850 3950 60 
-F18 "INT5" O L 8850 4050 60 
-F19 "INT6" O L 8850 4150 60 
-$EndSheet
 Wire Wire Line
 	7900 3050 8850 3050
 Wire Wire Line
@@ -860,106 +1009,12 @@ Wire Wire Line
 	7900 4650 8850 4650
 Wire Wire Line
 	8850 4750 7900 4750
-$Sheet
-S 5050 1500 2850 4400
-U 5889F4B8
-F0 "Mainboard microcontroller" 60
-F1 "mainboard_microcontroller.sch" 60
-F2 "RXSM_RX" I R 7900 2000 59 
-F3 "RasPi_RX" I R 7900 1700 59 
-F4 "temp1_INT" I R 7900 3650 59 
-F5 "temp2_INT" I R 7900 3750 59 
-F6 "temp3_INT" I R 7900 3850 59 
-F7 "temp4_INT" I R 7900 3950 59 
-F8 "temp5_INT" I R 7900 4050 59 
-F9 "bat_charge_status" I L 5050 4350 60 
-F10 "RXSM_LO" I R 7900 2300 60 
-F11 "RXSM_SOE" I R 7900 2400 60 
-F12 "RXSM_SODS" I R 7900 2500 60 
-F13 "lens_heater_EN" O L 5050 3850 60 
-F14 "pressure_SCL" O L 5050 2450 60 
-F15 "pressure_SDA" B L 5050 2550 60 
-F16 "cam_light_EN" O L 5050 3750 60 
-F17 "probe1_EN" O L 5050 3950 60 
-F18 "probe2_EN" O L 5050 4050 60 
-F19 "probe3_EN" O L 5050 4150 60 
-F20 "bat_boost_EN" O L 5050 4450 60 
-F21 "bat_charge_EN" O L 5050 4550 60 
-F22 "temperature_SDA" B L 5050 2750 60 
-F23 "temperature_SCL" O L 5050 2650 60 
-F24 "LED1" I R 7900 5250 60 
-F25 "LED2" I R 7900 5350 60 
-F26 "LED3" I R 7900 5450 60 
-F27 "SW1" I R 7900 5650 60 
-F28 "SW2" I R 7900 5800 60 
-F29 "encoder1_A" I L 5050 1600 60 
-F30 "encoder1_B" I L 5050 1700 60 
-F31 "encoder2_A" I L 5050 1800 60 
-F32 "encoder2_B" I L 5050 1900 60 
-F33 "encoder3_A" I L 5050 2000 60 
-F34 "encoder3_B" I L 5050 2100 60 
-F35 "RXSM_TX" O R 7900 2100 60 
-F36 "RasPi_TX" O R 7900 1600 60 
-F37 "temp1_CS" O R 7900 4250 60 
-F38 "temp2_CS" O R 7900 4350 60 
-F39 "temp3_CS" O R 7900 4450 60 
-F40 "temp4_CS" O R 7900 4550 60 
-F41 "temp5_CS" O R 7900 4650 60 
-F42 "extADC_SPI_SCK" O L 5050 3050 60 
-F43 "extADC_SPI_MISO" I L 5050 3150 60 
-F44 "extADC_SPI_MOSI" O L 5050 3250 60 
-F45 "extADC_SPI_CS1" O L 5050 3350 60 
-F46 "brake_EN" O L 5050 3550 60 
-F47 "encoderMotor_A" I L 5050 4750 60 
-F48 "encoderMotor_B" I L 5050 4850 60 
-F49 "hall_W" I L 5050 5750 60 
-F50 "hall_V" I L 5050 5650 60 
-F51 "hall_U" I L 5050 5550 60 
-F52 "temp_SPI1_SCK" O R 7900 3050 60 
-F53 "temp_SPI1_MISO" I R 7900 3250 60 
-F54 "temp_SPI1_MOSI" O R 7900 3150 60 
-F55 "temp_SPI2_SCK" O R 7900 3350 60 
-F56 "temp_SPI2_MISO" I R 7900 3550 60 
-F57 "temp_SPI2_MOSI" O R 7900 3450 60 
-F58 "temp6_INT" I R 7900 4150 60 
-F59 "temp6_CS" O R 7900 4750 60 
-F60 "Motor_U_N" O L 5050 5050 60 
-F61 "Motor_U_P" O L 5050 4950 60 
-F62 "Motor_V_P" O L 5050 5150 60 
-F63 "Motor_V_N" O L 5050 5250 60 
-F64 "Motor_W_P" O L 5050 5350 60 
-F65 "Motor_W_N" O L 5050 5450 60 
-$EndSheet
 Wire Wire Line
 	1100 4600 1950 4600
 Wire Wire Line
 	1950 4200 1100 4200
 Wire Wire Line
 	1100 4100 1950 4100
-Text Label 1950 4100 2    60   ~ 0
-Motor_U_P
-Text Label 1950 4200 2    60   ~ 0
-Motor_U_N
-Text Label 1950 4400 2    60   ~ 0
-Motor_V_N
-Text Label 1950 4600 2    60   ~ 0
-Motor_W_N
-Text Label 1950 4300 2    60   ~ 0
-Motor_V_P
-Text Label 1950 4500 2    60   ~ 0
-Motor_W_P
-Text Label 4300 4950 0    60   ~ 0
-Motor_U_P
-Text Label 4300 5050 0    60   ~ 0
-Motor_U_N
-Text Label 4300 5250 0    60   ~ 0
-Motor_V_N
-Text Label 4300 5450 0    60   ~ 0
-Motor_W_N
-Text Label 4300 5150 0    60   ~ 0
-Motor_V_P
-Text Label 4300 5350 0    60   ~ 0
-Motor_W_P
 Wire Wire Line
 	5050 5450 4300 5450
 Wire Wire Line
@@ -972,18 +1027,6 @@ Wire Wire Line
 	5050 5050 4300 5050
 Wire Wire Line
 	4300 4950 5050 4950
-$Sheet
-S 3300 1500 1350 700 
-U 591DE5BC
-F0 "Heat_Probe_Encoder" 60
-F1 "heat_probe_encoder.sch" 60
-F2 "ENC1_A" O R 4650 1600 60 
-F3 "ENC1_B" O R 4650 1700 60 
-F4 "ENC2_A" O R 4650 1800 60 
-F5 "ENC2_B" O R 4650 1900 60 
-F6 "ENC3_A" O R 4650 2000 60 
-F7 "ENC3_B" O R 4650 2100 60 
-$EndSheet
 Wire Wire Line
 	1350 1500 3050 1500
 Wire Wire Line
@@ -1002,30 +1045,8 @@ Wire Wire Line
 	4650 1700 5050 1700
 Wire Wire Line
 	5050 1600 4650 1600
-$Comp
-L R R108
-U 1 1 59204DCC
-P 9000 900
-F 0 "R108" V 9080 900 50  0000 C CNN
-F 1 "NC" V 9000 900 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 8930 900 50  0001 C CNN
-F 3 "" H 9000 900 50  0001 C CNN
-	1    9000 900 
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8750 900  8850 900 
-$Comp
-L CONN_01X40 J101
-U 1 1 592203A3
-P 900 5650
-F 0 "J101" H 900 7700 50  0000 C CNN
-F 1 "Powerboard <-> Mainboard" V 1000 5650 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x20_Pitch2.54mm" H 900 5650 50  0001 C CNN
-F 3 "" H 900 5650 50  0001 C CNN
-	1    900  5650
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	1200 3700 1200 7700
 Wire Wire Line
@@ -1039,17 +1060,6 @@ Wire Wire Line
 Connection ~ 1200 7000
 Wire Wire Line
 	1200 7700 1300 7700
-$Comp
-L DB9_FEMALE J102
-U 1 1 59285E82
-P 700 2150
-F 0 "J102" H 700 2700 50  0000 C CNN
-F 1 "Temperature & Pressure" H 400 1350 50  0000 C CNN
-F 2 "Connectors:DB9FD" H 700 2150 50  0001 C CNN
-F 3 "" H 700 2150 50  0001 C CNN
-	1    700  2150
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	1100 1750 1100 2650
 Wire Wire Line
@@ -1091,14 +1101,116 @@ Wire Wire Line
 	1350 2450 1350 2750
 Wire Wire Line
 	1350 2750 5050 2750
-Text Label 8400 5250 0    20   ~ 0
-LED1_R
-Text Label 8900 5350 0    20   ~ 0
-LED2_R
-Text Label 8400 5450 0    20   ~ 0
-LED3_R
-Text Label 4450 6800 0    60   ~ 0
-5V_filtered
-Text Label 9200 900  0    60   ~ 0
-CAM_GND
+$Comp
+L TEST_1P J108
+U 1 1 5915CEDF
+P 8500 1050
+F 0 "J108" H 8500 1320 50  0000 C CNN
+F 1 "RasPi_TX" H 8500 1250 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 8700 1050 50  0001 C CNN
+F 3 "" H 8700 1050 50  0001 C CNN
+	1    8500 1050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8500 1050 8600 1050
+Connection ~ 8600 1050
+$Comp
+L TEST_1P J109
+U 1 1 5915D648
+P 9000 1450
+F 0 "J109" H 9000 1720 50  0000 C CNN
+F 1 "RasPi_RX" H 9000 1650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9200 1450 50  0001 C CNN
+F 3 "" H 9200 1450 50  0001 C CNN
+	1    9000 1450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9000 1450 8900 1450
+Connection ~ 8900 1450
+$Comp
+L TEST_1P J104
+U 1 1 591648E8
+P 2800 2850
+F 0 "J104" H 2700 2900 50  0000 C CNN
+F 1 "temp_SCL" V 2800 3200 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3000 2850 50  0001 C CNN
+F 3 "" H 3000 2850 50  0001 C CNN
+	1    2800 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L TEST_1P J105
+U 1 1 591686E2
+P 3000 2850
+F 0 "J105" H 2900 2900 50  0000 C CNN
+F 1 "temp_SDA" V 3000 3200 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3200 2850 50  0001 C CNN
+F 3 "" H 3200 2850 50  0001 C CNN
+	1    3000 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L TEST_1P J106
+U 1 1 5916895A
+P 3200 2850
+F 0 "J106" H 3100 2900 50  0000 C CNN
+F 1 "pres_SCL" V 3200 3200 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3400 2850 50  0001 C CNN
+F 3 "" H 3400 2850 50  0001 C CNN
+	1    3200 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L TEST_1P J107
+U 1 1 59168BD5
+P 3400 2850
+F 0 "J107" H 3300 2900 50  0000 C CNN
+F 1 "pres_SDA" V 3400 3200 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3600 2850 50  0001 C CNN
+F 3 "" H 3600 2850 50  0001 C CNN
+	1    3400 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2800 2850 2800 2650
+Connection ~ 2800 2650
+Wire Wire Line
+	3000 2750 3000 2850
+Connection ~ 3000 2750
+Wire Wire Line
+	3200 2450 3200 2850
+Connection ~ 3200 2450
+Wire Wire Line
+	3400 2550 3400 2850
+Connection ~ 3400 2550
+$Comp
+L TEST_1P J110
+U 1 1 5919CBEA
+P 6350 6700
+F 0 "J110" H 6250 6750 50  0000 C CNN
+F 1 "3V3" V 6350 6950 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6550 6700 50  0001 C CNN
+F 3 "" H 6550 6700 50  0001 C CNN
+	1    6350 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 6700 6350 6800
+Connection ~ 6350 6800
+$Comp
+L TEST_1P J111
+U 1 1 591A040C
+P 6350 7400
+F 0 "J111" H 6250 7450 50  0000 C CNN
+F 1 "GND" V 6350 7650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6550 7400 50  0001 C CNN
+F 3 "" H 6550 7400 50  0001 C CNN
+	1    6350 7400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6350 7300 6350 7400
+Connection ~ 6250 7300
 $EndSCHEMATC

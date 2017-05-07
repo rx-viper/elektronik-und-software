@@ -142,7 +142,7 @@ Wire Wire Line
 Wire Wire Line
 	5100 4300 5200 4300
 Wire Wire Line
-	7300 4200 6600 4200
+	6600 4200 8000 4200
 Wire Wire Line
 	6600 3700 5100 3700
 Wire Wire Line
@@ -152,7 +152,7 @@ Wire Wire Line
 Wire Wire Line
 	6600 4200 6600 3700
 Wire Wire Line
-	6500 4100 7300 4100
+	6500 4100 8000 4100
 Wire Wire Line
 	6400 4100 6300 4100
 Connection ~ 6400 4000
@@ -161,7 +161,7 @@ Wire Wire Line
 Wire Wire Line
 	6700 3600 6700 4000
 Wire Wire Line
-	6700 4000 7300 4000
+	6700 4000 8000 4000
 Wire Wire Line
 	5000 3600 5000 4000
 Wire Wire Line
@@ -169,19 +169,75 @@ Wire Wire Line
 Wire Wire Line
 	5100 4200 5200 4200
 Wire Wire Line
-	6300 4300 7300 4300
+	6300 4300 8000 4300
 Wire Wire Line
 	6400 3900 6400 4100
 Wire Wire Line
 	6500 4200 6500 4100
 Wire Wire Line
 	5100 4100 5200 4100
-Text HLabel 7300 4000 2    60   Input ~ 0
+Text HLabel 8000 4000 2    60   Input ~ 0
 CS
-Text HLabel 7300 4100 2    60   Input ~ 0
+Text HLabel 8000 4100 2    60   Input ~ 0
 SCK
-Text HLabel 7300 4300 2    60   Input ~ 0
+Text HLabel 8000 4300 2    60   Input ~ 0
 MOSI
-Text HLabel 7300 4200 2    60   Output ~ 0
+Text HLabel 8000 4200 2    60   Output ~ 0
 MISO
+$Comp
+L TEST_1P J1101
+U 1 1 59174B90
+P 6900 3900
+F 0 "J1101" V 6800 4050 50  0000 C CNN
+F 1 "FL1_CS" V 6900 4250 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7100 3900 50  0001 C CNN
+F 3 "" H 7100 3900 50  0001 C CNN
+	1    6900 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST_1P J1102
+U 1 1 59174C48
+P 7100 3900
+F 0 "J1102" V 7000 4050 50  0000 C CNN
+F 1 "FL1_SCK" V 7100 4250 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7300 3900 50  0001 C CNN
+F 3 "" H 7300 3900 50  0001 C CNN
+	1    7100 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST_1P J1103
+U 1 1 59174C66
+P 7300 3900
+F 0 "J1103" V 7200 4050 50  0000 C CNN
+F 1 "FL1_MISO" V 7300 4250 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7500 3900 50  0001 C CNN
+F 3 "" H 7500 3900 50  0001 C CNN
+	1    7300 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST_1P J1104
+U 1 1 59174CA0
+P 7500 3900
+F 0 "J1104" V 7400 4050 50  0000 C CNN
+F 1 "FL1_MOSI" V 7500 4250 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7700 3900 50  0001 C CNN
+F 3 "" H 7700 3900 50  0001 C CNN
+	1    7500 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 3900 6900 4000
+Connection ~ 6900 4000
+Wire Wire Line
+	7100 3900 7100 4100
+Connection ~ 7100 4100
+Wire Wire Line
+	7300 3900 7300 4200
+Connection ~ 7300 4200
+Wire Wire Line
+	7500 3900 7500 4300
+Connection ~ 7500 4300
 $EndSCHEMATC

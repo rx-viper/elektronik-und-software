@@ -299,7 +299,7 @@ F 3 "" H 6900 1700 50  0001 C CNN
 $EndComp
 Text Notes 6350 1450 0    60   ~ 0
 Optional pull-ups for\nopen-drain encoder outputs
-Text Notes 8150 2250 0    60   ~ 0
+Text Notes 7800 4500 0    60   ~ 0
 Optional RC-filter to remove noise\nfrom encoder cables
 $Comp
 L DS26LV32AT U1202
@@ -468,22 +468,22 @@ Wire Wire Line
 Wire Wire Line
 	8150 2400 9850 2400
 Wire Wire Line
-	8300 2400 8300 3550
+	8300 2300 8300 3550
 Connection ~ 8300 2400
 Wire Wire Line
-	8550 3550 8550 2600
+	8550 2300 8550 3550
 Connection ~ 8550 2600
 Wire Wire Line
-	8800 3550 8800 2800
+	8800 2300 8800 3550
 Connection ~ 8800 2800
 Wire Wire Line
-	9050 3000 9050 3550
+	9050 2300 9050 3550
 Connection ~ 9050 3000
 Wire Wire Line
-	9300 3550 9300 3200
+	9300 2300 9300 3550
 Connection ~ 9300 3200
 Wire Wire Line
-	9550 3400 9550 3550
+	9550 2300 9550 3550
 Connection ~ 9550 3400
 Wire Wire Line
 	8300 3850 8300 4050
@@ -841,4 +841,70 @@ Text Label 5250 3200 0    60   ~ 0
 ENC3_A_filter
 Text Label 5250 3400 0    60   ~ 0
 ENC3_B_filter
+$Comp
+L TEST_1P J1201
+U 1 1 591724E9
+P 8300 2300
+F 0 "J1201" V 8200 2450 50  0000 C CNN
+F 1 "ENC1_A" V 8300 2650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 8500 2300 50  0001 C CNN
+F 3 "" H 8500 2300 50  0001 C CNN
+	1    8300 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST_1P J1202
+U 1 1 59172B15
+P 8550 2300
+F 0 "J1202" V 8450 2450 50  0000 C CNN
+F 1 "ENC1_B" V 8550 2650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 8750 2300 50  0001 C CNN
+F 3 "" H 8750 2300 50  0001 C CNN
+	1    8550 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST_1P J1203
+U 1 1 59172B82
+P 8800 2300
+F 0 "J1203" V 8700 2450 50  0000 C CNN
+F 1 "ENC2_A" V 8800 2650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9000 2300 50  0001 C CNN
+F 3 "" H 9000 2300 50  0001 C CNN
+	1    8800 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST_1P J1204
+U 1 1 59172BF0
+P 9050 2300
+F 0 "J1204" V 8950 2450 50  0000 C CNN
+F 1 "ENC2_B" V 9050 2650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9250 2300 50  0001 C CNN
+F 3 "" H 9250 2300 50  0001 C CNN
+	1    9050 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST_1P J1205
+U 1 1 59173060
+P 9300 2300
+F 0 "J1205" V 9200 2450 50  0000 C CNN
+F 1 "ENC3_A" V 9300 2650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9500 2300 50  0001 C CNN
+F 3 "" H 9500 2300 50  0001 C CNN
+	1    9300 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L TEST_1P J1206
+U 1 1 591730D4
+P 9550 2300
+F 0 "J1206" V 9450 2450 50  0000 C CNN
+F 1 "ENC3_B" V 9550 2650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9750 2300 50  0001 C CNN
+F 3 "" H 9750 2300 50  0001 C CNN
+	1    9550 2300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
