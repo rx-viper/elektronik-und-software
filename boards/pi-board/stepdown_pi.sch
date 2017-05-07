@@ -386,4 +386,6 @@ F 3 "" H 3400 2400 50  0001 C CNN
 	1    3400 2400
 	1    0    0    -1  
 $EndComp
+Text Notes 5150 2050 0    60   ~ 0
+simliar to CMIO schematics
 $EndSCHEMATC
