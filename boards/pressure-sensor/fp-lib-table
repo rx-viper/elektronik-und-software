@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name rchojetzki-pressure-sensor-board)(type KiCad)(uri "$(KIPRJMOD)/rchojetzki-pressure-sensor-board.pretty")(options "")(descr ""))
+)
