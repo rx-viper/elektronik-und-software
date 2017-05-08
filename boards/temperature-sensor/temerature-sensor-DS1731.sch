@@ -68,136 +68,115 @@ F 3 "" H 650 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	950  1150 3650 1150
-Wire Wire Line
-	3000 1150 3000 1500
-Wire Wire Line
 	3000 1500 2800 1500
-Wire Wire Line
-	950  1350 1900 1350
-Wire Wire Line
-	1900 1350 1900 2700
-Wire Wire Line
-	1900 1800 2050 1800
-Wire Wire Line
-	2050 1600 1850 1600
-Wire Wire Line
-	1850 1600 1850 1750
-Wire Wire Line
-	1850 1750 950  1750
-Wire Wire Line
-	2050 1500 1800 1500
-Wire Wire Line
-	1800 1500 1800 1550
-Wire Wire Line
-	1800 1550 950  1550
-$Comp
-L R R1
-U 1 1 58FFD826
-P 3150 1400
-F 0 "R1" V 3230 1400 50  0000 C CNN
-F 1 "R" V 3150 1400 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3080 1400 50  0001 C CNN
-F 3 "" H 3150 1400 50  0001 C CNN
-	1    3150 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R3
-U 1 1 58FFD8DE
-P 3400 1400
-F 0 "R3" V 3480 1400 50  0000 C CNN
-F 1 "R" V 3400 1400 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3330 1400 50  0001 C CNN
-F 3 "" H 3400 1400 50  0001 C CNN
-	1    3400 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R5
-U 1 1 58FFD929
-P 3650 1400
-F 0 "R5" V 3730 1400 50  0000 C CNN
-F 1 "R" V 3650 1400 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3580 1400 50  0001 C CNN
-F 3 "" H 3650 1400 50  0001 C CNN
-	1    3650 1400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2800 1600 3150 1600
-Wire Wire Line
-	2800 1700 3400 1700
-Wire Wire Line
-	3400 1550 3400 1900
-Wire Wire Line
-	2800 1800 3650 1800
-Wire Wire Line
-	3650 1550 3650 1900
-Connection ~ 3000 1150
-Connection ~ 3150 1150
-Connection ~ 3400 1150
-Wire Wire Line
-	3150 1550 3150 1900
-Connection ~ 3400 1700
-Connection ~ 3650 1800
-Wire Wire Line
-	3650 1150 3650 1250
-Wire Wire Line
-	3400 1250 3400 1150
-Wire Wire Line
-	3150 1250 3150 1150
-Connection ~ 3150 1600
-Connection ~ 1900 1800
 Text Label 1000 1150 0    60   ~ 0
-VDD
-Text Label 1000 1350 0    60   ~ 0
 GND
+Text Label 1000 1350 0    60   ~ 0
+VDD
+Wire Wire Line
+	2950 1600 2800 1600
+Wire Wire Line
+	3550 1700 2800 1700
+Wire Wire Line
+	4150 1800 2800 1800
+$Comp
+L C C1
+U 1 1 591086F1
+P 1700 1150
+F 0 "C1" H 1725 1250 50  0000 L CNN
+F 1 "100nF" H 1725 1050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 1738 1000 50  0001 C CNN
+F 3 "" H 1700 1150 50  0001 C CNN
+	1    1700 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 2250 4500 2250
+Wire Wire Line
+	4500 2250 4500 2150
+Wire Wire Line
+	3900 2050 3900 2250
+Connection ~ 3900 2250
+Wire Wire Line
+	3300 1950 3300 2250
+Connection ~ 3300 2250
+Wire Wire Line
+	4500 1150 4500 1450
+Wire Wire Line
+	3900 1350 3900 1150
+Connection ~ 3900 1150
+Wire Wire Line
+	3300 1250 3300 1150
+Connection ~ 3300 1150
+Wire Wire Line
+	3000 1500 3000 1150
+Connection ~ 3000 1150
+Wire Wire Line
+	950  1350 2000 1350
+$Comp
+L S_JUMPER3 S1
+U 1 1 5910A1C4
+P 3300 1600
+F 0 "S1" V 3100 1600 60  0000 C CNN
+F 1 "S_JUMPER3" V 3200 1600 31  0000 C CNN
+F 2 "open-project:S_JUMPER_3" H 3300 1600 60  0001 C CNN
+F 3 "" H 3300 1600 60  0001 C CNN
+	1    3300 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L S_JUMPER3 S2
+U 1 1 5910A375
+P 3900 1700
+F 0 "S2" V 3700 1700 60  0000 C CNN
+F 1 "S_JUMPER3" V 3800 1700 31  0000 C CNN
+F 2 "open-project:S_JUMPER_3" H 3900 1700 60  0001 C CNN
+F 3 "" H 3900 1700 60  0001 C CNN
+	1    3900 1700
+	-1   0    0    1   
+$EndComp
+$Comp
+L S_JUMPER3 S3
+U 1 1 5910A463
+P 4500 1800
+F 0 "S3" V 4300 1800 60  0000 C CNN
+F 1 "S_JUMPER3" V 4400 1800 31  0000 C CNN
+F 2 "open-project:S_JUMPER_3" H 4500 1800 60  0001 C CNN
+F 3 "" H 4500 1800 60  0001 C CNN
+	1    4500 1800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2050 1600 1200 1600
+Wire Wire Line
+	1200 1600 1200 1550
+Wire Wire Line
+	1200 1550 950  1550
+Wire Wire Line
+	950  1750 1650 1750
 Text Label 1000 1550 0    60   ~ 0
-SDA
-Text Label 1000 1750 0    60   ~ 0
 SCL
-$Comp
-L S_JUMPER S1
-U 1 1 5902065C
-P 3400 2250
-F 0 "S1" H 3400 2100 60  0000 C CNN
-F 1 "S_JUMPER" H 3400 1900 60  0000 C CNN
-F 2 "rchojetzki-temp-board-footprint-lib:S_JUMPER_2_rchojetzki" H 3400 2250 60  0001 C CNN
-F 3 "" H 3400 2250 60  0001 C CNN
-	1    3400 2250
-	0    1    1    0   
-$EndComp
-$Comp
-L S_JUMPER S2
-U 1 1 590206E5
-P 3650 2250
-F 0 "S2" H 3650 2100 60  0000 C CNN
-F 1 "S_JUMPER" H 3650 1900 60  0000 C CNN
-F 2 "rchojetzki-temp-board-footprint-lib:S_JUMPER_2_rchojetzki" H 3650 2250 60  0001 C CNN
-F 3 "" H 3650 2250 60  0001 C CNN
-	1    3650 2250
-	0    1    1    0   
-$EndComp
-$Comp
-L S_JUMPER S3
-U 1 1 59020746
-P 3900 2250
-F 0 "S3" H 3900 2100 60  0000 C CNN
-F 1 "S_JUMPER" H 3900 1900 60  0000 C CNN
-F 2 "rchojetzki-temp-board-footprint-lib:S_JUMPER_2_rchojetzki" H 3900 2250 60  0001 C CNN
-F 3 "" H 3900 2250 60  0001 C CNN
-	1    3900 2250
-	0    1    1    0   
-$EndComp
+Text Label 1000 1750 0    60   ~ 0
+SDA
 Wire Wire Line
-	3150 2600 3150 2700
+	2050 1500 1650 1500
 Wire Wire Line
-	1900 2700 3650 2700
+	1650 1500 1650 1750
 Wire Wire Line
-	3400 2700 3400 2600
+	950  1150 1550 1150
 Wire Wire Line
-	3650 2700 3650 2600
-Connection ~ 3400 2700
-Connection ~ 3150 2700
+	1550 1800 2050 1800
+Wire Wire Line
+	1550 1000 1550 2250
+Connection ~ 1550 1800
+Wire Wire Line
+	2000 1350 2000 1150
+Wire Wire Line
+	2000 1150 4500 1150
+Wire Wire Line
+	1700 1300 1700 1350
+Connection ~ 1700 1350
+Wire Wire Line
+	1550 1000 1700 1000
+Connection ~ 1550 1150
 $EndSCHEMATC
