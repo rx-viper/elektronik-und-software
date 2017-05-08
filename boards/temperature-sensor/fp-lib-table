@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name rchojetzki-temp-board-footprint-lib)(type KiCad)(uri "$(KIPRJMOD)/rchojetzki-temp-board-footprint-lib.pretty")(options "")(descr ""))
+  (lib (name open-project)(type Legacy)(uri "$(KIPRJMOD)/open-project-lib/open-project.mod")(options "")(descr ""))
+)
