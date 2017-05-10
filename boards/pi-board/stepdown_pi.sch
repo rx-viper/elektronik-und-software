@@ -28,7 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:pam2306
+LIBS:rpi
 LIBS:switches
 LIBS:pi-board-cache
 EELAYER 25 0

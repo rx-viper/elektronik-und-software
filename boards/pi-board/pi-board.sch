@@ -28,7 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:pam2306
+LIBS:rpi
 LIBS:switches
 LIBS:pi-board-cache
 EELAYER 25 0
@@ -1127,4 +1127,14 @@ Text Label 4650 3250 0    60   ~ 0
 USB_boot+
 Text Label 4550 3400 2    60   ~ 0
 USB_cam+
+Text Label 10150 9300 0    60   ~ 0
+3V3
+Text Label 10450 9300 0    60   ~ 0
+1V8
+Text Label 16500 12250 0    60   ~ 0
+3V3
+Text Label 17700 12450 0    60   ~ 0
+1V8
+Text Label 18550 12450 0    60   ~ 0
+5V
 $EndSCHEMATC
