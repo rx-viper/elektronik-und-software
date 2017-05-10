@@ -1,14 +1,16 @@
 Electronics
+The VIPER electronics is in charge of all electronic parts included in our project. This also applies on hardware as well as on software. 
+All our choices have to be made in consideration of the requirements.
 
-The VIPER electronic is in charge of all electronic components used in our project. These include sensors, motors, boards, cables etc.  Furthermore we have to design our own boards fitting our needs.
+Requirements
 
-Challenges:
-Not all components are designed to be used in space. We have to make sure that all components fulfill the special requirements in space as for example low temperatures, very little pressure and high acceleration during rocket launch.
+Hardware
+-Our biggest challenge is the environment our experiment will be executed in. With temperatures up to -80°C and almost no pressure we have to choose  our hardware carefully. 
+-We have to make sure to deliver reliable measurement data, even in challenging conditions.
+-All data will be measured by 27 highly accurate temperature sensors, one pressure sensor and there will be two cameras, one capable of recording infrared and one able to record RGB.
 
-Tasks:
-In this project our goal is that all electrical components will work reliable. We have to program the automatized processes which are controlled from the signal from the rocket.
-We also have to cooperate with the structure team because sometimes we have to choose which components are useful or if we have enough room for our components in the structure model.
-The melting process into the ice blocks needs more current than the rocket module can provide. Therefore we have to use battery packs to power all parts which can't be powered by the REXUS module.
-In addition the VIPER electronics is in charge of programming. This includes the ground station providing general information during the flight, drivers for the components and more.
+Software
+- The experiment needs to be controlled by our software. For that we are able to use the signals given by the REXUS module to define destinctive points for our experiment.
+-Also the data has to be collected and stored properly. We will save our data on our Raspberry Pi 3 or on a flash drive. 
+-Furthermore we want to display data currently captured on our ground station. That way we will be able to have a first glance on the results of our project. 
 
-(Bild Groundstation)
