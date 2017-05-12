@@ -654,7 +654,6 @@ NoConn ~ 12800 4050
 NoConn ~ 12800 3550
 NoConn ~ 12800 3450
 NoConn ~ 12800 3150
-NoConn ~ 12800 2650
 $Comp
 L C C915
 U 1 1 590FA26B
@@ -981,8 +980,6 @@ Wire Wire Line
 Wire Wire Line
 	12800 5850 12900 5850
 Wire Wire Line
-	14700 6150 12800 6150
-Wire Wire Line
 	12900 6550 12800 6550
 Wire Wire Line
 	12800 6450 12900 6450
@@ -1090,4 +1087,13 @@ Connection ~ 10700 10250
 Wire Wire Line
 	11000 10350 11000 10250
 Connection ~ 11000 10250
+NoConn ~ 12800 6150
+Text Label 14200 6150 0    60   ~ 0
+Flash1_CS
+Wire Wire Line
+	14200 6150 14700 6150
+Text Label 13800 2650 2    60   ~ 0
+Flash1_CS
+Wire Wire Line
+	12800 2650 13800 2650
 $EndSCHEMATC

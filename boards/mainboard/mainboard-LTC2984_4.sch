@@ -66,17 +66,6 @@ F 3 "" H 7300 2350 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R702
-U 1 1 58FFF510
-P 4450 2200
-F 0 "R702" V 4350 2200 50  0000 C CNN
-F 1 "2k00" V 4450 2200 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 4380 2200 50  0001 C CNN
-F 3 "" H 4450 2200 50  0000 C CNN
-	1    4450 2200
-	0    1    1    0   
-$EndComp
-$Comp
 L C C719
 U 1 1 587B0677
 P 6350 1950
@@ -931,8 +920,6 @@ Wire Wire Line
 	8200 3400 8650 3400
 Wire Wire Line
 	9050 3400 8950 3400
-Wire Wire Line
-	4250 2200 4300 2200
 Text HLabel 4200 2400 0    60   Input ~ 0
 RTD1_B
 Text HLabel 4200 2500 0    60   Input ~ 0
