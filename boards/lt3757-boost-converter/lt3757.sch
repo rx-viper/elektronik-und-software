@@ -44,22 +44,22 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 2850 1300 0    60   Input ~ 0
+Text HLabel 2500 1300 0    60   Input ~ 0
 Bat_IN
-Text HLabel 8700 1300 2    60   Input ~ 0
+Text HLabel 10400 1300 2    60   Input ~ 0
 24V_OUT
 $Comp
-L GND #PWR03
+L GND #PWR3
 U 1 1 588F90A8
 P 4600 3550
-F 0 "#PWR03" H 4600 3300 50  0001 C CNN
+F 0 "#PWR3" H 4600 3300 50  0001 C CNN
 F 1 "GND" H 4600 3400 50  0000 C CNN
 F 2 "" H 4600 3550 50  0000 C CNN
 F 3 "" H 4600 3550 50  0000 C CNN
 	1    4600 3550
 	1    0    0    -1  
 $EndComp
-Text HLabel 2850 1900 0    60   Input ~ 0
+Text HLabel 2500 1900 0    60   Input ~ 0
 Enable
 $Comp
 L LT3757 U1
@@ -72,16 +72,12 @@ F 3 "" H 4600 2100 60  0001 C CNN
 	1    4600 2100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2850 1300 4900 1300
-Wire Wire Line
-	4600 1300 4600 1500
 $Comp
 L INDUCTOR L1
 U 1 1 588F9D48
 P 5200 1300
 F 0 "L1" V 5150 1300 50  0000 C CNN
-F 1 "0.72µH" V 5300 1300 50  0000 C CNN
+F 1 "2.4µH" V 5300 1300 50  0000 C CNN
 F 2 "GH_Inductors:Inductor_Wurth_HCI-1890" H 5200 1300 50  0001 C CNN
 F 3 "" H 5200 1300 50  0000 C CNN
 	1    5200 1300
@@ -175,11 +171,6 @@ F 3 "" H 3300 1650 50  0000 C CNN
 	1    3300 1650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3000 1450 3000 1300
-Connection ~ 3000 1300
-Wire Wire Line
-	3000 1750 3000 3450
 $Comp
 L R R5
 U 1 1 588FA63C
@@ -202,6 +193,182 @@ F 3 "" H 3900 2500 50  0000 C CNN
 	1    3900 2500
 	1    0    0    -1  
 $EndComp
+$Comp
+L R R8
+U 1 1 588FB43F
+P 4350 2900
+F 0 "R8" V 4430 2900 50  0000 C CNN
+F 1 "22k" V 4350 2900 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4280 2900 50  0001 C CNN
+F 3 "" H 4350 2900 50  0000 C CNN
+	1    4350 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C10
+U 1 1 588FB4B3
+P 4350 3250
+F 0 "C10" H 4375 3350 50  0000 L CNN
+F 1 "6n8" H 4375 3150 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4388 3100 50  0001 C CNN
+F 3 "" H 4350 3250 50  0000 C CNN
+	1    4350 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C9
+U 1 1 588FB818
+P 4850 3050
+F 0 "C9" H 4875 3150 50  0000 L CNN
+F 1 "4µ7" H 4875 2950 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4888 2900 50  0001 C CNN
+F 3 "" H 4850 3050 50  0000 C CNN
+	1    4850 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C8
+U 1 1 588FE63C
+P 4100 3050
+F 0 "C8" H 4125 3150 50  0000 L CNN
+F 1 "100p" H 4125 2950 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4138 2900 50  0001 C CNN
+F 3 "" H 4100 3050 50  0000 C CNN
+	1    4100 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R4
+U 1 1 588FE946
+P 5650 2250
+F 0 "R4" V 5730 2250 50  0000 C CNN
+F 1 "(22)" V 5650 2250 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 5580 2250 50  0001 C CNN
+F 3 "" H 5650 2250 50  0000 C CNN
+	1    5650 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L C C7
+U 1 1 588FE99D
+P 5400 2650
+F 0 "C7" H 5425 2750 50  0000 L CNN
+F 1 "(2n2)" H 5425 2550 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 5438 2500 50  0001 C CNN
+F 3 "" H 5400 2650 50  0000 C CNN
+	1    5400 2650
+	1    0    0    -1  
+$EndComp
+Text Notes 4150 1100 0    39   ~ 0
+Würth 7443556260\nL=2.4µH I_R=31.5A I_SAT=50A R_DC=1.58mOhm L_R=2.15µH
+Text Notes 5950 850  0    39   ~ 0
+Vishay VS-42CTQ030S-M3\n30V 2x20A D²PAK (TO-263AB) V_F=0.38V
+$Comp
+L CP C1
+U 1 1 58924C20
+P 3000 1600
+F 0 "C1" H 3025 1700 50  0000 L CNN
+F 1 "120µ" H 3025 1500 50  0000 L CNN
+F 2 "Capacitors_SMD:c_elec_8x10.5" H 3038 1450 50  0001 C CNN
+F 3 "" H 3000 1600 50  0000 C CNN
+	1    3000 1600
+	1    0    0    -1  
+$EndComp
+Text Notes 5950 3850 0    39   ~ 0
+Capacitors:\n1x + 4x Panasonic 35SVPF82M 35V 82µF 20mΩ, I_ripple=4A\nMouser #667-35SVPF82M
+$Comp
+L CP C5
+U 1 1 58924E09
+P 8600 2150
+F 0 "C5" H 8625 2250 50  0000 L CNN
+F 1 "120µ" H 8625 2050 50  0000 L CNN
+F 2 "Capacitors_SMD:c_elec_8x10.5" H 8638 2000 50  0001 C CNN
+F 3 "" H 8600 2150 50  0000 C CNN
+	1    8600 2150
+	1    0    0    -1  
+$EndComp
+Text Notes 5950 2850 0    39   ~ 0
+Vishay WSLP2726 2mΩ
+$Comp
+L Q_NMOS_GDS Q1
+U 1 1 58928FBF
+P 5800 2000
+F 0 "Q1" H 6100 2050 50  0000 R CNN
+F 1 "FDB86566" H 6350 1950 50  0000 R CNN
+F 2 "Diodes_SMD:DD-PAK_TO263_DualDiode_ThermalVias" H 6000 2100 50  0001 C CNN
+F 3 "" H 5800 2000 50  0000 C CNN
+	1    5800 2000
+	1    0    0    -1  
+$EndComp
+Text Notes 6150 1950 0    39   ~ 0
+Fairchild FDB86566\n60V 110A 2.7mΩ\nG_Q=80nC  C_RSS=57pF
+Text Label 5250 2100 0    39   ~ 0
+V_SENSE
+Text Label 6350 2400 0    39   ~ 0
+FBX
+Text Label 5400 2000 0    39   ~ 0
+GATE
+Text Label 4200 2750 0    39   ~ 0
+V_c
+Text Label 3700 2150 0    39   ~ 0
+RT
+Text Label 3900 2250 0    39   ~ 0
+SS
+Text Label 5800 1300 0    39   ~ 0
+L_D_FET
+$Comp
+L D_Schottky_x2_KCom_AKA D1
+U 1 1 58A9C328
+P 6450 1300
+F 0 "D1" V 6350 1150 50  0000 C CNN
+F 1 "VS-42CTQ030S-M3" V 6100 1300 50  0000 C CNN
+F 2 "Diodes_SMD:DD-PAK_TO263_DualDiode_ThermalVias" H 6450 1300 50  0001 C CNN
+F 3 "" H 6450 1300 50  0000 C CNN
+	1    6450 1300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C11
+U 1 1 59144BC0
+P 6750 2650
+F 0 "C11" H 6775 2750 50  0000 L CNN
+F 1 "(470p)" V 6800 2350 50  0000 L CNN
+F 2 "" H 6788 2500 50  0001 C CNN
+F 3 "" H 6750 2650 50  0001 C CNN
+	1    6750 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C12
+U 1 1 59144C5D
+P 9050 2150
+F 0 "C12" H 9075 2250 50  0000 L CNN
+F 1 "1µ" H 9075 2050 50  0000 L CNN
+F 2 "" H 9088 2000 50  0001 C CNN
+F 3 "" H 9050 2150 50  0001 C CNN
+	1    9050 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C13
+U 1 1 59144D66
+P 9350 2150
+F 0 "C13" H 9375 2250 50  0000 L CNN
+F 1 "100n" H 9375 2050 50  0000 L CNN
+F 2 "" H 9388 2000 50  0001 C CNN
+F 3 "" H 9350 2150 50  0001 C CNN
+	1    9350 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 1300 4900 1300
+Wire Wire Line
+	4600 1300 4600 1500
+Wire Wire Line
+	3000 1450 3000 1300
+Connection ~ 3000 1300
+Wire Wire Line
+	3000 1750 3000 3450
 Wire Wire Line
 	3650 2250 3650 2150
 Wire Wire Line
@@ -220,7 +387,7 @@ Wire Wire Line
 Wire Wire Line
 	3500 2050 3500 3450
 Wire Wire Line
-	3000 3450 8600 3450
+	2650 3450 10250 3450
 Wire Wire Line
 	4600 2700 4600 3550
 Wire Wire Line
@@ -237,7 +404,7 @@ Wire Wire Line
 Wire Wire Line
 	3550 1950 3550 1900
 Wire Wire Line
-	3550 1900 2850 1900
+	3550 1900 2500 1900
 Connection ~ 3300 1900
 Connection ~ 4600 1300
 Wire Wire Line
@@ -279,28 +446,6 @@ Wire Wire Line
 	7900 2300 7900 3450
 Connection ~ 7900 3450
 Connection ~ 8250 1300
-$Comp
-L R R8
-U 1 1 588FB43F
-P 4350 2900
-F 0 "R8" V 4430 2900 50  0000 C CNN
-F 1 "22k" V 4350 2900 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 4280 2900 50  0001 C CNN
-F 3 "" H 4350 2900 50  0000 C CNN
-	1    4350 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C10
-U 1 1 588FB4B3
-P 4350 3250
-F 0 "C10" H 4375 3350 50  0000 L CNN
-F 1 "6n8" H 4375 3150 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 4388 3100 50  0001 C CNN
-F 3 "" H 4350 3250 50  0000 C CNN
-	1    4350 3250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4350 3450 4350 3400
 Connection ~ 4350 3450
@@ -310,17 +455,6 @@ Wire Wire Line
 	4100 2750 4500 2750
 Wire Wire Line
 	4500 2750 4500 2700
-$Comp
-L C C9
-U 1 1 588FB818
-P 4850 3050
-F 0 "C9" H 4875 3150 50  0000 L CNN
-F 1 "4µ7" H 4875 2950 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 4888 2900 50  0001 C CNN
-F 3 "" H 4850 3050 50  0000 C CNN
-	1    4850 3050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4850 2900 4850 2800
 Wire Wire Line
@@ -334,26 +468,13 @@ Connection ~ 3300 3450
 Wire Wire Line
 	5150 2800 5150 3950
 Wire Wire Line
-	5150 3950 2300 3950
+	5150 3950 2000 3950
 Wire Wire Line
-	2300 3950 2300 1050
-Wire Wire Line
-	2300 1050 3550 1050
+	2000 1050 3550 1050
 Wire Wire Line
 	3550 1050 3550 1300
 Connection ~ 3550 1300
 Connection ~ 4850 2800
-$Comp
-L C C8
-U 1 1 588FE63C
-P 4100 3050
-F 0 "C8" H 4125 3150 50  0000 L CNN
-F 1 "100p" H 4125 2950 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 4138 2900 50  0001 C CNN
-F 3 "" H 4100 3050 50  0000 C CNN
-	1    4100 3050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4100 2900 4100 2750
 Connection ~ 4350 2750
@@ -364,28 +485,6 @@ Wire Wire Line
 	5200 2200 5250 2200
 Wire Wire Line
 	5250 2200 5250 2400
-$Comp
-L R R4
-U 1 1 588FE946
-P 5650 2250
-F 0 "R4" V 5730 2250 50  0000 C CNN
-F 1 "(22)" V 5650 2250 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 5580 2250 50  0001 C CNN
-F 3 "" H 5650 2250 50  0000 C CNN
-	1    5650 2250
-	0    1    1    0   
-$EndComp
-$Comp
-L C C7
-U 1 1 588FE99D
-P 5400 2650
-F 0 "C7" H 5425 2750 50  0000 L CNN
-F 1 "(2n2)" H 5425 2550 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 5438 2500 50  0001 C CNN
-F 3 "" H 5400 2650 50  0000 C CNN
-	1    5400 2650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5200 2100 5350 2100
 Wire Wire Line
@@ -401,80 +500,12 @@ Connection ~ 5900 2250
 Wire Wire Line
 	5400 2800 5400 3450
 Connection ~ 5400 3450
-Text Notes 4150 1100 0    39   ~ 0
-Würth 7443556082\nL=0.82µH I_R=41.5A I_SAT=65A R_DC=0.54mOhm L_R=0.72µH
-Text Notes 5950 850  0    39   ~ 0
-Vishay VS-42CTQ030S-M3\n30V 2x20A D²PAK (TO-263AB) V_F=0.38V
-$Comp
-L CP C1
-U 1 1 58924C20
-P 3000 1600
-F 0 "C1" H 3025 1700 50  0000 L CNN
-F 1 "120µ" H 3025 1500 50  0000 L CNN
-F 2 "Capacitors_SMD:c_elec_8x10.5" H 3038 1450 50  0001 C CNN
-F 3 "" H 3000 1600 50  0000 C CNN
-	1    3000 1600
-	1    0    0    -1  
-$EndComp
-Text Notes 5950 3850 0    39   ~ 0
-Capacitors:\n1x + 4x Panasonic 35SVPF82M 35V 82µF 20mΩ, I_ripple=4A\nMouser #667-35SVPF82M
-$Comp
-L CP C5
-U 1 1 58924E09
-P 8600 2150
-F 0 "C5" H 8625 2250 50  0000 L CNN
-F 1 "120µ" H 8625 2050 50  0000 L CNN
-F 2 "Capacitors_SMD:c_elec_8x10.5" H 8638 2000 50  0001 C CNN
-F 3 "" H 8600 2150 50  0000 C CNN
-	1    8600 2150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8600 2000 8600 1300
 Connection ~ 8600 1300
 Wire Wire Line
 	8600 3450 8600 2300
 Connection ~ 8250 3450
-Text Notes 5950 2850 0    39   ~ 0
-Vishay WSLP2726 2mΩ
-$Comp
-L Q_NMOS_GDS Q1
-U 1 1 58928FBF
-P 5800 2000
-F 0 "Q1" H 6100 2050 50  0000 R CNN
-F 1 "FDB86566" H 6350 1950 50  0000 R CNN
-F 2 "Diodes_SMD:DD-PAK_TO263_DualDiode_ThermalVias" H 6000 2100 50  0001 C CNN
-F 3 "" H 5800 2000 50  0000 C CNN
-	1    5800 2000
-	1    0    0    -1  
-$EndComp
-Text Notes 6150 1950 0    39   ~ 0
-Fairchild FDB86566\n60V 110A 2.7mΩ\nG_Q=80nC  C_RSS=57pF
-Text Label 5250 2100 0    39   ~ 0
-V_SENSE
-Text Label 6350 2400 0    39   ~ 0
-FBX
-Text Label 5400 2000 0    39   ~ 0
-GATE
-Text Label 4200 2750 0    39   ~ 0
-V_c
-Text Label 3700 2150 0    39   ~ 0
-RT
-Text Label 3900 2250 0    39   ~ 0
-SS
-Text Label 5800 1300 0    39   ~ 0
-L_D_FET
-$Comp
-L D_Schottky_x2_KCom_AKA D1
-U 1 1 58A9C328
-P 6450 1300
-F 0 "D1" V 6350 1150 50  0000 C CNN
-F 1 "VS-42CTQ030S-M3" V 6100 1300 50  0000 C CNN
-F 2 "Diodes_SMD:DD-PAK_TO263_DualDiode_ThermalVias" H 6450 1300 50  0001 C CNN
-F 3 "" H 6450 1300 50  0000 C CNN
-	1    6450 1300
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	5500 1300 6250 1300
 Wire Wire Line
@@ -485,5 +516,95 @@ Wire Wire Line
 	6250 1600 6450 1600
 Connection ~ 6250 1300
 Wire Wire Line
-	6650 1300 8700 1300
+	6650 1300 10400 1300
+Wire Wire Line
+	6750 2400 6750 2500
+Connection ~ 6750 2400
+Wire Wire Line
+	6750 2800 6750 3450
+Connection ~ 6750 3450
+$Comp
+L C C14
+U 1 1 5915C1D9
+P 9650 2150
+F 0 "C14" H 9675 2250 50  0000 L CNN
+F 1 "100n" H 9675 2050 50  0000 L CNN
+F 2 "" H 9688 2000 50  0001 C CNN
+F 3 "" H 9650 2150 50  0001 C CNN
+	1    9650 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C16
+U 1 1 5915C23F
+P 10250 2150
+F 0 "C16" H 10275 2250 50  0000 L CNN
+F 1 "10n" H 10275 2050 50  0000 L CNN
+F 2 "" H 10288 2000 50  0001 C CNN
+F 3 "" H 10250 2150 50  0001 C CNN
+	1    10250 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C15
+U 1 1 5915C2C5
+P 9950 2150
+F 0 "C15" H 9975 2250 50  0000 L CNN
+F 1 "47n" H 9975 2050 50  0000 L CNN
+F 2 "" H 9988 2000 50  0001 C CNN
+F 3 "" H 9950 2150 50  0001 C CNN
+	1    9950 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10250 2000 10250 1300
+Connection ~ 10250 1300
+Wire Wire Line
+	10250 3450 10250 2300
+Connection ~ 8600 3450
+Wire Wire Line
+	9050 2300 9050 3450
+Connection ~ 9050 3450
+Wire Wire Line
+	9350 2300 9350 3450
+Connection ~ 9350 3450
+Wire Wire Line
+	9650 2300 9650 3450
+Connection ~ 9650 3450
+Wire Wire Line
+	9950 2300 9950 3450
+Connection ~ 9950 3450
+Wire Wire Line
+	9950 2000 9950 1300
+Connection ~ 9950 1300
+Wire Wire Line
+	9650 1300 9650 2000
+Connection ~ 9650 1300
+Wire Wire Line
+	9350 2000 9350 1300
+Connection ~ 9350 1300
+Wire Wire Line
+	9050 2000 9050 1300
+Connection ~ 9050 1300
+Text Notes 4050 650  0    39   ~ 0
+Old: Würth 7443556082\nOld: L=0.82µH I_R=41.5A I_SAT=65A R_DC=0.54mOhm L_R=0.72µH
+$Comp
+L C C?
+U 1 1 5915D314
+P 2650 1600
+F 0 "C?" H 2675 1700 50  0000 L CNN
+F 1 "100n" H 2675 1500 50  0000 L CNN
+F 2 "" H 2688 1450 50  0001 C CNN
+F 3 "" H 2650 1600 50  0001 C CNN
+	1    2650 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 3950 2000 1050
+Wire Wire Line
+	2650 1450 2650 1300
+Connection ~ 2650 1300
+Wire Wire Line
+	2650 1750 2650 3450
+Connection ~ 3000 3450
 $EndSCHEMATC
