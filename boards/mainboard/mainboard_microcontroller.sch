@@ -290,11 +290,11 @@ Text HLabel 12900 7250 2    59   Input ~ 0
 temp5_INT
 Text HLabel 3500 3850 0    59   Output ~ 0
 temp5_CS
-Text HLabel 12900 5450 2    60   Output ~ 0
+Text HLabel 3500 8850 0    60   Output ~ 0
 probe1_EN
-Text HLabel 12900 5550 2    60   Output ~ 0
+Text HLabel 3500 8950 0    60   Output ~ 0
 probe2_EN
-Text HLabel 12900 2550 2    60   Output ~ 0
+Text HLabel 12900 5150 2    60   Output ~ 0
 probe3_EN
 Text HLabel 12900 4850 2    60   Output ~ 0
 cam_light_EN
@@ -469,7 +469,7 @@ Text HLabel 12900 3050 2    60   Output ~ 0
 extADC_SPI_MOSI
 Text HLabel 12900 2750 2    60   Output ~ 0
 extADC_SPI_CS1
-Text HLabel 12900 8950 2    60   Output ~ 0
+Text HLabel 12900 6250 2    60   Output ~ 0
 brake_EN
 Text HLabel 12900 8650 2    60   Input ~ 0
 encoderMotor_A
@@ -634,8 +634,6 @@ NoConn ~ 3600 7250
 NoConn ~ 3600 7750
 NoConn ~ 3600 7850
 NoConn ~ 3600 8150
-NoConn ~ 3600 8850
-NoConn ~ 3600 8950
 NoConn ~ 12800 8850
 NoConn ~ 12800 8550
 NoConn ~ 12800 7950
@@ -644,9 +642,8 @@ NoConn ~ 12800 7750
 NoConn ~ 12800 7550
 NoConn ~ 12800 7450
 NoConn ~ 12800 6650
-NoConn ~ 12800 6250
 NoConn ~ 12800 5250
-NoConn ~ 12800 5150
+NoConn ~ 12800 5450
 NoConn ~ 12800 5350
 NoConn ~ 12800 4250
 NoConn ~ 12800 4150
@@ -946,7 +943,7 @@ Wire Wire Line
 Wire Wire Line
 	12800 2450 12900 2450
 Wire Wire Line
-	12900 2550 12800 2550
+	12900 5150 12800 5150
 Wire Wire Line
 	12800 2750 12900 2750
 Wire Wire Line
@@ -971,10 +968,6 @@ Wire Wire Line
 	12800 4850 12900 4850
 Wire Wire Line
 	12900 4950 12800 4950
-Wire Wire Line
-	12900 5450 12800 5450
-Wire Wire Line
-	12800 5550 12900 5550
 Wire Wire Line
 	12900 5750 12800 5750
 Wire Wire Line
@@ -1012,7 +1005,7 @@ Wire Wire Line
 Wire Wire Line
 	12800 8750 12900 8750
 Wire Wire Line
-	12800 8950 12900 8950
+	12800 6250 12900 6250
 Wire Wire Line
 	3600 8750 3500 8750
 Wire Wire Line
@@ -1096,4 +1089,8 @@ Text Label 13800 2650 2    60   ~ 0
 Flash1_CS
 Wire Wire Line
 	12800 2650 13800 2650
+Wire Wire Line
+	3600 8850 3500 8850
+Wire Wire Line
+	3500 8950 3600 8950
 $EndSCHEMATC
