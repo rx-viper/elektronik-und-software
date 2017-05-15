@@ -41,12 +41,13 @@ LIBS:esd_diode_dual
 LIBS:ad7928
 LIBS:references
 LIBS:lt3592
+LIBS:ds26lv32at
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 11
+Sheet 7 10
 Title "Powerboard: Heat Probes"
 Date "2017-04-15"
 Rev "10"
@@ -421,8 +422,6 @@ Wire Wire Line
 	5050 5500 5150 5500
 Text Notes 4100 6350 0    60   ~ 0
 3x decoupling capacitors for ACS711
-Text Label 3300 1400 0    60   ~ 0
-24V_BAT
 $Comp
 L Q_NMOS_GDS Q801
 U 1 1 58F51B43
@@ -489,10 +488,8 @@ Wire Wire Line
 	2200 5300 2900 5300
 Text Notes 4850 2050 0    60   ~ 0
 3x ACS711: Hall Effect Linear Current Sensor
-Text HLabel 3100 1400 0    60   Input ~ 0
-24V_BAT
-Wire Wire Line
-	3100 1400 9250 1400
+Text HLabel 9150 2200 0    60   Input ~ 0
+24V_BAT_1
 Wire Wire Line
 	3800 2250 3800 2150
 Wire Wire Line
@@ -515,9 +512,7 @@ F 3 "" H 10200 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9250 1400 9250 4100
-Wire Wire Line
-	9250 2200 9900 2200
+	9150 2200 9900 2200
 Wire Wire Line
 	9250 2300 9900 2300
 Connection ~ 9250 2200
@@ -541,8 +536,7 @@ Wire Wire Line
 	8500 2900 9900 2900
 Connection ~ 8500 2800
 Wire Wire Line
-	9250 3000 9900 3000
-Connection ~ 9250 2500
+	9150 3000 9900 3000
 Wire Wire Line
 	9250 3100 9900 3100
 Connection ~ 9250 3000
@@ -563,8 +557,7 @@ Connection ~ 8500 3600
 Wire Wire Line
 	8500 3700 9900 3700
 Wire Wire Line
-	9250 3800 9900 3800
-Connection ~ 9250 3300
+	9150 3800 9900 3800
 Wire Wire Line
 	9250 3900 9900 3900
 Connection ~ 9250 3800
@@ -595,4 +588,14 @@ Text HLabel 7150 4200 2    60   Output ~ 0
 Probe2_Current
 Text HLabel 7150 5600 2    60   Output ~ 0
 Probe3_Current
+Text HLabel 9150 3000 0    60   Input ~ 0
+24V_BAT_2
+Text HLabel 9150 3800 0    60   Input ~ 0
+24V_BAT_3
+Wire Wire Line
+	9250 3000 9250 3300
+Wire Wire Line
+	9250 3800 9250 4100
+Wire Wire Line
+	9250 2200 9250 2500
 $EndSCHEMATC

@@ -41,12 +41,13 @@ LIBS:esd_diode_dual
 LIBS:ad7928
 LIBS:references
 LIBS:lt3592
+LIBS:ds26lv32at
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 11
+Sheet 1 10
 Title "Powerboard overview"
 Date "2017-03-14"
 Rev "10"
@@ -86,15 +87,6 @@ F 3 "" H 1150 3050 50  0000 C CNN
 	1    1150 3050
 	-1   0    0    1   
 $EndComp
-$Sheet
-S 3100 2900 1500 400 
-U 5886F238
-F0 "Powerboard Stepup 24V" 60
-F1 "powerboard_stepup_24V.sch" 60
-F2 "Bat_IN" I L 3100 3000 60 
-F3 "24V_OUT" I R 4600 3000 60 
-F4 "Enable" I L 3100 3200 60 
-$EndSheet
 $Comp
 L +5V #PWR109
 U 1 1 5886FF1B
@@ -342,8 +334,6 @@ Text Label 2000 4100 1    60   ~ 0
 RXSM_28V
 Text Notes 2300 3600 0    60   ~ 0
 Battery\ncut off
-Text Label 4700 3000 0    60   ~ 0
-24V_BAT
 $Comp
 L CMC FL101
 U 1 1 58C8D036
@@ -419,7 +409,7 @@ $Comp
 L Q_PMOS_GDS Q101
 U 1 1 58CA6DDD
 P 2100 3100
-F 0 "Q101" H 2400 3150 50  0000 R CNN
+F 0 "Q101" V 2250 3400 50  0000 R CNN
 F 1 "P-FET" V 2050 3450 50  0000 R CNN
 F 2 "" H 2300 3200 50  0000 C CNN
 F 3 "" H 2100 3100 50  0000 C CNN
@@ -452,7 +442,7 @@ Text Label 4900 2200 2    60   ~ 0
 Charge_status
 Text Label 2550 2750 2    47   ~ 0
 BAT_raw
-Text Label 3650 3500 2    60   ~ 0
+Text Label 2500 3250 0    60   ~ 0
 Boost24V_EN
 Text Label 4900 2400 2    60   ~ 0
 Charge_EN
@@ -498,17 +488,19 @@ RXSM_RX_Y
 Text Label 6550 7600 2    60   ~ 0
 RXSM_RX_~Z
 $Sheet
-S 4200 3850 1500 600 
+S 4200 3750 1500 700 
 U 58F4FF70
 F0 "Powerboard_Heat_Probes" 60
 F1 "heat-probes.sch" 60
 F2 "Probe1_EN" I L 4200 4150 60 
 F3 "Probe2_EN" I L 4200 4250 60 
 F4 "Probe3_EN" I L 4200 4350 60 
-F5 "24V_BAT" I L 4200 3950 60 
-F6 "Probe1_Current" O R 5700 4050 60 
-F7 "Probe2_Current" O R 5700 4150 60 
-F8 "Probe3_Current" O R 5700 4250 60 
+F5 "Probe1_Current" O R 5700 3950 60 
+F6 "Probe2_Current" O R 5700 4050 60 
+F7 "Probe3_Current" O R 5700 4150 60 
+F8 "24V_BAT_1" I L 4200 3850 60 
+F9 "24V_BAT_2" I L 4200 3950 60 
+F10 "24V_BAT_3" I L 4200 4050 60 
 $EndSheet
 Text Label 3650 4150 0    60   ~ 0
 Probe1_EN
@@ -627,42 +619,42 @@ F 3 "" H 10750 4800 50  0001 C CNN
 $EndComp
 Text Label 9600 4100 0    60   ~ 0
 Phase_U
-Text Label 9600 4300 0    60   ~ 0
+Text Label 9600 4200 0    60   ~ 0
 Phase_V
-Text Label 9600 4500 0    60   ~ 0
+Text Label 9600 4300 0    60   ~ 0
 Phase_W
-Text Label 9600 5000 0    60   ~ 0
+Text Label 9600 4500 0    60   ~ 0
 Hall_U
-Text Label 9600 5100 0    60   ~ 0
+Text Label 9600 4600 0    60   ~ 0
 Hall_V
-Text Label 9600 5200 0    60   ~ 0
+Text Label 9600 4700 0    60   ~ 0
 Hall_W
 $Comp
 L GND #PWR118
 U 1 1 5900FB88
-P 10200 5600
-F 0 "#PWR118" H 10200 5350 50  0001 C CNN
-F 1 "GND" H 10200 5450 50  0000 C CNN
-F 2 "" H 10200 5600 50  0001 C CNN
-F 3 "" H 10200 5600 50  0001 C CNN
-	1    10200 5600
-	1    0    0    -1  
+P 10350 4400
+F 0 "#PWR118" H 10350 4150 50  0001 C CNN
+F 1 "GND" H 10350 4250 50  0000 C CNN
+F 2 "" H 10350 4400 50  0001 C CNN
+F 3 "" H 10350 4400 50  0001 C CNN
+	1    10350 4400
+	0    1    1    0   
 $EndComp
 $Comp
 L +5V #PWR119
 U 1 1 5901160D
-P 10400 5600
-F 0 "#PWR119" H 10400 5450 50  0001 C CNN
-F 1 "+5V" H 10400 5740 50  0000 C CNN
-F 2 "" H 10400 5600 50  0000 C CNN
-F 3 "" H 10400 5600 50  0000 C CNN
-	1    10400 5600
-	-1   0    0    1   
+P 10350 4800
+F 0 "#PWR119" H 10350 4650 50  0001 C CNN
+F 1 "+5V" H 10350 4940 50  0000 C CNN
+F 2 "" H 10350 4800 50  0000 C CNN
+F 3 "" H 10350 4800 50  0000 C CNN
+	1    10350 4800
+	0    -1   -1   0   
 $EndComp
-Text Label 9600 5300 0    60   ~ 0
-Encoder_A+
-Text Label 9600 5400 0    60   ~ 0
+Text Label 9600 5200 0    60   ~ 0
 Encoder_B+
+Text Label 9600 5300 0    60   ~ 0
+Encoder_B-
 Text Label 4400 6650 0    60   ~ 0
 LO
 Text Label 4400 6750 0    60   ~ 0
@@ -675,70 +667,20 @@ Text Label 4400 7500 0    60   ~ 0
 RX
 Text Notes 4050 4600 0    60   ~ 0
 Heat probe connectors in sub-schematic
-Text Label 9600 4800 0    60   ~ 0
-Brake-
-Text Label 8750 4600 0    60   ~ 0
-RXSM_28V
-$Comp
-L Q_NMOS_GSD Q103
-U 1 1 59097F47
-P 9100 5100
-F 0 "Q103" H 9050 5000 50  0000 R CNN
-F 1 "N-MOS" H 9150 5250 50  0000 R CNN
-F 2 "" H 9300 5200 50  0000 C CNN
-F 3 "" H 9100 5100 50  0000 C CNN
-	1    9100 5100
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR115
-U 1 1 59098973
-P 9200 5500
-F 0 "#PWR115" H 9200 5250 50  0001 C CNN
-F 1 "GND" H 9200 5350 50  0000 C CNN
-F 2 "" H 9200 5500 50  0001 C CNN
-F 3 "" H 9200 5500 50  0001 C CNN
-	1    9200 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R113
-U 1 1 59098E08
-P 9000 5400
-F 0 "R113" V 9080 5400 50  0000 C CNN
-F 1 "100k" V 9000 5400 50  0000 C CNN
-F 2 "" V 8930 5400 50  0001 C CNN
-F 3 "" H 9000 5400 50  0001 C CNN
-	1    9000 5400
-	0    1    1    0   
-$EndComp
 $Comp
 L R R111
 U 1 1 5909C2E9
-P 8550 5100
-F 0 "R111" V 8630 5100 50  0000 C CNN
-F 1 "1k" V 8550 5100 50  0000 C CNN
-F 2 "" V 8480 5100 50  0001 C CNN
-F 3 "" H 8550 5100 50  0001 C CNN
-	1    8550 5100
+P 10050 5500
+F 0 "R111" V 10130 5500 50  0000 C CNN
+F 1 "1k" V 10050 5500 50  0000 C CNN
+F 2 "" V 9980 5500 50  0001 C CNN
+F 3 "" H 10050 5500 50  0001 C CNN
+	1    10050 5500
 	0    1    1    0   
 $EndComp
-Text Label 8700 5000 2    60   ~ 0
-Brake_EN
-$Comp
-L D D101
-U 1 1 590A075E
-P 9400 4700
-F 0 "D101" H 9300 4650 50  0000 C CNN
-F 1 "D" H 9550 4650 50  0000 C CNN
-F 2 "" H 9400 4700 50  0001 C CNN
-F 3 "" H 9400 4700 50  0001 C CNN
-	1    9400 4700
-	-1   0    0    1   
-$EndComp
-Text Notes 8500 4750 0    60   ~ 0
-snubber diode
-Text Notes 9950 6000 0    60   ~ 0
+Text Label 9450 5500 0    60   ~ 0
+EndSwitch
+Text Notes 10750 5900 2    60   ~ 0
 5V power supply\nfor hall & encoder
 Text Notes 6700 6400 0    60   ~ 0
 3.3V power supply for\nADC and transceivers
@@ -784,6 +726,329 @@ F 3 "" H 2400 2250 50  0000 C CNN
 $EndComp
 Text Label 1700 1650 2    51   ~ 0
 RXSM_charge-
+Text Label 1550 1850 2    51   ~ 0
+RXSM_RX_A
+NoConn ~ 1050 1250
+NoConn ~ 1050 1450
+$Comp
+L R R104
+U 1 1 59107368
+P 2800 5350
+F 0 "R104" V 2880 5350 50  0000 C CNN
+F 1 "91k" V 2800 5350 50  0000 C CNN
+F 2 "" V 2730 5350 50  0001 C CNN
+F 3 "" H 2800 5350 50  0001 C CNN
+	1    2800 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R106
+U 1 1 59107544
+P 3000 5350
+F 0 "R106" V 3080 5350 50  0000 C CNN
+F 1 "15k" V 3000 5350 50  0000 C CNN
+F 2 "" V 2930 5350 50  0001 C CNN
+F 3 "" H 3000 5350 50  0001 C CNN
+	1    3000 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R107
+U 1 1 591076EE
+P 3000 5950
+F 0 "R107" V 3080 5950 50  0000 C CNN
+F 1 "1k" V 3000 5950 50  0000 C CNN
+F 2 "" V 2930 5950 50  0001 C CNN
+F 3 "" H 3000 5950 50  0001 C CNN
+	1    3000 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R105
+U 1 1 591078A5
+P 2800 5950
+F 0 "R105" V 2880 5950 50  0000 C CNN
+F 1 "13k" V 2800 5950 50  0000 C CNN
+F 2 "" V 2730 5950 50  0001 C CNN
+F 3 "" H 2800 5950 50  0001 C CNN
+	1    2800 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR107
+U 1 1 591082B9
+P 2900 6300
+F 0 "#PWR107" H 2900 6050 50  0001 C CNN
+F 1 "GND" H 2900 6150 50  0000 C CNN
+F 2 "" H 2900 6300 50  0001 C CNN
+F 3 "" H 2900 6300 50  0001 C CNN
+	1    2900 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R108
+U 1 1 5910E673
+P 3200 5350
+F 0 "R108" V 3280 5350 50  0000 C CNN
+F 1 "15k" V 3200 5350 50  0000 C CNN
+F 2 "" V 3130 5350 50  0001 C CNN
+F 3 "" H 3200 5350 50  0001 C CNN
+	1    3200 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R109
+U 1 1 5910E822
+P 3200 5950
+F 0 "R109" V 3280 5950 50  0000 C CNN
+F 1 "1k" V 3200 5950 50  0000 C CNN
+F 2 "" V 3130 5950 50  0001 C CNN
+F 3 "" H 3200 5950 50  0001 C CNN
+	1    3200 5950
+	1    0    0    -1  
+$EndComp
+Text Label 2250 5000 0    60   ~ 0
+24V_BAT
+Text Label 2250 5200 0    60   ~ 0
+BAT_raw
+Text Notes 2650 5250 3    60   ~ 0
+Voltage divider (E24)\n24V and 28V: v = 1/16 = 0.0625\nBattery: v = 1/8 = 0.125
+$Sheet
+S 4100 4950 1000 900 
+U 58F69406
+F0 "Powerboard_ADC_Filter" 51
+F1 "powerboard_adc_filter.sch" 51
+F2 "IN1" I L 4100 5150 60 
+F3 "IN2" I L 4100 5250 60 
+F4 "IN3" I L 4100 5350 60 
+F5 "IN4" I L 4100 5450 60 
+F6 "IN5" I L 4100 5550 60 
+F7 "IN6" I L 4100 5650 60 
+F8 "IN7" I L 4100 5750 60 
+F9 "IN0" I L 4100 5050 60 
+F10 "OUT1" O R 5100 5150 60 
+F11 "OUT2" O R 5100 5250 60 
+F12 "OUT3" O R 5100 5350 60 
+F13 "OUT4" O R 5100 5450 60 
+F14 "OUT5" O R 5100 5550 60 
+F15 "OUT6" O R 5100 5650 60 
+F16 "OUT7" O R 5100 5750 60 
+F17 "OUT0" O R 5100 5050 60 
+$EndSheet
+$Comp
+L GND #PWR108
+U 1 1 58F86D3A
+P 4000 5950
+F 0 "#PWR108" H 4000 5700 50  0001 C CNN
+F 1 "GND" H 4000 5800 50  0000 C CNN
+F 2 "" H 4000 5950 50  0001 C CNN
+F 3 "" H 4000 5950 50  0001 C CNN
+	1    4000 5950
+	1    0    0    -1  
+$EndComp
+Text Label 7900 3100 0    60   ~ 0
+Motor_U_P
+Text Label 7900 3200 0    60   ~ 0
+Motor_U_N
+Text Label 7900 3300 0    60   ~ 0
+Motor_V_P
+Text Label 7900 3400 0    60   ~ 0
+Motor_V_N
+Text Label 7900 3500 0    60   ~ 0
+Motor_W_P
+Text Label 7900 3600 0    60   ~ 0
+Motor_W_N
+Text Label 10500 2900 2    60   ~ 0
+Phase_U
+Text Label 10500 3000 2    60   ~ 0
+Phase_V
+Text Label 10500 3100 2    60   ~ 0
+Phase_W
+Text Label 1700 6100 2    60   ~ 0
+Lens_Heat_EN
+Text Label 1700 5000 2    60   ~ 0
+Probe3_EN
+Text Label 1700 4900 2    60   ~ 0
+Probe2_EN
+Text Label 1700 4800 2    60   ~ 0
+Probe1_EN
+Text Label 1700 5900 2    60   ~ 0
+Cam_Light_EN
+Text Label 1700 5800 2    60   ~ 0
+Charge_status
+Text Label 1700 6200 2    60   ~ 0
+Boost24V_EN
+Text Label 1700 5700 2    60   ~ 0
+Charge_EN
+Text Label 1700 7100 2    60   ~ 0
+Hall_U
+Text Label 1700 7200 2    60   ~ 0
+Hall_V
+Text Label 1700 7300 2    60   ~ 0
+Hall_W
+Text Label 1700 6800 2    60   ~ 0
+Encoder_A
+Text Label 1700 6900 2    60   ~ 0
+Encoder_B
+Text Label 1700 6400 2    60   ~ 0
+LO
+Text Label 1700 6500 2    60   ~ 0
+SOE
+Text Label 1700 6600 2    60   ~ 0
+SODS
+Text Label 1700 7400 2    60   ~ 0
+TX
+Text Label 1700 7500 2    60   ~ 0
+RX
+$Comp
+L GND #PWR?
+U 1 1 5919E7BC
+P 1050 7700
+F 0 "#PWR?" H 1050 7450 50  0001 C CNN
+F 1 "GND" H 1050 7550 50  0000 C CNN
+F 2 "" H 1050 7700 50  0001 C CNN
+F 3 "" H 1050 7700 50  0001 C CNN
+	1    1050 7700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 5919E7C2
+P 1150 3600
+F 0 "#PWR?" H 1150 3450 50  0001 C CNN
+F 1 "+5V" H 1150 3740 50  0000 C CNN
+F 2 "" H 1150 3600 50  0000 C CNN
+F 3 "" H 1150 3600 50  0000 C CNN
+	1    1150 3600
+	1    0    0    -1  
+$EndComp
+Text Label 1700 5200 2    60   ~ 0
+extADC_SPI_SCK
+Text Label 1700 5300 2    60   ~ 0
+extADC_SPI_MISO
+Text Label 1700 5400 2    60   ~ 0
+extADC_SPI_MOSI
+Text Label 1700 5500 2    60   ~ 0
+extADC_SPI_CS1
+Text Label 1700 4100 2    60   ~ 0
+Motor_U_P
+Text Label 1700 4200 2    60   ~ 0
+Motor_U_N
+Text Label 1700 4400 2    60   ~ 0
+Motor_V_N
+Text Label 1700 4600 2    60   ~ 0
+Motor_W_N
+Text Label 1700 4300 2    60   ~ 0
+Motor_V_P
+Text Label 1700 4500 2    60   ~ 0
+Motor_W_P
+$Comp
+L CONN_01X40 J?
+U 1 1 5919E7D3
+P 650 5650
+F 0 "J?" H 650 7700 50  0000 C CNN
+F 1 "Powerboard <-> Mainboard" V 750 5650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x20_Pitch2.54mm" H 650 5650 50  0001 C CNN
+F 3 "" H 650 5650 50  0001 C CNN
+	1    650  5650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 J?
+U 1 1 591A537E
+P 3300 3000
+F 0 "J?" H 3300 3100 50  0000 C CNN
+F 1 "BAT" V 3400 3000 50  0000 C CNN
+F 2 "" H 3300 3000 50  0001 C CNN
+F 3 "" H 3300 3000 50  0001 C CNN
+	1    3300 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 J?
+U 1 1 591A9664
+P 3300 3250
+F 0 "J?" H 3300 3350 50  0000 C CNN
+F 1 "Boost24V_EN" H 3200 3150 50  0000 C CNN
+F 2 "" H 3300 3250 50  0001 C CNN
+F 3 "" H 3300 3250 50  0001 C CNN
+	1    3300 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 J?
+U 1 1 591AFED2
+P 3700 3000
+F 0 "J?" H 3700 3100 50  0000 C CNN
+F 1 "24V_1" V 3800 3000 50  0000 C CNN
+F 2 "" H 3700 3000 50  0001 C CNN
+F 3 "" H 3700 3000 50  0001 C CNN
+	1    3700 3000
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_01X01 J?
+U 1 1 591B02F7
+P 3700 3250
+F 0 "J?" H 3700 3350 50  0000 C CNN
+F 1 "24V_1" V 3800 3250 50  0000 C CNN
+F 2 "" H 3700 3250 50  0001 C CNN
+F 3 "" H 3700 3250 50  0001 C CNN
+	1    3700 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_01X01 J?
+U 1 1 591B051E
+P 3700 3500
+F 0 "J?" H 3700 3600 50  0000 C CNN
+F 1 "24V_1" V 3800 3500 50  0000 C CNN
+F 2 "" H 3700 3500 50  0001 C CNN
+F 3 "" H 3700 3500 50  0001 C CNN
+	1    3700 3500
+	-1   0    0    1   
+$EndComp
+Text Notes 5300 3050 2    60   ~ 0
+1x or 3x 24V Boost converter\non seperate PCB
+$Comp
+L GND #PWR?
+U 1 1 591C869D
+P 10350 4900
+F 0 "#PWR?" H 10350 4650 50  0001 C CNN
+F 1 "GND" H 10350 4750 50  0000 C CNN
+F 2 "" H 10350 4900 50  0001 C CNN
+F 3 "" H 10350 4900 50  0001 C CNN
+	1    10350 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 591C9070
+P 10350 5400
+F 0 "#PWR?" H 10350 5250 50  0001 C CNN
+F 1 "+5V" H 10350 5540 50  0000 C CNN
+F 2 "" H 10350 5400 50  0000 C CNN
+F 3 "" H 10350 5400 50  0000 C CNN
+	1    10350 5400
+	0    -1   -1   0   
+$EndComp
+Text Label 9600 5000 0    60   ~ 0
+Encoder_A+
+Text Label 9600 5100 0    60   ~ 0
+Encoder_A-
+Text Notes 9100 5600 0    60   ~ 0
+TODO: End Switch
+$Comp
+L DS26LV32AT U?
+U 1 1 591E6770
+P 8600 4850
+F 0 "U?" H 8600 4300 60  0000 C CNN
+F 1 "DS26LV32AT" H 8600 5400 60  0000 C CNN
+F 2 "" H 8700 4650 60  0001 C CNN
+F 3 "" H 8700 4650 60  0001 C CNN
+	1    8600 4850
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
 	10100 1500 10300 1500
 Wire Wire Line
@@ -897,8 +1162,6 @@ Wire Wire Line
 Wire Wire Line
 	2600 2750 1850 2750
 Wire Wire Line
-	3100 3200 3000 3200
-Wire Wire Line
 	4200 2200 4900 2200
 Wire Wire Line
 	4200 2400 4900 2400
@@ -918,16 +1181,6 @@ Wire Wire Line
 	5950 7500 6550 7500
 Wire Wire Line
 	6550 7400 5950 7400
-Wire Wire Line
-	4600 3000 5150 3000
-Wire Wire Line
-	5150 3000 5150 3600
-Wire Wire Line
-	5150 3600 4000 3600
-Wire Wire Line
-	4000 3600 4000 3950
-Wire Wire Line
-	4000 3950 4200 3950
 Wire Wire Line
 	3650 4150 4200 4150
 Wire Wire Line
@@ -984,34 +1237,19 @@ Wire Wire Line
 Wire Wire Line
 	9600 4100 10450 4100
 Wire Wire Line
-	10350 4100 10350 4200
+	10450 4200 9600 4200
 Wire Wire Line
-	10350 4200 10450 4200
-Connection ~ 10350 4100
-Wire Wire Line
-	10450 4300 9600 4300
+	9600 4300 10450 4300
 Wire Wire Line
 	9600 4500 10450 4500
 Wire Wire Line
-	10450 4600 10350 4600
+	10450 4600 9600 4600
 Wire Wire Line
-	10350 4600 10350 4500
-Connection ~ 10350 4500
+	9600 4700 10450 4700
 Wire Wire Line
-	10350 4300 10350 4400
+	9100 5300 10450 5300
 Wire Wire Line
-	10350 4400 10450 4400
-Connection ~ 10350 4300
-Wire Wire Line
-	9600 5000 10450 5000
-Wire Wire Line
-	10450 5100 9600 5100
-Wire Wire Line
-	9600 5200 10450 5200
-Wire Wire Line
-	9600 5400 10450 5400
-Wire Wire Line
-	10450 5300 9600 5300
+	9100 5200 10450 5200
 Wire Wire Line
 	4400 6650 4800 6650
 Wire Wire Line
@@ -1023,53 +1261,9 @@ Wire Wire Line
 Wire Wire Line
 	4800 7500 4400 7500
 Wire Wire Line
-	3000 3200 3000 3500
-Wire Wire Line
-	3000 3500 3650 3500
-Wire Wire Line
 	2800 3400 2800 3450
 Wire Wire Line
 	2000 3650 2000 4100
-Wire Wire Line
-	9550 4700 10450 4700
-Wire Wire Line
-	9200 4800 10450 4800
-Wire Wire Line
-	9200 4700 9200 4900
-Wire Wire Line
-	9200 5500 9200 5300
-Wire Wire Line
-	8700 5100 8900 5100
-Wire Wire Line
-	9200 5400 9150 5400
-Connection ~ 9200 5400
-Wire Wire Line
-	8850 5400 8800 5400
-Wire Wire Line
-	8800 5400 8800 5100
-Connection ~ 8800 5100
-Wire Wire Line
-	8400 5100 8300 5100
-Wire Wire Line
-	8300 5100 8300 5000
-Wire Wire Line
-	8300 5000 8700 5000
-Wire Wire Line
-	9250 4700 9200 4700
-Connection ~ 9200 4800
-Wire Wire Line
-	10400 5600 10400 5500
-Wire Wire Line
-	10400 5500 10450 5500
-Wire Wire Line
-	10450 4900 10200 4900
-Wire Wire Line
-	10200 4900 10200 5600
-Wire Wire Line
-	8750 4600 9600 4600
-Wire Wire Line
-	9600 4600 9600 4700
-Connection ~ 9600 4700
 Wire Wire Line
 	1050 950  1150 950 
 Wire Wire Line
@@ -1111,8 +1305,6 @@ Wire Wire Line
 	1700 1650 1700 2350
 Wire Wire Line
 	1700 2350 2000 2350
-Text Label 1550 1850 2    51   ~ 0
-RXSM_RX_A
 Wire Wire Line
 	1550 1350 1050 1350
 Wire Wire Line
@@ -1127,56 +1319,10 @@ Wire Wire Line
 	1050 2050 1550 2050
 Wire Wire Line
 	1550 2150 1050 2150
-NoConn ~ 1050 1250
-NoConn ~ 1050 1450
 Wire Wire Line
 	1350 3100 1350 3200
 Wire Wire Line
 	1350 3000 1900 3000
-$Comp
-L R R104
-U 1 1 59107368
-P 2800 5350
-F 0 "R104" V 2880 5350 50  0000 C CNN
-F 1 "91k" V 2800 5350 50  0000 C CNN
-F 2 "" V 2730 5350 50  0001 C CNN
-F 3 "" H 2800 5350 50  0001 C CNN
-	1    2800 5350
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R106
-U 1 1 59107544
-P 3000 5350
-F 0 "R106" V 3080 5350 50  0000 C CNN
-F 1 "15k" V 3000 5350 50  0000 C CNN
-F 2 "" V 2930 5350 50  0001 C CNN
-F 3 "" H 3000 5350 50  0001 C CNN
-	1    3000 5350
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R107
-U 1 1 591076EE
-P 3000 5950
-F 0 "R107" V 3080 5950 50  0000 C CNN
-F 1 "1k" V 3000 5950 50  0000 C CNN
-F 2 "" V 2930 5950 50  0001 C CNN
-F 3 "" H 3000 5950 50  0001 C CNN
-	1    3000 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R105
-U 1 1 591078A5
-P 2800 5950
-F 0 "R105" V 2880 5950 50  0000 C CNN
-F 1 "13k" V 2800 5950 50  0000 C CNN
-F 2 "" V 2730 5950 50  0001 C CNN
-F 3 "" H 2800 5950 50  0001 C CNN
-	1    2800 5950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2250 5200 2800 5200
 Wire Wire Line
@@ -1193,17 +1339,6 @@ Wire Wire Line
 	2800 6200 3200 6200
 Wire Wire Line
 	3000 6200 3000 6100
-$Comp
-L GND #PWR107
-U 1 1 591082B9
-P 2900 6300
-F 0 "#PWR107" H 2900 6050 50  0001 C CNN
-F 1 "GND" H 2900 6150 50  0000 C CNN
-F 2 "" H 2900 6300 50  0001 C CNN
-F 3 "" H 2900 6300 50  0001 C CNN
-	1    2900 6300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2900 6300 2900 6200
 Connection ~ 2900 6200
@@ -1213,30 +1348,6 @@ Connection ~ 3000 5650
 Wire Wire Line
 	2800 5550 4100 5550
 Connection ~ 2800 5550
-$Comp
-L R R108
-U 1 1 5910E673
-P 3200 5350
-F 0 "R108" V 3280 5350 50  0000 C CNN
-F 1 "15k" V 3200 5350 50  0000 C CNN
-F 2 "" V 3130 5350 50  0001 C CNN
-F 3 "" H 3200 5350 50  0001 C CNN
-	1    3200 5350
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R109
-U 1 1 5910E822
-P 3200 5950
-F 0 "R109" V 3280 5950 50  0000 C CNN
-F 1 "1k" V 3200 5950 50  0000 C CNN
-F 2 "" V 3130 5950 50  0001 C CNN
-F 3 "" H 3200 5950 50  0001 C CNN
-	1    3200 5950
-	1    0    0    -1  
-$EndComp
-Text Label 2250 5000 0    60   ~ 0
-24V_BAT
 Wire Wire Line
 	2250 5000 3200 5000
 Wire Wire Line
@@ -1249,32 +1360,6 @@ Connection ~ 3000 6200
 Wire Wire Line
 	3200 5750 4100 5750
 Connection ~ 3200 5750
-Text Label 2250 5200 0    60   ~ 0
-BAT_raw
-Text Notes 2650 5250 3    60   ~ 0
-Voltage divider (E24)\n24V and 28V: v = 1/16 = 0.0625\nBattery: v = 1/8 = 0.125
-$Sheet
-S 4100 4950 1000 900 
-U 58F69406
-F0 "Powerboard_ADC_Filter" 51
-F1 "powerboard_adc_filter.sch" 51
-F2 "IN1" I L 4100 5150 60 
-F3 "IN2" I L 4100 5250 60 
-F4 "IN3" I L 4100 5350 60 
-F5 "IN4" I L 4100 5450 60 
-F6 "IN5" I L 4100 5550 60 
-F7 "IN6" I L 4100 5650 60 
-F8 "IN7" I L 4100 5750 60 
-F9 "IN0" I L 4100 5050 60 
-F10 "OUT1" O R 5100 5150 60 
-F11 "OUT2" O R 5100 5250 60 
-F12 "OUT3" O R 5100 5350 60 
-F13 "OUT4" O R 5100 5450 60 
-F14 "OUT5" O R 5100 5550 60 
-F15 "OUT6" O R 5100 5650 60 
-F16 "OUT7" O R 5100 5750 60 
-F17 "OUT0" O R 5100 5050 60 
-$EndSheet
 Wire Wire Line
 	5100 5050 5300 5050
 Wire Wire Line
@@ -1291,33 +1376,10 @@ Wire Wire Line
 	5100 5650 5300 5650
 Wire Wire Line
 	5300 5750 5100 5750
-$Comp
-L GND #PWR108
-U 1 1 58F86D3A
-P 4000 5950
-F 0 "#PWR108" H 4000 5700 50  0001 C CNN
-F 1 "GND" H 4000 5800 50  0000 C CNN
-F 2 "" H 4000 5950 50  0001 C CNN
-F 3 "" H 4000 5950 50  0001 C CNN
-	1    4000 5950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4000 5950 4000 5450
 Wire Wire Line
 	4000 5450 4100 5450
-Text Label 7900 3100 0    60   ~ 0
-Motor_U_P
-Text Label 7900 3200 0    60   ~ 0
-Motor_U_N
-Text Label 7900 3300 0    60   ~ 0
-Motor_V_P
-Text Label 7900 3400 0    60   ~ 0
-Motor_V_N
-Text Label 7900 3500 0    60   ~ 0
-Motor_W_P
-Text Label 7900 3600 0    60   ~ 0
-Motor_W_N
 Wire Wire Line
 	8450 3100 7900 3100
 Wire Wire Line
@@ -1330,12 +1392,6 @@ Wire Wire Line
 	8450 3500 7900 3500
 Wire Wire Line
 	7900 3600 8450 3600
-Text Label 10500 2900 2    60   ~ 0
-Phase_U
-Text Label 10500 3000 2    60   ~ 0
-Phase_V
-Text Label 10500 3100 2    60   ~ 0
-Phase_W
 Wire Wire Line
 	10500 2900 10050 2900
 Wire Wire Line
@@ -1349,97 +1405,6 @@ Wire Wire Line
 Connection ~ 2450 1600
 Wire Wire Line
 	4750 1200 4650 1200
-Text Label 1700 6100 2    60   ~ 0
-Lens_Heat_EN
-Text Label 1700 5000 2    60   ~ 0
-Probe3_EN
-Text Label 1700 4900 2    60   ~ 0
-Probe2_EN
-Text Label 1700 4800 2    60   ~ 0
-Probe1_EN
-Text Label 1700 5900 2    60   ~ 0
-Cam_Light_EN
-Text Label 1700 5800 2    60   ~ 0
-Charge_status
-Text Label 1700 6200 2    60   ~ 0
-Boost24V_EN
-Text Label 1700 5700 2    60   ~ 0
-Charge_EN
-Text Label 1700 7100 2    60   ~ 0
-Hall_U
-Text Label 1700 7200 2    60   ~ 0
-Hall_V
-Text Label 1700 7300 2    60   ~ 0
-Hall_W
-Text Label 1700 6800 2    60   ~ 0
-Encoder_A+
-Text Label 1700 6900 2    60   ~ 0
-Encoder_B+
-Text Label 1700 6400 2    60   ~ 0
-LO
-Text Label 1700 6500 2    60   ~ 0
-SOE
-Text Label 1700 6600 2    60   ~ 0
-SODS
-Text Label 1700 7400 2    60   ~ 0
-TX
-Text Label 1700 7500 2    60   ~ 0
-RX
-$Comp
-L GND #PWR?
-U 1 1 5919E7BC
-P 1050 7700
-F 0 "#PWR?" H 1050 7450 50  0001 C CNN
-F 1 "GND" H 1050 7550 50  0000 C CNN
-F 2 "" H 1050 7700 50  0001 C CNN
-F 3 "" H 1050 7700 50  0001 C CNN
-	1    1050 7700
-	0    -1   -1   0   
-$EndComp
-$Comp
-L +5V #PWR?
-U 1 1 5919E7C2
-P 1150 3600
-F 0 "#PWR?" H 1150 3450 50  0001 C CNN
-F 1 "+5V" H 1150 3740 50  0000 C CNN
-F 2 "" H 1150 3600 50  0000 C CNN
-F 3 "" H 1150 3600 50  0000 C CNN
-	1    1150 3600
-	1    0    0    -1  
-$EndComp
-Text Label 1700 4000 2    60   ~ 0
-Brake_EN
-Text Label 1700 5200 2    60   ~ 0
-extADC_SPI_SCK
-Text Label 1700 5300 2    60   ~ 0
-extADC_SPI_MISO
-Text Label 1700 5400 2    60   ~ 0
-extADC_SPI_MOSI
-Text Label 1700 5500 2    60   ~ 0
-extADC_SPI_CS1
-Text Label 1700 4100 2    60   ~ 0
-Motor_U_P
-Text Label 1700 4200 2    60   ~ 0
-Motor_U_N
-Text Label 1700 4400 2    60   ~ 0
-Motor_V_N
-Text Label 1700 4600 2    60   ~ 0
-Motor_W_N
-Text Label 1700 4300 2    60   ~ 0
-Motor_V_P
-Text Label 1700 4500 2    60   ~ 0
-Motor_W_P
-$Comp
-L CONN_01X40 J?
-U 1 1 5919E7D3
-P 650 5650
-F 0 "J?" H 650 7700 50  0000 C CNN
-F 1 "Powerboard <-> Mainboard" V 750 5650 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x20_Pitch2.54mm" H 650 5650 50  0001 C CNN
-F 3 "" H 650 5650 50  0001 C CNN
-	1    650  5650
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	950  7600 850  7600
 Wire Wire Line
@@ -1535,4 +1500,120 @@ Wire Wire Line
 Wire Wire Line
 	850  6700 950  6700
 Connection ~ 950  6700
+Wire Wire Line
+	4200 3850 4150 3850
+Wire Wire Line
+	4150 3850 4150 3000
+Wire Wire Line
+	4150 3000 3900 3000
+Wire Wire Line
+	3900 3250 4050 3250
+Wire Wire Line
+	4050 3250 4050 3950
+Wire Wire Line
+	4050 3950 4200 3950
+Wire Wire Line
+	3900 3500 3950 3500
+Wire Wire Line
+	3950 3500 3950 4050
+Wire Wire Line
+	3950 4050 4200 4050
+Wire Wire Line
+	2500 3250 3100 3250
+Wire Wire Line
+	10350 4400 10450 4400
+Wire Wire Line
+	10350 4900 10450 4900
+Wire Wire Line
+	10450 4800 10350 4800
+Wire Wire Line
+	10450 5400 10350 5400
+Wire Wire Line
+	10200 5500 10450 5500
+Wire Wire Line
+	9450 5500 9900 5500
+Wire Wire Line
+	9250 5100 10450 5100
+Wire Wire Line
+	9350 5000 10450 5000
+Wire Wire Line
+	9250 5100 9250 4900
+Wire Wire Line
+	9250 4900 9100 4900
+Wire Wire Line
+	9100 4800 9350 4800
+Wire Wire Line
+	9350 4800 9350 5000
+NoConn ~ 9100 5000
+NoConn ~ 9100 5100
+NoConn ~ 9100 4700
+NoConn ~ 9100 4600
+$Comp
+L +3V3 #PWR?
+U 1 1 591EC273
+P 9200 4500
+F 0 "#PWR?" H 9200 4350 50  0001 C CNN
+F 1 "+3V3" H 9200 4640 50  0000 C CNN
+F 2 "" H 9200 4500 50  0000 C CNN
+F 3 "" H 9200 4500 50  0000 C CNN
+	1    9200 4500
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 591EC48E
+P 9200 4300
+F 0 "#PWR?" H 9200 4050 50  0001 C CNN
+F 1 "GND" H 9200 4150 50  0000 C CNN
+F 2 "" H 9200 4300 50  0001 C CNN
+F 3 "" H 9200 4300 50  0001 C CNN
+	1    9200 4300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9200 4300 9200 4400
+Wire Wire Line
+	9200 4400 9100 4400
+Wire Wire Line
+	9100 4500 9200 4500
+$Comp
+L GND #PWR?
+U 1 1 591ECCC7
+P 8000 4300
+F 0 "#PWR?" H 8000 4050 50  0001 C CNN
+F 1 "GND" H 8000 4150 50  0000 C CNN
+F 2 "" H 8000 4300 50  0001 C CNN
+F 3 "" H 8000 4300 50  0001 C CNN
+	1    8000 4300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8000 4300 8000 4400
+Wire Wire Line
+	8000 4400 8100 4400
+$Comp
+L +3V3 #PWR?
+U 1 1 591ED0E6
+P 8000 4500
+F 0 "#PWR?" H 8000 4350 50  0001 C CNN
+F 1 "+3V3" H 8000 4640 50  0000 C CNN
+F 2 "" H 8000 4500 50  0000 C CNN
+F 3 "" H 8000 4500 50  0000 C CNN
+	1    8000 4500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8000 4500 8100 4500
+NoConn ~ 8100 4650
+NoConn ~ 8100 5050
+Text Label 7600 4850 0    60   ~ 0
+Encoder_A
+Text Label 7600 5250 0    60   ~ 0
+Encoder_B
+Wire Wire Line
+	7600 5250 8100 5250
+Wire Wire Line
+	8100 4850 7600 4850
+Text Label 1700 4000 2    60   ~ 0
+EndSwitch
 $EndSCHEMATC

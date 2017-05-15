@@ -41,12 +41,13 @@ LIBS:esd_diode_dual
 LIBS:ad7928
 LIBS:references
 LIBS:lt3592
+LIBS:ds26lv32at
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 11
+Sheet 7 10
 Title "Mainboard: RXSM RS422 connection"
 Date "2017-04-14"
 Rev "10"
