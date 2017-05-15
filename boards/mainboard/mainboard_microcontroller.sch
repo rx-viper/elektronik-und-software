@@ -270,25 +270,25 @@ Text HLabel 3500 7950 0    59   Input ~ 0
 temp_SPI1_MISO
 Text HLabel 3500 8050 0    59   Output ~ 0
 temp_SPI1_MOSI
-Text HLabel 3500 5950 0    59   Input ~ 0
+Text HLabel 1650 6050 0    59   Input ~ 0
 temp1_INT
-Text HLabel 3500 6150 0    59   Input ~ 0
+Text HLabel 1650 6150 0    59   Input ~ 0
 temp2_INT
-Text HLabel 3500 6350 0    59   Input ~ 0
+Text HLabel 1650 6250 0    59   Input ~ 0
 temp3_INT
-Text HLabel 12900 7050 2    59   Input ~ 0
+Text HLabel 1650 6350 0    59   Input ~ 0
 temp4_INT
-Text HLabel 3500 6050 0    59   Output ~ 0
-temp1_CS
-Text HLabel 3500 6250 0    59   Output ~ 0
-temp2_CS
-Text HLabel 3500 6750 0    59   Output ~ 0
-temp3_CS
 Text HLabel 12900 7150 2    59   Output ~ 0
+temp1_CS
+Text HLabel 12900 7250 2    59   Output ~ 0
+temp2_CS
+Text HLabel 3500 5950 0    59   Output ~ 0
+temp3_CS
+Text HLabel 3500 7750 0    59   Output ~ 0
 temp4_CS
-Text HLabel 12900 7250 2    59   Input ~ 0
+Text HLabel 1650 6450 0    59   Input ~ 0
 temp5_INT
-Text HLabel 3500 3850 0    59   Output ~ 0
+Text HLabel 12900 7050 2    59   Output ~ 0
 temp5_CS
 Text HLabel 3500 8850 0    60   Output ~ 0
 probe1_EN
@@ -487,9 +487,9 @@ Text HLabel 3500 6550 0    59   Input ~ 0
 temp_SPI2_MISO
 Text HLabel 3500 6650 0    59   Output ~ 0
 temp_SPI2_MOSI
-Text HLabel 12900 5750 2    59   Input ~ 0
+Text HLabel 1650 6550 0    59   Input ~ 0
 temp6_INT
-Text HLabel 12900 5850 2    59   Output ~ 0
+Text HLabel 3500 7850 0    59   Output ~ 0
 temp6_CS
 Text HLabel 3500 8250 0    60   Output ~ 0
 Motor_U_N
@@ -630,8 +630,6 @@ NoConn ~ 3600 6950
 NoConn ~ 3600 7050
 NoConn ~ 3600 7150
 NoConn ~ 3600 7250
-NoConn ~ 3600 7750
-NoConn ~ 3600 7850
 NoConn ~ 3600 8150
 NoConn ~ 12800 8850
 NoConn ~ 12800 7950
@@ -964,10 +962,6 @@ Wire Wire Line
 Wire Wire Line
 	12900 8250 12800 8250
 Wire Wire Line
-	12900 5750 12800 5750
-Wire Wire Line
-	12800 5850 12900 5850
-Wire Wire Line
 	12900 6550 12800 6550
 Wire Wire Line
 	12800 6450 12900 6450
@@ -975,12 +969,6 @@ Wire Wire Line
 	12800 6350 12900 6350
 Wire Wire Line
 	12900 6950 12800 6950
-Wire Wire Line
-	12800 7050 12900 7050
-Wire Wire Line
-	12900 7150 12800 7150
-Wire Wire Line
-	12800 7250 12900 7250
 Wire Wire Line
 	14700 7050 14600 7050
 Wire Wire Line
@@ -1024,23 +1012,11 @@ Wire Wire Line
 Wire Wire Line
 	3600 7450 3500 7450
 Wire Wire Line
-	3600 6750 3500 6750
-Wire Wire Line
 	3500 6650 3600 6650
 Wire Wire Line
 	3600 6550 3500 6550
 Wire Wire Line
 	3500 6450 3600 6450
-Wire Wire Line
-	3600 6350 3500 6350
-Wire Wire Line
-	3500 6250 3600 6250
-Wire Wire Line
-	3600 6150 3500 6150
-Wire Wire Line
-	3500 6050 3600 6050
-Wire Wire Line
-	3600 5950 3500 5950
 Wire Wire Line
 	3500 5850 3600 5850
 Wire Wire Line
@@ -1055,8 +1031,6 @@ Wire Wire Line
 	3500 4450 3600 4450
 Wire Wire Line
 	3600 4350 3500 4350
-Wire Wire Line
-	3600 3850 3500 3850
 Wire Wire Line
 	11000 10750 11000 10650
 Wire Wire Line
@@ -1088,4 +1062,40 @@ Wire Wire Line
 	12800 5250 12900 5250
 Wire Wire Line
 	12900 5550 12800 5550
+NoConn ~ 1650 6050
+NoConn ~ 1650 6150
+NoConn ~ 1650 6250
+NoConn ~ 1650 6350
+NoConn ~ 1650 6450
+NoConn ~ 1650 6550
+Text Notes 800  6000 0    60   ~ 0
+Int pin are not connected\nin the first PCB revision
+Wire Wire Line
+	12900 7050 12800 7050
+Wire Wire Line
+	12900 7250 12800 7250
+Wire Wire Line
+	12800 7150 12900 7150
+Wire Wire Line
+	3600 7850 3500 7850
+Wire Wire Line
+	3500 7750 3600 7750
+Wire Wire Line
+	3600 5950 3500 5950
+NoConn ~ 3600 6750
+NoConn ~ 3600 6350
+NoConn ~ 3600 6250
+NoConn ~ 3600 6150
+NoConn ~ 3600 6050
+NoConn ~ 3600 5250
+NoConn ~ 3600 5150
+NoConn ~ 3600 5050
+NoConn ~ 3600 3850
+NoConn ~ 3600 4250
+NoConn ~ 12800 8950
+NoConn ~ 12800 5850
+NoConn ~ 12800 5750
+NoConn ~ 12800 4950
+NoConn ~ 12800 4850
+NoConn ~ 12800 2550
 $EndSCHEMATC

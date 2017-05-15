@@ -88,39 +88,6 @@ F 3 "" H 6150 1950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C715
-U 1 1 58FFF520
-P 5950 1950
-F 0 "C715" H 5975 2050 50  0000 L CNN
-F 1 "10n" V 6000 1750 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 5988 1800 50  0001 C CNN
-F 3 "" H 5950 1950 50  0000 C CNN
-	1    5950 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C713
-U 1 1 58FFF524
-P 5750 1950
-F 0 "C713" H 5775 2050 50  0000 L CNN
-F 1 "10n" V 5800 1750 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 5788 1800 50  0001 C CNN
-F 3 "" H 5750 1950 50  0000 C CNN
-	1    5750 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C711
-U 1 1 587B0A42
-P 5550 1950
-F 0 "C711" H 5575 2050 50  0000 L CNN
-F 1 "10n" V 5600 1750 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 5588 1800 50  0001 C CNN
-F 3 "" H 5550 1950 50  0000 C CNN
-	1    5550 1950
-	1    0    0    -1  
-$EndComp
-$Comp
 L C C709
 U 1 1 58FFF530
 P 5350 1950
@@ -603,14 +570,8 @@ Connection ~ 5650 1700
 Wire Wire Line
 	6150 1800 6150 1700
 Connection ~ 6150 1700
-Wire Wire Line
-	5950 1700 5950 1800
 Connection ~ 5950 1700
-Wire Wire Line
-	5750 1800 5750 1700
 Connection ~ 5750 1700
-Wire Wire Line
-	5550 1800 5550 1700
 Connection ~ 5550 1700
 Wire Wire Line
 	5350 1800 5350 1700
@@ -627,14 +588,8 @@ Connection ~ 6350 2200
 Wire Wire Line
 	6150 2100 6150 2300
 Connection ~ 6150 2300
-Wire Wire Line
-	5950 2100 5950 2400
 Connection ~ 5950 2400
-Wire Wire Line
-	5750 2100 5750 2500
 Connection ~ 5750 2500
-Wire Wire Line
-	5550 2600 5550 2100
 Connection ~ 5550 2600
 Wire Wire Line
 	5350 2100 5350 2700
@@ -962,4 +917,6 @@ Wire Wire Line
 	7300 5450 7300 5550
 Wire Wire Line
 	7300 6050 7300 6150
+Text Notes 3750 2550 2    60   ~ 0
+T4_RTD1 is not connected\nin the first PCB revision
 $EndSCHEMATC

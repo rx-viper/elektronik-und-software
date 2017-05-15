@@ -316,6 +316,366 @@ F 3 "" H 7200 15600 50  0001 C CNN
 	1    7200 15600
 	1    0    0    -1  
 $EndComp
+Text Label 8700 950  0    60   ~ 0
+T1_RTD1_A
+Text Label 8700 1100 0    60   ~ 0
+T1_RTD1_B
+Text Label 8700 1200 0    60   ~ 0
+T1_RTD1_C
+Text Label 8700 1300 0    60   ~ 0
+T1_RTD1_D
+Text Label 8700 1500 0    60   ~ 0
+T1_RTD2_B
+Text Label 8700 1600 0    60   ~ 0
+T1_RTD2_C
+Text Label 8700 1700 0    60   ~ 0
+T1_RTD2_D
+Text Label 8700 1900 0    60   ~ 0
+T1_RTD3_B
+Text Label 8700 2000 0    60   ~ 0
+T1_RTD3_C
+Text Label 8700 2100 0    60   ~ 0
+T1_RTD3_D
+Text Label 8700 2300 0    60   ~ 0
+T1_RTD4_B
+Text Label 8700 2400 0    60   ~ 0
+T1_RTD4_C
+Text Label 8700 2500 0    60   ~ 0
+T1_RTD4_D
+Text Label 8700 2700 0    60   ~ 0
+T1_RTD5_B
+Text Label 8700 2800 0    60   ~ 0
+T1_RTD5_C
+Text Label 8700 2900 0    60   ~ 0
+T1_RTD5_D
+Text Label 8700 3100 0    60   ~ 0
+T1_RTD6_B
+Text Label 8700 3200 0    60   ~ 0
+T1_RTD6_C
+Text Label 8700 3300 0    60   ~ 0
+T1_RTD6_D
+Text Label 8700 3400 0    60   ~ 0
+T2_RTD1_A
+Text Label 8700 3500 0    60   ~ 0
+T2_RTD1_B
+Text Label 8700 3600 0    60   ~ 0
+T2_RTD1_C
+Text Label 8700 3700 0    60   ~ 0
+T2_RTD1_D
+Text Label 8700 3900 0    60   ~ 0
+T2_RTD2_B
+Text Label 8700 4000 0    60   ~ 0
+T2_RTD2_C
+Text Label 8700 4100 0    60   ~ 0
+T2_RTD2_D
+Text Label 8700 4300 0    60   ~ 0
+T2_RTD3_B
+Text Label 8700 4400 0    60   ~ 0
+T2_RTD3_C
+Text Label 8700 4500 0    60   ~ 0
+T2_RTD3_D
+Text Label 8700 4700 0    60   ~ 0
+T2_RTD4_B
+Text Label 8700 4800 0    60   ~ 0
+T2_RTD4_C
+Text Label 8700 4900 0    60   ~ 0
+T2_RTD4_D
+Text Label 8700 5100 0    60   ~ 0
+T2_RTD5_B
+Text Label 8700 5200 0    60   ~ 0
+T2_RTD5_C
+Text Label 8700 5300 0    60   ~ 0
+T2_RTD5_D
+Text Label 8700 5500 0    60   ~ 0
+T2_RTD6_B
+Text Label 8700 5600 0    60   ~ 0
+T2_RTD6_C
+Text Label 8700 5700 0    60   ~ 0
+T2_RTD6_D
+Text Label 8700 5800 0    60   ~ 0
+T3_RTD1_A
+Text Label 8700 5900 0    60   ~ 0
+T3_RTD1_B
+Text Label 8700 6000 0    60   ~ 0
+T3_RTD1_C
+Text Label 8700 6100 0    60   ~ 0
+T3_RTD1_D
+Text Label 8700 6300 0    60   ~ 0
+T3_RTD2_B
+Text Label 8700 6400 0    60   ~ 0
+T3_RTD2_C
+Text Label 8700 6500 0    60   ~ 0
+T3_RTD2_D
+Text Label 8700 6700 0    60   ~ 0
+T3_RTD3_B
+Text Label 8700 6800 0    60   ~ 0
+T3_RTD3_C
+Text Label 8700 6900 0    60   ~ 0
+T3_RTD3_D
+Text Label 8700 7100 0    60   ~ 0
+T3_RTD4_B
+Text Label 8700 7200 0    60   ~ 0
+T3_RTD4_C
+Text Label 8700 7300 0    60   ~ 0
+T3_RTD4_D
+Text Label 8700 7500 0    60   ~ 0
+T3_RTD5_B
+Text Label 8700 7600 0    60   ~ 0
+T3_RTD5_C
+Text Label 8700 7700 0    60   ~ 0
+T3_RTD5_D
+Text Label 8700 7900 0    60   ~ 0
+T3_RTD6_B
+Text Label 8700 8000 0    60   ~ 0
+T3_RTD6_C
+Text Label 8700 8100 0    60   ~ 0
+T3_RTD6_D
+Text Label 8700 8200 0    60   ~ 0
+T4_RTD1_A
+Text Label 8700 8300 0    60   ~ 0
+T4_RTD1_B
+Text Label 8700 8400 0    60   ~ 0
+T4_RTD1_C
+Text Label 8700 8500 0    60   ~ 0
+T4_RTD1_D
+Text Label 8700 9600 0    60   ~ 0
+T4_RTD2_B
+Text Label 8700 9700 0    60   ~ 0
+T4_RTD2_C
+Text Label 8700 9800 0    60   ~ 0
+T4_RTD2_D
+Text Label 8700 10000 0    60   ~ 0
+T4_RTD3_B
+Text Label 8700 10100 0    60   ~ 0
+T4_RTD3_C
+Text Label 8700 10200 0    60   ~ 0
+T4_RTD3_D
+Text Label 8700 10400 0    60   ~ 0
+T4_RTD4_B
+Text Label 8700 10500 0    60   ~ 0
+T4_RTD4_C
+Text Label 8700 10600 0    60   ~ 0
+T4_RTD4_D
+Text Label 8700 10800 0    60   ~ 0
+T4_RTD5_B
+Text Label 8700 10900 0    60   ~ 0
+T4_RTD5_C
+Text Label 8700 11000 0    60   ~ 0
+T4_RTD5_D
+Text Label 8700 11200 0    60   ~ 0
+T4_RTD6_B
+Text Label 8700 11300 0    60   ~ 0
+T4_RTD6_C
+Text Label 8700 11400 0    60   ~ 0
+T4_RTD6_D
+Text Label 8700 11500 0    60   ~ 0
+T5_RTD1_A
+Text Label 8700 11600 0    60   ~ 0
+T5_RTD1_B
+Text Label 8700 11700 0    60   ~ 0
+T5_RTD1_C
+Text Label 8700 11800 0    60   ~ 0
+T5_RTD1_D
+Text Label 8700 12000 0    60   ~ 0
+T5_RTD2_B
+Text Label 8700 12100 0    60   ~ 0
+T5_RTD2_C
+Text Label 8700 12200 0    60   ~ 0
+T5_RTD2_D
+Text Label 8700 12400 0    60   ~ 0
+T5_RTD3_B
+Text Label 8700 12500 0    60   ~ 0
+T5_RTD3_C
+Text Label 8700 12600 0    60   ~ 0
+T5_RTD3_D
+Text Label 8700 12800 0    60   ~ 0
+T5_RTD4_B
+Text Label 8700 12900 0    60   ~ 0
+T5_RTD4_C
+Text Label 8700 13000 0    60   ~ 0
+T5_RTD4_D
+Text Label 8700 13200 0    60   ~ 0
+T5_RTD5_B
+Text Label 8700 13300 0    60   ~ 0
+T5_RTD5_C
+Text Label 8700 13400 0    60   ~ 0
+T5_RTD5_D
+Text Label 8700 13600 0    60   ~ 0
+T5_RTD6_B
+Text Label 8700 13700 0    60   ~ 0
+T5_RTD6_C
+Text Label 8700 13800 0    60   ~ 0
+T5_RTD6_D
+Text Label 6000 14400 0    60   ~ 0
+T6_RTD1_A
+Text Label 6000 14500 0    60   ~ 0
+T6_RTD1_B
+Text Label 6000 14600 0    60   ~ 0
+T6_RTD1_C
+Text Label 6000 14700 0    60   ~ 0
+T6_RTD1_D
+Text Label 6000 14900 0    60   ~ 0
+T6_RTD2_B
+Text Label 6000 15000 0    60   ~ 0
+T6_RTD2_C
+Text Label 6000 15100 0    60   ~ 0
+T6_RTD2_D
+Text Label 6000 15300 0    60   ~ 0
+T6_RTD3_B
+Text Label 6000 15400 0    60   ~ 0
+T6_RTD3_C
+Text Label 6000 15500 0    60   ~ 0
+T6_RTD3_D
+Text Label 6000 15800 0    60   ~ 0
+T6_RTD4_B
+Text Label 6000 15900 0    60   ~ 0
+T6_RTD4_C
+Text Label 6000 16000 0    60   ~ 0
+T6_RTD4_D
+Text Label 6000 16200 0    60   ~ 0
+T6_RTD5_B
+Text Label 6000 16300 0    60   ~ 0
+T6_RTD5_C
+Text Label 6000 16400 0    60   ~ 0
+T6_RTD5_D
+Text Label 6000 16600 0    60   ~ 0
+T6_RTD6_B
+Text Label 6000 16700 0    60   ~ 0
+T6_RTD6_C
+Text Label 6000 16800 0    60   ~ 0
+T6_RTD6_D
+$Comp
+L TEST_1P J202
+U 1 1 591162B7
+P 1350 1600
+F 0 "J202" V 1400 1600 50  0000 C CNN
+F 1 "T_SPI1_SCK" V 1350 2000 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 1600 50  0001 C CNN
+F 3 "" H 1550 1600 50  0001 C CNN
+	1    1350 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TEST_1P J204
+U 1 1 591162BE
+P 1350 2000
+F 0 "J204" V 1400 2000 50  0000 C CNN
+F 1 "T_SPI1_MOSI" V 1350 2400 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 2000 50  0001 C CNN
+F 3 "" H 1550 2000 50  0001 C CNN
+	1    1350 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TEST_1P J203
+U 1 1 591162C5
+P 1350 1800
+F 0 "J203" V 1400 1800 50  0000 C CNN
+F 1 "T_SPI1_MISO" V 1350 2200 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 1800 50  0001 C CNN
+F 3 "" H 1550 1800 50  0001 C CNN
+	1    1350 1800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TEST_1P J205
+U 1 1 591162CC
+P 1350 9700
+F 0 "J205" V 1400 9700 50  0000 C CNN
+F 1 "T_SPI2_SCK" V 1350 10100 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 9700 50  0001 C CNN
+F 3 "" H 1550 9700 50  0001 C CNN
+	1    1350 9700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TEST_1P J207
+U 1 1 591162D3
+P 1350 10100
+F 0 "J207" V 1400 10100 50  0000 C CNN
+F 1 "T_SPI2_MOSI" V 1350 10500 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 10100 50  0001 C CNN
+F 3 "" H 1550 10100 50  0001 C CNN
+	1    1350 10100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TEST_1P J206
+U 1 1 591162DA
+P 1350 9900
+F 0 "J206" V 1400 9900 50  0000 C CNN
+F 1 "T_SPI2_MISO" V 1350 10300 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 9900 50  0001 C CNN
+F 3 "" H 1550 9900 50  0001 C CNN
+	1    1350 9900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TEST_1P J208
+U 1 1 59132096
+P 2400 1500
+F 0 "J208" H 2500 1550 50  0000 C CNN
+F 1 "T_SPI1_CS1" V 2400 1900 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 1500 50  0001 C CNN
+F 3 "" H 2600 1500 50  0001 C CNN
+	1    2400 1500
+	-1   0    0    1   
+$EndComp
+$Comp
+L TEST_1P J209
+U 1 1 591364FA
+P 2400 4200
+F 0 "J209" H 2500 4250 50  0000 C CNN
+F 1 "T_SPI1_CS2" V 2400 4600 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 4200 50  0001 C CNN
+F 3 "" H 2600 4200 50  0001 C CNN
+	1    2400 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L TEST_1P J210
+U 1 1 5913A386
+P 2400 6900
+F 0 "J210" H 2500 6950 50  0000 C CNN
+F 1 "T_SPI1_CS3" V 2400 7300 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 6900 50  0001 C CNN
+F 3 "" H 2600 6900 50  0001 C CNN
+	1    2400 6900
+	-1   0    0    1   
+$EndComp
+$Comp
+L TEST_1P J211
+U 1 1 5913F71A
+P 2400 9600
+F 0 "J211" H 2500 9650 50  0000 C CNN
+F 1 "T_SPI2_CS1" V 2400 10000 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 9600 50  0001 C CNN
+F 3 "" H 2600 9600 50  0001 C CNN
+	1    2400 9600
+	-1   0    0    1   
+$EndComp
+$Comp
+L TEST_1P J212
+U 1 1 59142F0B
+P 2400 12300
+F 0 "J212" H 2500 12350 50  0000 C CNN
+F 1 "T_SPI2_CS2" V 2400 12700 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 12300 50  0001 C CNN
+F 3 "" H 2600 12300 50  0001 C CNN
+	1    2400 12300
+	-1   0    0    1   
+$EndComp
+$Comp
+L TEST_1P J213
+U 1 1 5914BC93
+P 2400 15000
+F 0 "J213" H 2500 15050 50  0000 C CNN
+F 1 "T_SPI2_CS3" V 2400 15400 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 15000 50  0001 C CNN
+F 3 "" H 2600 15000 50  0001 C CNN
+	1    2400 15000
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
 	6800 16900 6800 15600
 Wire Wire Line
@@ -823,10 +1183,6 @@ Wire Wire Line
 Wire Wire Line
 	8200 9050 8200 8200
 Wire Wire Line
-	8200 8200 10200 8200
-Wire Wire Line
-	10200 8300 8300 8300
-Wire Wire Line
 	8300 8300 8300 9200
 Wire Wire Line
 	8300 9200 3850 9200
@@ -834,10 +1190,6 @@ Wire Wire Line
 	3850 9300 8400 9300
 Wire Wire Line
 	8400 9300 8400 8400
-Wire Wire Line
-	8400 8400 10200 8400
-Wire Wire Line
-	8500 8500 10200 8500
 Wire Wire Line
 	8500 8500 8500 9400
 Wire Wire Line
@@ -1020,300 +1372,6 @@ Connection ~ 9850 12300
 Wire Wire Line
 	9850 11900 10200 11900
 Connection ~ 9850 11900
-Text Label 8700 950  0    60   ~ 0
-T1_RTD1_A
-Text Label 8700 1100 0    60   ~ 0
-T1_RTD1_B
-Text Label 8700 1200 0    60   ~ 0
-T1_RTD1_C
-Text Label 8700 1300 0    60   ~ 0
-T1_RTD1_D
-Text Label 8700 1500 0    60   ~ 0
-T1_RTD2_B
-Text Label 8700 1600 0    60   ~ 0
-T1_RTD2_C
-Text Label 8700 1700 0    60   ~ 0
-T1_RTD2_D
-Text Label 8700 1900 0    60   ~ 0
-T1_RTD3_B
-Text Label 8700 2000 0    60   ~ 0
-T1_RTD3_C
-Text Label 8700 2100 0    60   ~ 0
-T1_RTD3_D
-Text Label 8700 2300 0    60   ~ 0
-T1_RTD4_B
-Text Label 8700 2400 0    60   ~ 0
-T1_RTD4_C
-Text Label 8700 2500 0    60   ~ 0
-T1_RTD4_D
-Text Label 8700 2700 0    60   ~ 0
-T1_RTD5_B
-Text Label 8700 2800 0    60   ~ 0
-T1_RTD5_C
-Text Label 8700 2900 0    60   ~ 0
-T1_RTD5_D
-Text Label 8700 3100 0    60   ~ 0
-T1_RTD6_B
-Text Label 8700 3200 0    60   ~ 0
-T1_RTD6_C
-Text Label 8700 3300 0    60   ~ 0
-T1_RTD6_D
-Text Label 8700 3400 0    60   ~ 0
-T2_RTD1_A
-Text Label 8700 3500 0    60   ~ 0
-T2_RTD1_B
-Text Label 8700 3600 0    60   ~ 0
-T2_RTD1_C
-Text Label 8700 3700 0    60   ~ 0
-T2_RTD1_D
-Text Label 8700 3900 0    60   ~ 0
-T2_RTD2_B
-Text Label 8700 4000 0    60   ~ 0
-T2_RTD2_C
-Text Label 8700 4100 0    60   ~ 0
-T2_RTD2_D
-Text Label 8700 4300 0    60   ~ 0
-T2_RTD3_B
-Text Label 8700 4400 0    60   ~ 0
-T2_RTD3_C
-Text Label 8700 4500 0    60   ~ 0
-T2_RTD3_D
-Text Label 8700 4700 0    60   ~ 0
-T2_RTD4_B
-Text Label 8700 4800 0    60   ~ 0
-T2_RTD4_C
-Text Label 8700 4900 0    60   ~ 0
-T2_RTD4_D
-Text Label 8700 5100 0    60   ~ 0
-T2_RTD5_B
-Text Label 8700 5200 0    60   ~ 0
-T2_RTD5_C
-Text Label 8700 5300 0    60   ~ 0
-T2_RTD5_D
-Text Label 8700 5500 0    60   ~ 0
-T2_RTD6_B
-Text Label 8700 5600 0    60   ~ 0
-T2_RTD6_C
-Text Label 8700 5700 0    60   ~ 0
-T2_RTD6_D
-Text Label 8700 5800 0    60   ~ 0
-T3_RTD1_A
-Text Label 8700 5900 0    60   ~ 0
-T3_RTD1_B
-Text Label 8700 6000 0    60   ~ 0
-T3_RTD1_C
-Text Label 8700 6100 0    60   ~ 0
-T3_RTD1_D
-Text Label 8700 6300 0    60   ~ 0
-T3_RTD2_B
-Text Label 8700 6400 0    60   ~ 0
-T3_RTD2_C
-Text Label 8700 6500 0    60   ~ 0
-T3_RTD2_D
-Text Label 8700 6700 0    60   ~ 0
-T3_RTD3_B
-Text Label 8700 6800 0    60   ~ 0
-T3_RTD3_C
-Text Label 8700 6900 0    60   ~ 0
-T3_RTD3_D
-Text Label 8700 7100 0    60   ~ 0
-T3_RTD4_B
-Text Label 8700 7200 0    60   ~ 0
-T3_RTD4_C
-Text Label 8700 7300 0    60   ~ 0
-T3_RTD4_D
-Text Label 8700 7500 0    60   ~ 0
-T3_RTD5_B
-Text Label 8700 7600 0    60   ~ 0
-T3_RTD5_C
-Text Label 8700 7700 0    60   ~ 0
-T3_RTD5_D
-Text Label 8700 7900 0    60   ~ 0
-T3_RTD6_B
-Text Label 8700 8000 0    60   ~ 0
-T3_RTD6_C
-Text Label 8700 8100 0    60   ~ 0
-T3_RTD6_D
-Text Label 8700 8200 0    60   ~ 0
-T4_RTD1_A
-Text Label 8700 8300 0    60   ~ 0
-T4_RTD1_B
-Text Label 8700 8400 0    60   ~ 0
-T4_RTD1_C
-Text Label 8700 8500 0    60   ~ 0
-T4_RTD1_D
-Text Label 8700 9600 0    60   ~ 0
-T4_RTD2_B
-Text Label 8700 9700 0    60   ~ 0
-T4_RTD2_C
-Text Label 8700 9800 0    60   ~ 0
-T4_RTD2_D
-Text Label 8700 10000 0    60   ~ 0
-T4_RTD3_B
-Text Label 8700 10100 0    60   ~ 0
-T4_RTD3_C
-Text Label 8700 10200 0    60   ~ 0
-T4_RTD3_D
-Text Label 8700 10400 0    60   ~ 0
-T4_RTD4_B
-Text Label 8700 10500 0    60   ~ 0
-T4_RTD4_C
-Text Label 8700 10600 0    60   ~ 0
-T4_RTD4_D
-Text Label 8700 10800 0    60   ~ 0
-T4_RTD5_B
-Text Label 8700 10900 0    60   ~ 0
-T4_RTD5_C
-Text Label 8700 11000 0    60   ~ 0
-T4_RTD5_D
-Text Label 8700 11200 0    60   ~ 0
-T4_RTD6_B
-Text Label 8700 11300 0    60   ~ 0
-T4_RTD6_C
-Text Label 8700 11400 0    60   ~ 0
-T4_RTD6_D
-Text Label 8700 11500 0    60   ~ 0
-T5_RTD1_A
-Text Label 8700 11600 0    60   ~ 0
-T5_RTD1_B
-Text Label 8700 11700 0    60   ~ 0
-T5_RTD1_C
-Text Label 8700 11800 0    60   ~ 0
-T5_RTD1_D
-Text Label 8700 12000 0    60   ~ 0
-T5_RTD2_B
-Text Label 8700 12100 0    60   ~ 0
-T5_RTD2_C
-Text Label 8700 12200 0    60   ~ 0
-T5_RTD2_D
-Text Label 8700 12400 0    60   ~ 0
-T5_RTD3_B
-Text Label 8700 12500 0    60   ~ 0
-T5_RTD3_C
-Text Label 8700 12600 0    60   ~ 0
-T5_RTD3_D
-Text Label 8700 12800 0    60   ~ 0
-T5_RTD4_B
-Text Label 8700 12900 0    60   ~ 0
-T5_RTD4_C
-Text Label 8700 13000 0    60   ~ 0
-T5_RTD4_D
-Text Label 8700 13200 0    60   ~ 0
-T5_RTD5_B
-Text Label 8700 13300 0    60   ~ 0
-T5_RTD5_C
-Text Label 8700 13400 0    60   ~ 0
-T5_RTD5_D
-Text Label 8700 13600 0    60   ~ 0
-T5_RTD6_B
-Text Label 8700 13700 0    60   ~ 0
-T5_RTD6_C
-Text Label 8700 13800 0    60   ~ 0
-T5_RTD6_D
-Text Label 6000 14400 0    60   ~ 0
-T6_RTD1_A
-Text Label 6000 14500 0    60   ~ 0
-T6_RTD1_B
-Text Label 6000 14600 0    60   ~ 0
-T6_RTD1_C
-Text Label 6000 14700 0    60   ~ 0
-T6_RTD1_D
-Text Label 6000 14900 0    60   ~ 0
-T6_RTD2_B
-Text Label 6000 15000 0    60   ~ 0
-T6_RTD2_C
-Text Label 6000 15100 0    60   ~ 0
-T6_RTD2_D
-Text Label 6000 15300 0    60   ~ 0
-T6_RTD3_B
-Text Label 6000 15400 0    60   ~ 0
-T6_RTD3_C
-Text Label 6000 15500 0    60   ~ 0
-T6_RTD3_D
-Text Label 6000 15800 0    60   ~ 0
-T6_RTD4_B
-Text Label 6000 15900 0    60   ~ 0
-T6_RTD4_C
-Text Label 6000 16000 0    60   ~ 0
-T6_RTD4_D
-Text Label 6000 16200 0    60   ~ 0
-T6_RTD5_B
-Text Label 6000 16300 0    60   ~ 0
-T6_RTD5_C
-Text Label 6000 16400 0    60   ~ 0
-T6_RTD5_D
-Text Label 6000 16600 0    60   ~ 0
-T6_RTD6_B
-Text Label 6000 16700 0    60   ~ 0
-T6_RTD6_C
-Text Label 6000 16800 0    60   ~ 0
-T6_RTD6_D
-$Comp
-L TEST_1P J202
-U 1 1 591162B7
-P 1350 1600
-F 0 "J202" V 1400 1600 50  0000 C CNN
-F 1 "T_SPI1_SCK" V 1350 2000 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 1600 50  0001 C CNN
-F 3 "" H 1550 1600 50  0001 C CNN
-	1    1350 1600
-	0    -1   -1   0   
-$EndComp
-$Comp
-L TEST_1P J204
-U 1 1 591162BE
-P 1350 2000
-F 0 "J204" V 1400 2000 50  0000 C CNN
-F 1 "T_SPI1_MOSI" V 1350 2400 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 2000 50  0001 C CNN
-F 3 "" H 1550 2000 50  0001 C CNN
-	1    1350 2000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L TEST_1P J203
-U 1 1 591162C5
-P 1350 1800
-F 0 "J203" V 1400 1800 50  0000 C CNN
-F 1 "T_SPI1_MISO" V 1350 2200 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 1800 50  0001 C CNN
-F 3 "" H 1550 1800 50  0001 C CNN
-	1    1350 1800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L TEST_1P J205
-U 1 1 591162CC
-P 1350 9700
-F 0 "J205" V 1400 9700 50  0000 C CNN
-F 1 "T_SPI2_SCK" V 1350 10100 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 9700 50  0001 C CNN
-F 3 "" H 1550 9700 50  0001 C CNN
-	1    1350 9700
-	0    -1   -1   0   
-$EndComp
-$Comp
-L TEST_1P J207
-U 1 1 591162D3
-P 1350 10100
-F 0 "J207" V 1400 10100 50  0000 C CNN
-F 1 "T_SPI2_MOSI" V 1350 10500 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 10100 50  0001 C CNN
-F 3 "" H 1550 10100 50  0001 C CNN
-	1    1350 10100
-	0    -1   -1   0   
-$EndComp
-$Comp
-L TEST_1P J206
-U 1 1 591162DA
-P 1350 9900
-F 0 "J206" V 1400 9900 50  0000 C CNN
-F 1 "T_SPI2_MISO" V 1350 10300 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1550 9900 50  0001 C CNN
-F 3 "" H 1550 9900 50  0001 C CNN
-	1    1350 9900
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1350 1600 1750 1600
 Connection ~ 1750 1600
@@ -1332,88 +1390,36 @@ Connection ~ 1650 9900
 Wire Wire Line
 	1350 9700 1750 9700
 Connection ~ 1750 9700
-$Comp
-L TEST_1P J208
-U 1 1 59132096
-P 2400 1500
-F 0 "J208" H 2500 1550 50  0000 C CNN
-F 1 "T_SPI1_CS1" V 2400 1900 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 1500 50  0001 C CNN
-F 3 "" H 2600 1500 50  0001 C CNN
-	1    2400 1500
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2400 1400 2400 1500
 Connection ~ 2400 1400
-$Comp
-L TEST_1P J209
-U 1 1 591364FA
-P 2400 4200
-F 0 "J209" H 2500 4250 50  0000 C CNN
-F 1 "T_SPI1_CS2" V 2400 4600 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 4200 50  0001 C CNN
-F 3 "" H 2600 4200 50  0001 C CNN
-	1    2400 4200
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2400 4100 2400 4200
 Connection ~ 2400 4100
-$Comp
-L TEST_1P J210
-U 1 1 5913A386
-P 2400 6900
-F 0 "J210" H 2500 6950 50  0000 C CNN
-F 1 "T_SPI1_CS3" V 2400 7300 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 6900 50  0001 C CNN
-F 3 "" H 2600 6900 50  0001 C CNN
-	1    2400 6900
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2400 6800 2400 6900
 Connection ~ 2400 6800
-$Comp
-L TEST_1P J211
-U 1 1 5913F71A
-P 2400 9600
-F 0 "J211" H 2500 9650 50  0000 C CNN
-F 1 "T_SPI2_CS1" V 2400 10000 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 9600 50  0001 C CNN
-F 3 "" H 2600 9600 50  0001 C CNN
-	1    2400 9600
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2400 9500 2400 9600
 Connection ~ 2400 9500
-$Comp
-L TEST_1P J212
-U 1 1 59142F0B
-P 2400 12300
-F 0 "J212" H 2500 12350 50  0000 C CNN
-F 1 "T_SPI2_CS2" V 2400 12700 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 12300 50  0001 C CNN
-F 3 "" H 2600 12300 50  0001 C CNN
-	1    2400 12300
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2400 12300 2400 12200
 Connection ~ 2400 12200
-$Comp
-L TEST_1P J213
-U 1 1 5914BC93
-P 2400 15000
-F 0 "J213" H 2500 15050 50  0000 C CNN
-F 1 "T_SPI2_CS3" V 2400 15400 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 15000 50  0001 C CNN
-F 3 "" H 2600 15000 50  0001 C CNN
-	1    2400 15000
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2400 14900 2400 15000
 Connection ~ 2400 14900
+Wire Wire Line
+	8200 8200 9850 8200
+Wire Wire Line
+	8300 8300 8700 8300
+Wire Wire Line
+	8400 8400 8700 8400
+Wire Wire Line
+	8500 8500 8700 8500
+NoConn ~ 10200 8200
+NoConn ~ 10200 8300
+NoConn ~ 10200 8400
+NoConn ~ 10200 8500
+Text Notes 8750 8800 0    60   ~ 0
+T4_RTD1 is not connected\nin the first PCB revision
 $EndSCHEMATC
