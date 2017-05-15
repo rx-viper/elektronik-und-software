@@ -1,0 +1,16 @@
+Electronics
+The VIPER electronics is in charge of all electronic parts included in our project. This also applies on hardware as well as on software. 
+All our choices have to be made in consideration of the requirements.
+
+Requirements
+
+Hardware
+-Our biggest challenge is the environment our experiment will be executed in. With temperatures up to -80°C and almost no pressure we have to choose  our hardware carefully. 
+-We have to make sure to deliver reliable measurement data, even in challenging conditions.
+-All data will be measured by 27 highly accurate temperature sensors, one pressure sensor and there will be two cameras, one capable of recording infrared and one able to record RGB.
+
+Software
+- The experiment needs to be controlled by our software. For that we are able to use the signals given by the REXUS module to define destinctive points for our experiment.
+-Also the data has to be collected and stored properly. We will save our data on our Raspberry Pi 3 or on a flash drive. 
+-Furthermore we want to display data currently captured on our ground station. That way we will be able to have a first glance on the results of our project. 
+
