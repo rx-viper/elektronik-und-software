@@ -47,7 +47,7 @@ encoding utf-8
 Sheet 1 12
 Title "Mainboard overview"
 Date "2017-03-14"
-Rev "15"
+Rev "20"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

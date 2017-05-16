@@ -47,7 +47,7 @@ encoding utf-8
 Sheet 12 12
 Title "Heat probe encoder interface"
 Date "2017-05-05"
-Rev "11"
+Rev "20"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
