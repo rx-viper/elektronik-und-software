@@ -158,21 +158,9 @@ Text Label 9600 1900 0    60   ~ 0
 RXSM_28V
 Text Label 7750 950  0    60   ~ 0
 Lens_Heat_EN
-Text Label 1900 6050 2    60   ~ 0
-Lens_Heat_EN
-Text Label 1900 5150 2    60   ~ 0
-Probe3_EN
-Text Label 1900 5050 2    60   ~ 0
-Probe2_EN
-Text Label 1900 4950 2    60   ~ 0
-Probe1_EN
-Text Label 1900 4250 2    60   ~ 0
-Motor_U_P
 Text Label 2250 5100 0    60   ~ 0
 RXSM_28V_sense
 Text Label 7200 1850 0    60   ~ 0
-Cam_Light_EN
-Text Label 1900 5950 2    60   ~ 0
 Cam_Light_EN
 Text Label 6450 2900 0    60   ~ 0
 RXSM_28V
@@ -462,17 +450,11 @@ F 3 "" H 1350 3200 50  0000 C CNN
 $EndComp
 Text Label 4900 2200 2    60   ~ 0
 Charge_status
-Text Label 1900 5850 2    60   ~ 0
-Charge_status
 Text Label 2550 2750 2    47   ~ 0
 BAT_raw
 Text Label 3650 3500 2    60   ~ 0
 Boost24V_EN
-Text Label 1900 6150 2    60   ~ 0
-Boost24V_EN
 Text Label 4900 2400 2    60   ~ 0
-Charge_EN
-Text Label 1900 5750 2    60   ~ 0
 Charge_EN
 $Sheet
 S 4800 6500 1150 500 
@@ -632,14 +614,6 @@ F 3 "" H 8550 950 50  0001 C CNN
 $EndComp
 Text Notes 9400 1050 0    60   ~ 0
 Pin 1, 2 & 6:\nUART from mainboard
-Text Label 1900 5250 2    60   ~ 0
-extADC_SCK
-Text Label 1900 5350 2    60   ~ 0
-extADC_MOSI
-Text Label 1900 5450 2    60   ~ 0
-extADC_MISO
-Text Label 1900 5550 2    60   ~ 0
-extADC_CS
 $Comp
 L DB15_FEMALE J104
 U 1 1 5900D731
@@ -689,16 +663,6 @@ Text Label 9600 5300 0    60   ~ 0
 Encoder_A+
 Text Label 9600 5400 0    60   ~ 0
 Encoder_B+
-Text Label 1900 6650 2    60   ~ 0
-Hall_U
-Text Label 1900 6750 2    60   ~ 0
-Hall_V
-Text Label 1900 6850 2    60   ~ 0
-Hall_W
-Text Label 1900 6350 2    60   ~ 0
-Encoder_A+
-Text Label 1900 6450 2    60   ~ 0
-Encoder_B+
 Text Label 4400 6650 0    60   ~ 0
 LO
 Text Label 4400 6750 0    60   ~ 0
@@ -709,51 +673,8 @@ Text Label 4400 7400 0    60   ~ 0
 TX
 Text Label 4400 7500 0    60   ~ 0
 RX
-Text Label 1900 6950 2    60   ~ 0
-LO
-Text Label 1900 7050 2    60   ~ 0
-SOE
-Text Label 1900 7150 2    60   ~ 0
-SODS
-Text Label 1900 7250 2    60   ~ 0
-TX
-Text Label 1900 7350 2    60   ~ 0
-RX
 Text Notes 4050 4600 0    60   ~ 0
 Heat probe connectors in sub-schematic
-$Comp
-L DB37_FEMALE J102
-U 1 1 59027E91
-P 750 5650
-F 0 "J102" H 750 7625 50  0000 C CNN
-F 1 "Powerboard <-> Mainboard" V 950 5650 50  0000 C CNN
-F 2 "" H 750 5650 50  0001 C CNN
-F 3 "" H 750 5650 50  0001 C CNN
-	1    750  5650
-	-1   0    0    -1  
-$EndComp
-$Comp
-L GND #PWR101
-U 1 1 590292DE
-P 1150 7550
-F 0 "#PWR101" H 1150 7300 50  0001 C CNN
-F 1 "GND" H 1150 7400 50  0000 C CNN
-F 2 "" H 1150 7550 50  0001 C CNN
-F 3 "" H 1150 7550 50  0001 C CNN
-	1    1150 7550
-	1    0    0    -1  
-$EndComp
-$Comp
-L +5V #PWR103
-U 1 1 5905088E
-P 1350 3750
-F 0 "#PWR103" H 1350 3600 50  0001 C CNN
-F 1 "+5V" H 1350 3890 50  0000 C CNN
-F 2 "" H 1350 3750 50  0000 C CNN
-F 3 "" H 1350 3750 50  0000 C CNN
-	1    1350 3750
-	1    0    0    -1  
-$EndComp
 Text Label 9600 4800 0    60   ~ 0
 Brake-
 Text Label 8750 4600 0    60   ~ 0
@@ -803,8 +724,6 @@ F 3 "" H 8550 5100 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 8700 5000 2    60   ~ 0
-Brake_EN
-Text Label 1900 4150 2    60   ~ 0
 Brake_EN
 $Comp
 L D D101
@@ -1104,74 +1023,6 @@ Wire Wire Line
 Wire Wire Line
 	4800 7500 4400 7500
 Wire Wire Line
-	1150 3850 1150 7550
-Wire Wire Line
-	1150 7450 1050 7450
-Wire Wire Line
-	1150 3850 1050 3850
-Connection ~ 1150 7450
-Wire Wire Line
-	1050 6550 1150 6550
-Connection ~ 1150 6550
-Wire Wire Line
-	1050 5650 1150 5650
-Connection ~ 1150 5650
-Wire Wire Line
-	1350 3750 1350 4050
-Wire Wire Line
-	1350 3950 1050 3950
-Wire Wire Line
-	1350 4050 1050 4050
-Connection ~ 1350 3950
-Wire Wire Line
-	1900 7350 1050 7350
-Wire Wire Line
-	1050 7250 1900 7250
-Wire Wire Line
-	1900 7150 1050 7150
-Wire Wire Line
-	1050 7050 1900 7050
-Wire Wire Line
-	1900 6950 1050 6950
-Wire Wire Line
-	1050 6850 1900 6850
-Wire Wire Line
-	1900 6750 1050 6750
-Wire Wire Line
-	1050 6650 1900 6650
-Wire Wire Line
-	1050 6450 1900 6450
-Wire Wire Line
-	1900 6350 1050 6350
-Wire Wire Line
-	1050 6050 1900 6050
-Wire Wire Line
-	1900 5950 1050 5950
-Wire Wire Line
-	1050 5850 1900 5850
-Wire Wire Line
-	1900 5750 1050 5750
-Wire Wire Line
-	1050 5550 1900 5550
-Wire Wire Line
-	1900 5450 1050 5450
-Wire Wire Line
-	1050 5350 1900 5350
-Wire Wire Line
-	1900 5250 1050 5250
-Wire Wire Line
-	1050 5150 1900 5150
-Wire Wire Line
-	1900 5050 1050 5050
-Wire Wire Line
-	1050 4950 1900 4950
-Wire Wire Line
-	1050 4450 1900 4450
-Wire Wire Line
-	1900 4350 1050 4350
-Wire Wire Line
-	1050 4250 1900 4250
-Wire Wire Line
 	3000 3200 3000 3500
 Wire Wire Line
 	3000 3500 3650 3500
@@ -1219,16 +1070,6 @@ Wire Wire Line
 Wire Wire Line
 	9600 4600 9600 4700
 Connection ~ 9600 4700
-Wire Wire Line
-	1050 4150 1900 4150
-Wire Wire Line
-	1050 6250 1150 6250
-Connection ~ 1150 6250
-Wire Wire Line
-	1050 6150 1900 6150
-Wire Wire Line
-	1050 4850 1150 4850
-Connection ~ 1150 4850
 Wire Wire Line
 	1050 950  1150 950 
 Wire Wire Line
@@ -1465,22 +1306,6 @@ Wire Wire Line
 	4000 5950 4000 5450
 Wire Wire Line
 	4000 5450 4100 5450
-Text Label 1900 4350 2    60   ~ 0
-Motor_U_N
-Text Label 1900 4450 2    60   ~ 0
-Motor_V_P
-Text Label 1900 4550 2    60   ~ 0
-Motor_V_N
-Text Label 1900 4650 2    60   ~ 0
-Motor_W_P
-Text Label 1900 4750 2    60   ~ 0
-Motor_W_N
-Wire Wire Line
-	1050 4750 1900 4750
-Wire Wire Line
-	1050 4650 1900 4650
-Wire Wire Line
-	1900 4550 1050 4550
 Text Label 7900 3100 0    60   ~ 0
 Motor_U_P
 Text Label 7900 3200 0    60   ~ 0
@@ -1524,4 +1349,190 @@ Wire Wire Line
 Connection ~ 2450 1600
 Wire Wire Line
 	4750 1200 4650 1200
+Text Label 1700 6100 2    60   ~ 0
+Lens_Heat_EN
+Text Label 1700 5000 2    60   ~ 0
+Probe3_EN
+Text Label 1700 4900 2    60   ~ 0
+Probe2_EN
+Text Label 1700 4800 2    60   ~ 0
+Probe1_EN
+Text Label 1700 5900 2    60   ~ 0
+Cam_Light_EN
+Text Label 1700 5800 2    60   ~ 0
+Charge_status
+Text Label 1700 6200 2    60   ~ 0
+Boost24V_EN
+Text Label 1700 5700 2    60   ~ 0
+Charge_EN
+Text Label 1700 7100 2    60   ~ 0
+Hall_U
+Text Label 1700 7200 2    60   ~ 0
+Hall_V
+Text Label 1700 7300 2    60   ~ 0
+Hall_W
+Text Label 1700 6800 2    60   ~ 0
+Encoder_A+
+Text Label 1700 6900 2    60   ~ 0
+Encoder_B+
+Text Label 1700 6400 2    60   ~ 0
+LO
+Text Label 1700 6500 2    60   ~ 0
+SOE
+Text Label 1700 6600 2    60   ~ 0
+SODS
+Text Label 1700 7400 2    60   ~ 0
+TX
+Text Label 1700 7500 2    60   ~ 0
+RX
+$Comp
+L GND #PWR?
+U 1 1 5919E7BC
+P 1050 7700
+F 0 "#PWR?" H 1050 7450 50  0001 C CNN
+F 1 "GND" H 1050 7550 50  0000 C CNN
+F 2 "" H 1050 7700 50  0001 C CNN
+F 3 "" H 1050 7700 50  0001 C CNN
+	1    1050 7700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 5919E7C2
+P 1150 3600
+F 0 "#PWR?" H 1150 3450 50  0001 C CNN
+F 1 "+5V" H 1150 3740 50  0000 C CNN
+F 2 "" H 1150 3600 50  0000 C CNN
+F 3 "" H 1150 3600 50  0000 C CNN
+	1    1150 3600
+	1    0    0    -1  
+$EndComp
+Text Label 1700 4000 2    60   ~ 0
+Brake_EN
+Text Label 1700 5200 2    60   ~ 0
+extADC_SPI_SCK
+Text Label 1700 5300 2    60   ~ 0
+extADC_SPI_MISO
+Text Label 1700 5400 2    60   ~ 0
+extADC_SPI_MOSI
+Text Label 1700 5500 2    60   ~ 0
+extADC_SPI_CS1
+Text Label 1700 4100 2    60   ~ 0
+Motor_U_P
+Text Label 1700 4200 2    60   ~ 0
+Motor_U_N
+Text Label 1700 4400 2    60   ~ 0
+Motor_V_N
+Text Label 1700 4600 2    60   ~ 0
+Motor_W_N
+Text Label 1700 4300 2    60   ~ 0
+Motor_V_P
+Text Label 1700 4500 2    60   ~ 0
+Motor_W_P
+$Comp
+L CONN_01X40 J?
+U 1 1 5919E7D3
+P 650 5650
+F 0 "J?" H 650 7700 50  0000 C CNN
+F 1 "Powerboard <-> Mainboard" V 750 5650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x20_Pitch2.54mm" H 650 5650 50  0001 C CNN
+F 3 "" H 650 5650 50  0001 C CNN
+	1    650  5650
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	950  7600 850  7600
+Wire Wire Line
+	950  3700 850  3700
+Connection ~ 950  7600
+Wire Wire Line
+	950  5600 850  5600
+Connection ~ 950  5600
+Wire Wire Line
+	1150 3600 1150 3900
+Wire Wire Line
+	1150 3800 850  3800
+Wire Wire Line
+	1150 3900 850  3900
+Connection ~ 1150 3800
+Wire Wire Line
+	1700 7500 850  7500
+Wire Wire Line
+	850  7400 1700 7400
+Wire Wire Line
+	1700 6600 850  6600
+Wire Wire Line
+	850  6500 1700 6500
+Wire Wire Line
+	1700 6400 850  6400
+Wire Wire Line
+	850  7300 1700 7300
+Wire Wire Line
+	1700 7200 850  7200
+Wire Wire Line
+	850  7100 1700 7100
+Wire Wire Line
+	850  6900 1700 6900
+Wire Wire Line
+	1700 6800 850  6800
+Wire Wire Line
+	850  6100 1700 6100
+Wire Wire Line
+	1700 5900 850  5900
+Wire Wire Line
+	850  5800 1700 5800
+Wire Wire Line
+	1700 5700 850  5700
+Wire Wire Line
+	850  5500 1700 5500
+Wire Wire Line
+	1700 5400 850  5400
+Wire Wire Line
+	850  5300 1700 5300
+Wire Wire Line
+	1700 5200 850  5200
+Wire Wire Line
+	850  5000 1700 5000
+Wire Wire Line
+	1700 4900 850  4900
+Wire Wire Line
+	850  4800 1700 4800
+Wire Wire Line
+	850  4500 1700 4500
+Wire Wire Line
+	1700 4400 850  4400
+Wire Wire Line
+	850  4300 1700 4300
+Wire Wire Line
+	850  4000 1700 4000
+Wire Wire Line
+	950  6300 850  6300
+Connection ~ 950  6300
+Wire Wire Line
+	850  6200 1700 6200
+Wire Wire Line
+	850  4700 950  4700
+Connection ~ 950  4700
+Wire Wire Line
+	850  4600 1700 4600
+Wire Wire Line
+	1700 4200 850  4200
+Wire Wire Line
+	850  4100 1700 4100
+Wire Wire Line
+	950  3700 950  7700
+Wire Wire Line
+	950  5100 850  5100
+Connection ~ 950  5100
+Wire Wire Line
+	950  6000 850  6000
+Connection ~ 950  6000
+Wire Wire Line
+	950  7000 850  7000
+Connection ~ 950  7000
+Wire Wire Line
+	950  7700 1050 7700
+Wire Wire Line
+	850  6700 950  6700
+Connection ~ 950  6700
 $EndSCHEMATC

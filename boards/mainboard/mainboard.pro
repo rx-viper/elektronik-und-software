@@ -1,4 +1,4 @@
-update=Fri May  5 21:12:38 2017
+update=Wed 17 May 2017 12:59:01 AM CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,16 +25,6 @@ version=1
 NetIExt=net
 [general]
 version=1
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=../../docs/boards/mainboard/schematic/
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
 [eeschema]
 version=1
 LibDir=lib
@@ -79,3 +69,13 @@ LibName37=lib/max6126
 LibName38=lib/ltc2984
 LibName39=lib/DB
 LibName40=lib/ds26lv32at
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/mainboard/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
