@@ -30,16 +30,16 @@ LIBS:contrib
 LIBS:valves
 LIBS:rchojetzki-viper-temp-board
 LIBS:open-project
-LIBS:temerature-sensor-DS1731-cache
+LIBS:temperature-sensor-DS1731-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Temperature Sensor Board (Structure, Battery, ...)"
+Date "2017-05-22"
+Rev "1"
+Comp "VIPER"
 Comment1 ""
 Comment2 ""
 Comment3 ""
