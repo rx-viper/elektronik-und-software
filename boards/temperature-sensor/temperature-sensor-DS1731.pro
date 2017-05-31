@@ -1,4 +1,4 @@
-update=26/04/2017 23:07:45
+update=Tue 30 May 2017 05:20:40 PM CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,13 @@ LibName28=contrib
 LibName29=valves
 LibName30=rchojetzki-viper-temp-board
 LibName31=open-project-lib/open-project
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/temperature-sensor-ds1731/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60

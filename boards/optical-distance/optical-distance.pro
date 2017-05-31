@@ -1,4 +1,4 @@
-update=23/05/2017 20:12:03
+update=Wed 31 May 2017 05:03:54 PM CEST
 version=1
 last_client=kicad
 [general]
@@ -61,3 +61,13 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=optical-distance
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/optical-distance/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60

@@ -29,16 +29,16 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:lt3757
-LIBS:lt3557-boost-converter-cache
+LIBS:lt3757-boost-converter-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 2
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "LT3757 Boost Converter 24V Connectors"
+Date "2017-05-20"
+Rev "10"
+Comp "VIPER"
 Comment1 ""
 Comment2 ""
 Comment3 ""
