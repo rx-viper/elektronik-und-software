@@ -3,7 +3,7 @@
 *.kicad_pcb-bak
 *.net
 *.bck
-
+*.FCStd
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
