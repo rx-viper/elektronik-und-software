@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:pressure-sensor-hcla
+LIBS:pressure-sensor-hcla-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -81,10 +82,6 @@ Wire Wire Line
 Wire Wire Line
 	2100 1150 2100 900 
 Wire Wire Line
-	2100 900  2500 900 
-Wire Wire Line
-	2500 900  2500 950 
-Wire Wire Line
 	1950 1050 2100 1050
 Connection ~ 2100 1050
 Wire Wire Line
@@ -120,4 +117,12 @@ Text Label 1200 1250 0    60   ~ 0
 SCL
 Text Label 1200 1350 0    60   ~ 0
 SDA
+NoConn ~ 2400 950 
+NoConn ~ 2500 950 
+NoConn ~ 2600 1850
+NoConn ~ 2500 1850
+Wire Wire Line
+	2100 900  2700 900 
+Wire Wire Line
+	2700 900  2700 950 
 $EndSCHEMATC
