@@ -30,15 +30,16 @@ LIBS:contrib
 LIBS:valves
 LIBS:as5304
 LIBS:optical-distance
+LIBS:magnetic-distance-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date ""
-Rev ""
-Comp ""
+Date "2017-06-06"
+Rev "1"
+Comp "VIPER"
 Comment1 ""
 Comment2 ""
 Comment3 ""
