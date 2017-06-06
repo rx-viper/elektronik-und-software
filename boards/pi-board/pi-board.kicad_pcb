@@ -12,7 +12,14 @@
     (nets 156)
   )
 
-  (page A4)
+  (page User 299.999 200)
+  (title_block
+    (title pi-board)
+    (date 2017-06-06)
+    (rev 1.0)
+    (company VIPER)
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)
