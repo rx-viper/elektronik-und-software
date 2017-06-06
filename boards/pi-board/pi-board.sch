@@ -28,7 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:rpi
+LIBS:pam2306
 LIBS:switches
 LIBS:pi-board-cache
 EELAYER 25 0
@@ -138,7 +138,7 @@ UART_RX
 Text Label 4450 8900 1    60   ~ 0
 UART_TX
 Text Label 4550 8900 1    60   ~ 0
-5V
++5V
 Text Label 4850 8900 1    60   ~ 0
 Camera_light
 $Comp
@@ -147,7 +147,7 @@ U 1 1 5904EE31
 P 7000 9350
 F 0 "J6" H 7000 9600 50  0000 C CNN
 F 1 "Camera light board" V 7100 9350 50  0000 C CNN
-F 2 "" H 7000 9350 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 7000 9350 50  0001 C CNN
 F 3 "" H 7000 9350 50  0001 C CNN
 	1    7000 9350
 	0    1    1    0   
@@ -168,9 +168,9 @@ S 8950 9150 1000 800
 U 59050995
 F0 "stepdown_pi" 60
 F1 "stepdown_pi.sch" 60
-F2 "5V" I L 8950 9350 60 
-F3 "3V3" I R 9950 9350 60 
-F4 "1V8" I R 9950 9650 60 
+F2 "+5V" I L 8950 9350 60 
+F3 "+3.3V" I R 9950 9350 60 
+F4 "+1V8" I R 9950 9650 60 
 $EndSheet
 $Comp
 L Board_RPi_CM3_200pConnector MD1
@@ -204,7 +204,7 @@ U 1 1 59071AB8
 P 14850 2900
 F 0 "J8" H 14850 3350 50  0000 C CNN
 F 1 "Flir lepton board" V 14950 2900 50  0000 C CNN
-F 2 "" H 14850 2900 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 14850 2900 50  0001 C CNN
 F 3 "" H 14850 2900 50  0001 C CNN
 	1    14850 2900
 	0    -1   -1   0   
@@ -500,12 +500,12 @@ $EndComp
 $Comp
 L TEST TP1
 U 1 1 590F8409
-P 13100 11950
-F 0 "TP1" H 13100 12250 50  0000 C BNN
-F 1 "TEST" H 13100 12200 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 13100 11950 50  0001 C CNN
-F 3 "" H 13100 11950 50  0001 C CNN
-	1    13100 11950
+P 12400 11800
+F 0 "TP1" H 12400 12100 50  0000 C BNN
+F 1 "TEST" H 12400 12050 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 12400 11800 50  0001 C CNN
+F 3 "" H 12400 11800 50  0001 C CNN
+	1    12400 11800
 	-1   0    0    1   
 $EndComp
 Text Notes 12800 11600 0    60   ~ 0
@@ -1010,8 +1010,6 @@ Connection ~ 4550 7000
 Wire Wire Line
 	17600 7600 1700 7600
 Wire Wire Line
-	5500 2450 5800 2450
-Wire Wire Line
 	5500 2550 5800 2550
 Wire Wire Line
 	4550 3850 4550 4800
@@ -1060,9 +1058,6 @@ Wire Wire Line
 	11350 10150 11850 10150
 Wire Wire Line
 	12150 10150 13000 10150
-Wire Wire Line
-	13100 11950 13100 11800
-Connection ~ 13100 11800
 Wire Wire Line
 	11350 10850 12150 10850
 Wire Wire Line
@@ -1114,7 +1109,7 @@ Wire Wire Line
 Wire Wire Line
 	13050 11800 13150 11800
 Wire Wire Line
-	12650 11800 12750 11800
+	12400 11800 12750 11800
 Text Label 4700 4400 0    60   ~ 0
 USB-
 Text Label 4550 4400 2    60   ~ 0
@@ -1127,14 +1122,18 @@ Text Label 4650 3250 0    60   ~ 0
 USB_boot+
 Text Label 4550 3400 2    60   ~ 0
 USB_cam+
-Text Label 10150 9300 0    60   ~ 0
-3V3
-Text Label 10450 9300 0    60   ~ 0
-1V8
-Text Label 16500 12250 0    60   ~ 0
-3V3
-Text Label 17700 12450 0    60   ~ 0
-1V8
-Text Label 18550 12450 0    60   ~ 0
-5V
+Connection ~ 12650 11800
+Text Notes 17050 11950 0    60   ~ 0
+Decouple capaciators
+$Comp
+L R R10
+U 1 1 5936EC06
+P 5650 2450
+F 0 "R10" V 5550 2450 50  0000 C CNN
+F 1 "NC" V 5650 2450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 5580 2450 50  0001 C CNN
+F 3 "" H 5650 2450 50  0001 C CNN
+	1    5650 2450
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

@@ -28,7 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:rpi
+LIBS:pam2306
 LIBS:switches
 LIBS:pi-board-cache
 EELAYER 25 0
@@ -46,7 +46,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text HLabel 3150 2550 0    60   Input ~ 0
-5V
++5V
 $Comp
 L C C8
 U 1 1 59079533
@@ -182,7 +182,7 @@ F 3 "" H 7300 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 9300 3650 2    60   Input ~ 0
-3V3
++3.3V
 $Comp
 L C C9
 U 1 1 5907B3B6
@@ -331,7 +331,7 @@ Wire Wire Line
 Wire Wire Line
 	7150 3650 9300 3650
 Text HLabel 9300 2550 2    60   Input ~ 0
-1V8
++1V8
 Wire Wire Line
 	3150 4500 8950 4500
 $Comp
@@ -386,6 +386,6 @@ F 3 "" H 3400 2400 50  0001 C CNN
 	1    3400 2400
 	1    0    0    -1  
 $EndComp
-Text Notes 5150 2050 0    60   ~ 0
-simliar to CMIO schematics
+Text Notes 3600 1750 0    60   ~ 0
+similar to CMIO schematics, see https://www.raspberrypi.org/app/uploads/2014/04/RPI-CMIO-V1_2-SCHEMATIC.pdf
 $EndSCHEMATC
