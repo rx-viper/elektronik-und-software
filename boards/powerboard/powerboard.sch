@@ -42,6 +42,7 @@ LIBS:ad7928
 LIBS:references
 LIBS:lt3592
 LIBS:ds26lv32at
+LIBS:drv8312
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
@@ -50,7 +51,7 @@ encoding utf-8
 Sheet 1 10
 Title "Powerboard overview"
 Date "2017-03-14"
-Rev "10"
+Rev "12"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -171,6 +172,7 @@ F8 "Motor_W_N" I L 8450 3600 60
 F9 "Phase_U" O R 10050 2900 60 
 F10 "Phase_V" O R 10050 3000 60 
 F11 "Phase_W" O R 10050 3100 60 
+F12 "Current" O R 10050 3300 60 
 $EndSheet
 Text Label 3350 5350 0    60   ~ 0
 Motor1_Current
@@ -508,11 +510,11 @@ Text Label 3650 4250 0    60   ~ 0
 Probe2_EN
 Text Label 3650 4350 0    60   ~ 0
 Probe3_EN
-Text Label 6450 4050 2    60   ~ 0
+Text Label 6450 3950 2    60   ~ 0
 Probe1_Current
-Text Label 6450 4150 2    60   ~ 0
+Text Label 6450 4050 2    60   ~ 0
 Probe2_Current
-Text Label 6450 4250 2    60   ~ 0
+Text Label 6450 4150 2    60   ~ 0
 Probe3_Current
 $Sheet
 S 5300 4950 950  900 
@@ -1188,11 +1190,11 @@ Wire Wire Line
 Wire Wire Line
 	3650 4350 4200 4350
 Wire Wire Line
-	5700 4050 6450 4050
+	5700 3950 6450 3950
 Wire Wire Line
-	6450 4150 5700 4150
+	6450 4050 5700 4050
 Wire Wire Line
-	5700 4250 6450 4250
+	5700 4150 6450 4150
 Wire Wire Line
 	3350 5050 4100 5050
 Wire Wire Line
@@ -1616,4 +1618,8 @@ Wire Wire Line
 	8100 4850 7600 4850
 Text Label 1700 4000 2    60   ~ 0
 EndSwitch
+Text Label 10800 3300 2    60   ~ 0
+Motor1_Current
+Wire Wire Line
+	10050 3300 10800 3300
 $EndSCHEMATC

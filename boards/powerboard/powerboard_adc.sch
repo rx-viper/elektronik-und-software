@@ -42,12 +42,13 @@ LIBS:ad7928
 LIBS:references
 LIBS:lt3592
 LIBS:ds26lv32at
+LIBS:drv8312
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 10
+Sheet 8 10
 Title "Powerboard: ADC"
 Date "2017-04-15"
 Rev "10"

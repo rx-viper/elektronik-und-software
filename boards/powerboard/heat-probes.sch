@@ -42,6 +42,7 @@ LIBS:ad7928
 LIBS:references
 LIBS:lt3592
 LIBS:ds26lv32at
+LIBS:drv8312
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END

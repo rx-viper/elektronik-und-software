@@ -1,4 +1,4 @@
-update=Tue May 16 00:39:32 2017
+update=Tue Jun  6 21:41:08 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -82,3 +82,4 @@ LibName40=lib/ad7928
 LibName41=references
 LibName42=lib/lt3592
 LibName43=lib/ds26lv32at
+LibName44=lib/drv8312
