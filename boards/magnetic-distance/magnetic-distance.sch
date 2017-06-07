@@ -36,7 +36,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "Magnetic position sensor"
 Date "2017-06-06"
 Rev "1"
 Comp "VIPER"
