@@ -28,7 +28,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:pam2306
 LIBS:switches
 LIBS:pi-board-cache
 EELAYER 25 0
@@ -37,9 +36,9 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
 Title "Stepdown Pi"
-Date "2017-05-01"
-Rev "1.0"
-Comp "Rexus - Viper"
+Date "2017-06-05"
+Rev "2"
+Comp "VIPER"
 Comment1 ""
 Comment2 ""
 Comment3 ""

@@ -28,7 +28,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:pam2306
 LIBS:switches
 LIBS:pi-board-cache
 EELAYER 25 0
@@ -36,10 +35,10 @@ EELAYER END
 $Descr User 19685 15748
 encoding utf-8
 Sheet 1 2
-Title "RaspberryPi CM board"
-Date "2017-05-01"
-Rev "1.0"
-Comp "Rexus - Viper"
+Title "RasPi CM board for Camera"
+Date "2017-06-05"
+Rev "2"
+Comp "VIPER"
 Comment1 ""
 Comment2 ""
 Comment3 ""

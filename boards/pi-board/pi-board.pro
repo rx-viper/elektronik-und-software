@@ -1,4 +1,4 @@
-update=Do 04 Mai 2017 22:50:04 CEST
+update=Wed Jun  7 03:00:15 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,3 +61,13 @@ LibName29=valves
 LibName30=/home/lrapp/Programming/KiCad_footprints/rpi
 LibName31=/home/lrapp/Programmierung/rx-viper/pam2306
 LibName32=switches
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/pi-board/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
