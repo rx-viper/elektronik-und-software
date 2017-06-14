@@ -181,9 +181,9 @@ $Comp
 L INDUCTOR_SMALL L501
 U 1 1 58C9A44D
 P 7850 3500
-F 0 "L501" H 7850 3600 50  0000 C CNN
-F 1 "47µH" H 7850 3450 50  0000 C CNN
-F 2 "Inductors_SMD:L_Fastron_PISR_Handsoldering" H 7850 3500 50  0001 C CNN
+F 0 "L501" H 7850 3450 50  0000 C CNN
+F 1 "Coilcraft XAL6060-822" H 8150 3600 50  0000 C CNN
+F 2 "L_Coilcraft:L_Coilcraft_XAL60xx_Handsoldering" H 7850 3500 50  0001 C CNN
 F 3 "" H 7850 3500 50  0000 C CNN
 	1    7850 3500
 	1    0    0    -1  
@@ -559,4 +559,6 @@ F 3 "" H 3250 2700 50  0001 C CNN
 	1    3250 2700
 	0    1    -1   0   
 $EndComp
+Text Notes 8150 3350 0    60   ~ 0
+10µH
 $EndSCHEMATC

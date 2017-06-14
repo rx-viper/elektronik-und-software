@@ -258,22 +258,11 @@ $Comp
 L INDUCTOR_SMALL L101
 U 1 1 588AFDA8
 P 7200 2900
-F 0 "L101" H 7200 3000 50  0000 C CNN
-F 1 "10µH" H 7200 2850 50  0000 C CNN
-F 2 "Inductors_SMD:L_Fastron_PISR_Handsoldering" H 7200 2900 50  0001 C CNN
+F 0 "L101" H 7200 2850 50  0000 C CNN
+F 1 "Coilcraft MSS1583-474" H 7200 3050 50  0000 C CNN
+F 2 "L_Coilcraft:L_Coilcraft_1583_Handsoldering" H 7200 2900 50  0001 C CNN
 F 3 "" H 7200 2900 50  0000 C CNN
 	1    7200 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L CP C106
-U 1 1 588B171D
-P 7550 3150
-F 0 "C106" H 7575 3250 50  0000 L CNN
-F 1 "10µ" H 7575 3050 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 7588 3000 50  0001 C CNN
-F 3 "" H 7550 3150 50  0000 C CNN
-	1    7550 3150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -287,7 +276,7 @@ F 3 "" H 7200 3500 50  0000 C CNN
 	1    7200 3500
 	1    0    0    -1  
 $EndComp
-Text Notes 7000 2750 0    49   ~ 0
+Text Notes 6950 2600 0    60   ~ 0
 PI filter\nf_g = ~~15kHz
 $Comp
 L R R103
@@ -341,17 +330,6 @@ F 3 "" H 2450 1350 50  0000 C CNN
 $EndComp
 Text Notes 2450 1000 0    49   ~ 0
 Max. input capacity on \nRXSM 28V: 100µF\n\nDon't assemble input \ncapacitors >1µF in voltage \nregulator sub-schematics!
-$Comp
-L CP C103
-U 1 1 58CAB676
-P 6850 3150
-F 0 "C103" H 6875 3250 50  0000 L CNN
-F 1 "1µ" H 6875 3050 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 6888 3000 50  0001 C CNN
-F 3 "" H 6850 3150 50  0000 C CNN
-	1    6850 3150
-	1    0    0    -1  
-$EndComp
 $Comp
 L CMC FL102
 U 1 1 58C97BBF
@@ -1650,4 +1628,28 @@ Wire Wire Line
 	1850 3400 2800 3400
 Text Notes 1250 800  0    60   ~ 0
 Common mode chokes:\n2x Würth 744272471\nWE-SL5 SMD 470µH 1.6A
+$Comp
+L C C106
+U 1 1 5941DCC3
+P 7550 3150
+F 0 "C106" H 7575 3250 50  0000 L CNN
+F 1 "470n" H 7575 3050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 7588 3000 50  0001 C CNN
+F 3 "" H 7550 3150 50  0001 C CNN
+	1    7550 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C103
+U 1 1 5941E73A
+P 6850 3150
+F 0 "C103" H 6875 3250 50  0000 L CNN
+F 1 "1µ" H 6875 3050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6888 3000 50  0001 C CNN
+F 3 "" H 6850 3150 50  0001 C CNN
+	1    6850 3150
+	1    0    0    -1  
+$EndComp
+Text Notes 7150 3100 0    60   ~ 0
+300µH
 $EndSCHEMATC

@@ -132,8 +132,8 @@ L INDUCTOR_SMALL L1001
 U 1 1 58F8C8BD
 P 6700 3350
 F 0 "L1001" H 6700 3450 50  0000 C CNN
-F 1 "10µH 250mA" H 6700 3300 50  0000 C CNN
-F 2 "Inductors_SMD:L_Fastron_PISN_Handsoldering" H 6700 3350 50  0001 C CNN
+F 1 "Coilcraft XAL4040-103" H 6650 3300 50  0000 C CNN
+F 2 "L_Coilcraft:L_Coilcraft_XAL40xx_Handsoldering" H 6700 3350 50  0001 C CNN
 F 3 "" H 6700 3350 50  0000 C CNN
 	1    6700 3350
 	1    0    0    -1  
@@ -278,4 +278,6 @@ Text Notes 7400 3900 0    60   ~ 0
 Datasheet: I_bright = 200mV / R_sense\n\n100mA = 200mV / 2 Ω
 Text Notes 4000 5250 0    60   ~ 0
 ToDo: Recalculate (depends on number of LEDs and LED current)
+Text Notes 6450 3200 0    60   ~ 0
+10µH 250mA
 $EndSCHEMATC
