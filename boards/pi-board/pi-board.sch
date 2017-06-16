@@ -28,7 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:pam2306
+LIBS:rpi
 LIBS:switches
 LIBS:pi-board-cache
 EELAYER 25 0
@@ -87,8 +87,6 @@ NoConn ~ 15050 6800
 NoConn ~ 16250 6800
 NoConn ~ 14750 6800
 NoConn ~ 14600 6800
-NoConn ~ 13700 6800
-NoConn ~ 13550 6800
 NoConn ~ 13250 6800
 NoConn ~ 13100 6800
 NoConn ~ 12800 6800
@@ -1063,4 +1061,28 @@ Text GLabel 10600 8600 2    60   Input ~ 0
 Wire Wire Line
 	10600 8600 10450 8600
 Connection ~ 10450 8600
+$Comp
+L CONN_01X03 J3
+U 1 1 5943D274
+P 13600 8250
+F 0 "J3" H 13600 8450 50  0000 C CNN
+F 1 "debug_uart" V 13700 8250 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 13600 8250 50  0001 C CNN
+F 3 "" H 13600 8250 50  0001 C CNN
+	1    13600 8250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	13700 6800 13700 8050
+Text Label 13700 7550 1    60   ~ 0
+debug_tx
+Text Label 13500 7550 1    60   ~ 0
+debug_rx
+Wire Wire Line
+	13600 7000 13600 8050
+Wire Wire Line
+	13550 6800 13500 6800
+Wire Wire Line
+	13500 6800 13500 8050
+Connection ~ 13600 7000
 $EndSCHEMATC
