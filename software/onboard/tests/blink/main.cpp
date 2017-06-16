@@ -25,16 +25,16 @@ main()
 {
 	Board::initialize();
 
-	Board::LedRed::set();
-	Board::LedGreen::reset();
-	Board::LedBlue::set();
+	Board::Ui::LedRed::set();
+	Board::Ui::LedGreen::reset();
+	Board::Ui::LedBlue::set();
 
 	while (1)
 	{
-		Board::LedRed::toggle();
-		Board::LedGreen::toggle();
-		Board::LedBlue::toggle();
-		xpcc::delayMilliseconds(Board::Button1::read() ? 250 : 500);
+		Board::Ui::LedRed::toggle();
+		Board::Ui::LedGreen::toggle();
+		Board::Ui::LedBlue::toggle();
+		xpcc::delayMilliseconds(Board::Ui::Button1::read() ? 250 : 500);
 	}
 
 	return 0;

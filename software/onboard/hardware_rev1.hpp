@@ -21,6 +21,8 @@
 
 #include <xpcc/architecture/platform.hpp>
 
+#include <xpcc/io/iostream.hpp>
+
 using namespace xpcc::stm32;
 
 namespace Board
@@ -100,12 +102,137 @@ struct systemClock
 	}
 };
 
-using LedRed	= GpioOutputG10;	// LED1
-using LedGreen	= GpioOutputG11;	// LED2
-using LedBlue	= GpioOutputG12;	// LED3
 
-using Button1	= GpioInputG13;		// SW1
-using Button2	= GpioInputG14;		// SW1
+using BattChargeStatus	= GpioInputB12;
+using BattChargeEnable	= GpioOutputB13;
+
+using BoostEnable		= GpioOutputB15;
+
+using CameraLightEnable		= GpioOutputB14;
+using CameraLensHeatEnable	= GpioOutputD8;
+
+using HeatprobeEnable1	= GpioOutputE14;
+using HeatprobeEnable2	= GpioOutputE15;
+using HeatprobeEnable3	= GpioOutputB11;
+
+namespace Ui {
+	using LedRed		= GpioOutputG3;	// LED1
+	using LedGreen		= GpioOutputG4;	// LED2
+	using LedBlue		= GpioOutputG5;	// LED3
+
+	using Button1		= GpioInputG13;	// SW1
+	using Button2		= GpioInputG14;	// SW1
+
+	using DebugUartRx	= GpioInputA10;
+	using DebugUartTx	= GpioOutputA9;
+	using DebugUart		= Usart1;
+
+	inline void
+	initialize()
+	{
+		LedRed::setOutput(xpcc::Gpio::High);
+		LedGreen::setOutput(xpcc::Gpio::High);
+		LedBlue::setOutput(xpcc::Gpio::High);
+
+		Button1::setInput();
+		Button2::setInput();
+
+		// Create a IODevice with the Uart
+		xpcc::IODeviceWrapper<DebugUart, xpcc::IOBuffer::BlockIfFull> device;
+		xpcc::IOStream stream(device);
+
+		DebugUartRx::connect(DebugUart::Rx);
+		DebugUartTx::connect(DebugUart::Tx);
+		DebugUart::initialize<systemClock, 115200>(12);
+	}
+}
+
+namespace Rxsm {
+	using TelemetrieRx	= GpioInputD2;
+	using TelemetrieTx	= GpioOutputC12;
+
+	using EventLo		= GpioInputD9;
+	using EventSoe		= GpioInputD10;
+	using EventSods		= GpioInputD11;
+}
+
+namespace Motor {
+	using PhaseUN		= GpioOutputE8;
+	using PhaseUP		= GpioOutputE9;
+	using PhaseVN		= GpioOutputE10;
+	using PhaseVP		= GpioOutputE11;
+	using PhaseWN		= GpioOutputE12;
+	using PhaseWP		= GpioOutputE13;
+
+	using HallU			= GpioInputC6;
+	using HallV			= GpioInputC7;
+	using HallW			= GpioInputC8;
+
+	using EndSwitch		= GpioInputC5;
+}
+
+namespace Sensors {
+	using PressureScl		= GpioOutputB6;
+	using PressureSda		= GpioB7;
+	using PressureI2c		= I2cMaster1;
+
+	using TemperatureScl	= GpioOutputF1;
+	using TemperatureSda	= GpioF0;
+	using TemperatureI2c	= I2cMaster2;
+}
+
+namespace Storage {
+	using Flash1Sck		= GpioOutputB10;
+	using Flash1Miso	= GpioInputC2;
+	using Flash1Mosi	= GpioOutputC3;
+	using Flash1Cs		= GpioOutputA3;
+	using Flash1Spi		= SpiMaster2;
+
+	using Flash2Sck		= GpioOutputC10;
+	using Flash2Miso	= GpioInputC11;
+	using Flash2Mosi	= GpioOutputD6;
+	using Flash2Cs		= GpioOutputD7;
+	using Flash2Spi		= SpiMaster3;
+}
+
+namespace TemperaturePt100 {
+	namespace SpiPins {
+		using Cs1		= GpioOutputC14;
+		using Cs2		= GpioOutputC15;
+		using Cs3		= GpioOutputF2;
+		using Cs4		= GpioOutputE3;
+		using Cs5		= GpioOutputC13;
+		using Cs6		= GpioOutputE4;
+	}
+
+	namespace Chips123 {
+	    using Sck	= GpioOutputE2;
+	    using Miso	= GpioOutputE5;
+	    using Mosi	= GpioOutputE6;
+	    using Spi	= SpiMaster4;
+	}
+
+	namespace Chips456 {
+	    using Sck	= GpioOutputF7;
+	    using Miso	= GpioOutputF8;
+	    using Mosi	= GpioOutputF9;
+	    using Spi	= SpiMaster5;
+	}
+
+	inline void
+	initialize()
+	{
+		Chips123::Sck::connect(Chips123::Spi::Sck);
+		Chips123::Mosi::connect(Chips123::Spi::Mosi);
+		//Chips123::Miso::connect(Chips123::Spi::Miso);
+		Chips123::Spi::initialize<systemClock, 700000>();
+
+		Chips456::Sck::connect(Chips456::Spi::Sck);
+		Chips456::Mosi::connect(Chips456::Spi::Mosi);
+		//Chips456::Miso::connect(Chips456::Spi::Miso);
+		Chips456::Spi::initialize<systemClock, 700000>();
+	}
+}
 
 inline void
 initialize()
@@ -113,14 +240,10 @@ initialize()
 	systemClock::enable();
 	xpcc::cortex::SysTickTimer::initialize<systemClock>();
 
-	LedRed::setOutput(xpcc::Gpio::High);
-	LedGreen::setOutput(xpcc::Gpio::High);
-	LedBlue::setOutput(xpcc::Gpio::High);
-
-	Button1::setInput();
-	Button2::setInput();
+	Ui::initialize();
+	TemperaturePt100::initialize();
 }
 
-};
+}
 
 #endif // HARDWARE_REV1_HPP
