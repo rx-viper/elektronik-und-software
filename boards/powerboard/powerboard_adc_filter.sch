@@ -52,7 +52,7 @@ encoding utf-8
 Sheet 10 10
 Title "Powerboard: ADC lowpass filters"
 Date "2017-04-18"
-Rev "10"
+Rev "20"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

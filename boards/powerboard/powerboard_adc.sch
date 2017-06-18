@@ -52,7 +52,7 @@ encoding utf-8
 Sheet 8 10
 Title "Powerboard: ADC"
 Date "2017-04-15"
-Rev "10"
+Rev "20"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
