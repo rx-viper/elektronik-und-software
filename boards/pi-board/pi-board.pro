@@ -1,4 +1,4 @@
-update=Wed Jun  7 03:00:15 2017
+update=Sun Jun 18 21:06:41 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,6 +25,16 @@ version=1
 NetIExt=net
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/pi-board/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [eeschema]
 version=1
 LibDir=../../../../KiCad_footprints
@@ -58,16 +68,4 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=/home/lrapp/Programming/KiCad_footprints/rpi
-LibName31=/home/lrapp/Programmierung/rx-viper/pam2306
-LibName32=switches
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=../../docs/boards/pi-board/schematic/
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
+LibName30=switches
