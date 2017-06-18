@@ -28,7 +28,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:pam2306
 LIBS:switches
 LIBS:pi-board-cache
 EELAYER 25 0
@@ -38,7 +37,7 @@ encoding utf-8
 Sheet 2 2
 Title "Stepdown Pi"
 Date "2017-06-05"
-Rev "2"
+Rev "10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
