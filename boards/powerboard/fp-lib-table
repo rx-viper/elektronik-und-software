@@ -1,0 +1,7 @@
+(fp_lib_table
+  (lib (name TI_TO-PMOD)(type Github)(uri https://github.com/kicad-rleh/TI_TO-PMOD.pretty)(options "")(descr ""))
+  (lib (name HSSOP)(type Github)(uri https://github.com/kicad-rleh/HSSOP.pretty)(options "")(descr ""))
+  (lib (name SOP-4)(type Github)(uri https://github.com/kicad-rleh/SOP-4.pretty)(options "")(descr ""))
+  (lib (name L_Coilcraft)(type Github)(uri https://github.com/kicad-rleh/L_Coilcraft.pretty)(options "")(descr ""))
+  (lib (name WE-SLx)(type Github)(uri https://github.com/kicad-rleh/WE-SLx.pretty)(options "")(descr ""))
+)

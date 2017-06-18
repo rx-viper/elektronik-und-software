@@ -1,4 +1,4 @@
-update=Sat Apr 15 19:27:22 2017
+update=Wed Jun  7 17:00:29 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -81,3 +81,6 @@ LibName39=lib/esd_diode_dual
 LibName40=lib/ad7928
 LibName41=references
 LibName42=lib/lt3592
+LibName43=lib/ds26lv32at
+LibName44=lib/drv8312
+LibName45=lib/drv8332

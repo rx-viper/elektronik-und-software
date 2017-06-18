@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DRV8332
+D DRV8332
+K DRV8332 MOTOR DRIVER TI
+F http://www.ti.com/lit/ds/symlink/drv8332.pdf
+$ENDCMP
+#
+#End Doc Library
