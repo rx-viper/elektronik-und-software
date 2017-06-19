@@ -103,17 +103,20 @@ struct systemClock
 };
 
 
+template<typename SpiStruct, uint32_t SpiBaudrate>
+inline void
+spiMasterInitialize()
+{
+	SpiStruct::Sck::connect(SpiStruct::Spi::Sck);
+	SpiStruct::Mosi::connect(SpiStruct::Spi::Mosi);
+	SpiStruct::Miso::connect(SpiStruct::Spi::Miso);
+	SpiStruct::Spi::template initialize<systemClock, SpiBaudrate>();
+}
+
 using BattChargeStatus	= GpioInputB12;
 using BattChargeEnable	= GpioOutputB13;
 
 using BoostEnable		= GpioOutputB15;
-
-using CameraLightEnable		= GpioOutputB14;
-using CameraLensHeatEnable	= GpioOutputD8;
-
-using HeatprobeEnable1	= GpioOutputE14;
-using HeatprobeEnable2	= GpioOutputE15;
-using HeatprobeEnable3	= GpioOutputB11;
 
 namespace Ui {
 	using LedRed		= GpioOutputG3;	// LED1
@@ -134,8 +137,8 @@ namespace Ui {
 		LedGreen::setOutput(xpcc::Gpio::High);
 		LedBlue::setOutput(xpcc::Gpio::High);
 
-		Button1::setInput();
-		Button2::setInput();
+		Button1::setInput(Gpio::InputType::PullUp);
+		Button2::setInput(Gpio::InputType::PullUp);
 
 		// Create a IODevice with the Uart
 		xpcc::IODeviceWrapper<DebugUart, xpcc::IOBuffer::BlockIfFull> device;
@@ -147,13 +150,36 @@ namespace Ui {
 	}
 }
 
-namespace Rxsm {
-	using TelemetrieRx	= GpioInputD2;
-	using TelemetrieTx	= GpioOutputC12;
+namespace Camera {
+    using Light		= GpioOutputB14;
+    using LensHeat	= GpioOutputD8;
 
-	using EventLo		= GpioInputD9;
-	using EventSoe		= GpioInputD10;
-	using EventSods		= GpioInputD11;
+    inline void
+	initialize() {
+		//TODO
+	}
+}
+
+namespace Rxsm {
+    using TelemetrieRx		= GpioInputD2;
+    using TelemetrieTx		= GpioOutputC12;
+    using TelemetrieUart	= Uart5;
+
+    using EventLo			= GpioInputD9;
+    using EventSoe			= GpioInputD10;
+    using EventSods			= GpioInputD11;
+
+    inline void
+	initialize()
+	{
+		EventLo::setInput(Gpio::InputType::Floating);
+		EventSoe::setInput(Gpio::InputType::Floating);
+		EventSods::setInput(Gpio::InputType::Floating);
+
+		TelemetrieRx::connect(TelemetrieUart::Rx);
+		TelemetrieTx::connect(TelemetrieUart::Tx);
+		TelemetrieUart::initialize<systemClock, 38400>(12);
+	}
 }
 
 namespace Motor {
@@ -169,68 +195,185 @@ namespace Motor {
 	using HallW			= GpioInputC8;
 
 	using EndSwitch		= GpioInputC5;
+
+    inline void
+	initialize()
+	{
+		EndSwitch::setInput(Gpio::InputType::PullUp);
+
+		//TODO
+	}
 }
 
-namespace Sensors {
-	using PressureScl		= GpioOutputB6;
-	using PressureSda		= GpioB7;
-	using PressureI2c		= I2cMaster1;
-
-	using TemperatureScl	= GpioOutputF1;
-	using TemperatureSda	= GpioF0;
-	using TemperatureI2c	= I2cMaster2;
-}
-
-namespace Storage {
-	using Flash1Sck		= GpioOutputB10;
-	using Flash1Miso	= GpioInputC2;
-	using Flash1Mosi	= GpioOutputC3;
-	using Flash1Cs		= GpioOutputA3;
-	using Flash1Spi		= SpiMaster2;
-
-	using Flash2Sck		= GpioOutputC10;
-	using Flash2Miso	= GpioInputC11;
-	using Flash2Mosi	= GpioOutputD6;
-	using Flash2Cs		= GpioOutputD7;
-	using Flash2Spi		= SpiMaster3;
-}
-
-namespace TemperaturePt100 {
-	namespace SpiPins {
-		using Cs1		= GpioOutputC14;
-		using Cs2		= GpioOutputC15;
-		using Cs3		= GpioOutputF2;
-		using Cs4		= GpioOutputE3;
-		using Cs5		= GpioOutputC13;
-		using Cs6		= GpioOutputE4;
+namespace Encoders {
+    template<typename EncoderStruct>
+    inline void
+	EncoderInitialize()
+	{
+		EncoderStruct::Timer::enable();
+		EncoderStruct::Timer::setMode(EncoderStruct::Timer::Mode::UpCounter, EncoderStruct::Timer::SlaveMode::Encoder3);
+		// Overflow must be 16bit because else a lot of our motor control code will break!
+		EncoderStruct::Timer::setOverflow(0xffff);
+		EncoderStruct::PinA::connect(EncoderStruct::Timer::Channel1, Gpio::InputType::Floating);
+		EncoderStruct::PinB::connect(EncoderStruct::Timer::Channel2, Gpio::InputType::Floating);
+		EncoderStruct::Timer::start();
 	}
 
-	namespace Chips123 {
-	    using Sck	= GpioOutputE2;
-	    using Miso	= GpioInputE5;
-	    using Mosi	= GpioOutputE6;
-	    using Spi	= SpiMaster4;
-	}
+	struct Motor {
+		using PinA = GpioInputD12;
+		using PinB = GpioInputD13;
+		using Timer = Timer4;
+		inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
+	};
 
-	namespace Chips456 {
-	    using Sck	= GpioOutputF7;
-	    using Miso	= GpioInputF8;
-	    using Mosi	= GpioOutputF9;
-	    using Spi	= SpiMaster5;
-	}
+	struct Heatprobe1 {
+		using PinA = GpioInputA15;
+		using PinB = GpioInputB3;
+		using Timer = Timer2;
+		inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
+	};
+
+	struct Heatprobe2 {
+		using PinA = GpioInputB4;
+		using PinB = GpioInputB5;
+		using Timer = Timer3;
+		inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
+	};
+
+	struct Heatprobe3 {
+		using PinA = GpioInputA0;
+		using PinB = GpioInputA1;
+		using Timer = Timer5;
+		inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
+	};
 
 	inline void
 	initialize()
 	{
-		Chips123::Sck::connect(Chips123::Spi::Sck);
-		Chips123::Mosi::connect(Chips123::Spi::Mosi);
-		Chips123::Miso::connect(Chips123::Spi::Miso);
-		Chips123::Spi::initialize<systemClock, 700000>();
+		EncoderInitialize<Motor>();
+		EncoderInitialize<Heatprobe1>();
+		EncoderInitialize<Heatprobe2>();
+		EncoderInitialize<Heatprobe3>();
+	}
+}
 
-		Chips456::Sck::connect(Chips456::Spi::Sck);
-		Chips456::Mosi::connect(Chips456::Spi::Mosi);
-		Chips456::Miso::connect(Chips456::Spi::Miso);
-		Chips456::Spi::initialize<systemClock, 700000>();
+namespace Heatprobes {
+    using Pin1	= GpioOutputE14;
+    using Pin2	= GpioOutputE15;
+    using Pin3	= GpioOutputB11;
+
+    inline void
+	initialize() {
+		//TODO
+		/*Timer::enable();
+		Timer::setMode(Timer::Mode::UpCounter, Timer::SlaveMode::Encoder3);
+		// Overflow must be 16bit because else a lot of our motor control code will break!
+		Timer::setOverflow(0xffff);
+		PinA::connect(EncoderStruct::Timer::Channel1, Gpio::InputType::Floating);
+		PinB::connect(EncoderStruct::Timer::Channel2, Gpio::InputType::Floating);
+		Timer::start();*/
+	}
+}
+
+namespace Sensors {
+    using PressureScl		= GpioB6;
+	using PressureSda		= GpioB7;
+	using PressureI2c		= I2cMaster1;
+
+    using TemperatureScl	= GpioF1;
+	using TemperatureSda	= GpioF0;
+	using TemperatureI2c	= I2cMaster2;
+
+    inline void
+	initialize()
+	{
+		PressureScl::connect(PressureI2c::Scl);
+		PressureSda::connect(PressureI2c::Sda);
+		PressureI2c::initialize<systemClock, PressureI2c::Baudrate::Standard, xpcc::Tolerance::FivePercent>();
+
+		TemperatureScl::connect(TemperatureI2c::Scl);
+		TemperatureSda::connect(TemperatureI2c::Sda);
+		TemperatureI2c::initialize<systemClock, PressureI2c::Baudrate::Standard, xpcc::Tolerance::FivePercent>();
+	}
+}
+
+namespace Storage {
+    constexpr uint32_t SpiBaudrate = 700000;
+
+	struct Flash1 {
+		using Sck		= GpioOutputB10;
+		using Miso		= GpioInputC2;
+		using Mosi		= GpioOutputC3;
+		using Cs		= GpioOutputA3;
+		using Spi		= SpiMaster2;
+	};
+
+	struct Flash2 {
+		using Sck		= GpioOutputC10;
+		using Miso		= GpioInputC11;
+		using Mosi		= GpioOutputD6;
+		using Cs		= GpioOutputD7;
+		using Spi		= SpiMaster3;
+	};
+
+	inline void
+	initialize()
+	{
+		Flash1::Cs::set();
+		Flash1::Cs::setOutput(Gpio::OutputType::PushPull);
+		Flash2::Cs::set();
+		Flash2::Cs::setOutput(Gpio::OutputType::PushPull);
+
+		spiMasterInitialize<Flash1, SpiBaudrate>();
+		spiMasterInitialize<Flash2, SpiBaudrate>();
+	}
+}
+
+namespace TemperaturePt100 {
+    constexpr uint32_t SpiBaudrate = 700000;
+
+	struct Chips123 {
+	    using Sck	= GpioOutputE2;
+	    using Miso	= GpioInputE5;
+	    using Mosi	= GpioOutputE6;
+	    using Spi	= SpiMaster4;
+
+		using Cs1	= GpioOutputC14;
+		using Cs2	= GpioOutputC15;
+		using Cs3	= GpioOutputF2;
+	};
+
+	struct Chips456 {
+	    using Sck	= GpioOutputF7;
+	    using Miso	= GpioInputF8;
+	    using Mosi	= GpioOutputF9;
+	    using Spi	= SpiMaster5;
+
+		using Cs4	= GpioOutputE3;
+		using Cs5	= GpioOutputC13;
+		using Cs6	= GpioOutputE4;
+	};
+
+	inline void
+	initialize()
+	{
+		Chips123::Cs1::set();
+		Chips123::Cs1::setOutput(Gpio::OutputType::PushPull);
+		Chips123::Cs2::set();
+		Chips123::Cs2::setOutput(Gpio::OutputType::PushPull);
+		Chips123::Cs3::set();
+		Chips123::Cs3::setOutput(Gpio::OutputType::PushPull);
+
+		spiMasterInitialize<Chips123, SpiBaudrate>();
+
+		Chips456::Cs4::set();
+		Chips456::Cs4::setOutput(Gpio::OutputType::PushPull);
+		Chips456::Cs5::set();
+		Chips456::Cs5::setOutput(Gpio::OutputType::PushPull);
+		Chips456::Cs6::set();
+		Chips456::Cs6::setOutput(Gpio::OutputType::PushPull);
+
+		spiMasterInitialize<Chips456, SpiBaudrate>();
 	}
 }
 
@@ -241,6 +384,11 @@ initialize()
 	xpcc::cortex::SysTickTimer::initialize<systemClock>();
 
 	Ui::initialize();
+	Rxsm::initialize();
+	Motor::initialize();
+	Encoders::initialize();
+	Sensors::initialize();
+	Storage::initialize();
 	TemperaturePt100::initialize();
 }
 
