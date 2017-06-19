@@ -36,8 +36,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
 Title "LT3757 Boost Converter 24V"
-Date "2017-05-20"
-Rev "10"
+Date "2017-06-19"
+Rev "20"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
