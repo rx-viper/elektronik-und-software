@@ -207,14 +207,14 @@ namespace TemperaturePt100 {
 
 	namespace Chips123 {
 	    using Sck	= GpioOutputE2;
-	    using Miso	= GpioOutputE5;
+	    using Miso	= GpioInputE5;
 	    using Mosi	= GpioOutputE6;
 	    using Spi	= SpiMaster4;
 	}
 
 	namespace Chips456 {
 	    using Sck	= GpioOutputF7;
-	    using Miso	= GpioOutputF8;
+	    using Miso	= GpioInputF8;
 	    using Mosi	= GpioOutputF9;
 	    using Spi	= SpiMaster5;
 	}
@@ -224,12 +224,12 @@ namespace TemperaturePt100 {
 	{
 		Chips123::Sck::connect(Chips123::Spi::Sck);
 		Chips123::Mosi::connect(Chips123::Spi::Mosi);
-		//Chips123::Miso::connect(Chips123::Spi::Miso);
+		Chips123::Miso::connect(Chips123::Spi::Miso);
 		Chips123::Spi::initialize<systemClock, 700000>();
 
 		Chips456::Sck::connect(Chips456::Spi::Sck);
 		Chips456::Mosi::connect(Chips456::Spi::Mosi);
-		//Chips456::Miso::connect(Chips456::Spi::Miso);
+		Chips456::Miso::connect(Chips456::Spi::Miso);
 		Chips456::Spi::initialize<systemClock, 700000>();
 	}
 }
