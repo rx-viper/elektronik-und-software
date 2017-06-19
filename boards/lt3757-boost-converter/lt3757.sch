@@ -49,10 +49,10 @@ Bat_IN
 Text HLabel 10400 1300 2    60   Input ~ 0
 24V_OUT
 $Comp
-L GND #PWR2
+L GND #PWR3
 U 1 1 588F90A8
 P 4600 3550
-F 0 "#PWR2" H 4600 3300 50  0001 C CNN
+F 0 "#PWR3" H 4600 3300 50  0001 C CNN
 F 1 "GND" H 4600 3400 50  0000 C CNN
 F 2 "" H 4600 3550 50  0000 C CNN
 F 3 "" H 4600 3550 50  0000 C CNN
@@ -97,12 +97,12 @@ $EndComp
 $Comp
 L R R3
 U 1 1 588FA0E6
-P 7050 2150
-F 0 "R3" V 7130 2150 50  0000 C CNN
-F 1 "226k" V 7050 2150 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 6980 2150 50  0001 C CNN
-F 3 "" H 7050 2150 50  0000 C CNN
-	1    7050 2150
+P 7050 2200
+F 0 "R3" V 7130 2200 50  0000 C CNN
+F 1 "226k" V 7050 2200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 6980 2200 50  0001 C CNN
+F 3 "" H 7050 2200 50  0000 C CNN
+	1    7050 2200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -304,7 +304,7 @@ Text Notes 6150 1950 0    39   ~ 0
 Fairchild FDB86566\n60V 110A 2.7mΩ\nG_Q=80nC  C_RSS=57pF
 Text Label 5250 2100 0    39   ~ 0
 V_SENSE
-Text Label 6350 2400 0    39   ~ 0
+Text Label 6550 2400 0    39   ~ 0
 FBX
 Text Label 5400 2000 0    39   ~ 0
 GATE
@@ -414,13 +414,7 @@ Wire Wire Line
 	5600 2000 5200 2000
 Wire Wire Line
 	5900 2200 5900 2500
-Wire Wire Line
-	5250 2400 7050 2400
-Wire Wire Line
-	7050 2300 7050 2500
 Connection ~ 7050 2400
-Wire Wire Line
-	7050 2000 7050 1300
 Wire Wire Line
 	8250 1300 8250 2000
 Connection ~ 7050 1300
@@ -607,4 +601,42 @@ Connection ~ 2650 1300
 Wire Wire Line
 	2650 1750 2650 3450
 Connection ~ 3000 3450
+$Comp
+L TEST TP1
+U 1 1 594839DA
+P 7050 2000
+F 0 "TP1" V 7000 2150 50  0000 C BNN
+F 1 "FBX" V 7150 2150 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7050 2000 50  0001 C CNN
+F 3 "" H 7050 2000 50  0001 C CNN
+	1    7050 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 2400 7050 2400
+$Comp
+L TEST TP2
+U 1 1 59483B59
+P 7050 1350
+F 0 "TP2" V 7150 1500 50  0000 C BNN
+F 1 "FBX" V 6950 1500 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7050 1350 50  0001 C CNN
+F 3 "" H 7050 1350 50  0001 C CNN
+	1    7050 1350
+	-1   0    0    1   
+$EndComp
+Text Notes 7350 1800 1    30   ~ 0
+manual\ncopper wire 
+Wire Wire Line
+	7050 2350 7050 2500
+Wire Wire Line
+	7050 2000 7050 2050
+Wire Wire Line
+	7050 1350 7050 1300
+Wire Notes Line
+	7200 1850 7250 1850
+Wire Notes Line
+	7250 1850 7250 1500
+Wire Notes Line
+	7250 1500 7200 1500
 $EndSCHEMATC
