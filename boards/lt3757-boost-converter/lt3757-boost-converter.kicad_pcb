@@ -3,16 +3,23 @@
   (general
     (links 69)
     (no_connects 1)
-    (area 46.914999 27.229999 90.880001 92.150001)
+    (area 46.355 22.13 92.184 94.175)
     (thickness 1.6)
-    (drawings 30)
+    (drawings 31)
     (tracks 120)
     (zones 0)
     (modules 40)
     (nets 19)
   )
 
-  (page A4)
+  (page User 200 150.012)
+  (title_block
+    (title "24V Boost Converter")
+    (date 2017-06-19)
+    (rev rev3)
+    (company VIPER)
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)
@@ -1467,6 +1474,9 @@
       (net 2 GND))
   )
 
+  (gr_text rev3 (at 67.945 31.115 270) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
   (gr_line (start 46.99 34.29) (end 53.975 34.29) (layer F.SilkS) (width 0.2))
   (gr_line (start 46.99 41.91) (end 53.975 41.91) (layer F.SilkS) (width 0.2))
   (gr_line (start 46.99 49.53) (end 52.705 49.53) (layer F.SilkS) (width 0.2))
