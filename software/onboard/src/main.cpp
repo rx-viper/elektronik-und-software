@@ -23,7 +23,8 @@
 int
 main()
 {
-	Board::initialize();
+	Board::initializeMcu();
+	Board::initializeAllPeripherals();
 
 	while (1)
 	{

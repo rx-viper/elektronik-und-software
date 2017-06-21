@@ -113,10 +113,6 @@ spiMasterInitialize()
 	SpiStruct::Spi::template initialize<systemClock, SpiBaudrate>();
 }
 
-using BattChargeStatus	= GpioInputB12;
-using BattChargeEnable	= GpioOutputB13;
-
-using BoostEnable		= GpioOutputB15;
 
 namespace Ui {
 	using LedRed		= GpioOutputG3;	// LED1
@@ -152,7 +148,7 @@ namespace Ui {
 
 namespace Camera {
     using Light		= GpioOutputB14;
-    using LensHeat	= GpioOutputD8;
+    using LensHeat	= GpioOutputB15;
 
     inline void
 	initialize() {
@@ -183,25 +179,95 @@ namespace Rxsm {
 }
 
 namespace Motor {
-	using PhaseUN		= GpioOutputE8;
-	using PhaseUP		= GpioOutputE9;
-	using PhaseVN		= GpioOutputE10;
-	using PhaseVP		= GpioOutputE11;
-	using PhaseWN		= GpioOutputE12;
-	using PhaseWP		= GpioOutputE13;
+    namespace PcbSignals {
+	    using PhaseUN		= GpioOutputE8;
+	    using PhaseUP		= GpioOutputE9;
+	    using PhaseVN		= GpioOutputE10;
+	    using PhaseVP		= GpioOutputE11;
+	    using PhaseWN		= GpioOutputE12;
+	    using PhaseWP		= GpioOutputE13;
+	}
+
+	using PwmU			= PcbSignals::PhaseUP;
+	using PwmV			= PcbSignals::PhaseVP;
+	using PwmW			= PcbSignals::PhaseWP;
+	using ResetU		= PcbSignals::PhaseUN;
+	using ResetV		= PcbSignals::PhaseVN;
+	using ResetW		= PcbSignals::PhaseWN;
+
+	using MotorTimer	= Timer1;
 
 	using HallU			= GpioInputC6;
 	using HallV			= GpioInputC7;
 	using HallW			= GpioInputC8;
 
+	using HallTimer		= Timer8;
+
 	using EndSwitch		= GpioInputC5;
+
+	inline void
+	initializeMotor()
+	{
+		MotorTimer::enable();
+		MotorTimer::setMode(MotorTimer::Mode::UpCounter,
+		                    MotorTimer::SlaveMode::Disabled,
+		                    MotorTimer::SlaveModeTrigger::Internal0,
+		                    MotorTimer::MasterMode::CompareOc1Ref);
+		// MotorTimer clock: main clock (180MHz)
+		MotorTimer::setPrescaler(1);
+		// Prescaler: 1 -> Timer counter frequency: 180MHz
+		MotorTimer::setOverflow(0x1FF); // 0x1FF == 511 | 9 bit PWM
+		// Pwm frequency: 180MHz / 512 = 350kHz
+		MotorTimer::disableCaptureComparePreloadedControl();
+		MotorTimer::forceInactive(1);
+		MotorTimer::forceInactive(2);
+		MotorTimer::forceInactive(3);
+		MotorTimer::configureOutputChannel(1, Timer::OutputCompareMode::Pwm2, 0xFF);
+		MotorTimer::configureOutputChannel(2, Timer::OutputCompareMode::Pwm2, 0xFF);
+		MotorTimer::configureOutputChannel(3, Timer::OutputCompareMode::Pwm2, 0xFF);
+		MotorTimer::enableOutput();
+		MotorTimer::applyAndReset();
+		MotorTimer::pause();
+		PwmU::connect(MotorTimer::Channel1);
+		PwmV::connect(MotorTimer::Channel2);
+		PwmW::connect(MotorTimer::Channel3);
+	}
+
+	inline void
+	initializeHall()
+	{
+		//TODO
+	}
+
+	inline void
+	initializeEndSwich()
+	{
+		EndSwitch::setInput(Gpio::InputType::PullUp);
+	}
 
     inline void
 	initialize()
 	{
-		EndSwitch::setInput(Gpio::InputType::PullUp);
+		initializeEndSwich();
+		initializeHall();
+		initializeMotor();
+	}
+}
 
-		//TODO
+namespace Powermanagement {
+    using BattChargeStatus	= xpcc::GpioInverted<GpioInputB12>;
+    using BattChargeEnable	= GpioOutputB13;
+
+    using BoostEnable		= GpioOutputD8;
+
+    inline void
+	initialize()
+	{
+		BattChargeStatus::setInput(Gpio::InputType::PullUp);
+		BattChargeEnable::setOutput(BattChargeEnable::OutputType::PushPull);
+		BattChargeEnable::set(false);
+		BoostEnable::setOutput(BoostEnable::OutputType::OpenDrain);
+		BoostEnable::set(false);
 	}
 }
 
@@ -258,20 +324,35 @@ namespace Encoders {
 }
 
 namespace Heatprobes {
-    using Pin1	= GpioOutputE14;
-    using Pin2	= GpioOutputE15;
-    using Pin3	= GpioOutputB11;
-
+    template <typename Timer, typename Pin>
     inline void
+	TimerPwmCh1Initialize() {
+		Timer::enable();
+		Timer::setMode(Timer::Mode::UpCounter,
+		                Timer::SlaveMode::Disabled,
+		                Timer::SlaveModeTrigger::Internal0,
+		                Timer::MasterMode::CompareOc1Ref);
+		Timer::setPeriod<systemClock>(2000, false); // PWM Frequency 500Hz (Period 2 ms)
+		Timer::forceInactive(1);
+		Timer::configureOutputChannel(1, Timer::OutputCompareMode::Pwm2, 0x7FFF, Timer::PinState::Disable);
+		Timer::applyAndReset();
+		Timer::pause();
+		Pin::connect(Timer::Channel1);
+	}
+
+	using Hp1Pin	= GpioOutputA2;
+	using Hp2Pin	= GpioOutputB9;
+	using Hp3Pin	= GpioOutputB8;
+
+	using Hp1Timer	= Timer9;
+	using Hp2Timer	= Timer11;
+	using Hp3Timer	= Timer10;
+
+	inline void
 	initialize() {
-		//TODO
-		/*Timer::enable();
-		Timer::setMode(Timer::Mode::UpCounter, Timer::SlaveMode::Encoder3);
-		// Overflow must be 16bit because else a lot of our motor control code will break!
-		Timer::setOverflow(0xffff);
-		PinA::connect(EncoderStruct::Timer::Channel1, Gpio::InputType::Floating);
-		PinB::connect(EncoderStruct::Timer::Channel2, Gpio::InputType::Floating);
-		Timer::start();*/
+		TimerPwmCh1Initialize<Hp1Timer, Hp1Pin>();
+		TimerPwmCh1Initialize<Hp2Timer, Hp2Pin>();
+		TimerPwmCh1Initialize<Hp3Timer, Hp3Pin>();
 	}
 }
 
@@ -378,15 +459,20 @@ namespace TemperaturePt100 {
 }
 
 inline void
-initialize()
+initializeMcu()
 {
 	systemClock::enable();
 	xpcc::cortex::SysTickTimer::initialize<systemClock>();
+}
 
+inline void
+initializeAllPeripherals()
+{
 	Ui::initialize();
 	Rxsm::initialize();
 	Motor::initialize();
 	Encoders::initialize();
+	Heatprobes::initialize();
 	Sensors::initialize();
 	Storage::initialize();
 	TemperaturePt100::initialize();
