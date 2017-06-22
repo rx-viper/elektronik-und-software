@@ -47,7 +47,7 @@ encoding utf-8
 Sheet 1 12
 Title "Mainboard overview"
 Date "2017-03-14"
-Rev "20"
+Rev "21"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -128,8 +128,8 @@ L INDUCTOR_SMALL L101
 U 1 1 588947F6
 P 3850 6800
 F 0 "L101" H 3850 6900 50  0000 C CNN
-F 1 "10µH" H 3850 6750 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3850 6800 50  0001 C CNN
+F 1 "XAL4040-153" H 3850 6750 50  0000 C CNN
+F 2 "L_Coilcraft:L_Coilcraft_XAL40xx_Handsoldering" H 3850 6800 50  0001 C CNN
 F 3 "" H 3850 6800 50  0000 C CNN
 	1    3850 6800
 	1    0    0    -1  
@@ -1389,4 +1389,6 @@ Wire Wire Line
 Wire Wire Line
 	1100 6700 1200 6700
 Connection ~ 1200 6700
+Text Notes 3750 6950 0    39   ~ 0
+15µH
 $EndSCHEMATC

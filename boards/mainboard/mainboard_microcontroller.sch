@@ -47,7 +47,7 @@ encoding utf-8
 Sheet 9 12
 Title "Mainboard CPU and Storage"
 Date "2017-03-14"
-Rev "20"
+Rev "21"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -290,19 +290,19 @@ Text HLabel 1650 6450 0    59   Input ~ 0
 temp5_INT
 Text HLabel 12900 7050 2    59   Output ~ 0
 temp5_CS
-Text HLabel 3500 8850 0    60   Output ~ 0
+Text HLabel 12900 2550 2    60   Output ~ 0
 probe1_EN
-Text HLabel 3500 8950 0    60   Output ~ 0
+Text HLabel 12900 4950 2    60   Output ~ 0
 probe2_EN
-Text HLabel 12900 5150 2    60   Output ~ 0
+Text HLabel 12900 4850 2    60   Output ~ 0
 probe3_EN
 Text HLabel 12900 5450 2    60   Output ~ 0
 cam_light_EN
-Text HLabel 12900 8250 2    60   Output ~ 0
+Text HLabel 12900 5550 2    60   Output ~ 0
 lens_heater_EN
 Text HLabel 12900 5250 2    60   Input ~ 0
 bat_charge_status
-Text HLabel 12900 5550 2    60   Output ~ 0
+Text HLabel 12900 8250 2    60   Output ~ 0
 bat_boost_EN
 Text HLabel 12900 5350 2    60   Output ~ 0
 bat_charge_EN
@@ -936,7 +936,7 @@ Wire Wire Line
 Wire Wire Line
 	12800 2450 12900 2450
 Wire Wire Line
-	12900 5150 12800 5150
+	12900 4850 12800 4850
 Wire Wire Line
 	12800 2750 12900 2750
 Wire Wire Line
@@ -960,7 +960,7 @@ Wire Wire Line
 Wire Wire Line
 	12800 5450 12900 5450
 Wire Wire Line
-	12900 8250 12800 8250
+	12900 5550 12800 5550
 Wire Wire Line
 	12900 6550 12800 6550
 Wire Wire Line
@@ -1053,15 +1053,11 @@ Flash1_CS
 Wire Wire Line
 	12800 2650 13800 2650
 Wire Wire Line
-	3600 8850 3500 8850
-Wire Wire Line
-	3500 8950 3600 8950
-Wire Wire Line
 	12900 5350 12800 5350
 Wire Wire Line
 	12800 5250 12900 5250
 Wire Wire Line
-	12900 5550 12800 5550
+	12900 8250 12800 8250
 NoConn ~ 1650 6050
 NoConn ~ 1650 6150
 NoConn ~ 1650 6250
@@ -1095,7 +1091,11 @@ NoConn ~ 3600 4250
 NoConn ~ 12800 8950
 NoConn ~ 12800 5850
 NoConn ~ 12800 5750
-NoConn ~ 12800 4950
-NoConn ~ 12800 4850
-NoConn ~ 12800 2550
+Wire Wire Line
+	12900 2550 12800 2550
+NoConn ~ 3600 8850
+NoConn ~ 3600 8950
+NoConn ~ 12800 5150
+Wire Wire Line
+	12900 4950 12800 4950
 $EndSCHEMATC
