@@ -2,17 +2,12 @@
 #define MAINWINDOW_H
 
 #include "log.h"
-#include "status.h"
+#include "serialconnection.h"
 #include "datamanager.h"
+
 #include "icehppmgraphic.h"
 
 #include <QMainWindow>
-#include <QtSerialPort/QSerialPort>
-
-
-class Console;
-class SettingsDialog;
-
 
 namespace Ui {
 class MainWindow;
@@ -27,24 +22,20 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionConnect_triggered();
-    void on_actionDisconnect_triggered();
-    void on_actionSetup_triggered();
-    void on_logAutoScroll_stateChanged(int arg1);
+    // Serial connection interface
+    void on_serialPortsList_activated(const QString &arg1);
+    void on_serialBaudRateList_activated(const QString &arg1);
+    void on_serialConnect_clicked();
+
+    // Data visualisation
+    void on_penDepthChange();
 
 private:
     Ui::MainWindow *ui;
 
-    Status status;
     Log log;
-
-    SettingsDialog *settings;
-    QSerialPort *serial;
-
+    SerialConnection serialConnection;
     DataManager dataManager;
-
-    void logAndStatus(const QString &message);
-    void receiveSerialData();
 };
 
 #endif // MAINWINDOW_H

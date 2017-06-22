@@ -3,23 +3,19 @@
 
 #include <QWidget>
 
-class IceHPPMGraphic : public QWidget {
+class IceHPPMGraphic : public QWidget
+{
     Q_OBJECT
+
+private:
+    float heatProbePenDepth = 0.0; // mm into the ice
+
 public:
     explicit IceHPPMGraphic(QWidget *parent = 0);
     void setHeatProbePenDepth(float heatProbePenDepth);
 
-signals:
-
-public slots:
-
 protected:
     void paintEvent(QPaintEvent *event) override;
-
-
-public:
-    float heatProbePenDepth = 0.5; // mm into the ice
-
 };
 
 #endif // ICEHPPMGRAPHIC_H

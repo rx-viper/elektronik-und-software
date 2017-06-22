@@ -33,6 +33,8 @@ void DataManager::handleNewPacket(const DataPacket& newPacket) {
     hpDepth[0] = static_cast<float>(newPacket.Data1)/1024.0*60.0;
     hpDepth[1] = static_cast<float>(newPacket.Data2)/1024.0*60.0;
     hpDepth[2] = static_cast<float>(newPacket.Data3)/1024.0*60.0;
+
+    penetrationDepthChanged(); // Can be used to update the visuals
 }
 
 float DataManager::currentHeatProbePenDepth(int idx) {

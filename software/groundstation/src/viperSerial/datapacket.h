@@ -1,8 +1,6 @@
 #ifndef DATAPACKET_H
 #define DATAPACKET_H
 
-//#include <cstdint>
-
 const char SyncWord[] = "Viper";
 const int SyncWordLength = 5;
 

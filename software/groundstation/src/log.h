@@ -4,7 +4,9 @@
 #include <QPlainTextEdit>
 #include <QString>
 
-class Log {
+class Log
+{
+private:
     QPlainTextEdit *textEdit;
     bool autoScroll = false;
 

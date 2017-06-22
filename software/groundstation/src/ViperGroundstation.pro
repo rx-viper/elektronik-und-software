@@ -25,21 +25,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     log.cpp \
-    status.cpp \
-    settingsdialog.cpp \
     datamanager.cpp \
-    icehppmgraphic.cpp
+    icehppmgraphic.cpp \
+    serialconnection.cpp
 
 HEADERS  += mainwindow.h \
     log.h \
-    status.h \
-    settingsdialog.h \
     datamanager.h \
     datapacket.h \
-    icehppmgraphic.h
+    icehppmgraphic.h \
+    serialconnection.h
 
-FORMS    += mainwindow.ui \
-    settingsdialog.ui
+FORMS    += mainwindow.ui
 
-RESOURCES += \
-    resources.qrc
+RESOURCES +=

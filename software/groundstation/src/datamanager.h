@@ -9,19 +9,29 @@
 
 using std::vector;
 
-class DataManager
+class DataManager : public QObject
 {
+    Q_OBJECT
+
+private:
     Log& log;
     QByteArray buffer;
     vector<DataPacket> Packets;
     int lastSyncPos;
-    float hpDepth[3] = {2.0, 4.0, 8.0};
+    float hpDepth[3] = {0.0, 0.0, 0.0};
 
 public:
     DataManager(Log& log);
-    void addNewData(const QByteArray &newData);
-    void handleNewPacket(const DataPacket& newPacket);
     float currentHeatProbePenDepth(int idx);
+
+public slots:
+    void addNewData(const QByteArray& newData);
+
+private:
+    void handleNewPacket(const DataPacket& newPacket);
+
+signals:
+    void penetrationDepthChanged();
 };
 
 #endif // DATAMANAGER_H

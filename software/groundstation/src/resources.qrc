@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/icons">
-        <file>icons/application-exit.png</file>
-        <file>icons/clear.png</file>
-        <file>icons/connect.png</file>
-        <file>icons/disconnect.png</file>
-        <file>icons/settings.png</file>
-    </qresource>
-</RCC>
