@@ -512,8 +512,10 @@ inline void
 initializeAllPeripherals()
 {
 	Ui::initialize();
+	Camera::initialize();
 	Rxsm::initialize();
 	Motor::initialize();
+	Powermanagement::initialize();
 	Encoders::initialize();
 	Heatprobes::initialize();
 	Sensors::initialize();
