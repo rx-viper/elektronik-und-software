@@ -250,11 +250,11 @@ namespace Motor {
 		                    MotorTimer::SlaveMode::Disabled,
 		                    MotorTimer::SlaveModeTrigger::Internal0,
 		                    MotorTimer::MasterMode::CompareOc1Ref);
-		// MotorTimer clock: main clock (180MHz)
+		// MotorTimer clock: APB2 clock (90MHz)
 		MotorTimer::setPrescaler(1);
-		// Prescaler: 1 -> Timer counter frequency: 180MHz
-		MotorTimer::setOverflow(0x1FF); // 0x1FF == 511 | 9 bit PWM
-		// Pwm frequency: 180MHz / 512 = 350kHz
+		// Prescaler: 1 -> Timer counter frequency: 90MHz
+		MotorTimer::setOverflow(0xFF); // 8 bit PWM
+		// Pwm frequency: 90MHz / 256 = 350kHz
 		MotorTimer::disableCaptureComparePreloadedControl();
 		MotorTimer::configureOutputChannel(1, MotorTimer::OutputCompareMode::Pwm2, 0xFF);
 		MotorTimer::configureOutputChannel(2, MotorTimer::OutputCompareMode::Pwm2, 0xFF);
