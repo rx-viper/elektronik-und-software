@@ -283,3 +283,13 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+
+# xpcc
+*.sconsign.dblite
+
+# qtcreator
+*.config
+*.creator
+*.creator.user
+*.files
+*.includes
