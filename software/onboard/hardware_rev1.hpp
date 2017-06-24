@@ -192,10 +192,10 @@ namespace Camera {
 }
 
 namespace Rxsm {
-	using TelemetrieRx		= GpioInputD2;
-	using TelemetrieTx		= GpioOutputC12;
-	using TelemetrieUart	= Uart5;
-	constexpr uint32_t TelemetrieBaudrate = TelemetrieUart::Baudrate::B38400;
+	using TelemetryRx		= GpioInputD2;
+	using TelemetryTx		= GpioOutputC12;
+	using TelemetryUart		= Uart5;
+	constexpr uint32_t TelemetryBaudrate = TelemetryUart::Baudrate::B38400;
 
 	using EventLo			= GpioInputD9;
 	using EventSoe			= GpioInputD10;
@@ -208,20 +208,20 @@ namespace Rxsm {
 		EventSoe::setInput(Gpio::InputType::Floating);
 		EventSods::setInput(Gpio::InputType::Floating);
 
-		TelemetrieRx::connect(TelemetrieUart::Rx);
-		TelemetrieTx::connect(TelemetrieUart::Tx);
-		TelemetrieUart::initialize<systemClock, TelemetrieBaudrate>(12);
+		TelemetryRx::connect(TelemetryUart::Rx);
+		TelemetryTx::connect(TelemetryUart::Tx);
+		TelemetryUart::initialize<systemClock, TelemetryBaudrate>(12);
 	}
 }
 
 namespace Motor {
 	namespace PcbSignals {
-	    using PhaseUN		= GpioOutputE8;
-	    using PhaseUP		= GpioOutputE9;
-	    using PhaseVN		= GpioOutputE10;
-	    using PhaseVP		= GpioOutputE11;
-	    using PhaseWN		= GpioOutputE12;
-	    using PhaseWP		= GpioOutputE13;
+		using PhaseUN		= GpioOutputE8;
+		using PhaseUP		= GpioOutputE9;
+		using PhaseVN		= GpioOutputE10;
+		using PhaseVP		= GpioOutputE11;
+		using PhaseWN		= GpioOutputE12;
+		using PhaseWP		= GpioOutputE13;
 	}
 
 	using PwmU			= PcbSignals::PhaseUP;
