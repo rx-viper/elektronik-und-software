@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name BNC)(type Github)(uri https://github.com/kicad-rleh/BNC.pretty)(options "")(descr ""))
+)

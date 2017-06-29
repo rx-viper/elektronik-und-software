@@ -1,4 +1,4 @@
-update=Sun Jun 18 21:06:41 2017
+update=Thu Jun 29 00:47:49 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -37,7 +37,7 @@ SpiceUseNetNumbers=0
 LabSize=60
 [eeschema]
 version=1
-LibDir=../../../../KiCad_footprints
+LibDir=lib
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -69,3 +69,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=switches
+LibName31=lib/ap7115
