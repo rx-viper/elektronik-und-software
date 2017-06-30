@@ -33,7 +33,7 @@ LIBS:DB
 LIBS:wiring-diagram-cache
 EELAYER 25 0
 EELAYER END
-$Descr User 11693 37402
+$Descr User 11693 37796
 encoding utf-8
 Sheet 1 1
 Title "Wiring Diagram"
@@ -66,17 +66,6 @@ Text Label 3050 1650 0    60   ~ 0
 pressure_VCC_3V3
 Text Notes 6500 1450 0    60   ~ 0
 BOARD: pressure-sensor
-$Comp
-L CONN_01X04_MALE J1_temperature-sensor-DS1731
-U 1 1 59538F72
-P 8200 -2550
-F 0 "J1_temperature-sensor-DS1731" H 8200 -2175 50  0000 C CNN
-F 1 "CONN_01X04_MALE" H 8200 -2950 50  0000 C CNN
-F 2 "" H 8200 -2250 50  0001 C CNN
-F 3 "" H 8200 -2250 50  0001 C CNN
-	1    8200 -2550
-	-1   0    0    1   
-$EndComp
 Text Label 3050 1450 0    60   ~ 0
 temp_VCC_3V3
 Text Label 3050 1350 0    60   ~ 0
@@ -85,8 +74,6 @@ Text Label 3050 1250 0    60   ~ 0
 temp_SDA
 Text Label 3050 1150 0    60   ~ 0
 temp_GND
-Text Notes 7400 -3050 0    60   ~ 0
-BOARD: temperature-sensor-DS1731
 $Comp
 L DB9_FEMALE J103_mainboard
 U 1 1 5953BEB8
@@ -891,37 +878,9 @@ $EndComp
 Wire Wire Line
 	3000 3450 3400 3450
 Wire Wire Line
-	3000 3350 3400 3350
+	3000 3350 4150 3350
 Wire Wire Line
-	3000 3550 3400 3550
-Wire Notes Line
-	7400 -3050 7400 -2100
-Wire Notes Line
-	8850 -3050 7400 -3050
-Wire Notes Line
-	8850 -2100 8850 -3050
-Wire Notes Line
-	7400 -2100 8850 -2100
-Wire Wire Line
-	7500 -2450 7900 -2450
-Wire Wire Line
-	7500 -2850 7500 -2450
-Wire Wire Line
-	4450 -2850 7500 -2850
-Wire Wire Line
-	7600 -2250 7900 -2250
-Wire Wire Line
-	7600 -2550 7600 -2250
-Wire Wire Line
-	4750 -2550 7600 -2550
-Wire Wire Line
-	7600 -2850 7900 -2850
-Wire Wire Line
-	7600 -2750 7600 -2850
-Wire Wire Line
-	4550 -2750 7600 -2750
-Wire Wire Line
-	4650 -2650 7900 -2650
+	3000 3550 4250 3550
 Wire Wire Line
 	3550 1150 3000 1150
 Wire Wire Line
@@ -1165,9 +1124,9 @@ Wire Wire Line
 Wire Notes Line
 	4000 24450 1000 24450
 Wire Notes Line
-	4000 24850 4000 34550
+	4000 24450 4000 34550
 Wire Notes Line
-	1000 24450 1000 34150
+	1000 24450 1000 34550
 Wire Notes Line
 	1000 23800 1000 800 
 Wire Wire Line
@@ -1494,7 +1453,7 @@ Wire Wire Line
 Wire Wire Line
 	3000 34200 7050 34200
 Wire Notes Line
-	4000 34550 1000 34550
+	1000 34550 4000 34550
 Wire Notes Line
 	5700 31250 5700 31600
 Wire Notes Line
@@ -1667,4 +1626,165 @@ Connection ~ 7250 33600
 Wire Wire Line
 	5550 35050 5550 33600
 Connection ~ 5550 33600
+$Comp
+L DB25_MALE J2_piboard
+U 1 1 59562DD6
+P 7050 4100
+F 0 "J2_piboard" H 7050 5450 50  0000 C CNN
+F 1 "DB25_MALE" H 7050 2725 50  0000 C CNN
+F 2 "" H 7050 4100 50  0001 C CNN
+F 3 "" H 7050 4100 50  0001 C CNN
+	1    7050 4100
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	8050 2600 8050 3800
+Wire Wire Line
+	7950 2800 7950 3800
+Wire Wire Line
+	7850 2700 7850 3800
+Wire Wire Line
+	7750 2900 7750 3800
+Wire Wire Line
+	7650 3000 7650 3800
+Wire Wire Line
+	7550 3800 7550 3100
+Text Label 8250 3750 1    60   ~ 0
+flir_SDA
+Text Label 8150 3750 1    60   ~ 0
+flir_SCL
+Text Label 8050 3750 1    60   ~ 0
+flir_CE
+Text Label 7950 3750 1    60   ~ 0
+flir_MISO
+Text Label 7850 3750 1    60   ~ 0
+flir_MOSI
+Text Label 7750 3750 1    60   ~ 0
+flir_CLCK
+Text Label 7650 3750 1    60   ~ 0
+flir_GND
+Text Label 7550 3750 1    60   ~ 0
+flir_VCC
+Wire Wire Line
+	7450 2700 7450 3800
+Wire Wire Line
+	7350 2800 7350 3800
+Text Label 7450 3750 1    60   ~ 0
+uart_RX
+Text Label 7350 3750 1    60   ~ 0
+uart_TX
+Wire Wire Line
+	6950 3800 6950 3100
+Wire Wire Line
+	6750 3800 6750 3100
+Wire Wire Line
+	6650 3800 6650 3750
+Wire Wire Line
+	6650 3750 6750 3750
+Connection ~ 6750 3750
+Wire Wire Line
+	6850 3800 6850 3750
+Wire Wire Line
+	6850 3750 6950 3750
+Connection ~ 6950 3750
+Text Label 6950 3700 1    60   ~ 0
+piboard_GND
+Text Label 6750 3700 1    60   ~ 0
+piboard_5V
+Wire Wire Line
+	6150 2550 6150 3800
+Wire Wire Line
+	6050 2550 6050 3800
+Wire Wire Line
+	5950 2550 5950 3800
+Wire Wire Line
+	5850 2550 5850 3800
+Text Label 6150 3750 1    60   ~ 0
+cam_USB-
+Text Label 6050 3750 1    60   ~ 0
+cam_USB+
+Text Label 5950 3750 1    60   ~ 0
+cam_GND
+Text Label 5850 3750 1    60   ~ 0
+cam_5V
+Wire Wire Line
+	7350 2800 4250 2800
+Wire Wire Line
+	4250 2800 4250 3550
+Wire Wire Line
+	7450 2700 4150 2700
+Wire Wire Line
+	4150 2700 4150 3350
+$Comp
+L CONN_01X04 J1_cam
+U 1 1 595662F3
+P 6000 2350
+F 0 "J1_cam" H 6000 2600 50  0000 C CNN
+F 1 "CONN_01X04" V 6100 2300 50  0000 C CNN
+F 2 "" H 6000 2350 50  0001 C CNN
+F 3 "" H 6000 2350 50  0001 C CNN
+	1    6000 2350
+	0    -1   -1   0   
+$EndComp
+Wire Notes Line
+	5650 2200 6350 2200
+Wire Notes Line
+	6350 2200 6350 2600
+Wire Notes Line
+	6350 2600 5650 2600
+Wire Notes Line
+	5650 2600 5650 2200
+Text Notes 5650 2200 0    60   ~ 0
+IDS uEye XS
+$Comp
+L CONN_01X08 J1_flir
+U 1 1 59567202
+P 9650 2950
+F 0 "J1_flir" H 9650 3400 50  0000 C CNN
+F 1 "CONN_01X08" V 9750 2950 50  0000 C CNN
+F 2 "" H 9650 2950 50  0001 C CNN
+F 3 "" H 9650 2950 50  0001 C CNN
+	1    9650 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 2600 9450 2600
+Wire Wire Line
+	7850 2700 9450 2700
+Wire Wire Line
+	7950 2800 9450 2800
+Wire Wire Line
+	7750 2900 9450 2900
+Wire Wire Line
+	7650 3000 9450 3000
+Wire Wire Line
+	7550 3100 9450 3100
+Wire Wire Line
+	9450 3200 8250 3200
+Wire Wire Line
+	9450 3300 8150 3300
+Wire Wire Line
+	8250 3200 8250 3800
+Wire Wire Line
+	8150 3300 8150 3800
+Wire Notes Line
+	9150 2400 9150 3500
+Wire Notes Line
+	9150 3500 10300 3500
+Wire Notes Line
+	10300 3500 10300 2400
+Wire Notes Line
+	10300 2400 9150 2400
+Text Notes 9150 2400 0    60   ~ 0
+FLIR Lepton3 Breakout-Board\n
+Wire Notes Line
+	8700 4350 5600 4350
+Wire Notes Line
+	5600 4350 5600 3050
+Wire Notes Line
+	5600 3050 8700 3050
+Wire Notes Line
+	8700 3050 8700 4350
+Text Notes 5600 3050 0    60   ~ 0
+BOARD: pi-board\n
 $EndSCHEMATC
