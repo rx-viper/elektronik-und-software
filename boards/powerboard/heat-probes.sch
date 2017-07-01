@@ -51,8 +51,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 7 10
 Title "Powerboard: Heat Probes"
-Date "2017-04-15"
-Rev "20"
+Date "2017-07-01"
+Rev "21"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -309,17 +309,6 @@ Text Notes 4850 2050 0    60   ~ 0
 3x ACS711: Hall Effect Linear Current Sensor
 Text HLabel 9150 2200 0    60   Input ~ 0
 24V_BAT_1
-$Comp
-L DB25_FEMALE J801
-U 1 1 58F5DCF8
-P 10200 3400
-F 0 "J801" H 10200 4750 50  0000 C CNN
-F 1 "Heat probe power" H 10200 2025 50  0000 C CNN
-F 2 "D-Sub:DB25FD" H 10200 3400 50  0001 C CNN
-F 3 "" H 10200 3400 50  0001 C CNN
-	1    10200 3400
-	1    0    0    -1  
-$EndComp
 Text HLabel 7150 2750 2    60   Output ~ 0
 Probe1_Current
 Text HLabel 7150 4200 2    60   Output ~ 0
@@ -456,80 +445,11 @@ Wire Wire Line
 Wire Wire Line
 	2200 5300 2900 5300
 Wire Wire Line
-	9150 2200 9900 2200
-Wire Wire Line
-	9250 2300 9900 2300
-Connection ~ 9250 2200
-Wire Wire Line
-	9250 2400 9900 2400
-Connection ~ 9250 2300
-Wire Wire Line
-	9250 2500 9900 2500
-Connection ~ 9250 2400
-Wire Wire Line
-	8500 1750 8500 2900
-Wire Wire Line
 	8500 2600 9900 2600
-Wire Wire Line
-	8500 2700 9900 2700
-Connection ~ 8500 2600
-Wire Wire Line
-	8500 2800 9900 2800
-Connection ~ 8500 2700
-Wire Wire Line
-	8500 2900 9900 2900
-Connection ~ 8500 2800
-Wire Wire Line
-	9150 3000 9900 3000
-Wire Wire Line
-	9250 3100 9900 3100
-Connection ~ 9250 3000
-Wire Wire Line
-	9250 3200 9900 3200
-Connection ~ 9250 3100
-Wire Wire Line
-	9250 3300 9900 3300
-Connection ~ 9250 3200
-Wire Wire Line
-	8500 3400 8500 3700
 Wire Wire Line
 	4700 3400 9900 3400
 Wire Wire Line
-	8500 3500 9900 3500
-Connection ~ 8500 3500
-Connection ~ 8500 3600
-Wire Wire Line
-	8500 3700 9900 3700
-Wire Wire Line
-	9150 3800 9900 3800
-Wire Wire Line
-	9250 3900 9900 3900
-Connection ~ 9250 3800
-Wire Wire Line
-	9250 4000 9900 4000
-Connection ~ 9250 3900
-Wire Wire Line
-	9250 4100 9900 4100
-Connection ~ 9250 4000
-Wire Wire Line
-	8500 5000 8500 4200
-Wire Wire Line
 	8500 4200 9900 4200
-Wire Wire Line
-	9900 4300 8500 4300
-Connection ~ 8500 4300
-Wire Wire Line
-	8500 4400 9900 4400
-Connection ~ 8500 4400
-Wire Wire Line
-	9900 4500 8500 4500
-Connection ~ 8500 4500
-Wire Wire Line
-	9250 3000 9250 3300
-Wire Wire Line
-	9250 3800 9250 4100
-Wire Wire Line
-	9250 2200 9250 2500
 Wire Wire Line
 	3500 1850 3500 1750
 Wire Wire Line
@@ -620,10 +540,7 @@ Wire Wire Line
 Connection ~ 3600 3200
 Wire Wire Line
 	4700 3200 4700 3400
-Connection ~ 8500 3400
 Connection ~ 3800 3200
-Wire Wire Line
-	9900 3600 8500 3600
 Text Label 3900 1750 0    60   ~ 0
 Probe1
 Text Label 3900 3200 0    60   ~ 0
@@ -745,4 +662,52 @@ F 3 "" H 5050 3000 50  0001 C CNN
 	1    5050 3050
 	1    0    0    -1  
 $EndComp
+$Comp
+L CONN_01X01 J810
+U 1 1 5957F99F
+P 10100 2600
+F 0 "J810" H 10100 2700 50  0000 C CNN
+F 1 "HP1" V 10200 2600 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 10100 2600 50  0001 C CNN
+F 3 "" H 10100 2600 50  0001 C CNN
+	1    10100 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 J811
+U 1 1 5957FB8A
+P 10100 3400
+F 0 "J811" H 10100 3500 50  0000 C CNN
+F 1 "HP2" V 10200 3400 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 10100 3400 50  0001 C CNN
+F 3 "" H 10100 3400 50  0001 C CNN
+	1    10100 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 J812
+U 1 1 5957FC02
+P 10100 4200
+F 0 "J812" H 10100 4300 50  0000 C CNN
+F 1 "HP3" V 10200 4200 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 10100 4200 50  0001 C CNN
+F 3 "" H 10100 4200 50  0001 C CNN
+	1    10100 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8500 5000 8500 4200
+Wire Wire Line
+	8500 1750 8500 2600
+Wire Wire Line
+	9150 3800 9250 3800
+Wire Wire Line
+	9150 3000 9250 3000
+Wire Wire Line
+	9150 2200 9250 2200
+NoConn ~ 9250 2200
+NoConn ~ 9250 3000
+NoConn ~ 9250 3800
+Text Notes 8850 2050 0    60   ~ 0
+Heat probes are directly\nconnected to 24V
 $EndSCHEMATC
