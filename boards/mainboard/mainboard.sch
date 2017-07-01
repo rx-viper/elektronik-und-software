@@ -436,7 +436,7 @@ U 1 1 59082736
 P 9900 1200
 F 0 "J103" H 9900 1750 50  0000 C CNN
 F 1 "Camera board" V 10100 1200 50  0000 C CNN
-F 2 "Connectors:DB9FD" H 9900 1200 50  0001 C CNN
+F 2 "D-Sub:DB9FD" H 9900 1200 50  0001 C CNN
 F 3 "" H 9900 1200 50  0001 C CNN
 	1    9900 1200
 	1    0    0    -1  
@@ -708,7 +708,7 @@ U 1 1 59285E82
 P 700 2150
 F 0 "J102" H 700 2700 50  0000 C CNN
 F 1 "Temperature & Pressure" H 400 1350 50  0000 C CNN
-F 2 "Connectors:DB9FD" H 700 2150 50  0001 C CNN
+F 2 "D-Sub:DB9FD" H 700 2150 50  0001 C CNN
 F 3 "" H 700 2150 50  0001 C CNN
 	1    700  2150
 	-1   0    0    -1  
@@ -1216,7 +1216,7 @@ U 1 1 591B6DB7
 P 2750 5250
 F 0 "J112" V 2700 5250 50  0000 C CNN
 F 1 "M3" V 2750 5500 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 2950 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 2950 5250 50  0001 C CNN
 F 3 "" H 2950 5250 50  0001 C CNN
 	1    2750 5250
 	1    0    0    -1  
@@ -1227,7 +1227,7 @@ U 1 1 591BEC29
 P 2950 5250
 F 0 "J113" V 2900 5250 50  0000 C CNN
 F 1 "M3" V 2950 5500 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 3150 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3150 5250 50  0001 C CNN
 F 3 "" H 3150 5250 50  0001 C CNN
 	1    2950 5250
 	1    0    0    -1  
@@ -1238,7 +1238,7 @@ U 1 1 591BEEB1
 P 3150 5250
 F 0 "J114" V 3100 5250 50  0000 C CNN
 F 1 "M3" V 3150 5500 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 3350 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3350 5250 50  0001 C CNN
 F 3 "" H 3350 5250 50  0001 C CNN
 	1    3150 5250
 	1    0    0    -1  
@@ -1249,7 +1249,7 @@ U 1 1 591BF13C
 P 3350 5250
 F 0 "J115" V 3300 5250 50  0000 C CNN
 F 1 "M3" V 3350 5500 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 3550 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3550 5250 50  0001 C CNN
 F 3 "" H 3550 5250 50  0001 C CNN
 	1    3350 5250
 	1    0    0    -1  
@@ -1260,7 +1260,7 @@ U 1 1 591BF3CA
 P 3550 5250
 F 0 "J116" V 3500 5250 50  0000 C CNN
 F 1 "M3" V 3550 5500 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 3750 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3750 5250 50  0001 C CNN
 F 3 "" H 3750 5250 50  0001 C CNN
 	1    3550 5250
 	1    0    0    -1  
@@ -1271,7 +1271,7 @@ U 1 1 591C1E55
 P 3750 5250
 F 0 "J117" V 3700 5250 50  0000 C CNN
 F 1 "M3" V 3750 5500 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 3950 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3950 5250 50  0001 C CNN
 F 3 "" H 3950 5250 50  0001 C CNN
 	1    3750 5250
 	1    0    0    -1  
