@@ -51,8 +51,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 10
 Title "Powerboard overview"
-Date "2017-03-14"
-Rev "20"
+Date "2017-07-01"
+Rev "21"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -1914,34 +1914,6 @@ F 3 "" H 1500 3250 50  0001 C CNN
 	1    1500 3300
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_01X01 J119
-U 1 1 5945D404
-P 3300 3500
-F 0 "J119" H 3300 3600 50  0000 C CNN
-F 1 "GND" V 3400 3500 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad_Via" H 3300 3500 50  0001 C CNN
-F 3 "" H 3300 3500 50  0001 C CNN
-	1    3300 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L GNDPWR #PWR027
-U 1 1 5945D6BD
-P 3200 3700
-F 0 "#PWR027" H 3200 3500 50  0001 C CNN
-F 1 "GNDPWR" H 3200 3570 50  0000 C CNN
-F 2 "" H 3200 3650 50  0001 C CNN
-F 3 "" H 3200 3650 50  0001 C CNN
-	1    3200 3700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3200 3700 3200 3650
-Wire Wire Line
-	3200 3650 3100 3650
-Wire Wire Line
-	3100 3650 3100 3500
 $Comp
 L R R122
 U 1 1 594658AD
