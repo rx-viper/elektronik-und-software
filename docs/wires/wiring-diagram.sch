@@ -1674,9 +1674,9 @@ uart_RX
 Text Label 7250 5450 1    60   ~ 0
 uart_TX
 Wire Wire Line
-	6850 5500 6850 4800
+	6850 4550 6850 5500
 Wire Wire Line
-	6650 5500 6650 4800
+	6650 4600 6650 5500
 Wire Wire Line
 	6550 5500 6550 5450
 Wire Wire Line
@@ -1787,4 +1787,32 @@ Wire Notes Line
 	8600 4750 8600 6050
 Text Notes 5500 4750 0    60   ~ 0
 BOARD: pi-board\n
+Wire Wire Line
+	2900 29050 3600 29050
+Wire Wire Line
+	2900 28850 4450 28850
+Text Label 3000 28850 0    60   ~ 0
+pi_board_5V
+Text Label 3000 29050 0    60   ~ 0
+5V
+Wire Wire Line
+	4400 28350 2900 28350
+Wire Wire Line
+	2900 28750 3600 28750
+Text Label 3000 28450 0    60   ~ 0
+RXSM_28V
+Wire Wire Line
+	2900 28450 3600 28450
+Text Label 3000 28350 0    60   ~ 0
+pi-board_GND
+Text Label 3000 28750 0    60   ~ 0
+lens-heater_OUT
+Wire Wire Line
+	6850 4550 4400 4550
+Wire Wire Line
+	4400 4550 4400 28350
+Wire Wire Line
+	6650 4600 4450 4600
+Wire Wire Line
+	4450 4600 4450 28850
 $EndSCHEMATC
