@@ -1,0 +1,33 @@
+Id,Designator,Package,Quantity,Designation,partsbox,
+1,J2,DB25MD,1,Mainbord / Powerboard + Camera,n,
+2,"C1,C2,C3,C4,C5",C_0603_HandSoldering,5,47u,xx,10u for 5V
+3,J5,USB_Micro-B,1,Bootloader,x,
+4,"J7,J1,J4",GS3,3,GS3,n,
+5,"C7,C11,C12",C_0603_HandSoldering,3,10u,x,
+6,"C9,C10",C_0603_HandSoldering,2,NF,n,
+7,D1,LED_0603,1,POWER,x,Red
+8,D2,LED_0603,1,ACT,x,Green
+9,TP1,Measurement_Point_Round-SMD-Pad_Small,1,TEST_EMMC _DISABLE,n,
+10,"TP2,TP3,TP4",Measurement_Point_Round-SMD-Pad_Small,3,TEST,n,
+11,U1,pam2306,1,PAM2306,x,
+12,"L1,L2",Inductor_Taiyo-Yuden_NR-50xx_HandSoldering,2,WE-74405042047,x,
+13,J3,Pin_Header_Straight_1x03_Pitch2.54mm,1,debug_uart,x,
+14,J6,BNC_Multi,1,VIDEO,x,Pomona 6747
+15,U2,SOT-353_SC-70-5_Handsoldering,1,AP7115,x,
+16,MD1,Socket_SODIMM_DDR1-2_TE_1612618_Debug,1,Raspberry Pi CM3,x,
+17,"J8,J9",MountingHole_2.2mm_M2_Pad,2,M2,n,
+18,"J10,J11,J12,J13,J14",MountingHole_3.2mm_M3_Pad,5,M3,n,
+19,R1,R_0603_HandSoldering,1,220R,x,
+20,"R6,R7",R_0603_HandSoldering,2,0R,x,
+21,R8,R_0603_HandSoldering,1,NF,n,do not assemble
+22,"R10,R15,R16,R17,R18,R19,R20,R21",R_0603_HandSoldering,8,NC,n,do not assemble
+23,"R11,R12",R_0603_HandSoldering,2,100k,x,
+24,"Q1,Q2",SOT-23,2,Q_NMOS_DGS,x,DMG1012UW-7
+25,"R2,R13,R14,R5",R_0603,4,100k,x,
+26,R3,R_0603,1,47k,x,
+27,R4,R_0603,1,470R,x,
+28,C13,C_0603,1,1µ,x,
+29,C14,C_0603,1,100n,x,
+30,C15,C_0603,1,4µ7,x,
+31,"C8,C6",C_0603,2,10u,x,
+32,R9,R_0603,1,NF,n,do not assemble
