@@ -1,0 +1,21 @@
+<packets>
+	<packet name="TestPacket1" id="255">
+		<array name="testArray" type="TestEnum" size="2" />
+	</packet>
+
+	<packet name="TestPacket2" id="254">
+		<element name="test1" type="int32_t" />
+		<element name="test2" type="TestEnum" />
+	</packet>
+
+	<enum name="TestEnum" type="uint8_t">
+		<element name="Enum0" />
+		<element name="Enum1" />
+		<element name="Enum2" />
+	</enum>
+
+	<packet_group name="TestPackets">
+		<packet name="TestPacket1" />
+		<packet name="TestPacket2" />
+	</packet_group>
+</packets>
