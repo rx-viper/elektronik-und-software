@@ -16,10 +16,10 @@ namespace viper
 namespace onboard
 {
 /**
- * Send and receive packets from a PacketGroup over an arbitrary byte-oriented data link
- * device compatible with the Uart interface of xpcc.
+ * Send and receive packets of a PacketGroup over an arbitrary byte-oriented data link
+ * compatible with the Uart interface of xpcc.
  *
- * All packet types must be member of a packet group is specified as
+ * All packet types must be member of a packet group specified as
  * the first class template argument.
  */
 template<typename Packets, typename Device>
