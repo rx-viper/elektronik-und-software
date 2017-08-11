@@ -20,6 +20,9 @@
 
 #include "../hardware_rev1.hpp"
 
+#include "Communicator.hpp"
+#include "Packets.hpp"
+
 int
 main()
 {
