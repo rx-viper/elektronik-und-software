@@ -1,4 +1,45 @@
 <packets>
+	<packet name="IceTemperatureLS" id="0">
+		<array name="temperatures" type="uint32_t" size="27" />
+	</packet>
+
+	<packet name="IceTemperatureHS" id="1">
+		<array name="temperatures" type="uint32_t" size="27" />
+	</packet>
+
+	<packet name="OtherTemperatureLS" id="2">
+		<array name="temperatures" type="uint16_t" size="5" />
+	</packet>
+
+	<packet name="OtherTemperatureHS" id="3">
+		<array name="temperatures" type="uint16_t" size="5" />
+	</packet>
+
+	<packet name="HpPenetrationDepthLS" id="4">
+		<array name="depth" type="int32_t" size="3" />
+	</packet>
+
+	<packet name="HpPenetrationDepthHS" id="5">
+		<array name="depth" type="int32_t" size="3" />
+	</packet>
+
+	<packet name="PressureLS" id="6">
+		<array name="value" type="int32_t" size="5" />
+	</packet>
+
+	<packet name="PressureHS" id="7">
+		<array name="value" type="int32_t" size="20" />
+	</packet>
+
+	<packet name="HpTemperatureLS" id="8">
+		<array name="temperature" type="uint32_t" size="3" />
+	</packet>
+
+	<packet name="HpTemperatureHS" id="9">
+		<array name="temperature" type="uint32_t" size="3" />
+	</packet>
+
+	<!-- TEST -->
 	<packet name="TestPacket1" id="255">
 		<array name="testArray" type="TestEnum" size="2" />
 	</packet>
