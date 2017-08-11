@@ -5,6 +5,8 @@
 #include <cstddef>
 #include <array>
 
+#include <xpcc/debug/logger.hpp>
+
 #include "CobsReader.hpp"
 #include "CobsWriter.hpp"
 
