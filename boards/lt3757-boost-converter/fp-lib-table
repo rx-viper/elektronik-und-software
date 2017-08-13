@@ -1,4 +1,5 @@
 (fp_lib_table
   (lib (name resistor-power-shunt)(type Github)(uri https://github.com/kicad-rleh/resistor-power-shunt.pretty)(options "")(descr ""))
   (lib (name GH_Inductors)(type Github)(uri "$(KIGITHUB)/Inductors.pretty")(options "")(descr ""))
+  (lib (name MSOP-10-1EP_3x3mm_Pitch0.5mm)(type KiCad)(uri "$(KIPRJMOD)/lib/MSOP-10-1EP_3x3mm_Pitch0.5mm.pretty")(options "")(descr ""))
 )
