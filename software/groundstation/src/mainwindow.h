@@ -8,6 +8,7 @@
 #include "icehppmgraphic.h"
 
 #include <QMainWindow>
+#include "./qcustomplot.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,7 @@ private slots:
     void on_serialPortsList_activated(const QString &arg1);
     void on_serialBaudRateList_activated(const QString &arg1);
     void on_serialConnect_clicked();
+    void drawIceTemperatures(QCustomPlot *customPlot, float Temperatures[][3]);
 
     // Data visualisation
     void on_penDepthChange();
