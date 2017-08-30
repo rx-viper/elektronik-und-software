@@ -140,7 +140,7 @@ struct VariantHelper<>
 	inline static void move([[gnu::unused]] size_t typeIndex, [[gnu::unused]] void* oldData, [[gnu::unused]] void* newData) {}
 
 	template<typename Visitor, typename Variant>
-	inline static void visit(Visitor&& visitor, const Variant& v) {}
+	inline static void visit([[gnu::unused]] Visitor&& visitor, [[gnu::unused]] const Variant& v) {}
 };
 
 }
