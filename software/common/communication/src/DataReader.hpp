@@ -124,8 +124,7 @@ bool DataReader::read(std::array<T, N>& array)
 	return true;
 }
 
-template<typename EnumT,
-		typename = std::enable_if_t<std::is_enum<EnumT>::value>>
+template<typename EnumT, typename>
 bool DataReader::read(EnumT& value)
 {
 	std::underlying_type_t<EnumT> intValue;

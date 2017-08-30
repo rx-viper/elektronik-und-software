@@ -137,8 +137,7 @@ bool DataWriter::write(const std::array<T, N>& array)
 	return true;
 }
 
-template<typename EnumT,
-		typename = std::enable_if_t<std::is_enum<EnumT>::value>>
+template<typename EnumT, typename>
 bool DataWriter::write(EnumT value)
 {
 	const auto intValue = static_cast<std::underlying_type_t<EnumT>>(value);
