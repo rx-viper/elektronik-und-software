@@ -65,6 +65,10 @@ void RxsmEvents::update()
 		if(sodsState ^ sodsFilter.getValue()) {
 			sodsChanged = true;
 		}
+
+		Board::Ui::LedRed::setOutput(loFilter.getValue());
+		Board::Ui::LedGreen::setOutput(soeFilter.getValue());
+		Board::Ui::LedBlue::setOutput(sodsFilter.getValue());
 	}
 }
 
