@@ -23,8 +23,13 @@
 
 #include "../hardware_rev1.hpp"
 #include "RxsmEvents.hpp"
+#include "Experiment.hpp"
 
 using viper::onboard::RxsmEvents;
+using viper::onboard::Experiment;
+using viper::onboard::GroundstationCommunicator;
+
+#include <xpcc/debug/logger.hpp>
 
 int
 main()
@@ -34,9 +39,17 @@ main()
 
 	RxsmEvents::initialize();
 
+	GroundstationCommunicator communicator;
+
+	Experiment experiment{communicator};
+	experiment.initialize();
+
 	while (1)
 	{
-		// ToDo
+		RxsmEvents::update();
+
+		experiment.update();
+		communicator.update();
 	}
 
 	return 0;
