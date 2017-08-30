@@ -18,16 +18,21 @@
 
 #include <xpcc/architecture/platform.hpp>
 
-#include "../hardware_rev1.hpp"
-
 #include "Communicator.hpp"
 #include "Packets.hpp"
+
+#include "../hardware_rev1.hpp"
+#include "RxsmEvents.hpp"
+
+using viper::onboard::RxsmEvents;
 
 int
 main()
 {
 	Board::initializeMcu();
 	Board::initializeAllPeripherals();
+
+	RxsmEvents::initialize();
 
 	while (1)
 	{
