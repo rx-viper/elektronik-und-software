@@ -32,7 +32,7 @@ class RxsmEvents
 public:
 	static void initialize();	
 
-	/// Call periodically from main loop
+	/// Call periodically
 	static void update();
 
 	/// Reset event line changes
@@ -50,8 +50,8 @@ public:
 	static bool startOfDataStorageChanged();
 
 private:
-	static constexpr uint16_t UpdateTimeoutMs = 1;
-	static constexpr uint16_t DebounceHysteresis = 5;
+	static constexpr uint16_t UpdateTimeoutMs = 2;
+	static constexpr uint16_t DebounceHysteresis = 10;
 
 	static xpcc::ShortPeriodicTimer debounceTimer;
 
