@@ -10,8 +10,12 @@
 #include "CobsReader.hpp"
 #include "CobsWriter.hpp"
 
+#include "Packets.hpp"
+
 using viper::communication::CobsReader;
 using viper::communication::CobsWriter;
+
+using viper::packet::GroundstationPackets;
 
 namespace viper
 {
@@ -44,7 +48,7 @@ public:
 	template<typename PacketT>
 	void sendPacket(const PacketT& packet);
 
-	/// Call this function peridically in the main loop
+	/// Call this function periodically in the main loop
 	void update();
 
 private:

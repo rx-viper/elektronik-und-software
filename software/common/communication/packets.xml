@@ -1,10 +1,10 @@
 <packets>
 	<packet name="IceTemperatureLS" id="0">
-		<array name="temperatures" type="uint32_t" size="27" />
+		<array name="temperatures" type="int32_t" size="27" />
 	</packet>
 
 	<packet name="IceTemperatureHS" id="1">
-		<array name="temperatures" type="uint32_t" size="27" />
+		<array name="temperatures" type="int32_t" size="27" />
 	</packet>
 
 	<packet name="OtherTemperatureLS" id="2">
@@ -24,20 +24,41 @@
 	</packet>
 
 	<packet name="PressureLS" id="6">
-		<array name="value" type="int32_t" size="5" />
+		<array name="values" type="int32_t" size="5" />
 	</packet>
 
 	<packet name="PressureHS" id="7">
-		<array name="value" type="int32_t" size="20" />
+		<array name="values" type="int32_t" size="20" />
 	</packet>
 
 	<packet name="HpTemperatureLS" id="8">
-		<array name="temperature" type="uint32_t" size="3" />
+		<array name="temperatures" type="int32_t" size="3" />
 	</packet>
 
 	<packet name="HpTemperatureHS" id="9">
-		<array name="temperature" type="uint32_t" size="3" />
+		<array name="temperatures" type="int32_t" size="3" />
 	</packet>
+
+	<packet name="Status" id="10">
+		<element name="time" type="uint32_t" />
+		<element name="lo" type="uint8_t" />
+		<element name="soe" type="uint8_t" />
+		<element name="sods" type="uint8_t" />
+	</packet>
+
+	<packet_group name="GroundstationPackets">
+		<packet name="IceTemperatureLS" />
+		<packet name="IceTemperatureHS" />
+		<packet name="OtherTemperatureLS" />
+		<packet name="OtherTemperatureHS" />
+		<packet name="HpPenetrationDepthLS" />
+		<packet name="HpPenetrationDepthHS" />
+		<packet name="PressureLS" />
+		<packet name="PressureHS" />
+		<packet name="HpTemperatureLS" />
+		<packet name="HpTemperatureHS" />
+		<packet name="Status" />
+	</packet_group>
 
 	<!-- TEST -->
 	<packet name="TestPacket1" id="255">
