@@ -106,23 +106,19 @@ void Communicator<Packets, Device>::parsePacket(const uint8_t* data, size_t size
 {
 	/*
 	 * Packet layout
-	 * sequence number (4 bytes)
 	 * id (1 byte)
 	 * data
 	 * crc32 (4 bytes)
 	 */
-	constexpr size_t sequenceNumberSize = 4;
 	constexpr size_t idSize = 1;
 	constexpr size_t crcSize = 4;
 
 	packetAvailable = false;
 
-	if(size < idSize + sequenceNumberSize + crcSize + 1) {
+	if(size < idSize + crcSize + 1) {
 		XPCC_LOG_WARNING << "Invalid data received" << xpcc::endl;
 		return;
 	}
-
-	receivedSequenceNumber = readUInt32(data);
 
 	CRC32 crc;
 	for(size_t index = 0; index < size - crcSize; ++index) {
@@ -136,7 +132,7 @@ void Communicator<Packets, Device>::parsePacket(const uint8_t* data, size_t size
 		return;
 	}
 
-	if(packet.read(data + sequenceNumberSize, size - sequenceNumberSize - crcSize)) {
+	if(packet.read(data, size - crcSize)) {
 		packetAvailable = true;
 	} else {
 		XPCC_LOG_ERROR << "BUG: Invalid packet format" << xpcc::endl;
@@ -152,9 +148,8 @@ size_t Communicator<Packets, Device>::writePacketPayload(const PacketT& packet)
 
 	DataWriter writer{packetBuffer.data(), packetBuffer.size()};
 
-	// write sequence number to packetBuffer
-	const uint32_t sequenceNumber = sendSequenceNumbers[typeIndex]++;
-	writer.write(sequenceNumber);
+	// set sequence number in packet
+	packet.sequenceNumber = sendSequenceNumbers[typeIndex]++;
 
 	// write packet id to packetBuffer
 	constexpr uint8_t id{PacketT::PacketID};
@@ -163,7 +158,7 @@ size_t Communicator<Packets, Device>::writePacketPayload(const PacketT& packet)
 	// write packet data to packetBuffer
 	packet.write(writer);
 
-	constexpr size_t expectedSize = PacketT::PacketSize + sizeof(uint32_t) + 1;
+	constexpr size_t expectedSize = PacketT::PacketSize + 1;
 	if(writer.getPosition() != expectedSize) {
 		XPCC_LOG_ERROR << "BUG: Invalid payload size " << writer.getPosition();
 		XPCC_LOG_ERROR << ", expected: " << expectedSize << xpcc::endl;

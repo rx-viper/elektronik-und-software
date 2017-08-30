@@ -117,25 +117,20 @@ void Communicator::processFrame()
 {
 	/*
 	 * Packet layout
-	 * sequence number (4 bytes)
 	 * id (1 byte)
 	 * data
 	 * crc32 (4 bytes)
 	 */
-	constexpr size_t sequenceNumberSize = 4;
 	constexpr size_t idSize = 1;
 	constexpr size_t crcSize = 4;
 
 	const uint8_t* data = frameReader.data();
 	size_t size = frameReader.size();
 
-	if(size < idSize + sequenceNumberSize + crcSize + 1) {
+	if(size < idSize + crcSize + 1) {
 		std::cerr << "Invalid data received" << std::endl;
 		return;
 	}
-
-	uint32_t sequenceNumber = readUInt32(data);
-	Q_UNUSED(sequenceNumber);
 
 	CRC32 crc;
 	for(size_t index = 0; index < size - crcSize; ++index) {
@@ -150,7 +145,7 @@ void Communicator::processFrame()
 	}
 
 	auto packet = std::make_unique<Packets>();
-	if(packet->read(data + sequenceNumberSize, size - sequenceNumberSize - crcSize)) {
+	if(packet->read(data, size - crcSize)) {
 		packetQueue.push_back(std::move(packet));
 		emit packetReceived();
 	} else {

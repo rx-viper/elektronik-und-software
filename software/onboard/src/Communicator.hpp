@@ -37,9 +37,6 @@ public:
 	/// @pre isPacketAvailable() must be true
 	inline const Packets& getPacket() { return packet; }
 
-	/// Get the sequence number for the last received packet
-	inline uint32_t getReceivedSequenceNumber() { return receivedSequenceNumber; }
-
 	/// Drop the received packet
 	inline void dropPacket() { packetAvailable = false; }
 
@@ -51,8 +48,8 @@ public:
 	void update();
 
 private:
-	// Maximum payload of a frame, +4: CRC Size, +4: Sequence Number, +1 Packet ID
-	static constexpr size_t MaxFramePayload = Packets::MaxPacketSize + 9;
+	// Maximum payload of a frame, +4: CRC Size, +1 Packet ID
+	static constexpr size_t MaxFramePayload = Packets::MaxPacketSize + 5;
 	// Maximum encoded size of a frame
 	static constexpr size_t MaxFrameSize = CobsWriter::minBufferSize(MaxFramePayload);
 
@@ -64,8 +61,8 @@ private:
 	template<typename PacketT>
 	size_t writePacketPayload(const PacketT& packet);
 
-	/// packet output buffer, +5 = 1 byte id + 4 bytes sequence number
-	std::array<uint8_t, Packets::MaxPacketSize + 5> packetBuffer;
+	/// packet output buffer, +1 byte id
+	std::array<uint8_t, Packets::MaxPacketSize + 1> packetBuffer;
 
 	/// frame output buffer
 	std::array<uint8_t, MaxFrameSize> frameBuffer;
@@ -80,7 +77,6 @@ private:
 
 	Packets packet;
 	bool packetAvailable;
-	uint32_t receivedSequenceNumber;
 };
 
 }

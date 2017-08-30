@@ -117,8 +117,8 @@ class PacketGenerator(object):
         if is_in_list(self._packets, id, lambda p: p.id):
             raise RuntimeError('Duplicate packet id %i ' % id)
 
-        elements = []
-        size = 0
+        elements = [PacketElement('sequenceNumber', 'mutable uint32_t', None)]
+        size = SIZES['uint32_t']
         for elem in packet_element:
             if elem.tag not in ('array', 'element'):
                 raise RuntimeError('Unexpected element "%s" in definition of packet "%s"' % (elem.tag, name))

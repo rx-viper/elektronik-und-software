@@ -61,8 +61,8 @@ private slots:
 	void dataReceived();
 
 private:
-	// Maximum payload of a frame, +4: CRC Size, +4: Sequence Number, +1 Packet ID
-	static constexpr size_t MaxFramePayload = Packets::MaxPacketSize + 9;
+	// Maximum payload of a frame, +4: CRC Size, +1 Packet ID
+	static constexpr size_t MaxFramePayload = Packets::MaxPacketSize + 5;
 	// Maximum encoded size of a frame
 	static constexpr size_t MaxFrameSize = CobsWriter::minBufferSize(MaxFramePayload);
 
@@ -78,8 +78,8 @@ private:
 	static void writeUInt32(uint32_t value, CobsWriter& writer);
 	static uint32_t readUInt32(const uint8_t data[4]);
 
-	/// packet output buffer, +5 = 1 byte id + 4 bytes sequence number
-	std::array<uint8_t, Packets::MaxPacketSize + 5> packetOutBuffer;
+	/// packet output buffer, +1 byte id
+	std::array<uint8_t, Packets::MaxPacketSize + 1> packetOutBuffer;
 
 	std::array<uint8_t, MaxFrameSize> frameOutBuffer;
 
@@ -105,9 +105,8 @@ size_t Communicator::writePacketPayload(const PacketType& packet)
 
 	DataWriter writer{packetOutBuffer.data(), packetOutBuffer.size()};
 
-	// write sequence number to packetBuffer
-	const uint32_t sequenceNumber = sendSequenceNumbers[typeIndex]++;
-	writer.write(sequenceNumber);
+	// set sequence number in packet
+	packet.sequenceNumber = sendSequenceNumbers[typeIndex]++;
 
 	// write packet id to packetBuffer
 	constexpr uint8_t id{PacketType::PacketID};
@@ -116,7 +115,7 @@ size_t Communicator::writePacketPayload(const PacketType& packet)
 	// write packet data to packetBuffer
 	packet.write(writer);
 
-	constexpr size_t expectedSize = PacketType::PacketSize + sizeof(uint32_t) + 1;
+	constexpr size_t expectedSize = PacketType::PacketSize + 1;
 	if(writer.getPosition() != expectedSize) {
 		std::cerr << "BUG: Invalid payload size " << writer.getPosition();
 		std::cerr << ", expected: " << expectedSize << std::endl;
