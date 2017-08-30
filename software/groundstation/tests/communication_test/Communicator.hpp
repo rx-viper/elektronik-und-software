@@ -134,9 +134,6 @@ void Communicator::sendPacket(const PacketType& packet)
 		throw CommunicationError{std::string{"communicator is not open"}};
 	}
 
-	const uint8_t id{PacketType::PacketID};
-	frameWriter.startFrame();
-	frameWriter.write(id);
 	frameWriter.startFrame();
 
 	// write packet header and data to packetBuffer
