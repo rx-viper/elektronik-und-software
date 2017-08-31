@@ -1,10 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "log.h"
-#include "serialconnection.h"
-#include "datamanager.h"
-
 #include "icehppmgraphic.h"
 
 #include <QMainWindow>
@@ -34,10 +30,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
-    Log log;
-    SerialConnection serialConnection;
-    DataManager dataManager;
 };
 
 #endif // MAINWINDOW_H
