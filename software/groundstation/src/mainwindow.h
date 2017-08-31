@@ -4,11 +4,18 @@
 #include "icehppmgraphic.h"
 
 #include <QMainWindow>
-#include "./qcustomplot.h"
+#include "qcustomplot.h"
+
+#include "ExperimentStatus.hpp"
+
+#include "communcation/BackendConfigWidget.hpp"
 
 namespace Ui {
 class MainWindow;
 }
+
+namespace viper
+{
 
 class MainWindow : public QMainWindow
 {
@@ -17,19 +24,20 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+	void setBackendConfigWidget(BackendConfigWidget* widget);
 
-private slots:
-    // Serial connection interface
-    void on_serialPortsList_activated(const QString &arg1);
-    void on_serialBaudRateList_activated(const QString &arg1);
-    void on_serialConnect_clicked();
-    void drawIceTemperatures(QCustomPlot *customPlot, float Temperatures[][3]);
+public slots:
+	void updateUI(const ExperimentStatus& status);
+	void setConnected(bool connected);
 
-    // Data visualisation
-    void on_penDepthChange();
+signals:
+	void connectClicked();
 
 private:
-    Ui::MainWindow *ui;
+	BackendConfigWidget* backendConfigWidget;
+	Ui::MainWindow *ui;
 };
+
+}
 
 #endif // MAINWINDOW_H

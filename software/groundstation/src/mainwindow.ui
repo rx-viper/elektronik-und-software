@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1177</width>
+    <width>1556</width>
     <height>645</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_16">
     <item>
-     <widget class="QFrame" name="">
+     <widget class="QFrame" name="frame">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -43,34 +43,11 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_8">
        <item>
-        <widget class="QComboBox" name="serialPortsList">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="serialBaudRateList"/>
-       </item>
-       <item>
-        <widget class="QPushButton" name="serialConnect">
+        <widget class="QPushButton" name="connectButton">
          <property name="text">
           <string>Connect</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>
@@ -97,7 +74,7 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
-            <widget class="QFrame" name="">
+            <widget class="QFrame" name="frame">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -108,7 +85,7 @@
               <item row="0" column="2">
                <layout class="QGridLayout" name="gridLayout_6">
                 <item row="1" column="0">
-                 <widget class="QLCDNumber" name="penetrationDepth1_5">
+                 <widget class="QLCDNumber" name="pressure1">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -171,7 +148,7 @@
               <item row="0" column="1">
                <layout class="QGridLayout" name="gridLayout_4">
                 <item row="1" column="0">
-                 <widget class="QLCDNumber" name="penetrationDepth1_4">
+                 <widget class="QLCDNumber" name="hpTemp1">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -303,7 +280,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout">
                <item>
-                <widget class="QCustomPlot" name="IceTemperatures1" native="true"/>
+                <widget class="IceTemperatureWidget" name="iceTemperatureWidget1" native="true"/>
                </item>
                <item>
                 <widget class="IceHPPMGraphic" name="widget" native="true">
@@ -350,7 +327,7 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QWidget" name="" native="true">
+            <widget class="QWidget" name="widget" native="true">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -437,7 +414,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLCDNumber" name="penetrationDepth1_6">
+                 <widget class="QLCDNumber" name="hpTemp2">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -500,7 +477,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLCDNumber" name="penetrationDepth1_7">
+                 <widget class="QLCDNumber" name="pressure2">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -562,7 +539,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_9">
                <item>
-                <widget class="QCustomPlot" name="IceTemperatures2" native="true"/>
+                <widget class="IceTemperatureWidget" name="iceTemperatureWidget2" native="true"/>
                </item>
                <item>
                 <widget class="IceHPPMGraphic" name="widget_2" native="true">
@@ -609,7 +586,7 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="QFrame" name="">
+            <widget class="QFrame" name="frame">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -696,7 +673,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLCDNumber" name="penetrationDepth1_8">
+                 <widget class="QLCDNumber" name="hpTemp3">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -759,7 +736,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLCDNumber" name="penetrationDepth1_9">
+                 <widget class="QLCDNumber" name="pressure3">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -821,7 +798,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_10">
                <item>
-                <widget class="QCustomPlot" name="IceTemperatures3" native="true"/>
+                <widget class="IceTemperatureWidget" name="iceTemperatureWidget3" native="true"/>
                </item>
                <item>
                 <widget class="IceHPPMGraphic" name="widget_3" native="true">
@@ -893,8 +870,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1177</width>
-     <height>21</height>
+     <width>1556</width>
+     <height>40</height>
     </rect>
    </property>
   </widget>
@@ -902,15 +879,15 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>QCustomPlot</class>
-   <extends>QWidget</extends>
-   <header location="global">./qcustomplot.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>IceHPPMGraphic</class>
    <extends>QWidget</extends>
    <header>icehppmgraphic.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>IceTemperatureWidget</class>
+   <extends>QWidget</extends>
+   <header>IceTemperatureWidget.hpp</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
