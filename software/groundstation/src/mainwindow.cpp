@@ -51,6 +51,24 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	ui->pressure1->display(QString::number(status.pressure(), 'f', 1));
 	ui->pressure2->display(QString::number(status.pressure(), 'f', 1));
 	ui->pressure3->display(QString::number(status.pressure(), 'f', 1));
+
+	if(status.eventLineStatus().liftOff) {
+		ui->loLabel->setText("LO: 1");
+	} else {
+		ui->loLabel->setText("LO: 0");
+	}
+
+	if(status.eventLineStatus().startOfExperiment) {
+		ui->soeLabel->setText("SOE: 1");
+	} else {
+		ui->soeLabel->setText("SOE: 0");
+	}
+
+	if(status.eventLineStatus().startOfDataStorage) {
+		ui->sodsLabel->setText("SODS: 1");
+	} else {
+		ui->sodsLabel->setText("SODS: 0");
+	}
 }
 
 void MainWindow::setConnected(bool connected)
