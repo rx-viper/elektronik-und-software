@@ -245,7 +245,7 @@ T& Variant<Types...>::operator=(T&& element)
 	// move-construct new element, if element references an rvalue.
 	new (&data) Type(std::forward<T>(element));
 
-	return *reinterpret_cast<T*>(&data);
+	return *reinterpret_cast<Type*>(&data);
 }
 
 template<typename... Types>
