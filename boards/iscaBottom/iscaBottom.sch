@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:lib_iscaBottom
+LIBS:iscaBottom-cache
 EELAYER 25 0
 EELAYER END
 $Descr USLegal 8500 14000 portrait
@@ -479,7 +480,7 @@ U 1 1 59C72989
 P 1550 6650
 F 0 "RTD15" V 1350 6650 50  0000 C CNN
 F 1 "RTD_4WIRE" V 1450 6650 50  0000 C CNN
-F 2 "footprints:4wire_SMDsolder" H 1550 6650 50  0001 C CNN
+F 2 "footprints:4wire_SMDsolder_reverse" H 1550 6650 50  0001 C CNN
 F 3 "" H 1550 6650 50  0001 C CNN
 	1    1550 6650
 	1    0    0    -1  
