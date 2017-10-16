@@ -32,9 +32,9 @@ PACKETS_CPP = $$PACKETS_GENERATED_DIR/Packets.cpp
 PACKETS_XML = ../../common/communication/packets.xml
 PACKETS_GENERATOR = ../../common/communication/packet_generator/PacketGenerator.py
 
-packets.target = $$PACKETS_HPP $$PACKETS_CPP
+packets.target = generate_packets
 packets.commands = ./$$PACKETS_GENERATOR $$PACKETS_XML $$PACKETS_GENERATED_DIR
-packets.depends = ../../common/communication/packets.xml
+packets.depends =
 
 COMMUNICATION_SRC_DIR = ../../common/communication/src
 
@@ -56,7 +56,7 @@ COMMUNICATION_HEADERS = $$COMMUNICATION_SRC_DIR/CobsReader.hpp \
     $$COMMUNICATION_SRC_DIR/Variant_impl.hpp
 
 QMAKE_EXTRA_TARGETS += packets
-PRE_TARGETDEPS += $$PACKETS_HPP $$PACKETS_CPP
+PRE_TARGETDEPS += generate_packets
 
 INCLUDEPATH += '../../common/communication/src'
 INCLUDEPATH += '../../common/communication/generated'
