@@ -217,8 +217,20 @@ class PacketGenerator(object):
         files = ('Packets.hpp', 'Packets.cpp')
         context = dict(enums=self._enums, packets=self._packets, packet_groups=self._packet_groups)
         for filename in files:
-            with open(path.join(self._output_folder, filename), 'w') as f:
-                f.write(self._templates[filename].render(context))
+            file_path = path.join(self._output_folder, filename)
+            new = self._templates[filename].render(context)
+            old = None
+
+            try:
+                with open(file_path , 'r') as f:
+                    old = f.read()
+            except FileNotFoundError:
+                pass
+
+            # only write file if it changed to avoid unnecessary recompilations
+            if new != old:
+                with open(file_path, 'w') as f:
+                    f.write(self._templates[filename].render(context))
 
 
 def main():
