@@ -30,8 +30,8 @@ namespace viper
 namespace onboard
 {
 
-//using GroundstationCommunicator = Communicator<GroundstationPackets, Board::Rxsm::TelemetryUart>;
-using GroundstationCommunicator = Communicator<GroundstationPackets, Board::Ui::DebugUart>;
+using GroundstationCommunicator = Communicator<GroundstationPackets, Board::Rxsm::TelemetryUart>;
+//using GroundstationCommunicator = Communicator<GroundstationPackets, Board::Ui::DebugUart>;
 
 class DataAcquisition
 {
