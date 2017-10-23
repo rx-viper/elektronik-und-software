@@ -26,26 +26,20 @@ Application::Application(int& argc, char** argv)
 	connect(&communicator, SIGNAL(packetReceived()), this, SLOT(packetReceived()));
 
 	packet::HpPenetrationDepthHS depth;
-	depth.depth = {56,-6, 19};
-
-	packet::GroundstationPackets p;
-	p = std::move(depth);
-	processPacket(p);
+	depth.depth = {{56,-6, 19}};
+	processPacket(depth);
 
 	packet::HpTemperatureLS temp;
-	temp.temperatures = {111, 73, 33};
-	p = std::move(temp);
-	processPacket(p);
+	temp.temperatures = {{111, 73, 33}};
+	processPacket(temp);
 
 	packet::IceTemperatureHS iceTemp;
 	iceTemp.temperatures = std::array<int32_t,27>{-20,-30,-40,3,-27,-33, -10, -29, -34 , -32, -20,-30,-40,3,-27,-33, -10, -29, -34 , -32, -20,-30,15,15,15,15, 15};
-	p = std::move(iceTemp);
-	processPacket(p);
+	processPacket(iceTemp);
 
 	packet::PressureHS pressure;
 	pressure.values.at(19) = 123;
-	p = std::move(pressure);
-	processPacket(p);
+	processPacket(pressure);
 }
 
 ExperimentStatus& Application::experimentStatus()
