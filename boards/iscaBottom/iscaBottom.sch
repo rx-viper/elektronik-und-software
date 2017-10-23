@@ -590,4 +590,27 @@ Wire Wire Line
 	1850 7900 2100 7900
 Wire Wire Line
 	1850 8000 2100 8000
+Wire Wire Line
+	3200 800  3750 800 
+Text Label 3450 800  0    60   ~ 0
+shield
+$Comp
+L R R1
+U 1 1 59ED224A
+P 3450 900
+F 0 "R1" V 3530 900 50  0000 C CNN
+F 1 "0" V 3450 900 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 3380 900 50  0001 C CNN
+F 3 "" H 3450 900 50  0001 C CNN
+	1    3450 900 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 800  3750 900 
+Wire Wire Line
+	3750 900  3600 900 
+Wire Wire Line
+	3200 800  3200 900 
+Wire Wire Line
+	3200 900  3300 900 
 $EndSCHEMATC
