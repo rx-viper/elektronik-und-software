@@ -76,7 +76,7 @@ void MainWindow::setConnected(bool connected)
 		backendConfigWidget->setEnabled(!connected);
 
 	if(connected) {
-		ui->connectButton->setText("Dis&connect");
+		ui->connectButton->setText("Disconnect");
 	} else {
 		ui->connectButton->setText("&Connect");
 	}
