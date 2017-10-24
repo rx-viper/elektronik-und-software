@@ -36,13 +36,12 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	ui->iceTemperatureWidget2->setIceTemperatures(status.iceTemperatures(1));
 	ui->iceTemperatureWidget3->setIceTemperatures(status.iceTemperatures(2));
 
-	// TODO: rename  widget !!!!
-	ui->widget->setHeatProbePenDepth(status.heatProbeDepth(0));
+	ui->hpDepthGraphic1->setHeatProbePenDepth(status.heatProbeDepth(0));
 	ui->penetrationDepth1->display(QString::number(status.heatProbeDepth(0), 'f', 1));
-	ui->widget_2->setHeatProbePenDepth(status.heatProbeDepth(1));
-	ui->penetrationDepth1_2->display(QString::number(status.heatProbeDepth(1), 'f', 1));
-	ui->widget_3->setHeatProbePenDepth(status.heatProbeDepth(2));
-	ui->penetrationDepth1_3->display(QString::number(status.heatProbeDepth(2), 'f', 1));
+	ui->hpDepthGraphic2->setHeatProbePenDepth(status.heatProbeDepth(1));
+	ui->penetrationDepth2->display(QString::number(status.heatProbeDepth(1), 'f', 1));
+	ui->hpDepthGraphic3->setHeatProbePenDepth(status.heatProbeDepth(2));
+	ui->penetrationDepth3->display(QString::number(status.heatProbeDepth(2), 'f', 1));
 
 	ui->hpTemp1->display(QString::number(status.heatProbeTemperature(0), 'f', 1));
 	ui->hpTemp2->display(QString::number(status.heatProbeTemperature(1), 'f', 1));

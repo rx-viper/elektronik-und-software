@@ -13,6 +13,7 @@ void IceHPPMGraphic::setHeatProbePenDepth(float heatProbePenDepth) {
 }
 
 void IceHPPMGraphic::paintEvent(QPaintEvent *event) {
+	Q_UNUSED(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 

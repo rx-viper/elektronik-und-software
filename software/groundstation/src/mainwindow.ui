@@ -283,7 +283,7 @@
                 <widget class="IceTemperatureWidget" name="iceTemperatureWidget1" native="true"/>
                </item>
                <item>
-                <widget class="IceHPPMGraphic" name="widget" native="true">
+                <widget class="IceHPPMGraphic" name="hpDepthGraphic1" native="true">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -351,7 +351,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLCDNumber" name="penetrationDepth1_2">
+                 <widget class="QLCDNumber" name="penetrationDepth2">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -542,7 +542,7 @@
                 <widget class="IceTemperatureWidget" name="iceTemperatureWidget2" native="true"/>
                </item>
                <item>
-                <widget class="IceHPPMGraphic" name="widget_2" native="true">
+                <widget class="IceHPPMGraphic" name="hpDepthGraphic2" native="true">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -610,7 +610,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLCDNumber" name="penetrationDepth1_3">
+                 <widget class="QLCDNumber" name="penetrationDepth3">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -801,7 +801,7 @@
                 <widget class="IceTemperatureWidget" name="iceTemperatureWidget3" native="true"/>
                </item>
                <item>
-                <widget class="IceHPPMGraphic" name="widget_3" native="true">
+                <widget class="IceHPPMGraphic" name="hpDepthGraphic3" native="true">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                    <horstretch>0</horstretch>

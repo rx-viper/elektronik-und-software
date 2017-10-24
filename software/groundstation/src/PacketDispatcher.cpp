@@ -12,8 +12,14 @@ PacketDispatcher::PacketDispatcher(Application& app_) : app{app_}, experimentSta
 void PacketDispatcher::operator()(const IceTemperatureLS& data)
 {
 	static_assert(data.temperatures.size() == 27, "Unexpected ice temp data size");
+
+	// 9 temperature values per ice container
 	const int32_t* dataPtr{data.temperatures.data()};
-	std::array<IceTemperatures, 3> iceTemperatures{dataPtr, dataPtr + 9, dataPtr + 18};
+	const auto* ice0Temp = dataPtr + 0;
+	const auto* ice1Temp = dataPtr + 9;
+	const auto* ice2Temp = dataPtr + 18;
+
+	std::array<IceTemperatures, 3> iceTemperatures{{ice0Temp, ice1Temp, ice2Temp}};
 
 	experimentStatus.updateIceTemperatures(iceTemperatures);
 }
@@ -21,22 +27,28 @@ void PacketDispatcher::operator()(const IceTemperatureLS& data)
 void PacketDispatcher::operator()(const IceTemperatureHS& data)
 {
 	static_assert(data.temperatures.size() == 27, "Unexpected ice temp data size");
+
+	// 9 temperature values per ice container
 	const int32_t* dataPtr{data.temperatures.data()};
-	std::array<IceTemperatures, 3> iceTemperatures{dataPtr, dataPtr + 9, dataPtr + 18};
+	const auto* ice0Temp = dataPtr + 0;
+	const auto* ice1Temp = dataPtr + 9;
+	const auto* ice2Temp = dataPtr + 18;
+
+	std::array<IceTemperatures, 3> iceTemperatures{{ice0Temp, ice1Temp, ice2Temp}};
 
 	experimentStatus.updateIceTemperatures(iceTemperatures);
 }
 
 void PacketDispatcher::operator()(const PressureLS& pressures)
 {
-	// Get last pressure value only
-	experimentStatus.updatePressure(pressures.values.at(4));
+	static_assert (pressures.values.size(), "array size is 0");
+	experimentStatus.updatePressure(pressures.values.back());
 }
 
 void PacketDispatcher::operator()(const PressureHS& pressures)
 {
-	// Get last pressure value only
-	experimentStatus.updatePressure(pressures.values.at(19));
+	static_assert (pressures.values.size(), "array size is 0");
+	experimentStatus.updatePressure(pressures.values.back());
 }
 
 void PacketDispatcher::operator()(const HpTemperatureLS& hpTemperatures)

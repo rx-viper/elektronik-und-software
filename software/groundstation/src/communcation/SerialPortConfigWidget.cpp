@@ -5,7 +5,7 @@
 #include <QSerialPortInfo>
 
 SerialPortConfigWidget::SerialPortConfigWidget(SerialPortBackend& backend_, QWidget* parent) :
-	backend{backend_}, BackendConfigWidget{parent}
+	BackendConfigWidget{parent}, backend{backend_}
 {
 	setupUi(this);
 	QList<QSerialPortInfo> availablePorts = QSerialPortInfo::availablePorts();

@@ -19,11 +19,11 @@ namespace viper
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+	explicit MainWindow(QWidget *parent = 0);
+	~MainWindow();
 	void setBackendConfigWidget(BackendConfigWidget* widget);
 
 public slots:
@@ -34,8 +34,8 @@ signals:
 	void connectClicked();
 
 private:
+	Ui::MainWindow* ui;
 	BackendConfigWidget* backendConfigWidget;
-	Ui::MainWindow *ui;
 };
 
 }

@@ -3,10 +3,8 @@
 namespace viper
 {
 
-ExperimentStatus::ExperimentStatus()
+ExperimentStatus::ExperimentStatus() : hpDepths{}, hpTemperatures{}
 {
-	hpDepths.fill(0);
-	hpTemperatures.fill(0);
 }
 
 const IceTemperatures& ExperimentStatus::iceTemperatures(size_t containerIndex) const
