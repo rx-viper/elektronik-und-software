@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:iscaBottom-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -154,78 +155,6 @@ F 3 "" H 1650 11550 50  0001 C CNN
 	1    1650 11550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1850 8200 2100 8200
-Wire Wire Line
-	1850 8300 2100 8300
-Wire Wire Line
-	1850 8400 2100 8400
-Wire Wire Line
-	1850 8500 2100 8500
-Wire Wire Line
-	1750 8600 2100 8600
-Wire Wire Line
-	1750 8700 2100 8700
-Wire Wire Line
-	1750 8800 2100 8800
-Wire Wire Line
-	1750 8900 2100 8900
-Wire Wire Line
-	1850 9000 2100 9000
-Wire Wire Line
-	1850 9100 2100 9100
-Wire Wire Line
-	1850 9200 2100 9200
-Wire Wire Line
-	1850 9300 2100 9300
-Wire Wire Line
-	1750 9400 2100 9400
-Wire Wire Line
-	1750 9500 2100 9500
-Wire Wire Line
-	1750 9600 2100 9600
-Wire Wire Line
-	1750 9700 2100 9700
-Wire Wire Line
-	1850 9800 2100 9800
-Wire Wire Line
-	1850 9900 2100 9900
-Wire Wire Line
-	1850 10000 2100 10000
-Wire Wire Line
-	1850 10100 2100 10100
-Wire Wire Line
-	1750 10200 2100 10200
-Wire Wire Line
-	1750 10300 2100 10300
-Wire Wire Line
-	1750 10400 2100 10400
-Wire Wire Line
-	1750 10500 2100 10500
-Wire Wire Line
-	1850 10600 2100 10600
-Wire Wire Line
-	1850 10700 2100 10700
-Wire Wire Line
-	1850 10800 2100 10800
-Wire Wire Line
-	1850 10900 2100 10900
-Wire Wire Line
-	1750 11000 2100 11000
-Wire Wire Line
-	1750 11100 2100 11100
-Wire Wire Line
-	1750 11200 2100 11200
-Wire Wire Line
-	1750 11300 2100 11300
-Wire Wire Line
-	1850 11400 2100 11400
-Wire Wire Line
-	1850 11500 2100 11500
-Wire Wire Line
-	1850 11600 2100 11600
-Wire Wire Line
-	1850 11700 2100 11700
 $Comp
 L CONN_01X36 J1
 U 1 1 59C717CB
@@ -336,78 +265,6 @@ F 3 "" H 1650 4050 50  0001 C CNN
 	1    1650 4050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1850 700  2100 700 
-Wire Wire Line
-	1850 800  2100 800 
-Wire Wire Line
-	1850 900  2100 900 
-Wire Wire Line
-	1850 1000 2100 1000
-Wire Wire Line
-	1750 1100 2100 1100
-Wire Wire Line
-	1750 1200 2100 1200
-Wire Wire Line
-	1750 1300 2100 1300
-Wire Wire Line
-	1750 1400 2100 1400
-Wire Wire Line
-	1850 1500 2100 1500
-Wire Wire Line
-	1850 1600 2100 1600
-Wire Wire Line
-	1850 1700 2100 1700
-Wire Wire Line
-	1850 1800 2100 1800
-Wire Wire Line
-	1750 1900 2100 1900
-Wire Wire Line
-	1750 2000 2100 2000
-Wire Wire Line
-	1750 2100 2100 2100
-Wire Wire Line
-	1750 2200 2100 2200
-Wire Wire Line
-	1850 2300 2100 2300
-Wire Wire Line
-	1850 2400 2100 2400
-Wire Wire Line
-	1850 2500 2100 2500
-Wire Wire Line
-	1850 2600 2100 2600
-Wire Wire Line
-	1750 2700 2100 2700
-Wire Wire Line
-	1750 2800 2100 2800
-Wire Wire Line
-	1750 2900 2100 2900
-Wire Wire Line
-	1750 3000 2100 3000
-Wire Wire Line
-	1850 3100 2100 3100
-Wire Wire Line
-	1850 3200 2100 3200
-Wire Wire Line
-	1850 3300 2100 3300
-Wire Wire Line
-	1850 3400 2100 3400
-Wire Wire Line
-	1750 3500 2100 3500
-Wire Wire Line
-	1750 3600 2100 3600
-Wire Wire Line
-	1750 3700 2100 3700
-Wire Wire Line
-	1750 3800 2100 3800
-Wire Wire Line
-	1850 3900 2100 3900
-Wire Wire Line
-	1850 4000 2100 4000
-Wire Wire Line
-	1850 4100 2100 4100
-Wire Wire Line
-	1850 4200 2100 4200
 $Comp
 L CONN_01X36 J2
 U 1 1 59C72965
@@ -518,6 +375,570 @@ F 3 "" H 1650 7850 50  0001 C CNN
 	1    1650 7850
 	1    0    0    -1  
 $EndComp
+$Comp
+L MontingHole_SinkOneSide M1
+U 1 1 59F09AB4
+P 6000 1000
+F 0 "M1" H 6000 1000 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 1600 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 1000 60  0001 C CNN
+F 3 "" H 6000 1000 60  0001 C CNN
+	1    6000 1000
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V1
+U 1 1 59F09DCE
+P 6000 1350
+F 0 "V1" H 6000 1350 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 1700 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 1350 60  0001 C CNN
+F 3 "" H 6000 1350 60  0001 C CNN
+	1    6000 1350
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V2
+U 1 1 59F09E47
+P 6000 1700
+F 0 "V2" H 6000 1700 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 2050 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 1700 60  0001 C CNN
+F 3 "" H 6000 1700 60  0001 C CNN
+	1    6000 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide M2
+U 1 1 59F0A5E5
+P 6000 2050
+F 0 "M2" H 6000 2050 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 2650 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 2050 60  0001 C CNN
+F 3 "" H 6000 2050 60  0001 C CNN
+	1    6000 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V3
+U 1 1 59F0A8DE
+P 6000 2400
+F 0 "V3" H 6000 2400 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 2750 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 2400 60  0001 C CNN
+F 3 "" H 6000 2400 60  0001 C CNN
+	1    6000 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V4
+U 1 1 59F0AB3F
+P 6000 2750
+F 0 "V4" H 6000 2750 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 3100 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 2750 60  0001 C CNN
+F 3 "" H 6000 2750 60  0001 C CNN
+	1    6000 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide M3
+U 1 1 59F0B1C6
+P 6000 3100
+F 0 "M3" H 6000 3100 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 3700 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 3100 60  0001 C CNN
+F 3 "" H 6000 3100 60  0001 C CNN
+	1    6000 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V5
+U 1 1 59F0B23B
+P 6000 3450
+F 0 "V5" H 6000 3450 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 3800 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 3450 60  0001 C CNN
+F 3 "" H 6000 3450 60  0001 C CNN
+	1    6000 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V6
+U 1 1 59F0B6E6
+P 6000 3800
+F 0 "V6" H 6000 3800 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 4150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 3800 60  0001 C CNN
+F 3 "" H 6000 3800 60  0001 C CNN
+	1    6000 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide M4
+U 1 1 59F0FA29
+P 6000 4100
+F 0 "M4" H 6000 4100 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 4700 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 4100 60  0001 C CNN
+F 3 "" H 6000 4100 60  0001 C CNN
+	1    6000 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V7
+U 1 1 59F0FAD4
+P 6000 4450
+F 0 "V7" H 6000 4450 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 4800 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 4450 60  0001 C CNN
+F 3 "" H 6000 4450 60  0001 C CNN
+	1    6000 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V8
+U 1 1 59F0FB6D
+P 6000 4800
+F 0 "V8" H 6000 4800 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 5150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 4800 60  0001 C CNN
+F 3 "" H 6000 4800 60  0001 C CNN
+	1    6000 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide M5
+U 1 1 59F0FC06
+P 6000 5100
+F 0 "M5" H 6000 5100 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 5700 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 5100 60  0001 C CNN
+F 3 "" H 6000 5100 60  0001 C CNN
+	1    6000 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V9
+U 1 1 59F0FE7C
+P 6000 5400
+F 0 "V9" H 6000 5400 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 5750 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 5400 60  0001 C CNN
+F 3 "" H 6000 5400 60  0001 C CNN
+	1    6000 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V10
+U 1 1 59F0FF65
+P 6000 5700
+F 0 "V10" H 6000 5700 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 6050 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 5700 60  0001 C CNN
+F 3 "" H 6000 5700 60  0001 C CNN
+	1    6000 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide M6
+U 1 1 59F11109
+P 6000 6000
+F 0 "M6" H 6000 6000 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 6600 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 6000 60  0001 C CNN
+F 3 "" H 6000 6000 60  0001 C CNN
+	1    6000 6000
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V11
+U 1 1 59F11366
+P 6000 6300
+F 0 "V11" H 6000 6300 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 6650 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 6300 60  0001 C CNN
+F 3 "" H 6000 6300 60  0001 C CNN
+	1    6000 6300
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V12
+U 1 1 59F1145F
+P 6000 6600
+F 0 "V12" H 6000 6600 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 6950 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 6600 60  0001 C CNN
+F 3 "" H 6000 6600 60  0001 C CNN
+	1    6000 6600
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide M7
+U 1 1 59F115A2
+P 6000 6900
+F 0 "M7" H 6000 6900 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 7500 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 6900 60  0001 C CNN
+F 3 "" H 6000 6900 60  0001 C CNN
+	1    6000 6900
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V13
+U 1 1 59F11829
+P 6000 7200
+F 0 "V13" H 6000 7200 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 7550 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 7200 60  0001 C CNN
+F 3 "" H 6000 7200 60  0001 C CNN
+	1    6000 7200
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V14
+U 1 1 59F11A8C
+P 6000 7500
+F 0 "V14" H 6000 7500 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 7850 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 7500 60  0001 C CNN
+F 3 "" H 6000 7500 60  0001 C CNN
+	1    6000 7500
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide M8
+U 1 1 59F1261E
+P 6000 7800
+F 0 "M8" H 6000 7800 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 8400 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 7800 60  0001 C CNN
+F 3 "" H 6000 7800 60  0001 C CNN
+	1    6000 7800
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V15
+U 1 1 59F12A05
+P 6000 8100
+F 0 "V15" H 6000 8100 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 8450 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 8100 60  0001 C CNN
+F 3 "" H 6000 8100 60  0001 C CNN
+	1    6000 8100
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V16
+U 1 1 59F12ABC
+P 6000 8400
+F 0 "V16" H 6000 8400 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 8750 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 8400 60  0001 C CNN
+F 3 "" H 6000 8400 60  0001 C CNN
+	1    6000 8400
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide M9
+U 1 1 59F12FBF
+P 6000 8700
+F 0 "M9" H 6000 8700 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 9300 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 8700 60  0001 C CNN
+F 3 "" H 6000 8700 60  0001 C CNN
+	1    6000 8700
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V17
+U 1 1 59F13371
+P 6000 9000
+F 0 "V17" H 6000 9000 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 9350 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 9000 60  0001 C CNN
+F 3 "" H 6000 9000 60  0001 C CNN
+	1    6000 9000
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V18
+U 1 1 59F13432
+P 6000 9300
+F 0 "V18" H 6000 9300 60  0000 C CNN
+F 1 "ViaGrounding" V 6150 9650 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 6000 9300 60  0001 C CNN
+F 3 "" H 6000 9300 60  0001 C CNN
+	1    6000 9300
+	0    1    1    0   
+$EndComp
+Text Label 5850 5550 0    60   ~ 0
+GND
+$Comp
+L MontingHole_SinkOneSide A1
+U 1 1 59F0B20D
+P 6000 10100
+F 0 "A1" H 6000 10100 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 10700 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 10100 60  0001 C CNN
+F 3 "" H 6000 10100 60  0001 C CNN
+	1    6000 10100
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide B1
+U 1 1 59F0B7F8
+P 6000 10400
+F 0 "B1" H 6000 10400 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 11000 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 10400 60  0001 C CNN
+F 3 "" H 6000 10400 60  0001 C CNN
+	1    6000 10400
+	0    1    1    0   
+$EndComp
+$Comp
+L MontingHole_SinkOneSide C1
+U 1 1 59F0B8A7
+P 6000 10700
+F 0 "C1" H 6000 10700 60  0000 C CNN
+F 1 "MontingHole_SinkOneSide" V 6150 11300 60  0000 C CNN
+F 2 "footprints:MountingHoleM2_2.2mm_oneSided" H 6000 10700 60  0001 C CNN
+F 3 "" H 6000 10700 60  0001 C CNN
+	1    6000 10700
+	0    1    1    0   
+$EndComp
+$Comp
+L ViaGrounding V20
+U 1 1 59F0CC32
+P 3500 10800
+F 0 "V20" H 3500 10800 60  0000 C CNN
+F 1 "ViaGrounding" V 3650 11150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 3500 10800 60  0001 C CNN
+F 3 "" H 3500 10800 60  0001 C CNN
+	1    3500 10800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ViaGrounding V21
+U 1 1 59F0CD2F
+P 3850 10800
+F 0 "V21" H 3850 10800 60  0000 C CNN
+F 1 "ViaGrounding" V 4000 11150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 3850 10800 60  0001 C CNN
+F 3 "" H 3850 10800 60  0001 C CNN
+	1    3850 10800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ViaGrounding V22
+U 1 1 59F0CDE0
+P 4150 10800
+F 0 "V22" H 4150 10800 60  0000 C CNN
+F 1 "ViaGrounding" V 4300 11150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 4150 10800 60  0001 C CNN
+F 3 "" H 4150 10800 60  0001 C CNN
+	1    4150 10800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ViaGrounding V23
+U 1 1 59F0CE75
+P 4450 10800
+F 0 "V23" H 4450 10800 60  0000 C CNN
+F 1 "ViaGrounding" V 4600 11150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 4450 10800 60  0001 C CNN
+F 3 "" H 4450 10800 60  0001 C CNN
+	1    4450 10800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ViaGrounding V24
+U 1 1 59F0CF0A
+P 4750 10800
+F 0 "V24" H 4750 10800 60  0000 C CNN
+F 1 "ViaGrounding" V 4900 11150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 4750 10800 60  0001 C CNN
+F 3 "" H 4750 10800 60  0001 C CNN
+	1    4750 10800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ViaGrounding V25
+U 1 1 59F0CFA3
+P 5100 10800
+F 0 "V25" H 5100 10800 60  0000 C CNN
+F 1 "ViaGrounding" V 5250 11150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 5100 10800 60  0001 C CNN
+F 3 "" H 5100 10800 60  0001 C CNN
+	1    5100 10800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ViaGrounding V26
+U 1 1 59F0D05A
+P 5400 10800
+F 0 "V26" H 5400 10800 60  0000 C CNN
+F 1 "ViaGrounding" V 5550 11150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 5400 10800 60  0001 C CNN
+F 3 "" H 5400 10800 60  0001 C CNN
+	1    5400 10800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ViaGrounding V19
+U 1 1 59F0D129
+P 3200 10800
+F 0 "V19" H 3200 10800 60  0000 C CNN
+F 1 "ViaGrounding" V 3350 11150 60  0000 C CNN
+F 2 "footprints:GroundingVia" H 3200 10800 60  0001 C CNN
+F 3 "" H 3200 10800 60  0001 C CNN
+	1    3200 10800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 8200 2100 8200
+Wire Wire Line
+	1850 8300 2100 8300
+Wire Wire Line
+	1850 8400 2100 8400
+Wire Wire Line
+	1850 8500 2100 8500
+Wire Wire Line
+	1750 8600 2100 8600
+Wire Wire Line
+	1750 8700 2100 8700
+Wire Wire Line
+	1750 8800 2100 8800
+Wire Wire Line
+	1750 8900 2100 8900
+Wire Wire Line
+	1850 9000 2100 9000
+Wire Wire Line
+	1850 9100 2100 9100
+Wire Wire Line
+	1850 9200 2100 9200
+Wire Wire Line
+	1850 9300 2100 9300
+Wire Wire Line
+	1750 9400 2100 9400
+Wire Wire Line
+	1750 9500 2100 9500
+Wire Wire Line
+	1750 9600 2100 9600
+Wire Wire Line
+	1750 9700 2100 9700
+Wire Wire Line
+	1850 9800 2100 9800
+Wire Wire Line
+	1850 9900 2100 9900
+Wire Wire Line
+	1850 10000 2100 10000
+Wire Wire Line
+	1850 10100 2100 10100
+Wire Wire Line
+	1750 10200 2100 10200
+Wire Wire Line
+	1750 10300 2100 10300
+Wire Wire Line
+	1750 10400 2100 10400
+Wire Wire Line
+	1750 10500 2100 10500
+Wire Wire Line
+	1850 10600 2100 10600
+Wire Wire Line
+	1850 10700 2100 10700
+Wire Wire Line
+	1850 10800 2100 10800
+Wire Wire Line
+	1850 10900 2100 10900
+Wire Wire Line
+	1750 11000 2100 11000
+Wire Wire Line
+	1750 11100 2100 11100
+Wire Wire Line
+	1750 11200 2100 11200
+Wire Wire Line
+	1750 11300 2100 11300
+Wire Wire Line
+	1850 11400 2100 11400
+Wire Wire Line
+	1850 11500 2100 11500
+Wire Wire Line
+	1850 11600 2100 11600
+Wire Wire Line
+	1850 11700 2100 11700
+Wire Wire Line
+	1850 700  2100 700 
+Wire Wire Line
+	1850 800  2100 800 
+Wire Wire Line
+	1850 900  2100 900 
+Wire Wire Line
+	1850 1000 2100 1000
+Wire Wire Line
+	1750 1100 2100 1100
+Wire Wire Line
+	1750 1200 2100 1200
+Wire Wire Line
+	1750 1300 2100 1300
+Wire Wire Line
+	1750 1400 2100 1400
+Wire Wire Line
+	1850 1500 2100 1500
+Wire Wire Line
+	1850 1600 2100 1600
+Wire Wire Line
+	1850 1700 2100 1700
+Wire Wire Line
+	1850 1800 2100 1800
+Wire Wire Line
+	1750 1900 2100 1900
+Wire Wire Line
+	1750 2000 2100 2000
+Wire Wire Line
+	1750 2100 2100 2100
+Wire Wire Line
+	1750 2200 2100 2200
+Wire Wire Line
+	1850 2300 2100 2300
+Wire Wire Line
+	1850 2400 2100 2400
+Wire Wire Line
+	1850 2500 2100 2500
+Wire Wire Line
+	1850 2600 2100 2600
+Wire Wire Line
+	1750 2700 2100 2700
+Wire Wire Line
+	1750 2800 2100 2800
+Wire Wire Line
+	1750 2900 2100 2900
+Wire Wire Line
+	1750 3000 2100 3000
+Wire Wire Line
+	1850 3100 2100 3100
+Wire Wire Line
+	1850 3200 2100 3200
+Wire Wire Line
+	1850 3300 2100 3300
+Wire Wire Line
+	1850 3400 2100 3400
+Wire Wire Line
+	1750 3500 2100 3500
+Wire Wire Line
+	1750 3600 2100 3600
+Wire Wire Line
+	1750 3700 2100 3700
+Wire Wire Line
+	1750 3800 2100 3800
+Wire Wire Line
+	1850 3900 2100 3900
+Wire Wire Line
+	1850 4000 2100 4000
+Wire Wire Line
+	1850 4100 2100 4100
+Wire Wire Line
+	1850 4200 2100 4200
 Wire Wire Line
 	1850 4500 2100 4500
 Wire Wire Line
@@ -591,26 +1012,53 @@ Wire Wire Line
 Wire Wire Line
 	1850 8000 2100 8000
 Wire Wire Line
-	3200 800  3750 800 
-Text Label 3450 800  0    60   ~ 0
-shield
-$Comp
-L R R1
-U 1 1 59ED224A
-P 3450 900
-F 0 "R1" V 3530 900 50  0000 C CNN
-F 1 "0" V 3450 900 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3380 900 50  0001 C CNN
-F 3 "" H 3450 900 50  0001 C CNN
-	1    3450 900 
-	0    1    1    0   
-$EndComp
+	5850 10950 5850 1000
+Connection ~ 5850 1350
+Connection ~ 5850 1700
+Connection ~ 5850 2050
 Wire Wire Line
-	3750 800  3750 900 
+	5850 4450 5850 4100
+Connection ~ 5850 4100
+Connection ~ 5850 4450
 Wire Wire Line
-	3750 900  3600 900 
+	5850 3800 5850 3450
+Connection ~ 5850 3450
+Connection ~ 5850 3800
 Wire Wire Line
-	3200 800  3200 900 
+	5850 2750 5850 3100
+Connection ~ 5850 3100
+Connection ~ 5850 2750
 Wire Wire Line
-	3200 900  3300 900 
+	5850 2400 5850 2050
+Connection ~ 5850 2400
+Connection ~ 5850 4800
+Connection ~ 5850 5100
+Connection ~ 5850 5400
+Connection ~ 5850 5700
+Connection ~ 5850 6000
+Connection ~ 5850 6300
+Connection ~ 5850 6600
+Connection ~ 5850 6900
+Connection ~ 5850 7200
+Connection ~ 5850 7500
+Connection ~ 5850 7800
+Connection ~ 5850 8100
+Connection ~ 5850 8400
+Connection ~ 5850 8700
+Connection ~ 5850 9000
+Connection ~ 5850 9300
+Connection ~ 5850 10100
+Connection ~ 5850 10400
+Wire Wire Line
+	3200 10950 5850 10950
+Connection ~ 5400 10950
+Connection ~ 5850 10700
+Connection ~ 4750 10950
+Connection ~ 5100 10950
+Connection ~ 4150 10950
+Connection ~ 4450 10950
+Connection ~ 3500 10950
+Connection ~ 3850 10950
+Text Label 5600 10950 0    60   ~ 0
+GND
 $EndSCHEMATC
