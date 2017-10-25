@@ -1,0 +1,83 @@
+<packets>
+	<packet name="IceTemperatureLS" id="0">
+		<array name="temperatures" type="int32_t" size="27" />
+	</packet>
+
+	<packet name="IceTemperatureHS" id="1">
+		<array name="temperatures" type="int32_t" size="27" />
+	</packet>
+
+	<packet name="OtherTemperatureLS" id="2">
+		<array name="temperatures" type="uint16_t" size="5" />
+	</packet>
+
+	<packet name="OtherTemperatureHS" id="3">
+		<array name="temperatures" type="uint16_t" size="5" />
+	</packet>
+
+	<packet name="HpPenetrationDepthLS" id="4">
+		<array name="depth" type="int32_t" size="3" />
+	</packet>
+
+	<packet name="HpPenetrationDepthHS" id="5">
+		<array name="depth" type="int32_t" size="3" />
+	</packet>
+
+	<packet name="PressureLS" id="6">
+		<array name="values" type="int32_t" size="5" />
+	</packet>
+
+	<packet name="PressureHS" id="7">
+		<array name="values" type="int32_t" size="20" />
+	</packet>
+
+	<packet name="HpTemperatureLS" id="8">
+		<array name="temperatures" type="int32_t" size="3" />
+	</packet>
+
+	<packet name="HpTemperatureHS" id="9">
+		<array name="temperatures" type="int32_t" size="3" />
+	</packet>
+
+	<packet name="Status" id="10">
+		<element name="time" type="uint32_t" />
+		<element name="lo" type="uint8_t" />
+		<element name="soe" type="uint8_t" />
+		<element name="sods" type="uint8_t" />
+	</packet>
+
+	<packet_group name="GroundstationPackets">
+		<packet name="IceTemperatureLS" />
+		<packet name="IceTemperatureHS" />
+		<packet name="OtherTemperatureLS" />
+		<packet name="OtherTemperatureHS" />
+		<packet name="HpPenetrationDepthLS" />
+		<packet name="HpPenetrationDepthHS" />
+		<packet name="PressureLS" />
+		<packet name="PressureHS" />
+		<packet name="HpTemperatureLS" />
+		<packet name="HpTemperatureHS" />
+		<packet name="Status" />
+	</packet_group>
+
+	<!-- TEST -->
+	<packet name="TestPacket1" id="255">
+		<array name="testArray" type="TestEnum" size="2" />
+	</packet>
+
+	<packet name="TestPacket2" id="254">
+		<element name="test1" type="int32_t" />
+		<element name="test2" type="TestEnum" />
+	</packet>
+
+	<enum name="TestEnum" type="uint8_t">
+		<element name="Enum0" />
+		<element name="Enum1" />
+		<element name="Enum2" />
+	</enum>
+
+	<packet_group name="TestPackets">
+		<packet name="TestPacket1" />
+		<packet name="TestPacket2" />
+	</packet_group>
+</packets>

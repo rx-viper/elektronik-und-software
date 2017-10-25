@@ -1,4 +1,6 @@
-# path to the xpcc root directory
+# path to the xpcc root directory (modify as required!)
 xpccpath = '../../../../xpcc'
-# execute the common SConstruct file
-execfile(xpccpath + '/scons/SConstruct')
+# path to the software common directory (modify as required!)
+common_path = '../../common'
+# execute the scons file
+execfile('../scons/SConstruct')

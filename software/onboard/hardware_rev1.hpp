@@ -89,6 +89,15 @@ struct systemClock
 			2,      // 360MHz / P=2 -> 180MHz = F_cpu
 			7       // 360MHz / Q=7 -> ~51MHz = F_usb => bad for USB
 		);
+		/*ClockControl::enableInternalClock(); // 16 MHz
+		ClockControl::enablePll(
+			ClockControl::PllSource::InternalClock,
+			8,      // 16MHz / N=8 -> 2MHz
+			180,    // 2MHz * M=180 -> 360MHz
+			2,      // 360MHz / P=2 -> 180MHz = F_cpu
+			7       // 360MHz / Q=7 -> ~51MHz = F_usb => bad for USB
+		);*/
+
 		ClockControl::setFlashLatency(Frequency);
 		ClockControl::enableSystemClock(ClockControl::SystemClockSource::Pll);
 		ClockControl::setApb1Prescaler(ClockControl::Apb1Prescaler::Div4);
@@ -197,9 +206,9 @@ namespace Rxsm {
 	using TelemetryUart		= Uart5;
 	constexpr uint32_t TelemetryBaudrate = TelemetryUart::Baudrate::B38400;
 
-	using EventLo			= GpioInputD9;
-	using EventSoe			= GpioInputD10;
-	using EventSods			= GpioInputD11;
+	using EventLo			= xpcc::GpioInverted<GpioInputD9>;
+	using EventSoe			= xpcc::GpioInverted<GpioInputD10>;
+	using EventSods			= xpcc::GpioInverted<GpioInputD11>;
 
 	inline void
 	initialize()

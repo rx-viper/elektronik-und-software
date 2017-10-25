@@ -1,41 +1,43 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "log.h"
-#include "serialconnection.h"
-#include "datamanager.h"
-
 #include "icehppmgraphic.h"
 
 #include <QMainWindow>
+#include "qcustomplot.h"
+
+#include "ExperimentStatus.hpp"
+
+#include "communcation/BackendConfigWidget.hpp"
 
 namespace Ui {
 class MainWindow;
 }
 
+namespace viper
+{
+
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+	explicit MainWindow(QWidget *parent = 0);
+	~MainWindow();
+	void setBackendConfigWidget(BackendConfigWidget* widget);
 
-private slots:
-    // Serial connection interface
-    void on_serialPortsList_activated(const QString &arg1);
-    void on_serialBaudRateList_activated(const QString &arg1);
-    void on_serialConnect_clicked();
+public slots:
+	void updateUI(const ExperimentStatus& status);
+	void setConnected(bool connected);
 
-    // Data visualisation
-    void on_penDepthChange();
+signals:
+	void connectClicked();
 
 private:
-    Ui::MainWindow *ui;
-
-    Log log;
-    SerialConnection serialConnection;
-    DataManager dataManager;
+	Ui::MainWindow* ui;
+	BackendConfigWidget* backendConfigWidget;
 };
+
+}
 
 #endif // MAINWINDOW_H

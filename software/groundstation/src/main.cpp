@@ -1,11 +1,9 @@
-#include "mainwindow.h"
-#include <QApplication>
+#include "Application.hpp"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+	viper::Application app(argc, argv);
+	app.showMainWindow();
 
-    return a.exec();
+	return app.exec();
 }
