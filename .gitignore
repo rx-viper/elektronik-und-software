@@ -294,3 +294,6 @@ TSWLatexianTemp*
 *.files
 *.includes
 *.pro.user
+
+# Qt Project
+software/groundstation/build-ViperGroundstation-Desktop-Debug/
