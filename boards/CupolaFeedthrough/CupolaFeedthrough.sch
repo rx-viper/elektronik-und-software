@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:CupolaFeedthrough-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -204,7 +205,7 @@ U 1 1 59F26318
 P 2100 3750
 F 0 "J107" H 2100 4020 50  0000 C CNN
 F 1 "GND" H 2100 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2300 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2300 3750 50  0001 C CNN
 F 3 "" H 2300 3750 50  0001 C CNN
 	1    2100 3750
 	1    0    0    -1  
@@ -215,7 +216,7 @@ U 1 1 59F26404
 P 2300 3750
 F 0 "J108" H 2300 4020 50  0000 C CNN
 F 1 "GND" H 2300 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2500 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2500 3750 50  0001 C CNN
 F 3 "" H 2500 3750 50  0001 C CNN
 	1    2300 3750
 	1    0    0    -1  
@@ -226,7 +227,7 @@ U 1 1 59F26430
 P 2500 3750
 F 0 "J109" H 2500 4020 50  0000 C CNN
 F 1 "GND" H 2500 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2700 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2700 3750 50  0001 C CNN
 F 3 "" H 2700 3750 50  0001 C CNN
 	1    2500 3750
 	1    0    0    -1  
@@ -237,7 +238,7 @@ U 1 1 59F2645F
 P 2700 3750
 F 0 "J110" H 2700 4020 50  0000 C CNN
 F 1 "GND" H 2700 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2900 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2900 3750 50  0001 C CNN
 F 3 "" H 2900 3750 50  0001 C CNN
 	1    2700 3750
 	1    0    0    -1  
@@ -248,7 +249,7 @@ U 1 1 59F26491
 P 2900 3750
 F 0 "J111" H 2900 4020 50  0000 C CNN
 F 1 "GND" H 2900 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3100 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3100 3750 50  0001 C CNN
 F 3 "" H 3100 3750 50  0001 C CNN
 	1    2900 3750
 	1    0    0    -1  
@@ -259,7 +260,7 @@ U 1 1 59F26E8D
 P 3100 3750
 F 0 "J112" H 3100 4020 50  0000 C CNN
 F 1 "GND" H 3100 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3300 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3300 3750 50  0001 C CNN
 F 3 "" H 3300 3750 50  0001 C CNN
 	1    3100 3750
 	1    0    0    -1  
@@ -270,7 +271,7 @@ U 1 1 59F26E93
 P 3300 3750
 F 0 "J113" H 3300 4020 50  0000 C CNN
 F 1 "GND" H 3300 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3500 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3500 3750 50  0001 C CNN
 F 3 "" H 3500 3750 50  0001 C CNN
 	1    3300 3750
 	1    0    0    -1  
@@ -281,7 +282,7 @@ U 1 1 59F26E99
 P 3500 3750
 F 0 "J114" H 3500 4020 50  0000 C CNN
 F 1 "GND" H 3500 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3700 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3700 3750 50  0001 C CNN
 F 3 "" H 3700 3750 50  0001 C CNN
 	1    3500 3750
 	1    0    0    -1  
@@ -292,7 +293,7 @@ U 1 1 59F26E9F
 P 3700 3750
 F 0 "J115" H 3700 4020 50  0000 C CNN
 F 1 "GND" H 3700 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3900 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3900 3750 50  0001 C CNN
 F 3 "" H 3900 3750 50  0001 C CNN
 	1    3700 3750
 	1    0    0    -1  
@@ -303,7 +304,7 @@ U 1 1 59F26EA5
 P 3900 3750
 F 0 "J116" H 3900 4020 50  0000 C CNN
 F 1 "GND" H 3900 3950 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 4100 3750 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 4100 3750 50  0001 C CNN
 F 3 "" H 4100 3750 50  0001 C CNN
 	1    3900 3750
 	1    0    0    -1  
@@ -358,7 +359,7 @@ U 1 1 59F274F5
 P 2100 4500
 F 0 "J117" H 2100 4770 50  0000 C CNN
 F 1 "GND" H 2100 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2300 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2300 4500 50  0001 C CNN
 F 3 "" H 2300 4500 50  0001 C CNN
 	1    2100 4500
 	1    0    0    -1  
@@ -369,7 +370,7 @@ U 1 1 59F274FB
 P 2300 4500
 F 0 "J118" H 2300 4770 50  0000 C CNN
 F 1 "GND" H 2300 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2500 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2500 4500 50  0001 C CNN
 F 3 "" H 2500 4500 50  0001 C CNN
 	1    2300 4500
 	1    0    0    -1  
@@ -380,7 +381,7 @@ U 1 1 59F27501
 P 2500 4500
 F 0 "J119" H 2500 4770 50  0000 C CNN
 F 1 "GND" H 2500 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2700 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2700 4500 50  0001 C CNN
 F 3 "" H 2700 4500 50  0001 C CNN
 	1    2500 4500
 	1    0    0    -1  
@@ -391,7 +392,7 @@ U 1 1 59F27507
 P 2700 4500
 F 0 "J120" H 2700 4770 50  0000 C CNN
 F 1 "GND" H 2700 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2900 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2900 4500 50  0001 C CNN
 F 3 "" H 2900 4500 50  0001 C CNN
 	1    2700 4500
 	1    0    0    -1  
@@ -402,7 +403,7 @@ U 1 1 59F2750D
 P 2900 4500
 F 0 "J121" H 2900 4770 50  0000 C CNN
 F 1 "GND" H 2900 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3100 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3100 4500 50  0001 C CNN
 F 3 "" H 3100 4500 50  0001 C CNN
 	1    2900 4500
 	1    0    0    -1  
@@ -413,7 +414,7 @@ U 1 1 59F27513
 P 3100 4500
 F 0 "J122" H 3100 4770 50  0000 C CNN
 F 1 "GND" H 3100 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3300 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3300 4500 50  0001 C CNN
 F 3 "" H 3300 4500 50  0001 C CNN
 	1    3100 4500
 	1    0    0    -1  
@@ -424,7 +425,7 @@ U 1 1 59F27519
 P 3300 4500
 F 0 "J123" H 3300 4770 50  0000 C CNN
 F 1 "GND" H 3300 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3500 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3500 4500 50  0001 C CNN
 F 3 "" H 3500 4500 50  0001 C CNN
 	1    3300 4500
 	1    0    0    -1  
@@ -435,7 +436,7 @@ U 1 1 59F2751F
 P 3500 4500
 F 0 "J124" H 3500 4770 50  0000 C CNN
 F 1 "GND" H 3500 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3700 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3700 4500 50  0001 C CNN
 F 3 "" H 3700 4500 50  0001 C CNN
 	1    3500 4500
 	1    0    0    -1  
@@ -446,7 +447,7 @@ U 1 1 59F27525
 P 3700 4500
 F 0 "J125" H 3700 4770 50  0000 C CNN
 F 1 "GND" H 3700 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3900 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3900 4500 50  0001 C CNN
 F 3 "" H 3900 4500 50  0001 C CNN
 	1    3700 4500
 	1    0    0    -1  
@@ -457,7 +458,7 @@ U 1 1 59F2752B
 P 3900 4500
 F 0 "J126" H 3900 4770 50  0000 C CNN
 F 1 "GND" H 3900 4700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 4100 4500 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 4100 4500 50  0001 C CNN
 F 3 "" H 4100 4500 50  0001 C CNN
 	1    3900 4500
 	1    0    0    -1  
@@ -512,7 +513,7 @@ U 1 1 59F27868
 P 2100 5250
 F 0 "J127" H 2100 5520 50  0000 C CNN
 F 1 "GND" H 2100 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2300 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2300 5250 50  0001 C CNN
 F 3 "" H 2300 5250 50  0001 C CNN
 	1    2100 5250
 	1    0    0    -1  
@@ -523,7 +524,7 @@ U 1 1 59F2786E
 P 2300 5250
 F 0 "J128" H 2300 5520 50  0000 C CNN
 F 1 "GND" H 2300 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2500 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2500 5250 50  0001 C CNN
 F 3 "" H 2500 5250 50  0001 C CNN
 	1    2300 5250
 	1    0    0    -1  
@@ -534,7 +535,7 @@ U 1 1 59F27874
 P 2500 5250
 F 0 "J129" H 2500 5520 50  0000 C CNN
 F 1 "GND" H 2500 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2700 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2700 5250 50  0001 C CNN
 F 3 "" H 2700 5250 50  0001 C CNN
 	1    2500 5250
 	1    0    0    -1  
@@ -545,7 +546,7 @@ U 1 1 59F2787A
 P 2700 5250
 F 0 "J130" H 2700 5520 50  0000 C CNN
 F 1 "GND" H 2700 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 2900 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 2900 5250 50  0001 C CNN
 F 3 "" H 2900 5250 50  0001 C CNN
 	1    2700 5250
 	1    0    0    -1  
@@ -556,7 +557,7 @@ U 1 1 59F27880
 P 2900 5250
 F 0 "J131" H 2900 5520 50  0000 C CNN
 F 1 "GND" H 2900 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3100 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3100 5250 50  0001 C CNN
 F 3 "" H 3100 5250 50  0001 C CNN
 	1    2900 5250
 	1    0    0    -1  
@@ -567,7 +568,7 @@ U 1 1 59F27886
 P 3100 5250
 F 0 "J132" H 3100 5520 50  0000 C CNN
 F 1 "GND" H 3100 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3300 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3300 5250 50  0001 C CNN
 F 3 "" H 3300 5250 50  0001 C CNN
 	1    3100 5250
 	1    0    0    -1  
@@ -578,7 +579,7 @@ U 1 1 59F2788C
 P 3300 5250
 F 0 "J133" H 3300 5520 50  0000 C CNN
 F 1 "GND" H 3300 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3500 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3500 5250 50  0001 C CNN
 F 3 "" H 3500 5250 50  0001 C CNN
 	1    3300 5250
 	1    0    0    -1  
@@ -589,7 +590,7 @@ U 1 1 59F27892
 P 3500 5250
 F 0 "J134" H 3500 5520 50  0000 C CNN
 F 1 "GND" H 3500 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3700 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3700 5250 50  0001 C CNN
 F 3 "" H 3700 5250 50  0001 C CNN
 	1    3500 5250
 	1    0    0    -1  
@@ -600,7 +601,7 @@ U 1 1 59F27898
 P 3700 5250
 F 0 "J135" H 3700 5520 50  0000 C CNN
 F 1 "GND" H 3700 5450 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.7mm_Pad" H 3900 5250 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_4mm" H 3900 5250 50  0001 C CNN
 F 3 "" H 3900 5250 50  0001 C CNN
 	1    3700 5250
 	1    0    0    -1  
