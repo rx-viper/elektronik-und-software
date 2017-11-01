@@ -354,28 +354,28 @@ namespace Encoders {
 		using PinA = GpioInputD12;
 		using PinB = GpioInputD13;
 		using Timer = Timer4;
-		inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
+		static inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
 	};
 
 	struct Heatprobe1 {
 		using PinA = GpioInputA15;
 		using PinB = GpioInputB3;
 		using Timer = Timer2;
-		inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
+		static inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
 	};
 
 	struct Heatprobe2 {
 		using PinA = GpioInputB4;
 		using PinB = GpioInputB5;
 		using Timer = Timer3;
-		inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
+		static inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
 	};
 
 	struct Heatprobe3 {
 		using PinA = GpioInputA0;
 		using PinB = GpioInputA1;
 		using Timer = Timer5;
-		inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
+		static inline Timer::Value getEncoderRaw() { return Timer::getValue(); }
 	};
 
 	inline void
