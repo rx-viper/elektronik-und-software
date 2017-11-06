@@ -164,4 +164,40 @@ Text Label 1500 2050 1    60   ~ 0
 B
 Text Label 1700 2050 1    60   ~ 0
 B*
+$Comp
+L R R1
+U 1 1 59FF412E
+P 3350 2800
+F 0 "R1" V 3430 2800 50  0000 C CNN
+F 1 "HEAT" V 3350 2800 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206" V 3280 2800 50  0001 C CNN
+F 3 "" H 3350 2800 50  0001 C CNN
+	1    3350 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 59FF41A8
+P 3550 2800
+F 0 "R2" V 3630 2800 50  0000 C CNN
+F 1 "HEAT" V 3550 2800 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206" V 3480 2800 50  0001 C CNN
+F 3 "" H 3550 2800 50  0001 C CNN
+	1    3550 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 2950 3350 3150
+Connection ~ 3350 3150
+Wire Wire Line
+	3550 2950 3550 3150
+Connection ~ 3550 3150
+Wire Wire Line
+	3350 2650 3350 2450
+Wire Wire Line
+	2950 2450 3550 2450
+Connection ~ 2950 2450
+Wire Wire Line
+	3550 2450 3550 2650
+Connection ~ 3350 2450
 $EndSCHEMATC
