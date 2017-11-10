@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP XC6220
+D LDO Voltage Regulator Torex Semiconductor
+K LDO Voltage Regulator
+$ENDCMP
+#
+#End Doc Library
