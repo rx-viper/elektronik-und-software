@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Flir_LEPTON
+D LWIR camera 8 to 14um 80x60 pixel
+K LWIR camera
+F https://cdn.sparkfun.com/datasheets/Sensors/Infrared/FLIR_Lepton_Data_Brief.pdf
+$ENDCMP
+#
+#End Doc Library

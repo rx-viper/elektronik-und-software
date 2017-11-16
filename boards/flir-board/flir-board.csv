@@ -1,0 +1,22 @@
+ID,Bezeichner,Gehäuse,Stückzahl,Bezeichnung,Anbieter und Ref.,,
+1,"C101,C102,C107,C108,C109",C_0603,5,10u 25V 0603,,x,5
+2,C103,C_0603,1,1u,,x,2
+3,C104,C_0805,1,10u,,x,1
+4,"C105,C106,C113,C114,C115",C_0603,5,100n,,x,5
+5,C110,C_1206,1,10u 1206,,x,1
+6,C111,C_0603,1,1u 0603,,x,so
+7,C112,C_0603,1,10n,,x,1
+8,D101,D_SMB_Standard,1,SMBJ3V3HE3,,x,1
+9,J101,Pin_Header_Straight_1x02_Pitch2.54mm,1,POWER,,no,
+10,J102,Pin_Header_Straight_1x02_Pitch2.54mm,1,I2C,,no,
+11,J103,Pin_Header_Straight_1x04_Pitch2.54mm,1,SPI,,no,
+12,J104,Pin_Header_Straight_1x01_Pitch2.54mm,1,GPIO3,,no,
+13,L101,L_7.3x7.3_H3.5,1,SRR0603-100ML,,x,1
+14,"R101,R102",R_1206,2,HEAT,,no,
+15,"R103,R105",R_0603,2,10k,,x,2
+16,R104,R_0603,1,100k,,x,1
+17,U101,SOT89-5_Housing,1,XC6220B281PR-G,,x,1
+18,U102,SOT89-5_Housing,1,XC6220B301PR-G,,x,1
+19,U103,SOT89-5_Housing,1,XC6222B121PR-G,,x,1
+20,U104,Molex_105028-1001,1,Flir_LEPTON,,x,1
+21,X101,xt23,1,ASTMHTE-25.000MHZ-ZJ-E,,x,1
