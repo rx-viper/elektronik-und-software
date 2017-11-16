@@ -3,7 +3,7 @@
   (general
     (links 124)
     (no_connects 0)
-    (area 144.449999 79.949999 170.050001 125.050001)
+    (area 135 75 180.557143 130.000001)
     (thickness 1.6)
     (drawings 48)
     (tracks 570)
@@ -13,6 +13,13 @@
   )
 
   (page A4)
+  (title_block
+    (title "Flir Board")
+    (date 2017-11-16)
+    (rev rev1)
+    (company VIPER)
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)
@@ -68,8 +75,8 @@
     (aux_axis_origin 0 0)
     (visible_elements FFFFFF7F)
     (pcbplotparams
-      (layerselection 0x00030_80000001)
-      (usegerberextensions false)
+      (layerselection 0x010fc_80000001)
+      (usegerberextensions true)
       (excludeedgelayer true)
       (linewidth 0.100000)
       (plotframeref false)
@@ -89,9 +96,9 @@
       (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
-      (drillshape 1)
+      (drillshape 0)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory gerber/))
   )
 
   (net 0 "")
