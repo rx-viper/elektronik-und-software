@@ -1,4 +1,4 @@
-update=Mi 15 Nov 2017 23:52:29 CET
+update=Do 16 Nov 2017 02:00:40 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,6 +59,6 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=sensors
-LibName31=lib/flir-lepton
-LibName32=lib/smd-oscillator
-LibName33=lib/XC622x
+LibName31=lib/smd-oscillator
+LibName32=lib/XC622x
+LibName33=lib/flir-lepton

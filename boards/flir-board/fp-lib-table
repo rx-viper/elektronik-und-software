@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name local-lib)(type KiCad)(uri "$(KIPRJMOD)/lib")(options "")(descr ""))
+  (lib (name rleh-oscillators)(type Github)(uri https://github.com/kicad-rleh/rleh-oscillators.pretty)(options "")(descr ""))
+)
