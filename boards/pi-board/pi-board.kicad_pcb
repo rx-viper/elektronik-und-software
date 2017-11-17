@@ -3,7 +3,7 @@
   (general
     (links 213)
     (no_connects 0)
-    (area 48.832999 32.319999 144.868001 80.730001)
+    (area 44.45 24.615 160.898 95.35)
     (thickness 1.6)
     (drawings 64)
     (tracks 1545)
@@ -15,8 +15,8 @@
   (page User 200 150.012)
   (title_block
     (title pi-board)
-    (date 2017-06-06)
-    (rev rev1)
+    (date 2017-11-17)
+    (rev rev2)
     (company VIPER)
   )
 
@@ -79,8 +79,8 @@
     (aux_axis_origin 0.013 0.01)
     (visible_elements FFFFFFFF)
     (pcbplotparams
-      (layerselection 0x00030_80000001)
-      (usegerberextensions false)
+      (layerselection 0x010f0_80000001)
+      (usegerberextensions true)
       (excludeedgelayer true)
       (linewidth 0.100000)
       (plotframeref false)
@@ -100,9 +100,9 @@
       (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
-      (drillshape 1)
+      (drillshape 0)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory gerber/))
   )
 
   (net 0 "")
@@ -2754,10 +2754,10 @@
     (arrow2a (pts (xy 48.908 27.315) (xy 50.034504 27.901421)))
     (arrow2b (pts (xy 48.908 27.315) (xy 50.034504 26.728579)))
   )
-  (gr_text rev1 (at 62.484 77.089) (layer F.SilkS) (tstamp 59550685)
+  (gr_text rev2 (at 62.484 77.089) (layer F.SilkS) (tstamp 59550685)
     (effects (font (size 3 3) (thickness 0.6)))
   )
-  (gr_text rev1 (at 70.104 67.437) (layer B.SilkS) (tstamp 59550674)
+  (gr_text rev2 (at 70.104 67.437) (layer B.SilkS) (tstamp 59550674)
     (effects (font (size 5 5) (thickness 0.85)) (justify mirror))
   )
   (gr_text "© Leonard Rapp" (at 121.412 74.168) (layer F.SilkS) (tstamp 5955066D)
@@ -5761,21 +5761,6 @@
         (xy 75.37 35.916491) (xy 70.22 35.916491) (xy 70.149589 35.562509) (xy 69.949074 35.262417) (xy 69.648982 35.061902)
         (xy 69.295 34.991491) (xy 68.941018 35.061902) (xy 68.640926 35.262417) (xy 68.440411 35.562509) (xy 68.37 35.916491)
         (xy 55.707698 35.916491) (xy 55.708628 34.852106) (xy 55.157917 33.519285) (xy 54.534721 32.895) (xy 61.854183 32.895)
-      )
-    )
-  )
-  (zone (net 0) (net_name "") (layer B.Mask) (tstamp 0) (hatch edge 0.508)
-    (connect_pads (clearance 0.508))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
-    (polygon
-      (pts
-        (xy 95.136 66.685) (xy 93.612 66.685) (xy 93.231 66.304) (xy 93.231 63.256) (xy 95.136 63.256)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 95.009 66.558) (xy 93.664606 66.558) (xy 93.358 66.251394) (xy 93.358 63.383) (xy 95.009 63.383)
       )
     )
   )
