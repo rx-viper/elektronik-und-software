@@ -44,12 +44,13 @@ LIBS:lt3592
 LIBS:ds26lv32at
 LIBS:drv8312
 LIBS:drv8332
+LIBS:cd40109b
 LIBS:powerboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 10
+Sheet 1 11
 Title "Powerboard overview"
 Date "2017-07-05"
 Rev "22"
@@ -92,13 +93,13 @@ $EndComp
 $Comp
 L GND #PWR03
 U 1 1 58871E64
-P 2800 4150
-F 0 "#PWR03" H 2800 3900 50  0001 C CNN
-F 1 "GND" H 2800 4000 50  0000 C CNN
-F 2 "" H 2800 4150 50  0000 C CNN
-F 3 "" H 2800 4150 50  0000 C CNN
-	1    2800 4150
-	1    0    0    -1  
+P 2950 3900
+F 0 "#PWR03" H 2950 3650 50  0001 C CNN
+F 1 "GND" H 2950 3750 50  0000 C CNN
+F 2 "" H 2950 3900 50  0000 C CNN
+F 3 "" H 2950 3900 50  0000 C CNN
+	1    2950 3900
+	0    -1   -1   0   
 $EndComp
 $Comp
 L +5V #PWR04
@@ -120,7 +121,7 @@ L Q_NMOS_GSD Q104
 U 1 1 5887C68D
 P 9150 1250
 F 0 "Q104" V 9050 1550 50  0000 R CNN
-F 1 "DMN6140L" V 9150 1750 50  0000 R CNN
+F 1 "PMV55ENEA" V 9150 1800 50  0000 R CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23" H 9350 1350 50  0001 C CNN
 F 3 "" H 9150 1250 50  0000 C CNN
 	1    9150 1250
@@ -285,22 +286,22 @@ F 1 "10k" V 2400 3900 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 2330 3900 50  0001 C CNN
 F 3 "" H 2400 3900 50  0000 C CNN
 	1    2400 3900
-	1    0    0    -1  
+	0    -1   -1   0   
 $EndComp
 $Comp
 L R R102
 U 1 1 58C8BE20
-P 2150 3650
-F 0 "R102" V 2230 3650 50  0000 C CNN
-F 1 "20k" V 2150 3650 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2080 3650 50  0001 C CNN
-F 3 "" H 2150 3650 50  0000 C CNN
-	1    2150 3650
+P 2000 3650
+F 0 "R102" V 2080 3650 50  0000 C CNN
+F 1 "20k" V 2000 3650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 1930 3650 50  0001 C CNN
+F 3 "" H 2000 3650 50  0000 C CNN
+	1    2000 3650
 	0    1    1    0   
 $EndComp
-Text Label 2000 4100 1    60   ~ 0
+Text Label 1850 4100 1    60   ~ 0
 RXSM_28V
-Text Notes 2300 3600 0    60   ~ 0
+Text Notes 2150 3600 0    60   ~ 0
 Battery\ncut off
 $Comp
 L CMC FL101
@@ -426,11 +427,11 @@ F8 "24V_BAT_1" I L 4200 3850 60
 F9 "24V_BAT_2" I L 4200 3950 60 
 F10 "24V_BAT_3" I L 4200 4050 60 
 $EndSheet
-Text Label 3650 4150 0    60   ~ 0
+Text Label 2350 4150 0    60   ~ 0
 Probe1_EN
-Text Label 3650 4250 0    60   ~ 0
+Text Label 2350 4250 0    60   ~ 0
 Probe2_EN
-Text Label 3650 4350 0    60   ~ 0
+Text Label 2350 4350 0    60   ~ 0
 Probe3_EN
 Text Label 6450 3950 2    60   ~ 0
 Probe1_Current
@@ -569,7 +570,7 @@ Text Label 4400 7400 0    60   ~ 0
 TX
 Text Label 4400 7500 0    60   ~ 0
 RX
-Text Notes 4050 4600 0    60   ~ 0
+Text Notes 4250 3650 0    60   ~ 0
 Heat probe connectors in sub-schematic
 $Comp
 L R R111
@@ -1023,12 +1024,12 @@ $EndComp
 $Comp
 L Q_NMOS_GSD Q102
 U 1 1 5940925F
-P 2700 3650
-F 0 "Q102" V 2950 3750 50  0000 R CNN
-F 1 "DMN6140L" V 2900 3500 50  0000 R CNN
-F 2 "TO_SOT_Packages_SMD:SOT-23" H 2900 3750 50  0001 C CNN
-F 3 "" H 2700 3650 50  0000 C CNN
-	1    2700 3650
+P 2550 3650
+F 0 "Q102" H 2950 3750 50  0000 R CNN
+F 1 "DMN6140L" H 3150 3550 50  0000 R CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 2750 3750 50  0001 C CNN
+F 3 "" H 2550 3650 50  0000 C CNN
+	1    2550 3650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1110,15 +1111,10 @@ Wire Wire Line
 Wire Wire Line
 	6950 2900 6450 2900
 Wire Wire Line
-	2300 3650 2500 3650
+	2150 3650 2350 3650
 Wire Wire Line
-	2400 3750 2400 3650
-Connection ~ 2400 3650
-Wire Wire Line
-	2400 4050 2800 4050
-Wire Wire Line
-	2800 3850 2800 4150
-Connection ~ 2800 4050
+	2250 3650 2250 3900
+Connection ~ 2250 3650
 Wire Wire Line
 	2450 950  2450 1200
 Wire Wire Line
@@ -1168,8 +1164,6 @@ Wire Wire Line
 	1850 2750 1850 3100
 Connection ~ 1850 3000
 Wire Wire Line
-	2100 3400 2100 3300
-Wire Wire Line
 	2600 2400 2600 2750
 Wire Wire Line
 	2600 2750 1850 2750
@@ -1194,11 +1188,11 @@ Wire Wire Line
 Wire Wire Line
 	6550 7400 5950 7400
 Wire Wire Line
-	3650 4150 4200 4150
+	2350 4150 2900 4150
 Wire Wire Line
-	3650 4250 4200 4250
+	2350 4250 2900 4250
 Wire Wire Line
-	3650 4350 4200 4350
+	2350 4350 2900 4350
 Wire Wire Line
 	5700 3950 6900 3950
 Wire Wire Line
@@ -1261,7 +1255,7 @@ Wire Wire Line
 Wire Wire Line
 	4800 7500 4400 7500
 Wire Wire Line
-	2000 3650 2000 4100
+	1850 3650 1850 4100
 Wire Wire Line
 	1050 950  1150 950 
 Wire Wire Line
@@ -1546,11 +1540,8 @@ Wire Wire Line
 	1500 3150 1350 3150
 Wire Wire Line
 	10100 1300 10300 1300
-Connection ~ 2100 3400
 Wire Wire Line
-	2800 3400 2800 3450
-Wire Wire Line
-	1850 3400 2800 3400
+	2650 3400 2650 3450
 Text Notes 1250 800  0    60   ~ 0
 Common mode chokes:\n2x Würth 744272471\nWE-SL5 SMD 470µH 1.6A
 $Comp
@@ -2430,4 +2421,32 @@ Wire Wire Line
 	6200 2100 6300 2100
 Wire Wire Line
 	6300 2100 6300 2200
+Wire Wire Line
+	1850 3400 2650 3400
+Wire Wire Line
+	2100 3300 2100 3400
+Connection ~ 2100 3400
+$Sheet
+S 2900 4050 750  400 
+U 5A16D393
+F0 "Powerboard_MOSFET_Driver" 39
+F1 "powerboard_mosfet_driver.sch" 39
+F2 "IN_A" I L 2900 4150 60 
+F3 "IN_B" I L 2900 4250 60 
+F4 "IN_C" I L 2900 4350 60 
+F6 "OUT_A" O R 3650 4150 60 
+F7 "OUT_B" O R 3650 4250 60 
+F8 "OUT_C" O R 3650 4350 60 
+$EndSheet
+Wire Wire Line
+	2550 3900 2950 3900
+Wire Wire Line
+	2650 3850 2650 3900
+Connection ~ 2650 3900
+Wire Wire Line
+	3650 4150 4200 4150
+Wire Wire Line
+	4200 4250 3650 4250
+Wire Wire Line
+	3650 4350 4200 4350
 $EndSCHEMATC
