@@ -61,12 +61,12 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 2750 1100 1900 200 
+S 3550 1050 1350 200 
 U 5886B9BC
-F0 "Powerboard Regulator 28V to 5V" 60
-F1 "powerboard_regulator_28V-to-5V.sch" 60
-F2 "RXSM_28V_IN" I L 2750 1200 60 
-F3 "5V_3A_OUT" I R 4650 1200 60 
+F0 "Powerboard Regulator 28V to 5V" 39
+F1 "powerboard_regulator_28V-to-5V.sch" 39
+F2 "RXSM_28V_IN" I L 3550 1150 60 
+F3 "5V_3A_OUT" I R 4900 1150 60 
 $EndSheet
 $Comp
 L GND #PWR01
@@ -82,12 +82,12 @@ $EndComp
 $Comp
 L +5V #PWR02
 U 1 1 5886FF1B
-P 4750 1200
-F 0 "#PWR02" H 4750 1050 50  0001 C CNN
-F 1 "+5V" H 4750 1340 50  0000 C CNN
-F 2 "" H 4750 1200 50  0000 C CNN
-F 3 "" H 4750 1200 50  0000 C CNN
-	1    4750 1200
+P 5000 1150
+F 0 "#PWR02" H 5000 1000 50  0001 C CNN
+F 1 "+5V" H 5000 1290 50  0000 C CNN
+F 2 "" H 5000 1150 50  0000 C CNN
+F 3 "" H 5000 1150 50  0000 C CNN
+	1    5000 1150
 	0    1    1    0   
 $EndComp
 $Comp
@@ -112,9 +112,9 @@ F 3 "" H 10100 1500 50  0000 C CNN
 	1    10100 1500
 	0    -1   -1   0   
 $EndComp
-Text Label 2250 1150 0    60   ~ 0
+Text Label 2500 1150 0    60   ~ 0
 RXSM_28V
-Text Label 2700 3000 0    60   ~ 0
+Text Label 2500 3000 0    60   ~ 0
 BAT_10V
 $Comp
 L Q_NMOS_GSD Q104
@@ -188,22 +188,11 @@ F 3 "" H 7350 5950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C107
-U 1 1 588B4816
-P 8150 5950
-F 0 "C107" H 8175 6050 50  0000 L CNN
-F 1 "100n" H 8175 5850 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 8188 5800 50  0001 C CNN
-F 3 "" H 8150 5950 50  0000 C CNN
-	1    8150 5950
-	1    0    0    -1  
-$EndComp
-$Comp
 L CP C108
 U 1 1 588B4932
 P 8400 5950
 F 0 "C108" H 8425 6050 50  0000 L CNN
-F 1 "10µ" H 8425 5850 50  0000 L CNN
+F 1 "22µ Tantal" H 8425 5850 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805" H 8438 5800 50  0001 C CNN
 F 3 "" H 8400 5950 50  0000 C CNN
 	1    8400 5950
@@ -319,16 +308,14 @@ $EndComp
 $Comp
 L CP C102
 U 1 1 58C8D570
-P 2450 1350
-F 0 "C102" H 2475 1450 50  0000 L CNN
-F 1 "47µ" H 2475 1250 50  0000 L CNN
-F 2 "Capacitors_SMD:C_1206" H 2488 1200 50  0001 C CNN
-F 3 "" H 2450 1350 50  0000 C CNN
-	1    2450 1350
+P 2750 1350
+F 0 "C102" H 2775 1450 50  0000 L CNN
+F 1 "4µ7 0805 50V" H 2800 1050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206" H 2788 1200 50  0001 C CNN
+F 3 "" H 2750 1350 50  0000 C CNN
+	1    2750 1350
 	1    0    0    -1  
 $EndComp
-Text Notes 2450 1000 0    49   ~ 0
-Max. input capacity on \nRXSM 28V: 100µF\n\nDon't assemble input \ncapacitors >1µF in voltage \nregulator sub-schematics!
 $Comp
 L CMC FL102
 U 1 1 58C97BBF
@@ -343,14 +330,14 @@ F 5 "Passive" H 2330 2540 50  0001 C CNN "Family"
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 2700 2100 1500 400 
+S 3000 2100 1500 400 
 U 58C99165
-F0 "Powerboard Battery Charging" 60
-F1 "powerboard_battery_charging.sch" 60
-F2 "battery" I L 2700 2400 60 
-F3 "charge_power" I L 2700 2200 60 
-F4 "charge_status" I R 4200 2200 60 
-F5 "charge_enable" I R 4200 2400 60 
+F0 "Powerboard Battery Charging" 39
+F1 "powerboard_battery_charging.sch" 39
+F2 "battery" I L 3000 2400 60 
+F3 "charge_power" I L 3000 2200 60 
+F4 "charge_status" I R 4500 2200 60 
+F5 "charge_enable" I R 4500 2400 60 
 $EndSheet
 $Comp
 L Q_PMOS_GDS Q101
@@ -363,13 +350,13 @@ F 3 "" H 2100 3100 50  0000 C CNN
 	1    2100 3100
 	0    1    -1   0   
 $EndComp
-Text Label 4900 2200 2    60   ~ 0
+Text Label 5200 2200 2    60   ~ 0
 Charge_status
 Text Label 1750 3000 2    60   ~ 0
 BAT_raw
 Text Label 2500 3250 0    60   ~ 0
 Boost24V_EN
-Text Label 4900 2400 2    60   ~ 0
+Text Label 5200 2400 2    60   ~ 0
 Charge_EN
 $Sheet
 S 4800 6500 1150 500 
@@ -1087,13 +1074,9 @@ Connection ~ 7350 6200
 Connection ~ 7750 6200
 Wire Wire Line
 	8400 6200 8400 6100
-Wire Wire Line
-	8150 6100 8150 6200
 Connection ~ 8150 6200
 Wire Wire Line
 	8050 5700 8500 5700
-Wire Wire Line
-	8150 5700 8150 5800
 Wire Wire Line
 	8400 5700 8400 5800
 Connection ~ 8150 5700
@@ -1115,13 +1098,6 @@ Wire Wire Line
 Wire Wire Line
 	2250 3650 2250 3900
 Connection ~ 2250 3650
-Wire Wire Line
-	2450 950  2450 1200
-Wire Wire Line
-	2650 1150 2650 1600
-Wire Wire Line
-	2650 1200 2750 1200
-Connection ~ 2450 1150
 Wire Wire Line
 	2200 1350 2250 1350
 Wire Wire Line
@@ -1153,24 +1129,11 @@ Wire Wire Line
 	2250 2150 2250 2050
 Connection ~ 2250 2450
 Wire Wire Line
-	2600 1850 2600 2200
-Wire Wire Line
-	2600 2200 2700 2200
-Wire Wire Line
-	2700 2400 2600 2400
-Wire Wire Line
 	2300 3000 3100 3000
 Wire Wire Line
-	1850 2750 1850 3100
-Connection ~ 1850 3000
+	4500 2200 5200 2200
 Wire Wire Line
-	2600 2400 2600 2750
-Wire Wire Line
-	2600 2750 1850 2750
-Wire Wire Line
-	4200 2200 4900 2200
-Wire Wire Line
-	4200 2400 4900 2400
+	4500 2400 5200 2400
 Wire Wire Line
 	5950 6600 6550 6600
 Wire Wire Line
@@ -1275,12 +1238,12 @@ Connection ~ 1150 2250
 Wire Wire Line
 	2400 2450 2400 2400
 Wire Wire Line
-	2250 2050 2600 2050
+	2250 2050 2950 2050
 Wire Wire Line
 	2400 1950 2400 2100
 Connection ~ 2400 2050
 Wire Wire Line
-	2200 1150 2650 1150
+	2200 1150 3550 1150
 Wire Wire Line
 	2000 1050 2000 1150
 Wire Wire Line
@@ -1387,12 +1350,12 @@ Wire Wire Line
 Wire Wire Line
 	10500 3100 10050 3100
 Wire Wire Line
-	2250 1600 2450 1600
+	2250 1600 3300 1600
 Wire Wire Line
 	2450 1500 2450 1700
 Connection ~ 2450 1600
 Wire Wire Line
-	4750 1200 4650 1200
+	5000 1150 4900 1150
 Wire Wire Line
 	950  7600 850  7600
 Wire Wire Line
@@ -1542,7 +1505,7 @@ Wire Wire Line
 	10100 1300 10300 1300
 Wire Wire Line
 	2650 3400 2650 3450
-Text Notes 1250 800  0    60   ~ 0
+Text Notes 550  750  0    60   ~ 0
 Common mode chokes:\n2x Würth 744272471\nWE-SL5 SMD 470µH 1.6A
 $Comp
 L C C106
@@ -2062,43 +2025,40 @@ Wire Wire Line
 $Comp
 L LED D101
 U 1 1 595CC8D4
-P 3350 1600
-F 0 "D101" H 3350 1700 50  0000 C CNN
-F 1 "RX-PW" H 3350 1500 50  0000 C CNN
-F 2 "LEDs:LED_0603" H 3350 1600 50  0001 C CNN
-F 3 "" H 3350 1600 50  0001 C CNN
-	1    3350 1600
+P 4550 1600
+F 0 "D101" H 4550 1700 50  0000 C CNN
+F 1 "RX-PW" H 4550 1500 50  0000 C CNN
+F 2 "LEDs:LED_0603" H 4550 1600 50  0001 C CNN
+F 3 "" H 4550 1600 50  0001 C CNN
+	1    4550 1600
 	-1   0    0    1   
 $EndComp
 $Comp
 L R R125
 U 1 1 595CCB2F
-P 2950 1600
-F 0 "R125" V 3030 1600 50  0000 C CNN
-F 1 "10k" V 2950 1600 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2880 1600 50  0001 C CNN
-F 3 "" H 2950 1600 50  0001 C CNN
-	1    2950 1600
+P 4150 1600
+F 0 "R125" V 4230 1600 50  0000 C CNN
+F 1 "10k" V 4150 1600 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4080 1600 50  0001 C CNN
+F 3 "" H 4150 1600 50  0001 C CNN
+	1    4150 1600
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2650 1600 2800 1600
-Connection ~ 2650 1200
-Wire Wire Line
-	3100 1600 3200 1600
+	4300 1600 4400 1600
 $Comp
 L GND #PWR032
 U 1 1 595CD2B4
-P 3600 1600
-F 0 "#PWR032" H 3600 1350 50  0001 C CNN
-F 1 "GND" H 3600 1450 50  0000 C CNN
-F 2 "" H 3600 1600 50  0000 C CNN
-F 3 "" H 3600 1600 50  0000 C CNN
-	1    3600 1600
+P 4800 1600
+F 0 "#PWR032" H 4800 1350 50  0001 C CNN
+F 1 "GND" H 4800 1450 50  0000 C CNN
+F 2 "" H 4800 1600 50  0000 C CNN
+F 3 "" H 4800 1600 50  0000 C CNN
+	1    4800 1600
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	3600 1600 3500 1600
+	4800 1600 4700 1600
 $Comp
 L LED D103
 U 1 1 595D8360
@@ -2122,54 +2082,46 @@ F 3 "" H 3300 2750 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2700 2750 3150 2750
-Wire Wire Line
 	3450 2750 3550 2750
 Wire Wire Line
 	3950 2750 3850 2750
-Wire Wire Line
-	2700 2750 2700 3000
-Connection ~ 2700 3000
 $Comp
 L LED D102
 U 1 1 595DA1BD
-P 3350 1850
-F 0 "D102" H 3350 1950 50  0000 C CNN
-F 1 "RX-CHG" H 3350 1750 50  0000 C CNN
-F 2 "LEDs:LED_0603" H 3350 1850 50  0001 C CNN
-F 3 "" H 3350 1850 50  0001 C CNN
-	1    3350 1850
+P 4550 1850
+F 0 "D102" H 4550 1950 50  0000 C CNN
+F 1 "RX-CHG" H 4550 1750 50  0000 C CNN
+F 2 "LEDs:LED_0603" H 4550 1850 50  0001 C CNN
+F 3 "" H 4550 1850 50  0001 C CNN
+	1    4550 1850
 	-1   0    0    1   
 $EndComp
 $Comp
 L R R126
 U 1 1 595DA1C3
-P 2950 1850
-F 0 "R126" V 3030 1850 50  0000 C CNN
-F 1 "10k" V 2950 1850 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2880 1850 50  0001 C CNN
-F 3 "" H 2950 1850 50  0001 C CNN
-	1    2950 1850
+P 4150 1850
+F 0 "R126" V 4230 1850 50  0000 C CNN
+F 1 "10k" V 4150 1850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4080 1850 50  0001 C CNN
+F 3 "" H 4150 1850 50  0001 C CNN
+	1    4150 1850
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2600 1850 2800 1850
-Wire Wire Line
-	3100 1850 3200 1850
+	4300 1850 4400 1850
 $Comp
 L GND #PWR033
 U 1 1 595DA1CB
-P 3600 1850
-F 0 "#PWR033" H 3600 1600 50  0001 C CNN
-F 1 "GND" H 3600 1700 50  0000 C CNN
-F 2 "" H 3600 1850 50  0000 C CNN
-F 3 "" H 3600 1850 50  0000 C CNN
-	1    3600 1850
+P 4800 1850
+F 0 "#PWR033" H 4800 1600 50  0001 C CNN
+F 1 "GND" H 4800 1700 50  0000 C CNN
+F 2 "" H 4800 1850 50  0000 C CNN
+F 3 "" H 4800 1850 50  0000 C CNN
+	1    4800 1850
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	3600 1850 3500 1850
-Connection ~ 2600 2050
+	4800 1850 4700 1850
 $Comp
 L GNDPWR #PWR034
 U 1 1 595E8E41
@@ -2197,16 +2149,14 @@ Wire Wire Line
 $Comp
 L TEST TP101
 U 1 1 595ECBCF
-P 2250 950
-F 0 "TP101" H 2250 1250 50  0000 C BNN
-F 1 "28V" H 2250 1200 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2250 950 50  0001 C CNN
-F 3 "" H 2250 950 50  0001 C CNN
-	1    2250 950 
-	0    -1   -1   0   
+P 2450 1100
+F 0 "TP101" H 2450 1400 50  0000 C BNN
+F 1 "28V" H 2450 1350 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2450 1100 50  0001 C CNN
+F 3 "" H 2450 1100 50  0001 C CNN
+	1    2450 1100
+	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2250 950  2450 950 
 $Comp
 L TEST TP110
 U 1 1 595EFF6F
@@ -2449,4 +2399,100 @@ Wire Wire Line
 	4200 4250 3650 4250
 Wire Wire Line
 	3650 4350 4200 4350
+Wire Wire Line
+	8150 6100 8150 6200
+Wire Wire Line
+	8150 5700 8150 5800
+$Comp
+L C C107
+U 1 1 588B4816
+P 8150 5950
+F 0 "C107" H 8175 6050 50  0000 L CNN
+F 1 "100n" H 8175 5850 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 8188 5800 50  0001 C CNN
+F 3 "" H 8150 5950 50  0000 C CNN
+	1    8150 5950
+	1    0    0    -1  
+$EndComp
+Text Notes 2550 650  0    49   ~ 0
+Max. input capacity on \nRXSM 28V: 100µF
+Wire Wire Line
+	3150 2750 3050 2750
+Wire Wire Line
+	3050 2750 3050 3000
+Connection ~ 3050 3000
+Wire Wire Line
+	1850 2800 1850 3100
+Connection ~ 1850 3000
+Wire Wire Line
+	1850 2800 2950 2800
+Wire Wire Line
+	2950 2800 2950 2400
+Wire Wire Line
+	2950 2400 3000 2400
+Wire Wire Line
+	4000 1850 2950 1850
+Wire Wire Line
+	2950 1850 2950 2200
+Wire Wire Line
+	2950 2200 3000 2200
+Connection ~ 2950 2050
+Wire Wire Line
+	3500 1150 3500 1600
+Wire Wire Line
+	3500 1600 4000 1600
+$Comp
+L CP C?
+U 1 1 5A1AEBFA
+P 2450 1350
+F 0 "C?" V 2400 1150 50  0000 L CNN
+F 1 "50SVPK22M" V 2600 1100 50  0000 L CNN
+F 2 "" H 2488 1200 50  0001 C CNN
+F 3 "" H 2450 1350 50  0001 C CNN
+	1    2450 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 1600 2750 1500
+Wire Wire Line
+	2750 1150 2750 1200
+Connection ~ 3500 1150
+Connection ~ 2750 1150
+$Comp
+L C C?
+U 1 1 5A1AFE99
+P 3000 1350
+F 0 "C?" H 3025 1450 50  0000 L CNN
+F 1 "100n" V 3050 1100 50  0000 L CNN
+F 2 "" H 3038 1200 50  0001 C CNN
+F 3 "" H 3000 1350 50  0001 C CNN
+	1    3000 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 1600 3000 1500
+Connection ~ 2750 1600
+Wire Wire Line
+	3000 1200 3000 1150
+Connection ~ 3000 1150
+$Comp
+L D_Zener D?
+U 1 1 5A1B06A8
+P 3300 1350
+F 0 "D?" H 3300 1450 50  0000 C CNN
+F 1 "SMAJ36A" H 3300 1250 50  0000 C CNN
+F 2 "" H 3300 1350 50  0001 C CNN
+F 3 "" H 3300 1350 50  0001 C CNN
+	1    3300 1350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3300 1200 3300 1150
+Connection ~ 3300 1150
+Wire Wire Line
+	3300 1600 3300 1500
+Connection ~ 3000 1600
+Wire Wire Line
+	2450 1100 2450 1200
+Connection ~ 2450 1150
 $EndSCHEMATC
