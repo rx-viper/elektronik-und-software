@@ -52,8 +52,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 9 11
 Title ""
-Date ""
-Rev "20"
+Date "2017-11-23"
+Rev "rev10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -241,8 +241,8 @@ L C C1003
 U 1 1 58F8D464
 P 7150 3800
 F 0 "C1003" H 7175 3900 50  0000 L CNN
-F 1 "4µ7" H 7175 3700 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 7188 3650 50  0001 C CNN
+F 1 "4µ7 0805 50V" H 7175 3700 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 7188 3650 50  0001 C CNN
 F 3 "" H 7150 3800 50  0001 C CNN
 	1    7150 3800
 	1    0    0    -1  
@@ -252,10 +252,10 @@ Wire Wire Line
 	7150 4400 7150 3950
 Connection ~ 5650 4400
 $Comp
-L GND #PWR092
+L GND #PWR097
 U 1 1 58F8D528
 P 4400 4500
-F 0 "#PWR092" H 4400 4250 50  0001 C CNN
+F 0 "#PWR097" H 4400 4250 50  0001 C CNN
 F 1 "GND" H 4400 4350 50  0000 C CNN
 F 2 "" H 4400 4500 50  0001 C CNN
 F 3 "" H 4400 4500 50  0001 C CNN
@@ -263,10 +263,10 @@ F 3 "" H 4400 4500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR093
+L GND #PWR098
 U 1 1 58F8D9DF
 P 3600 2750
-F 0 "#PWR093" H 3600 2500 50  0001 C CNN
+F 0 "#PWR098" H 3600 2500 50  0001 C CNN
 F 1 "GND" H 3600 2600 50  0000 C CNN
 F 2 "" H 3600 2750 50  0001 C CNN
 F 3 "" H 3600 2750 50  0001 C CNN
@@ -275,7 +275,7 @@ F 3 "" H 3600 2750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3600 2750 3600 2850
-Text Notes 7400 3900 0    60   ~ 0
+Text Notes 7700 3600 0    60   ~ 0
 Datasheet: I_bright = 200mV / R_sense\n\n100mA = 200mV / 2 Ω
 Text Notes 4000 5250 0    60   ~ 0
 ToDo: Recalculate (depends on number of LEDs and LED current)

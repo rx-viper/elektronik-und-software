@@ -52,8 +52,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 11
 Title "Powerboard 5V regulator"
-Date "2017-03-14"
-Rev "20"
+Date "2017-11-23"
+Rev "rev10"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -109,7 +109,7 @@ L R R203
 U 1 1 588682F3
 P 5100 3350
 F 0 "R203" V 5180 3350 50  0000 C CNN
-F 1 "100k" V 5100 3350 50  0000 C CNN
+F 1 "43k2" V 5100 3350 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 5030 3350 50  0001 C CNN
 F 3 "" H 5100 3350 50  0000 C CNN
 	1    5100 3350
@@ -198,7 +198,7 @@ U 1 1 58868D2E
 P 7350 3500
 F 0 "C206" H 7375 3600 50  0000 L CNN
 F 1 "100µ/10V" H 7375 3400 50  0000 L CNN
-F 2 "Capacitors_SMD:C_1812_HandSoldering" H 7388 3350 50  0001 C CNN
+F 2 "Capacitors_SMD:C_1812" H 7388 3350 50  0001 C CNN
 F 3 "" H 7350 3500 50  0000 C CNN
 	1    7350 3500
 	1    0    0    -1  
