@@ -265,39 +265,6 @@ F 3 "" H 3050 5300 50  0000 C CNN
 	1    3050 5300
 	0    1    1    0   
 $EndComp
-$Comp
-L R R804
-U 1 1 58F51B6E
-P 3550 2750
-F 0 "R804" V 3630 2750 50  0000 C CNN
-F 1 "100k" V 3550 2750 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 3480 2750 50  0001 C CNN
-F 3 "" H 3550 2750 50  0000 C CNN
-	1    3550 2750
-	0    1    1    0   
-$EndComp
-$Comp
-L R R805
-U 1 1 58F51B75
-P 3550 4200
-F 0 "R805" V 3630 4200 50  0000 C CNN
-F 1 "100k" V 3550 4200 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 3480 4200 50  0001 C CNN
-F 3 "" H 3550 4200 50  0000 C CNN
-	1    3550 4200
-	0    1    1    0   
-$EndComp
-$Comp
-L R R806
-U 1 1 58F51B7C
-P 3550 5600
-F 0 "R806" V 3630 5600 50  0000 C CNN
-F 1 "100k" V 3550 5600 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 3480 5600 50  0001 C CNN
-F 3 "" H 3550 5600 50  0000 C CNN
-	1    3550 5600
-	0    1    1    0   
-$EndComp
 Text Notes 4100 6350 0    60   ~ 0
 3x decoupling capacitors for ACS711
 Text HLabel 2200 2450 0    60   Input ~ 0
@@ -403,37 +370,13 @@ Wire Wire Line
 Wire Wire Line
 	3500 2450 3200 2450
 Wire Wire Line
-	3400 2750 3300 2750
-Wire Wire Line
-	3300 2750 3300 2450
-Connection ~ 3300 2450
-Wire Wire Line
-	3700 4200 5150 4200
-Wire Wire Line
 	3800 3900 3800 4200
 Wire Wire Line
 	3500 3900 3200 3900
 Wire Wire Line
-	3300 3900 3300 4200
-Wire Wire Line
-	3300 4200 3400 4200
-Connection ~ 3300 3900
-Wire Wire Line
-	3700 5600 5150 5600
-Wire Wire Line
 	3800 5300 3800 5600
 Wire Wire Line
 	3500 5300 3200 5300
-Wire Wire Line
-	3300 5300 3300 5600
-Wire Wire Line
-	3300 5600 3400 5600
-Connection ~ 3300 5300
-Connection ~ 3800 5600
-Connection ~ 3800 4200
-Connection ~ 3800 2750
-Wire Wire Line
-	3700 2750 5150 2750
 Wire Wire Line
 	5150 2650 5050 2650
 Wire Wire Line
@@ -795,4 +738,10 @@ Wire Wire Line
 	9650 2250 9650 2200
 Wire Wire Line
 	9650 2200 9550 2200
+Wire Wire Line
+	3800 5600 5150 5600
+Wire Wire Line
+	3800 4200 5150 4200
+Wire Wire Line
+	3800 2750 5150 2750
 $EndSCHEMATC
