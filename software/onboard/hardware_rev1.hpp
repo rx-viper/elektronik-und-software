@@ -236,9 +236,9 @@ namespace Motor {
 	using PwmU			= PcbSignals::PhaseUP;
 	using PwmV			= PcbSignals::PhaseVP;
 	using PwmW			= PcbSignals::PhaseWP;
-	using ResetU		= PcbSignals::PhaseUN;
-	using ResetV		= PcbSignals::PhaseVN;
-	using ResetW		= PcbSignals::PhaseWN;
+	using ResetU		= xpcc::GpioInverted<PcbSignals::PhaseUN>;
+	using ResetV		= xpcc::GpioInverted<PcbSignals::PhaseVN>;
+	using ResetW		= xpcc::GpioInverted<PcbSignals::PhaseWN>;
 
 	using MotorTimer	= Timer1;
 
@@ -248,6 +248,7 @@ namespace Motor {
 
 	//using HallTimer		= Timer8;
 	constexpr uint8_t HallInterruptPriority	= 12;
+	constexpr uint16_t MaxPwm{0x1FFu}; // 9 bit PWM
 
 	using EndSwitch		= GpioInputC5;
 
@@ -259,11 +260,11 @@ namespace Motor {
 		                    MotorTimer::SlaveMode::Disabled,
 		                    MotorTimer::SlaveModeTrigger::Internal0,
 		                    MotorTimer::MasterMode::CompareOc1Ref);
-		// MotorTimer clock: APB2 clock (90MHz)
+		// MotorTimer clock: APB2 timer clock (180MHz)
 		MotorTimer::setPrescaler(1);
-		// Prescaler: 1 -> Timer counter frequency: 90MHz
-		MotorTimer::setOverflow(0xFF); // 8 bit PWM
-		// Pwm frequency: 90MHz / 256 = 350kHz
+		// Prescaler: 1 -> Timer counter frequency: 180MHz
+		MotorTimer::setOverflow(MaxPwm); // 9 bit PWM
+		// Pwm frequency: 180MHz / 512 = 350kHz
 		MotorTimer::disableCaptureComparePreloadedControl();
 		MotorTimer::configureOutputChannel(1, MotorTimer::OutputCompareMode::Pwm2, 0xFF);
 		MotorTimer::configureOutputChannel(2, MotorTimer::OutputCompareMode::Pwm2, 0xFF);
@@ -274,6 +275,10 @@ namespace Motor {
 		PwmU::connect(MotorTimer::Channel1);
 		PwmV::connect(MotorTimer::Channel2);
 		PwmW::connect(MotorTimer::Channel3);
+
+		ResetU::setOutput(true);
+		ResetV::setOutput(true);
+		ResetW::setOutput(true);
 	}
 
 	inline void
