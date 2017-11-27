@@ -2,6 +2,6 @@
   (lib (name rleh-oscillators)(type Github)(uri https://github.com/kicad-rleh/rleh-oscillators.pretty)(options "")(descr ""))
   (lib (name Connectors)(type Github)(uri https://github.com/kicad/Connectors.pretty)(options "")(descr ""))
   (lib (name L_Coilcraft)(type Github)(uri https://github.com/kicad-rleh/L_Coilcraft.pretty)(options "")(descr ""))
-  (lib (name D-Sub-HD)(type Github)(uri https://github.com/kicad-rleh/D-Sub-HD.pretty)(options "")(descr ""))
   (lib (name D-Sub)(type Github)(uri https://github.com/kicad-rleh/D-Sub.pretty)(options "")(descr ""))
+  (lib (name D-Sub-HD)(type Github)(uri https://github.com/kicad-rleh/D-Sub-HD.pretty)(options "")(descr ""))
 )
