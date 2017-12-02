@@ -188,7 +188,7 @@ Variant<Types...>::~Variant()
 template<typename... Types>
 Variant<Types...>::Variant(const Variant<Types...>& other)
 {
-	Helper::copy(typeIndex, &other.data, &data);
+	Helper::copy(other.typeIndex, &other.data, &data);
 	typeIndex = other.typeIndex;
 }
 
@@ -198,7 +198,7 @@ Variant<Types...>& Variant<Types...>::operator=(const Variant<Types...>& other)
 	if(this != &other) {
 		// TODO: optimization: use copy assignment if both variants hold the same type
 		destructElement();
-		Helper::copy(typeIndex, &other.data, &data);
+		Helper::copy(other.typeIndex, &other.data, &data);
 		typeIndex = other.typeIndex;
 	}
 	return *this;
@@ -207,7 +207,7 @@ Variant<Types...>& Variant<Types...>::operator=(const Variant<Types...>& other)
 template<typename... Types>
 Variant<Types...>::Variant(Variant<Types...>&& other)
 {
-	Helper::move(typeIndex, &other.data, &data);
+	Helper::move(other.typeIndex, &other.data, &data);
 	typeIndex = other.typeIndex;
 }
 
@@ -217,7 +217,7 @@ Variant<Types...>& Variant<Types...>::operator=(Variant<Types...>&& other)
 	if(this != &other) {
 		// TODO: optimization: use move-assignment if both variants hold the same type
 		destructElement();
-		Helper::move(typeIndex, &other.data, &data);
+		Helper::move(other.typeIndex, &other.data, &data);
 		typeIndex = other.typeIndex;
 	}
 
