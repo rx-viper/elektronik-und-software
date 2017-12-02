@@ -166,7 +166,7 @@ template<typename... Types>
 template<typename T, typename >
 Variant<Types...>::Variant(T&& element)
 {
-	// If a non-const lvalue reference is passed to this function,
+	// If an lvalue is passed to this function,
 	// T will be deduced as reference type. Thus remove_reference_t
 	// must be applied to T.
 	using Type = std::remove_reference_t<T>;
@@ -228,7 +228,7 @@ template<typename... Types>
 template<typename T, typename>
 T& Variant<Types...>::operator=(T&& element)
 {
-	// If a non-const lvalue reference is passed to this function,
+	// If an lvalue is passed to this function,
 	// T will be deduced as reference type. Thus remove_reference_t
 	// must be applied to T.
 	using Type = std::remove_reference_t<T>;
