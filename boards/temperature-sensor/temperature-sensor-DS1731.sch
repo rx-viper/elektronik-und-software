@@ -38,7 +38,7 @@ encoding utf-8
 Sheet 1 1
 Title "Temperature Sensor Board (Structure, Battery, ...)"
 Date "2017-05-22"
-Rev "1"
+Rev "2"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
