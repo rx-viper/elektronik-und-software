@@ -34,9 +34,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "camera light"
-Date "2017-04-13"
-Rev "01"
+Title "Camera light 2"
+Date "2017-08-23"
+Rev "2"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""

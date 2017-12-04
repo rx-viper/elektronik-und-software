@@ -1,4 +1,4 @@
-update=Tue 30 May 2017 05:02:09 PM CEST
+update=Mo 04 Dez 2017 02:09:42 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,7 +61,7 @@ version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=../../docs/boards/camera-light/schematic/
+PlotDirectoryName=../../docs/boards/camera-light-2/schematic/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=
