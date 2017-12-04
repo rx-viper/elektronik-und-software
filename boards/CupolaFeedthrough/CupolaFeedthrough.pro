@@ -1,4 +1,4 @@
-update=Do 26 Okt 2017 21:58:46 CEST
+update=Mo 04 Dez 2017 02:12:34 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,7 +61,7 @@ version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=
+PlotDirectoryName=../../docs/boards/cupola-feedthrough/schematic/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=
