@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-<svg width="58cm" height="45cm" viewBox="3 47 1145 887" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="53cm" height="26cm" viewBox="101 47 1046 505" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="725" y="59">
     <tspan x="725" y="59">last datapoint older than 1 second?</tspan>
   </text>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="474.29,105.362 653.145,105.362 653.145,106 827.528,106 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="424.49,106.01 628.245,106.01 628.245,106 827.528,106 "/>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="819.764,111 829.764,106 819.764,101 "/>
   </g>
   <g>
@@ -34,71 +34,11 @@
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="737.286,298.5 727.286,303.5 737.286,308.5 "/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="131.203" y="472.912" width="100.1" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="131.203" y="472.912" width="100.1" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="181.253" y="494.812">
-      <tspan x="181.253" y="494.812">classify data</tspan>
-    </text>
-  </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="181.253" y1="508.912" x2="182.126" y2="568.296"/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="176.941,555.723 182.176,571.648 186.94,555.576 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="181.74" y="537.956">{measurement data}</text>
-  </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="231.302" y1="490.912" x2="384.497" y2="492.828"/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="371.788,497.67 387.85,492.87 371.913,487.67 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="231.202" y="472.912">{signal / command}</text>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="121.725" y="655.912" width="121.25" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="121.725" y="655.912" width="121.25" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="182.35" y="677.812">
-      <tspan x="182.35" y="677.812">update digrams</tspan>
-    </text>
-  </g>
-  <g>
-    <polygon style="fill: #ffffff" points="391.202,492.912 411.202,472.912 431.202,492.912 411.202,512.912 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="391.202,492.912 411.202,472.912 431.202,492.912 411.202,512.912 "/>
-  </g>
-  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="383.202" y="459.912">
-    <tspan x="383.202" y="459.912">critical?</tspan>
-  </text>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="431.202" y1="492.912" x2="524.498" y2="491.046"/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="511.953,496.298 527.85,490.979 511.753,486.3 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="451.202" y="471.912">{yes}</text>
-  </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="411.202" y1="512.912" x2="414.645" y2="732.296"/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="409.447,719.728 414.697,735.648 419.446,719.571 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="429.814" y="625.958">{no}</text>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="581.738" y="761.506" width="92.65" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="581.738" y="761.506" width="92.65" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="628.063" y="783.406">
-      <tspan x="628.063" y="783.406">write to log</tspan>
-    </text>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="531.202" y="472.912" width="139.55" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="531.202" y="472.912" width="139.55" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="600.977" y="494.812">
-      <tspan x="600.977" y="494.812">write to critical log</tspan>
-    </text>
-  </g>
-  <g>
     <rect style="fill: #ffffff" x="974" y="88" width="172.35" height="36" rx="20" ry="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="974" y="88" width="172.35" height="36" rx="20" ry="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1060.18" y="109.9">
       <tspan x="1060.18" y="109.9">set status disconnected</tspan>
     </text>
-  </g>
-  <ellipse style="fill: #000000" cx="20.7492" cy="490.912" rx="10" ry="10"/>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="30.7492,490.912 40.7492,490.912 121.203,490.912 126.731,490.912 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="118.967,495.912 128.967,490.912 118.967,485.912 "/>
   </g>
   <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1060.18,124 1060.18,134 1060.18,278.5 1060.18,284.028 "/>
@@ -128,132 +68,164 @@
   </g>
   <rect style="fill: #000000" x="530" y="229" width="82" height="8"/>
   <g>
-    <rect style="fill: #ffffff" x="516" y="150" width="108.8" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="516" y="150" width="108.8" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="570.4" y="171.9">
-      <tspan x="570.4" y="171.9">wait 1 second</tspan>
+    <rect style="fill: #ffffff" x="516.917" y="150" width="108.8" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="516.917" y="150" width="108.8" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="571.317" y="171.9">
+      <tspan x="571.317" y="171.9">wait 1 second</tspan>
     </text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="571,229 571,207.5 570.4,207.5 570.4,190.472 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="575.4,198.236 570.4,188.236 565.4,198.236 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="571,229 571,207.5 571.317,207.5 571.317,190.472 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="576.317,198.236 571.317,188.236 566.317,198.236 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="570.4,150 570.4,128.5 571,128.5 571,111.472 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="576,119.236 571,109.236 566,119.236 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="571.317,150 571.317,128.341 570.781,128.341 570.781,111.154 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="575.781,118.918 570.781,108.918 565.781,118.918 "/>
+  </g>
+  <ellipse style="fill: #000000" cx="152.816" cy="288.264" rx="10" ry="10"/>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="163.821,288.264 187.706,288.264 187.706,288.011 207.119,288.011 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="199.355,293.011 209.355,288.011 199.355,283.011 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="670.752,490.912 742.138,490.912 742.138,553.77 809.052,553.77 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="801.289,558.77 811.289,553.77 801.289,548.77 "/>
-  </g>
-  <ellipse style="fill: #000000" cx="14.8156" cy="105.264" rx="10" ry="10"/>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="25.821,105.264 49.7059,105.264 49.7059,105.011 69.1187,105.011 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="61.3547,110.011 71.3547,105.011 61.3547,100.011 "/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="204.146" y="87.011" width="80" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="204.146" y="87.011" width="80" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="244.146" y="108.911">
-      <tspan x="244.146" y="108.911">start log</tspan>
+    <rect style="fill: #ffffff" x="333.146" y="270.011" width="80" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="333.146" y="270.011" width="80" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="373.146" y="291.911">
+      <tspan x="373.146" y="291.911">start log</tspan>
     </text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="153.591,105.011 163.591,105.011 194.146,105.011 199.674,105.011 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="191.91,110.011 201.91,105.011 191.91,100.011 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="291.591,288.011 301.591,288.011 323.146,288.011 328.674,288.011 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="320.91,293.011 330.91,288.011 320.91,283.011 "/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="73.5908" y="87.011" width="80" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="73.5908" y="87.011" width="80" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="113.591" y="108.911">
-      <tspan x="113.591" y="108.911">init UI</tspan>
+    <rect style="fill: #ffffff" x="211.591" y="270.011" width="80" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="211.591" y="270.011" width="80" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="251.591" y="291.911">
+      <tspan x="251.591" y="291.911">init UI</tspan>
     </text>
   </g>
-  <rect style="fill: #000000" x="362.916" y="733.822" width="86.8946" height="8"/>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="406.364,733.822 406.214,733.822 406.214,779.506 577.266,779.506 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="569.502,784.506 579.502,779.506 569.502,774.506 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="672.388,779.506 741.956,779.506 741.956,553.77 807.052,553.77 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="799.289,558.77 809.289,553.77 799.289,548.77 "/>
-  </g>
-  <ellipse style="fill: #000000" cx="824.53" cy="553.77" rx="10" ry="10"/>
   <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="141.314" y="403.322">
     <tspan x="141.314" y="403.322"></tspan>
   </text>
-  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="14.3137" y="462.322">
-    <tspan x="14.3137" y="462.322">data input</tspan>
-  </text>
-  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3.31376" y="71.9822">
-    <tspan x="3.31376" y="71.9822">program startup</tspan>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="101.792" y="266.755">
+    <tspan x="101.792" y="266.755">program startup</tspan>
   </text>
   <g>
-    <rect style="fill: #ffffff" x="64.75" y="575" width="234.95" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="64.75" y="575" width="234.95" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="182.225" y="596.9">
-      <tspan x="182.225" y="596.9">append to measurement data file</tspan>
+    <rect style="fill: #ffffff" x="209.84" y="88.0104" width="214.65" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="209.84" y="88.0104" width="214.65" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="317.165" y="109.91">
+      <tspan x="317.165" y="109.91">set up serial or tcp connection</tspan>
     </text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="182.225,611 182.225,633.456 182.35,633.456 182.35,651.44 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="177.35,643.676 182.35,653.676 187.35,643.676 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="413.146,288.011 443.146,288.011 443.146,237.896 183.115,237.896 183.115,187.78 208.642,187.78 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="200.879,192.78 210.879,187.78 200.879,182.78 "/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="339.84" y="87.362" width="134.45" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="339.84" y="87.362" width="134.45" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="407.065" y="109.262">
-      <tspan x="407.065" y="109.262">set up connection</tspan>
+    <rect style="fill: #ffffff" x="699.124" y="425.816" width="132.5" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="699.124" y="425.816" width="132.5" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="765.374" y="447.716">
+      <tspan x="765.374" y="447.716">write to database</tspan>
     </text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="284.146,105.011 311.993,105.011 311.993,105.362 335.368,105.362 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="327.604,110.362 337.604,105.362 327.604,100.362 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="242.976,673.912 375.708,673.912 375.708,733.822 378.25,733.822 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="366.014,738.822 376.014,733.822 366.014,728.822 "/>
-  </g>
-  <ellipse style="fill: #000000" cx="22.5465" cy="913.756" rx="10" ry="10"/>
-  <g>
-    <rect style="fill: #ffffff" x="303.712" y="896.446" width="92.65" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="303.712" y="896.446" width="92.65" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="350.037" y="918.346">
-      <tspan x="350.037" y="918.346">write to log</tspan>
+    <rect style="fill: #ffffff" x="509.028" y="425.544" width="149.05" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="509.028" y="425.544" width="149.05" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="583.553" y="447.444">
+      <tspan x="583.553" y="447.444">process data packet</tspan>
     </text>
   </g>
-  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="20.18" y="878.726">
-    <tspan x="20.18" y="878.726">user toggles test mode</tspan>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="658.078,443.544 678.601,443.544 678.601,443.816 694.652,443.816 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="686.888,448.816 696.888,443.816 686.888,438.816 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="873.406" y="425.544" width="82.35" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="873.406" y="425.544" width="82.35" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="914.581" y="447.444">
+      <tspan x="914.581" y="447.444">update UI</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="831.624,443.816 852.515,443.816 852.515,443.544 868.934,443.544 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="861.17,448.544 871.17,443.544 861.17,438.544 "/>
+  </g>
+  <ellipse style="fill: #000000" cx="1021.75" cy="443.351" rx="10" ry="10"/>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="955.756,443.544 983.251,443.544 983.251,443.351 1006.27,443.351 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="998.51,448.351 1008.51,443.351 998.51,438.351 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="213.115" y="169.78" width="197.9" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="213.115" y="169.78" width="197.9" height="36" rx="20" ry="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="312.065" y="191.68">
+      <tspan x="312.065" y="191.68">set up database connection</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="411.015,187.78 441.015,187.78 441.015,146.895 179.84,146.895 179.84,106.01 205.368,106.01 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="197.604,111.01 207.604,106.01 197.604,101.01 "/>
+  </g>
+  <ellipse style="fill: #000000" cx="245.987" cy="443.35" rx="10" ry="10"/>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="243.62" y="410.154">
+    <tspan x="243.62" y="410.154">data input</tspan>
   </text>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="33.5519,913.756 72.6672,913.756 72.6672,914.174 107.31,914.174 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="99.5465,919.174 109.547,914.174 99.5465,909.174 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.992,443.35 299.317,443.35 299.317,443.768 337.17,443.768 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="329.406,448.768 339.406,443.768 329.406,438.768 "/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="111.783" y="896.174" width="118.75" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="111.783" y="896.174" width="118.75" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="171.158" y="918.074">
-      <tspan x="171.158" y="918.074">send command</tspan>
+    <rect style="fill: #ffffff" x="341.642" y="425.768" width="121.45" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="341.642" y="425.768" width="121.45" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="402.367" y="447.668">
+      <tspan x="402.367" y="447.668">record raw data</tspan>
     </text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="230.533,914.174 267.122,914.174 267.122,914.446 299.24,914.446 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="291.476,919.446 301.476,914.446 291.476,909.446 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="463.092,443.768 486.06,443.768 486.06,443.544 504.556,443.544 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="496.792,448.544 506.792,443.544 496.792,438.544 "/>
+  </g>
+  <ellipse style="fill: #000000" cx="334.654" cy="532.265" rx="10" ry="10"/>
+  <g>
+    <rect style="fill: #ffffff" x="615.819" y="514.955" width="92.65" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="615.819" y="514.955" width="92.65" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="662.144" y="536.855">
+      <tspan x="662.144" y="536.855">write to log</tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="332.287" y="497.235">
+    <tspan x="332.287" y="497.235">user toggles test mode</tspan>
+  </text>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="345.659,532.265 384.774,532.265 384.774,532.683 419.418,532.683 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="411.654,537.683 421.654,532.683 411.654,527.683 "/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="459.654" y="896.174" width="82.35" height="36" rx="20" ry="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="459.654" y="896.174" width="82.35" height="36" rx="20" ry="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="500.829" y="918.074">
-      <tspan x="500.829" y="918.074">update UI</tspan>
+    <rect style="fill: #ffffff" x="423.89" y="514.683" width="118.75" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="423.89" y="514.683" width="118.75" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="483.265" y="536.583">
+      <tspan x="483.265" y="536.583">send command</tspan>
     </text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="396.362,914.446 428.008,914.446 428.008,914.174 455.182,914.174 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="447.418,919.174 457.418,914.174 447.418,909.174 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="542.64,532.683 579.229,532.683 579.229,532.955 611.347,532.955 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="603.583,537.955 613.583,532.955 603.583,527.955 "/>
   </g>
-  <ellipse style="fill: #000000" cx="624.506" cy="914.898" rx="10" ry="10"/>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="542.004,914.174 577.752,914.174 577.752,914.898 609.028,914.898 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="601.265,919.898 611.265,914.898 601.265,909.898 "/>
+    <rect style="fill: #ffffff" x="771.761" y="514.683" width="82.35" height="36" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="771.761" y="514.683" width="82.35" height="36" rx="20" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="812.936" y="536.583">
+      <tspan x="812.936" y="536.583">update UI</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="708.469,532.955 740.115,532.955 740.115,532.683 767.289,532.683 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="759.525,537.683 769.525,532.683 759.525,527.683 "/>
+  </g>
+  <ellipse style="fill: #000000" cx="936.613" cy="532.49" rx="10" ry="10"/>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="854.111,532.683 889.859,532.683 889.859,532.49 921.136,532.49 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="913.372,537.49 923.372,532.49 913.372,527.49 "/>
   </g>
 </svg>
