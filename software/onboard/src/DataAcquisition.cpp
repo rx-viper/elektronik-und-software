@@ -26,37 +26,77 @@ namespace onboard
 {
 
 DataAcquisition::DataAcquisition(GroundstationCommunicator& communicator_)
-	: communicator{communicator_}, iceTempTimer{iceTempLowTimeout}, otherTempTimer{otherTempLowTimeout},
-	depthTimer{depthLowTimeout}, pressureTimer{pressureLowTimeout}, hpTempTimer{hpTempLowTimeout}
+	: communicator{communicator_},
+	  pressureSensor1{I2cAddress::Pressure1},
+	  pressureSensor2{I2cAddress::Pressure2},
+	  otherTempSensor1{I2cAddress::OtherTemp1},
+	  otherTempSensor2{I2cAddress::OtherTemp2},
+	  otherTempSensor3{I2cAddress::OtherTemp3},
+	  otherTempSensor4{I2cAddress::OtherTemp4},
+	  otherTempSensor5{I2cAddress::OtherTemp5},
+	  pressureSampler1{pressureSensor1},
+	  pressureSampler2{pressureSensor2},
+	  otherTempSampler1{otherTempSensor1},
+	  otherTempSampler2{otherTempSensor2},
+	  otherTempSampler3{otherTempSensor3},
+	  otherTempSampler4{otherTempSensor4},
+	  otherTempSampler5{otherTempSensor5},
+	  iceTempTimer{0},
+	  hpTempTimer{0},
+	  hpDepthTimer{0}
 {
-	iceTempState = otherTempState = 0;
-	depthState = pressureState = hpTempState = 0;
+	iceTempTimer.stop();
+	hpTempTimer.stop();
+	hpDepthTimer.stop();
+}
+
+void DataAcquisition::initialize()
+{
+	timeout.restart(Timeouts::Initialize);
+
+	bool allInitialized = false;
+	while(!timeout.isExpired() && !allInitialized) {
+		iceTemperatureSampler.update();
+		pressureSampler1.update();
+		pressureSampler2.update();
+		otherTempSampler1.update();
+		otherTempSampler2.update();
+		otherTempSampler3.update();
+		otherTempSampler4.update();
+		otherTempSampler5.update();
+
+		allInitialized = iceTemperatureSampler.isInitialized()
+				&& pressureSampler1.isInitialized()
+				&& pressureSampler2.isInitialized()
+				&& otherTempSampler1.isInitialized()
+				&& otherTempSampler2.isInitialized()
+				&& otherTempSampler3.isInitialized()
+				&& otherTempSampler4.isInitialized()
+				&& otherTempSampler5.isInitialized();
+	}
 }
 
 void DataAcquisition::start()
 {
-	if(!enabled) {
-		resetTimers();
-	}
+	highRate = true;
+	setLowRate();
 
-	enabled = true;
-}
-
-void DataAcquisition::stop()
-{
-	enabled = false;
-}
-
-bool DataAcquisition::isRunning()
-{
-	return enabled;
+	iceTemperatureSampler.startMeasurement();
 }
 
 void DataAcquisition::setLowRate()
 {
 	if(highRate) {
 		highRate = false;
-		resetTimers();
+		iceTempTimer.restart(Timeouts::LowRate::IceTemp);
+		hpTempTimer.restart(Timeouts::LowRate::HeatProbeTemp);
+		pressureSampler1.start(Timeouts::LowRate::Pressure, PressureValuesPerPacketLow);
+		pressureSampler2.start(Timeouts::LowRate::Pressure, PressureValuesPerPacketLow);
+		otherTempSampler1.start(Timeouts::LowRate::OtherTemp);
+		otherTempSampler2.start(Timeouts::LowRate::OtherTemp);
+		otherTempSampler3.start(Timeouts::LowRate::OtherTemp);
+		otherTempSampler4.start(Timeouts::LowRate::OtherTemp);
+		otherTempSampler5.start(Timeouts::LowRate::OtherTemp);
 	}
 }
 
@@ -64,7 +104,15 @@ void DataAcquisition::setHighRate()
 {
 	if(!highRate) {
 		highRate = true;
-		resetTimers();
+		iceTempTimer.restart(Timeouts::HighRate::IceTemp);
+		hpTempTimer.restart(Timeouts::HighRate::HeatProbeTemp);
+		pressureSampler1.start(Timeouts::HighRate::Pressure, PressureValuesPerPacketHigh);
+		pressureSampler2.start(Timeouts::HighRate::Pressure, PressureValuesPerPacketHigh);
+		otherTempSampler1.start(Timeouts::HighRate::OtherTemp);
+		otherTempSampler2.start(Timeouts::HighRate::OtherTemp);
+		otherTempSampler3.start(Timeouts::HighRate::OtherTemp);
+		otherTempSampler4.start(Timeouts::HighRate::OtherTemp);
+		otherTempSampler5.start(Timeouts::HighRate::OtherTemp);
 	}
 }
 
@@ -75,40 +123,19 @@ void DataAcquisition::setStorageEnabled(bool enabled)
 
 void DataAcquisition::update()
 {
-	if(!enabled) {
-		return;
-	}
-
 	if(iceTempTimer.execute()) {
-		if(highRate) {
-			sendIceTemperatures<packet::IceTemperatureHS>();
-		} else {
-			sendIceTemperatures<packet::IceTemperatureLS>();
-		}
-	}
+		if(iceTemperatureSampler.isFinished()) {
+			hpTemp[0] = iceTemperatureSampler.data(HpTempSensorIndex[0], HpTempChannelIndex[0]).getTemperatureFixed();
+			hpTemp[1] = iceTemperatureSampler.data(HpTempSensorIndex[1], HpTempChannelIndex[1]).getTemperatureFixed();
+			hpTemp[2] = iceTemperatureSampler.data(HpTempSensorIndex[2], HpTempChannelIndex[2]).getTemperatureFixed();
 
-	if(otherTempTimer.execute()) {
-		if(highRate) {
-			sendOtherTemperatures<packet::OtherTemperatureHS>();
-		} else {
-			sendOtherTemperatures<packet::OtherTemperatureLS>();
+			if(highRate) {
+				sendIceTemperatures<packet::IceTemperatureHS>();
+			} else {
+				sendIceTemperatures<packet::IceTemperatureLS>();
+			}
 		}
-	}
-
-	if(depthTimer.execute()) {
-		if(highRate) {
-			sendHPDepth<packet::HpPenetrationDepthHS>();
-		} else {
-			sendHPDepth<packet::HpPenetrationDepthLS>();
-		}
-	}
-
-	if(pressureTimer.execute()) {
-		if(highRate) {
-			sendPressure<packet::PressureHS>();
-		} else {
-			sendPressure<packet::PressureLS>();
-		}
+		iceTemperatureSampler.startMeasurement();
 	}
 
 	if(hpTempTimer.execute()) {
@@ -118,24 +145,65 @@ void DataAcquisition::update()
 			sendHPTemperatures<packet::HpTemperatureLS>();
 		}
 	}
+
+	if(otherTempSampler1.isFinished() &&
+			otherTempSampler2.isFinished() &&
+			otherTempSampler3.isFinished() &&
+			otherTempSampler4.isFinished() &&
+			otherTempSampler5.isFinished())
+	{
+		otherTempSampler1.resetFinished();
+		otherTempSampler2.resetFinished();
+		otherTempSampler3.resetFinished();
+		otherTempSampler4.resetFinished();
+		otherTempSampler5.resetFinished();
+
+		if(highRate) {
+			sendOtherTemperatures<packet::OtherTemperatureHS>();
+		} else {
+			sendOtherTemperatures<packet::OtherTemperatureLS>();
+		}
+	}
+
+	if(pressureSampler1.isFinished() && pressureSampler2.isFinished()) {
+		pressureSampler1.resetFinished();
+		pressureSampler2.resetFinished();
+
+		if(highRate) {
+			sendPressure<packet::PressureHS>();
+		} else {
+			sendPressure<packet::PressureLS>();
+		}
+	}
+
+	iceTemperatureSampler.update();
+	pressureSampler1.update();
+	pressureSampler2.update();
+	otherTempSampler1.update();
+	otherTempSampler2.update();
+	otherTempSampler3.update();
+	otherTempSampler4.update();
+	otherTempSampler5.update();
+
+	/*if(depthTimer.execute()) {
+		if(highRate) {
+			sendHPDepth<packet::HpPenetrationDepthHS>();
+		} else {
+			sendHPDepth<packet::HpPenetrationDepthLS>();
+		}
+	}
+	*/
 }
 
-void DataAcquisition::resetTimers()
+bool DataAcquisition::isHpTempChannel(size_t sensorIndex, size_t channelIndex)
 {
-	if(highRate) {
-		iceTempTimer.restart(iceTempHighTimeout);
-		otherTempTimer.restart(otherTempHighTimeout);
-		depthTimer.restart(depthHighTimeout);
-		pressureTimer.restart(pressureHighTimeout);
-		hpTempTimer.restart(hpTempHighTimeout);
-	} else {
-		iceTempTimer.restart(iceTempLowTimeout);
-		otherTempTimer.restart(otherTempLowTimeout);
-		depthTimer.restart(depthLowTimeout);
-		pressureTimer.restart(pressureLowTimeout);
-		hpTempTimer.restart(hpTempLowTimeout);
-
+	for (size_t i = 0; i < 3; ++i) {
+		if(HpTempSensorIndex[i] == sensorIndex && HpTempChannelIndex[i] == channelIndex) {
+			return true;
+		}
 	}
+
+	return false;
 }
 
 }
