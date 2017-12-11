@@ -163,7 +163,7 @@ namespace Ui {
 		Button2::setInput(Gpio::InputType::PullUp);
 
 		// Create a IODevice with the Uart
-		xpcc::IODeviceWrapper<DebugUart, xpcc::IOBuffer::BlockIfFull> device;
+		xpcc::IODeviceWrapper<DebugUart, xpcc::IOBuffer::DiscardIfFull> device;
 		xpcc::IOStream stream(device);
 
 		DebugUartRx::connect(DebugUart::Rx);
