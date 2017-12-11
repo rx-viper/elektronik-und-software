@@ -265,10 +265,10 @@ namespace Motor {
 		// Prescaler: 1 -> Timer counter frequency: 180MHz
 		MotorTimer::setOverflow(MaxPwm); // 9 bit PWM
 		// Pwm frequency: 180MHz / 512 = 350kHz
-		MotorTimer::disableCaptureComparePreloadedControl();
-		MotorTimer::configureOutputChannel(1, MotorTimer::OutputCompareMode::Pwm2, 0xFF);
-		MotorTimer::configureOutputChannel(2, MotorTimer::OutputCompareMode::Pwm2, 0xFF);
-		MotorTimer::configureOutputChannel(3, MotorTimer::OutputCompareMode::Pwm2, 0xFF);
+		MotorTimer::configureOutputChannel(1, MotorTimer::OutputCompareMode::Pwm2, 0);
+		MotorTimer::configureOutputChannel(2, MotorTimer::OutputCompareMode::Pwm2, 0);
+		MotorTimer::configureOutputChannel(3, MotorTimer::OutputCompareMode::Pwm2, 0);
+		MotorTimer::enableCaptureComparePreloadedControl();
 		MotorTimer::enableOutput();
 		MotorTimer::applyAndReset();
 		MotorTimer::pause();
@@ -286,9 +286,9 @@ namespace Motor {
 	{
 		// Timer is not used for commutation
 		// Bldc motor commutation is done using external gpio pin interrupts
-		HallU::setInput(Gpio::InputType::PullDown);
-		HallV::setInput(Gpio::InputType::PullDown);
-		HallW::setInput(Gpio::InputType::PullDown);
+		HallU::setInput(Gpio::InputType::PullUp);
+		HallV::setInput(Gpio::InputType::PullUp);
+		HallW::setInput(Gpio::InputType::PullUp);
 
 		HallU::setInputTrigger(Gpio::InputTrigger::BothEdges);
 		HallU::enableExternalInterrupt();
@@ -299,20 +299,20 @@ namespace Motor {
 		HallW::setInputTrigger(Gpio::InputTrigger::BothEdges);
 		HallW::enableExternalInterrupt();
 		HallW::enableExternalInterruptVector(HallInterruptPriority);
+	}
 
-		/*
-		// External interrupt has to be declared like this:
-		XPCC_ISR(EXTI9_5)
-		{
-			// TODO: Blcd commutation
-		}
-		 */
+	inline void
+	setCompareValue(uint16_t compareValue)
+	{
+		MotorTimer::setCompareValue(1, compareValue);
+		MotorTimer::setCompareValue(2, compareValue);
+		MotorTimer::setCompareValue(3, compareValue);
 	}
 
 	inline void
 	initializeEndSwich()
 	{
-		EndSwitch::setInput(Gpio::InputType::PullUp);
+		EndSwitch::setInput(Gpio::InputType::PullDown);
 	}
 
 	inline void
