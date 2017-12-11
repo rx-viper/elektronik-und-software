@@ -330,6 +330,17 @@ namespace Powermanagement {
 
 	using BoostEnable		= GpioOutputD8;
 
+	struct Adc
+	{
+		static constexpr auto SpiBaudrate = 5'625'000;
+
+		using Spi = SpiMaster1;
+		using Cs = GpioOutputA4;
+		using Sck = GpioOutputA5;
+		using Miso = GpioInputA6;
+		using Mosi = GpioOutputA7;
+	};
+
 	inline void
 	initialize()
 	{
@@ -338,6 +349,9 @@ namespace Powermanagement {
 		BattChargeEnable::set(false);
 		BoostEnable::setOutput(BoostEnable::OutputType::OpenDrain);
 		BoostEnable::set(false);
+
+		Adc::Cs::setOutput(true);
+		spiMasterInitialize<Adc, Adc::SpiBaudrate>();
 	}
 }
 
