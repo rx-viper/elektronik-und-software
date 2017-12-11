@@ -39,7 +39,9 @@
 
 /// Immidiately calls the declared activity. Additional parameter will be forwarded to ACTIVITY_LOG_STATE_CHANGE.
 #define CALL_ACTIVITY(nextActivity, ...) do { \
-			ACTIVITY_LOG_STATE_CHANGE(this->activity, nextActivity, ##__VA_ARGS__); \
+			if(this->activity != nextActivity) { \
+				ACTIVITY_LOG_STATE_CHANGE(this->activity, nextActivity, ##__VA_ARGS__); \
+			} \
 			this->activity = nextActivity; \
 			goto activity_switch; } while(0)
 
