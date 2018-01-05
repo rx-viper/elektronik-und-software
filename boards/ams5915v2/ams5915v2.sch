@@ -1,0 +1,343 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:st890
+LIBS:lt1117cst-3v3
+LIBS:iso1540
+LIBS:ams5915
+LIBS:max4995a
+LIBS:tlv73333pdbvr
+LIBS:ams5915v2-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L R R3
+U 1 1 5A4C2B09
+P 3450 2850
+F 0 "R3" V 3350 2850 50  0000 C CNN
+F 1 "300k" V 3450 2850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 3380 2850 50  0001 C CNN
+F 3 "" H 3450 2850 50  0001 C CNN
+	1    3450 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L Conn_01x04 J1
+U 1 1 5A4C2BC1
+P 1850 2300
+F 0 "J1" H 1850 2500 50  0000 C CNN
+F 1 "Conn_01x04" H 1850 2000 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x04_Pitch2.54mm" H 1850 2300 50  0001 C CNN
+F 3 "" H 1850 2300 50  0001 C CNN
+	1    1850 2300
+	-1   0    0    -1  
+$EndComp
+Text Label 2100 2300 0    60   ~ 0
+GND
+Text Label 2100 2400 0    60   ~ 0
+SDA
+Text Label 2100 2500 0    60   ~ 0
+SCL
+$Comp
+L C C1
+U 1 1 5A4C314F
+P 3250 2250
+F 0 "C1" H 3275 2350 50  0000 L CNN
+F 1 "1u" H 3275 2150 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 3288 2100 50  0001 C CNN
+F 3 "" H 3250 2250 50  0001 C CNN
+	1    3250 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 5A4C36BB
+P 4050 3000
+F 0 "C2" H 4075 3100 50  0000 L CNN
+F 1 "100n" H 4075 2900 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4088 2850 50  0001 C CNN
+F 3 "" H 4050 3000 50  0001 C CNN
+	1    4050 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C3
+U 1 1 5A4C3947
+P 5850 3300
+F 0 "C3" H 5875 3400 50  0000 L CNN
+F 1 "1u" H 5875 3200 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 5888 3150 50  0001 C CNN
+F 3 "" H 5850 3300 50  0001 C CNN
+	1    5850 3300
+	1    0    0    -1  
+$EndComp
+Text Label 2100 2200 0    60   ~ 0
+5v
+$Comp
+L C C4
+U 1 1 5A4C44E9
+P 7100 3350
+F 0 "C4" H 7125 3450 50  0000 L CNN
+F 1 "100n" H 7125 3250 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 7138 3200 50  0001 C CNN
+F 3 "" H 7100 3350 50  0001 C CNN
+	1    7100 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L AMS5915 U3
+U 1 1 5A4C860D
+P 7700 4250
+F 0 "U3" H 7700 3950 60  0000 C CNN
+F 1 "AMS5915" H 7700 4550 60  0000 C CNN
+F 2 "kicad-footprints-rchojetzki:AMS_5915-XXXX-D_differential_pressure_sensor" H 7700 4250 60  0001 C CNN
+F 3 "" H 7700 4250 60  0001 C CNN
+	1    7700 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L MAX4995A U1
+U 1 1 5A4EC88C
+P 3750 2350
+F 0 "U1" H 3750 2600 60  0000 C CNN
+F 1 "MAX4995A" H 3750 2100 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23-6" H 3750 2350 60  0001 C CNN
+F 3 "" H 3750 2350 60  0001 C CNN
+	1    3750 2350
+	0    1    -1   0   
+$EndComp
+$Comp
+L TLV73333PDBVR U2
+U 1 1 5A4ECB7E
+P 5050 3200
+F 0 "U2" H 5050 3450 60  0000 C CNN
+F 1 "TLV73333PDBVR" H 5050 2950 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23-5" H 5050 3200 60  0001 C CNN
+F 3 "" H 5050 3200 60  0001 C CNN
+	1    5050 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 2950 3750 2950
+Wire Wire Line
+	3750 2950 3750 2800
+Wire Wire Line
+	3250 1750 3750 1750
+Wire Wire Line
+	3750 1750 3750 1900
+Wire Wire Line
+	3250 2100 3250 1750
+Wire Wire Line
+	3250 2400 3250 3200
+Wire Wire Line
+	3250 2050 3000 2050
+Wire Wire Line
+	3000 2050 3000 2200
+Wire Wire Line
+	3000 2200 2050 2200
+Connection ~ 3250 2050
+Wire Wire Line
+	2050 2300 3000 2300
+Wire Wire Line
+	3000 2300 3000 2450
+Wire Wire Line
+	3000 2450 3250 2450
+Connection ~ 3250 2450
+Wire Wire Line
+	4050 3150 4050 3600
+Wire Wire Line
+	3250 3200 4600 3200
+Connection ~ 3250 2950
+Wire Wire Line
+	4050 2850 4050 2800
+Wire Wire Line
+	3950 2800 4450 2800
+Wire Wire Line
+	3950 2800 3950 2850
+Wire Wire Line
+	3950 2850 3850 2850
+Wire Wire Line
+	3850 2850 3850 2800
+Connection ~ 4050 3200
+Wire Wire Line
+	4450 2800 4450 3300
+Wire Wire Line
+	4450 3100 4600 3100
+Connection ~ 4050 2800
+Wire Wire Line
+	5500 3100 8900 3100
+Wire Wire Line
+	5850 3100 5850 3150
+Wire Wire Line
+	5850 3450 5850 3600
+Wire Wire Line
+	4050 3600 8900 3600
+Wire Wire Line
+	3600 2850 3650 2850
+Wire Wire Line
+	3650 2850 3650 2800
+Wire Wire Line
+	3300 2850 3250 2850
+Connection ~ 3250 2850
+Wire Wire Line
+	6850 4200 7200 4200
+Wire Wire Line
+	6850 3100 6850 4200
+Wire Wire Line
+	7100 4100 7200 4100
+Wire Wire Line
+	7100 3500 7100 4100
+Connection ~ 5850 3600
+Connection ~ 5850 3100
+$Comp
+L C C5
+U 1 1 5A4F055D
+P 8900 3350
+F 0 "C5" H 8925 3450 50  0000 L CNN
+F 1 "100n" H 8925 3250 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 8938 3200 50  0001 C CNN
+F 3 "" H 8900 3350 50  0001 C CNN
+	1    8900 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L AMS5915 U4
+U 1 1 5A4F0563
+P 9500 4250
+F 0 "U4" H 9500 3950 60  0000 C CNN
+F 1 "AMS5915" H 9500 4550 60  0000 C CNN
+F 2 "kicad-footprints-rchojetzki:AMS_5915-XXXX-D_differential_pressure_sensor" H 9500 4250 60  0001 C CNN
+F 3 "" H 9500 4250 60  0001 C CNN
+	1    9500 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8650 4200 9000 4200
+Wire Wire Line
+	8650 3100 8650 4200
+Wire Wire Line
+	8900 4100 9000 4100
+Wire Wire Line
+	8900 3500 8900 4100
+Connection ~ 6850 3100
+Connection ~ 7100 3600
+Wire Wire Line
+	2050 2500 2200 2500
+Wire Wire Line
+	2200 4400 7200 4400
+Wire Wire Line
+	7200 4300 2600 4300
+Wire Wire Line
+	2600 2400 2050 2400
+Wire Wire Line
+	6850 4300 6850 4700
+Wire Wire Line
+	6850 4700 8650 4700
+Wire Wire Line
+	8650 4700 8650 4300
+Wire Wire Line
+	8650 4300 9000 4300
+Connection ~ 6850 4300
+Wire Wire Line
+	6750 4400 6750 4800
+Wire Wire Line
+	6750 4800 8750 4800
+Wire Wire Line
+	8750 4800 8750 4400
+Wire Wire Line
+	8750 4400 9000 4400
+Connection ~ 6750 4400
+$Comp
+L R R1
+U 1 1 5A4F1CD4
+P 2200 3300
+F 0 "R1" V 2280 3300 50  0000 C CNN
+F 1 "100" V 2200 3300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 2130 3300 50  0001 C CNN
+F 3 "" H 2200 3300 50  0001 C CNN
+	1    2200 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5A4F1D4D
+P 2600 3300
+F 0 "R2" V 2680 3300 50  0000 C CNN
+F 1 "100" V 2600 3300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 2530 3300 50  0001 C CNN
+F 3 "" H 2600 3300 50  0001 C CNN
+	1    2600 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 2500 2200 3150
+Wire Wire Line
+	2600 2400 2600 3150
+Wire Wire Line
+	2600 4300 2600 3450
+Wire Wire Line
+	2200 3450 2200 4400
+Wire Wire Line
+	4450 3300 4600 3300
+Connection ~ 4450 3100
+Wire Wire Line
+	7100 3200 7100 3100
+Connection ~ 7100 3100
+Wire Wire Line
+	8900 3100 8900 3200
+Connection ~ 8650 3100
+Connection ~ 8900 3600
+Text Label 5550 3100 0    60   ~ 0
+3v3
+Text Label 4200 2800 0    60   ~ 0
+5vSWITCHED
+Wire Wire Line
+	3650 1900 3650 1850
+Wire Wire Line
+	3650 1850 2900 1850
+Wire Wire Line
+	2900 1850 2900 2300
+Connection ~ 2900 2300
+$EndSCHEMATC
