@@ -31,9 +31,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:st890
-LIBS:lt1117cst-3v3
-LIBS:iso1540
 LIBS:ams5915
 LIBS:max4995a
 LIBS:tlv73333pdbvr
@@ -168,7 +165,7 @@ Wire Wire Line
 Wire Wire Line
 	3750 1750 3750 1900
 Wire Wire Line
-	3250 2100 3250 1750
+	3250 1750 3250 2100
 Wire Wire Line
 	3250 2400 3250 3200
 Wire Wire Line
@@ -268,7 +265,7 @@ Wire Wire Line
 Wire Wire Line
 	2200 4400 7200 4400
 Wire Wire Line
-	7200 4300 2600 4300
+	2600 4300 7200 4300
 Wire Wire Line
 	2600 2400 2050 2400
 Wire Wire Line
@@ -334,10 +331,6 @@ Text Label 5550 3100 0    60   ~ 0
 Text Label 4200 2800 0    60   ~ 0
 5vSWITCHED
 Wire Wire Line
-	3650 1900 3650 1850
-Wire Wire Line
-	3650 1850 2900 1850
-Wire Wire Line
-	2900 1850 2900 2300
-Connection ~ 2900 2300
+	3650 1900 3650 1750
+Connection ~ 3650 1750
 $EndSCHEMATC
