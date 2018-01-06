@@ -1,4 +1,4 @@
-update=Do 16 Nov 2017 02:00:40 CET
+update=Mo 04 Dez 2017 02:15:44 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -62,3 +62,13 @@ LibName30=sensors
 LibName31=lib/smd-oscillator
 LibName32=lib/XC622x
 LibName33=lib/flir-lepton
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/flir-board/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60

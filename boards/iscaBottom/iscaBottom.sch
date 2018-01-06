@@ -36,10 +36,10 @@ EELAYER END
 $Descr USLegal 8500 14000 portrait
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "ISCA Bottom"
+Date "2017-10-15"
+Rev "1"
+Comp "VIPER"
 Comment1 ""
 Comment2 ""
 Comment3 ""

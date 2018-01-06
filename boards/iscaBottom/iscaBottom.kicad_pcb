@@ -3,7 +3,7 @@
   (general
     (links 145)
     (no_connects 12)
-    (area 71.424999 21.399999 250.100001 178.600001)
+    (area 69.56429 18.106388 280.100001 178.825)
     (thickness 1.6)
     (drawings 48)
     (tracks 911)
@@ -13,6 +13,13 @@
   )
 
   (page A4)
+  (title_block
+    (title "ISCA Bottom")
+    (date 2017-10-15)
+    (rev 1)
+    (company VIPER)
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)
