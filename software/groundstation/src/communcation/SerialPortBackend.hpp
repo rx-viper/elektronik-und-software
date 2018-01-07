@@ -12,8 +12,8 @@ namespace viper
 class SerialPortBackend : public QIODeviceBackend
 {
 public:
-	//static constexpr auto BaudRate    = QSerialPort::Baud38400;
-	static constexpr auto BaudRate    = QSerialPort::Baud115200;
+	static constexpr auto BaudRate    = QSerialPort::Baud38400;
+	//static constexpr auto BaudRate    = QSerialPort::Baud115200;
 	static constexpr auto DataBits    = QSerialPort::Data8;
 	static constexpr auto StopBits    = QSerialPort::OneStop;
 	static constexpr auto Parity      = QSerialPort::NoParity;
