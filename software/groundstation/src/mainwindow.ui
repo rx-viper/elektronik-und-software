@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1556</width>
-    <height>645</height>
+    <height>962</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,7 +32,7 @@
    <string>REXUS VIPER Groundstation</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout_16">
+   <layout class="QVBoxLayout" name="verticalLayout_17">
     <item>
      <widget class="QFrame" name="frame">
       <property name="sizePolicy">
@@ -452,7 +452,7 @@
                    <number>5</number>
                   </property>
                   <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
+                   <enum>QLCDNumber::Outline</enum>
                   </property>
                   <property name="value" stdset="0">
                    <double>0.000000000000000</double>
@@ -704,14 +704,8 @@
                   <property name="frameShadow">
                    <enum>QFrame::Plain</enum>
                   </property>
-                  <property name="smallDecimalPoint">
-                   <bool>false</bool>
-                  </property>
                   <property name="digitCount">
                    <number>5</number>
-                  </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
                   </property>
                   <property name="value" stdset="0">
                    <double>0.000000000000000</double>
@@ -828,7 +822,21 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_11">
+     <layout class="QHBoxLayout" name="horizontalLayout_12">
+      <item>
+       <widget class="QPushButton" name="testOnButton">
+        <property name="text">
+         <string>Test on</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="testOffButton">
+        <property name="text">
+         <string>Test off</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPlainTextEdit" name="logText">
         <property name="enabled">
@@ -837,7 +845,7 @@
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
+          <verstretch>1</verstretch>
          </sizepolicy>
         </property>
         <property name="font">
@@ -866,25 +874,54 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="loLabel">
-        <property name="text">
-         <string>LO: 0</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="soeLabel">
-        <property name="text">
-         <string>SOE: 0</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="sodsLabel">
-        <property name="text">
-         <string>SODS: 0</string>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" name="verticalLayout_16">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QLabel" name="loLabel">
+            <property name="text">
+             <string>LO: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="sodsLabel">
+            <property name="text">
+             <string>SODS: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="soeLabel">
+            <property name="text">
+             <string>SOE: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="motorLabel">
+            <property name="text">
+             <string>Motor Position: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="timeLabel">
+            <property name="text">
+             <string>Time: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="testModeLabel">
+            <property name="text">
+             <string>Test mode: 0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>

@@ -75,7 +75,8 @@ SOURCES += main.cpp \
     PacketDispatcher.cpp \
     MeasurementData.cpp \
     IceTemperatureWidget.cpp \
-    communcation/SerialPortConfigWidget.cpp
+    communcation/SerialPortConfigWidget.cpp \
+    IceTemperatureWindow.cpp
 
 SOURCES += $$COMMUNICATION_SRC
 
@@ -95,11 +96,13 @@ HEADERS  += mainwindow.h \
     MeasurementData.hpp \
     IceTemperatureWidget.hpp \
     communcation/BackendConfigWidget.hpp \
-    communcation/SerialPortConfigWidget.hpp
+    communcation/SerialPortConfigWidget.hpp \
+    IceTemperatureWindow.hpp
 
 HEADERS += $$COMMUNICATION_HEADERS
 
 FORMS    += mainwindow.ui \
-    communcation/SerialPortConfigWidget.ui
+    communcation/SerialPortConfigWidget.ui \
+    IceTemperatureWindow.ui
 
 RESOURCES +=

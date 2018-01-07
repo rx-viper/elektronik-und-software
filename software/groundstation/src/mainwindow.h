@@ -32,6 +32,8 @@ public slots:
 
 signals:
 	void connectClicked();
+	void testOnClicked();
+	void testOffClicked();
 
 private:
 	Ui::MainWindow* ui;

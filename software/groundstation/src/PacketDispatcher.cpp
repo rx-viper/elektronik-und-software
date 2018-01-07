@@ -66,18 +66,20 @@ void PacketDispatcher::operator()(const Status& status)
 	EventLineStatus eventStatus{status};
 	experimentStatus.updateEventLines(eventStatus);
 	experimentStatus.updateUptime(status.time);
+	experimentStatus.updateHpOvertemperature(status.hpOvertemperature);
+	experimentStatus.updateMotorPosition(status.motorPosition);
+	experimentStatus.updateTestMode(status.testModeEnabled);
+	std::cout << int(status.state) << ", " << uint16_t(status.testModeEnabled) << std::endl;
 }
 
 void PacketDispatcher::operator()(const OtherTemperatureLS& otherTemperatures)
 {
-	// TODO
-	Q_UNUSED(otherTemperatures);
+	experimentStatus.updateOtherTemperatures(otherTemperatures.temperatures);
 }
 
 void PacketDispatcher::operator()(const OtherTemperatureHS& otherTemperatures)
 {
-	// TODO
-	Q_UNUSED(otherTemperatures);
+	experimentStatus.updateOtherTemperatures(otherTemperatures.temperatures);
 }
 
 void PacketDispatcher::operator()(const HpPenetrationDepthLS& hpDepth)

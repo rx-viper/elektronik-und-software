@@ -15,6 +15,7 @@ using viper::packet::PressureHS;
 using viper::packet::HpTemperatureLS;
 using viper::packet::HpTemperatureHS;
 using viper::packet::Status;
+using viper::packet::TestMode;
 
 namespace viper
 {
@@ -38,6 +39,7 @@ public:
 	void operator()(const HpTemperatureLS& hpTemperatures);
 	void operator()(const HpTemperatureHS& hpTemperatures);
 	void operator()(const Status& status);
+	void operator()(const TestMode& mode){ (void)mode; }
 
 private:
 	Application& app;

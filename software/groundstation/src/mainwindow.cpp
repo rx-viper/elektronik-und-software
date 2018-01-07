@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 	ui->setupUi(this);
 	connect(ui->connectButton, SIGNAL(clicked()), this, SIGNAL(connectClicked()));
+	connect(ui->testOnButton, SIGNAL(clicked()), this, SIGNAL(testOnClicked()));
+	connect(ui->testOffButton, SIGNAL(clicked()), this, SIGNAL(testOffClicked()));
 }
 
 MainWindow::~MainWindow()
@@ -67,6 +69,29 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 		ui->sodsLabel->setText("SODS: 1");
 	} else {
 		ui->sodsLabel->setText("SODS: 0");
+	}
+
+	ui->testModeLabel->setText("Test mode: " + QString::number(status.testMode()));
+
+	ui->timeLabel->setText("Time: " + QString::number(status.onboardUptime()));
+	ui->motorLabel->setText("Motor Position: " + QString::number(status.motorPosition()));
+
+	if(!status.heatProbeOvertemperature(0)) {
+		ui->hpTemp1->setSegmentStyle(QLCDNumber::Flat);
+	} else {
+		ui->hpTemp1->setSegmentStyle(QLCDNumber::Outline);
+	}
+
+	if(!status.heatProbeOvertemperature(1)) {
+		ui->hpTemp2->setSegmentStyle(QLCDNumber::Flat);
+	} else {
+		ui->hpTemp2->setSegmentStyle(QLCDNumber::Outline);
+	}
+
+	if(!status.heatProbeOvertemperature(2)) {
+		ui->hpTemp3->setSegmentStyle(QLCDNumber::Flat);
+	} else {
+		ui->hpTemp3->setSegmentStyle(QLCDNumber::Outline);
 	}
 }
 
