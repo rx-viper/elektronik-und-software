@@ -147,9 +147,9 @@ void DataAcquisition::sendIceTemperatures()
 {
 	PacketT packet;
 
+	size_t index = 0;
 	for(size_t sensor = 0; sensor < iceTemperatureSampler.SensorCount; ++sensor) {
 		size_t channelCount = iceTemperatureSampler.channelCount(sensor);
-		size_t index = 0;
 
 		for(size_t channel = 0; channel < channelCount; ++channel) {
 			if(!isHpTempChannel(sensor, channel) && index < packet.temperatures.size()) {

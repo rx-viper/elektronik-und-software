@@ -49,7 +49,7 @@ public:
 
 	static constexpr size_t SensorCount{6};
 	static constexpr uint16_t MeasurementTimeout{171*6};
-	static constexpr uint16_t ResultTimeout{2};
+	static constexpr uint16_t ResultTimeout{5};
 
 	Ltc2984Sampler();
 

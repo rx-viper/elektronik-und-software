@@ -102,7 +102,7 @@ Ltc2984ThreadBase::run()
 			if(request == Request::Measurement) {
 				RF_CALL(nextMeasurementCommand());
 			} else if(request == Request::FetchResult) {
-				dataValid = RF_CALL(readBusy()) && !abortMeasurement;
+				dataValid = !RF_CALL(readBusy()) && !abortMeasurement;
 				if(dataValid) {
 					RF_CALL(readData(data));
 				}
