@@ -145,6 +145,9 @@ private:
 	xpcc::ShortPeriodicTimer iceTempTimer;
 	xpcc::ShortPeriodicTimer hpTempTimer;
 	xpcc::ShortPeriodicTimer hpDepthTimer;
+
+public:
+	bool testMode = false;
 };
 
 template<typename PacketT>

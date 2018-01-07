@@ -8,11 +8,11 @@
 	</packet>
 
 	<packet name="OtherTemperatureLS" id="2">
-		<array name="temperatures" type="uint16_t" size="5" />
+		<array name="temperatures" type="int16_t" size="5" />
 	</packet>
 
 	<packet name="OtherTemperatureHS" id="3">
-		<array name="temperatures" type="uint16_t" size="5" />
+		<array name="temperatures" type="int16_t" size="5" />
 	</packet>
 
 	<packet name="HpPenetrationDepthLS" id="4">
@@ -38,12 +38,33 @@
 	<packet name="HpTemperatureHS" id="9">
 		<array name="temperatures" type="int32_t" size="3" />
 	</packet>
+	
+	<packet name="TestMode" id="11">
+		<element name="enabled" type="uint8_t" />
+	</packet>
+
+	<enum name="ExperimentState" type="uint8_t">
+		<element name="Initialize" />
+		<element name="HomeMotor" />
+		<element name="Idle" />
+		<element name="DataStorageStarted" />
+		<element name="LiftedOff" />
+		<element name="StartExperiment" />
+		<element name="ExperimentRunning" />
+		<element name="StopExperiment" />
+		<element name="PrepareShutdown" />
+		<element name="Shutdown" />
+	</enum>
 
 	<packet name="Status" id="10">
 		<element name="time" type="uint32_t" />
 		<element name="lo" type="uint8_t" />
 		<element name="soe" type="uint8_t" />
 		<element name="sods" type="uint8_t" />
+		<element name="state" type="ExperimentState" />
+		<element name="hpOvertemperature" type="uint8_t" />
+		<element name="motorPosition" type="int32_t" />
+		<element name="testModeEnabled" type="uint8_t" />
 	</packet>
 
 	<packet_group name="GroundstationPackets">
@@ -58,6 +79,7 @@
 		<packet name="HpTemperatureLS" />
 		<packet name="HpTemperatureHS" />
 		<packet name="Status" />
+		<packet name="TestMode" />
 	</packet_group>
 
 	<!-- TEST -->

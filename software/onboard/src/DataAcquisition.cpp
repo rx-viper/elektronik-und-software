@@ -201,6 +201,15 @@ void DataAcquisition::update()
 		}
 	}
 	*/
+
+	if(communicator.isPacketAvailable()) {
+		const GroundstationPackets& p = communicator.getPacket();
+		const auto* testModePacket = p.get<viper::packet::TestMode>();
+		if(testModePacket) {
+			this->testMode = testModePacket->enabled;
+		}
+		communicator.dropPacket();
+	}
 }
 
 bool DataAcquisition::isHpTempChannel(size_t sensorIndex, size_t channelIndex)

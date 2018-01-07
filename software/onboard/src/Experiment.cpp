@@ -72,7 +72,12 @@ void Experiment::sendStatus()
 	status.lo = RxsmEvents::liftOff();
 	status.soe = RxsmEvents::startOfExperiment();
 	status.sods = RxsmEvents::startOfDataStorage();
-
+	status.hpOvertemperature =  HeatprobeControl::isOvertemperature(0) ? 0b001 : 0;
+	status.hpOvertemperature |= HeatprobeControl::isOvertemperature(1) ? 0b010 : 0;
+	status.hpOvertemperature |= HeatprobeControl::isOvertemperature(2) ? 0b100 : 0;
+	status.state = activity;
+	status.motorPosition = Motor::getPosition();
+	status.testModeEnabled = dataAcquisition.testMode;
 	communicator.sendPacket(status);
 }
 

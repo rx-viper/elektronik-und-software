@@ -53,17 +53,7 @@ public:
 	xpcc::ResumableResult<void>
 	update();
 
-	enum class Activity
-	{
-		Initialize,
-		Idle,
-		DataStorageStarted,
-		LiftedOff,
-		StartExperiment,
-		ExperimentRunning,
-		StopExperiment,
-		Shutdown
-	};
+	using Activity = packet::ExperimentState;
 
 private:
 	void sendStatus();
