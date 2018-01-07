@@ -75,6 +75,9 @@ public:
 	static constexpr uint16_t PressureValuesPerPacketHigh{20};
 	static constexpr uint16_t PressureValuesPerPacketLow{5};
 
+	static_assert (PressureValuesPerPacketHigh == packet::PressureHS().values.size(), "Invalid pressure value count");
+	static_assert (PressureValuesPerPacketLow == packet::PressureLS().values.size(), "Invalid pressure value count");
+
 	using PressureSensor = Amsys5915Sensor<Board::Sensors::PressureI2c>;
 	using OtherTemperatureSensor = Ds1731Sensor<Board::Sensors::TemperatureI2c>;
 
@@ -125,8 +128,10 @@ private:
 	OtherTemperatureSensor otherTempSensor4;
 	OtherTemperatureSensor otherTempSensor5;
 
-	SimpleSensorSampler<PressureSensor, 20> pressureSampler1;
-	SimpleSensorSampler<PressureSensor, 20> pressureSampler2;
+	static constexpr auto MaxPressureValues = std::max(PressureValuesPerPacketLow, PressureValuesPerPacketHigh);
+	SimpleSensorSampler<PressureSensor, MaxPressureValues> pressureSampler1;
+	SimpleSensorSampler<PressureSensor, MaxPressureValues> pressureSampler2;
+
 	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler1;
 	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler2;
 	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler3;
