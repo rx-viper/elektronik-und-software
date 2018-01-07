@@ -21,6 +21,7 @@
 #include "Experiment.hpp"
 #include "RxsmEvents.hpp"
 #include "Communicator.hpp"
+#include "Motor.hpp"
 #include "HeatprobeControl.hpp"
 
 namespace viper
@@ -83,6 +84,13 @@ Experiment::run()
 		DECLARE_ACTIVITY(Activity::Initialize)
 		{
 			initialize();
+			CALL_ACTIVITY(Activity::HomeMotor);
+		}
+
+		DECLARE_ACTIVITY(Activity::HomeMotor)
+		{
+			Motor::home();
+			RF_WAIT_UNTIL(Motor::isHomed());
 			CALL_ACTIVITY(Activity::Idle);
 		}
 
@@ -128,6 +136,8 @@ Experiment::run()
 		{
 			// TODO: start
 			dataAcquisition.setHighRate();
+			Motor::setPosition(MotorHppmDownPosition);
+			RF_WAIT_UNTIL(Motor::isPositionReached());
 			HeatprobeControl::setOn();
 			CALL_ACTIVITY(Activity::ExperimentRunning);
 		}
@@ -147,14 +157,27 @@ Experiment::run()
 			// TODO: stop
 			HeatprobeControl::setOff();
 			dataAcquisition.setLowRate();
+			Motor::home();
+			CALL_ACTIVITY(Activity::PrepareShutdown);
+		}
+
+		DECLARE_ACTIVITY(Activity::PrepareShutdown)
+		{
+			// TODO: stop
+			HeatprobeControl::setOff();
+			dataAcquisition.setLowRate();
+			Motor::home();
+
+			RF_WAIT_UNTIL(!RxsmEvents::startOfDataStorage());
+
+			// TODO: Disable lens heater
+			// TODO: Disable camera recording
+
 			CALL_ACTIVITY(Activity::Shutdown);
 		}
 
 		DECLARE_ACTIVITY(Activity::Shutdown)
 		{
-			HeatprobeControl::setOff();
-			// TODO: Disable lens heater
-			// TODO: Disable camera recording
 			RF_YIELD();
 			CALL_ACTIVITY(Activity::Shutdown);
 		}

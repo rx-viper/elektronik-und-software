@@ -24,27 +24,62 @@ main()
 	Board::Motor::initialize();
 	Board::Encoders::initialize();
 
+	Motor::initialize();
+
 	logger << "\n\nWelcome to Motor Test!\n\n" << xpcc::endl;
-
-	Board::Motor::MotorTimer::start();
-
-	Board::Motor::ResetU::setOutput(false);
-	Board::Motor::ResetV::setOutput(false);
-	Board::Motor::ResetW::setOutput(false);
+	Board::Ui::LedRed::reset();
 
 	while(!Board::Rxsm::EventSoe::read()) {
+//		if()
+		bool hallU = Board::Motor::HallU::read();
+		bool hallV = Board::Motor::HallV::read();
+		bool hallW = Board::Motor::HallW::read();
+		
+		Board::Ui::LedRed::set(hallU);
+		Board::Ui::LedGreen::set(hallV);
+		Board::Ui::LedBlue::set(hallW);
+
+		logger << (hallU?1:0) << (hallV?1:0) << (hallW?1:0) << xpcc::endl;
+	}
+
+	Motor::home();
+	while(!Motor::isHomed()) {
+		Motor::update();
+	}
+	
+	//Motor::setPwm(1000);
+//	xpcc::delayMilliseconds(500);
+	/*xpcc::delayMilliseconds(50);
+	Motor::update();
+	xpcc::delayMilliseconds(50);
+	Motor::update();
+	xpcc::delayMilliseconds(50);
+	Motor::update();
+	xpcc::delayMilliseconds(50);
+	Motor::update();*/
+	logger << Motor::getPosition() << xpcc::endl;
+
+	while(!Board::Rxsm::EventLo::read()) {
+		Motor::update();
 		Board::Ui::LedRed::set(Board::Motor::EndSwitch::read());
 	}
 
-	if(Board::Rxsm::EventLo::read()) {
-		Motor::setPwm(-0x1FF);
-	} else {
-		Motor::setPwm(0x1FF);
+	Motor::setPosition(5'600'000);
+
+	while(!Motor::isPositionReached()) {
+		Motor::update();
+		Board::Ui::LedRed::set(Board::Motor::EndSwitch::read());
+	}
+
+	Motor::home();
+	while(!Motor::isHomed()) {
+		Motor::update();
+		Board::Ui::LedRed::set(Board::Motor::EndSwitch::read());
 	}
 
 	while (1)
 	{
-		logger << Board::Encoders::Motor::getEncoderRaw() << xpcc::endl;
+//		logger << Board::Encoders::Motor::getEncoderRaw() << xpcc::endl;
 		Board::Ui::LedRed::set(Board::Motor::EndSwitch::read());
 	}
 

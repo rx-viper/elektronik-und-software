@@ -42,6 +42,7 @@ class Experiment : public xpcc::pt::Protothread, public xpcc::NestedResumable<10
 {
 public:
 	static constexpr uint16_t StatusPacketTimeout = 1000; // in ms
+	static constexpr uint32_t MotorHppmDownPosition = 5555555;
 
 	Experiment(GroundstationCommunicator& communicator_);
 	Experiment(const Experiment&) = delete;
