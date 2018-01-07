@@ -36,7 +36,7 @@ namespace onboard
 	using Ltc2984Sensor6 = xpcc::Ltc2984<Board::TemperaturePt100::Chips456::Spi, Board::TemperaturePt100::Chips456::Cs6>;
 
 	constexpr std::array<uint16_t, 3> HpTempSensorIndex = {{5, 5, 5}};
-	constexpr std::array<uint16_t, 3> HpTempChannelIndex = {{0, 1, 2}};
+	constexpr std::array<uint16_t, 3> HpTempChannelIndex = {{1, 0, 2}};
 
 	template<typename Sensor>
 	struct Ltc2984Config;
@@ -44,14 +44,15 @@ namespace onboard
 	template<>
 	struct Ltc2984Config<Ltc2984Sensor1>
 	{
-		static constexpr size_t ChannelCount{1};
+		static constexpr size_t ChannelCount{6};
 
 		static constexpr std::array<xpcc::ltc2984::Channel, ChannelCount> channels = {{
-			/*xpcc::ltc2984::Channel::Ch4,
 			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,*/
-			xpcc::ltc2984::Channel::Ch4
+			xpcc::ltc2984::Channel::Ch7,
+			xpcc::ltc2984::Channel::Ch10,
+			xpcc::ltc2984::Channel::Ch13,
+			xpcc::ltc2984::Channel::Ch16,
+			xpcc::ltc2984::Channel::Ch19
 		}};
 
 		static constexpr auto RtdConfig = xpcc::ltc2984::Configuration::rtd(
@@ -70,14 +71,15 @@ namespace onboard
 	template<>
 	struct Ltc2984Config<Ltc2984Sensor2>
 	{
-		static constexpr size_t ChannelCount{1};
+		static constexpr size_t ChannelCount{6};
 
 		static constexpr std::array<xpcc::ltc2984::Channel, ChannelCount> channels = {{
 			xpcc::ltc2984::Channel::Ch4,
-			/*xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4*/
+			xpcc::ltc2984::Channel::Ch7,
+			xpcc::ltc2984::Channel::Ch10,
+			xpcc::ltc2984::Channel::Ch13,
+			xpcc::ltc2984::Channel::Ch16,
+			xpcc::ltc2984::Channel::Ch19
 		}};
 
 		static constexpr auto RtdConfig = xpcc::ltc2984::Configuration::rtd(
@@ -96,14 +98,15 @@ namespace onboard
 	template<>
 	struct Ltc2984Config<Ltc2984Sensor3>
 	{
-		static constexpr size_t ChannelCount{1};
+		static constexpr size_t ChannelCount{6};
 
 		static constexpr std::array<xpcc::ltc2984::Channel, ChannelCount> channels = {{
-			/*xpcc::ltc2984::Channel::Ch4,
 			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,*/
-			xpcc::ltc2984::Channel::Ch4
+			xpcc::ltc2984::Channel::Ch7,
+			xpcc::ltc2984::Channel::Ch10,
+			xpcc::ltc2984::Channel::Ch13,
+			xpcc::ltc2984::Channel::Ch16,
+			xpcc::ltc2984::Channel::Ch19
 		}};
 
 		static constexpr auto RtdConfig = xpcc::ltc2984::Configuration::rtd(
@@ -122,14 +125,15 @@ namespace onboard
 	template<>
 	struct Ltc2984Config<Ltc2984Sensor4>
 	{
-		static constexpr size_t ChannelCount{1};
+		static constexpr size_t ChannelCount{4};
 
 		static constexpr std::array<xpcc::ltc2984::Channel, ChannelCount> channels = {{
-			/*xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,*/
-			xpcc::ltc2984::Channel::Ch4
+			//xpcc::ltc2984::Channel::Ch4,
+			xpcc::ltc2984::Channel::Ch7,
+			xpcc::ltc2984::Channel::Ch10,
+			xpcc::ltc2984::Channel::Ch13,
+			xpcc::ltc2984::Channel::Ch16
+			//xpcc::ltc2984::Channel::Ch19
 		}};
 
 		static constexpr auto RtdConfig = xpcc::ltc2984::Configuration::rtd(
@@ -148,14 +152,15 @@ namespace onboard
 	template<>
 	struct Ltc2984Config<Ltc2984Sensor5>
 	{
-		static constexpr size_t ChannelCount{1};
+		static constexpr size_t ChannelCount{5};
 
 		static constexpr std::array<xpcc::ltc2984::Channel, ChannelCount> channels = {{
-			/*xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,
-			xpcc::ltc2984::Channel::Ch4,*/
-			xpcc::ltc2984::Channel::Ch4
+			//xpcc::ltc2984::Channel::Ch4,
+			xpcc::ltc2984::Channel::Ch7,
+			xpcc::ltc2984::Channel::Ch10,
+			xpcc::ltc2984::Channel::Ch13,
+			xpcc::ltc2984::Channel::Ch16,
+			xpcc::ltc2984::Channel::Ch19
 		}};
 
 		static constexpr auto RtdConfig = xpcc::ltc2984::Configuration::rtd(
@@ -174,12 +179,12 @@ namespace onboard
 	template<>
 	struct Ltc2984Config<Ltc2984Sensor6>
 	{
-		static constexpr size_t ChannelCount{6};
+		static constexpr size_t ChannelCount{3};
 
 		static constexpr std::array<xpcc::ltc2984::Channel, ChannelCount> channels = {{
-			xpcc::ltc2984::Channel::Ch4,
+			/*xpcc::ltc2984::Channel::Ch4,
 			xpcc::ltc2984::Channel::Ch7,
-			xpcc::ltc2984::Channel::Ch10,
+			xpcc::ltc2984::Channel::Ch10,*/
 			xpcc::ltc2984::Channel::Ch13,
 			xpcc::ltc2984::Channel::Ch16,
 			xpcc::ltc2984::Channel::Ch19
