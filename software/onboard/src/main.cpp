@@ -24,10 +24,12 @@
 #include "../hardware_rev1.hpp"
 #include "RxsmEvents.hpp"
 #include "Experiment.hpp"
+#include "HeatprobeControl.hpp"
 
 using viper::onboard::RxsmEvents;
 using viper::onboard::Experiment;
 using viper::onboard::GroundstationCommunicator;
+using viper::onboard::HeatprobeControl;
 
 #include <xpcc/debug/logger.hpp>
 
@@ -36,6 +38,8 @@ main()
 {
 	Board::initializeMcu();
 	Board::initializeAllPeripherals();
+
+	HeatprobeControl::initialize();
 
 	RxsmEvents::initialize();
 
@@ -47,6 +51,7 @@ main()
 	while (1)
 	{
 		RxsmEvents::update();
+		HeatprobeControl::update();
 
 		experiment.update();
 		communicator.update();

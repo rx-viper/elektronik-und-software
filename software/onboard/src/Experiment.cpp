@@ -21,6 +21,7 @@
 #include "Experiment.hpp"
 #include "RxsmEvents.hpp"
 #include "Communicator.hpp"
+#include "HeatprobeControl.hpp"
 
 namespace viper
 {
@@ -127,6 +128,7 @@ Experiment::run()
 		{
 			// TODO: start
 			dataAcquisition.setHighRate();
+			HeatprobeControl::setOn();
 			CALL_ACTIVITY(Activity::ExperimentRunning);
 		}
 
@@ -143,12 +145,14 @@ Experiment::run()
 		DECLARE_ACTIVITY(Activity::StopExperiment)
 		{
 			// TODO: stop
+			HeatprobeControl::setOff();
 			dataAcquisition.setLowRate();
 			CALL_ACTIVITY(Activity::Shutdown);
 		}
 
 		DECLARE_ACTIVITY(Activity::Shutdown)
 		{
+			HeatprobeControl::setOff();
 			// TODO: Disable lens heater
 			// TODO: Disable camera recording
 			RF_YIELD();

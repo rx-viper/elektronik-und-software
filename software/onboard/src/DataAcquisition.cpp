@@ -19,6 +19,7 @@
 #include <xpcc/architecture/platform.hpp>
 
 #include "DataAcquisition.hpp"
+#include "HeatprobeControl.hpp"
 
 namespace viper
 {
@@ -125,9 +126,16 @@ void DataAcquisition::update()
 {
 	if(iceTempTimer.execute()) {
 		if(iceTemperatureSampler.isFinished()) {
-			hpTemp[0] = iceTemperatureSampler.data(HpTempSensorIndex[0], HpTempChannelIndex[0]).getTemperatureFixed();
-			hpTemp[1] = iceTemperatureSampler.data(HpTempSensorIndex[1], HpTempChannelIndex[1]).getTemperatureFixed();
-			hpTemp[2] = iceTemperatureSampler.data(HpTempSensorIndex[2], HpTempChannelIndex[2]).getTemperatureFixed();
+			for(int i = 0; i < 3; ++i) {
+				auto hpTempData = iceTemperatureSampler.data(HpTempSensorIndex[i], HpTempChannelIndex[i]);
+				if(!hpTempData.isValid()) {
+					// set to invalid value to trigger emergency off
+					hpTemp[i] = HeatprobeControl::InvalidTemperature;
+				} else {
+					hpTemp[i] = hpTempData.getTemperatureInteger();
+				}
+				HeatprobeControl::setTemperature(i, hpTemp[i]);
+			}
 
 			if(highRate) {
 				sendIceTemperatures<packet::IceTemperatureHS>();

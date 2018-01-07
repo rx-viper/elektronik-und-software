@@ -49,7 +49,7 @@ public:
 			static constexpr uint16_t OtherTemp{5000};
 			static constexpr uint16_t HeatProbeDepth{500};
 			static constexpr uint16_t Pressure{50};
-			static constexpr uint16_t HeatProbeTemp{667};
+			static constexpr uint16_t HeatProbeTemp{1140};
 		};
 
 		struct LowRate {
@@ -57,7 +57,7 @@ public:
 			static constexpr uint16_t OtherTemp{10000};
 			static constexpr uint16_t HeatProbeDepth{10000};
 			static constexpr uint16_t Pressure{200};
-			static constexpr uint16_t HeatProbeTemp{10000};
+			static constexpr uint16_t HeatProbeTemp{10000}; // change to 3*IceTemp = 9000 ?
 		};
 	};
 
@@ -133,7 +133,7 @@ private:
 	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler4;
 	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler5;
 
-	std::array<uint16_t, 3> hpTemp = {};
+	std::array<uint32_t, 3> hpTemp = {};
 
 	xpcc::ShortTimeout timeout;
 
