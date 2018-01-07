@@ -11,6 +11,8 @@
 
 #include <xpcc/debug/logger.hpp>
 
+#ifdef ACTIVITY_DEBUG_LOG
+
 /// Redefine this with the name of the activity
 #define ACTIVITY_LOG_NAME ""
 
@@ -26,6 +28,21 @@
 #define ACTIVITY_LOG_STATE_CHANGE(oldActivity, newActivity, ...) \
 		XPCC_LOG_DEBUG << XPCC_FILE_INFO << "[sm:" ACTIVITY_LOG_NAME "] " << oldActivity << " -> " << newActivity << " ()" << xpcc::endl
 
+#else
+
+/// Redefine this with the name of the activity
+#define ACTIVITY_LOG_NAME ""
+
+/// Gets called upon enterting the activity group
+#define ACTIVITY_LOG_BEGIN(activity)
+
+/// Gets called upon exiting the activity group
+#define ACTIVITY_LOG_EXIT(activity)
+
+/// Gets called when a new activity has been called
+#define ACTIVITY_LOG_STATE_CHANGE(oldActivity, newActivity, ...)
+
+#endif
 
 /// Use at the beginning of an activity group
 /// Must be used without index for `xpcc::NestedResumable`s and with index for `xpcc::Resumable`s.
@@ -37,10 +54,10 @@
 /// Declares and activity
 #define DECLARE_ACTIVITY(a) } else if(this->activity == a) {
 
+// ACTIVITY_LOG_STATE_CHANGE(this->activity, nextActivity, ##__VA_ARGS__);
 /// Immidiately calls the declared activity. Additional parameter will be forwarded to ACTIVITY_LOG_STATE_CHANGE.
 #define CALL_ACTIVITY(nextActivity, ...) do { \
 			if(this->activity != nextActivity) { \
-				ACTIVITY_LOG_STATE_CHANGE(this->activity, nextActivity, ##__VA_ARGS__); \
 			} \
 			this->activity = nextActivity; \
 			goto activity_switch; } while(0)
