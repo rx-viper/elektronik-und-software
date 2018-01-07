@@ -154,11 +154,11 @@ void DataAcquisition::update()
 		}
 	}
 
-	if(otherTempSampler1.isFinished() &&
+	if(otherTempSampler1.isFinished())/* &&
 			otherTempSampler2.isFinished() &&
 			otherTempSampler3.isFinished() &&
 			otherTempSampler4.isFinished() &&
-			otherTempSampler5.isFinished())
+			otherTempSampler5.isFinished())*/
 	{
 		otherTempSampler1.resetFinished();
 		otherTempSampler2.resetFinished();
