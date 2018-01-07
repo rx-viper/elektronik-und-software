@@ -1,4 +1,4 @@
-update=Fri 05 Jan 2018 01:48:32 AM CET
+update=Sun 07 Jan 2018 03:09:25 PM CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,9 +61,6 @@ LibName29=opto
 LibName30=atmel
 LibName31=contrib
 LibName32=valves
-LibName33=st890
-LibName34=lt1117cst-3v3
-LibName35=iso1540
-LibName36=ams5915
-LibName37=max4995a
-LibName38=tlv73333pdbvr
+LibName33=ams5915
+LibName34=max4995a
+LibName35=tlv73333pdbvr
