@@ -3,7 +3,7 @@
 namespace viper
 {
 
-ExperimentStatus::ExperimentStatus() : hpDepths{}, hpTemperatures{}
+ExperimentStatus::ExperimentStatus() : hpDepths{}, hpTemperatures{}, hpOvertemperature{}, otherTemp{}
 {
 }
 

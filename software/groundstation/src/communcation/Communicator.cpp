@@ -10,13 +10,14 @@ namespace viper
 using communication::CRC32;
 using communication::CobsWriter;
 
-Communicator::Communicator() : frameReader{frameInBuffer.data(), frameInBuffer.size()},
+Communicator::Communicator() : sendSequenceNumbers{}, frameReader{frameInBuffer.data(), frameInBuffer.size()},
 	frameWriter{frameOutBuffer.data(), frameOutBuffer.size()}
 {
 }
 
 Communicator::Communicator(std::shared_ptr<CommunicationBackend> backend_)
-	: backend{std::move(backend_)},
+	: sendSequenceNumbers{},
+	  backend{std::move(backend_)},
 	  frameReader{frameInBuffer.data(), frameInBuffer.size()},
 	  frameWriter{frameOutBuffer.data(), frameOutBuffer.size()}
 {
