@@ -1,4 +1,4 @@
-update=Sun 07 Jan 2018 03:09:25 PM CET
+update=Mo 08 Jan 2018 21:09:13 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -64,3 +64,13 @@ LibName32=valves
 LibName33=ams5915
 LibName34=max4995a
 LibName35=tlv73333pdbvr
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../docs/boards/ams5915v2/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
