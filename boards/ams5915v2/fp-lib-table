@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name kicad-footprints-rchojetzki)(type Github)(uri https://github.com/rchojetzki/rchojetzki-kicad-footprints-lib.pretty)(options "")(descr ""))
+)
