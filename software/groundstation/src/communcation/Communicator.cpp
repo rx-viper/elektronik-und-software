@@ -90,6 +90,7 @@ void Communicator::dataReceived()
 	while(backend->isDataAvailable()) {
 		uint8_t* data = receivedData.data();
 		size_t size = readFromBackend(data, receivedData.size());
+		emit logRawData(QByteArray(reinterpret_cast<char*>(data), size), QDateTime::currentDateTime());
 
 		if(frameReader.isDataAvailable()) {
 			processFrame();

@@ -34,7 +34,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_17">
     <item>
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="buttonFrame">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -43,9 +43,16 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_8">
        <item>
-        <widget class="QPushButton" name="connectButton">
+        <widget class="QPushButton" name="connectDbButton">
          <property name="text">
-          <string>Connect</string>
+          <string>Connect Db</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="connectSerialButton">
+         <property name="text">
+          <string>Connect Serial</string>
          </property>
         </widget>
        </item>
@@ -74,7 +81,7 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
-            <widget class="QFrame" name="frame">
+            <widget class="QFrame" name="frame_exp1">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -933,7 +940,7 @@
      <x>0</x>
      <y>0</y>
      <width>1556</width>
-     <height>40</height>
+     <height>27</height>
     </rect>
    </property>
   </widget>

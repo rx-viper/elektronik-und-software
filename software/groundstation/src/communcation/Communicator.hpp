@@ -16,6 +16,8 @@
 
 #include "Packets.hpp"
 
+#include <QDateTime>
+
 using viper::communication::CobsReader;
 using viper::communication::CobsWriter;
 using viper::communication::DataWriter;
@@ -56,6 +58,7 @@ public:
 
 signals:
 	void packetReceived();
+	void logRawData(const QByteArray& data, const QDateTime& time);
 
 private slots:
 	void dataReceived();

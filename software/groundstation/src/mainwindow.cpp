@@ -11,7 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
 	ui(new Ui::MainWindow), backendConfigWidget(nullptr)
 {
 	ui->setupUi(this);
-	connect(ui->connectButton, SIGNAL(clicked()), this, SIGNAL(connectClicked()));
+	connect(ui->connectDbButton, SIGNAL(clicked()), this, SIGNAL(connectDbClicked()));
+	connect(ui->connectSerialButton, SIGNAL(clicked()), this, SIGNAL(connectSerialClicked()));
 	connect(ui->testOnButton, SIGNAL(clicked()), this, SIGNAL(testOnClicked()));
 	connect(ui->testOffButton, SIGNAL(clicked()), this, SIGNAL(testOffClicked()));
 }
@@ -28,7 +29,7 @@ void MainWindow::setBackendConfigWidget(BackendConfigWidget* widget)
 	}
 
 	// TODO: fix this, this is a hack, removing is not possible
-	ui->frame->layout()->addWidget(widget);
+	ui->buttonFrame->layout()->addWidget(widget);
 	backendConfigWidget = widget;
 }
 
@@ -95,15 +96,15 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	}
 }
 
-void MainWindow::setConnected(bool connected)
+void MainWindow::setSerialConnected(bool connected)
 {
 	if(backendConfigWidget)
 		backendConfigWidget->setEnabled(!connected);
 
 	if(connected) {
-		ui->connectButton->setText("Disconnect");
+		ui->connectSerialButton->setText("Disconnect");
 	} else {
-		ui->connectButton->setText("&Connect");
+		ui->connectSerialButton->setText("&Connect");
 	}
 }
 
