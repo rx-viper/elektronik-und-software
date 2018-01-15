@@ -457,9 +457,10 @@ namespace Sensors {
 }
 
 namespace Storage {
-	constexpr uint32_t SpiBaudrate = 700000;
+	static constexpr uint32_t SpiBaudrate = 5625000;
+	static constexpr uint32_t FlashSize = 8*1024*1024;
 
-	struct Flash1 {
+	struct Flash1Spi {
 		using Sck		= GpioOutputB10;
 		using Miso		= GpioInputC2;
 		using Mosi		= GpioOutputC3;
@@ -467,7 +468,7 @@ namespace Storage {
 		using Spi		= SpiMaster2;
 	};
 
-	struct Flash2 {
+	struct Flash2Spi {
 		using Sck		= GpioOutputC10;
 		using Miso		= GpioInputC11;
 		using Mosi		= GpioOutputD6;
@@ -478,13 +479,14 @@ namespace Storage {
 	inline void
 	initialize()
 	{
-		Flash1::Cs::set();
-		Flash1::Cs::setOutput(Gpio::OutputType::PushPull);
-		Flash2::Cs::set();
-		Flash2::Cs::setOutput(Gpio::OutputType::PushPull);
+		// CS pins are initialized in BdSpiFlash::initialize()
+		//Flash1::Cs::set();
+		//Flash1::Cs::setOutput(Gpio::OutputType::PushPull);
+		//Flash2::Cs::set();
+		//Flash2::Cs::setOutput(Gpio::OutputType::PushPull);
 
-		spiMasterInitialize<Flash1, SpiBaudrate>();
-		spiMasterInitialize<Flash2, SpiBaudrate>();
+		spiMasterInitialize<Flash1Spi, SpiBaudrate>();
+		spiMasterInitialize<Flash2Spi, SpiBaudrate>();
 	}
 }
 
