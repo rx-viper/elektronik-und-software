@@ -169,6 +169,22 @@ bool HpTemperatureHS::write(DataWriter& writer) const
     return writer.write(temperatures);
 }
 
+bool TestMode::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(enabled);
+}
+
+bool TestMode::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(enabled);
+}
+
 bool Status::read(DataReader& reader)
 {
     if(!reader.read(sequenceNumber))
@@ -183,7 +199,19 @@ bool Status::read(DataReader& reader)
     if(!reader.read(soe))
         return false;
     
-    return reader.read(sods);
+    if(!reader.read(sods))
+        return false;
+    
+    if(!reader.read(state))
+        return false;
+    
+    if(!reader.read(hpOvertemperature))
+        return false;
+    
+    if(!reader.read(motorPosition))
+        return false;
+    
+    return reader.read(testModeEnabled);
 }
 
 bool Status::write(DataWriter& writer) const
@@ -200,7 +228,19 @@ bool Status::write(DataWriter& writer) const
     if(!writer.write(soe))
         return false;
     
-    return writer.write(sods);
+    if(!writer.write(sods))
+        return false;
+    
+    if(!writer.write(state))
+        return false;
+    
+    if(!writer.write(hpOvertemperature))
+        return false;
+    
+    if(!writer.write(motorPosition))
+        return false;
+    
+    return writer.write(testModeEnabled);
 }
 
 bool TestPacket1::read(DataReader& reader)

@@ -10,6 +10,7 @@
 #include "PacketDispatcher.hpp"
 #include "ExperimentStatus.hpp"
 #include "mainwindow.h"
+#include "IceTemperatureWindow.hpp"
 
 #include <memory>
 
@@ -36,12 +37,15 @@ private slots:
 	void processPacket(const GroundstationPackets& packet);
 	void updateGUI();
 	void connectButtonClicked();
+	void testOnButtonClicked();
+	void testOffButtonClicked();
 
 private:
 	Communicator communicator;
 	PacketDispatcher packetDispatcher;
 	ExperimentStatus status;
 	MainWindow mainWindow;
+	IceTemperatureWindow iceTempWindow;
 	QTimer guiUpdateTimer;
 
 	std::shared_ptr<CommunicationBackend> backend;

@@ -22,6 +22,8 @@
 #include "../../hardware_rev1.hpp"
 #include <array>
 
+#include <xpcc/processing/timer.hpp>
+
 namespace viper
 {
 namespace onboard
@@ -32,11 +34,39 @@ class Motor
 public:
 	using MotorTimer = Board::Motor::MotorTimer;
 
+	static constexpr uint16_t HomingPwm = -400;
+	
+	// Wait 200ms before reading encoder home location after end switch has been reached
+	static constexpr uint16_t HomingLagTimeout = 400;
+	static constexpr uint16_t ControllerPeriod = 1; // ms
+
+	static void initialize();
+
+	static void disable();
+
+	static void home();
+	static bool isHomed();
+
 	static void setPwm(int16_t pwm);
+
+	static void setPosition(int32_t currentPosition);
+	static bool isPositionReached();
+	static int32_t getPosition();
+
+	/// Call periodically from main loop
+	static void update();
 
 	static void doCommutation();
 
 private:
+	enum class ControllerMode
+	{
+		Disabled,
+		Pwm,
+		HomingActive,
+		Position
+	};
+
 	enum class PwmMode
 	{
 		Off,
@@ -44,10 +74,30 @@ private:
 		Inverted
 	};
 
+	static void setPwmValue(int16_t pwm, bool keepMode = false);
 	static void setPwmMode(uint32_t channel, PwmMode mode);
 	static void updateModeEvent();
 
+	static void updateEncoder();
+
 	using OutputSet = std::array<PwmMode, 3>;
+
+	static ControllerMode controllerMode;
+	static bool homed;
+	static xpcc::ShortPeriodicTimer controllerTimer;
+	static int16_t currentPwm;
+	static int32_t currentVelocity;
+	static int32_t currentPosition;
+	static int32_t targetPosition;
+
+	static uint16_t lastEncoder;
+
+	static xpcc::Pid<float> speedController;
+	static xpcc::SCurveController<float>::Parameter positionControllerParameters;
+	static xpcc::SCurveController<float> positionController;
+
+	static xpcc::ShortTimeout homingLagTimeout;
+
 
 	static constexpr std::array<OutputSet, 7> outputSets = {{
 		{PwmMode::Off,		PwmMode::Off,		PwmMode::Off},
@@ -74,4 +124,4 @@ private:
 }
 }
 
-#endif // VIPER_ONBOARD_RXSM_EVENTS_HPP
+#endif // VIPER_ONBOARD_MOTOR_HPP

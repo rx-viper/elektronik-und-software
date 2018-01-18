@@ -24,6 +24,21 @@ using communication::PacketGroup;
 using communication::DataReader;
 using communication::DataWriter;
 
+/// @enum ExperimentState
+enum class ExperimentState : uint8_t
+{
+    Initialize,
+    HomeMotor,
+    Idle,
+    DataStorageStarted,
+    LiftedOff,
+    StartExperiment,
+    ExperimentRunning,
+    StopExperiment,
+    PrepareShutdown,
+    Shutdown
+};
+
 /// @enum TestEnum
 enum class TestEnum : uint8_t
 {
@@ -69,7 +84,7 @@ struct OtherTemperatureLS
     static constexpr size_t PacketSize{14};
     
     mutable uint32_t sequenceNumber;
-    std::array<uint16_t, 5> temperatures;
+    std::array<int16_t, 5> temperatures;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
@@ -84,7 +99,7 @@ struct OtherTemperatureHS
     static constexpr size_t PacketSize{14};
     
     mutable uint32_t sequenceNumber;
-    std::array<uint16_t, 5> temperatures;
+    std::array<int16_t, 5> temperatures;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
@@ -182,17 +197,36 @@ struct HpTemperatureHS
     constexpr inline size_t size() const { return PacketSize; }
 };
 
+/// Packet TestMode
+struct TestMode
+{
+    static constexpr uint8_t PacketID{0xb};
+    static constexpr size_t PacketSize{5};
+    
+    mutable uint32_t sequenceNumber;
+    uint8_t enabled;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
 /// Packet Status
 struct Status
 {
     static constexpr uint8_t PacketID{0xa};
-    static constexpr size_t PacketSize{11};
+    static constexpr size_t PacketSize{18};
     
     mutable uint32_t sequenceNumber;
     uint32_t time;
     uint8_t lo;
     uint8_t soe;
     uint8_t sods;
+    ExperimentState state;
+    uint8_t hpOvertemperature;
+    int32_t motorPosition;
+    uint8_t testModeEnabled;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
@@ -232,7 +266,7 @@ struct TestPacket2
 };
 
 /// PacketGroup GroundstationPackets
-using GroundstationPackets = PacketGroup<IceTemperatureLS, IceTemperatureHS, OtherTemperatureLS, OtherTemperatureHS, HpPenetrationDepthLS, HpPenetrationDepthHS, PressureLS, PressureHS, HpTemperatureLS, HpTemperatureHS, Status>;
+using GroundstationPackets = PacketGroup<IceTemperatureLS, IceTemperatureHS, OtherTemperatureLS, OtherTemperatureHS, HpPenetrationDepthLS, HpPenetrationDepthHS, PressureLS, PressureHS, HpTemperatureLS, HpTemperatureHS, Status, TestMode>;
 /// PacketGroup TestPackets
 using TestPackets = PacketGroup<TestPacket1, TestPacket2>;
 

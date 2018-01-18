@@ -21,6 +21,8 @@
 #include "Experiment.hpp"
 #include "RxsmEvents.hpp"
 #include "Communicator.hpp"
+#include "Motor.hpp"
+#include "HeatprobeControl.hpp"
 
 namespace viper
 {
@@ -34,26 +36,18 @@ Experiment::Experiment(GroundstationCommunicator& communicator_)
 
 void Experiment::initialize()
 {
+	dataAcquisition.initialize();
+	dataAcquisition.setStorageEnabled(false);
+	dataAcquisition.setLowRate();
 	dataAcquisition.start();
 }
 
-void Experiment::update()
+xpcc::ResumableResult<void>
+Experiment::update()
 {
 	if(RxsmEvents::eventOccurred()) {
 		statusPacketTimer.restart(StatusPacketTimeout);
 		sendStatus();
-
-		if(RxsmEvents::startOfExperiment()) {
-			dataAcquisition.setStorageEnabled(true);
-			dataAcquisition.setHighRate();
-		} else if(RxsmEvents::liftOff()) { // !SOE && LO
-			dataAcquisition.setStorageEnabled(true);
-			dataAcquisition.setLowRate();
-		} else { // !SOE && !LO
-			dataAcquisition.setStorageEnabled(false);
-			dataAcquisition.setLowRate();
-		}
-
 		RxsmEvents::acknowledge();
 	}
 
@@ -62,6 +56,12 @@ void Experiment::update()
 	}
 
 	dataAcquisition.update();
+
+	PT_BEGIN();
+	while(1) {
+		PT_CALL(run());
+	}
+	PT_END();
 }
 
 void Experiment::sendStatus()
@@ -72,8 +72,159 @@ void Experiment::sendStatus()
 	status.lo = RxsmEvents::liftOff();
 	status.soe = RxsmEvents::startOfExperiment();
 	status.sods = RxsmEvents::startOfDataStorage();
-
+	status.hpOvertemperature =  HeatprobeControl::isOvertemperature(0) ? 0b001 : 0;
+	status.hpOvertemperature |= HeatprobeControl::isOvertemperature(1) ? 0b010 : 0;
+	status.hpOvertemperature |= HeatprobeControl::isOvertemperature(2) ? 0b100 : 0;
+	status.state = activity;
+	status.motorPosition = Motor::getPosition();
+	status.testModeEnabled = dataAcquisition.testMode;
 	communicator.sendPacket(status);
+}
+
+xpcc::ResumableResult<void>
+Experiment::run()
+{
+	ACTIVITY_GROUP_BEGIN()
+	{
+		DECLARE_ACTIVITY(Activity::Initialize)
+		{
+			initialize();
+			CALL_ACTIVITY(Activity::HomeMotor);
+		}
+
+		DECLARE_ACTIVITY(Activity::HomeMotor)
+		{
+			Motor::home();
+			RF_WAIT_UNTIL(Motor::isHomed());
+			CALL_ACTIVITY(Activity::Idle);
+		}
+
+		DECLARE_ACTIVITY(Activity::Idle)
+		{
+			if(RxsmEvents::startOfDataStorage() ||
+					RxsmEvents::liftOff() || RxsmEvents::startOfExperiment()) {
+				// TODO: Enable lens heater
+				// TODO: Enable camera recording
+				CALL_ACTIVITY(Activity::DataStorageStarted);
+			}
+
+			RF_YIELD();
+			CALL_ACTIVITY(Activity::Idle);
+		}
+
+		DECLARE_ACTIVITY(Activity::DataStorageStarted)
+		{
+			if(RxsmEvents::liftOff() || RxsmEvents::startOfExperiment()) {
+				dataAcquisition.setStorageEnabled(true);
+				CALL_ACTIVITY(Activity::LiftedOff);
+			} else if (!RxsmEvents::startOfDataStorage()) {
+				CALL_ACTIVITY(Activity::Idle);
+			}
+
+			RF_YIELD();
+			CALL_ACTIVITY(Activity::DataStorageStarted);
+		}
+
+		DECLARE_ACTIVITY(Activity::LiftedOff)
+		{
+			if(RxsmEvents::startOfExperiment()) {
+				CALL_ACTIVITY(Activity::StartExperiment);
+			} else if(!RxsmEvents::liftOff()) {
+				CALL_ACTIVITY(Activity::DataStorageStarted);
+			}
+
+			RF_YIELD();
+			CALL_ACTIVITY(Activity::LiftedOff);
+		}
+
+		DECLARE_ACTIVITY(Activity::StartExperiment)
+		{
+			// TODO: start
+			dataAcquisition.setHighRate();
+			Motor::setPosition(MotorHppmDownPosition);
+			RF_WAIT_UNTIL(Motor::isPositionReached());
+			HeatprobeControl::setOn();
+			CALL_ACTIVITY(Activity::ExperimentRunning);
+		}
+
+		DECLARE_ACTIVITY(Activity::ExperimentRunning)
+		{
+			if(!RxsmEvents::startOfExperiment()) {
+				CALL_ACTIVITY(Activity::StopExperiment);
+			}
+
+			RF_YIELD();
+			CALL_ACTIVITY(Activity::ExperimentRunning);
+		}
+
+		DECLARE_ACTIVITY(Activity::StopExperiment)
+		{
+			// TODO: stop
+			HeatprobeControl::setOff();
+			dataAcquisition.setLowRate();
+			Motor::home();
+			CALL_ACTIVITY(Activity::PrepareShutdown);
+		}
+
+		DECLARE_ACTIVITY(Activity::PrepareShutdown)
+		{
+			// TODO: stop
+			HeatprobeControl::setOff();
+			dataAcquisition.setLowRate();
+			Motor::home();
+
+			RF_WAIT_UNTIL(!RxsmEvents::startOfDataStorage());
+
+			// TODO: Disable lens heater
+			// TODO: Disable camera recording
+
+			CALL_ACTIVITY(Activity::Shutdown);
+		}
+
+		DECLARE_ACTIVITY(Activity::Shutdown)
+		{
+			RF_YIELD();
+			CALL_ACTIVITY(Activity::Shutdown);
+		}
+	}
+
+	ACTIVITY_GROUP_END();
+}
+
+xpcc::IOStream& operator<<(xpcc::IOStream& out, Experiment::Activity state)
+{
+	using Activity = Experiment::Activity;
+
+	switch(state) {
+	case Activity::Initialize:
+		out << "Initialize" << xpcc::endl;
+		break;
+	case Activity::Idle:
+		out << "Idle" << xpcc::endl;
+		break;
+	case Activity::DataStorageStarted:
+		out << "DataStorageStarted" << xpcc::endl;
+		break;
+	case Activity::LiftedOff:
+		out << "LiftedOff" << xpcc::endl;
+		break;
+	case Activity::StartExperiment:
+		out << "StartExperiment" << xpcc::endl;
+		break;
+	case Activity::ExperimentRunning:
+		out << "ExperimentRunning" << xpcc::endl;
+		break;
+	case Activity::StopExperiment:
+		out << "StopExperiment" << xpcc::endl;
+		break;
+	case Activity::Shutdown:
+		out << "Shutdown" << xpcc::endl;
+		break;
+	default:
+		out << "BUG! Unknown state" << xpcc::endl;
+	}
+
+	return out;
 }
 
 }

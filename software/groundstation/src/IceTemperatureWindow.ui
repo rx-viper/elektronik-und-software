@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IceTemperatureWindow</class>
+ <widget class="QDialog" name="IceTemperatureWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1631</width>
+    <height>548</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QGroupBox" name="iceTemperatureBox">
+     <property name="title">
+      <string>IceTemperatures</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableWidget" name="tempTable">
+        <row>
+         <property name="text">
+          <string>R1</string>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string>R2</string>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string>R3</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>Temp1_1</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temp1_2</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temp1_3</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temp2_1</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temp2_2</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temp2_3</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temp3_1</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temp3_2</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temp3_3</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Other Temperatures</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLCDNumber" name="otherTemp1"/>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="otherTemp2"/>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="otherTemp3"/>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="otherTemp4">
+        <property name="value" stdset="0">
+         <double>0.000000000000000</double>
+        </property>
+        <property name="intValue" stdset="0">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="otherTemp5"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

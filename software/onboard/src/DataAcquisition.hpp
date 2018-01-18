@@ -25,24 +25,69 @@
 #include "Communicator.hpp"
 #include "../hardware_rev1.hpp"
 
+#include "Ltc2984Sampler.hpp"
+#include "SimpleSensorSampler.hpp"
+
+#include "Ds1731Sensor.hpp"
+#include "Amsys5915Sensor.hpp"
+
 namespace viper
 {
 namespace onboard
 {
 
 using GroundstationCommunicator = Communicator<GroundstationPackets, Board::Rxsm::TelemetryUart>;
-//using GroundstationCommunicator = Communicator<GroundstationPackets, Board::Ui::DebugUart>;
 
 class DataAcquisition
 {
 public:
+	struct Timeouts {
+		static constexpr uint16_t Initialize{1000};
+
+		struct HighRate {
+			static constexpr uint16_t IceTemp{1140};
+			static constexpr uint16_t OtherTemp{5000};
+			static constexpr uint16_t HeatProbeDepth{500};
+			static constexpr uint16_t Pressure{50};
+			static constexpr uint16_t HeatProbeTemp{1140};
+		};
+
+		struct LowRate {
+			static constexpr uint16_t IceTemp{3000};
+			static constexpr uint16_t OtherTemp{10000};
+			static constexpr uint16_t HeatProbeDepth{10000};
+			static constexpr uint16_t Pressure{200};
+			static constexpr uint16_t HeatProbeTemp{10000}; // change to 3*IceTemp = 9000 ?
+		};
+	};
+
+	// TODO: addresses
+	struct I2cAddress {
+		static constexpr uint8_t Pressure1{0x41};
+		static constexpr uint8_t Pressure2{0x42};
+		static constexpr uint8_t OtherTemp1{0x4B};
+		static constexpr uint8_t OtherTemp2{0x1};
+		static constexpr uint8_t OtherTemp3{0x1};
+		static constexpr uint8_t OtherTemp4{0x1};
+		static constexpr uint8_t OtherTemp5{0x1};
+	};
+
+	static constexpr uint16_t PressureValuesPerPacketHigh{20};
+	static constexpr uint16_t PressureValuesPerPacketLow{5};
+
+	static_assert (PressureValuesPerPacketHigh == packet::PressureHS().values.size(), "Invalid pressure value count");
+	static_assert (PressureValuesPerPacketLow == packet::PressureLS().values.size(), "Invalid pressure value count");
+
+	using PressureSensor = Amsys5915Sensor<Board::Sensors::PressureI2c>;
+	using OtherTemperatureSensor = Ds1731Sensor<Board::Sensors::TemperatureI2c>;
+
 	DataAcquisition(GroundstationCommunicator& communicator_);
 	DataAcquisition(const DataAcquisition&) = delete;
 	DataAcquisition& operator=(const DataAcquisition&) = delete;
 
+	void initialize();
+
 	void start();
-	void stop();
-	bool isRunning();
 
 	void setLowRate();
 	void setHighRate();
@@ -51,7 +96,7 @@ public:
 	void update();
 
 private:
-	void resetTimers();
+	static bool isHpTempChannel(size_t sensorIndex, size_t channelIndex);
 
 	template<typename PacketT>
 	void sendIceTemperatures();
@@ -73,42 +118,53 @@ private:
 	bool highRate = false;
 	bool storageEnabled = false;
 
-	static constexpr uint16_t iceTempHighTimeout = 667;
-	static constexpr uint16_t iceTempLowTimeout = 3000;
+	Ltc2984Sampler iceTemperatureSampler;
+
+	PressureSensor pressureSensor1;
+	PressureSensor pressureSensor2;
+	OtherTemperatureSensor otherTempSensor1;
+	OtherTemperatureSensor otherTempSensor2;
+	OtherTemperatureSensor otherTempSensor3;
+	OtherTemperatureSensor otherTempSensor4;
+	OtherTemperatureSensor otherTempSensor5;
+
+	static constexpr auto MaxPressureValues = std::max(PressureValuesPerPacketLow, PressureValuesPerPacketHigh);
+	SimpleSensorSampler<PressureSensor, MaxPressureValues> pressureSampler1;
+	SimpleSensorSampler<PressureSensor, MaxPressureValues> pressureSampler2;
+
+	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler1;
+	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler2;
+	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler3;
+	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler4;
+	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler5;
+
+	std::array<uint32_t, 3> hpTemp = {};
+
+	xpcc::ShortTimeout timeout;
+
 	xpcc::ShortPeriodicTimer iceTempTimer;
-
-	static constexpr uint16_t otherTempHighTimeout = 5000;
-	static constexpr uint16_t otherTempLowTimeout = 10000;
-	xpcc::ShortPeriodicTimer otherTempTimer;
-
-	static constexpr uint16_t depthHighTimeout = 500;
-	static constexpr uint16_t depthLowTimeout = 10000;
-	xpcc::ShortPeriodicTimer depthTimer;
-
-	static constexpr uint16_t pressureHighTimeout = 50;
-	static constexpr uint16_t pressureLowTimeout = 200;
-	xpcc::ShortPeriodicTimer pressureTimer;
-
-	static constexpr uint16_t hpTempHighTimeout = 667;
-	static constexpr uint16_t hpTempLowTimeout = 10000;
 	xpcc::ShortPeriodicTimer hpTempTimer;
+	xpcc::ShortPeriodicTimer hpDepthTimer;
 
-	// state of fake data generation
-	uint8_t iceTempState;
-	uint8_t otherTempState;
-	uint8_t depthState;
-	uint8_t pressureState;
-	uint8_t hpTempState;
+public:
+	bool testMode = false;
 };
 
 template<typename PacketT>
 void DataAcquisition::sendIceTemperatures()
 {
-	iceTempState++;
-
 	PacketT packet;
-	for(size_t index = 0; index < packet.temperatures.size(); ++index) {
-		packet.temperatures[index] = 1024 * (20*sin(iceTempState / 20.0f) - 50 - index);
+
+	size_t index = 0;
+	for(size_t sensor = 0; sensor < iceTemperatureSampler.SensorCount; ++sensor) {
+		size_t channelCount = iceTemperatureSampler.channelCount(sensor);
+
+		for(size_t channel = 0; channel < channelCount; ++channel) {
+			if(!isHpTempChannel(sensor, channel) && index < packet.temperatures.size()) {
+				auto& data = iceTemperatureSampler.data(sensor, channel);
+				packet.temperatures[index++] = data.getTemperatureFixed();
+			}
+		}
 	}
 
 	communicator.sendPacket(packet);
@@ -117,12 +173,15 @@ void DataAcquisition::sendIceTemperatures()
 template<typename PacketT>
 void DataAcquisition::sendOtherTemperatures()
 {
-	otherTempState++;
-
 	PacketT packet;
-	for(size_t index = 0; index < packet.temperatures.size(); ++index) {
-		packet.temperatures[index] = (10*sin(otherTempState / 3.0f) + 20 - index);
-	}
+
+	static_assert(packet.temperatures.size() == 5, "Invalid other temperature count");
+
+	packet.temperatures[0] = otherTempSampler1.getData();
+	packet.temperatures[1] = otherTempSampler2.getData();
+	packet.temperatures[2] = otherTempSampler3.getData();
+	packet.temperatures[3] = otherTempSampler4.getData();
+	packet.temperatures[4] = otherTempSampler5.getData();
 
 	communicator.sendPacket(packet);
 }
@@ -130,14 +189,8 @@ void DataAcquisition::sendOtherTemperatures()
 template<typename PacketT>
 void DataAcquisition::sendHPDepth()
 {
-	depthState++;
-	depthState = (depthState <= 100) ? depthState : 0;
-
 	PacketT packet;
-	for(size_t index = 0; index < packet.depth.size(); ++index) {
-		packet.depth[index] = depthState - index;
-	}
-
+//	packet.depth[] = ;
 	communicator.sendPacket(packet);
 }
 
@@ -146,7 +199,8 @@ void DataAcquisition::sendPressure()
 {
 	PacketT packet;
 	for(size_t index = 0; index < packet.values.size(); ++index) {
-		packet.values[index] = 100 * sin(pressureState++ / 20.0f) + 200;
+		// TODO: sensor2
+		packet.values[index] = pressureSampler1.getData(index);
 	}
 
 	communicator.sendPacket(packet);
@@ -155,12 +209,13 @@ void DataAcquisition::sendPressure()
 template<typename PacketT>
 void DataAcquisition::sendHPTemperatures()
 {
-	hpTempState++;
-
 	PacketT packet;
-	for(size_t index = 0; index < packet.temperatures.size(); ++index) {
-		packet.temperatures[index] = 1024 * (20*sin(hpTempState / 20.0f) + 100 - index);
-	}
+
+	static_assert(packet.temperatures.size() == 3, "Invalid heat probe temperature count");
+
+	packet.temperatures[0] = hpTemp[0];
+	packet.temperatures[1] = hpTemp[1];
+	packet.temperatures[2] = hpTemp[2];
 
 	communicator.sendPacket(packet);
 }

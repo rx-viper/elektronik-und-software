@@ -47,7 +47,7 @@ void IceTemperatureWidget::setIceTemperatures(const viper::IceTemperatures& iceT
 {
 	for(int x=0; x<3; ++x) {
 		for(int y=0; y<3; ++y) {
-			float temp = iceTemperatures.operator()(x, y);
+			float temp = iceTemperatures(x, y) / 1024.f;
 			colorMap->data()->setCell(x, y, temp);
 		}
 	}

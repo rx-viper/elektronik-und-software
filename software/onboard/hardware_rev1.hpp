@@ -123,7 +123,7 @@ spiMasterInitialize()
 	SpiStruct::Spi::template initialize<systemClock, SpiBaudrate>();
 }
 
-template <typename Timer, typename Pin, uint32_t period_us>
+template <typename Timer, typename Pin, uint32_t Prescaler, uint32_t Overflow>
 inline void
 TimerPwmCh1Initialize() {
 	Timer::enable();
@@ -131,9 +131,14 @@ TimerPwmCh1Initialize() {
 	                Timer::SlaveMode::Disabled,
 	                Timer::SlaveModeTrigger::Internal0,
 	                Timer::MasterMode::CompareOc1Ref);
-	Timer::template setPeriod<systemClock>(period_us, false);
+
+	Timer::setPrescaler(Prescaler);
+	Timer::setOverflow(Overflow);
+
 	Timer::forceInactive(1);
-	Timer::configureOutputChannel(1, Timer::OutputCompareMode::Pwm2, 0x7FFF, Timer::PinState::Disable);
+	Timer::configureOutputChannel(1, Timer::OutputCompareMode::Pwm, 0);
+	Timer::forceInactive(1);
+
 	Timer::applyAndReset();
 	Timer::pause();
 	Pin::connect(Timer::Channel1);
@@ -163,7 +168,7 @@ namespace Ui {
 		Button2::setInput(Gpio::InputType::PullUp);
 
 		// Create a IODevice with the Uart
-		xpcc::IODeviceWrapper<DebugUart, xpcc::IOBuffer::BlockIfFull> device;
+		xpcc::IODeviceWrapper<DebugUart, xpcc::IOBuffer::DiscardIfFull> device;
 		xpcc::IOStream stream(device);
 
 		DebugUartRx::connect(DebugUart::Rx);
@@ -312,7 +317,7 @@ namespace Motor {
 	inline void
 	initializeEndSwich()
 	{
-		EndSwitch::setInput(Gpio::InputType::PullDown);
+		EndSwitch::setInput(Gpio::InputType::Floating);
 	}
 
 	inline void
@@ -408,8 +413,10 @@ namespace Encoders {
 }
 
 namespace Heatprobes {
-	constexpr uint16_t PwmPeriod	= 2000;
-	// PWM Frequency 500Hz (Period 2 ms)
+	// Prescaler: 6 -> Timer counter frequency: 30MHz
+	// PWM frequency: 30MHz / 60000 = 500 Hz
+	constexpr uint16_t Prescaler = 6;
+	constexpr uint16_t Overflow	 = 60000;
 
 	using Hp1Pin	= GpioOutputA2;
 	using Hp2Pin	= GpioOutputB9;
@@ -421,9 +428,9 @@ namespace Heatprobes {
 
 	inline void
 	initialize() {
-		TimerPwmCh1Initialize<Hp1Timer, Hp1Pin, PwmPeriod>();
-		TimerPwmCh1Initialize<Hp2Timer, Hp2Pin, PwmPeriod>();
-		TimerPwmCh1Initialize<Hp3Timer, Hp3Pin, PwmPeriod>();
+		TimerPwmCh1Initialize<Hp1Timer, Hp1Pin, Prescaler, Overflow>();
+		TimerPwmCh1Initialize<Hp2Timer, Hp2Pin, Prescaler, Overflow>();
+		TimerPwmCh1Initialize<Hp3Timer, Hp3Pin, Prescaler, Overflow>();
 	}
 }
 

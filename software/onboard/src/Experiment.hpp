@@ -1,4 +1,4 @@
-/* RxsmEvents.hpp
+/* Experiment.hpp
  *
  * Copyright (C) 2017 Christopher Durand
  *
@@ -20,19 +20,29 @@
 #define VIPER_ONBOARD_EXPERIMENT_HPP
 
 #include <xpcc/processing/resumable.hpp>
+#include <xpcc/processing/protothread.hpp>
 #include <xpcc/processing/timer/periodic_timer.hpp>
+#include <xpcc/io/iostream.hpp>
+
 #include "Communicator.hpp"
 #include "DataAcquisition.hpp"
+
+#undef  ACTIVITY_LOG_NAME
+#define ACTIVITY_LOG_NAME "Experiment"
+
+#include "Activity.hpp"
+
 
 namespace viper
 {
 namespace onboard
 {
 
-class Experiment : public xpcc::NestedResumable<10>
+class Experiment : public xpcc::pt::Protothread, public xpcc::NestedResumable<10>
 {
 public:
 	static constexpr uint16_t StatusPacketTimeout = 1000; // in ms
+	static constexpr uint32_t MotorHppmDownPosition = 5555555;
 
 	Experiment(GroundstationCommunicator& communicator_);
 	Experiment(const Experiment&) = delete;
@@ -40,15 +50,25 @@ public:
 
 	void initialize();
 
-	void update();
+	xpcc::ResumableResult<void>
+	update();
+
+	using Activity = packet::ExperimentState;
 
 private:
 	void sendStatus();
+
+	xpcc::ResumableResult<void>
+	run();
+
+	Activity activity = Activity::Initialize;
 
 	GroundstationCommunicator& communicator;
 	DataAcquisition dataAcquisition;
 	xpcc::ShortPeriodicTimer statusPacketTimer;
 };
+
+xpcc::IOStream& operator<<(xpcc::IOStream& out, Experiment::Activity state);
 
 }
 }

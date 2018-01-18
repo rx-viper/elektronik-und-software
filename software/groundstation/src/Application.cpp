@@ -12,6 +12,8 @@ Application::Application(int& argc, char** argv)
 	guiUpdateTimer.start(20);
 	connect(&guiUpdateTimer, SIGNAL(timeout()), this, SLOT(updateGUI()));
 	connect(&mainWindow, SIGNAL(connectClicked()), this, SLOT(connectButtonClicked()));
+	connect(&mainWindow, SIGNAL(testOnClicked()), this, SLOT(testOnButtonClicked()));
+	connect(&mainWindow, SIGNAL(testOffClicked()), this, SLOT(testOffButtonClicked()));
 
 	// TODO: remove hardcoded static backend
 	backend = std::make_shared<SerialPortBackend>();
@@ -25,7 +27,7 @@ Application::Application(int& argc, char** argv)
 
 	connect(&communicator, SIGNAL(packetReceived()), this, SLOT(packetReceived()));
 
-	packet::HpPenetrationDepthHS depth;
+	/*packet::HpPenetrationDepthHS depth;
 	depth.depth = {{56,-6, 19}};
 	processPacket(depth);
 
@@ -40,6 +42,11 @@ Application::Application(int& argc, char** argv)
 	packet::PressureHS pressure;
 	pressure.values.at(19) = 123;
 	processPacket(pressure);
+
+	packet::OtherTemperatureHS otherTemp;
+	otherTemp.temperatures = {{20, 30, 40, 50, 60}};
+	processPacket(otherTemp);*/
+
 }
 
 ExperimentStatus& Application::experimentStatus()
@@ -50,6 +57,7 @@ ExperimentStatus& Application::experimentStatus()
 void Application::showMainWindow()
 {
 	mainWindow.show();
+	iceTempWindow.show();
 }
 
 void Application::packetReceived()
@@ -70,6 +78,7 @@ void Application::processPacket(const packet::GroundstationPackets& packet)
 void Application::updateGUI()
 {
 	mainWindow.updateUI(status);
+	iceTempWindow.updateUI(status);
 }
 
 void Application::connectButtonClicked()
@@ -93,6 +102,21 @@ void Application::connectButtonClicked()
 		}
 		mainWindow.setConnected(communicator.isOpen());
 	}
+}
+
+void Application::testOnButtonClicked()
+{
+	viper::packet::TestMode testMode;
+	testMode.enabled = 1;
+	communicator.sendPacket(testMode);
+}
+
+void Application::testOffButtonClicked()
+{
+	viper::packet::TestMode testMode;
+	testMode.enabled = 0;
+
+	communicator.sendPacket(testMode);
 }
 
 }
