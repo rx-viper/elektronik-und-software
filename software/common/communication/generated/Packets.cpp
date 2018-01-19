@@ -169,6 +169,114 @@ bool HpTemperatureHS::write(DataWriter& writer) const
     return writer.write(temperatures);
 }
 
+bool HpPowerLS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    if(!reader.read(voltage))
+        return false;
+    
+    return reader.read(current);
+}
+
+bool HpPowerLS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    if(!writer.write(voltage))
+        return false;
+    
+    return writer.write(current);
+}
+
+bool HpPowerHS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    if(!reader.read(voltage))
+        return false;
+    
+    return reader.read(current);
+}
+
+bool HpPowerHS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    if(!writer.write(voltage))
+        return false;
+    
+    return writer.write(current);
+}
+
+bool BattVoltageLS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(value);
+}
+
+bool BattVoltageLS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(value);
+}
+
+bool BattVoltageHS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(values);
+}
+
+bool BattVoltageHS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(values);
+}
+
+bool MotorCurrentLS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(value);
+}
+
+bool MotorCurrentLS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(value);
+}
+
+bool MotorCurrentHS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(values);
+}
+
+bool MotorCurrentHS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(values);
+}
+
 bool TestMode::read(DataReader& reader)
 {
     if(!reader.read(sequenceNumber))

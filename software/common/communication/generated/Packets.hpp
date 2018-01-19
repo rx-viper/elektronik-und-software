@@ -197,6 +197,98 @@ struct HpTemperatureHS
     constexpr inline size_t size() const { return PacketSize; }
 };
 
+/// Packet HpPowerLS
+struct HpPowerLS
+{
+    static constexpr uint8_t PacketID{0xc};
+    static constexpr size_t PacketSize{16};
+    
+    mutable uint32_t sequenceNumber;
+    std::array<uint16_t, 3> voltage;
+    std::array<uint16_t, 3> current;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
+/// Packet HpPowerHS
+struct HpPowerHS
+{
+    static constexpr uint8_t PacketID{0xd};
+    static constexpr size_t PacketSize{16};
+    
+    mutable uint32_t sequenceNumber;
+    std::array<uint16_t, 3> voltage;
+    std::array<uint16_t, 3> current;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
+/// Packet BattVoltageLS
+struct BattVoltageLS
+{
+    static constexpr uint8_t PacketID{0x10};
+    static constexpr size_t PacketSize{6};
+    
+    mutable uint32_t sequenceNumber;
+    int16_t value;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
+/// Packet BattVoltageHS
+struct BattVoltageHS
+{
+    static constexpr uint8_t PacketID{0x11};
+    static constexpr size_t PacketSize{12};
+    
+    mutable uint32_t sequenceNumber;
+    std::array<int16_t, 4> values;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
+/// Packet MotorCurrentLS
+struct MotorCurrentLS
+{
+    static constexpr uint8_t PacketID{0x12};
+    static constexpr size_t PacketSize{6};
+    
+    mutable uint32_t sequenceNumber;
+    int16_t value;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
+/// Packet MotorCurrentHS
+struct MotorCurrentHS
+{
+    static constexpr uint8_t PacketID{0x13};
+    static constexpr size_t PacketSize{12};
+    
+    mutable uint32_t sequenceNumber;
+    std::array<int16_t, 4> values;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
 /// Packet TestMode
 struct TestMode
 {
@@ -266,7 +358,7 @@ struct TestPacket2
 };
 
 /// PacketGroup GroundstationPackets
-using GroundstationPackets = PacketGroup<IceTemperatureLS, IceTemperatureHS, OtherTemperatureLS, OtherTemperatureHS, HpPenetrationDepthLS, HpPenetrationDepthHS, PressureLS, PressureHS, HpTemperatureLS, HpTemperatureHS, Status, TestMode>;
+using GroundstationPackets = PacketGroup<IceTemperatureLS, IceTemperatureHS, OtherTemperatureLS, OtherTemperatureHS, HpPenetrationDepthLS, HpPenetrationDepthHS, PressureLS, PressureHS, HpTemperatureLS, HpTemperatureHS, HpPowerLS, HpPowerHS, BattVoltageLS, BattVoltageHS, MotorCurrentLS, MotorCurrentHS, Status, TestMode>;
 /// PacketGroup TestPackets
 using TestPackets = PacketGroup<TestPacket1, TestPacket2>;
 

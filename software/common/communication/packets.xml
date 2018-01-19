@@ -38,7 +38,33 @@
 	<packet name="HpTemperatureHS" id="9">
 		<array name="temperatures" type="int32_t" size="3" />
 	</packet>
-	
+
+	<packet name="HpPowerLS" id="12">
+		<array name="voltage" type="uint16_t" size="3" />
+		<array name="current" type="uint16_t" size="3" />
+	</packet>
+
+	<packet name="HpPowerHS" id="13">
+		<array name="voltage" type="uint16_t" size="3" />
+		<array name="current" type="uint16_t" size="3" />
+	</packet>
+
+	<packet name="BattVoltageLS" id="16">
+		<element name="value" type="int16_t" />
+	</packet>
+
+	<packet name="BattVoltageHS" id="17">
+		<array name="values" type="int16_t" size="4" />
+	</packet>
+
+	<packet name="MotorCurrentLS" id="18">
+		<element name="value" type="int16_t" />
+	</packet>
+
+	<packet name="MotorCurrentHS" id="19">
+		<array name="values" type="int16_t" size="4" />
+	</packet>
+
 	<packet name="TestMode" id="11">
 		<element name="enabled" type="uint8_t" />
 	</packet>
@@ -78,6 +104,12 @@
 		<packet name="PressureHS" />
 		<packet name="HpTemperatureLS" />
 		<packet name="HpTemperatureHS" />
+		<packet name="HpPowerLS" />
+		<packet name="HpPowerHS" />
+		<packet name="BattVoltageLS" />
+		<packet name="BattVoltageHS" />
+		<packet name="MotorCurrentLS" />
+		<packet name="MotorCurrentHS" />
 		<packet name="Status" />
 		<packet name="TestMode" />
 	</packet_group>
