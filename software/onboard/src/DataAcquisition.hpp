@@ -26,6 +26,7 @@
 #include "../hardware_rev1.hpp"
 
 #include "Ltc2984Sampler.hpp"
+#include "Ad7928Sampler.hpp"
 #include "SimpleSensorSampler.hpp"
 
 #include "Ds1731Sensor.hpp"
@@ -50,6 +51,7 @@ public:
 			static constexpr uint16_t HeatProbeDepth{500};
 			static constexpr uint16_t Pressure{50};
 			static constexpr uint16_t HeatProbeTemp{1140};
+			static constexpr uint16_t Adc{500};
 		};
 
 		struct LowRate {
@@ -58,6 +60,7 @@ public:
 			static constexpr uint16_t HeatProbeDepth{10000};
 			static constexpr uint16_t Pressure{200};
 			static constexpr uint16_t HeatProbeTemp{10000}; // change to 3*IceTemp = 9000 ?
+			static constexpr uint16_t Adc{10000};
 		};
 	};
 
@@ -113,12 +116,29 @@ private:
 	template<typename PacketT>
 	void sendHPTemperatures();
 
+	template<typename PacketT>
+	void sendHPPower();
+
+	template<typename PacketT>
+	void sendBattVoltageLS();
+
+	template<typename PacketT>
+	void sendBattVoltageHS();
+
+	template<typename PacketT>
+	void sendMotorCurrentLS();
+
+	template<typename PacketT>
+	void sendMotorCurrentHS();
+
 	GroundstationCommunicator& communicator;
 	bool enabled = false;
 	bool highRate = false;
 	bool storageEnabled = false;
 
 	Ltc2984Sampler iceTemperatureSampler;
+
+	Ad7928Sampler adcSampler;
 
 	PressureSensor pressureSensor1;
 	PressureSensor pressureSensor2;
@@ -139,12 +159,17 @@ private:
 	SimpleSensorSampler<OtherTemperatureSensor> otherTempSampler5;
 
 	std::array<uint32_t, 3> hpTemp = {};
+	std::array<uint16_t, 4> battVoltageHS = {};
+	uint8_t battVoltageHSIndex = 0;
+	std::array<uint16_t, 4> motorCurrentHS = {};
+	uint8_t motorCurrentHSIndex = 0;
 
 	xpcc::ShortTimeout timeout;
 
 	xpcc::ShortPeriodicTimer iceTempTimer;
 	xpcc::ShortPeriodicTimer hpTempTimer;
 	xpcc::ShortPeriodicTimer hpDepthTimer;
+	xpcc::ShortPeriodicTimer adcTimer;
 
 public:
 	bool testMode = false;
@@ -217,6 +242,66 @@ void DataAcquisition::sendHPTemperatures()
 	packet.temperatures[1] = hpTemp[1];
 	packet.temperatures[2] = hpTemp[2];
 
+	communicator.sendPacket(packet);
+}
+
+template<typename PacketT>
+void DataAcquisition::sendHPPower()
+{
+	using Sensor = viper::onboard::Ad7928Sampler::Sensor;
+	PacketT packet;
+
+	static const std::array<Sensor, 3> voltageSensors {Sensor::HP1Voltage, Sensor::HP2Voltage, Sensor::HP3Voltage};
+	for(uint8_t index = 0; index < packet.voltage.size(); ++index)
+	{
+		packet.voltage[index] = adcSampler.getDataAndReset(voltageSensors[index]);
+	}
+
+	static const std::array<Sensor, 3> currentSensors {Sensor::HP1Current, Sensor::HP2Current, Sensor::HP3Current};
+	for(uint8_t index = 0; index < packet.current.size(); ++index) {
+		packet.current[index] = adcSampler.getDataAndReset(currentSensors[index]);
+	}
+
+	communicator.sendPacket(packet);
+}
+
+template<typename PacketT>
+void DataAcquisition::sendBattVoltageLS()
+{
+	PacketT packet;
+	packet.value = adcSampler.getDataAndReset(Ad7928Sampler::Sensor::BattVoltage);
+	communicator.sendPacket(packet);
+}
+
+template<typename PacketT>
+void DataAcquisition::sendBattVoltageHS()
+{
+	static_assert(sizeof(battVoltageHS) == sizeof(PacketT::values), "Size of battVoltageHS does not match packet size");
+	PacketT packet;
+	for(uint8_t index = 0; index < packet.values.size(); ++index) {
+		packet.values[index] = battVoltageHS[index];
+	}
+	communicator.sendPacket(packet);
+
+}
+
+template<typename PacketT>
+void DataAcquisition::sendMotorCurrentLS()
+{
+	PacketT packet;
+	packet.value = adcSampler.getDataAndReset(Ad7928Sampler::Sensor::MotorCurrent);
+	communicator.sendPacket(packet);
+
+}
+
+template<typename PacketT>
+void DataAcquisition::sendMotorCurrentHS()
+{
+	static_assert(sizeof(motorCurrentHS) == sizeof(PacketT::values), "Size of motorCurrentHS does not match packet size");
+	PacketT packet;
+	for(uint8_t index = 0; index < packet.values.size(); ++index) {
+		packet.values[index] = motorCurrentHS[index];
+	}
 	communicator.sendPacket(packet);
 }
 

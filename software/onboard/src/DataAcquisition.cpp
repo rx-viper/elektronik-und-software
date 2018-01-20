@@ -44,11 +44,13 @@ DataAcquisition::DataAcquisition(GroundstationCommunicator& communicator_)
 	  otherTempSampler5{otherTempSensor5},
 	  iceTempTimer{0},
 	  hpTempTimer{0},
-	  hpDepthTimer{0}
+	  hpDepthTimer{0},
+	  adcTimer{0}
 {
 	iceTempTimer.stop();
 	hpTempTimer.stop();
 	hpDepthTimer.stop();
+	adcTimer.stop();
 }
 
 void DataAcquisition::initialize()
@@ -65,6 +67,7 @@ void DataAcquisition::initialize()
 		otherTempSampler3.update();
 		otherTempSampler4.update();
 		otherTempSampler5.update();
+		adcSampler.update();
 
 		allInitialized = iceTemperatureSampler.isInitialized()
 				&& pressureSampler1.isInitialized()
@@ -73,7 +76,8 @@ void DataAcquisition::initialize()
 				&& otherTempSampler2.isInitialized()
 				&& otherTempSampler3.isInitialized()
 				&& otherTempSampler4.isInitialized()
-				&& otherTempSampler5.isInitialized();
+				&& otherTempSampler5.isInitialized()
+				&& adcSampler.isInitialized();
 	}
 }
 
@@ -83,6 +87,7 @@ void DataAcquisition::start()
 	setLowRate();
 
 	iceTemperatureSampler.startMeasurement();
+	adcSampler.startSampling();
 }
 
 void DataAcquisition::setLowRate()
@@ -91,6 +96,7 @@ void DataAcquisition::setLowRate()
 		highRate = false;
 		iceTempTimer.restart(Timeouts::LowRate::IceTemp);
 		hpTempTimer.restart(Timeouts::LowRate::HeatProbeTemp);
+		adcTimer.restart(Timeouts::LowRate::Adc);
 		pressureSampler1.start(Timeouts::LowRate::Pressure, PressureValuesPerPacketLow);
 		pressureSampler2.start(Timeouts::LowRate::Pressure, PressureValuesPerPacketLow);
 		otherTempSampler1.start(Timeouts::LowRate::OtherTemp);
@@ -107,6 +113,7 @@ void DataAcquisition::setHighRate()
 		highRate = true;
 		iceTempTimer.restart(Timeouts::HighRate::IceTemp);
 		hpTempTimer.restart(Timeouts::HighRate::HeatProbeTemp);
+		adcTimer.restart(Timeouts::HighRate::Adc);
 		pressureSampler1.start(Timeouts::HighRate::Pressure, PressureValuesPerPacketHigh);
 		pressureSampler2.start(Timeouts::HighRate::Pressure, PressureValuesPerPacketHigh);
 		otherTempSampler1.start(Timeouts::HighRate::OtherTemp);
@@ -154,6 +161,28 @@ void DataAcquisition::update()
 		}
 	}
 
+	if(adcTimer.execute()) {
+		if(highRate) {
+			sendHPPower<packet::HpPowerHS>();
+
+			battVoltageHS[battVoltageHSIndex++] = adcSampler.getDataAndReset(Ad7928Sampler::Sensor::BattVoltage);
+			if(battVoltageHSIndex > sizeof(battVoltageHS)) {
+				battVoltageHSIndex = 0;
+				sendBattVoltageHS<packet::BattVoltageHS>();
+			}
+
+			motorCurrentHS[motorCurrentHSIndex++] = adcSampler.getDataAndReset(Ad7928Sampler::Sensor::MotorCurrent);
+			if(motorCurrentHSIndex > sizeof(motorCurrentHS)) {
+				motorCurrentHSIndex = 0;
+				sendMotorCurrentHS<packet::MotorCurrentHS>();
+			}
+		} else {
+			sendHPPower<packet::HpPowerLS>();
+			sendBattVoltageLS<packet::BattVoltageLS>();
+			sendMotorCurrentLS<packet::MotorCurrentLS>();
+		}
+	}
+
 	if(otherTempSampler1.isFinished())/* &&
 			otherTempSampler2.isFinished() &&
 			otherTempSampler3.isFinished() &&
@@ -192,6 +221,7 @@ void DataAcquisition::update()
 	otherTempSampler3.update();
 	otherTempSampler4.update();
 	otherTempSampler5.update();
+	adcSampler.update();
 
 	/*if(depthTimer.execute()) {
 		if(highRate) {
