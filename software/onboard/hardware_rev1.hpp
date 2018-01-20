@@ -413,9 +413,9 @@ namespace Encoders {
 }
 
 namespace Heatprobes {
-	// Prescaler: 6 -> Timer counter frequency: 30MHz
-	// PWM frequency: 30MHz / 60000 = 500 Hz
-	constexpr uint16_t Prescaler = 6;
+	// Prescaler: 600 -> Timer counter frequency: 300kHz
+	// PWM frequency: 300kHz / 60000 = 5Hz
+	constexpr uint16_t Prescaler = 600;
 	constexpr uint16_t Overflow	 = 60000;
 
 	using Hp1Pin	= GpioOutputA2;
