@@ -17,6 +17,12 @@ using viper::packet::PressureLS;
 using viper::packet::PressureHS;
 using viper::packet::HpTemperatureLS;
 using viper::packet::HpTemperatureHS;
+using viper::packet::HpPowerLS;
+using viper::packet::HpPowerHS;
+using viper::packet::BattVoltageLS;
+using viper::packet::BattVoltageHS;
+using viper::packet::MotorCurrentLS;
+using viper::packet::MotorCurrentHS;
 using viper::packet::Status;
 using viper::packet::TestMode;
 
@@ -38,6 +44,12 @@ public:
 	void operator()(const HpPenetrationDepthHS& hpDepth);
 	void operator()(const PressureLS& pressures);
 	void operator()(const PressureHS& pressures);
+	void operator()(const HpPowerLS& hpPower);
+	void operator()(const HpPowerHS& hpPower);
+	void operator()(const BattVoltageLS& battVoltage);
+	void operator()(const BattVoltageHS& battVoltage);
+	void operator()(const MotorCurrentLS& motorCurrent);
+	void operator()(const MotorCurrentHS& motorCurrent);
 	void operator()(const Status& status);
 	void operator()(const TestMode& mode){ (void)mode; }
 

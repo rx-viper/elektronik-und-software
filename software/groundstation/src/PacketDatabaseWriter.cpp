@@ -83,3 +83,33 @@ void PacketDatabaseWriter::operator()(const HpPenetrationDepthHS& hpDepth)
 {
 	emit logHpPenetrationDepthHS(hpDepth.sequenceNumber, hpDepth.depth, QDateTime::currentDateTime());
 }
+
+void PacketDatabaseWriter::operator()(const HpPowerLS& hpPower)
+{
+
+}
+
+void PacketDatabaseWriter::operator()(const HpPowerHS& hpPower)
+{
+
+}
+
+void PacketDatabaseWriter::operator()(const BattVoltageLS& battVoltage)
+{
+
+}
+
+void PacketDatabaseWriter::operator()(const BattVoltageHS& battVoltage)
+{
+
+}
+
+void PacketDatabaseWriter::operator()(const MotorCurrentLS& motorCurrent)
+{
+
+}
+
+void PacketDatabaseWriter::operator()(const MotorCurrentHS& motorCurrent)
+{
+
+}

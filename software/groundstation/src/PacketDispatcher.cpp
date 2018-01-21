@@ -92,5 +92,34 @@ void PacketDispatcher::operator()(const HpPenetrationDepthHS& hpDepth)
 	experimentStatus.updateHpDepth(hpDepth.depth);
 }
 
+void PacketDispatcher::operator()(const HpPowerLS& hpPower)
+{
+
 }
 
+void PacketDispatcher::operator()(const HpPowerHS& hpPower)
+{
+
+}
+
+void PacketDispatcher::operator()(const BattVoltageLS& battVoltage)
+{
+
+}
+
+void PacketDispatcher::operator()(const BattVoltageHS& battVoltage)
+{
+
+}
+
+void PacketDispatcher::operator()(const MotorCurrentLS& motorCurrent)
+{
+
+}
+
+void PacketDispatcher::operator()(const MotorCurrentHS& motorCurrent)
+{
+
+}
+
+}
