@@ -78,14 +78,14 @@ FlashWriter<BlockDevice>::initialize()
 
 	flashAddress -= BlockSize;
 
-	bufferA[0] = (experimentId >> 24) & 0xFF;
-	bufferA[1] = (experimentId >> 16) & 0xFF;
-	bufferA[2] = (experimentId >> 8) & 0xFF;
-	bufferA[3] = (experimentId) & 0xFF;
-	bufferB[0] = (experimentId >> 24) & 0xFF;
-	bufferB[1] = (experimentId >> 16) & 0xFF;
-	bufferB[2] = (experimentId >> 8) & 0xFF;
-	bufferB[3] = (experimentId) & 0xFF;
+	bufferA[3] = (experimentId >> 24) & 0xFF;
+	bufferA[2] = (experimentId >> 16) & 0xFF;
+	bufferA[1] = (experimentId >> 8) & 0xFF;
+	bufferA[0] = (experimentId) & 0xFF;
+	bufferB[3] = (experimentId >> 24) & 0xFF;
+	bufferB[2] = (experimentId >> 16) & 0xFF;
+	bufferB[1] = (experimentId >> 8) & 0xFF;
+	bufferB[0] = (experimentId) & 0xFF;
 
 	indexWrite = 0;
 
