@@ -83,8 +83,8 @@ CREATE TABLE IF NOT EXISTS data_pressure(
 );
 
 DROP TYPE IF EXISTS EVENT_FLAG CASCADE;
-CREATE TYPE EVENT_FLAG AS ENUM ('LO', 'SOE', 'SODS', 'TEST_MODE', 'MOTOR_HOME');
-CREATE TABLE IF NOT EXISTS data_flags(
+CREATE TYPE EVENT_FLAG AS ENUM ('LO', 'SOE', 'SODS', 'TEST_MODE', 'HP_OVERTEMP');
+CREATE TABLE IF NOT EXISTS data_status_flags(
    _id BIGSERIAL PRIMARY KEY,
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
    sensor_id EVENT_FLAG NOT NULL,
@@ -111,4 +111,38 @@ CREATE TABLE IF NOT EXISTS raw_data(
    groundstation_time TIMESTAMP NOT NULL,
    serial_data BYTEA NOT NULL,
    direction SER_DIRECTION DEFAULT 'RX'
+);
+
+CREATE TABLE IF NOT EXISTS data_heat_probe_power(
+   _id BIGSERIAL PRIMARY KEY,
+   _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
+   sensor_id INTEGER NOT NULL,
+   sample_freqency SAMPLE_FREQ,
+   voltage DOUBLE PRECISION NOT NULL,
+   current DOUBLE PRECISION NOT NULL,
+   experiment_time INTEGER NOT NULL,
+   groundstation_time TIMESTAMP NOT NULL,
+   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS data_motor_current(
+   _id BIGSERIAL PRIMARY KEY,
+   _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
+   sensor_id INTEGER NOT NULL,
+   sample_freqency SAMPLE_FREQ,
+   value DOUBLE PRECISION NOT NULL,
+   experiment_time INTEGER NOT NULL,
+   groundstation_time TIMESTAMP NOT NULL,
+   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS data_battery_voltage(
+   _id BIGSERIAL PRIMARY KEY,
+   _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
+   sensor_id INTEGER NOT NULL,
+   sample_freqency SAMPLE_FREQ,
+   value DOUBLE PRECISION NOT NULL,
+   experiment_time INTEGER NOT NULL,
+   groundstation_time TIMESTAMP NOT NULL,
+   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
 );
