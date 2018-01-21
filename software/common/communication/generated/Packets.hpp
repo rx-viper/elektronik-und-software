@@ -234,6 +234,38 @@ struct Status
     constexpr inline size_t size() const { return PacketSize; }
 };
 
+/// Packet PiStatus
+struct PiStatus
+{
+    static constexpr uint8_t PacketID{0x14};
+    static constexpr size_t PacketSize{9};
+    
+    mutable uint32_t sequenceNumber;
+    uint8_t recordingEnabled;
+    uint32_t storageAvailable;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
+/// Packet PiCommand
+struct PiCommand
+{
+    static constexpr uint8_t PacketID{0x15};
+    static constexpr size_t PacketSize{9};
+    
+    mutable uint32_t sequenceNumber;
+    uint8_t recordingEnabled;
+    uint32_t onboardTime;
+
+    bool read(DataReader& reader);
+    bool write(DataWriter& writer) const;
+
+    constexpr inline size_t size() const { return PacketSize; }
+};
+
 /// Packet TestPacket1
 struct TestPacket1
 {
@@ -267,6 +299,8 @@ struct TestPacket2
 
 /// PacketGroup GroundstationPackets
 using GroundstationPackets = PacketGroup<IceTemperatureLS, IceTemperatureHS, OtherTemperatureLS, OtherTemperatureHS, HpPenetrationDepthLS, HpPenetrationDepthHS, PressureLS, PressureHS, HpTemperatureLS, HpTemperatureHS, Status, TestMode>;
+/// PacketGroup PiPackets
+using PiPackets = PacketGroup<PiStatus>;
 /// PacketGroup TestPackets
 using TestPackets = PacketGroup<TestPacket1, TestPacket2>;
 

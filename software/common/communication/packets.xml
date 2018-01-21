@@ -82,6 +82,21 @@
 		<packet name="TestMode" />
 	</packet_group>
 
+	<!-- Pi -->
+	<packet name="PiStatus" id="20">
+		<element name="recordingEnabled" type="uint8_t" />
+		<element name="storageAvailable" type="uint32_t" />
+	</packet>
+
+	<packet name="PiCommand" id="21">
+		<element name="recordingEnabled" type="uint8_t" />
+		<element name="onboardTime" type="uint32_t" />
+	</packet>
+
+	<packet_group name="PiPackets">
+		<packet name="PiStatus" />
+	</packet_group>
+
 	<!-- TEST -->
 	<packet name="TestPacket1" id="255">
 		<array name="testArray" type="TestEnum" size="2" />
