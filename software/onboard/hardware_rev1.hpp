@@ -98,6 +98,10 @@ struct systemClock
 			7       // 360MHz / Q=7 -> ~51MHz = F_usb => bad for USB
 		);*/
 
+		// Enable overdrive mode
+		PWR->CR |= PWR_CR_ODEN;
+		// wait for it
+		while (not (PWR->CSR & PWR_CSR_ODRDY)) ;
 		ClockControl::setFlashLatency(Frequency);
 		ClockControl::enableSystemClock(ClockControl::SystemClockSource::Pll);
 		ClockControl::setApb1Prescaler(ClockControl::Apb1Prescaler::Div4);
