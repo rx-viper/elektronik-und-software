@@ -69,6 +69,7 @@ void PacketDispatcher::operator()(const Status& status)
 	experimentStatus.updateHpOvertemperature(status.hpOvertemperature);
 	experimentStatus.updateMotorPosition(status.motorPosition);
 	experimentStatus.updateTestMode(status.testModeEnabled);
+	experimentStatus.updateExperimentId(status.experimentId);
 	std::cout << int(status.state) << ", " << uint16_t(status.testModeEnabled) << std::endl;
 }
 

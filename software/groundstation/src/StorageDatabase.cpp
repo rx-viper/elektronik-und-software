@@ -131,3 +131,8 @@ void  StorageDatabase::logStatus(uint32_t seq,
 {
 
 }
+
+void StorageDatabase::logExperimentId(uint32_t experimentId, const QDateTime &time)
+{
+
+}

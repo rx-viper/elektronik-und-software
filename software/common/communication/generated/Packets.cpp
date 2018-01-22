@@ -319,7 +319,10 @@ bool Status::read(DataReader& reader)
     if(!reader.read(motorPosition))
         return false;
     
-    return reader.read(testModeEnabled);
+    if(!reader.read(testModeEnabled))
+        return false;
+    
+    return reader.read(experimentId);
 }
 
 bool Status::write(DataWriter& writer) const
@@ -348,7 +351,10 @@ bool Status::write(DataWriter& writer) const
     if(!writer.write(motorPosition))
         return false;
     
-    return writer.write(testModeEnabled);
+    if(!writer.write(testModeEnabled))
+        return false;
+    
+    return writer.write(experimentId);
 }
 
 bool TestPacket1::read(DataReader& reader)

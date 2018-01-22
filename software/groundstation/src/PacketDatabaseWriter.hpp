@@ -73,6 +73,7 @@ signals:
 				   int32_t motorPosition,
 				   uint8_t testModeEnabled,
 				   const QDateTime& time);
+	void logExperimentId(uint32_t experimentId, const QDateTime& time);
 
 public slots:
 

@@ -51,6 +51,7 @@ public slots:
 				   int32_t motorPosition,
 				   uint8_t testModeEnabled,
 				   const QDateTime& time);
+	void logExperimentId(uint32_t experimentId, const QDateTime& time);
 
 private:
 	QSqlQuery queryRawData;
@@ -61,6 +62,7 @@ private:
 	QSqlQuery queryPressureLS;
 	QSqlQuery queryPressureHS;
 	QSqlQuery queryStatus;
+	QSqlQuery queryExperimentId;
 
 private:
 	QSqlDatabase db;

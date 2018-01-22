@@ -56,11 +56,10 @@ main()
 	else {
 		XPCC_LOG_INFO << "Info: Experiment ID = " << experimentId << xpcc::endl;
 	}
-	// TODO: Use experimentId
 
 	GroundstationCommunicator communicator(communicationFlashWriter);
 
-	Experiment experiment{communicator};
+	Experiment experiment{communicator, experimentId};
 	experiment.initialize();
 
 	while (1)

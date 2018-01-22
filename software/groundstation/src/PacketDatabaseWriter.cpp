@@ -57,6 +57,7 @@ void PacketDatabaseWriter::operator()(const HpTemperatureHS& hpTemperatures)
 
 void PacketDatabaseWriter::operator()(const Status& status)
 {
+	emit logExperimentId(status.experimentId, QDateTime::currentDateTime());
 	emit logStatus(status.sequenceNumber, status.time,
 				   status.lo, status.soe,status.sods,
 				   static_cast<uint8_t>(status.state), status.hpOvertemperature,

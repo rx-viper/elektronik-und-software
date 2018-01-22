@@ -72,6 +72,8 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 		ui->sodsLabel->setText("SODS: 0");
 	}
 
+	ui->experimentIdLabel->setText("Experiment Id: " + QString::number(status.getExperimentId()));
+
 	ui->testModeLabel->setText("Test mode: " + QString::number(status.testMode()));
 
 	ui->timeLabel->setText("Time: " + QString::number(status.onboardUptime()));

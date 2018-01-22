@@ -22,6 +22,7 @@ public:
 	int16_t otherTemperatures(size_t sensorIndex) const;
 	int32_t motorPosition() const;
 	uint8_t testMode() const;
+	uint32_t getExperimentId() const;
 
 	void updateIceTemperatures(const std::array<IceTemperatures, 3> iceTemperatureData);
 	void updatePressure(float pressureValue);
@@ -33,6 +34,8 @@ public:
 	void updateOtherTemperatures(const std::array<int16_t, 5>& otherTemperatures);
 	void updateMotorPosition(int32_t pos);
 	void updateTestMode(uint8_t test);
+	void updateExperimentId(uint32_t experimentId);
+
 private:
 	std::array<IceTemperatures, 3> iceTemperatureData;
 	float pressureValue = 0;
@@ -44,6 +47,7 @@ private:
 	uint32_t uptime = 0;
 	uint32_t motorPos = 0;
 	uint8_t testModeEnabled = 0;
+	uint32_t experimentId = 0;
 };
 
 }

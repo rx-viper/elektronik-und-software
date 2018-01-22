@@ -29,8 +29,11 @@ namespace viper
 namespace onboard
 {
 
-Experiment::Experiment(GroundstationCommunicator& communicator_)
-	: communicator{communicator_}, dataAcquisition{communicator_}, statusPacketTimer{StatusPacketTimeout}
+Experiment::Experiment(GroundstationCommunicator& communicator_, uint32_t experimentId_)
+	: communicator{communicator_},
+	  dataAcquisition{communicator_},
+	  statusPacketTimer{StatusPacketTimeout},
+	  experimentId{experimentId_}
 {
 }
 
@@ -78,6 +81,7 @@ void Experiment::sendStatus()
 	status.state = activity;
 	status.motorPosition = Motor::getPosition();
 	status.testModeEnabled = dataAcquisition.testMode;
+	status.experimentId = experimentId;
 	communicator.sendPacket(status);
 }
 

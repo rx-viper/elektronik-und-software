@@ -883,32 +883,18 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_16">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <layout class="QVBoxLayout" name="verticalLayout_18">
           <item>
-           <widget class="QLabel" name="loLabel">
+           <widget class="QLabel" name="testModeLabel">
             <property name="text">
-             <string>LO: 0</string>
+             <string>Test mode: 0</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="sodsLabel">
+           <widget class="QLabel" name="experimentIdLabel">
             <property name="text">
-             <string>SODS: 0</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="soeLabel">
-            <property name="text">
-             <string>SOE: 0</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="motorLabel">
-            <property name="text">
-             <string>Motor Position: 0</string>
+             <string>experimentId</string>
             </property>
            </widget>
           </item>
@@ -920,9 +906,30 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="testModeLabel">
+           <widget class="QLabel" name="motorLabel">
             <property name="text">
-             <string>Test mode: 0</string>
+             <string>Motor Position: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="soeLabel">
+            <property name="text">
+             <string>SOE: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="sodsLabel">
+            <property name="text">
+             <string>SODS: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="loLabel">
+            <property name="text">
+             <string>LO: 0</string>
             </property>
            </widget>
           </item>

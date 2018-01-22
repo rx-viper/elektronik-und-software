@@ -44,7 +44,7 @@ public:
 	static constexpr uint16_t StatusPacketTimeout = 1000; // in ms
 	static constexpr uint32_t MotorHppmDownPosition = 5555555;
 
-	Experiment(GroundstationCommunicator& communicator_);
+	Experiment(GroundstationCommunicator& communicator_, uint32_t experimentId_);
 	Experiment(const Experiment&) = delete;
 	Experiment& operator=(const Experiment&) = delete;
 
@@ -66,6 +66,8 @@ private:
 	GroundstationCommunicator& communicator;
 	DataAcquisition dataAcquisition;
 	xpcc::ShortPeriodicTimer statusPacketTimer;
+
+	const uint32_t experimentId;
 };
 
 xpcc::IOStream& operator<<(xpcc::IOStream& out, Experiment::Activity state);

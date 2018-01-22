@@ -52,6 +52,11 @@ uint8_t ExperimentStatus::testMode() const
 	return testModeEnabled;
 }
 
+uint32_t ExperimentStatus::getExperimentId() const
+{
+	return experimentId;
+}
+
 uint32_t ExperimentStatus::onboardUptime() const
 {
 	return uptime;
@@ -107,6 +112,11 @@ void ExperimentStatus::updateHpTemperatures(const std::array<int32_t, 3>& hpTemp
 void ExperimentStatus::updateHpDepth(const std::array<int32_t, 3>& hpDepths)
 {
 	this->hpDepths = hpDepths;
+}
+
+void ExperimentStatus::updateExperimentId(uint32_t experimentId)
+{
+	this->experimentId = experimentId;
 }
 
 }
