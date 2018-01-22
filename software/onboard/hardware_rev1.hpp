@@ -182,30 +182,31 @@ namespace Ui {
 }
 
 namespace Camera {
-	constexpr uint16_t PwmPeriod		= 100;
+	//constexpr uint16_t PwmPeriod		= 100;
 	// PWM frequency 10kHz (period 100us)
 
 	using LightPin		= GpioOutputB14;
 	using LensHeatPin	= GpioOutputB15;
 
-	using CameraTimer	= Timer12;
+	//using CameraTimer	= Timer12;
 
 	inline void
 	initialize() {
-		CameraTimer::enable();
-		CameraTimer::setMode(CameraTimer::Mode::UpCounter,
-		                     CameraTimer::SlaveMode::Disabled,
-		                     CameraTimer::SlaveModeTrigger::Internal0,
-		                     CameraTimer::MasterMode::CompareOc1Ref);
-		CameraTimer::setPeriod<systemClock>(PwmPeriod, false);
-		CameraTimer::forceInactive(1);
-		CameraTimer::forceInactive(2);
-		CameraTimer::configureOutputChannel(1, CameraTimer::OutputCompareMode::Pwm2, 0x7FFF, CameraTimer::PinState::Disable);
-		CameraTimer::configureOutputChannel(2, CameraTimer::OutputCompareMode::Pwm2, 0x7FFF, CameraTimer::PinState::Disable);
-		CameraTimer::applyAndReset();
-		CameraTimer::pause();
-		LightPin::connect(CameraTimer::Channel1);
-		LensHeatPin::connect(CameraTimer::Channel2);
+		//CameraTimer::enable();
+		//CameraTimer::setMode(CameraTimer::Mode::UpCounter,
+		//                     CameraTimer::SlaveMode::Disabled,
+		//                     CameraTimer::SlaveModeTrigger::Internal0,
+		//                     CameraTimer::MasterMode::CompareOc1Ref);
+		//CameraTimer::setPeriod<systemClock>(PwmPeriod, false);
+		//CameraTimer::forceInactive(1);
+		//CameraTimer::forceInactive(2);
+		//CameraTimer::configureOutputChannel(1, CameraTimer::OutputCompareMode::Pwm2, 0x7FFF, CameraTimer::PinState::Disable);
+		//CameraTimer::configureOutputChannel(2, CameraTimer::OutputCompareMode::Pwm2, 0x7FFF, CameraTimer::PinState::Disable);
+		//CameraTimer::applyAndReset();
+		//CameraTimer::pause();
+		//LightPin::connect(CameraTimer::Channel1);
+		//LensHeatPin::connect(CameraTimer::Channel2);
+		LightPin::setOutput();
 	}
 }
 

@@ -92,7 +92,7 @@ Experiment::run()
 	{
 		DECLARE_ACTIVITY(Activity::Initialize)
 		{
-			initialize();
+			Board::Camera::LightPin::set();
 			CALL_ACTIVITY(Activity::HomeMotor);
 		}
 
@@ -181,6 +181,7 @@ Experiment::run()
 
 			// TODO: Disable lens heater
 			// TODO: Disable camera recording
+			Board::Camera::LightPin::reset();
 
 			CALL_ACTIVITY(Activity::Shutdown);
 		}
