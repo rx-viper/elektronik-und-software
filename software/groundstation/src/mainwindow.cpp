@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <iostream>
 
 #include "ExperimentStatus.hpp"
 
@@ -96,6 +97,14 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	} else {
 		ui->hpTemp3->setSegmentStyle(QLCDNumber::Outline);
 	}
+
+	// HP encoder: 360lpi, length: 45mm -> 640 ticks
+	//std::cout << status.heatProbeDepth(0) << std::endl;
+	//std::cout << status.heatProbeDepth(1) << std::endl;
+	//std::cout << status.heatProbeDepth(2) << std::endl;
+	ui->hpDepthGraphic1->setHeatProbePenDepth(52.f * status.heatProbeDepth(0) / 640.f);
+	ui->hpDepthGraphic2->setHeatProbePenDepth(52.f * status.heatProbeDepth(1) / 640.f);
+	ui->hpDepthGraphic3->setHeatProbePenDepth(52.f * status.heatProbeDepth(2) / 640.f);
 }
 
 void MainWindow::setSerialConnected(bool connected)

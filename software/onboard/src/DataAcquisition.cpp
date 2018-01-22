@@ -97,6 +97,7 @@ void DataAcquisition::setLowRate()
 		iceTempTimer.restart(Timeouts::LowRate::IceTemp);
 		hpTempTimer.restart(Timeouts::LowRate::HeatProbeTemp);
 		adcTimer.restart(Timeouts::LowRate::Adc);
+		hpDepthTimer.restart(Timeouts::LowRate::HeatProbeDepth);
 		pressureSampler1.start(Timeouts::LowRate::Pressure, PressureValuesPerPacketLow);
 		pressureSampler2.start(Timeouts::LowRate::Pressure, PressureValuesPerPacketLow);
 		otherTempSampler1.start(Timeouts::LowRate::OtherTemp);
@@ -114,6 +115,7 @@ void DataAcquisition::setHighRate()
 		iceTempTimer.restart(Timeouts::HighRate::IceTemp);
 		hpTempTimer.restart(Timeouts::HighRate::HeatProbeTemp);
 		adcTimer.restart(Timeouts::HighRate::Adc);
+		hpDepthTimer.restart(Timeouts::HighRate::HeatProbeDepth);
 		pressureSampler1.start(Timeouts::HighRate::Pressure, PressureValuesPerPacketHigh);
 		pressureSampler2.start(Timeouts::HighRate::Pressure, PressureValuesPerPacketHigh);
 		otherTempSampler1.start(Timeouts::HighRate::OtherTemp);
@@ -180,6 +182,14 @@ void DataAcquisition::update()
 			sendHPPower<packet::HpPowerLS>();
 			sendBattVoltageLS<packet::BattVoltageLS>();
 			sendMotorCurrentLS<packet::MotorCurrentLS>();
+		}
+	}
+
+	if(hpDepthTimer.execute()) {
+		if(highRate) {
+			sendHPDepth<packet::HpPenetrationDepthHS>();
+		} else {
+			sendHPDepth<packet::HpPenetrationDepthLS>();
 		}
 	}
 

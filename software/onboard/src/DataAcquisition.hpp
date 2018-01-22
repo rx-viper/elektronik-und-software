@@ -48,7 +48,7 @@ public:
 		struct HighRate {
 			static constexpr uint16_t IceTemp{1140};
 			static constexpr uint16_t OtherTemp{5000};
-			static constexpr uint16_t HeatProbeDepth{500};
+			static constexpr uint16_t HeatProbeDepth{250};
 			static constexpr uint16_t Pressure{50};
 			static constexpr uint16_t HeatProbeTemp{1140};
 			static constexpr uint16_t Adc{500};
@@ -57,7 +57,7 @@ public:
 		struct LowRate {
 			static constexpr uint16_t IceTemp{3000};
 			static constexpr uint16_t OtherTemp{10000};
-			static constexpr uint16_t HeatProbeDepth{10000};
+			static constexpr uint16_t HeatProbeDepth{1000};
 			static constexpr uint16_t Pressure{200};
 			static constexpr uint16_t HeatProbeTemp{10000}; // change to 3*IceTemp = 9000 ?
 			static constexpr uint16_t Adc{10000};
@@ -214,8 +214,8 @@ void DataAcquisition::sendOtherTemperatures()
 template<typename PacketT>
 void DataAcquisition::sendHPDepth()
 {
-	static_assert(sizeof(PacketT::depth) == 3, "HpPenetrationDepthHS.depth length must be 3");
 	PacketT packet;
+	static_assert(packet.depth.size() == 3, "HpPenetrationDepthHS.depth length must be 3");
 	packet.depth[0] = Board::Encoders::Heatprobe1::getEncoderRaw();
 	packet.depth[1] = Board::Encoders::Heatprobe2::getEncoderRaw();
 	packet.depth[2] = Board::Encoders::Heatprobe3::getEncoderRaw();

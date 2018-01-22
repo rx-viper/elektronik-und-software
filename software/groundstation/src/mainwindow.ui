@@ -260,7 +260,7 @@
                    <bool>false</bool>
                   </property>
                   <property name="digitCount">
-                   <number>5</number>
+                   <number>8</number>
                   </property>
                   <property name="segmentStyle">
                    <enum>QLCDNumber::Flat</enum>
@@ -393,7 +393,7 @@
                    <bool>false</bool>
                   </property>
                   <property name="digitCount">
-                   <number>5</number>
+                   <number>8</number>
                   </property>
                   <property name="segmentStyle">
                    <enum>QLCDNumber::Flat</enum>
@@ -652,7 +652,7 @@
                    <bool>false</bool>
                   </property>
                   <property name="digitCount">
-                   <number>5</number>
+                   <number>8</number>
                   </property>
                   <property name="segmentStyle">
                    <enum>QLCDNumber::Flat</enum>
