@@ -214,8 +214,11 @@ void DataAcquisition::sendOtherTemperatures()
 template<typename PacketT>
 void DataAcquisition::sendHPDepth()
 {
+	static_assert(sizeof(PacketT::depth) == 3, "HpPenetrationDepthHS.depth length must be 3");
 	PacketT packet;
-//	packet.depth[] = ;
+	packet.depth[0] = Board::Encoders::Heatprobe1::getEncoderRaw();
+	packet.depth[1] = Board::Encoders::Heatprobe2::getEncoderRaw();
+	packet.depth[2] = Board::Encoders::Heatprobe3::getEncoderRaw();
 	communicator.sendPacket(packet);
 }
 
