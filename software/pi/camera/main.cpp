@@ -22,7 +22,7 @@ using viper::packet::PiShutdown;
 
 std::atomic<uint32_t> onboardTime;
 std::atomic<uint32_t> experimentId;
-std::chrono::time_point lastCommandTime;
+auto lastCommandTime = std::chrono::high_resolution_clock::now();
 
 
 // variable is written by unix signal handler, must be volatile
@@ -41,12 +41,12 @@ static uint32_t getOnboardTime()
 {
 	auto now = std::chrono::high_resolution_clock::now();
 	auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastCommandTime);
-	return onboardTime + diff;
+	return (std::chrono::milliseconds(onboardTime) + diff).count();
 }
 
 static void readPackets(Communicator& communicator, CameraThread& cameraThread)
 {
-	static std::chrono::time_point lastTime = std::chrono::high_resolution_clock::now();
+	static auto lastTime = std::chrono::high_resolution_clock::now();
 	communicator.update(100ms);
 	if(communicator.isPacketAvailable()) {
 		auto packet = communicator.readPacket();
@@ -88,7 +88,9 @@ int main(int argc, char* argv[])
 	experimentId = 0;
 	lastCommandTime = std::chrono::high_resolution_clock::now();
 
-	CameraThread thread;
+	std::string filePath = createExperimentDirectory();
+
+	CameraThread thread{filePath};
 	try {
 		auto port = std::make_shared<SerialPort>("/dev/ttyAMA0", B115200);
 		Communicator communicator{port};

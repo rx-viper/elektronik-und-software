@@ -91,7 +91,7 @@ void Lepton3Thread::run()
 
 		if(saveToFile) {
 			auto s = snappy::Compress((const char*)frames[bufferIndex].data.data(), frames[bufferIndex].data.size() * sizeof(uint16_t), &compressedData);
-			std::string filename = nextFilename("data/Lepton_", ".compressed");
+			std::string filename = nextFilename(filePath, "_Lepton.compressed");
 			std::ofstream file(filename, std::ofstream::binary);
 			file.write(compressedData.data(), compressedData.size());
 		}

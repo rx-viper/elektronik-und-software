@@ -365,7 +365,7 @@ void CameraThread::run()
 			if(storageEnabled) {
 				jpegEncoder->compress(cameraImage.data(), jpegQuality);
 
-				std::string filename = nextFilename("data/camera_", ".jpg");
+				std::string filename = nextFilename(filePath, "_camera.jpg");
 				std::ofstream file(filename, std::ofstream::binary);
 				file.write(reinterpret_cast<const char*>(jpegEncoder->jpegData()), jpegEncoder->jpegSize());
 			}

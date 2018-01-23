@@ -22,7 +22,7 @@ using namespace std::string_literals;
 class CameraThread
 {
 public:
-	CameraThread() { storageEnabled = false; }
+	CameraThread(const std::string& filePath_) : leptonThread{filePath_}, filePath{filePath_} { storageEnabled = false; }
 	~CameraThread() { stop(); }
 
 	void start();
@@ -50,6 +50,7 @@ private:
 	Lepton3Thread leptonThread;
 
 	std::atomic<bool> storageEnabled;
+	std::string filePath;
 };
 
 

@@ -19,7 +19,7 @@ class Lepton3Thread
 public:
 	using Frame = Lepton3::Frame;
 
-	Lepton3Thread(const std::string& filePath = "."s);
+	Lepton3Thread(const std::string& filePath);
 	~Lepton3Thread();
 
 	void start();
