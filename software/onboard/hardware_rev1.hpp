@@ -442,7 +442,7 @@ namespace Heatprobes {
 namespace Sensors {
 	using PressureScl		= GpioB6;
 	using PressureSda		= GpioB7;
-	using PressureI2c		= I2cMaster1;
+	using PressureI2c		= xpcc::SoftwareI2cMaster<PressureScl, PressureSda>;
 
 	using TemperatureScl	= GpioF1;
 	using TemperatureSda	= GpioF0;
