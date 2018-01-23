@@ -34,7 +34,7 @@ namespace viper
 namespace onboard
 {
 
-class Ad7928Sampler : protected xpcc::pt::Protothread, protected xpcc::NestedResumable<2>
+class Ad7928Sampler : protected xpcc::pt::Protothread
 {
 public:
 	enum class Sensor : uint8_t {
@@ -72,8 +72,11 @@ private:
 	bool initialized;
 	bool start;
 
-	using Filter = viper::filter::Average<uint16_t>;
+	using Filter = viper::filter::Average<int32_t>;
 	std::array<Filter, 8> filters;
+
+	xpcc::ad7928::Data adcValue;
+	uint_fast8_t currentChannel = 0;
 
 	xpcc::Ad7928<Board::Powermanagement::Adc::Spi, Board::Powermanagement::Adc::Cs> adc;
 };

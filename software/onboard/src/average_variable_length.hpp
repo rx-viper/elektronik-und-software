@@ -83,7 +83,7 @@ const T
 viper::filter::Average<T>::getValueAndReset()
 {
 	T value = (index != 0) ? (sum / static_cast<T>(index)) : 0;
-	value = 0;
+	sum = 0;
 	index = 0;
 	return value;
 }

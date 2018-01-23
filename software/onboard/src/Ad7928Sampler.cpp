@@ -51,14 +51,12 @@ Ad7928Sampler::update()
 	{
 		timeout.restart(SamplePeriod);
 		PT_CALL(adc.startSequence(sequence));
-		filters[0].update(PT_CALL(adc.nextSequenceConversion()).value());
-		filters[1].update(PT_CALL(adc.nextSequenceConversion()).value());
-		filters[2].update(PT_CALL(adc.nextSequenceConversion()).value());
-		filters[3].update(PT_CALL(adc.nextSequenceConversion()).value());
-		filters[4].update(PT_CALL(adc.nextSequenceConversion()).value());
-		filters[5].update(PT_CALL(adc.nextSequenceConversion()).value());
-		filters[6].update(PT_CALL(adc.nextSequenceConversion()).value());
-		filters[7].update(PT_CALL(adc.nextSequenceConversion()).value());
+
+		for(currentChannel = 0; currentChannel < 8; ++currentChannel) {
+			adcValue = PT_CALL(adc.nextSequenceConversion());
+			filters[currentChannel].update(adcValue.value());
+		}
+
 		PT_WAIT_UNTIL(timeout.execute());
 	}
 
@@ -83,12 +81,13 @@ Ad7928Sampler::getDataAndReset(Sensor sensor)
 	case Sensor::HP2Current:
 	case Sensor::HP3Current:
 	case Sensor::MotorCurrent:
-		// Current = (voltage - 0.33V) / (264mV/mA)
+		// Current = (voltage - 0.33V) / (264mV/A)
 		// <=> ((2.5V * value / 4096) - 0.33V) / (0.264mV/mA)
-		// -> 0.00231194 * value - 1.25
-		// -> 0.00231194 (value - 540.672)
-		// ~> (value - 541) / 433
-		return (filters[static_cast<uint8_t>(sensor)].getValueAndReset() - 541) / 433;
+		// -> 0.00231194 * value - 1.25 (in A)
+		// -> 0.00231194 (value - 540.672) * 1000 (in mA)
+		// ~> (value - 541) / 433 * 1000 (in mA)
+
+		return std::max(0.f, filters[static_cast<uint8_t>(sensor)].getValueAndReset()*2.31194f - 1250.f);
 	case Sensor::HP1Voltage:
 	case Sensor::HP2Voltage:
 	case Sensor::HP3Voltage:
