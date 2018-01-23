@@ -62,12 +62,12 @@ void DataAcquisition::initialize()
 		iceTemperatureSampler.update();
 		pressureSampler1.update();
 		pressureSampler2.update();
-		otherTempSampler1.update();
+		/*otherTempSampler1.update();
 		otherTempSampler2.update();
 		otherTempSampler3.update();
 		otherTempSampler4.update();
 		otherTempSampler5.update();
-		adcSampler.update();
+		adcSampler.update();*/
 
 		allInitialized = iceTemperatureSampler.isInitialized()
 				&& pressureSampler1.isInitialized()
@@ -76,8 +76,8 @@ void DataAcquisition::initialize()
 				&& otherTempSampler2.isInitialized()
 				&& otherTempSampler3.isInitialized()
 				&& otherTempSampler4.isInitialized()
-				&& otherTempSampler5.isInitialized()
-				&& adcSampler.isInitialized();
+				&& otherTempSampler5.isInitialized();
+				//&& adcSampler.isInitialized();
 	}
 }
 
@@ -96,15 +96,15 @@ void DataAcquisition::setLowRate()
 		highRate = false;
 		iceTempTimer.restart(Timeouts::LowRate::IceTemp);
 		hpTempTimer.restart(Timeouts::LowRate::HeatProbeTemp);
-		adcTimer.restart(Timeouts::LowRate::Adc);
+		//adcTimer.restart(Timeouts::LowRate::Adc);
 		hpDepthTimer.restart(Timeouts::LowRate::HeatProbeDepth);
 		pressureSampler1.start(Timeouts::LowRate::Pressure, PressureValuesPerPacketLow);
 		pressureSampler2.start(Timeouts::LowRate::Pressure, PressureValuesPerPacketLow);
-		otherTempSampler1.start(Timeouts::LowRate::OtherTemp);
+		/*otherTempSampler1.start(Timeouts::LowRate::OtherTemp);
 		otherTempSampler2.start(Timeouts::LowRate::OtherTemp);
 		otherTempSampler3.start(Timeouts::LowRate::OtherTemp);
 		otherTempSampler4.start(Timeouts::LowRate::OtherTemp);
-		otherTempSampler5.start(Timeouts::LowRate::OtherTemp);
+		otherTempSampler5.start(Timeouts::LowRate::OtherTemp);*/
 	}
 }
 
@@ -114,15 +114,15 @@ void DataAcquisition::setHighRate()
 		highRate = true;
 		iceTempTimer.restart(Timeouts::HighRate::IceTemp);
 		hpTempTimer.restart(Timeouts::HighRate::HeatProbeTemp);
-		adcTimer.restart(Timeouts::HighRate::Adc);
+		//adcTimer.restart(Timeouts::HighRate::Adc);
 		hpDepthTimer.restart(Timeouts::HighRate::HeatProbeDepth);
 		pressureSampler1.start(Timeouts::HighRate::Pressure, PressureValuesPerPacketHigh);
 		pressureSampler2.start(Timeouts::HighRate::Pressure, PressureValuesPerPacketHigh);
-		otherTempSampler1.start(Timeouts::HighRate::OtherTemp);
+		/*otherTempSampler1.start(Timeouts::HighRate::OtherTemp);
 		otherTempSampler2.start(Timeouts::HighRate::OtherTemp);
 		otherTempSampler3.start(Timeouts::HighRate::OtherTemp);
 		otherTempSampler4.start(Timeouts::HighRate::OtherTemp);
-		otherTempSampler5.start(Timeouts::HighRate::OtherTemp);
+		otherTempSampler5.start(Timeouts::HighRate::OtherTemp);*/
 	}
 }
 
@@ -163,7 +163,7 @@ void DataAcquisition::update()
 		}
 	}
 
-	if(adcTimer.execute()) {
+	/*if(adcTimer.execute()) {
 		if(highRate) {
 			sendHPPower<packet::HpPowerHS>();
 
@@ -183,7 +183,7 @@ void DataAcquisition::update()
 			sendBattVoltageLS<packet::BattVoltageLS>();
 			sendMotorCurrentLS<packet::MotorCurrentLS>();
 		}
-	}
+	}*/
 
 	if(hpDepthTimer.execute()) {
 		if(highRate) {
@@ -193,11 +193,11 @@ void DataAcquisition::update()
 		}
 	}
 
-	if(otherTempSampler1.isFinished())/* &&
+	/*if(otherTempSampler1.isFinished()) &&
 			otherTempSampler2.isFinished() &&
 			otherTempSampler3.isFinished() &&
 			otherTempSampler4.isFinished() &&
-			otherTempSampler5.isFinished())*/
+			otherTempSampler5.isFinished())
 	{
 		otherTempSampler1.resetFinished();
 		otherTempSampler2.resetFinished();
@@ -210,28 +210,28 @@ void DataAcquisition::update()
 		} else {
 			sendOtherTemperatures<packet::OtherTemperatureLS>();
 		}
-	}
+	}*/
 
 	if(pressureSampler1.isFinished() && pressureSampler2.isFinished()) {
-		pressureSampler1.resetFinished();
-		pressureSampler2.resetFinished();
-
 		if(highRate) {
 			sendPressure<packet::PressureHS>();
 		} else {
 			sendPressure<packet::PressureLS>();
 		}
+
+		pressureSampler1.resetFinished();
+		pressureSampler2.resetFinished();
 	}
 
 	iceTemperatureSampler.update();
 	pressureSampler1.update();
 	pressureSampler2.update();
-	otherTempSampler1.update();
+	/*otherTempSampler1.update();
 	otherTempSampler2.update();
 	otherTempSampler3.update();
 	otherTempSampler4.update();
-	otherTempSampler5.update();
-	adcSampler.update();
+	otherTempSampler5.update();*/
+	//adcSampler.update();
 
 	/*if(depthTimer.execute()) {
 		if(highRate) {

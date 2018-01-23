@@ -455,9 +455,9 @@ namespace Sensors {
 		PressureSda::connect(PressureI2c::Sda);
 		PressureI2c::initialize<systemClock, PressureI2c::Baudrate::Standard, xpcc::Tolerance::FivePercent>();
 
-		TemperatureScl::connect(TemperatureI2c::Scl);
+		/*TemperatureScl::connect(TemperatureI2c::Scl);
 		TemperatureSda::connect(TemperatureI2c::Sda);
-		TemperatureI2c::initialize<systemClock, PressureI2c::Baudrate::Standard, xpcc::Tolerance::FivePercent>();
+		TemperatureI2c::initialize<systemClock, PressureI2c::Baudrate::Standard, xpcc::Tolerance::FivePercent>();*/
 	}
 }
 
