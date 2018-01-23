@@ -168,13 +168,13 @@ void DataAcquisition::update()
 			sendHPPower<packet::HpPowerHS>();
 
 			battVoltageHS[battVoltageHSIndex++] = adcSampler.getDataAndReset(Ad7928Sampler::Sensor::BattVoltage);
-			if(battVoltageHSIndex > sizeof(battVoltageHS)) {
+			if(battVoltageHSIndex >= battVoltageHS.size()) {
 				battVoltageHSIndex = 0;
 				sendBattVoltageHS<packet::BattVoltageHS>();
 			}
 
 			motorCurrentHS[motorCurrentHSIndex++] = adcSampler.getDataAndReset(Ad7928Sampler::Sensor::MotorCurrent);
-			if(motorCurrentHSIndex > sizeof(motorCurrentHS)) {
+			if(motorCurrentHSIndex >= motorCurrentHS.size()) {
 				motorCurrentHSIndex = 0;
 				sendMotorCurrentHS<packet::MotorCurrentHS>();
 			}
