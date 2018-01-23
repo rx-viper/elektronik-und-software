@@ -93,9 +93,14 @@
 		<element name="onboardTime" type="uint32_t" />
 	</packet>
 
+	<packet name="PiShutdown" id="22">
+		<element name="dummy" type="uint8_t" />
+	</packet>
+
 	<packet_group name="PiPackets">
 		<packet name="PiStatus" />
 		<packet name="PiCommand" />
+		<packet name="PiShutdown" />
 	</packet_group>
 
 	<!-- TEST -->

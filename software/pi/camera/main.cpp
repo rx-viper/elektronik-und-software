@@ -17,11 +17,14 @@ using namespace std::chrono_literals;
 using viper::packet::PiStatus;
 using viper::packet::PiCommand;
 using viper::packet::PiPackets;
+using viper::packet::PiShutdown;
 
 // variable is written by unix signal handler, must be volatile
 static volatile bool stop = false;
 
 constexpr auto StatusTimeout = 500ms;
+
+static bool shutdown = false;
 
 void sigInt(int signal)
 {
@@ -38,6 +41,12 @@ static void readPackets(Communicator& communicator, CameraThread& cameraThread)
 			if(command) {
 				const bool enableRecording = command->recordingEnabled > 0;
 				cameraThread.setFileStorageEnabled(enableRecording);
+			} else {
+				const auto* shutdownPacket = packet->get<PiShutdown>();
+				if(shutdownPacket) {
+					shutdown = true;
+					stop = true;
+				}
 			}
 		}
 	}
@@ -80,8 +89,13 @@ int main(int argc, char* argv[])
 		}
 
 		thread.stop();
+
+		if(shutdown) {
+			system("poweroff");
+		}
 	} catch(const std::exception& e) {
 		std::cerr << "ERROR: " << e.what() << std::endl;
+		return -1;
 	}
 
     return 0;
