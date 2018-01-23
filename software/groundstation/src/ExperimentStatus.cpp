@@ -3,7 +3,7 @@
 namespace viper
 {
 
-ExperimentStatus::ExperimentStatus() : hpDepths{}, hpTemperatures{}, hpOvertemperature{}, otherTemp{}
+ExperimentStatus::ExperimentStatus()
 {
 }
 
@@ -55,6 +55,26 @@ uint8_t ExperimentStatus::testMode() const
 uint32_t ExperimentStatus::getExperimentId() const
 {
 	return experimentId;
+}
+
+uint16_t ExperimentStatus::heatProbeVoltage(size_t heatProbeIndex) const
+{
+	return hpVoltages.at(heatProbeIndex);
+}
+
+uint16_t ExperimentStatus::heatProbeCurrent(size_t heatProbeIndex) const
+{
+	return hpCurrents.at(heatProbeIndex);
+}
+
+uint16_t ExperimentStatus::batteryVoltage() const
+{
+	return battVoltage;
+}
+
+uint16_t ExperimentStatus::motorCurrent() const
+{
+	return motorCurrentMeasurement;
 }
 
 uint32_t ExperimentStatus::onboardUptime() const
@@ -117,6 +137,26 @@ void ExperimentStatus::updateHpDepth(const std::array<int32_t, 3>& hpDepths)
 void ExperimentStatus::updateExperimentId(uint32_t experimentId)
 {
 	this->experimentId = experimentId;
+}
+
+void ExperimentStatus::updateBatteryVoltage(uint16_t batteryVoltage)
+{
+	this->battVoltage = batteryVoltage;
+}
+
+void ExperimentStatus::updateMotorCurrent(uint16_t motorCurrent)
+{
+	this->motorCurrentMeasurement = motorCurrent;
+}
+
+void ExperimentStatus::updateHpCurrents(const std::array<uint16_t, 3>& hpCurrents)
+{
+	this->hpCurrents = hpCurrents;
+}
+
+void ExperimentStatus::updateHpVoltages(const std::array<uint16_t, 3>& hpVoltages)
+{
+	this->hpVoltages = hpVoltages;
 }
 
 }

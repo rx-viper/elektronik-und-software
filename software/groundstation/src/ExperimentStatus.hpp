@@ -23,6 +23,10 @@ public:
 	int32_t motorPosition() const;
 	uint8_t testMode() const;
 	uint32_t getExperimentId() const;
+	uint16_t heatProbeVoltage(size_t heatProbeIndex) const;
+	uint16_t heatProbeCurrent(size_t heatProbeIndex) const;
+	uint16_t batteryVoltage() const;
+	uint16_t motorCurrent() const;
 
 	void updateIceTemperatures(const std::array<IceTemperatures, 3> iceTemperatureData);
 	void updatePressure(float pressureValue);
@@ -35,14 +39,22 @@ public:
 	void updateMotorPosition(int32_t pos);
 	void updateTestMode(uint8_t test);
 	void updateExperimentId(uint32_t experimentId);
+	void updateHpVoltages(const std::array<uint16_t, 3>& hpVoltages);
+	void updateHpCurrents(const std::array<uint16_t, 3>& hpCurrents);
+	void updateBatteryVoltage(uint16_t batteryVoltage);
+	void updateMotorCurrent(uint16_t motorCurrent);
 
 private:
-	std::array<IceTemperatures, 3> iceTemperatureData;
+	std::array<IceTemperatures, 3> iceTemperatureData = {};
 	float pressureValue = 0;
-	std::array<int32_t, 3> hpDepths;
-	std::array<int32_t, 3> hpTemperatures;
-	std::array<bool, 3> hpOvertemperature;
-	std::array<int16_t, 5> otherTemp;
+	std::array<int32_t, 3> hpDepths = {};
+	std::array<int32_t, 3> hpTemperatures = {};
+	std::array<bool, 3> hpOvertemperature = {};
+	std::array<int16_t, 5> otherTemp = {};
+	std::array<uint16_t, 3> hpVoltages = {};
+	std::array<uint16_t, 3> hpCurrents = {};
+	uint16_t battVoltage = 0;
+	uint16_t motorCurrentMeasurement = 0;
 	EventLineStatus eventLines;
 	uint32_t uptime = 0;
 	uint32_t motorPos = 0;

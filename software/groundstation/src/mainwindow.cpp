@@ -47,6 +47,14 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	ui->hpDepthGraphic3->setHeatProbePenDepth(status.heatProbeDepth(2));
 	ui->penetrationDepth3->display(QString::number(status.heatProbeDepth(2), 'f', 1));
 
+	ui->hpCurrent1->display(QString::number(status.heatProbeCurrent(0)));
+	ui->hpCurrent2->display(QString::number(status.heatProbeCurrent(1)));
+	ui->hpCurrent3->display(QString::number(status.heatProbeCurrent(2)));
+
+	ui->hpVoltage1->display(QString::number(status.heatProbeVoltage(0)));
+	ui->hpVoltage2->display(QString::number(status.heatProbeVoltage(1)));
+	ui->hpVoltage3->display(QString::number(status.heatProbeVoltage(2)));
+
 	ui->hpTemp1->display(QString::number(status.heatProbeTemperature(0), 'f', 1));
 	ui->hpTemp2->display(QString::number(status.heatProbeTemperature(1), 'f', 1));
 	ui->hpTemp3->display(QString::number(status.heatProbeTemperature(2), 'f', 1));
@@ -79,6 +87,8 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 
 	ui->timeLabel->setText("Time: " + QString::number(status.onboardUptime()));
 	ui->motorLabel->setText("Motor Position: " + QString::number(status.motorPosition()));
+	ui->motorCurrentLabel->setText("Motor Current: " + QString::number(status.motorCurrent()));
+	ui->batteryVoltageLabel->setText("Battery Voltage: " + QString::number(status.batteryVoltage()));
 
 	if(!status.heatProbeOvertemperature(0)) {
 		ui->hpTemp1->setSegmentStyle(QLCDNumber::Flat);
