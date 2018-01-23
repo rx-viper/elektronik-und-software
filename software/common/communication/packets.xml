@@ -126,6 +126,7 @@
 	<packet name="PiCommand" id="21">
 		<element name="recordingEnabled" type="uint8_t" />
 		<element name="onboardTime" type="uint32_t" />
+		<element name="experimentId" type="uint32_t" />
 	</packet>
 
 	<packet name="PiShutdown" id="22">

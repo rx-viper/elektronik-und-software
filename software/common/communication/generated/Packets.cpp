@@ -399,7 +399,10 @@ bool PiCommand::read(DataReader& reader)
     if(!reader.read(recordingEnabled))
         return false;
     
-    return reader.read(onboardTime);
+    if(!reader.read(onboardTime))
+        return false;
+    
+    return reader.read(experimentId);
 }
 
 bool PiCommand::write(DataWriter& writer) const
@@ -410,7 +413,10 @@ bool PiCommand::write(DataWriter& writer) const
     if(!writer.write(recordingEnabled))
         return false;
     
-    return writer.write(onboardTime);
+    if(!writer.write(onboardTime))
+        return false;
+    
+    return writer.write(experimentId);
 }
 
 bool PiShutdown::read(DataReader& reader)

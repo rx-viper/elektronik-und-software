@@ -125,8 +125,6 @@ void Motor::setPosition(int32_t position)
 		disable();
 		return;
 	}*/
-	XPCC_LOG_DEBUG << "motor::setPosition(" << position << ")" << xpcc::endl;
-
 	targetPosition = position;
 	controllerMode = ControllerMode::Position;
 }

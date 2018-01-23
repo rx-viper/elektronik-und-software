@@ -19,10 +19,11 @@ namespace onboard
 {
 
 template<typename Packets, typename Device>
-Communicator<Packets, Device>::Communicator(CommunicationFlashWriter& flashWriter_) :
+Communicator<Packets, Device>::Communicator(CommunicationFlashWriter& flashWriter_, bool flashEnabled_) :
 	frameWriter{frameBuffer.data(),frameBuffer.size()},
 	frameReader{receiveBuffer.data(), receiveBuffer.size()},
 	flashWriter{flashWriter_},
+	flashEnabled{flashEnabled_},
 	packetAvailable{false}
 {
 	sendSequenceNumbers.fill(0);
@@ -61,9 +62,11 @@ void Communicator<Packets, Device>::sendPacket(const PacketT& packet)
 
 	Device::write(frameWriter.data(), frameWriter.size());
 
-	// write data to flash after Lift-Off and if SODS is active
-	if(viper::onboard::RxsmEvents::liftOff() && viper::onboard::RxsmEvents::startOfDataStorage()) {
-		flashWriter.write(frameWriter.data(), frameWriter.size());
+	if(flashEnabled) {
+		// write data to flash after Lift-Off and if SODS is active
+		if(viper::onboard::RxsmEvents::liftOff() && viper::onboard::RxsmEvents::startOfDataStorage()) {
+			flashWriter.write(frameWriter.data(), frameWriter.size());
+		}
 	}
 }
 
@@ -175,6 +178,14 @@ size_t Communicator<Packets, Device>::writePacketPayload(const PacketT& packet)
 	}
 
 	return writer.isError() ? 0 : writer.getPosition();
+}
+
+template<typename Packets, typename Device>
+void Communicator<Packets, Device>::flushFlashWriter()
+{
+	if(flashEnabled) {
+		flashWriter.flush();
+	}
 }
 
 }
