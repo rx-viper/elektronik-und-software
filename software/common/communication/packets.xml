@@ -50,19 +50,19 @@
 	</packet>
 
 	<packet name="BattVoltageLS" id="16">
-		<element name="value" type="int16_t" />
+		<element name="value" type="uint16_t" />
 	</packet>
 
 	<packet name="BattVoltageHS" id="17">
-		<array name="values" type="int16_t" size="4" />
+		<array name="values" type="uint16_t" size="4" />
 	</packet>
 
 	<packet name="MotorCurrentLS" id="18">
-		<element name="value" type="int16_t" />
+		<element name="value" type="uint16_t" />
 	</packet>
 
 	<packet name="MotorCurrentHS" id="19">
-		<array name="values" type="int16_t" size="4" />
+		<array name="values" type="uint16_t" size="4" />
 	</packet>
 
 	<packet name="TestMode" id="11">

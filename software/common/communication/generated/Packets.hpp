@@ -236,7 +236,7 @@ struct BattVoltageLS
     static constexpr size_t PacketSize{6};
     
     mutable uint32_t sequenceNumber;
-    int16_t value;
+    uint16_t value;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
@@ -251,7 +251,7 @@ struct BattVoltageHS
     static constexpr size_t PacketSize{12};
     
     mutable uint32_t sequenceNumber;
-    std::array<int16_t, 4> values;
+    std::array<uint16_t, 4> values;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
@@ -266,7 +266,7 @@ struct MotorCurrentLS
     static constexpr size_t PacketSize{6};
     
     mutable uint32_t sequenceNumber;
-    int16_t value;
+    uint16_t value;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
@@ -281,7 +281,7 @@ struct MotorCurrentHS
     static constexpr size_t PacketSize{12};
     
     mutable uint32_t sequenceNumber;
-    std::array<int16_t, 4> values;
+    std::array<uint16_t, 4> values;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
