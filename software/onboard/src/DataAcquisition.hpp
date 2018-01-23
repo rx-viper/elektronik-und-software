@@ -66,8 +66,8 @@ public:
 
 	// TODO: addresses
 	struct I2cAddress {
-		static constexpr uint8_t Pressure1{0x41};
-		static constexpr uint8_t Pressure2{0x42};
+		static constexpr uint8_t Pressure1{0x28};
+		static constexpr uint8_t Pressure2{0x41};
 		static constexpr uint8_t OtherTemp1{0x4B};
 		static constexpr uint8_t OtherTemp2{0x1};
 		static constexpr uint8_t OtherTemp3{0x1};
