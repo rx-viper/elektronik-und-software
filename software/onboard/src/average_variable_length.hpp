@@ -51,7 +51,7 @@ namespace filter
 
 		/// Append new value
 		void
-		update(const T& input);
+		update(T input);
 
 		/// Get filtered value and reset sum
 		const T
@@ -72,7 +72,7 @@ viper::filter::Average<T>::Average() :
 
 template<typename T>
 void
-viper::filter::Average<T>::update(const T& input)
+viper::filter::Average<T>::update(T input)
 {
 	sum += input;
 	index++;
