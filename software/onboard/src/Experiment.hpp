@@ -32,21 +32,19 @@
 
 #include "Activity.hpp"
 
+
 namespace viper
 {
 namespace onboard
 {
 
-using PiCommunicator = viper::onboard::Communicator<viper::packet::PiPackets, Board::Camera::PiUart>;
-
 class Experiment : public xpcc::pt::Protothread, public xpcc::NestedResumable<10>
 {
 public:
 	static constexpr uint16_t StatusPacketTimeout = 1000; // in ms
-	static constexpr uint16_t PiCommandTimeout = 1000;
 	static constexpr uint32_t MotorHppmDownPosition = 5555555;
 
-	Experiment(GroundstationCommunicator& communicator_, PiCommunicator& piCommunicator, uint32_t experimentId_);
+	Experiment(GroundstationCommunicator& communicator_, uint32_t experimentId_);
 	Experiment(const Experiment&) = delete;
 	Experiment& operator=(const Experiment&) = delete;
 
@@ -59,7 +57,6 @@ public:
 
 private:
 	void sendStatus();
-	void sendPiCommand();
 
 	xpcc::ResumableResult<void>
 	run();
@@ -67,18 +64,10 @@ private:
 	Activity activity = Activity::Initialize;
 
 	GroundstationCommunicator& communicator;
-	PiCommunicator& piCommunicator;
 	DataAcquisition dataAcquisition;
 	xpcc::ShortPeriodicTimer statusPacketTimer;
-	xpcc::ShortPeriodicTimer piCommandPacketTimer;
 
 	const uint32_t experimentId;
-
-	static constexpr uint8_t cameraRecordingOn = 0xFF;
-	static constexpr uint8_t cameraRecordingOff = 0x00;
-	uint8_t cameraRecording = cameraRecordingOff;
-	uint8_t cameraRecordingStatus = 0;
-	uint32_t piStorageAvailable = 0;
 };
 
 xpcc::IOStream& operator<<(xpcc::IOStream& out, Experiment::Activity state);

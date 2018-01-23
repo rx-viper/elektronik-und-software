@@ -31,7 +31,6 @@ using viper::onboard::RxsmEvents;
 using viper::onboard::Experiment;
 using viper::onboard::Motor;
 using viper::onboard::GroundstationCommunicator;
-using viper::onboard::PiCommunicator;
 using viper::onboard::CommunicationFlashWriter;
 using viper::onboard::HeatprobeControl;
 
@@ -59,9 +58,8 @@ main()
 	}
 
 	GroundstationCommunicator communicator(communicationFlashWriter);
-	PiCommunicator piCommunicator(communicationFlashWriter, false);
 
-	Experiment experiment{communicator, piCommunicator, experimentId};
+	Experiment experiment{communicator, experimentId};
 	experiment.initialize();
 
 	while (1)
@@ -73,7 +71,6 @@ main()
 		experiment.update();
 		communicator.update();
 		communicationFlashWriter.run();
-		piCommunicator.update();
 	}
 
 	return 0;

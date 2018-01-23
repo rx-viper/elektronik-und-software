@@ -29,12 +29,10 @@ namespace viper
 namespace onboard
 {
 
-Experiment::Experiment(GroundstationCommunicator& communicator_, PiCommunicator& piCommunicator_, uint32_t experimentId_)
+Experiment::Experiment(GroundstationCommunicator& communicator_, uint32_t experimentId_)
 	: communicator{communicator_},
-	  piCommunicator{piCommunicator_},
 	  dataAcquisition{communicator_},
 	  statusPacketTimer{StatusPacketTimeout},
-	  piCommandPacketTimer{PiCommandTimeout},
 	  experimentId{experimentId_}
 {
 }
@@ -60,21 +58,7 @@ Experiment::update()
 		sendStatus();
 	}
 
-	if(piCommandPacketTimer.execute()) {
-		sendPiCommand();
-	}
-
 	dataAcquisition.update();
-
-	if(piCommunicator.isPacketAvailable()) {
-		const packet::PiPackets& p = piCommunicator.getPacket();
-		const auto* piStatusPacket = p.get<viper::packet::PiStatus>();
-		if(piStatusPacket) {
-			this->cameraRecordingStatus = piStatusPacket->recordingEnabled;
-			this->piStorageAvailable = piStatusPacket->storageAvailable;
-		}
-		piCommunicator.dropPacket();
-	}
 
 	PT_BEGIN();
 	while(1) {
@@ -101,15 +85,6 @@ void Experiment::sendStatus()
 	communicator.sendPacket(status);
 }
 
-void Experiment::sendPiCommand()
-{
-	packet::PiCommand packet;
-	packet.recordingEnabled = this->cameraRecording;
-	packet.experimentId = this->experimentId;
-	packet.onboardTime = xpcc::Clock::now().getTime();
-	piCommunicator.sendPacket(packet);
-}
-
 xpcc::ResumableResult<void>
 Experiment::run()
 {
@@ -133,7 +108,7 @@ Experiment::run()
 			if(RxsmEvents::startOfDataStorage() ||
 					RxsmEvents::liftOff() || RxsmEvents::startOfExperiment()) {
 				// TODO: Enable lens heater
-				this->cameraRecording = cameraRecordingOn;
+				// TODO: Enable camera recording
 				CALL_ACTIVITY(Activity::DataStorageStarted);
 			}
 
@@ -166,7 +141,10 @@ Experiment::run()
 
 		DECLARE_ACTIVITY(Activity::StartExperiment)
 		{
+			// TODO: start
+			XPCC_LOG_DEBUG << "SOE" << xpcc::endl;
 			dataAcquisition.setHighRate();
+			XPCC_LOG_DEBUG << "dataAcquisition.setHighRate() finished" << xpcc::endl;
 			Motor::setPosition(MotorHppmDownPosition);
 			RF_WAIT_UNTIL(Motor::isPositionReached());
 			HeatprobeControl::setOn();
@@ -202,15 +180,8 @@ Experiment::run()
 			RF_WAIT_UNTIL(!RxsmEvents::startOfDataStorage());
 
 			// TODO: Disable lens heater
-			this->cameraRecording = cameraRecordingOff;
+			// TODO: Disable camera recording
 			Board::Camera::LightPin::reset();
-			RF_YIELD();
-
-			viper::packet::PiShutdown packet;
-			packet.dummy = 0x42;
-			piCommunicator.sendPacket(packet);
-
-			communicator.flushFlashWriter();
 
 			CALL_ACTIVITY(Activity::Shutdown);
 		}
