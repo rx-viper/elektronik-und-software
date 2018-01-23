@@ -49,7 +49,7 @@ public:
 			static constexpr uint16_t IceTemp{1140};
 			static constexpr uint16_t OtherTemp{5000};
 			static constexpr uint16_t HeatProbeDepth{250};
-			static constexpr uint16_t Pressure{50};
+			static constexpr uint16_t Pressure{50}; // TODO: it seems this rate does not work with software i2c ???
 			static constexpr uint16_t HeatProbeTemp{1140};
 			static constexpr uint16_t Adc{500};
 		};
@@ -78,8 +78,10 @@ public:
 	static constexpr uint16_t PressureValuesPerPacketHigh{20};
 	static constexpr uint16_t PressureValuesPerPacketLow{5};
 
-	static_assert (PressureValuesPerPacketHigh == packet::PressureHS().values.size(), "Invalid pressure value count");
-	static_assert (PressureValuesPerPacketLow == packet::PressureLS().values.size(), "Invalid pressure value count");
+	static_assert (PressureValuesPerPacketHigh == packet::PressureHS().sensor1.size(), "Invalid pressure value count");
+	static_assert (PressureValuesPerPacketHigh == packet::PressureHS().sensor2.size(), "Invalid pressure value count");
+	static_assert (PressureValuesPerPacketLow == packet::PressureLS().sensor1.size(), "Invalid pressure value count");
+	static_assert (PressureValuesPerPacketLow == packet::PressureLS().sensor2.size(), "Invalid pressure value count");
 
 	using PressureSensor = Amsys5915Sensor<Board::Sensors::PressureI2c>;
 	using OtherTemperatureSensor = Ds1731Sensor<Board::Sensors::TemperatureI2c>;
@@ -226,9 +228,12 @@ template<typename PacketT>
 void DataAcquisition::sendPressure()
 {
 	PacketT packet;
-	for(size_t index = 0; index < packet.values.size(); ++index) {
-		// TODO: sensor2
-		packet.values[index] = pressureSampler1.getData(index);
+	for(size_t index = 0; index < packet.sensor1.size(); ++index) {
+		packet.sensor1[index] = pressureSampler1.getData(index);
+	}
+
+	for(size_t index = 0; index < packet.sensor2.size(); ++index) {
+		packet.sensor2[index] = pressureSampler2.getData(index);
 	}
 
 	communicator.sendPacket(packet);
