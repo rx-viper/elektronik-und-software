@@ -110,7 +110,10 @@ bool PressureLS::read(DataReader& reader)
     if(!reader.read(sequenceNumber))
         return false;
     
-    return reader.read(values);
+    if(!reader.read(sensor1))
+        return false;
+    
+    return reader.read(sensor2);
 }
 
 bool PressureLS::write(DataWriter& writer) const
@@ -118,7 +121,10 @@ bool PressureLS::write(DataWriter& writer) const
     if(!writer.write(sequenceNumber))
         return false;
     
-    return writer.write(values);
+    if(!writer.write(sensor1))
+        return false;
+    
+    return writer.write(sensor2);
 }
 
 bool PressureHS::read(DataReader& reader)
@@ -126,7 +132,10 @@ bool PressureHS::read(DataReader& reader)
     if(!reader.read(sequenceNumber))
         return false;
     
-    return reader.read(values);
+    if(!reader.read(sensor1))
+        return false;
+    
+    return reader.read(sensor2);
 }
 
 bool PressureHS::write(DataWriter& writer) const
@@ -134,7 +143,10 @@ bool PressureHS::write(DataWriter& writer) const
     if(!writer.write(sequenceNumber))
         return false;
     
-    return writer.write(values);
+    if(!writer.write(sensor1))
+        return false;
+    
+    return writer.write(sensor2);
 }
 
 bool HpTemperatureLS::read(DataReader& reader)

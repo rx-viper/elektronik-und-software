@@ -24,11 +24,13 @@
 	</packet>
 
 	<packet name="PressureLS" id="6">
-		<array name="values" type="int32_t" size="5" />
+		<array name="sensor1" type="uint16_t" size="5" />
+		<array name="sensor2" type="uint16_t" size="5" />
 	</packet>
 
 	<packet name="PressureHS" id="7">
-		<array name="values" type="int32_t" size="20" />
+		<array name="sensor1" type="uint16_t" size="20" />
+		<array name="sensor2" type="uint16_t" size="20" />
 	</packet>
 
 	<packet name="HpTemperatureLS" id="8">

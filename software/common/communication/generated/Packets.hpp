@@ -144,7 +144,8 @@ struct PressureLS
     static constexpr size_t PacketSize{24};
     
     mutable uint32_t sequenceNumber;
-    std::array<int32_t, 5> values;
+    std::array<uint16_t, 5> sensor1;
+    std::array<uint16_t, 5> sensor2;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
@@ -159,7 +160,8 @@ struct PressureHS
     static constexpr size_t PacketSize{84};
     
     mutable uint32_t sequenceNumber;
-    std::array<int32_t, 20> values;
+    std::array<uint16_t, 20> sensor1;
+    std::array<uint16_t, 20> sensor2;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;
