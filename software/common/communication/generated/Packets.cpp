@@ -369,6 +369,66 @@ bool Status::write(DataWriter& writer) const
     return writer.write(experimentId);
 }
 
+bool PiStatus::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    if(!reader.read(recordingEnabled))
+        return false;
+    
+    return reader.read(storageAvailable);
+}
+
+bool PiStatus::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    if(!writer.write(recordingEnabled))
+        return false;
+    
+    return writer.write(storageAvailable);
+}
+
+bool PiCommand::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    if(!reader.read(recordingEnabled))
+        return false;
+    
+    return reader.read(onboardTime);
+}
+
+bool PiCommand::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    if(!writer.write(recordingEnabled))
+        return false;
+    
+    return writer.write(onboardTime);
+}
+
+bool PiShutdown::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(dummy);
+}
+
+bool PiShutdown::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(dummy);
+}
+
 bool TestPacket1::read(DataReader& reader)
 {
     if(!reader.read(sequenceNumber))

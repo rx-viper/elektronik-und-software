@@ -1,0 +1,16 @@
+IdsImageMemory.o: IdsImageMemory.cpp IdsImageMemory.hpp
+Lepton3Thread.o: Lepton3Thread.cpp Lepton3Thread.hpp Lepton3.hpp \
+ FileUtil.hpp
+FileUtil.o: FileUtil.cpp
+CameraThread.o: CameraThread.cpp CameraThread.hpp Lepton3Thread.hpp \
+ Lepton3.hpp FramebufferRenderer.hpp Renderer.hpp IdsCamera.hpp \
+ IdsImageMemory.hpp JpegEncoder.hpp TurboJpegAllocator.h SwScale.hpp \
+ FileUtil.hpp
+IdsCamera.o: IdsCamera.cpp IdsCamera.hpp IdsImageMemory.hpp \
+ SequenceBufferLock.hpp
+main.o: main.cpp CameraThread.hpp Lepton3Thread.hpp Lepton3.hpp \
+ FramebufferRenderer.hpp Renderer.hpp IdsCamera.hpp IdsImageMemory.hpp \
+ JpegEncoder.hpp TurboJpegAllocator.h SwScale.hpp
+Lepton3.o: Lepton3.cpp Lepton3.hpp
+FramebufferRenderer.o: FramebufferRenderer.cpp FramebufferRenderer.hpp \
+ Renderer.hpp

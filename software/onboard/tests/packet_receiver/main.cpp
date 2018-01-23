@@ -57,24 +57,30 @@ xpcc::hosted::SerialInterface* SerialWrapperDevice::interface = nullptr;
 
 int main()
 {
-	xpcc::hosted::SerialInterface serialPort("/dev/ttyACM0", 115200);
+	xpcc::hosted::SerialInterface serialPort("/dev/ttyUSB1", 115200);
 	
 	if (not serialPort.open()) {
 		XPCC_LOG_ERROR << "Could not open port: " << serialPort.getDeviceName().c_str() << xpcc::endl;
 		exit(EXIT_FAILURE);
 	}
 
+
 	SerialWrapperDevice::interface = &serialPort;
 	
-    Communicator<TestPackets, SerialWrapperDevice> communicator;
-	
+    Communicator<PiPackets, SerialWrapperDevice> communicator;
+
+	PiCommand command;
+	command.onboardTime = 1337;
+	command.recordingEnabled = 0;
+	communicator.sendPacket(command);
+
 	while (1) {
         if(communicator.isPacketAvailable()) {
-			const TestPackets& packetGroup = communicator.getPacket();
+			const PiPackets& packetGroup = communicator.getPacket();
 			
-			const TestPacket2* packet2 = packetGroup.get<TestPacket2>();
+			const PiStatus* packet2 = packetGroup.get<PiStatus>();
 			if(packet2) {
-				std::cout << packet2->test1 << ", " << int(packet2->test2) << std::endl;
+				std::cout << (int)packet2->recordingEnabled << ", " << packet2->storageAvailable << std::endl;
 			}
 			communicator.dropPacket();
 		}

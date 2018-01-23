@@ -28,53 +28,22 @@ using namespace Board;
 
 using viper::onboard::Communicator;
 
-using viper::packet::TestPackets;
-using viper::packet::TestPacket2;
-using viper::packet::TestEnum;
+using viper::packet::PiPackets;
+using viper::packet::PiStatus;
 
 /*
  * Example for STM32F746G discovery board that sends packets with simulated bit errors.
  * To run this on other hardware you will need to change the project settings in project.cfg
  */
 using UartDevice = Board::stlink::Uart;
-constexpr uint32_t BitErrorRate = 2; // in units of 10^-4
-
-// initialize random number generator with a value range of [0, 10000]
-std::default_random_engine random(42);
-std::uniform_int_distribution<uint32_t> uniformDist(0, 10000);
-
-/// Uart device wrapper to simulate transmission errors
-template<typename Uart>
-struct ErrorUart
-{
-	static void write(const uint8_t* data, size_t size)
-	{
-		for(size_t i = 0; i < size; ++i) {
-			uint8_t byte = data[i];
-			for(uint8_t bit = 0; bit < 8; ++bit) {
-				const bool isError = uniformDist(random) < BitErrorRate;
-				if(isError)
-					byte ^= (1 << bit);
-			}
-			Uart::write(byte);
-		}
-	}
-	
-	inline static bool read(uint8_t& data)
-	{
-		return Uart::read(data);
-	}
-};
-
-using TestCommunicator = Communicator<TestPackets, ErrorUart<UartDevice>>;
 
 int main()
 {
 	Board::initialize();
 	LedD13::setOutput();
-	xpcc::PeriodicTimer timer(10);
+	xpcc::PeriodicTimer timer(100);
 	
-    TestCommunicator communicator;
+    Communicator<PiPackets, UartDevice> communicator;
 	uint32_t testInt = 0;
 
 	while (1) {
@@ -86,12 +55,11 @@ int main()
 
         // send packet every 10 ms
         if(timer.execute()) {
-			TestPacket2 packet2;
+			PiStatus packet;
 
-			packet2.test1 = testInt++;
-			packet2.test2 = testInt % 2 ? TestEnum::Enum1 : TestEnum::Enum2;
+			packet.recordingEnabled = testInt++ % 0xFF;
 
-			communicator.sendPacket(packet2);
+			communicator.sendPacket(packet);
 		}
 		
         communicator.update();
