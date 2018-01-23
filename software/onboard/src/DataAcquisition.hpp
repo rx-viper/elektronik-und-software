@@ -49,7 +49,7 @@ public:
 			static constexpr uint16_t IceTemp{1140};
 			static constexpr uint16_t OtherTemp{5000};
 			static constexpr uint16_t HeatProbeDepth{250};
-			static constexpr uint16_t Pressure{50}; // TODO: it seems this rate does not work with software i2c ???
+			static constexpr uint16_t Pressure{200}; // TODO: it seems this rate does not work with software i2c ???
 			static constexpr uint16_t HeatProbeTemp{1140};
 			static constexpr uint16_t Adc{500};
 		};
