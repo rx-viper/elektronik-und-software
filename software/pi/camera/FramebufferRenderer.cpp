@@ -6,6 +6,7 @@
 
 #include <sys/ioctl.h>
 #include <sys/mman.h>
+#include <sys/kd.h>
 
 #include <cerrno>
 #include <fcntl.h>
@@ -18,7 +19,7 @@ using namespace std::string_literals;
 
 Renderer::Size FramebufferRenderer::open()
 {
-	if(fd != -1) {
+	if(fd != -1 || ttyFd >= 0) {
 		close();
 	}
 
@@ -26,6 +27,11 @@ Renderer::Size FramebufferRenderer::open()
 
 	if((fd = ::open(device, O_RDWR)) == -1) {
 		throw RendererException("opening device "s + device + " failed:" + strerror(errno));
+	}
+
+	ttyFd = ::open("/dev/tty1", O_RDWR);
+	if(ttyFd >= 0) {
+		ioctl(ttyFd, KDSETMODE, KD_GRAPHICS);
 	}
 
 	readScreenInfo();
@@ -71,6 +77,12 @@ void FramebufferRenderer::close()
 		::close(fd);
 		fd = -1;
 	}
+
+	if(ttyFd >= 0) {
+		ioctl(ttyFd,KDSETMODE,KD_TEXT);
+		::close(ttyFd);
+	}
+	ttyFd = -1;
 
 	stop = true;
 	if(thread.joinable()) {

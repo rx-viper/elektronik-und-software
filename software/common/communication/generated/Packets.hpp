@@ -300,7 +300,7 @@ struct TestPacket2
 /// PacketGroup GroundstationPackets
 using GroundstationPackets = PacketGroup<IceTemperatureLS, IceTemperatureHS, OtherTemperatureLS, OtherTemperatureHS, HpPenetrationDepthLS, HpPenetrationDepthHS, PressureLS, PressureHS, HpTemperatureLS, HpTemperatureHS, Status, TestMode>;
 /// PacketGroup PiPackets
-using PiPackets = PacketGroup<PiStatus>;
+using PiPackets = PacketGroup<PiStatus, PiCommand>;
 /// PacketGroup TestPackets
 using TestPackets = PacketGroup<TestPacket1, TestPacket2>;
 

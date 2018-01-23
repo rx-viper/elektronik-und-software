@@ -47,6 +47,7 @@ private:
 	void renderThread();
 
 	int fd = -1;
+	int ttyFd = -1;
 	unsigned int xStride = 0;
 
 	uint8_t* fbData = nullptr;

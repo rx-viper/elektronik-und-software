@@ -2,6 +2,7 @@
 #include <cstring>
 #include <unistd.h>
 #include <iostream>
+#include <sys/statvfs.h>
 
 std::string nextFilename(const std::string& prefix, const std::string& suffix)
 {
@@ -22,3 +23,14 @@ std::string nextFilename(const std::string& prefix, const std::string& suffix)
 
 	return name;
 } 
+
+size_t availableStorage(const char* path)
+{
+	struct statvfs info;
+	int result = statvfs(path,  &info);
+	if(result < 0) {
+		return 0;
+	} else {
+		return info.f_bsize / 1024 * info.f_bfree;
+	}
+}

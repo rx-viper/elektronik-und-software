@@ -6,9 +6,9 @@ PACKET_GENERATOR=../../common/communication/packet_generator/PacketGenerator.py
 PACKET_XML=../../common/communication/packets.xml
 PACKET_DIR=../../common/communication/generated/
 
-CXXFLAGS=-O3 -I../common/communication/src/ -I$(PACKET_DIR)
+CXXFLAGS=-O3 -I../../common/communication/src/ -I$(PACKET_DIR)
 LDFLAGS=
-LDLIBS=
+LDLIBS=-lswscale -lturbojpeg -lavutil -lpthread -lueye_api -lsnappy
 
 BUILD_DIR = ./build
 
@@ -32,7 +32,7 @@ DEP = $(OBJS:%.o=%.d)
 
 $(BIN) : $(OBJS)
 	mkdir -p $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) $(BUILD_DIR)/*.o -o $@
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LDLIBS) $(BUILD_DIR)/*.o -o $@
 
 -include $(DEP)
 

@@ -95,6 +95,7 @@
 
 	<packet_group name="PiPackets">
 		<packet name="PiStatus" />
+		<packet name="PiCommand" />
 	</packet_group>
 
 	<!-- TEST -->

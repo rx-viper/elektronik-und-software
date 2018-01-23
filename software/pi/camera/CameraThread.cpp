@@ -310,12 +310,13 @@ void CameraThread::stop()
 
 void CameraThread::setFileStorageEnabled(bool enabled)
 {
-	
+	storageEnabled = enabled;
+	leptonThread.setFileStorageEnabled(enabled);
 }
 
-void CameraThread::isFileStorageEnabled(bool enabled)
+bool CameraThread::isFileStorageEnabled()
 {
-	
+	return storageEnabled;
 }
 
 void CameraThread::run()
@@ -333,7 +334,6 @@ void CameraThread::run()
 			camera.readImage(cameraImage);
 
 			cameraScaler->scale(cameraImage.data(), camera.width(), fbCameraImage.data(), fbSize.width * sizeof(uint32_t));
-			
 
 			{
 				auto leptonFrameLock = leptonThread.lock();
@@ -362,11 +362,13 @@ void CameraThread::run()
 
 			fbRenderer.swapBuffers();
 
-			jpegEncoder->compress(cameraImage.data(), jpegQuality);
+			if(storageEnabled) {
+				jpegEncoder->compress(cameraImage.data(), jpegQuality);
 
-			std::string filename = nextFilename("data/camera_", ".jpg");
-			std::ofstream file(filename, std::ofstream::binary);
-			file.write(reinterpret_cast<const char*>(jpegEncoder->jpegData()), jpegEncoder->jpegSize());
+				std::string filename = nextFilename("data/camera_", ".jpg");
+				std::ofstream file(filename, std::ofstream::binary);
+				file.write(reinterpret_cast<const char*>(jpegEncoder->jpegData()), jpegEncoder->jpegSize());
+			}
 
 			auto newTime = std::chrono::high_resolution_clock::now();
 			auto diff = newTime - time;

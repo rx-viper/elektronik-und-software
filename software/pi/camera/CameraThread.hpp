@@ -22,13 +22,14 @@ using namespace std::string_literals;
 class CameraThread
 {
 public:
+	CameraThread() { storageEnabled = false; }
 	~CameraThread() { stop(); }
 
 	void start();
 	void stop();
 
 	void setFileStorageEnabled(bool enabled);
-	void isFileStorageEnabled(bool enabled);
+	bool isFileStorageEnabled();
 	
 private:
 	void run();

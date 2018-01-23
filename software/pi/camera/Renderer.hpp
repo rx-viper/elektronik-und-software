@@ -24,7 +24,7 @@ public:
 	virtual Size open() = 0;
 	virtual void close() = 0;
 	virtual bool isOpen() = 0;
-	virtual void draw(RGBValue* data, Size size, size_t xOffset, size_t yOffset) = 0;
+	virtual void draw(const RGBValue* data, Size size, size_t xOffset, size_t yOffset) = 0;
 	virtual void swapBuffers() = 0;
 };
 
