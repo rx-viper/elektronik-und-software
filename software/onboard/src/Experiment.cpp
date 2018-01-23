@@ -29,8 +29,11 @@ namespace viper
 namespace onboard
 {
 
-Experiment::Experiment(GroundstationCommunicator& communicator_)
-	: communicator{communicator_}, dataAcquisition{communicator_}, statusPacketTimer{StatusPacketTimeout}
+Experiment::Experiment(GroundstationCommunicator& communicator_, uint32_t experimentId_)
+	: communicator{communicator_},
+	  dataAcquisition{communicator_},
+	  statusPacketTimer{StatusPacketTimeout},
+	  experimentId{experimentId_}
 {
 }
 
@@ -78,6 +81,7 @@ void Experiment::sendStatus()
 	status.state = activity;
 	status.motorPosition = Motor::getPosition();
 	status.testModeEnabled = dataAcquisition.testMode;
+	status.experimentId = experimentId;
 	communicator.sendPacket(status);
 }
 
@@ -88,7 +92,7 @@ Experiment::run()
 	{
 		DECLARE_ACTIVITY(Activity::Initialize)
 		{
-			initialize();
+			Board::Camera::LightPin::set();
 			CALL_ACTIVITY(Activity::HomeMotor);
 		}
 
@@ -129,8 +133,6 @@ Experiment::run()
 		{
 			if(RxsmEvents::startOfExperiment()) {
 				CALL_ACTIVITY(Activity::StartExperiment);
-			} else if(!RxsmEvents::liftOff()) {
-				CALL_ACTIVITY(Activity::DataStorageStarted);
 			}
 
 			RF_YIELD();
@@ -140,7 +142,9 @@ Experiment::run()
 		DECLARE_ACTIVITY(Activity::StartExperiment)
 		{
 			// TODO: start
+			XPCC_LOG_DEBUG << "SOE" << xpcc::endl;
 			dataAcquisition.setHighRate();
+			XPCC_LOG_DEBUG << "dataAcquisition.setHighRate() finished" << xpcc::endl;
 			Motor::setPosition(MotorHppmDownPosition);
 			RF_WAIT_UNTIL(Motor::isPositionReached());
 			HeatprobeControl::setOn();
@@ -177,6 +181,7 @@ Experiment::run()
 
 			// TODO: Disable lens heater
 			// TODO: Disable camera recording
+			Board::Camera::LightPin::reset();
 
 			CALL_ACTIVITY(Activity::Shutdown);
 		}

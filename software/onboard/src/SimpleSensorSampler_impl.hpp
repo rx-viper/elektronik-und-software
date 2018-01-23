@@ -129,6 +129,7 @@ SimpleSensorSampler<Sensor, MaxValues>::run()
 		DECLARE_ACTIVITY(Activity::Measurement)
 		{
 			data[valueIndex] = RF_CALL(sensor.measure());
+
 			if(!restart) {
 				++valueIndex;
 				if(valueIndex >= numValues) {
@@ -137,6 +138,7 @@ SimpleSensorSampler<Sensor, MaxValues>::run()
 				}
 			} else {
 				valueIndex = 0;
+				restart = false;
 			}
 			CALL_ACTIVITY(Activity::Waiting);
 		}

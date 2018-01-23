@@ -41,14 +41,16 @@ void PacketDispatcher::operator()(const IceTemperatureHS& data)
 
 void PacketDispatcher::operator()(const PressureLS& pressures)
 {
-	static_assert (pressures.values.size(), "array size is 0");
-	experimentStatus.updatePressure(pressures.values.back());
+	static_assert (pressures.sensor1.size(), "array size is 0");
+	static_assert (pressures.sensor2.size(), "array size is 0");
+	experimentStatus.updatePressure({{pressures.sensor1.back(), pressures.sensor2.back()}});
 }
 
 void PacketDispatcher::operator()(const PressureHS& pressures)
 {
-	static_assert (pressures.values.size(), "array size is 0");
-	experimentStatus.updatePressure(pressures.values.back());
+	static_assert (pressures.sensor1.size(), "array size is 0");
+	static_assert (pressures.sensor2.size(), "array size is 0");
+	experimentStatus.updatePressure({{pressures.sensor1.back(), pressures.sensor2.back()}});
 }
 
 void PacketDispatcher::operator()(const HpTemperatureLS& hpTemperatures)
@@ -69,6 +71,7 @@ void PacketDispatcher::operator()(const Status& status)
 	experimentStatus.updateHpOvertemperature(status.hpOvertemperature);
 	experimentStatus.updateMotorPosition(status.motorPosition);
 	experimentStatus.updateTestMode(status.testModeEnabled);
+	experimentStatus.updateExperimentId(status.experimentId);
 	std::cout << int(status.state) << ", " << uint16_t(status.testModeEnabled) << std::endl;
 }
 
@@ -92,5 +95,36 @@ void PacketDispatcher::operator()(const HpPenetrationDepthHS& hpDepth)
 	experimentStatus.updateHpDepth(hpDepth.depth);
 }
 
+void PacketDispatcher::operator()(const HpPowerLS& hpPower)
+{
+	experimentStatus.updateHpVoltages(hpPower.voltage);
+	experimentStatus.updateHpCurrents(hpPower.current);
 }
 
+void PacketDispatcher::operator()(const HpPowerHS& hpPower)
+{
+	experimentStatus.updateHpVoltages(hpPower.voltage);
+	experimentStatus.updateHpCurrents(hpPower.current);
+}
+
+void PacketDispatcher::operator()(const BattVoltageLS& battVoltage)
+{
+	experimentStatus.updateBatteryVoltage(battVoltage.value);
+}
+
+void PacketDispatcher::operator()(const BattVoltageHS& battVoltage)
+{
+	experimentStatus.updateBatteryVoltage(battVoltage.values.back());
+}
+
+void PacketDispatcher::operator()(const MotorCurrentLS& motorCurrent)
+{
+	experimentStatus.updateMotorCurrent(motorCurrent.value);
+}
+
+void PacketDispatcher::operator()(const MotorCurrentHS& motorCurrent)
+{
+	experimentStatus.updateMotorCurrent(motorCurrent.values.back());
+}
+
+}

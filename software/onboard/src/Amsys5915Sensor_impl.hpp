@@ -22,6 +22,7 @@
 
 #include <algorithm>
 #include "Amsys5915Sensor.hpp"
+#include <xpcc/debug/logger.hpp>
 
 namespace viper
 {
@@ -42,11 +43,11 @@ xpcc::ResumableResult<void> Amsys5915Sensor<I2cMaster>::initialize()
 }
 
 template<typename I2cMaster>
-xpcc::ResumableResult<uint32_t> Amsys5915Sensor<I2cMaster>::measure()
+xpcc::ResumableResult<uint16_t> Amsys5915Sensor<I2cMaster>::measure()
 {
 	RF_BEGIN();
 	RF_CALL(sensor.readPressure());
-	RF_END_RETURN(std::min<uint32_t>(sensor.getData().getPressure() * MaxPressure, MaxPressure));
+	RF_END_RETURN(sensor.getData().getPressureRaw());
 }
 
 }

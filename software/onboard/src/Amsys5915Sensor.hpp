@@ -32,7 +32,7 @@ template<typename I2cMaster>
 class Amsys5915Sensor : public xpcc::NestedResumable<1>
 {
 public:
-	using Data = uint32_t;
+	using Data = uint16_t;
 	static constexpr Data MaxPressure = std::numeric_limits<Data>::max() - 1;
 	static constexpr Data InvalidValue = std::numeric_limits<Data>::max();
 
@@ -41,7 +41,7 @@ public:
 	xpcc::ResumableResult<void>
 	initialize();
 
-	xpcc::ResumableResult<uint32_t>
+	xpcc::ResumableResult<uint16_t>
 	measure();
 
 private:

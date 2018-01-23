@@ -8,9 +8,11 @@
 #include "communcation/Communicator.hpp"
 #include "communcation/SerialPortBackend.hpp"
 #include "PacketDispatcher.hpp"
+#include "PacketDatabaseWriter.hpp"
 #include "ExperimentStatus.hpp"
 #include "mainwindow.h"
 #include "IceTemperatureWindow.hpp"
+#include "StorageDatabase.hpp"
 
 #include <memory>
 
@@ -36,7 +38,8 @@ private slots:
 	void packetReceived();
 	void processPacket(const GroundstationPackets& packet);
 	void updateGUI();
-	void connectButtonClicked();
+	void connectSerialButtonClicked();
+	void connectDbButtonClicked();
 	void testOnButtonClicked();
 	void testOffButtonClicked();
 
@@ -50,6 +53,9 @@ private:
 
 	std::shared_ptr<CommunicationBackend> backend;
 	BackendConfigWidget* backendConfigWidget;
+
+	StorageDatabase db;
+	PacketDatabaseWriter packetDatabaseWriter;
 };
 
 }

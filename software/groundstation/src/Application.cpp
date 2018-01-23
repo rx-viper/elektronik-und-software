@@ -6,12 +6,13 @@ namespace viper
 {
 
 Application::Application(int& argc, char** argv)
-	: QApplication{argc, argv}, packetDispatcher{*this}, backendConfigWidget{nullptr}
+	: QApplication{argc, argv}, packetDispatcher{*this}, backendConfigWidget{nullptr}, db{}, packetDatabaseWriter{this->db}
 {
 	guiUpdateTimer.setSingleShot(false);
 	guiUpdateTimer.start(20);
 	connect(&guiUpdateTimer, SIGNAL(timeout()), this, SLOT(updateGUI()));
-	connect(&mainWindow, SIGNAL(connectClicked()), this, SLOT(connectButtonClicked()));
+	connect(&mainWindow, SIGNAL(connectSerialClicked()), this, SLOT(connectSerialButtonClicked()));
+	connect(&mainWindow, SIGNAL(connectDbClicked()), this, SLOT(connectDbButtonClicked()));
 	connect(&mainWindow, SIGNAL(testOnClicked()), this, SLOT(testOnButtonClicked()));
 	connect(&mainWindow, SIGNAL(testOffClicked()), this, SLOT(testOffButtonClicked()));
 
@@ -73,6 +74,7 @@ void Application::packetReceived()
 void Application::processPacket(const packet::GroundstationPackets& packet)
 {
 	packet.applyVisitor(packetDispatcher);
+	packet.applyVisitor(packetDatabaseWriter);
 }
 
 void Application::updateGUI()
@@ -81,7 +83,7 @@ void Application::updateGUI()
 	iceTempWindow.updateUI(status);
 }
 
-void Application::connectButtonClicked()
+void Application::connectSerialButtonClicked()
 {
 	if(!backend) {
 		return;
@@ -89,7 +91,7 @@ void Application::connectButtonClicked()
 
 	if(communicator.isOpen()) {
 		communicator.close();
-		mainWindow.setConnected(false);
+		mainWindow.setSerialConnected(false);
 	} else {
 		try {
 			if(backendConfigWidget) {
@@ -100,7 +102,17 @@ void Application::connectButtonClicked()
 		} catch (const std::runtime_error& err) {
 			QMessageBox::critical(&mainWindow, "Opening backend failed",  err.what());
 		}
-		mainWindow.setConnected(communicator.isOpen());
+		mainWindow.setSerialConnected(communicator.isOpen());
+	}
+}
+
+void Application::connectDbButtonClicked()
+{
+	if(!db.open()) {
+		QMessageBox::critical(&mainWindow, "Database Error",  "Unable to connect to Database: " + db.lastError());
+	}
+	else {
+		// disable button?
 	}
 }
 

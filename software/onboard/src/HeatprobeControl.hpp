@@ -44,7 +44,7 @@ public:
 	static constexpr int32_t InvalidTemperature{9001};
 
 	// set from 0 .. 1
-	static constexpr float Hp1Power{0.1f};
+	static constexpr float Hp1Power{1.0f};
 	static constexpr float Hp2Power{1.0f};
 	static constexpr float Hp3Power{0.5f};
 

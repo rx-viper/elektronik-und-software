@@ -6,6 +6,8 @@
 #include "CRC32.hpp"
 #include "DataWriter.hpp"
 
+#include "RxsmEvents.hpp"
+
 using viper::communication::CobsReader;
 using viper::communication::CobsWriter;
 using viper::communication::CRC32;
@@ -17,9 +19,11 @@ namespace onboard
 {
 
 template<typename Packets, typename Device>
-Communicator<Packets, Device>::Communicator() :
-	frameWriter{frameBuffer.data(), frameBuffer.size()},
-	frameReader{receiveBuffer.data(), receiveBuffer.size()}, packetAvailable{false}
+Communicator<Packets, Device>::Communicator(CommunicationFlashWriter& flashWriter_) :
+	frameWriter{frameBuffer.data(),frameBuffer.size()},
+	frameReader{receiveBuffer.data(), receiveBuffer.size()},
+	flashWriter{flashWriter_},
+	packetAvailable{false}
 {
 	sendSequenceNumbers.fill(0);
 }
@@ -56,6 +60,11 @@ void Communicator<Packets, Device>::sendPacket(const PacketT& packet)
 	}
 
 	Device::write(frameWriter.data(), frameWriter.size());
+
+	// write data to flash after Lift-Off and if SODS is active
+	if(viper::onboard::RxsmEvents::liftOff() && viper::onboard::RxsmEvents::startOfDataStorage()) {
+		flashWriter.write(frameWriter.data(), frameWriter.size());
+	}
 }
 
 template<typename Packets, typename Device>
