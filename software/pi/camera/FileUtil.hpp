@@ -4,7 +4,7 @@
 #include <string>
 #include <cstdint>
 
-const std::string PiDataPath = "/home/pi/software/pi/camera/data/";
+const std::string PiDataPath = "/home/pi/data/";
 
 std::string createExperimentDirectory();
 

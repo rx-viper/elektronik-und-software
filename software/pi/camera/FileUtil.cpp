@@ -6,12 +6,22 @@
 
 using std::string_literals;
 
-std::string createExperimentDirectory()
+std::string experimentDataPath{};
+
+void createExperimentDirectory()
 {
 	std::string command = "mkdir -p "s + PiDataPath;
 	system(command.c_str());
 	
-	// TODO: implement
+	unsigned int i = 0;
+	experimentDataPath = PiDataPath + "boot_"s + std::to_string(i) + "/"s;
+	while(directoryExists(experimentDataPath)) {
+		i++;
+		experimentDataPath = PiDataPath + "boot_"s + std::to_string(i) + "/"s;
+	}
+
+	command = "mkdir -p "s + experimentDataPath;
+	system(command.c_str());
 }
 
 bool directoryExists(std::string path)
@@ -21,7 +31,11 @@ bool directoryExists(std::string path)
 	return stat(path.c_str(), &sb) == 0 && S_ISDIR(sb.st_mode);
 }
 
-std::string nextFilename(const std::string& prefix, const std::string& suffix)
+std::string nextFilename(const std::string& prefix, const std::string& suffix) {
+	
+}
+
+std::string nextFilename2(const std::string& prefix, const std::string& suffix)
 {
 	char number[7];
 	int image_index = 0;

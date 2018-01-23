@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include <atomic>
 
 #include "Communicator.hpp"
 
@@ -18,6 +19,11 @@ using viper::packet::PiStatus;
 using viper::packet::PiCommand;
 using viper::packet::PiPackets;
 using viper::packet::PiShutdown;
+
+std::atomic<uint32_t> onboardTime;
+std::atomic<uint32_t> experimentId;
+std::chrono::time_point lastCommandTime;
+
 
 // variable is written by unix signal handler, must be volatile
 static volatile bool stop = false;
@@ -31,8 +37,16 @@ void sigInt(int signal)
     stop = true;
 }
 
+static uint32_t getOnboardTime()
+{
+	auto now = std::chrono::high_resolution_clock::now();
+	auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastCommandTime);
+	return onboardTime + diff;
+}
+
 static void readPackets(Communicator& communicator, CameraThread& cameraThread)
 {
+	static std::chrono::time_point lastTime = std::chrono::high_resolution_clock::now();
 	communicator.update(100ms);
 	if(communicator.isPacketAvailable()) {
 		auto packet = communicator.readPacket();
@@ -41,6 +55,9 @@ static void readPackets(Communicator& communicator, CameraThread& cameraThread)
 			if(command) {
 				const bool enableRecording = command->recordingEnabled > 0;
 				cameraThread.setFileStorageEnabled(enableRecording);
+				onboardTime = command->onboardTime;
+				experimentId = command->experimentId;
+				lastCommandTime = std::chrono::high_resolution_clock::now();
 			} else {
 				const auto* shutdownPacket = packet->get<PiShutdown>();
 				if(shutdownPacket) {
@@ -66,6 +83,10 @@ int main(int argc, char* argv[])
 	signal(SIGTERM, &sigInt);
 
 	std::array<uint8_t, 4096> packetBuffer;
+	
+	onboardTime = 0;
+	experimentId = 0;
+	lastCommandTime = std::chrono::high_resolution_clock::now();
 
 	CameraThread thread;
 	try {
