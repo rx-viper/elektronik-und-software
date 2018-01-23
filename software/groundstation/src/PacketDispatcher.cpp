@@ -41,14 +41,16 @@ void PacketDispatcher::operator()(const IceTemperatureHS& data)
 
 void PacketDispatcher::operator()(const PressureLS& pressures)
 {
-	static_assert (pressures.values.size(), "array size is 0");
-	experimentStatus.updatePressure(pressures.values.back());
+	static_assert (pressures.sensor1.size(), "array size is 0");
+	static_assert (pressures.sensor2.size(), "array size is 0");
+	experimentStatus.updatePressure({{pressures.sensor1.back(), pressures.sensor2.back()}});
 }
 
 void PacketDispatcher::operator()(const PressureHS& pressures)
 {
-	static_assert (pressures.values.size(), "array size is 0");
-	experimentStatus.updatePressure(pressures.values.back());
+	static_assert (pressures.sensor1.size(), "array size is 0");
+	static_assert (pressures.sensor2.size(), "array size is 0");
+	experimentStatus.updatePressure({{pressures.sensor1.back(), pressures.sensor2.back()}});
 }
 
 void PacketDispatcher::operator()(const HpTemperatureLS& hpTemperatures)

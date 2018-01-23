@@ -59,9 +59,8 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	ui->hpTemp2->display(QString::number(status.heatProbeTemperature(1), 'f', 1));
 	ui->hpTemp3->display(QString::number(status.heatProbeTemperature(2), 'f', 1));
 
-	ui->pressure1->display(QString::number(status.pressure(), 'f', 1));
-	ui->pressure2->display(QString::number(status.pressure(), 'f', 1));
-	ui->pressure3->display(QString::number(status.pressure(), 'f', 1));
+	ui->pressure1->display(QString::number(status.pressure(0), 'f', 1));
+	ui->pressure2->display(QString::number(status.pressure(1), 'f', 1));
 
 	if(status.eventLineStatus().liftOff) {
 		ui->loLabel->setText("LO: 1");

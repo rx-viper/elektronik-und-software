@@ -33,16 +33,18 @@ void PacketDatabaseWriter::operator()(const IceTemperatureHS& data)
 
 void PacketDatabaseWriter::operator()(const PressureLS& pressures)
 {
-	static_assert (pressures.values.size(), "array size is 0");
+	// TODO: implement pressure value storage
+	//static_assert (pressures.values.size(), "array size is 0");
 
-	emit logPressureLS(pressures.sequenceNumber, pressures.values, QDateTime::currentDateTime());
+	//emit logPressureLS(pressures.sequenceNumber, pressures.values, QDateTime::currentDateTime());
 }
 
 void PacketDatabaseWriter::operator()(const PressureHS& pressures)
 {
-	static_assert (pressures.values.size(), "array size is 0");
+	// TODO: implement pressure value storage
+	//static_assert (pressures.values.size(), "array size is 0");
 
-	emit logPressureHS(pressures.sequenceNumber, pressures.values, QDateTime::currentDateTime());
+	//emit logPressureHS(pressures.sequenceNumber, pressures.values, QDateTime::currentDateTime());
 }
 
 void PacketDatabaseWriter::operator()(const HpTemperatureLS& hpTemperatures)

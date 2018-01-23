@@ -12,9 +12,13 @@ const IceTemperatures& ExperimentStatus::iceTemperatures(size_t containerIndex) 
 	return iceTemperatureData.at(containerIndex);
 }
 
-float ExperimentStatus::pressure() const
+float ExperimentStatus::pressure(size_t sensorIndex) const
 {
-	return pressureValue;
+	const uint16_t offset{1638};
+	const uint16_t span{13107};
+	const float maxValue = 20.0f; // in mbar
+
+	return (pressureValues.at(sensorIndex) - offset) / float(span) * maxValue;
 }
 
 int32_t ExperimentStatus::heatProbeDepth(size_t heatProbeIndex) const
@@ -87,9 +91,9 @@ void ExperimentStatus::updateIceTemperatures(const std::array<IceTemperatures, 3
 	this->iceTemperatureData = iceTemperatureData;
 }
 
-void ExperimentStatus::updatePressure(float pressureValue)
+void ExperimentStatus::updatePressure(std::array<uint16_t, 2> pressureValues)
 {
-	this->pressureValue = pressureValue;
+	this->pressureValues = pressureValues;
 }
 
 void ExperimentStatus::updateEventLines(EventLineStatus& eventLines)

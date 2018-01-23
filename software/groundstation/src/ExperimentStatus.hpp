@@ -13,7 +13,7 @@ public:
 	ExperimentStatus();
 
 	const IceTemperatures& iceTemperatures(size_t containerIndex) const;
-	float pressure() const;
+	float pressure(size_t sensorIndex) const;
 	int32_t heatProbeDepth(size_t heatProbeIndex) const;
 	int32_t heatProbeTemperature(size_t heatProbeIndex) const;
 	bool heatProbeOvertemperature(size_t heatProbeIndex) const;
@@ -29,7 +29,7 @@ public:
 	uint16_t motorCurrent() const;
 
 	void updateIceTemperatures(const std::array<IceTemperatures, 3> iceTemperatureData);
-	void updatePressure(float pressureValue);
+	void updatePressure(std::array<uint16_t, 2> pressureValues);
 	void updateHpDepth(const std::array<int32_t, 3>& hpDepths);
 	void updateHpTemperatures(const std::array<int32_t, 3>& hpTemperatures);
 	void updateEventLines(EventLineStatus& eventLines);
@@ -46,7 +46,7 @@ public:
 
 private:
 	std::array<IceTemperatures, 3> iceTemperatureData = {};
-	float pressureValue = 0;
+	std::array<uint16_t, 2> pressureValues = {};
 	std::array<int32_t, 3> hpDepths = {};
 	std::array<int32_t, 3> hpTemperatures = {};
 	std::array<bool, 3> hpOvertemperature = {};
