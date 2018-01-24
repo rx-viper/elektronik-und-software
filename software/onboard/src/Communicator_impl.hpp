@@ -158,7 +158,8 @@ size_t Communicator<Packets, Device>::writePacketPayload(const PacketT& packet)
 	DataWriter writer{packetBuffer.data(), packetBuffer.size()};
 
 	// set sequence number in packet
-	packet.sequenceNumber = sendSequenceNumbers[typeIndex]++;
+	//packet.sequenceNumber = sendSequenceNumbers[typeIndex]++;
+	packet.sequenceNumber = xpcc::Clock::now().getTime();
 
 	// write packet id to packetBuffer
 	constexpr uint8_t id{PacketT::PacketID};
