@@ -143,7 +143,6 @@ FlashWriter<BlockDevice>::run()
 	{
 		if(writeBufferToFlash) {
 			writeBufferToFlash = false;
-			XPCC_LOG_ERROR << "Info: Writing data to flash page " << flashAddress << xpcc::endl;
 			if(!PT_CALL(bd.program(bufferShadow, flashAddress, BlockSize))) {
 				XPCC_LOG_ERROR << "Error: unable to write page to flash." << xpcc::endl;
 			}

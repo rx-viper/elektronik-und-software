@@ -141,10 +141,7 @@ Experiment::run()
 
 		DECLARE_ACTIVITY(Activity::StartExperiment)
 		{
-			// TODO: start
-			XPCC_LOG_DEBUG << "SOE" << xpcc::endl;
 			dataAcquisition.setHighRate();
-			XPCC_LOG_DEBUG << "dataAcquisition.setHighRate() finished" << xpcc::endl;
 			Motor::setPosition(MotorHppmDownPosition);
 			RF_WAIT_UNTIL(Motor::isPositionReached());
 			HeatprobeControl::setOn();

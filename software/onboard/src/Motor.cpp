@@ -125,7 +125,6 @@ void Motor::setPosition(int32_t position)
 		disable();
 		return;
 	}*/
-	XPCC_LOG_DEBUG << "motor::setPosition(" << position << ")" << xpcc::endl;
 
 	targetPosition = position;
 	controllerMode = ControllerMode::Position;
@@ -174,7 +173,6 @@ void Motor::update()
 		updateEncoder();
 	//}
 
-	static uint32_t tmp = 0;
 	if(controllerMode == ControllerMode::Position) {
 		if(controllerTimer.execute()) {
 			float distance = (targetPosition - currentPosition);
@@ -185,11 +183,7 @@ void Motor::update()
 			positionController.update(distance / 1000, false);
 			currentPwm = positionController.getValue();
 			setPwmValue(currentPwm, true);
-			if(tmp % 100 == 0) {
-				XPCC_LOG_ERROR << distance << ", " << currentPosition << "," << targetPosition  << ", " << currentPwm << xpcc::endl;
-			}
 		}
-		tmp++;
 	}
 }
 
