@@ -349,11 +349,12 @@ struct PiStatus
 struct PiCommand
 {
     static constexpr uint8_t PacketID{0x15};
-    static constexpr size_t PacketSize{9};
+    static constexpr size_t PacketSize{13};
     
     mutable uint32_t sequenceNumber;
     uint8_t recordingEnabled;
     uint32_t onboardTime;
+    uint32_t experimentId;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;

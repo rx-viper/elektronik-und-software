@@ -186,6 +186,11 @@ namespace Camera {
 
 	//using CameraTimer	= Timer12;
 
+	using PiUart	= Uart8;
+	using PiUartRx	= GpioE0;
+	using PiUartTx	= GpioE1;
+	constexpr uint32_t PiBaudrate = PiUart::Baudrate::B115200;
+
 	inline void
 	initialize() {
 		//CameraTimer::enable();
@@ -203,6 +208,10 @@ namespace Camera {
 		//LightPin::connect(CameraTimer::Channel1);
 		//LensHeatPin::connect(CameraTimer::Channel2);
 		LightPin::setOutput();
+
+		PiUartRx::connect(PiUart::Rx);
+		PiUartTx::connect(PiUart::Tx);
+		PiUart::initialize<systemClock, PiBaudrate>(12);
 	}
 }
 
