@@ -26,7 +26,7 @@ namespace viper
 namespace onboard
 {
 
-using LoggerDevice = xpcc::IODeviceWrapper<Board::Ui::DebugUart, xpcc::IOBuffer::BlockIfFull>;
+using LoggerDevice = xpcc::IODeviceWrapper<Board::Ui::DebugUart, xpcc::IOBuffer::DiscardIfFull>;
 
 }
 }
