@@ -225,7 +225,7 @@ namespace Rxsm {
 
 		TelemetryRx::connect(TelemetryUart::Rx);
 		TelemetryTx::connect(TelemetryUart::Tx);
-		TelemetryUart::initialize<systemClock, TelemetryBaudrate>(12);
+		TelemetryUart::initialize<systemClock, TelemetryBaudrate>(10);
 	}
 }
 
@@ -253,7 +253,7 @@ namespace Motor {
 	using HallW			= GpioInputC8;
 
 	//using HallTimer		= Timer8;
-	constexpr uint8_t HallInterruptPriority	= 12;
+	constexpr uint8_t HallInterruptPriority	= 4;
 	constexpr uint16_t MaxPwm{0x1FFu}; // 9 bit PWM
 
 	using EndSwitch		= GpioInputC5;
