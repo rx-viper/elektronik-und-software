@@ -133,7 +133,11 @@ Experiment::run()
 			if(RxsmEvents::startOfDataStorage() ||
 					RxsmEvents::liftOff() || RxsmEvents::startOfExperiment()) {
 				// TODO: Enable lens heater
-				this->cameraRecording = cameraRecordingOn;
+				if(dataAcquisition.testMode != 0) {
+					this->cameraRecording = cameraRecordingOff;
+				} else {
+					this->cameraRecording = cameraRecordingOn;
+				}
 				CALL_ACTIVITY(Activity::DataStorageStarted);
 			}
 
@@ -169,7 +173,11 @@ Experiment::run()
 			dataAcquisition.setHighRate();
 			Motor::setPosition(MotorHppmDownPosition);
 			RF_WAIT_UNTIL(Motor::isPositionReached());
-			HeatprobeControl::setOn();
+
+			if(dataAcquisition.testMode == 0) {
+				HeatprobeControl::setOn();
+			}
+
 			CALL_ACTIVITY(Activity::ExperimentRunning);
 		}
 
