@@ -20,6 +20,7 @@ using viper::packet::PiCommand;
 using viper::packet::PiPackets;
 using viper::packet::PiShutdown;
 
+static uint32_t receivedOnboardTime = 0;
 std::atomic<uint32_t> onboardTime;
 std::atomic<uint32_t> experimentId;
 auto lastCommandTime = std::chrono::high_resolution_clock::now();
@@ -41,7 +42,7 @@ static uint32_t getOnboardTime()
 {
 	auto now = std::chrono::high_resolution_clock::now();
 	auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastCommandTime);
-	return (std::chrono::milliseconds(onboardTime) + diff).count();
+	return (std::chrono::milliseconds(receivedOnboardTime) + diff).count();
 }
 
 static void readPackets(Communicator& communicator, CameraThread& cameraThread)
@@ -55,7 +56,7 @@ static void readPackets(Communicator& communicator, CameraThread& cameraThread)
 			if(command) {
 				const bool enableRecording = command->recordingEnabled > 0;
 				cameraThread.setFileStorageEnabled(enableRecording);
-				onboardTime = command->onboardTime;
+				receivedOnboardTime = command->onboardTime;
 				experimentId = command->experimentId;
 				lastCommandTime = std::chrono::high_resolution_clock::now();
 			} else {
@@ -102,6 +103,8 @@ int main(int argc, char* argv[])
 
 		while(!stop) {
 			readPackets(communicator, thread);
+
+			onboardTime = getOnboardTime();
 
 			auto now = std::chrono::high_resolution_clock::now();
 			auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastStatus);
