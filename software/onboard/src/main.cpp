@@ -37,6 +37,12 @@ using viper::onboard::HeatprobeControl;
 
 #include <xpcc/debug/logger.hpp>
 
+namespace {
+	CommunicationFlashWriter communicationFlashWriter;
+	GroundstationCommunicator communicator(communicationFlashWriter);
+	PiCommunicator piCommunicator(communicationFlashWriter, false);
+}
+
 int
 main()
 {
@@ -48,7 +54,6 @@ main()
 
 	RxsmEvents::initialize();
 
-	CommunicationFlashWriter communicationFlashWriter;
 
 	uint32_t experimentId = RF_CALL_BLOCKING(communicationFlashWriter.initialize());
 	if(experimentId == 0) {
@@ -57,9 +62,6 @@ main()
 	else {
 		XPCC_LOG_INFO << "Info: Experiment ID = " << experimentId << xpcc::endl;
 	}
-
-	GroundstationCommunicator communicator(communicationFlashWriter);
-	PiCommunicator piCommunicator(communicationFlashWriter, false);
 
 	Experiment experiment{communicator, piCommunicator, experimentId};
 	experiment.initialize();
