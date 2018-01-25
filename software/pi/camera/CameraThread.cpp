@@ -321,7 +321,6 @@ bool CameraThread::isFileStorageEnabled()
 
 void CameraThread::run()
 {
-	auto time = std::chrono::high_resolution_clock::now();
 	std::vector<uint32_t> fbLeptonImage;
 	fbLeptonImage.resize(Lepton3::Frame::width*Lepton3::Frame::height);
 
@@ -369,15 +368,6 @@ void CameraThread::run()
 				std::ofstream file(filename, std::ofstream::binary);
 				file.write(reinterpret_cast<const char*>(jpegEncoder->jpegData()), jpegEncoder->jpegSize());
 			}
-
-			auto newTime = std::chrono::high_resolution_clock::now();
-			auto diff = newTime - time;
-			time = newTime;
-
-			auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(diff);
-			if(ms.count() > 150)
-			std::cout << "IMAGE: " << ms.count() << std::endl;
-
 		} catch(const std::exception& e) {
 			std::cerr << "Error: " << e.what() << std::endl;
 		}
