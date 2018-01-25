@@ -69,11 +69,11 @@ static void readPackets(Communicator& communicator, CameraThread& cameraThread)
 	}
 }
 
-static void sendStatus(Communicator& communicator, CameraThread& cameraThread)
+static void sendStatus(Communicator& communicator, CameraThread& cameraThread, const std::string& path)
 {
 	PiStatus status;
 	status.recordingEnabled = cameraThread.isFileStorageEnabled();
-	status.storageAvailable = availableStorage(".");
+	status.storageAvailable = availableStorage(path.c_str());
 	communicator.sendPacket(status);
 }
 
@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
 			auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastStatus);
 			if(diff >= StatusTimeout) {
 				lastStatus = now;
-				sendStatus(communicator, thread);
+				sendStatus(communicator, thread, filePath);
 			}
 		}
 
