@@ -1232,6 +1232,20 @@
            </widget>
           </item>
           <item>
+           <widget class="QLabel" name="piRecordingLabel">
+            <property name="text">
+             <string>Pi Recording: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="piStorageLabel">
+            <property name="text">
+             <string>Pi Free Space: ? KB</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="soeLabel">
             <property name="text">
              <string>SOE: 0</string>

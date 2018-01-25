@@ -27,6 +27,8 @@ public:
 	uint16_t heatProbeCurrent(size_t heatProbeIndex) const;
 	uint16_t batteryVoltage() const;
 	uint16_t motorCurrent() const;
+	bool isPiRecordingEnabled() const;
+	uint32_t piFreeStorage() const;
 
 	void updateIceTemperatures(const std::array<IceTemperatures, 3> iceTemperatureData);
 	void updatePressure(std::array<uint16_t, 2> pressureValues);
@@ -43,6 +45,8 @@ public:
 	void updateHpCurrents(const std::array<uint16_t, 3>& hpCurrents);
 	void updateBatteryVoltage(uint16_t batteryVoltage);
 	void updateMotorCurrent(uint16_t motorCurrent);
+	void updatePiRecordingState(bool isRecording);
+	void updatePiFreeStorage(uint32_t freeStorageKb);
 
 private:
 	std::array<IceTemperatures, 3> iceTemperatureData = {};
@@ -60,6 +64,8 @@ private:
 	uint32_t motorPos = 0;
 	uint8_t testModeEnabled = 0;
 	uint32_t experimentId = 0;
+	bool piRecordingEnabled = false;
+	uint32_t piFreeStorageKb = 0;
 };
 
 }

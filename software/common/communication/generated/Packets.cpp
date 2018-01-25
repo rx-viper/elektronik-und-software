@@ -334,7 +334,13 @@ bool Status::read(DataReader& reader)
     if(!reader.read(testModeEnabled))
         return false;
     
-    return reader.read(experimentId);
+    if(!reader.read(experimentId))
+        return false;
+    
+    if(!reader.read(piRecordingEnabled))
+        return false;
+    
+    return reader.read(piStorageAvailable);
 }
 
 bool Status::write(DataWriter& writer) const
@@ -366,7 +372,13 @@ bool Status::write(DataWriter& writer) const
     if(!writer.write(testModeEnabled))
         return false;
     
-    return writer.write(experimentId);
+    if(!writer.write(experimentId))
+        return false;
+    
+    if(!writer.write(piRecordingEnabled))
+        return false;
+    
+    return writer.write(piStorageAvailable);
 }
 
 bool PiStatus::read(DataReader& reader)

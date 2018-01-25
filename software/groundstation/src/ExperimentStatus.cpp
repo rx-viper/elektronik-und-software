@@ -81,6 +81,16 @@ uint16_t ExperimentStatus::motorCurrent() const
 	return motorCurrentMeasurement;
 }
 
+bool ExperimentStatus::isPiRecordingEnabled() const
+{
+	return piRecordingEnabled;
+}
+
+uint32_t ExperimentStatus::piFreeStorage() const
+{
+	return piFreeStorageKb;
+}
+
 uint32_t ExperimentStatus::onboardUptime() const
 {
 	return uptime;
@@ -151,6 +161,16 @@ void ExperimentStatus::updateBatteryVoltage(uint16_t batteryVoltage)
 void ExperimentStatus::updateMotorCurrent(uint16_t motorCurrent)
 {
 	this->motorCurrentMeasurement = motorCurrent;
+}
+
+void ExperimentStatus::updatePiRecordingState(bool isRecording)
+{
+	piRecordingEnabled = isRecording;
+}
+
+void ExperimentStatus::updatePiFreeStorage(uint32_t freeStorageKb)
+{
+	piFreeStorageKb = freeStorageKb;
 }
 
 void ExperimentStatus::updateHpCurrents(const std::array<uint16_t, 3>& hpCurrents)

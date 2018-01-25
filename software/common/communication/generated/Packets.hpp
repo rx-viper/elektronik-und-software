@@ -310,7 +310,7 @@ struct TestMode
 struct Status
 {
     static constexpr uint8_t PacketID{0xa};
-    static constexpr size_t PacketSize{22};
+    static constexpr size_t PacketSize{27};
     
     mutable uint32_t sequenceNumber;
     uint32_t time;
@@ -322,6 +322,8 @@ struct Status
     int32_t motorPosition;
     uint8_t testModeEnabled;
     uint32_t experimentId;
+    uint8_t piRecordingEnabled;
+    uint32_t piStorageAvailable;
 
     bool read(DataReader& reader);
     bool write(DataWriter& writer) const;

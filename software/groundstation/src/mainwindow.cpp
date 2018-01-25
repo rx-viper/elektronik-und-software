@@ -89,6 +89,9 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	ui->motorCurrentLabel->setText("Motor Current: " + QString::number(status.motorCurrent()));
 	ui->batteryVoltageLabel->setText("Battery Voltage: " + QString::number(status.batteryVoltage()));
 
+	ui->piStorageLabel->setText("Pi Free Space: " + QString::number(status.piFreeStorage()) + " KB");
+	ui->piRecordingLabel->setText("Pi Recording: " + QString::number(status.isPiRecordingEnabled()));
+
 	if(!status.heatProbeOvertemperature(0)) {
 		ui->hpTemp1->setSegmentStyle(QLCDNumber::Flat);
 	} else {

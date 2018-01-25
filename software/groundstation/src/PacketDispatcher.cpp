@@ -72,6 +72,8 @@ void PacketDispatcher::operator()(const Status& status)
 	experimentStatus.updateMotorPosition(status.motorPosition);
 	experimentStatus.updateTestMode(status.testModeEnabled);
 	experimentStatus.updateExperimentId(status.experimentId);
+	experimentStatus.updatePiRecordingState(status.piRecordingEnabled > 0);
+	experimentStatus.updatePiFreeStorage(status.piStorageAvailable);
 	std::cout << int(status.state) << ", " << uint16_t(status.testModeEnabled) << std::endl;
 }
 

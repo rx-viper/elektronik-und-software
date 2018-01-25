@@ -98,6 +98,8 @@ void Experiment::sendStatus()
 	status.motorPosition = Motor::getPosition();
 	status.testModeEnabled = dataAcquisition.testMode;
 	status.experimentId = experimentId;
+	status.piRecordingEnabled = this->cameraRecording;
+	status.piStorageAvailable = this->piStorageAvailable;
 	communicator.sendPacket(status);
 }
 
@@ -151,6 +153,8 @@ Experiment::run()
 				dataAcquisition.setStorageEnabled(true);
 				CALL_ACTIVITY(Activity::LiftedOff);
 			} else if (!RxsmEvents::startOfDataStorage()) {
+				// Abort SODS => disable pi recording
+				this->cameraRecording = cameraRecordingOff;
 				CALL_ACTIVITY(Activity::Idle);
 			}
 

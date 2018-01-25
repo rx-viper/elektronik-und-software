@@ -94,6 +94,8 @@
 		<element name="motorPosition" type="int32_t" />
 		<element name="testModeEnabled" type="uint8_t" />
 		<element name="experimentId" type="uint32_t" />
+		<element name="piRecordingEnabled" type="uint8_t" />
+		<element name="piStorageAvailable" type="uint32_t" />
 	</packet>
 
 	<packet_group name="GroundstationPackets">
