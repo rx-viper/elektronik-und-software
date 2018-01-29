@@ -1,0 +1,20 @@
+Id,Designator,Package,Quantity,Designation,Supplier and ref,partsbox,
+1,"REF**,REF**,REF**",MountingHole_3.2mm_M3,3,MountingHole_3.2mm_M3,,n,
+2,"C1,C7,C8",C_0805,3,1u,,x,
+3,C2,C_1206,1,10u,,x,
+4,"C3,C4,C5,C6",C_0603,4,100n,,x,
+5,D1,LED_0603,1,LED_5v,,x,green
+6,D2,LED_0603,1,LED_3v3,,x,yellow
+7,D3,LED_0603,1,LED_P1,,x,red
+8,D4,LED_0603,1,LED_P2,,x,red
+9,J1,Pin_Header_Angled_1x04_Pitch2.54mm,1,Conn_01x04,,n,
+10,"R1,R2",R_0603,2,100,,x,Zero-ohm
+11,R3,R_0603,1,4k7,,x,
+12,"R4,R6,R8",R_0603,3,2k7,,x,
+13,"R5,R7",R_0603,2,576k,,x,
+14,TP2,Measurement_Point_Round-SMD-Pad_Small,1,GND,,n,
+15,TP3,Measurement_Point_Round-SMD-Pad_Small,1,3v3,,n,
+16,U1,SOT-23-5,1,TLV73333PDBVR,,x,
+17,"U2,U4",SOT-23-6,2,MAX4995A,,x,
+18,"U3,U5",AMS_5915-XXXX-D_differential_pressure_sensor,2,AMS5915,,x,
+19,TP1,Measurement_Point_Round-SMD-Pad_Small,1,5v,,n,
