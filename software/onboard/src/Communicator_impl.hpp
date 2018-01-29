@@ -6,6 +6,8 @@
 #include "CRC32.hpp"
 #include "DataWriter.hpp"
 
+#include "RxsmEvents.hpp"
+
 using viper::communication::CobsReader;
 using viper::communication::CobsWriter;
 using viper::communication::CRC32;
@@ -17,9 +19,12 @@ namespace onboard
 {
 
 template<typename Packets, typename Device>
-Communicator<Packets, Device>::Communicator() :
-	frameWriter{frameBuffer.data(), frameBuffer.size()},
-	frameReader{receiveBuffer.data(), receiveBuffer.size()}, packetAvailable{false}
+Communicator<Packets, Device>::Communicator(CommunicationFlashWriter& flashWriter_, bool flashEnabled_) :
+	frameWriter{frameBuffer.data(),frameBuffer.size()},
+	frameReader{receiveBuffer.data(), receiveBuffer.size()},
+	flashWriter{flashWriter_},
+	flashEnabled{flashEnabled_},
+	packetAvailable{false}
 {
 	sendSequenceNumbers.fill(0);
 }
@@ -56,6 +61,13 @@ void Communicator<Packets, Device>::sendPacket(const PacketT& packet)
 	}
 
 	Device::write(frameWriter.data(), frameWriter.size());
+
+	if(flashEnabled) {
+		// write data to flash after Lift-Off and if SODS is active
+		if(viper::onboard::RxsmEvents::liftOff() && viper::onboard::RxsmEvents::startOfDataStorage()) {
+			flashWriter.write(frameWriter.data(), frameWriter.size());
+		}
+	}
 }
 
 template<typename Packets, typename Device>
@@ -149,7 +161,8 @@ size_t Communicator<Packets, Device>::writePacketPayload(const PacketT& packet)
 	DataWriter writer{packetBuffer.data(), packetBuffer.size()};
 
 	// set sequence number in packet
-	packet.sequenceNumber = sendSequenceNumbers[typeIndex]++;
+	//packet.sequenceNumber = sendSequenceNumbers[typeIndex]++;
+	packet.sequenceNumber = xpcc::Clock::now().getTime();
 
 	// write packet id to packetBuffer
 	constexpr uint8_t id{PacketT::PacketID};
@@ -166,6 +179,14 @@ size_t Communicator<Packets, Device>::writePacketPayload(const PacketT& packet)
 	}
 
 	return writer.isError() ? 0 : writer.getPosition();
+}
+
+template<typename Packets, typename Device>
+void Communicator<Packets, Device>::flushFlashWriter()
+{
+	if(flashEnabled) {
+		flashWriter.flush();
+	}
 }
 
 }

@@ -31,9 +31,17 @@ using viper::onboard::RxsmEvents;
 using viper::onboard::Experiment;
 using viper::onboard::Motor;
 using viper::onboard::GroundstationCommunicator;
+using viper::onboard::PiCommunicator;
+using viper::onboard::CommunicationFlashWriter;
 using viper::onboard::HeatprobeControl;
 
 #include <xpcc/debug/logger.hpp>
+
+namespace {
+	CommunicationFlashWriter communicationFlashWriter;
+	GroundstationCommunicator communicator(communicationFlashWriter);
+	PiCommunicator piCommunicator(communicationFlashWriter, false);
+}
 
 int
 main()
@@ -46,9 +54,16 @@ main()
 
 	RxsmEvents::initialize();
 
-	GroundstationCommunicator communicator;
 
-	Experiment experiment{communicator};
+	uint32_t experimentId = RF_CALL_BLOCKING(communicationFlashWriter.initialize());
+	if(experimentId == 0) {
+		XPCC_LOG_INFO << "Error: Unable to initialize CommunicationFlashWriter!" << xpcc::endl;
+	}
+	else {
+		XPCC_LOG_INFO << "Info: Experiment ID = " << experimentId << xpcc::endl;
+	}
+
+	Experiment experiment{communicator, piCommunicator, experimentId};
 	experiment.initialize();
 
 	while (1)
@@ -59,6 +74,8 @@ main()
 
 		experiment.update();
 		communicator.update();
+		communicationFlashWriter.run();
+		piCommunicator.update();
 	}
 
 	return 0;

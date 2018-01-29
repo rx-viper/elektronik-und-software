@@ -98,6 +98,10 @@ struct systemClock
 			7       // 360MHz / Q=7 -> ~51MHz = F_usb => bad for USB
 		);*/
 
+		// Enable overdrive mode
+		PWR->CR |= PWR_CR_ODEN;
+		// wait for it
+		while (not (PWR->CSR & PWR_CSR_ODRDY)) ;
 		ClockControl::setFlashLatency(Frequency);
 		ClockControl::enableSystemClock(ClockControl::SystemClockSource::Pll);
 		ClockControl::setApb1Prescaler(ClockControl::Apb1Prescaler::Div4);
@@ -167,10 +171,6 @@ namespace Ui {
 		Button1::setInput(Gpio::InputType::PullUp);
 		Button2::setInput(Gpio::InputType::PullUp);
 
-		// Create a IODevice with the Uart
-		xpcc::IODeviceWrapper<DebugUart, xpcc::IOBuffer::DiscardIfFull> device;
-		xpcc::IOStream stream(device);
-
 		DebugUartRx::connect(DebugUart::Rx);
 		DebugUartTx::connect(DebugUart::Tx);
 		DebugUart::initialize<systemClock, DebugBaudrate>(12);
@@ -178,30 +178,40 @@ namespace Ui {
 }
 
 namespace Camera {
-	constexpr uint16_t PwmPeriod		= 100;
+	//constexpr uint16_t PwmPeriod		= 100;
 	// PWM frequency 10kHz (period 100us)
 
 	using LightPin		= GpioOutputB14;
 	using LensHeatPin	= GpioOutputB15;
 
-	using CameraTimer	= Timer12;
+	//using CameraTimer	= Timer12;
+
+	using PiUart	= Uart8;
+	using PiUartRx	= GpioE0;
+	using PiUartTx	= GpioE1;
+	constexpr uint32_t PiBaudrate = PiUart::Baudrate::B115200;
 
 	inline void
 	initialize() {
-		CameraTimer::enable();
-		CameraTimer::setMode(CameraTimer::Mode::UpCounter,
-		                     CameraTimer::SlaveMode::Disabled,
-		                     CameraTimer::SlaveModeTrigger::Internal0,
-		                     CameraTimer::MasterMode::CompareOc1Ref);
-		CameraTimer::setPeriod<systemClock>(PwmPeriod, false);
-		CameraTimer::forceInactive(1);
-		CameraTimer::forceInactive(2);
-		CameraTimer::configureOutputChannel(1, CameraTimer::OutputCompareMode::Pwm2, 0x7FFF, CameraTimer::PinState::Disable);
-		CameraTimer::configureOutputChannel(2, CameraTimer::OutputCompareMode::Pwm2, 0x7FFF, CameraTimer::PinState::Disable);
-		CameraTimer::applyAndReset();
-		CameraTimer::pause();
-		LightPin::connect(CameraTimer::Channel1);
-		LensHeatPin::connect(CameraTimer::Channel2);
+		//CameraTimer::enable();
+		//CameraTimer::setMode(CameraTimer::Mode::UpCounter,
+		//                     CameraTimer::SlaveMode::Disabled,
+		//                     CameraTimer::SlaveModeTrigger::Internal0,
+		//                     CameraTimer::MasterMode::CompareOc1Ref);
+		//CameraTimer::setPeriod<systemClock>(PwmPeriod, false);
+		//CameraTimer::forceInactive(1);
+		//CameraTimer::forceInactive(2);
+		//CameraTimer::configureOutputChannel(1, CameraTimer::OutputCompareMode::Pwm2, 0x7FFF, CameraTimer::PinState::Disable);
+		//CameraTimer::configureOutputChannel(2, CameraTimer::OutputCompareMode::Pwm2, 0x7FFF, CameraTimer::PinState::Disable);
+		//CameraTimer::applyAndReset();
+		//CameraTimer::pause();
+		//LightPin::connect(CameraTimer::Channel1);
+		//LensHeatPin::connect(CameraTimer::Channel2);
+		LightPin::setOutput();
+
+		PiUartRx::connect(PiUart::Rx);
+		PiUartTx::connect(PiUart::Tx);
+		PiUart::initialize<systemClock, PiBaudrate>(12);
 	}
 }
 
@@ -224,7 +234,7 @@ namespace Rxsm {
 
 		TelemetryRx::connect(TelemetryUart::Rx);
 		TelemetryTx::connect(TelemetryUart::Tx);
-		TelemetryUart::initialize<systemClock, TelemetryBaudrate>(12);
+		TelemetryUart::initialize<systemClock, TelemetryBaudrate>(10);
 	}
 }
 
@@ -252,7 +262,7 @@ namespace Motor {
 	using HallW			= GpioInputC8;
 
 	//using HallTimer		= Timer8;
-	constexpr uint8_t HallInterruptPriority	= 12;
+	constexpr uint8_t HallInterruptPriority	= 4;
 	constexpr uint16_t MaxPwm{0x1FFu}; // 9 bit PWM
 
 	using EndSwitch		= GpioInputC5;
@@ -413,9 +423,9 @@ namespace Encoders {
 }
 
 namespace Heatprobes {
-	// Prescaler: 6 -> Timer counter frequency: 30MHz
-	// PWM frequency: 30MHz / 60000 = 500 Hz
-	constexpr uint16_t Prescaler = 6;
+	// Prescaler: 600 -> Timer counter frequency: 300kHz
+	// PWM frequency: 300kHz / 60000 = 5Hz
+	constexpr uint16_t Prescaler = 600;
 	constexpr uint16_t Overflow	 = 60000;
 
 	using Hp1Pin	= GpioOutputA2;
@@ -437,7 +447,7 @@ namespace Heatprobes {
 namespace Sensors {
 	using PressureScl		= GpioB6;
 	using PressureSda		= GpioB7;
-	using PressureI2c		= I2cMaster1;
+	using PressureI2c		= xpcc::SoftwareI2cMaster<PressureScl, PressureSda>;
 
 	using TemperatureScl	= GpioF1;
 	using TemperatureSda	= GpioF0;
@@ -450,16 +460,17 @@ namespace Sensors {
 		PressureSda::connect(PressureI2c::Sda);
 		PressureI2c::initialize<systemClock, PressureI2c::Baudrate::Standard, xpcc::Tolerance::FivePercent>();
 
-		TemperatureScl::connect(TemperatureI2c::Scl);
+		/*TemperatureScl::connect(TemperatureI2c::Scl);
 		TemperatureSda::connect(TemperatureI2c::Sda);
-		TemperatureI2c::initialize<systemClock, PressureI2c::Baudrate::Standard, xpcc::Tolerance::FivePercent>();
+		TemperatureI2c::initialize<systemClock, PressureI2c::Baudrate::Standard, xpcc::Tolerance::FivePercent>();*/
 	}
 }
 
 namespace Storage {
-	constexpr uint32_t SpiBaudrate = 700000;
+	static constexpr uint32_t SpiBaudrate = 5625000;
+	static constexpr uint32_t FlashSize = 8*1024*1024;
 
-	struct Flash1 {
+	struct Flash1Spi {
 		using Sck		= GpioOutputB10;
 		using Miso		= GpioInputC2;
 		using Mosi		= GpioOutputC3;
@@ -467,7 +478,7 @@ namespace Storage {
 		using Spi		= SpiMaster2;
 	};
 
-	struct Flash2 {
+	struct Flash2Spi {
 		using Sck		= GpioOutputC10;
 		using Miso		= GpioInputC11;
 		using Mosi		= GpioOutputD6;
@@ -478,13 +489,14 @@ namespace Storage {
 	inline void
 	initialize()
 	{
-		Flash1::Cs::set();
-		Flash1::Cs::setOutput(Gpio::OutputType::PushPull);
-		Flash2::Cs::set();
-		Flash2::Cs::setOutput(Gpio::OutputType::PushPull);
+		// CS pins are initialized in BdSpiFlash::initialize()
+		//Flash1::Cs::set();
+		//Flash1::Cs::setOutput(Gpio::OutputType::PushPull);
+		//Flash2::Cs::set();
+		//Flash2::Cs::setOutput(Gpio::OutputType::PushPull);
 
-		spiMasterInitialize<Flash1, SpiBaudrate>();
-		spiMasterInitialize<Flash2, SpiBaudrate>();
+		spiMasterInitialize<Flash1Spi, SpiBaudrate>();
+		spiMasterInitialize<Flash2Spi, SpiBaudrate>();
 	}
 }
 

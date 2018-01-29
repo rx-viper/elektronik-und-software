@@ -82,10 +82,10 @@ private:
 
 	using OutputSet = std::array<PwmMode, 3>;
 
-	static ControllerMode controllerMode;
+	static volatile ControllerMode controllerMode;
 	static bool homed;
 	static xpcc::ShortPeriodicTimer controllerTimer;
-	static int16_t currentPwm;
+	static volatile int16_t currentPwm;
 	static int32_t currentVelocity;
 	static int32_t currentPosition;
 	static int32_t targetPosition;

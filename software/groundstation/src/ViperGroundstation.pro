@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui serialport printsupport network
+QT       += core gui serialport printsupport network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -76,7 +76,9 @@ SOURCES += main.cpp \
     MeasurementData.cpp \
     IceTemperatureWidget.cpp \
     communcation/SerialPortConfigWidget.cpp \
-    IceTemperatureWindow.cpp
+    IceTemperatureWindow.cpp \
+    StorageDatabase.cpp \
+    PacketDatabaseWriter.cpp
 
 SOURCES += $$COMMUNICATION_SRC
 
@@ -97,7 +99,9 @@ HEADERS  += mainwindow.h \
     IceTemperatureWidget.hpp \
     communcation/BackendConfigWidget.hpp \
     communcation/SerialPortConfigWidget.hpp \
-    IceTemperatureWindow.hpp
+    IceTemperatureWindow.hpp \
+    StorageDatabase.hpp \
+    PacketDatabaseWriter.hpp
 
 HEADERS += $$COMMUNICATION_HEADERS
 

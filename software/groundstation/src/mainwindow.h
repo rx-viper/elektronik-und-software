@@ -28,10 +28,11 @@ public:
 
 public slots:
 	void updateUI(const ExperimentStatus& status);
-	void setConnected(bool connected);
+	void setSerialConnected(bool connected);
 
 signals:
-	void connectClicked();
+	void connectSerialClicked();
+	void connectDbClicked();
 	void testOnClicked();
 	void testOffClicked();
 

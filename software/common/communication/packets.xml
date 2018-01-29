@@ -24,11 +24,13 @@
 	</packet>
 
 	<packet name="PressureLS" id="6">
-		<array name="values" type="int32_t" size="5" />
+		<array name="sensor1" type="uint16_t" size="5" />
+		<array name="sensor2" type="uint16_t" size="5" />
 	</packet>
 
 	<packet name="PressureHS" id="7">
-		<array name="values" type="int32_t" size="20" />
+		<array name="sensor1" type="uint16_t" size="20" />
+		<array name="sensor2" type="uint16_t" size="20" />
 	</packet>
 
 	<packet name="HpTemperatureLS" id="8">
@@ -38,7 +40,33 @@
 	<packet name="HpTemperatureHS" id="9">
 		<array name="temperatures" type="int32_t" size="3" />
 	</packet>
-	
+
+	<packet name="HpPowerLS" id="12">
+		<array name="voltage" type="uint16_t" size="3" />
+		<array name="current" type="uint16_t" size="3" />
+	</packet>
+
+	<packet name="HpPowerHS" id="13">
+		<array name="voltage" type="uint16_t" size="3" />
+		<array name="current" type="uint16_t" size="3" />
+	</packet>
+
+	<packet name="BattVoltageLS" id="16">
+		<element name="value" type="uint16_t" />
+	</packet>
+
+	<packet name="BattVoltageHS" id="17">
+		<array name="values" type="uint16_t" size="4" />
+	</packet>
+
+	<packet name="MotorCurrentLS" id="18">
+		<element name="value" type="uint16_t" />
+	</packet>
+
+	<packet name="MotorCurrentHS" id="19">
+		<array name="values" type="uint16_t" size="4" />
+	</packet>
+
 	<packet name="TestMode" id="11">
 		<element name="enabled" type="uint8_t" />
 	</packet>
@@ -65,6 +93,9 @@
 		<element name="hpOvertemperature" type="uint8_t" />
 		<element name="motorPosition" type="int32_t" />
 		<element name="testModeEnabled" type="uint8_t" />
+		<element name="experimentId" type="uint32_t" />
+		<element name="piRecordingEnabled" type="uint8_t" />
+		<element name="piStorageAvailable" type="uint32_t" />
 	</packet>
 
 	<packet_group name="GroundstationPackets">
@@ -78,8 +109,36 @@
 		<packet name="PressureHS" />
 		<packet name="HpTemperatureLS" />
 		<packet name="HpTemperatureHS" />
+		<packet name="HpPowerLS" />
+		<packet name="HpPowerHS" />
+		<packet name="BattVoltageLS" />
+		<packet name="BattVoltageHS" />
+		<packet name="MotorCurrentLS" />
+		<packet name="MotorCurrentHS" />
 		<packet name="Status" />
 		<packet name="TestMode" />
+	</packet_group>
+
+	<!-- Pi -->
+	<packet name="PiStatus" id="20">
+		<element name="recordingEnabled" type="uint8_t" />
+		<element name="storageAvailable" type="uint32_t" />
+	</packet>
+
+	<packet name="PiCommand" id="21">
+		<element name="recordingEnabled" type="uint8_t" />
+		<element name="onboardTime" type="uint32_t" />
+		<element name="experimentId" type="uint32_t" />
+	</packet>
+
+	<packet name="PiShutdown" id="22">
+		<element name="dummy" type="uint8_t" />
+	</packet>
+
+	<packet_group name="PiPackets">
+		<packet name="PiStatus" />
+		<packet name="PiCommand" />
+		<packet name="PiShutdown" />
 	</packet_group>
 
 	<!-- TEST -->

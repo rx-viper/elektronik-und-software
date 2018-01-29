@@ -31,12 +31,12 @@ namespace onboard
 constexpr std::array<Motor::OutputSet, 7> Motor::outputSets;
 constexpr std::array<uint_fast8_t, 8> Motor::hallMap;
 
-Motor::ControllerMode Motor::controllerMode = Motor::ControllerMode::Disabled;
+volatile Motor::ControllerMode Motor::controllerMode = Motor::ControllerMode::Disabled;
 bool Motor::homed = false;
 
 xpcc::ShortPeriodicTimer Motor::controllerTimer{Motor::ControllerPeriod};
 
-int16_t Motor::currentPwm = 0;
+volatile int16_t Motor::currentPwm = 0;
 int32_t Motor::currentVelocity = 0;
 int32_t Motor::currentPosition = 0;
 int32_t Motor::targetPosition = 0;
@@ -176,7 +176,6 @@ void Motor::update()
 	if(controllerMode == ControllerMode::Position) {
 		if(controllerTimer.execute()) {
 			float distance = (targetPosition - currentPosition);
-			//XPCC_LOG_ERROR << distance << ", " << currentPosition << "," << targetPosition << xpcc::endl;
 			if(fabs(distance) < 5000) {
 				distance = 0;
 				positionController.resetErrorSum();

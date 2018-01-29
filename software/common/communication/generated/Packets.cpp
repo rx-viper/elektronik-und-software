@@ -110,7 +110,10 @@ bool PressureLS::read(DataReader& reader)
     if(!reader.read(sequenceNumber))
         return false;
     
-    return reader.read(values);
+    if(!reader.read(sensor1))
+        return false;
+    
+    return reader.read(sensor2);
 }
 
 bool PressureLS::write(DataWriter& writer) const
@@ -118,7 +121,10 @@ bool PressureLS::write(DataWriter& writer) const
     if(!writer.write(sequenceNumber))
         return false;
     
-    return writer.write(values);
+    if(!writer.write(sensor1))
+        return false;
+    
+    return writer.write(sensor2);
 }
 
 bool PressureHS::read(DataReader& reader)
@@ -126,7 +132,10 @@ bool PressureHS::read(DataReader& reader)
     if(!reader.read(sequenceNumber))
         return false;
     
-    return reader.read(values);
+    if(!reader.read(sensor1))
+        return false;
+    
+    return reader.read(sensor2);
 }
 
 bool PressureHS::write(DataWriter& writer) const
@@ -134,7 +143,10 @@ bool PressureHS::write(DataWriter& writer) const
     if(!writer.write(sequenceNumber))
         return false;
     
-    return writer.write(values);
+    if(!writer.write(sensor1))
+        return false;
+    
+    return writer.write(sensor2);
 }
 
 bool HpTemperatureLS::read(DataReader& reader)
@@ -167,6 +179,114 @@ bool HpTemperatureHS::write(DataWriter& writer) const
         return false;
     
     return writer.write(temperatures);
+}
+
+bool HpPowerLS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    if(!reader.read(voltage))
+        return false;
+    
+    return reader.read(current);
+}
+
+bool HpPowerLS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    if(!writer.write(voltage))
+        return false;
+    
+    return writer.write(current);
+}
+
+bool HpPowerHS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    if(!reader.read(voltage))
+        return false;
+    
+    return reader.read(current);
+}
+
+bool HpPowerHS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    if(!writer.write(voltage))
+        return false;
+    
+    return writer.write(current);
+}
+
+bool BattVoltageLS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(value);
+}
+
+bool BattVoltageLS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(value);
+}
+
+bool BattVoltageHS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(values);
+}
+
+bool BattVoltageHS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(values);
+}
+
+bool MotorCurrentLS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(value);
+}
+
+bool MotorCurrentLS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(value);
+}
+
+bool MotorCurrentHS::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(values);
+}
+
+bool MotorCurrentHS::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(values);
 }
 
 bool TestMode::read(DataReader& reader)
@@ -211,7 +331,16 @@ bool Status::read(DataReader& reader)
     if(!reader.read(motorPosition))
         return false;
     
-    return reader.read(testModeEnabled);
+    if(!reader.read(testModeEnabled))
+        return false;
+    
+    if(!reader.read(experimentId))
+        return false;
+    
+    if(!reader.read(piRecordingEnabled))
+        return false;
+    
+    return reader.read(piStorageAvailable);
 }
 
 bool Status::write(DataWriter& writer) const
@@ -240,7 +369,82 @@ bool Status::write(DataWriter& writer) const
     if(!writer.write(motorPosition))
         return false;
     
-    return writer.write(testModeEnabled);
+    if(!writer.write(testModeEnabled))
+        return false;
+    
+    if(!writer.write(experimentId))
+        return false;
+    
+    if(!writer.write(piRecordingEnabled))
+        return false;
+    
+    return writer.write(piStorageAvailable);
+}
+
+bool PiStatus::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    if(!reader.read(recordingEnabled))
+        return false;
+    
+    return reader.read(storageAvailable);
+}
+
+bool PiStatus::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    if(!writer.write(recordingEnabled))
+        return false;
+    
+    return writer.write(storageAvailable);
+}
+
+bool PiCommand::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    if(!reader.read(recordingEnabled))
+        return false;
+    
+    if(!reader.read(onboardTime))
+        return false;
+    
+    return reader.read(experimentId);
+}
+
+bool PiCommand::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    if(!writer.write(recordingEnabled))
+        return false;
+    
+    if(!writer.write(onboardTime))
+        return false;
+    
+    return writer.write(experimentId);
+}
+
+bool PiShutdown::read(DataReader& reader)
+{
+    if(!reader.read(sequenceNumber))
+        return false;
+    
+    return reader.read(dummy);
+}
+
+bool PiShutdown::write(DataWriter& writer) const
+{
+    if(!writer.write(sequenceNumber))
+        return false;
+    
+    return writer.write(dummy);
 }
 
 bool TestPacket1::read(DataReader& reader)

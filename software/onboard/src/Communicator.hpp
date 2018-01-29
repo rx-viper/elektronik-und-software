@@ -5,6 +5,8 @@
 #include <cstddef>
 #include <array>
 
+#include "CommunicationFlashWriter.hpp"
+
 #include <xpcc/debug/logger.hpp>
 
 #include "CobsReader.hpp"
@@ -14,6 +16,8 @@
 
 using viper::communication::CobsReader;
 using viper::communication::CobsWriter;
+
+using viper::onboard::CommunicationFlashWriter;
 
 using viper::packet::GroundstationPackets;
 
@@ -32,7 +36,7 @@ template<typename Packets, typename Device>
 class Communicator
 {
 public:
-	Communicator();
+	Communicator(CommunicationFlashWriter& flashWriter_, bool flashEnabled_ = true);
 
 	/// Test if a packet has been received and is available for reading
 	inline bool isPacketAvailable() { return packetAvailable; }
@@ -50,6 +54,9 @@ public:
 
 	/// Call this function periodically in the main loop
 	void update();
+
+	/// Flush flashWriter
+	void flushFlashWriter();
 
 private:
 	// Maximum payload of a frame, +4: CRC Size, +1 Packet ID
@@ -78,6 +85,8 @@ private:
 
 	CobsWriter frameWriter;
 	CobsReader frameReader;
+	CommunicationFlashWriter& flashWriter;
+	bool flashEnabled;
 
 	Packets packet;
 	bool packetAvailable;
