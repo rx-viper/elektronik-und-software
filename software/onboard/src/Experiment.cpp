@@ -98,7 +98,7 @@ void Experiment::sendStatus()
 	status.motorPosition = Motor::getPosition();
 	status.testModeEnabled = dataAcquisition.testMode;
 	status.experimentId = experimentId;
-	status.piRecordingEnabled = this->cameraRecording;
+	status.piRecordingEnabled = this->cameraRecordingStatus;
 	status.piStorageAvailable = this->piStorageAvailable;
 	communicator.sendPacket(status);
 }
