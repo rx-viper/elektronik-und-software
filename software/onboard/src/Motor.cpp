@@ -148,25 +148,21 @@ int32_t Motor::getPosition()
 
 void Motor::update()
 {
-	if(Board::Motor::EndSwitch::read()) {
-		if(controllerMode == ControllerMode::HomingActive) {
+	if(controllerMode == ControllerMode::HomingActive) {
+		if(homingLagTimeout.isExpired()) {
+			currentPosition = 0;
+			currentVelocity = 0;
+			homed = true;
+			lastEncoder = Board::Encoders::Motor::getEncoderRaw();
+			homingLagTimeout.stop();
+			disable();
+		} else if(Board::Motor::EndSwitch::read()) {
 			setPwmValue(0, true);
 
 			if(homingLagTimeout.isStopped()) {
 				homingLagTimeout.restart(HomingLagTimeout);
-			} else if(homingLagTimeout.isExpired()) {
-				currentPosition = 0;
-				currentVelocity = 0;
-				homed = true;
-				lastEncoder = Board::Encoders::Motor::getEncoderRaw();
-				homingLagTimeout.stop();
-				disable();
 			}
 		}
-		/* else if(controllerMode == ControllerMode::Pwm && ((currentPwm > 0) == (HomingPwm > 0))) {
-			setPwm(0);
-			disable();
-		}*/
 	}
 
 	//if(homed) {
