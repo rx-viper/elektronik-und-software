@@ -69,8 +69,8 @@ private:
 	GroundstationCommunicator& communicator;
 	PiCommunicator& piCommunicator;
 	DataAcquisition dataAcquisition;
-	xpcc::ShortPeriodicTimer statusPacketTimer;
-	xpcc::ShortPeriodicTimer piCommandPacketTimer;
+	xpcc::PeriodicTimer statusPacketTimer;
+	xpcc::PeriodicTimer piCommandPacketTimer;
 
 	const uint32_t experimentId;
 

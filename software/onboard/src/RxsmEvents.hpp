@@ -53,7 +53,7 @@ private:
 	static constexpr uint16_t UpdateTimeoutMs = 2;
 	static constexpr uint16_t DebounceHysteresis = 10;
 
-	static xpcc::ShortPeriodicTimer debounceTimer;
+	static xpcc::PeriodicTimer debounceTimer;
 
 	static bool loChanged;
 	static xpcc::filter::Debounce<uint8_t> loFilter;

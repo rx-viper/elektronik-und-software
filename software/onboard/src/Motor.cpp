@@ -34,7 +34,7 @@ constexpr std::array<uint_fast8_t, 8> Motor::hallMap;
 volatile Motor::ControllerMode Motor::controllerMode = Motor::ControllerMode::Disabled;
 bool Motor::homed = false;
 
-xpcc::ShortPeriodicTimer Motor::controllerTimer{Motor::ControllerPeriod};
+xpcc::PeriodicTimer Motor::controllerTimer{Motor::ControllerPeriod};
 
 volatile int16_t Motor::currentPwm = 0;
 int32_t Motor::currentVelocity = 0;
@@ -45,7 +45,7 @@ uint16_t Motor::lastEncoder = 0;
 
 xpcc::Pid<float> Motor::positionController;
 
-xpcc::ShortTimeout Motor::homingLagTimeout;
+xpcc::Timeout Motor::homingLagTimeout;
 
 void Motor::initialize()
 {

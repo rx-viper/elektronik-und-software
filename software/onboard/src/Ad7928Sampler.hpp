@@ -68,7 +68,7 @@ public:
 private:
 	static constexpr uint16_t SamplePeriod = 5; // 200 Hz
 
-	xpcc::ShortTimeout timeout;
+	xpcc::Timeout timeout;
 	bool initialized;
 	bool start;
 

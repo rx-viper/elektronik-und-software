@@ -132,7 +132,7 @@ private:
 		return static_cast<MuxChannel>(1U << bitIndex);
 	}
 
-	xpcc::ShortPeriodicTimer initializeTimer;
+	xpcc::PeriodicTimer initializeTimer;
 	Sensor sensor;
 	size_t i = 0;
 };

@@ -84,7 +84,7 @@ private:
 
 	static volatile ControllerMode controllerMode;
 	static bool homed;
-	static xpcc::ShortPeriodicTimer controllerTimer;
+	static xpcc::PeriodicTimer controllerTimer;
 	static volatile int16_t currentPwm;
 	static int32_t currentVelocity;
 	static int32_t currentPosition;
@@ -93,7 +93,7 @@ private:
 	static uint16_t lastEncoder;
 
 	static xpcc::Pid<float> positionController;
-	static xpcc::ShortTimeout homingLagTimeout;
+	static xpcc::Timeout homingLagTimeout;
 
 
 	static constexpr std::array<OutputSet, 7> outputSets = {{

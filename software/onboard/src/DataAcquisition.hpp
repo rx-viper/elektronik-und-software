@@ -166,12 +166,12 @@ private:
 	std::array<uint16_t, 4> motorCurrentHS = {};
 	uint8_t motorCurrentHSIndex = 0;
 
-	xpcc::ShortTimeout timeout;
+	xpcc::Timeout timeout;
 
-	xpcc::ShortPeriodicTimer iceTempTimer;
-	xpcc::ShortPeriodicTimer hpTempTimer;
-	xpcc::ShortPeriodicTimer hpDepthTimer;
-	xpcc::ShortPeriodicTimer adcTimer;
+	xpcc::PeriodicTimer iceTempTimer;
+	xpcc::PeriodicTimer hpTempTimer;
+	xpcc::PeriodicTimer hpDepthTimer;
+	xpcc::PeriodicTimer adcTimer;
 
 public:
 	bool testMode = false;
