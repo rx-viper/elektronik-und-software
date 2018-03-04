@@ -327,7 +327,7 @@ namespace Motor {
 	inline void
 	initializeEndSwich()
 	{
-		EndSwitch::setInput(Gpio::InputType::Floating);
+		EndSwitch::setInput(Gpio::InputType::PullDown);
 	}
 
 	inline void
