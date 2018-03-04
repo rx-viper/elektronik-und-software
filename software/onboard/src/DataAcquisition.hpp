@@ -32,12 +32,17 @@
 #include "Ds1731Sensor.hpp"
 #include "Amsys5915Sensor.hpp"
 
+#include "PauseUart.hpp"
+
 namespace viper
 {
 namespace onboard
 {
 
-using GroundstationCommunicator = Communicator<GroundstationPackets, Board::Rxsm::TelemetryUart>;
+using UartDevice = Board::Rxsm::TelemetryUart;
+using RxsmUart = PauseUart<UartDevice, 2000, 24>;
+
+using GroundstationCommunicator = Communicator<GroundstationPackets, RxsmUart>;
 
 class DataAcquisition
 {
