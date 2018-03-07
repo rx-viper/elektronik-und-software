@@ -1,11 +1,4 @@
-﻿CREATE TABLE IF NOT EXISTS experiment(
-   _id BIGSERIAL PRIMARY KEY,
-   _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
-   id INTEGER UNIQUE NOT NULL,
-   groundstation_time TIMESTAMP NOT NULL
-);
-
-DROP TYPE IF EXISTS SAMPLE_FREQ CASCADE;
+﻿DROP TYPE IF EXISTS SAMPLE_FREQ CASCADE;
 CREATE TYPE SAMPLE_FREQ AS ENUM ('LOW', 'HIGH');
 
 CREATE TABLE IF NOT EXISTS data_ice_sample_temperature(
@@ -14,11 +7,11 @@ CREATE TABLE IF NOT EXISTS data_ice_sample_temperature(
    ice_sample_id INTEGER NOT NULL,
    sensor_id INTEGER NOT NULL,
    sample_freqency SAMPLE_FREQ NOT NULL,
-   value DOUBLE PRECISION NOT NULL,
+   value INTEGER NOT NULL,
    error BOOL DEFAULT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS data_heat_probe_temperature(
@@ -26,11 +19,11 @@ CREATE TABLE IF NOT EXISTS data_heat_probe_temperature(
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
    sensor_id INTEGER NOT NULL,
    sample_freqency SAMPLE_FREQ,
-   value DOUBLE PRECISION NOT NULL,
+   value INTEGER NOT NULL,
    error BOOL DEFAULT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS data_other_temperature(
@@ -38,11 +31,11 @@ CREATE TABLE IF NOT EXISTS data_other_temperature(
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
    sensor_id INTEGER NOT NULL,
    sample_freqency SAMPLE_FREQ,
-   value DOUBLE PRECISION NOT NULL,
+   value INTEGER NOT NULL,
    error BOOL DEFAULT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS data_heat_probe_penetration_depth(
@@ -54,7 +47,7 @@ CREATE TABLE IF NOT EXISTS data_heat_probe_penetration_depth(
    error BOOL DEFAULT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS data_motor_position(
@@ -66,7 +59,7 @@ CREATE TABLE IF NOT EXISTS data_motor_position(
    error BOOL DEFAULT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS data_pressure(
@@ -74,24 +67,24 @@ CREATE TABLE IF NOT EXISTS data_pressure(
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
    sensor_id INTEGER NOT NULL,
    sample_freqency SAMPLE_FREQ,
-   pressure DOUBLE PRECISION NOT NULL,
-   temperature DOUBLE PRECISION NOT NULL,
+   pressure INTEGER NOT NULL,
+   temperature INTEGER NOT NULL,
    error BOOL DEFAULT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
-DROP TYPE IF EXISTS EVENT_FLAG CASCADE;
-CREATE TYPE EVENT_FLAG AS ENUM ('LO', 'SOE', 'SODS', 'TEST_MODE', 'HP_OVERTEMP');
-CREATE TABLE IF NOT EXISTS data_status_flags(
+DROP TYPE IF EXISTS STATUS_TYPES CASCADE;
+CREATE TYPE STATUS_TYPES AS ENUM ('LO', 'SOE', 'SODS', 'TEST_MODE', 'HP_OVERTEMP', 'MOTOR_POSITION', 'PI_RECORDING', 'PI_STORAGE');
+CREATE TABLE IF NOT EXISTS data_status(
    _id BIGSERIAL PRIMARY KEY,
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
-   sensor_id EVENT_FLAG NOT NULL,
-   value BOOL NOT NULL,
+   sensor_id STATUS_TYPES NOT NULL,
+   value INTEGER NOT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS data_state_machine(
@@ -100,7 +93,7 @@ CREATE TABLE IF NOT EXISTS data_state_machine(
    state INTEGER NOT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 DROP TYPE IF EXISTS SER_DIRECTION CASCADE;
@@ -118,31 +111,29 @@ CREATE TABLE IF NOT EXISTS data_heat_probe_power(
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
    sensor_id INTEGER NOT NULL,
    sample_freqency SAMPLE_FREQ,
-   voltage DOUBLE PRECISION NOT NULL,
-   current DOUBLE PRECISION NOT NULL,
+   voltage INTEGER NOT NULL,
+   current INTEGER NOT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS data_motor_current(
    _id BIGSERIAL PRIMARY KEY,
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
-   sensor_id INTEGER NOT NULL,
    sample_freqency SAMPLE_FREQ,
-   value DOUBLE PRECISION NOT NULL,
+   value INTEGER NOT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS data_battery_voltage(
    _id BIGSERIAL PRIMARY KEY,
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
-   sensor_id INTEGER NOT NULL,
    sample_freqency SAMPLE_FREQ,
-   value DOUBLE PRECISION NOT NULL,
+   value INTEGER NOT NULL,
    experiment_time INTEGER NOT NULL,
    groundstation_time TIMESTAMP NOT NULL,
-   experiment_id INTEGER REFERENCES experiment(id) NOT NULL
+   experiment_id INTEGER NOT NULL
 );

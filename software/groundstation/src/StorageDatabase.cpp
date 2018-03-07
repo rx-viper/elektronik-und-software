@@ -1,4 +1,5 @@
 #include "StorageDatabase.hpp"
+#include <iostream>
 
 StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 								 const QString& password, const QString& database)
@@ -56,6 +57,82 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 	{
 		errorStrings.append(db.lastError().text());
 	}
+	if(!queryHpTemperature.prepare("INSERT INTO data_heat_probe_temperature "
+								   "(sensor_id, value, sample_freqency, experiment_time, groundstation_time, "
+								   "experiment_id) "
+								   "SELECT v.sensor_id, v.value, :freq, :exp_time, :ground_time, :exp_id "
+								   "FROM ( "
+								   "SELECT 0 AS sensor_id, :value0 as value FROM DUAL UNION ALL "
+								   "SELECT 1 AS sensor_id, :value1 as value FROM DUAL UNION ALL "
+								   "SELECT 2 AS sensor_id, :value2 as value FROM DUAL "
+								   ") v"
+								   ))
+	{
+		errorStrings.append(db.lastError().text());
+	}
+	if(!queryHpPenetrationDepth.prepare("INSERT INTO data_heat_probe_penetration_depth "
+								   "(sensor_id, value, sample_freqency, experiment_time, groundstation_time, "
+								   "experiment_id) "
+								   "SELECT v.sensor_id, v.value, :freq, :exp_time, :ground_time, :exp_id "
+								   "FROM ( "
+								   "SELECT 0 AS sensor_id, :value0 as value FROM DUAL UNION ALL "
+								   "SELECT 1 AS sensor_id, :value1 as value FROM DUAL UNION ALL "
+								   "SELECT 2 AS sensor_id, :value2 as value FROM DUAL "
+								   ") v"
+								   ))
+	{
+		errorStrings.append(db.lastError().text());
+	}
+	if(!queryPressure.prepare("INSERT INTO data_pressure "
+							  "(sensor_id, pressure, temperature, sample_freqency, experiment_time, groundstation_time, "
+							  "experiment_id) "
+							  "VALUES (:sensor_id, :pressure, :temperature, :freq, :exp_time, :ground_time, :exp_id) "
+							  ))
+	{
+		errorStrings.append(db.lastError().text());
+	}
+	if(!queryHpPower.prepare("INSERT INTO data_heat_probe_power "
+							 "(sensor_id, voltage, current, sample_freqency, experiment_time, groundstation_time, experiment_id) "
+							 "VALUES (:sensor_id, :voltage, :current, :freq, :exp_time, :ground_time, :exp_id) "
+							 ))
+	{
+		errorStrings.append(db.lastError().text());
+	}
+	if(!queryBattVoltage.prepare("INSERT INTO data_battery_voltage "
+								 "(value, sample_freqency, experiment_time, groundstation_time, experiment_id) "
+								 "VALUES (:value, :freq, :exp_time, :ground_time, :exp_id) "
+								 ))
+	{
+		errorStrings.append(db.lastError().text());
+	}
+	if(!queryMotorCurrent.prepare("INSERT INTO data_motor_current "
+								  "(value, sample_freqency, experiment_time, groundstation_time, experiment_id) "
+								  "VALUES (:value, :freq, :exp_time, :ground_time, :exp_id) "
+								  ))
+	{
+		errorStrings.append(db.lastError().text());
+	}
+	if(!queryOtherTemperature.prepare("INSERT INTO data_other_temperature "
+									  "(sensor_id, value, sample_freqency, experiment_time, groundstation_time, experiment_id) "
+									  "VALUES (:sensor_id, :value, :freq, :exp_time, :ground_time, :exp_id) "
+									  ))
+	{
+		errorStrings.append(db.lastError().text());
+	}
+	if(!queryStateMachine.prepare("INSERT INTO data_state_machine "
+								  "(state, experiment_time, groundstation_time, experiment_id) "
+								  "VALUES (:state, :exp_time, :ground_time, :exp_id) "
+								  ))
+	{
+		errorStrings.append(db.lastError().text());
+	}
+	if(!queryStatus.prepare("INSERT INTO data_status "
+							"(sensor_id, value, experiment_time, groundstation_time, experiment_id) "
+							"VALUES (:sensor_id, :value, :exp_time, :ground_time, :exp_id) "
+							))
+	{
+		errorStrings.append(db.lastError().text());
+	}
 }
 
 StorageDatabase::~StorageDatabase()
@@ -79,9 +156,9 @@ void  StorageDatabase::logIceTemperature(uint32_t seq, const std::array<int32_t,
 	queryIceTemperature.bindValue(":freq", sample_freq ? "'HIGH'" : "'LOW'");
 	queryIceTemperature.bindValue(":exp_time", seq);
 	queryIceTemperature.bindValue(":ground_time", time);
-	queryIceTemperature.bindValue(":exp_id", 0);
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; i < 9; i++)
+	queryIceTemperature.bindValue(":exp_id", this->experiment_id);
+	for (size_t i = 0; i < 3; i++)
+		for (size_t j = 0; i < 9; i++)
 			queryIceTemperature.bindValue(QString(":value{}{}").arg(i, j), values.at(i * 9 + j));
 	if(!queryIceTemperature.exec()) {
 		errorStrings.append(db.lastError().text());
@@ -90,32 +167,186 @@ void  StorageDatabase::logIceTemperature(uint32_t seq, const std::array<int32_t,
 
 void  StorageDatabase::logOtherTemperature(uint32_t seq, const std::array<int16_t, 5>& values, bool sample_freq, const QDateTime& time)
 {
-
+	for (size_t i = 0; i < values.size(); i++) {
+		queryOtherTemperature.bindValue(":freq", sample_freq ? "'HIGH'" : "'LOW'");
+		queryOtherTemperature.bindValue(":exp_time", seq);
+		queryOtherTemperature.bindValue(":ground_time", time);
+		queryOtherTemperature.bindValue(":exp_id", this->experiment_id);
+		queryOtherTemperature.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryOtherTemperature.bindValue(":value", values.at(i));
+		if(!queryOtherTemperature.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
 }
 
 void  StorageDatabase::logHpTemperature(uint32_t seq, const std::array<int32_t, 3>& values, bool sample_freq, const QDateTime& time)
 {
-
+	for (size_t i = 0; i < values.size(); i++) {
+		queryHpTemperature.bindValue(":freq", sample_freq ? "'HIGH'" : "'LOW'");
+		queryHpTemperature.bindValue(":exp_time", seq);
+		queryHpTemperature.bindValue(":ground_time", time);
+		queryHpTemperature.bindValue(":exp_id", this->experiment_id);
+		queryHpTemperature.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryHpTemperature.bindValue(":value", values.at(i));
+		if(!queryHpTemperature.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
 }
 
 void  StorageDatabase::logHpPenetrationDepthLS(uint32_t seq, const std::array<int32_t, 3>& values, const QDateTime& time)
 {
-
+	for (size_t i = 0; i < values.size(); i++) {
+		queryHpPenetrationDepth.bindValue(":freq", "'LOW'");
+		queryHpPenetrationDepth.bindValue(":exp_time", seq);
+		queryHpPenetrationDepth.bindValue(":ground_time", time);
+		queryHpPenetrationDepth.bindValue(":exp_id", this->experiment_id);
+		queryHpPenetrationDepth.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryHpPenetrationDepth.bindValue(":value", values.at(i));
+		if(!queryHpPenetrationDepth.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
 }
 
 void  StorageDatabase::logHpPenetrationDepthHS(uint32_t seq, const std::array<int32_t, 3>& values, const QDateTime& time)
 {
-
+	for (size_t i = 0; i < values.size(); i++) {
+		queryHpPenetrationDepth.bindValue(":freq", "'HIGH'");
+		queryHpPenetrationDepth.bindValue(":exp_time", seq);
+		queryHpPenetrationDepth.bindValue(":ground_time", time);
+		queryHpPenetrationDepth.bindValue(":exp_id", this->experiment_id);
+		queryHpPenetrationDepth.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryHpPenetrationDepth.bindValue(":value", values.at(i));
+		if(!queryHpPenetrationDepth.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
 }
 
-void  StorageDatabase::logPressureLS(uint32_t seq, const std::array<int32_t, 5>& values, const QDateTime& time)
+void  StorageDatabase::logPressureLS(uint32_t seq, const std::array<int32_t, 5>& sensor1, const std::array<int32_t, 5>& sensor2, const QDateTime& time)
 {
-
+	for (size_t i = 0; i < sensor1.size(); i++) {
+		queryPressure.bindValue(":freq", "'LOW'");
+		queryPressure.bindValue(":exp_time", seq);
+		queryPressure.bindValue(":ground_time", time);
+		queryPressure.bindValue(":exp_id", this->experiment_id);
+		queryPressure.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryPressure.bindValue(":value", sensor1.at(i));
+		if(!queryPressure.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
+	for (size_t i = 0; i < sensor2.size(); i++) {
+		queryPressure.bindValue(":freq", "'LOW'");
+		queryPressure.bindValue(":exp_time", seq);
+		queryPressure.bindValue(":ground_time", time);
+		queryPressure.bindValue(":exp_id", this->experiment_id);
+		queryPressure.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryPressure.bindValue(":value", sensor2.at(i));
+		if(!queryPressure.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
 }
 
-void  StorageDatabase::logPressureHS(uint32_t seq, const std::array<int32_t, 20>& values, const QDateTime& time)
+void  StorageDatabase::logPressureHS(uint32_t seq, const std::array<int32_t, 20>& sensor1, const std::array<int32_t, 20>& sensor2, const QDateTime& time)
 {
+	for (size_t i = 0; i < sensor1.size(); i++) {
+		queryPressure.bindValue(":freq", "'HIGH'");
+		queryPressure.bindValue(":exp_time", seq);
+		queryPressure.bindValue(":ground_time", time);
+		queryPressure.bindValue(":exp_id", this->experiment_id);
+		queryPressure.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryPressure.bindValue(":value", sensor1.at(i));
+		if(!queryPressure.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
+	for (size_t i = 0; i < sensor2.size(); i++) {
+		queryPressure.bindValue(":freq", "'HIGH'");
+		queryPressure.bindValue(":exp_time", seq);
+		queryPressure.bindValue(":ground_time", time);
+		queryPressure.bindValue(":exp_id", this->experiment_id);
+		queryPressure.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryPressure.bindValue(":value", sensor2.at(i));
+		if(!queryPressure.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
+}
 
+void StorageDatabase::logBattVoltageLS(uint32_t seq, uint16_t value, const QDateTime &time)
+{
+	queryBattVoltage.bindValue(":freq", "'LOW'");
+	queryBattVoltage.bindValue(":exp_time", seq);
+	queryBattVoltage.bindValue(":ground_time", time);
+	queryBattVoltage.bindValue(":exp_id", this->experiment_id);
+	queryBattVoltage.bindValue(":value", value);
+	if(!queryBattVoltage.exec()) {
+		errorStrings.append(db.lastError().text());
+	}
+}
+
+void StorageDatabase::logBattVoltageHS(uint32_t seq, const std::array<uint16_t, 4> &values, const QDateTime &time)
+{
+	for (size_t i = 0; i < values.size(); i++) {
+		queryBattVoltage.bindValue(":freq", "'HIGH'");
+		queryBattVoltage.bindValue(":exp_time", seq);
+		queryBattVoltage.bindValue(":ground_time", time);
+		queryBattVoltage.bindValue(":exp_id", this->experiment_id);
+		queryBattVoltage.bindValue(":value", values.at(i));
+		if(!queryBattVoltage.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
+}
+
+void StorageDatabase::logMotorCurrentLS(uint32_t seq, uint16_t value, const QDateTime &time)
+{
+	queryMotorCurrent.bindValue(":freq", "'LOW'");
+	queryMotorCurrent.bindValue(":exp_time", seq);
+	queryMotorCurrent.bindValue(":ground_time", time);
+	queryMotorCurrent.bindValue(":exp_id", this->experiment_id);
+	queryMotorCurrent.bindValue(":value", value);
+	if(!queryMotorCurrent.exec()) {
+		errorStrings.append(db.lastError().text());
+	}
+}
+
+void StorageDatabase::logMotorCurrentHS(uint32_t seq, const std::array<uint16_t, 4> &values, const QDateTime &time)
+{
+	for (size_t i = 0; i < values.size(); i++) {
+		queryMotorCurrent.bindValue(":freq", "'HIGH'");
+		queryMotorCurrent.bindValue(":exp_time", seq);
+		queryMotorCurrent.bindValue(":ground_time", time);
+		queryMotorCurrent.bindValue(":exp_id", this->experiment_id);
+		queryMotorCurrent.bindValue(":value", values.at(i));
+		if(!queryMotorCurrent.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
+}
+
+void  StorageDatabase::logHpPower(uint32_t seq,
+								  const std::array<uint16_t, 3>& voltage,
+								  const std::array<uint16_t, 3>& current,
+								  bool sample_freq,
+								  const QDateTime& time)
+{
+	for (size_t i = 0; i < voltage.size(); i++) {
+		queryHpPower.bindValue(":freq", sample_freq ? "'HIGH'" : "'LOW'");
+		queryHpPower.bindValue(":exp_time", seq);
+		queryHpPower.bindValue(":ground_time", time);
+		queryHpPower.bindValue(":exp_id", this->experiment_id);
+		queryHpPower.bindValue(":sensor_id", static_cast<uint32_t>(i+1));
+		queryHpPower.bindValue(":voltage", voltage.at(i));
+		queryHpPower.bindValue(":current", current.at(i));
+		if(!queryHpPower.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
 }
 
 void  StorageDatabase::logStatus(uint32_t seq,
@@ -127,12 +358,63 @@ void  StorageDatabase::logStatus(uint32_t seq,
 								 uint8_t hpOvertemperature,
 								 int32_t motorPosition,
 								 uint8_t testModeEnabled,
+								 uint32_t experimentId,
+								 uint8_t piRecordingEnabled,
+								 uint32_t piStorageAvailable,
 								 const QDateTime& time)
 {
+	(void) exp_time;
+	// Experiment Id
+	if(this->experiment_id != experimentId) {
+		std::cout << "Experiment ID changed: " << this->experiment_id << " -> " << experimentId << std::endl;
+	}
+	this->experiment_id = experimentId;
 
-}
+	// State Machine
+	queryStateMachine.bindValue(":state", state);
+	queryStateMachine.bindValue(":exp_time", seq);
+	queryStateMachine.bindValue(":ground_time", time);
+	queryStateMachine.bindValue(":exp_id", this->experiment_id);
+	if(!queryStateMachine.exec()) {
+		errorStrings.append(db.lastError().text());
+	}
 
-void StorageDatabase::logExperimentId(uint32_t experimentId, const QDateTime &time)
-{
-
+	// Other Status types
+	//'LO', 'SOE', 'SODS', 'TEST_MODE', 'HP_OVERTEMP', 'MOTOR_POSITION', 'PI_RECORDING', 'PI_STORAGE'
+	static const QStringList status_types{"'LO'", "'SOE'", "'SODS'", "'TEST_MODE'", "'HP_OVERTEMP'", "'MOTOR_POSITION'", "'PI_RECORDING'", "'PI_STORAGE'"};
+	for(int i = 0; i < status_types.size(); i++) {
+		queryStatus.bindValue(":sensor_id", status_types.at(i));
+		switch(i) {
+		case 0:
+			queryStatus.bindValue(":value", lo);
+			break;
+		case 1:
+			queryStatus.bindValue(":value", soe);
+			break;
+		case 2:
+			queryStatus.bindValue(":value", sods);
+			break;
+		case 3:
+			queryStatus.bindValue(":value", testModeEnabled);
+			break;
+		case 4:
+			queryStatus.bindValue(":value", hpOvertemperature);
+			break;
+		case 5:
+			queryStatus.bindValue(":value", motorPosition);
+			break;
+		case 6:
+			queryStatus.bindValue(":value", piRecordingEnabled);
+			break;
+		case 7:
+			queryStatus.bindValue(":value", piStorageAvailable);
+			break;
+		}
+		queryStatus.bindValue(":exp_time", seq);
+		queryStatus.bindValue(":ground_time", time);
+		queryStatus.bindValue(":exp_id", this->experiment_id);
+		if(!queryStatus.exec()) {
+			errorStrings.append(db.lastError().text());
+		}
+	}
 }

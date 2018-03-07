@@ -38,9 +38,8 @@ public slots:
 	void logHpTemperature(uint32_t seq, const std::array<int32_t, 3>& values, bool sample_freq, const QDateTime& time);
 	void logHpPenetrationDepthLS(uint32_t seq, const std::array<int32_t, 3>& values, const QDateTime& time);
 	void logHpPenetrationDepthHS(uint32_t seq, const std::array<int32_t, 3>& values, const QDateTime& time);
-	//void logHpPower(uint32_t seq, const std::array<uint16_t, 3>& values, const QDateTime& time);
-	void logPressureLS(uint32_t seq, const std::array<int32_t, 5>& values, const QDateTime& time);
-	void logPressureHS(uint32_t seq, const std::array<int32_t, 20>& values, const QDateTime& time);
+	void logPressureLS(uint32_t seq, const std::array<int32_t, 5>& sensor1, const std::array<int32_t, 5>& sensor2, const QDateTime& time);
+	void logPressureHS(uint32_t seq, const std::array<int32_t, 20>& sensor1, const std::array<int32_t, 20>& sensor2, const QDateTime& time);
 	void logStatus(uint32_t seq,
 				   uint32_t exp_time,
 				   uint8_t lo,
@@ -50,19 +49,35 @@ public slots:
 				   uint8_t hpOvertemperature,
 				   int32_t motorPosition,
 				   uint8_t testModeEnabled,
+				   uint32_t experimentId,
+				   uint8_t piRecordingEnabled,
+				   uint32_t piStorageAvailable,
 				   const QDateTime& time);
-	void logExperimentId(uint32_t experimentId, const QDateTime& time);
+	void logHpPower(uint32_t seq,
+					const std::array<uint16_t, 3>& voltage,
+					const std::array<uint16_t, 3>& current,
+					bool sample_freq,
+					const QDateTime& time);
+	void logBattVoltageHS(uint32_t seq, const std::array<uint16_t, 4>& values, const QDateTime& time);
+	void logBattVoltageLS(uint32_t seq, uint16_t value, const QDateTime& time);
+	void logMotorCurrentHS(uint32_t seq, const std::array<uint16_t, 4>& values, const QDateTime& time);
+	void logMotorCurrentLS(uint32_t seq, uint16_t value, const QDateTime& time);
 
 private:
 	QSqlQuery queryRawData;
 	QSqlQuery queryIceTemperature;
 	QSqlQuery queryHpTemperature;
-	QSqlQuery queryHpPenetrationDepthLS;
-	QSqlQuery queryHpPenetrationDepthHS;
-	QSqlQuery queryPressureLS;
-	QSqlQuery queryPressureHS;
+	QSqlQuery queryHpPenetrationDepth;
+	QSqlQuery queryPressure;
+	QSqlQuery queryHpPower;
+	QSqlQuery queryBattVoltage;
+	QSqlQuery queryMotorCurrent;
+	QSqlQuery queryOtherTemperature;
+	QSqlQuery queryStateMachine;
 	QSqlQuery queryStatus;
-	QSqlQuery queryExperimentId;
+
+private:
+	uint32_t experiment_id = 0;
 
 private:
 	QSqlDatabase db;
