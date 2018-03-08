@@ -16,6 +16,8 @@ Application::Application(int& argc, char** argv, QSqlDatabase& qdb)
 	connect(&mainWindow, SIGNAL(testOnClicked()), this, SLOT(testOnButtonClicked()));
 	connect(&mainWindow, SIGNAL(testOffClicked()), this, SLOT(testOffButtonClicked()));
 
+	connect(&communicator, SIGNAL(logRawData(QByteArray,QDateTime)), &db, SLOT(logRawData(QByteArray,QDateTime)));
+
 	// TODO: remove hardcoded static backend
 	backend = std::make_shared<SerialPortBackend>();
 
@@ -111,9 +113,6 @@ void Application::connectDbButtonClicked()
 	if(!db.isOpen()) {
 		if(!db.open()) {
 			QMessageBox::critical(&mainWindow, "Database Error",  "Unable to connect to Database: " + db.lastError());
-		}
-		else {
-			QMessageBox::information(&mainWindow, "Database Connected",  "Successfully connected to Database.");
 		}
 	}
 	else {

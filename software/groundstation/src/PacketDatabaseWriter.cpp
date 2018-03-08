@@ -1,7 +1,8 @@
 #include "PacketDatabaseWriter.hpp"
 
 
-#define CONNECT(signal) QObject::connect(this, SIGNAL(signal), &db, SLOT(signal), Qt::QueuedConnection)
+#define CONNECT(signal) QObject::connect(this, SIGNAL(signal), &db, SLOT(signal))
+//, Qt::QueuedConnection)
 
 PacketDatabaseWriter::PacketDatabaseWriter(StorageDatabase& db) : db{db}
 {
