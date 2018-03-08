@@ -7,18 +7,17 @@
 PacketDatabaseWriter::PacketDatabaseWriter(StorageDatabase& db) : db{db}
 {
 	CONNECT(logRawData(QByteArray,QDateTime));
-	CONNECT(logIceTemperature(uint32_t,std::array<int32_t,_Tp2>,bool,QDateTime));
-	CONNECT(logOtherTemperature(uint32_t,std::array<int16_t,_Tp2>,bool,QDateTime));
-	CONNECT(logHpTemperature(uint32_t,std::array<int32_t,_Tp2>,bool,QDateTime));
-	CONNECT(logHpPenetrationDepthLS(uint32_t,std::array<int32_t,_Tp2>,QDateTime));
-	CONNECT(logHpPenetrationDepthHS(uint32_t,std::array<int32_t,_Tp2>,QDateTime));
-	CONNECT(logPressureLS(uint32_t,std::array<int32_t,_Tp2>,std::array<int32_t,_Tp2>,QDateTime));
-	CONNECT(logPressureHS(uint32_t,std::array<int32_t,_Tp2>,std::array<int32_t,_Tp2>,QDateTime));
+	CONNECT(logIceTemperature(uint32_t,std::array<int32_t, 27>,bool,QDateTime));
+	CONNECT(logHpTemperature(uint32_t,std::array<int32_t, 3>,bool,QDateTime));
+	CONNECT(logHpPenetrationDepthLS(uint32_t,std::array<int32_t,3>,QDateTime));
+	CONNECT(logHpPenetrationDepthHS(uint32_t,std::array<int32_t, 3>,QDateTime));
+	CONNECT(logPressureLS(uint32_t,std::array<int32_t, 5>,std::array<int32_t, 5>,QDateTime));
+	CONNECT(logPressureHS(uint32_t,std::array<int32_t, 20>,std::array<int32_t, 20>,QDateTime));
 	CONNECT(logStatus(uint32_t,uint32_t,uint8_t,uint8_t,uint8_t,uint8_t,uint8_t,int32_t,uint8_t,uint32_t,uint8_t,uint32_t,QDateTime));
-	CONNECT(logHpPower(uint32_t,std::array<uint16_t,_Tp2>,std::array<uint16_t,_Tp2>,bool,QDateTime));
-	CONNECT(logBattVoltageHS(uint32_t,std::array<uint16_t,_Tp2>,QDateTime));
+	CONNECT(logHpPower(uint32_t,std::array<uint16_t, 3>,std::array<uint16_t, 3>,bool,QDateTime));
+	CONNECT(logBattVoltageHS(uint32_t,std::array<uint16_t, 4>,QDateTime));
 	CONNECT(logBattVoltageLS(uint32_t,uint16_t,QDateTime));
-	CONNECT(logMotorCurrentHS(uint32_t,std::array<uint16_t,_Tp2>,QDateTime));
+	CONNECT(logMotorCurrentHS(uint32_t,std::array<uint16_t, 4>,QDateTime));
 	CONNECT(logBattVoltageLS(uint32_t,uint16_t,QDateTime));
 }
 

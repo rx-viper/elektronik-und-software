@@ -12,45 +12,9 @@ void StorageDatabase::prepareQueries() {
 		errorStrings.append(queryRawData.lastError().text());
 		errorStrings.append(db.driver()->lastError().text());
 	}
-
-	//	generator script:
-	//	for i in range(0, 3):
-	//		for j in range(0, 9):
-	//			#print("\"({}, {}, :freq, :value{}{}, :exp_time, :ground_time)\"".format(i, j, i, j))
-	//			print("\"SELECT {} AS sample_id, {} AS sensor_id, :value{}{} as value FROM DUAL UNION ALL \"".format(i, j, i, j))
 	if(!queryIceTemperature.prepare("INSERT INTO data_ice_sample_temperature "
-									"(ice_sample_id, sensor_id, value, sample_freqency, experiment_time, "
-									"groundstation_time, experiment_id) "
-									"SELECT v.sample_id, v.sensor_id, v.value, :freq, :exp_time, :ground_time, :exp_id "
-									"FROM ( "
-									"SELECT 0 AS sample_id, 0 AS sensor_id, :value00 as value FROM DUAL UNION ALL "
-									"SELECT 0 AS sample_id, 1 AS sensor_id, :value01 as value FROM DUAL UNION ALL "
-									"SELECT 0 AS sample_id, 2 AS sensor_id, :value02 as value FROM DUAL UNION ALL "
-									"SELECT 0 AS sample_id, 3 AS sensor_id, :value03 as value FROM DUAL UNION ALL "
-									"SELECT 0 AS sample_id, 4 AS sensor_id, :value04 as value FROM DUAL UNION ALL "
-									"SELECT 0 AS sample_id, 5 AS sensor_id, :value05 as value FROM DUAL UNION ALL "
-									"SELECT 0 AS sample_id, 6 AS sensor_id, :value06 as value FROM DUAL UNION ALL "
-									"SELECT 0 AS sample_id, 7 AS sensor_id, :value07 as value FROM DUAL UNION ALL "
-									"SELECT 0 AS sample_id, 8 AS sensor_id, :value08 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 0 AS sensor_id, :value10 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 1 AS sensor_id, :value11 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 2 AS sensor_id, :value12 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 3 AS sensor_id, :value13 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 4 AS sensor_id, :value14 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 5 AS sensor_id, :value15 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 6 AS sensor_id, :value16 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 7 AS sensor_id, :value17 as value FROM DUAL UNION ALL "
-									"SELECT 1 AS sample_id, 8 AS sensor_id, :value18 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 0 AS sensor_id, :value20 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 1 AS sensor_id, :value21 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 2 AS sensor_id, :value22 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 3 AS sensor_id, :value23 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 4 AS sensor_id, :value24 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 5 AS sensor_id, :value25 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 6 AS sensor_id, :value26 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 7 AS sensor_id, :value27 as value FROM DUAL UNION ALL "
-									"SELECT 2 AS sample_id, 8 AS sensor_id, :value28 as value FROM DUAL "
-									") v"
+									"(ice_sample_id, sensor_id, value, sample_freqency, experiment_time, groundstation_time, experiment_id) "
+									"VALUES (:sample_id, :sensor_id, :value, :freq, :exp_time, :ground_time, :exp_id)"
 									))
 	{
 		errorStrings.append(db.lastError().text());
@@ -82,7 +46,7 @@ void StorageDatabase::prepareQueries() {
 							  ))
 	{
 		errorStrings.append(db.lastError().text());
-		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(queryPressure.lastError().text());
 		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryHpPower.prepare("INSERT INTO data_heat_probe_power "
@@ -179,17 +143,20 @@ void StorageDatabase::logRawData(const QByteArray& data, const QDateTime& time)
 
 void  StorageDatabase::logIceTemperature(uint32_t seq, const std::array<int32_t, 27>& values, bool sample_freq, const QDateTime& time)
 {
-	queryIceTemperature.bindValue(0, sample_freq ? "HIGH" : "LOW");
-	queryIceTemperature.bindValue(1, seq);
-	queryIceTemperature.bindValue(2, time);
-	queryIceTemperature.bindValue(3, this->experiment_id);
 	for (size_t i = 0; i < 27; i++) {
-		queryIceTemperature.bindValue(i+3, values.at(i));
-	}
-	if(!queryIceTemperature.exec()) {
-		errorStrings.append(db.lastError().text());
-		std::cout << db.lastError().text().toLocal8Bit().constData() << std::endl << queryRawData.lastError().text().toLocal8Bit().constData() << std::endl;
-		std::cout << queryRawData.lastQuery().toLocal8Bit().constData() << std::endl;
+		queryIceTemperature.bindValue(0, 0);
+		queryIceTemperature.bindValue(1, QString::number(i));
+		queryIceTemperature.bindValue(2, values.at(i));
+		queryIceTemperature.bindValue(3, sample_freq ? "HIGH" : "LOW");
+		queryIceTemperature.bindValue(4, seq);
+		queryIceTemperature.bindValue(5, time);
+		queryIceTemperature.bindValue(6, this->experiment_id);
+
+		if(!queryIceTemperature.exec()) {
+			errorStrings.append(db.lastError().text());
+			std::cout << db.lastError().text().toLocal8Bit().constData() << std::endl << queryIceTemperature.lastError().text().toLocal8Bit().constData() << std::endl;
+			std::cout << queryIceTemperature.lastQuery().toLocal8Bit().constData() << std::endl;
+		}
 	}
 }
 
