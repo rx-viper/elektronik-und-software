@@ -5,8 +5,8 @@
 namespace viper
 {
 
-Application::Application(int& argc, char** argv)
-	: QApplication{argc, argv}, packetDispatcher{*this}, backendConfigWidget{nullptr}, db{}, packetDatabaseWriter{this->db}
+Application::Application(int& argc, char** argv, QSqlDatabase& qdb)
+	: QApplication{argc, argv}, packetDispatcher{*this}, backendConfigWidget{nullptr}, db{qdb}, packetDatabaseWriter{this->db}
 {
 	guiUpdateTimer.setSingleShot(false);
 	guiUpdateTimer.start(20);
@@ -108,11 +108,19 @@ void Application::connectSerialButtonClicked()
 
 void Application::connectDbButtonClicked()
 {
-	if(!db.open()) {
-		QMessageBox::critical(&mainWindow, "Database Error",  "Unable to connect to Database: " + db.lastError());
+	if(!db.isOpen()) {
+		if(!db.open()) {
+			QMessageBox::critical(&mainWindow, "Database Error",  "Unable to connect to Database: " + db.lastError());
+		}
+		else {
+			QMessageBox::information(&mainWindow, "Database Connected",  "Successfully connected to Database.");
+		}
 	}
 	else {
-		// disable button?
+		QStringList errors = db.getErrors();
+		for(int i = 0; i < errors.size(); i++) {
+			std::cout << "[DB error] " << errors.at(i).toLocal8Bit().constData() << std::endl;
+		}
 	}
 }
 

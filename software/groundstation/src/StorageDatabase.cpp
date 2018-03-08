@@ -1,18 +1,16 @@
 #include "StorageDatabase.hpp"
 #include <iostream>
 
-StorageDatabase::StorageDatabase(const QString& host, const QString& user,
-								 const QString& password, const QString& database)
+StorageDatabase::StorageDatabase(QSqlDatabase& db_) :
+	db{db_}
 {
-	db = QSqlDatabase::addDatabase("QPSQL");
-	db.setHostName(host);
-	db.setUserName(user);
-	db.setPassword(password);
-	db.setDatabaseName(database);
+}
 
+void StorageDatabase::prepareQueries() {
 	if(!queryRawData.prepare("INSERT INTO raw_data (groundstation_time, serial_data, direction) VALUES (:time, :data, 'RX')"))
 	{
-		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 
 	//	generator script:
@@ -56,6 +54,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 									))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryHpTemperature.prepare("INSERT INTO data_heat_probe_temperature "
 								   "(sensor_id, value, sample_freqency, experiment_time, groundstation_time, "
@@ -69,6 +69,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 								   ))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryHpPenetrationDepth.prepare("INSERT INTO data_heat_probe_penetration_depth "
 								   "(sensor_id, value, sample_freqency, experiment_time, groundstation_time, "
@@ -82,6 +84,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 								   ))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryPressure.prepare("INSERT INTO data_pressure "
 							  "(sensor_id, pressure, temperature, sample_freqency, experiment_time, groundstation_time, "
@@ -90,6 +94,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 							  ))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryHpPower.prepare("INSERT INTO data_heat_probe_power "
 							 "(sensor_id, voltage, current, sample_freqency, experiment_time, groundstation_time, experiment_id) "
@@ -97,6 +103,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 							 ))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryBattVoltage.prepare("INSERT INTO data_battery_voltage "
 								 "(value, sample_freqency, experiment_time, groundstation_time, experiment_id) "
@@ -104,6 +112,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 								 ))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryMotorCurrent.prepare("INSERT INTO data_motor_current "
 								  "(value, sample_freqency, experiment_time, groundstation_time, experiment_id) "
@@ -111,6 +121,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 								  ))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryOtherTemperature.prepare("INSERT INTO data_other_temperature "
 									  "(sensor_id, value, sample_freqency, experiment_time, groundstation_time, experiment_id) "
@@ -118,6 +130,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 									  ))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryStateMachine.prepare("INSERT INTO data_state_machine "
 								  "(state, experiment_time, groundstation_time, experiment_id) "
@@ -125,6 +139,8 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 								  ))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
 	}
 	if(!queryStatus.prepare("INSERT INTO data_status "
 							"(sensor_id, value, experiment_time, groundstation_time, experiment_id) "
@@ -132,6 +148,12 @@ StorageDatabase::StorageDatabase(const QString& host, const QString& user,
 							))
 	{
 		errorStrings.append(db.lastError().text());
+		errorStrings.append(queryRawData.lastError().text());
+		errorStrings.append(db.driver()->lastError().text());
+	}
+
+	for (int i = 0; i < errorStrings.size(); ++i) {
+		 std::cout << "Database Query Preparation Errors: " << errorStrings.at(i).toLocal8Bit().constData() << std::endl;
 	}
 }
 
@@ -139,6 +161,20 @@ StorageDatabase::~StorageDatabase()
 {
 	db.commit();
 	db.close();
+}
+
+bool StorageDatabase::open() {
+	std::cout << "Connecting to Database... ";
+	if(db.open() && db.isValid() && !db.isOpenError()) {
+		std::cout << "Success!" << std::endl;
+		prepareQueries();
+		return true;
+	}
+	else {
+		std::cout << "Error!" << std::endl;
+		std::cout << db.lastError().text().toLocal8Bit().constData() << std::endl;
+		return false;
+	}
 }
 
 void StorageDatabase::logRawData(const QByteArray& data, const QDateTime& time)

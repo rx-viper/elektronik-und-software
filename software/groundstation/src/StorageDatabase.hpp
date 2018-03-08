@@ -14,15 +14,16 @@ class StorageDatabase : public QThread
 {
 	Q_OBJECT
 public:
-	StorageDatabase(const QString& host = "::1",
-					const QString& user = "viper",
-					const QString& password = "viper",
-					const QString& database = "viper");
+	StorageDatabase(QSqlDatabase& qdb);
 
 	~StorageDatabase();
 
+private:
+	void prepareQueries();
+
 public:
-	bool open() {return db.open();}
+	bool open();
+	bool isOpen() {return db.isOpen();}
 
 public:
 	int error() const {return errorStrings.length();}
@@ -64,6 +65,9 @@ public slots:
 	void logMotorCurrentLS(uint32_t seq, uint16_t value, const QDateTime& time);
 
 private:
+	QSqlDatabase db;
+
+private:
 	QSqlQuery queryRawData;
 	QSqlQuery queryIceTemperature;
 	QSqlQuery queryHpTemperature;
@@ -78,9 +82,6 @@ private:
 
 private:
 	uint32_t experiment_id = 0;
-
-private:
-	QSqlDatabase db;
 
 private:
 	QStringList errorStrings;
