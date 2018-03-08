@@ -262,9 +262,11 @@ Motor::updateEncoder()
 
 XPCC_ISR(EXTI9_5)
 {
+	Board::Ui::DebugUartRx::set();
 	Board::Motor::HallU::acknowledgeExternalInterruptFlag();
 	Board::Motor::HallV::acknowledgeExternalInterruptFlag();
 	Board::Motor::HallW::acknowledgeExternalInterruptFlag();
 	viper::onboard::Motor::doCommutation();
+	Board::Ui::DebugUartRx::reset();
 }
 

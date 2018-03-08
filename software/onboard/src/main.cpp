@@ -79,6 +79,7 @@ main()
 		communicator.update();
 		communicationFlashWriter.run();
 		piCommunicator.update();
+		Board::Ui::DebugUartTx::toggle();
 	}
 
 	return 0;

@@ -156,7 +156,8 @@ namespace Ui {
 	using Button1		= GpioInputG13;	// SW1
 	using Button2		= GpioInputG14;	// SW1
 
-	using DebugUartRx	= GpioInputA10;
+	//using DebugUartRx	= GpioInputA10;
+	using DebugUartRx	= GpioOutputA10;
 	using DebugUartTx	= GpioOutputA9;
 	using DebugUart		= Usart1;
 	constexpr uint32_t DebugBaudrate = DebugUart::Baudrate::B115200;
@@ -171,8 +172,10 @@ namespace Ui {
 		Button1::setInput(Gpio::InputType::PullUp);
 		Button2::setInput(Gpio::InputType::PullUp);
 
-		DebugUartRx::connect(DebugUart::Rx);
-		DebugUartTx::connect(DebugUart::Tx);
+		//DebugUartRx::connect(DebugUart::Rx);
+		//DebugUartTx::connect(DebugUart::Tx);
+		DebugUartTx::setOutput(false);
+		DebugUartRx::setOutput(false);
 		DebugUart::initialize<systemClock, DebugBaudrate>(12);
 	}
 }
