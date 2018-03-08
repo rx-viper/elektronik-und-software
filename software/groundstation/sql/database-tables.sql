@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS raw_data(
    _id BIGSERIAL PRIMARY KEY,
    _database_time TIMESTAMP NOT NULL DEFAULT NOW(),
    groundstation_time TIMESTAMP NOT NULL,
-   serial_data BYTEA NOT NULL,
+   serial_data TEXT NOT NULL,
    direction SER_DIRECTION DEFAULT 'RX'
 );
 
