@@ -39,8 +39,8 @@ public slots:
 	void logHpTemperature(uint32_t seq, const std::array<int32_t, 3>& values, bool sample_freq, const QDateTime& time);
 	void logHpPenetrationDepthLS(uint32_t seq, const std::array<int32_t, 3>& values, const QDateTime& time);
 	void logHpPenetrationDepthHS(uint32_t seq, const std::array<int32_t, 3>& values, const QDateTime& time);
-	void logPressureLS(uint32_t seq, const std::array<int32_t, 5>& sensor1, const std::array<int32_t, 5>& sensor2, const QDateTime& time);
-	void logPressureHS(uint32_t seq, const std::array<int32_t, 20>& sensor1, const std::array<int32_t, 20>& sensor2, const QDateTime& time);
+	void logPressureLS(uint32_t seq, const std::array<uint16_t, 5>& sensor1, const std::array<uint16_t, 5>& sensor2, const QDateTime& time);
+	void logPressureHS(uint32_t seq, const std::array<uint16_t, 20>& sensor1, const std::array<uint16_t, 20>& sensor2, const QDateTime& time);
 	void logStatus(uint32_t seq,
 				   uint32_t exp_time,
 				   uint8_t lo,

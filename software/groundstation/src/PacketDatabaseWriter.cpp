@@ -11,8 +11,8 @@ PacketDatabaseWriter::PacketDatabaseWriter(StorageDatabase& db) : db{db}
 	CONNECT(logHpTemperature(uint32_t,std::array<int32_t, 3>,bool,QDateTime));
 	CONNECT(logHpPenetrationDepthLS(uint32_t,std::array<int32_t,3>,QDateTime));
 	CONNECT(logHpPenetrationDepthHS(uint32_t,std::array<int32_t, 3>,QDateTime));
-	CONNECT(logPressureLS(uint32_t,std::array<int32_t, 5>,std::array<int32_t, 5>,QDateTime));
-	CONNECT(logPressureHS(uint32_t,std::array<int32_t, 20>,std::array<int32_t, 20>,QDateTime));
+	CONNECT(logPressureLS(uint32_t,std::array<uint16_t, 5>,std::array<uint16_t, 5>,QDateTime));
+	CONNECT(logPressureHS(uint32_t,std::array<uint16_t, 20>,std::array<uint16_t, 20>,QDateTime));
 	CONNECT(logStatus(uint32_t,uint32_t,uint8_t,uint8_t,uint8_t,uint8_t,uint8_t,int32_t,uint8_t,uint32_t,uint8_t,uint32_t,QDateTime));
 	CONNECT(logHpPower(uint32_t,std::array<uint16_t, 3>,std::array<uint16_t, 3>,bool,QDateTime));
 	CONNECT(logBattVoltageHS(uint32_t,std::array<uint16_t, 4>,QDateTime));
@@ -40,7 +40,7 @@ void PacketDatabaseWriter::operator()(const PressureLS& pressures)
 	static_assert (pressures.sensor1.size(), "array size is 0");
 	static_assert (pressures.sensor2.size(), "array size is 0");
 
-	//emit logPressureLS(pressures.sequenceNumber, pressures.sensor1, pressures.sensor2, QDateTime::currentDateTime());
+	emit logPressureLS(pressures.sequenceNumber, pressures.sensor1, pressures.sensor2, QDateTime::currentDateTime());
 }
 
 void PacketDatabaseWriter::operator()(const PressureHS& pressures)
@@ -48,7 +48,7 @@ void PacketDatabaseWriter::operator()(const PressureHS& pressures)
 	static_assert (pressures.sensor1.size(), "array size is 0");
 	static_assert (pressures.sensor2.size(), "array size is 0");
 
-	//emit logPressureHS(pressures.sequenceNumber, pressures.sensor1, pressures.sensor2, QDateTime::currentDateTime());
+	emit logPressureHS(pressures.sequenceNumber, pressures.sensor1, pressures.sensor2, QDateTime::currentDateTime());
 }
 
 void PacketDatabaseWriter::operator()(const HpTemperatureLS& hpTemperatures)

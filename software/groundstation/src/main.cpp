@@ -11,10 +11,10 @@ Q_DECLARE_METATYPE(IceArray)
 using DepthArray = std::array<int32_t, 3>;
 Q_DECLARE_METATYPE(DepthArray)
 
-using  PressureLSArray = std::array<int32_t, 5>;
+using  PressureLSArray = std::array<uint16_t, 5>;
 Q_DECLARE_METATYPE(PressureLSArray)
 
-using  PressureHSArray = std::array<int32_t, 20>;
+using  PressureHSArray = std::array<uint16_t, 20>;
 Q_DECLARE_METATYPE(PressureHSArray)
 
 using HpPowerHSArray = std::array<uint16_t, 3>;
@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
 	qRegisterMetaType<uint16_t>("uint16_t");
 	qRegisterMetaType<uint8_t>("uint8_t");
 	qRegisterMetaType<std::array<int32_t, 3>>("std::array<int32_t, 3>");
-	qRegisterMetaType<std::array<int32_t, 5>>("std::array<int32_t, 5>");
-	qRegisterMetaType<std::array<int32_t, 20>>("std::array<int32_t, 20>");
+	qRegisterMetaType<std::array<uint16_t, 5>>("std::array<uint16_t, 5>");
+	qRegisterMetaType<std::array<uint16_t, 20>>("std::array<uint16_t, 20>");
 	qRegisterMetaType<std::array<uint16_t, 3>>("std::array<uint16_t, 3>");
 	qRegisterMetaType<std::array<uint16_t, 4>>("std::array<uint16_t, 4>");
 

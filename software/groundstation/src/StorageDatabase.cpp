@@ -226,10 +226,10 @@ void  StorageDatabase::logHpPenetrationDepthHS(uint32_t seq, const std::array<in
 	}
 }
 
-void  StorageDatabase::logPressureLS(uint32_t seq, const std::array<int32_t, 5>& sensor1, const std::array<int32_t, 5>& sensor2, const QDateTime& time)
+void  StorageDatabase::logPressureLS(uint32_t seq, const std::array<uint16_t, 5>& sensor1, const std::array<uint16_t, 5>& sensor2, const QDateTime& time)
 {
 	for (size_t i = 0; i < sensor1.size(); i++) {
-		queryPressure.bindValue(3, "HIGH");
+		queryPressure.bindValue(3, "LOW");
 		queryPressure.bindValue(4, seq);
 		queryPressure.bindValue(5, time);
 		queryPressure.bindValue(6, this->experiment_id);
@@ -241,7 +241,7 @@ void  StorageDatabase::logPressureLS(uint32_t seq, const std::array<int32_t, 5>&
 		}
 	}
 	for (size_t i = 0; i < sensor2.size(); i++) {
-		queryPressure.bindValue(3, "HIGH");
+		queryPressure.bindValue(3, "LOW");
 		queryPressure.bindValue(4, seq);
 		queryPressure.bindValue(5, time);
 		queryPressure.bindValue(6, this->experiment_id);
@@ -254,7 +254,7 @@ void  StorageDatabase::logPressureLS(uint32_t seq, const std::array<int32_t, 5>&
 	}
 }
 
-void  StorageDatabase::logPressureHS(uint32_t seq, const std::array<int32_t, 20>& sensor1, const std::array<int32_t, 20>& sensor2, const QDateTime& time)
+void  StorageDatabase::logPressureHS(uint32_t seq, const std::array<uint16_t, 20>& sensor1, const std::array<uint16_t, 20>& sensor2, const QDateTime& time)
 {
 	for (size_t i = 0; i < sensor1.size(); i++) {
 		queryPressure.bindValue(3, "HIGH");
