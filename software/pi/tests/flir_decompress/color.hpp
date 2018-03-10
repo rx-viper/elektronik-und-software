@@ -1,8 +1,7 @@
-#include "CameraThread.hpp"
+#ifndef COLOR_HPP
+#define COLOR_HPP
 
-#include <fstream>
-#include <algorithm>
-#include "FileUtil.hpp"
+#include <array>
 
 struct Color
 {
@@ -270,106 +269,4 @@ const std::array<Color, 256> colorTable = {
 	Color{255, 255, 0}
 };
 
-void CameraThread::start()
-{
-	stop();
-
-	camera.open();
-	const auto cameraWidth = camera.width();
-	const auto cameraHeight = camera.height();
-	cameraImage.resize(cameraWidth * cameraHeight);
-
-	fbSize = fbRenderer.open();
-	fbCameraImage.resize(fbSize.width * fbSize.height);
-
-	jpegEncoder = std::make_unique<JpegEncoder>(cameraWidth, cameraHeight, TJPF_GRAY, TJSAMP_GRAY);
-	cameraScaler = std::make_unique<SwScale>(cameraWidth, cameraHeight, AV_PIX_FMT_GRAY8, fbSize.width, fbSize.height, AV_PIX_FMT_RGB32);
-	std::cout << "1LEPTON" << std::endl;
-	leptonThread.start();
-	std::cout << "2LEPTON" << std::endl;
-
-	thread = std::thread{std::bind(&CameraThread::run, this)};
-}
-
-void CameraThread::stop()
-{
-	if(thread.joinable()) {
-		stopThread = true;
-		thread.join();
-		thread = std::thread{};
-	}
-
-	camera.close();
-
-	fbRenderer.close();
-
-	jpegEncoder = nullptr;
-	cameraScaler = nullptr;
-	leptonThread.stop();
-}
-
-void CameraThread::setFileStorageEnabled(bool enabled)
-{
-	storageEnabled = enabled;
-	leptonThread.setFileStorageEnabled(enabled);
-}
-
-bool CameraThread::isFileStorageEnabled()
-{
-	return storageEnabled;
-}
-
-void CameraThread::run()
-{
-	std::vector<uint32_t> fbLeptonImage;
-	fbLeptonImage.resize(Lepton3::Frame::width*Lepton3::Frame::height);
-
-	while(!stopThread) {
-		try {
-			if(!camera.waitForImage(1000ms)) {
-				std::cerr << "IDS Camera timeout" << std::endl;
-				continue;
-			}
-			camera.readImage(cameraImage);
-
-			cameraScaler->scale(cameraImage.data(), camera.width(), fbCameraImage.data(), fbSize.width * sizeof(uint32_t));
-
-			{
-				auto leptonFrameLock = leptonThread.lock();
-				const Lepton3::Frame& frame = leptonThread.frame();
-				int min = *std::min_element(frame.data.begin(), frame.data.end());
-				int max = *std::max_element(frame.data.begin(), frame.data.end());
-				
-				if(max == min) {
-					max = min + 1;
-				}
-
-				for(int y = 0; y < Lepton3::Frame::height; ++y) {
-					for(int x = 0; x < Lepton3::Frame::width; ++x) {
-						float floatValue = float(frame.data[x + y * Lepton3::Frame::width] - min) / (max-min) * 255;
-						const auto color = colorTable[(uint8_t) floatValue];
-						uint8_t r = color.r;
-						uint8_t g = color.g;
-						uint8_t b = color.b;
-						const uint32_t rgb = b | (g << 8) | (r << 16);
-						fbLeptonImage[x + y * Lepton3::Frame::width] = rgb;
-					}
-				}
-				fbRenderer.draw(fbCameraImage.data(), {fbSize.width,fbSize.height}, 0, 0);	
-				fbRenderer.draw(fbLeptonImage.data(), {Lepton3::Frame::width,Lepton3::Frame::height}, 720-160, 576-120);
-			}
-
-			fbRenderer.swapBuffers();
-
-			if(storageEnabled) {
-				jpegEncoder->compress(cameraImage.data(), jpegQuality);
-
-				std::string filename = nextFilename(filePath, "_camera.jpg");
-				std::ofstream file(filename, std::ofstream::binary);
-				file.write(reinterpret_cast<const char*>(jpegEncoder->jpegData()), jpegEncoder->jpegSize());
-			}
-		} catch(const std::exception& e) {
-			std::cerr << "Error: " << e.what() << std::endl;
-		}
-    }
-}
+#endif // COLOR_HPP
