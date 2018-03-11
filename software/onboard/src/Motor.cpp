@@ -146,6 +146,11 @@ int32_t Motor::getPosition()
 	return currentPosition;
 }
 
+Motor::ControllerMode Motor::getMode()
+{
+	return controllerMode;
+}
+
 void Motor::update()
 {
 	if(controllerMode == ControllerMode::HomingActive) {
@@ -181,6 +186,8 @@ void Motor::update()
 			setPwmValue(currentPwm, true);
 		}
 	}
+
+	doCommutation();
 }
 
 void xpcc_always_inline
@@ -257,16 +264,5 @@ Motor::updateEncoder()
 }
 
 }
-}
-
-
-XPCC_ISR(EXTI9_5)
-{
-	Board::Ui::DebugUartRx::set();
-	Board::Motor::HallU::acknowledgeExternalInterruptFlag();
-	Board::Motor::HallV::acknowledgeExternalInterruptFlag();
-	Board::Motor::HallW::acknowledgeExternalInterruptFlag();
-	viper::onboard::Motor::doCommutation();
-	Board::Ui::DebugUartRx::reset();
 }
 

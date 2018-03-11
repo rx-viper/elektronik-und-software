@@ -303,20 +303,9 @@ namespace Motor {
 	initializeHall()
 	{
 		// Timer is not used for commutation
-		// Bldc motor commutation is done using external gpio pin interrupts
 		HallU::setInput(Gpio::InputType::PullUp);
 		HallV::setInput(Gpio::InputType::PullUp);
 		HallW::setInput(Gpio::InputType::PullUp);
-
-		HallU::setInputTrigger(Gpio::InputTrigger::BothEdges);
-		HallU::enableExternalInterrupt();
-		HallU::enableExternalInterruptVector(HallInterruptPriority);
-		HallV::setInputTrigger(Gpio::InputTrigger::BothEdges);
-		HallV::enableExternalInterrupt();
-		HallV::enableExternalInterruptVector(HallInterruptPriority);
-		HallW::setInputTrigger(Gpio::InputTrigger::BothEdges);
-		HallW::enableExternalInterrupt();
-		HallW::enableExternalInterruptVector(HallInterruptPriority);
 	}
 
 	inline void

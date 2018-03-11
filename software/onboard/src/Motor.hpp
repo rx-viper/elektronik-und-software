@@ -58,7 +58,6 @@ public:
 
 	static void doCommutation();
 
-private:
 	enum class ControllerMode
 	{
 		Disabled,
@@ -67,6 +66,9 @@ private:
 		Position
 	};
 
+	static ControllerMode getMode();
+
+private:
 	enum class PwmMode
 	{
 		Off,
