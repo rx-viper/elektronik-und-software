@@ -97,6 +97,10 @@ private:
 	static xpcc::Pid<float> positionController;
 	static xpcc::Timeout homingLagTimeout;
 
+	static constexpr size_t HallValue = 10;
+	static constexpr size_t NumHallAverages = 5;
+	static constexpr uint32_t HallHighThreshold = 4;
+	static xpcc::filter::MovingAverage<uint32_t, NumHallAverages> hallFilter[3];
 
 	static constexpr std::array<OutputSet, 7> outputSets = {{
 		{PwmMode::Off,		PwmMode::Off,		PwmMode::Off},

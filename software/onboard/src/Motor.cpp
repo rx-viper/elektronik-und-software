@@ -30,6 +30,7 @@ namespace onboard
 
 constexpr std::array<Motor::OutputSet, 7> Motor::outputSets;
 constexpr std::array<uint_fast8_t, 8> Motor::hallMap;
+xpcc::filter::MovingAverage<uint32_t, Motor::NumHallAverages> Motor::hallFilter[3];
 
 volatile Motor::ControllerMode Motor::controllerMode = Motor::ControllerMode::Disabled;
 bool Motor::homed = false;
@@ -193,6 +194,12 @@ void Motor::update()
 void xpcc_always_inline
 Motor::doCommutation()
 {
+	for (unsigned i = 0; i < NumHallAverages; i++) {
+		hallFilter[0].update(Board::Motor::HallU::read() ? HallValue : 0);
+		hallFilter[1].update(Board::Motor::HallV::read() ? HallValue : 0);
+		hallFilter[2].update(Board::Motor::HallW::read() ? HallValue : 0);
+	}
+
 	if(controllerMode == ControllerMode::Disabled || currentPwm == 0) {
 		setPwmMode(1, PwmMode::Off);
 		setPwmMode(2, PwmMode::Off);
@@ -205,9 +212,19 @@ Motor::doCommutation()
 		return;
 	}
 
-	uint8_t hallInput = (Board::Motor::HallU::read() ? 0b010 : 0);
-	hallInput |= (Board::Motor::HallV::read() ? 0b001 : 0);
-	hallInput |= (Board::Motor::HallW::read() ? 0b100 : 0);
+	uint8_t hallInput = 0;
+	if(hallFilter[0].getValue() >= HallHighThreshold) {
+		hallInput |= 0b010;
+	}
+	if(hallFilter[1].getValue() >= HallHighThreshold) {
+		hallInput |= 0b001;
+	}
+	if(hallFilter[2].getValue() >= HallHighThreshold) {
+		hallInput |= 0b100;
+	}
+
+	// Output filtered HallU
+	Board::Ui::DebugUartRx::set(bool(hallInput & 0b010));
 
 	const auto& output = outputSets[hallMap[hallInput]];
 
