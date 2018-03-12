@@ -126,12 +126,12 @@ main()
 					break;
 				}
 
-				if(address != 0) {
+				/*if(address != 0) {
 					if(std::equal(buffer1.begin(), buffer1.begin() + HeaderSize, InvalidHeader.begin())) {
 						logger << "Empty block found at address " << address << xpcc::endl;
 						break;
 					}
-				}
+				}*/
 				DumpUart::writeBlocking(buffer1.data() +  HeaderSize, DataSize);
 				address += BlockSize;
 			}
