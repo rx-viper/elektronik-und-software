@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name LW_G6SP)(type Github)(uri https://github.com/kicad-rleh/LW_G6SP.pretty)(options "")(descr ""))
+  (lib (name cupola-cable-board)(type KiCad)(uri "$(KIPRJMOD)")(options "")(descr ""))
 )
