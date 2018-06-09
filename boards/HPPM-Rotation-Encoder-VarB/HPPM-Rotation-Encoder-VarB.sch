@@ -406,7 +406,6 @@ NoConn ~ 6200 3950
 NoConn ~ 6200 4050
 NoConn ~ 6200 3550
 NoConn ~ 6200 3750
-NoConn ~ 6200 3650
 $Comp
 L GND #PWR015
 U 1 1 5B1096F8
@@ -419,7 +418,7 @@ F 3 "" H 6400 3950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6400 3950 6400 3850
+	6400 3650 6400 3950
 Wire Wire Line
 	6400 3850 6200 3850
 $Comp
@@ -477,4 +476,7 @@ Wire Wire Line
 Wire Wire Line
 	4900 3150 4900 3450
 Connection ~ 4900 3450
+Wire Wire Line
+	6200 3650 6400 3650
+Connection ~ 6400 3850
 $EndSCHEMATC
