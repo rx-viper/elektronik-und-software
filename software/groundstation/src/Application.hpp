@@ -25,7 +25,7 @@ class Application : public QApplication
 {
 	Q_OBJECT
 public:
-	explicit Application(int& argc, char** argv);
+	explicit Application(int& argc, char** argv, QSqlDatabase& qdb);
 
 	ExperimentStatus& experimentStatus();
 

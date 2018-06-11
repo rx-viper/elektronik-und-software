@@ -5,8 +5,8 @@
 namespace viper
 {
 
-Application::Application(int& argc, char** argv)
-	: QApplication{argc, argv}, packetDispatcher{*this}, backendConfigWidget{nullptr}, db{}, packetDatabaseWriter{this->db}
+Application::Application(int& argc, char** argv, QSqlDatabase& qdb)
+	: QApplication{argc, argv}, packetDispatcher{*this}, backendConfigWidget{nullptr}, db{qdb}, packetDatabaseWriter{this->db}
 {
 	guiUpdateTimer.setSingleShot(false);
 	guiUpdateTimer.start(20);
@@ -15,6 +15,8 @@ Application::Application(int& argc, char** argv)
 	connect(&mainWindow, SIGNAL(connectDbClicked()), this, SLOT(connectDbButtonClicked()));
 	connect(&mainWindow, SIGNAL(testOnClicked()), this, SLOT(testOnButtonClicked()));
 	connect(&mainWindow, SIGNAL(testOffClicked()), this, SLOT(testOffButtonClicked()));
+
+	connect(&communicator, SIGNAL(logRawData(QByteArray,QDateTime)), &db, SLOT(logRawData(QByteArray,QDateTime)));
 
 	// TODO: remove hardcoded static backend
 	backend = std::make_shared<SerialPortBackend>();
@@ -108,11 +110,16 @@ void Application::connectSerialButtonClicked()
 
 void Application::connectDbButtonClicked()
 {
-	if(!db.open()) {
-		QMessageBox::critical(&mainWindow, "Database Error",  "Unable to connect to Database: " + db.lastError());
+	if(!db.isOpen()) {
+		if(!db.open()) {
+			QMessageBox::critical(&mainWindow, "Database Error",  "Unable to connect to Database: " + db.lastError());
+		}
 	}
 	else {
-		// disable button?
+		QStringList errors = db.getErrors();
+		for(int i = 0; i < errors.size(); i++) {
+			std::cout << "[DB error] " << errors.at(i).toLocal8Bit().constData() << std::endl;
+		}
 	}
 }
 

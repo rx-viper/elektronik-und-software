@@ -1,0 +1,6 @@
+# path to the xpcc root directory (modify as required!)
+xpccpath = '../../../../../xpcc'
+# path to the software common directory (modify as required!)
+common_path = '../../../common'
+# execute the scons file
+execfile(common_path + '/../onboard/scons/SConstruct')
