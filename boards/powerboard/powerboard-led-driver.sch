@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 9 11
 Title ""
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -61,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L LT3592 U1001
+L lt3592:LT3592 U1001
 U 1 1 58F8C4EB
 P 4400 3500
 F 0 "U1001" H 4100 3900 60  0000 C CNN
@@ -72,9 +26,11 @@ F 3 "" H 4400 3500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1001
+L powerboard-rescue:C C1001
 U 1 1 58F8C51B
 P 3600 3000
+AR Path="/58F8C51B" Ref="C1001"  Part="1" 
+AR Path="/58F8B0DB/58F8C51B" Ref="C1001"  Part="1" 
 F 0 "C1001" H 3625 3100 50  0000 L CNN
 F 1 "1µ" H 3625 2900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3638 2850 50  0001 C CNN
@@ -85,7 +41,7 @@ $EndComp
 Text HLabel 2450 3250 0    60   Input ~ 0
 VIN
 $Comp
-L R R1001
+L powerboard-rescue:R R1001
 U 1 1 58F8C597
 P 3750 4000
 F 0 "R1001" V 3830 4000 50  0000 C CNN
@@ -96,7 +52,7 @@ F 3 "" H 3750 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1003
+L powerboard-rescue:R R1003
 U 1 1 58F8C5E2
 P 5650 4150
 F 0 "R1003" V 5730 4150 50  0000 C CNN
@@ -107,7 +63,7 @@ F 3 "" H 5650 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1002
+L powerboard-rescue:R R1002
 U 1 1 58F8C6D0
 P 5400 3750
 F 0 "R1002" V 5480 3750 50  0000 C CNN
@@ -118,7 +74,7 @@ F 3 "" H 5400 3750 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L D_Schottky D1001
+L powerboard-rescue:D_Schottky D1001
 U 1 1 58F8C88C
 P 5400 3450
 F 0 "D1001" H 5200 3500 50  0000 C CNN
@@ -129,7 +85,7 @@ F 3 "" H 5400 3450 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L INDUCTOR_SMALL L1001
+L powerboard-rescue:INDUCTOR_SMALL L1001
 U 1 1 58F8C8BD
 P 6700 3350
 F 0 "L1001" H 6700 3450 50  0000 C CNN
@@ -140,9 +96,11 @@ F 3 "" H 6700 3350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1002
+L powerboard-rescue:C C1002
 U 1 1 58F8CA2B
 P 5400 3250
+AR Path="/58F8CA2B" Ref="C1002"  Part="1" 
+AR Path="/58F8B0DB/58F8CA2B" Ref="C1002"  Part="1" 
 F 0 "C1002" V 5350 3300 50  0000 L CNN
 F 1 "100n" V 5350 3000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5438 3100 50  0001 C CNN
@@ -151,7 +109,7 @@ F 3 "" H 5400 3250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1004
+L powerboard-rescue:R R1004
 U 1 1 58F8CCC5
 P 6250 3650
 F 0 "R1004" V 6330 3650 50  0000 C CNN
@@ -237,9 +195,11 @@ Enable
 Wire Wire Line
 	3350 3450 3850 3450
 $Comp
-L C C1003
+L powerboard-rescue:C C1003
 U 1 1 58F8D464
 P 7150 3800
+AR Path="/58F8D464" Ref="C1003"  Part="1" 
+AR Path="/58F8B0DB/58F8D464" Ref="C1003"  Part="1" 
 F 0 "C1003" H 7175 3900 50  0000 L CNN
 F 1 "4µ7 0805 50V" H 7175 3700 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805" H 7188 3650 50  0001 C CNN
@@ -252,7 +212,7 @@ Wire Wire Line
 	7150 4400 7150 3950
 Connection ~ 5650 4400
 $Comp
-L GND #PWR0101
+L power1:GND #PWR0101
 U 1 1 58F8D528
 P 4400 4500
 F 0 "#PWR0101" H 4400 4250 50  0001 C CNN
@@ -263,7 +223,7 @@ F 3 "" H 4400 4500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0102
+L power1:GND #PWR0102
 U 1 1 58F8D9DF
 P 3600 2750
 F 0 "#PWR0102" H 3600 2500 50  0001 C CNN
@@ -282,7 +242,7 @@ ToDo: Recalculate (depends on number of LEDs and LED current)
 Text Notes 6450 3200 0    60   ~ 0
 10µH 250mA
 $Comp
-L D D1002
+L powerboard-rescue:D D1002
 U 1 1 5A1EBD00
 P 2700 3250
 F 0 "D1002" H 2700 3350 50  0000 C CNN
@@ -293,7 +253,7 @@ F 3 "" H 2700 3250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L D D1003
+L powerboard-rescue:D D1003
 U 1 1 5A1EBDB0
 P 3100 3250
 F 0 "D1003" H 3100 3350 50  0000 C CNN

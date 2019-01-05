@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 11
 Title "Powerboard: RXSM Event Lines"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -61,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L PC3H7 U601
+L pc3h7:PC3H7 U601
 U 1 1 5906A149
 P 6050 3500
 F 0 "U601" H 5850 3700 50  0000 L CNN
@@ -72,7 +26,7 @@ F 3 "" H 6075 3500 50  0000 L CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L PC3H7 U602
+L pc3h7:PC3H7 U602
 U 1 1 5906A150
 P 6050 3950
 F 0 "U602" H 5850 4150 50  0000 L CNN
@@ -83,7 +37,7 @@ F 3 "" H 6075 3950 50  0000 L CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L PC3H7 U603
+L pc3h7:PC3H7 U603
 U 1 1 5906A157
 P 6050 4400
 F 0 "U603" H 5850 4600 50  0000 L CNN
@@ -94,7 +48,7 @@ F 3 "" H 6075 4400 50  0000 L CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R605
+L powerboard-rescue:R R605
 U 1 1 5906A15E
 P 6600 3200
 F 0 "R605" V 6680 3200 50  0000 C CNN
@@ -105,7 +59,7 @@ F 3 "" H 6600 3200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R604
+L powerboard-rescue:R R604
 U 1 1 5906A165
 P 6400 3200
 F 0 "R604" V 6500 3200 50  0000 C CNN
@@ -116,7 +70,7 @@ F 3 "" H 6400 3200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R606
+L powerboard-rescue:R R606
 U 1 1 5906A16C
 P 6800 3200
 F 0 "R606" V 6880 3200 50  0000 C CNN
@@ -127,7 +81,7 @@ F 3 "" H 6800 3200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR068
+L power1:GND #PWR068
 U 1 1 5906A173
 P 5600 4500
 F 0 "#PWR068" H 5600 4250 50  0001 C CNN
@@ -138,7 +92,7 @@ F 3 "" H 5600 4500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R601
+L powerboard-rescue:R R601
 U 1 1 5906A179
 P 5300 3250
 F 0 "R601" V 5380 3250 50  0000 C CNN
@@ -149,7 +103,7 @@ F 3 "" H 5300 3250 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +3V3 #PWR069
+L power1:+3V3 #PWR069
 U 1 1 5906A180
 P 5050 3250
 F 0 "#PWR069" H 5050 3100 50  0001 C CNN
@@ -160,7 +114,7 @@ F 3 "" H 5050 3250 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +3V3 #PWR070
+L power1:+3V3 #PWR070
 U 1 1 5906A186
 P 5050 3700
 F 0 "#PWR070" H 5050 3550 50  0001 C CNN
@@ -171,7 +125,7 @@ F 3 "" H 5050 3700 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R602
+L powerboard-rescue:R R602
 U 1 1 5906A18C
 P 5300 3700
 F 0 "R602" V 5380 3700 50  0000 C CNN
@@ -182,7 +136,7 @@ F 3 "" H 5300 3700 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R603
+L powerboard-rescue:R R603
 U 1 1 5906A193
 P 5300 4150
 F 0 "R603" V 5380 4150 50  0000 C CNN
@@ -193,7 +147,7 @@ F 3 "" H 5300 4150 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +3V3 #PWR071
+L power1:+3V3 #PWR071
 U 1 1 5906A19A
 P 5050 4150
 F 0 "#PWR071" H 5050 4000 50  0001 C CNN

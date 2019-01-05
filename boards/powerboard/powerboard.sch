@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 11
 Title "Powerboard overview"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -69,7 +23,7 @@ F2 "RXSM_28V_IN" I L 3550 1150 60
 F3 "5V_3A_OUT" I R 4900 1150 60 
 $EndSheet
 $Comp
-L GND #PWR01
+L power1:GND #PWR01
 U 1 1 5886D3D2
 P 2450 1700
 F 0 "#PWR01" H 2450 1450 50  0001 C CNN
@@ -80,7 +34,7 @@ F 3 "" H 2450 1700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR02
+L power1:+5V #PWR02
 U 1 1 5886FF1B
 P 5000 1150
 F 0 "#PWR02" H 5000 1000 50  0001 C CNN
@@ -91,7 +45,7 @@ F 3 "" H 5000 1150 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR03
+L power1:GND #PWR03
 U 1 1 58871E64
 P 2950 3900
 F 0 "#PWR03" H 2950 3650 50  0001 C CNN
@@ -102,7 +56,7 @@ F 3 "" H 2950 3900 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +5V #PWR04
+L power1:+5V #PWR04
 U 1 1 5887310D
 P 8600 750
 F 0 "#PWR04" H 8600 600 50  0001 C CNN
@@ -117,7 +71,7 @@ RXSM_28V
 Text Label 2500 3000 0    60   ~ 0
 BAT_10V
 $Comp
-L Q_NMOS_GSD Q104
+L powerboard-rescue:Q_NMOS_GSD Q104
 U 1 1 5887C68D
 P 8250 1250
 F 0 "Q104" V 8150 1550 50  0000 R CNN
@@ -128,7 +82,7 @@ F 3 "" H 8250 1250 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR05
+L power1:GND #PWR05
 U 1 1 5887C966
 P 7850 1350
 F 0 "#PWR05" H 7850 1100 50  0001 C CNN
@@ -144,7 +98,7 @@ Text Label 6850 950  0    60   ~ 0
 Lens_Heat_EN
 Text Label 7200 1850 0    60   ~ 0
 Cam_Light_EN
-Text Label 6100 2900 0    60   ~ 0
+Text Label 5900 2900 0    60   ~ 0
 RXSM_28V
 $Sheet
 S 8450 2800 1600 900 
@@ -166,7 +120,7 @@ $EndSheet
 Text Label 3350 5350 0    60   ~ 0
 Motor1_Current
 $Comp
-L LM1117-3.3 U101
+L powerboard-rescue:LM1117-3.3 U101
 U 1 1 588B332C
 P 8850 5800
 F 0 "U101" H 8950 5550 50  0000 C CNN
@@ -177,18 +131,18 @@ F 3 "" H 8850 5800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C105
+L powerboard-rescue:C C105
 U 1 1 588B4592
 P 8450 6050
 F 0 "C105" H 8475 6150 50  0000 L CNN
-F 1 "100n" H 8475 5950 50  0000 L CNN
+F 1 "100n" H 8550 6000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 8488 5900 50  0001 C CNN
 F 3 "" H 8450 6050 50  0000 C CNN
 	1    8450 6050
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C108
+L powerboard-rescue:CP C108
 U 1 1 588B4932
 P 9500 6050
 F 0 "C108" H 9525 6150 50  0000 L CNN
@@ -199,18 +153,18 @@ F 3 "" H 9500 6050 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C104
+L powerboard-rescue:CP C104
 U 1 1 588B4A5C
 P 8200 6050
 F 0 "C104" H 8225 6150 50  0000 L CNN
-F 1 "10µ oder 4µ7 Tantal" H 8225 5950 50  0000 L CNN
+F 1 "10µ oder 4µ7 Tantal" H 8000 5900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805" H 8238 5900 50  0001 C CNN
 F 3 "" H 8200 6050 50  0000 C CNN
 	1    8200 6050
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR06
+L power1:GND #PWR06
 U 1 1 588B4F5A
 P 8850 6400
 F 0 "#PWR06" H 8850 6150 50  0001 C CNN
@@ -221,7 +175,7 @@ F 3 "" H 8850 6400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR07
+L power1:+5V #PWR07
 U 1 1 588B59D2
 P 8100 5800
 F 0 "#PWR07" H 8100 5650 50  0001 C CNN
@@ -232,7 +186,7 @@ F 3 "" H 8100 5800 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +3V3 #PWR08
+L power1:+3V3 #PWR08
 U 1 1 588B5CD1
 P 9600 5800
 F 0 "#PWR08" H 9600 5650 50  0001 C CNN
@@ -243,29 +197,29 @@ F 3 "" H 9600 5800 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L INDUCTOR_SMALL L101
+L powerboard-rescue:INDUCTOR_SMALL L101
 U 1 1 588AFDA8
-P 6850 2900
-F 0 "L101" H 6850 2850 50  0000 C CNN
-F 1 "Coilcraft MSS1583-474" H 6850 3050 50  0000 C CNN
-F 2 "L_Coilcraft:L_Coilcraft_1583_Handsoldering" H 6850 2900 50  0001 C CNN
-F 3 "" H 6850 2900 50  0000 C CNN
-	1    6850 2900
+P 6650 2900
+F 0 "L101" H 6650 2850 50  0000 C CNN
+F 1 "Coilcraft MSS1583-474" H 6650 3050 50  0000 C CNN
+F 2 "L_Coilcraft:L_Coilcraft_1583_Handsoldering" H 6650 2900 50  0001 C CNN
+F 3 "" H 6650 2900 50  0000 C CNN
+	1    6650 2900
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L power1:GND #PWR09
 U 1 1 588B1908
-P 7200 3500
-F 0 "#PWR09" H 7200 3250 50  0001 C CNN
-F 1 "GND" H 7200 3350 50  0000 C CNN
-F 2 "" H 7200 3500 50  0000 C CNN
-F 3 "" H 7200 3500 50  0000 C CNN
-	1    7200 3500
+P 7350 3500
+F 0 "#PWR09" H 7350 3250 50  0001 C CNN
+F 1 "GND" H 7350 3350 50  0000 C CNN
+F 2 "" H 7350 3500 50  0000 C CNN
+F 3 "" H 7350 3500 50  0000 C CNN
+	1    7350 3500
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R103
+L powerboard-rescue:R R103
 U 1 1 58C8BC13
 P 2400 3900
 F 0 "R103" V 2480 3900 50  0000 C CNN
@@ -276,7 +230,7 @@ F 3 "" H 2400 3900 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R102
+L powerboard-rescue:R R102
 U 1 1 58C8BE20
 P 2000 3650
 F 0 "R102" V 2080 3650 50  0000 C CNN
@@ -291,7 +245,7 @@ RXSM_28V
 Text Notes 2150 3600 0    60   ~ 0
 Battery\ncut off
 $Comp
-L CMC FL101
+L common_mode_choke:CMC FL101
 U 1 1 58C8D036
 P 2100 1250
 F 0 "FL101" H 2100 1100 60  0000 C CNB
@@ -304,7 +258,7 @@ F 5 "Passive" H 2330 1540 50  0001 C CNN "Family"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CMC FL102
+L common_mode_choke:CMC FL102
 U 1 1 58C97BBF
 P 2100 2250
 F 0 "FL102" H 2100 2405 60  0000 C CNB
@@ -327,7 +281,7 @@ F4 "charge_status" I R 4500 2200 60
 F5 "charge_enable" I R 4500 2400 60 
 $EndSheet
 $Comp
-L Q_PMOS_GDS Q101
+L powerboard-rescue:Q_PMOS_GDS Q101
 U 1 1 58CA6DDD
 P 2100 3100
 F 0 "Q101" V 2250 3400 50  0000 R CNN
@@ -449,7 +403,7 @@ $EndSheet
 Text Label 7200 1750 0    60   ~ 0
 RXSM_28V
 $Comp
-L GND #PWR010
+L power1:GND #PWR010
 U 1 1 58F98D85
 P 10200 2100
 F 0 "#PWR010" H 10200 1850 50  0001 C CNN
@@ -462,7 +416,7 @@ $EndComp
 NoConn ~ 10300 1200
 NoConn ~ 10300 1400
 $Comp
-L R R112
+L powerboard-rescue:R R112
 U 1 1 58FB5586
 P 7950 1200
 F 0 "R112" V 8030 1200 50  0000 C CNN
@@ -473,7 +427,7 @@ F 3 "" H 7950 1200 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R110
+L powerboard-rescue:R R110
 U 1 1 58FB598C
 P 7650 950
 F 0 "R110" V 7730 950 50  0000 C CNN
@@ -486,7 +440,7 @@ $EndComp
 Text Notes 11050 2000 1    60   ~ 0
 Pin 1, 2 & 6:\nUART from mainboard
 $Comp
-L DB15_FEMALE J104
+L powerboard-rescue:DB15_FEMALE J104
 U 1 1 5900D731
 P 10950 4800
 F 0 "J104" H 10970 5650 50  0000 C CNN
@@ -509,7 +463,7 @@ Hall_V
 Text Label 9800 4300 0    60   ~ 0
 Hall_W
 $Comp
-L GND #PWR011
+L power1:GND #PWR011
 U 1 1 5900FB88
 P 10550 4400
 F 0 "#PWR011" H 10550 4150 50  0001 C CNN
@@ -520,7 +474,7 @@ F 3 "" H 10550 4400 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +5V #PWR012
+L power1:+5V #PWR012
 U 1 1 5901160D
 P 10550 5000
 F 0 "#PWR012" H 10550 4850 50  0001 C CNN
@@ -547,15 +501,15 @@ RX
 Text Notes 4250 3650 0    60   ~ 0
 Heat probe connectors in sub-schematic
 $Comp
-L R R111
+L powerboard-rescue:R R111
 U 1 1 5909C2E9
 P 10400 4900
-F 0 "R111" V 10450 5100 50  0000 C CNN
-F 1 "1k" V 10400 4900 50  0000 C CNN
+F 0 "R111" V 10450 4700 50  0000 C CNN
+F 1 "0" V 10400 4900 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 10330 4900 50  0001 C CNN
 F 3 "" H 10400 4900 50  0001 C CNN
 	1    10400 4900
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 Text Label 9800 4900 0    60   ~ 0
 EndSwitch
@@ -564,7 +518,7 @@ Text Notes 10750 5900 2    60   ~ 0
 Text Notes 7800 6500 0    60   ~ 0
 3.3V power supply for\nADC and transceivers
 $Comp
-L DB15_MALE J101
+L powerboard-rescue:DB15_MALE J101
 U 1 1 590BBE7C
 P 750 1650
 F 0 "J101" H 770 2500 50  0000 C CNN
@@ -593,7 +547,7 @@ RXSM_RX_Y
 Text Label 1550 2150 2    51   ~ 0
 RXSM_RX_~Z
 $Comp
-L CP C101
+L powerboard-rescue:CP C101
 U 1 1 58C97CE9
 P 2400 2250
 F 0 "C101" H 2425 2350 50  0000 L CNN
@@ -610,7 +564,7 @@ RXSM_RX_A
 NoConn ~ 1050 1250
 NoConn ~ 1050 1450
 $Comp
-L R R104
+L powerboard-rescue:R R104
 U 1 1 59107368
 P 2600 5250
 F 0 "R104" V 2680 5250 50  0000 C CNN
@@ -621,7 +575,7 @@ F 3 "" H 2600 5250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R106
+L powerboard-rescue:R R106
 U 1 1 59107544
 P 2800 5250
 F 0 "R106" V 2880 5250 50  0000 C CNN
@@ -632,7 +586,7 @@ F 3 "" H 2800 5250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R107
+L powerboard-rescue:R R107
 U 1 1 591076EE
 P 2800 5950
 F 0 "R107" V 2880 5950 50  0000 C CNN
@@ -643,7 +597,7 @@ F 3 "" H 2800 5950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R105
+L powerboard-rescue:R R105
 U 1 1 591078A5
 P 2600 5950
 F 0 "R105" V 2680 5950 50  0000 C CNN
@@ -654,7 +608,7 @@ F 3 "" H 2600 5950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR013
+L power1:GND #PWR013
 U 1 1 591082B9
 P 2700 6300
 F 0 "#PWR013" H 2700 6050 50  0001 C CNN
@@ -665,7 +619,7 @@ F 3 "" H 2700 6300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R108
+L powerboard-rescue:R R108
 U 1 1 5910E673
 P 3000 5250
 F 0 "R108" V 3080 5250 50  0000 C CNN
@@ -676,7 +630,7 @@ F 3 "" H 3000 5250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R109
+L powerboard-rescue:R R109
 U 1 1 5910E822
 P 3000 5950
 F 0 "R109" V 3080 5950 50  0000 C CNN
@@ -749,11 +703,11 @@ Boost24V_EN
 Text Label 1700 5700 2    60   ~ 0
 Charge_EN
 Text Label 1700 7100 2    60   ~ 0
-Hall_U
+Hall_U_filter
 Text Label 1700 7200 2    60   ~ 0
-Hall_V
+Hall_V_filter
 Text Label 1700 7300 2    60   ~ 0
-Hall_W
+Hall_W_filter
 Text Label 1700 6800 2    60   ~ 0
 Encoder_A
 Text Label 1700 6900 2    60   ~ 0
@@ -769,7 +723,7 @@ TX
 Text Label 1700 7500 2    60   ~ 0
 RX
 $Comp
-L GND #PWR014
+L power1:GND #PWR014
 U 1 1 5919E7BC
 P 1050 7700
 F 0 "#PWR014" H 1050 7450 50  0001 C CNN
@@ -780,7 +734,7 @@ F 3 "" H 1050 7700 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +5V #PWR015
+L power1:+5V #PWR015
 U 1 1 5919E7C2
 P 1150 3600
 F 0 "#PWR015" H 1150 3450 50  0001 C CNN
@@ -811,7 +765,7 @@ Motor_V_P
 Text Label 1700 4500 2    60   ~ 0
 Motor_W_P
 $Comp
-L CONN_01X40 J102
+L powerboard-rescue:CONN_01X40 J102
 U 1 1 5919E7D3
 P 650 5650
 F 0 "J102" H 650 7700 50  0000 C CNN
@@ -822,7 +776,7 @@ F 3 "" H 650 5650 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L CONN_01X01 J105
+L powerboard-rescue:CONN_01X01 J105
 U 1 1 591A537E
 P 3300 3000
 F 0 "J105" H 3300 3100 50  0000 C CNN
@@ -833,7 +787,7 @@ F 3 "" H 3300 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X01 J106
+L powerboard-rescue:CONN_01X01 J106
 U 1 1 591A9664
 P 3300 3250
 F 0 "J106" H 3300 3350 50  0000 C CNN
@@ -844,7 +798,7 @@ F 3 "" H 3300 3250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X01 J107
+L powerboard-rescue:CONN_01X01 J107
 U 1 1 591AFED2
 P 3700 3000
 F 0 "J107" H 3700 3100 50  0000 C CNN
@@ -855,7 +809,7 @@ F 3 "" H 3700 3000 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L CONN_01X01 J108
+L powerboard-rescue:CONN_01X01 J108
 U 1 1 591B02F7
 P 3700 3250
 F 0 "J108" H 3700 3350 50  0000 C CNN
@@ -866,7 +820,7 @@ F 3 "" H 3700 3250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L CONN_01X01 J109
+L powerboard-rescue:CONN_01X01 J109
 U 1 1 591B051E
 P 3700 3500
 F 0 "J109" H 3700 3600 50  0000 C CNN
@@ -879,7 +833,7 @@ $EndComp
 Text Notes 5300 3050 2    60   ~ 0
 1x or 3x 24V Boost converter\non seperate PCB
 $Comp
-L GND #PWR016
+L power1:GND #PWR016
 U 1 1 591C869D
 P 10550 5500
 F 0 "#PWR016" H 10550 5250 50  0001 C CNN
@@ -890,7 +844,7 @@ F 3 "" H 10550 5500 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +5V #PWR017
+L power1:+5V #PWR017
 U 1 1 591C9070
 P 10550 5100
 F 0 "#PWR017" H 10550 4950 50  0001 C CNN
@@ -905,7 +859,7 @@ Encoder_A+
 Text Label 9700 5100 2    60   ~ 0
 Encoder_A-
 $Comp
-L DS26LV32AT U102
+L ds26lv32at:DS26LV32AT U102
 U 1 1 591E6770
 P 8600 4850
 F 0 "U102" H 8600 4300 60  0000 C CNN
@@ -920,7 +874,7 @@ NoConn ~ 9100 4900
 NoConn ~ 9100 4700
 NoConn ~ 9100 4600
 $Comp
-L +3V3 #PWR018
+L power1:+3V3 #PWR018
 U 1 1 591EC273
 P 9200 4500
 F 0 "#PWR018" H 9200 4350 50  0001 C CNN
@@ -931,7 +885,7 @@ F 3 "" H 9200 4500 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR019
+L power1:GND #PWR019
 U 1 1 591EC48E
 P 9200 4300
 F 0 "#PWR019" H 9200 4050 50  0001 C CNN
@@ -942,7 +896,7 @@ F 3 "" H 9200 4300 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR020
+L power1:GND #PWR020
 U 1 1 591ECCC7
 P 8000 4300
 F 0 "#PWR020" H 8000 4050 50  0001 C CNN
@@ -953,7 +907,7 @@ F 3 "" H 8000 4300 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L +3V3 #PWR021
+L power1:+3V3 #PWR021
 U 1 1 591ED0E6
 P 8000 4500
 F 0 "#PWR021" H 8000 4350 50  0001 C CNN
@@ -974,7 +928,7 @@ EndSwitch
 Text Label 10800 3300 2    60   ~ 0
 Motor1_Current
 $Comp
-L CONN_01X01 J110
+L powerboard-rescue:CONN_01X01 J110
 U 1 1 5938B3B7
 P 1150 3000
 F 0 "J110" H 1150 2900 50  0000 C CNN
@@ -985,7 +939,7 @@ F 3 "" H 1150 3000 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L CONN_01X01 J111
+L powerboard-rescue:CONN_01X01 J111
 U 1 1 5938BEA1
 P 1150 3150
 F 0 "J111" H 1150 3250 50  0000 C CNN
@@ -996,7 +950,7 @@ F 3 "" H 1150 3150 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Q_NMOS_GSD Q102
+L powerboard-rescue:Q_NMOS_GSD Q102
 U 1 1 5940925F
 P 2550 3650
 F 0 "Q102" H 2950 3750 50  0000 R CNN
@@ -1007,7 +961,7 @@ F 3 "" H 2550 3650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L DB9_FEMALE J103
+L powerboard-rescue:DB9_FEMALE J103
 U 1 1 58FA6D23
 P 10600 1600
 F 0 "J103" H 10600 2150 50  0000 C CNN
@@ -1018,7 +972,7 @@ F 3 "" H 10600 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R101
+L powerboard-rescue:R R101
 U 1 1 58CAB3E4
 P 1850 3250
 F 0 "R101" V 1930 3250 50  0000 C CNN
@@ -1031,31 +985,31 @@ $EndComp
 Text Notes 550  750  0    60   ~ 0
 Common mode chokes:\n2x Würth 744272471\nWE-SL5 SMD 470µH 1.6A
 $Comp
-L C C106
+L powerboard-rescue:C C106
 U 1 1 5941DCC3
-P 7200 3150
-F 0 "C106" H 7225 3250 50  0000 L CNN
-F 1 "470n" H 7225 3050 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 7238 3000 50  0001 C CNN
-F 3 "" H 7200 3150 50  0001 C CNN
-	1    7200 3150
+P 7000 3150
+F 0 "C106" H 7025 3250 50  0000 L CNN
+F 1 "470n" H 7025 3050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 7038 3000 50  0001 C CNN
+F 3 "" H 7000 3150 50  0001 C CNN
+	1    7000 3150
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C103
+L powerboard-rescue:C C103
 U 1 1 5941E73A
-P 6500 3150
-F 0 "C103" H 6525 3250 50  0000 L CNN
-F 1 "1µ" H 6525 3050 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 6538 3000 50  0001 C CNN
-F 3 "" H 6500 3150 50  0001 C CNN
-	1    6500 3150
+P 6300 3150
+F 0 "C103" H 6325 3250 50  0000 L CNN
+F 1 "1µ" H 6325 3050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6338 3000 50  0001 C CNN
+F 3 "" H 6300 3150 50  0001 C CNN
+	1    6300 3150
 	1    0    0    -1  
 $EndComp
 Text Notes 6850 2650 0    60   ~ 0
 470µH
 $Comp
-L R R113
+L powerboard-rescue:R R113
 U 1 1 5944781E
 P 3200 5250
 F 0 "R113" V 3280 5250 50  0000 C CNN
@@ -1066,7 +1020,7 @@ F 3 "" H 3200 5250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R114
+L powerboard-rescue:R R114
 U 1 1 59447A4E
 P 3200 5950
 F 0 "R114" V 3280 5950 50  0000 C CNN
@@ -1087,76 +1041,10 @@ Text Label 4050 3250 3    60   ~ 0
 Text Label 3950 3500 3    60   ~ 0
 24V_BAT_3
 $Comp
-L TEST_1P J112
+L powerboard-rescue:TEST_1P J112
 U 1 1 594494A5
-P 2600 6950
-F 0 "J112" H 2600 7220 50  0000 C CNN
-F 1 "M3" H 2600 7150 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 2800 6950 50  0001 C CNN
-F 3 "" H 2800 6950 50  0001 C CNN
-	1    2600 6950
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R115
-U 1 1 594499D8
-P 2600 7200
-F 0 "R115" V 2680 7200 50  0000 C CNN
-F 1 "NC" V 2600 7200 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2530 7200 50  0001 C CNN
-F 3 "" H 2600 7200 50  0001 C CNN
-	1    2600 7200
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST_1P J113
-U 1 1 5944AD3C
-P 2800 6950
-F 0 "J113" H 2800 7220 50  0000 C CNN
-F 1 "M3" H 2800 7150 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3000 6950 50  0001 C CNN
-F 3 "" H 3000 6950 50  0001 C CNN
-	1    2800 6950
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R116
-U 1 1 5944AD42
-P 2800 7200
-F 0 "R116" V 2880 7200 50  0000 C CNN
-F 1 "NC" V 2800 7200 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2730 7200 50  0001 C CNN
-F 3 "" H 2800 7200 50  0001 C CNN
-	1    2800 7200
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST_1P J114
-U 1 1 5944B1CB
-P 3500 6950
-F 0 "J114" H 3500 7220 50  0000 C CNN
-F 1 "M3" H 3500 7150 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3700 6950 50  0001 C CNN
-F 3 "" H 3700 6950 50  0001 C CNN
-	1    3500 6950
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R117
-U 1 1 5944B1D1
-P 3500 7200
-F 0 "R117" V 3580 7200 50  0000 C CNN
-F 1 "NC" V 3500 7200 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 3430 7200 50  0001 C CNN
-F 3 "" H 3500 7200 50  0001 C CNN
-	1    3500 7200
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST_1P J115
-U 1 1 5944B1D9
 P 3200 6950
-F 0 "J115" H 3200 7220 50  0000 C CNN
+F 0 "J112" H 3200 7220 50  0000 C CNN
 F 1 "M3" H 3200 7150 50  0000 C CNN
 F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3400 6950 50  0001 C CNN
 F 3 "" H 3400 6950 50  0001 C CNN
@@ -1164,10 +1052,10 @@ F 3 "" H 3400 6950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R118
-U 1 1 5944B1DF
+L powerboard-rescue:R R115
+U 1 1 594499D8
 P 3200 7200
-F 0 "R118" V 3280 7200 50  0000 C CNN
+F 0 "R115" V 3280 7200 50  0000 C CNN
 F 1 "NC" V 3200 7200 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 3130 7200 50  0001 C CNN
 F 3 "" H 3200 7200 50  0001 C CNN
@@ -1175,36 +1063,102 @@ F 3 "" H 3200 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST_1P J117
+L powerboard-rescue:TEST_1P J113
+U 1 1 5944AD3C
+P 3400 6950
+F 0 "J113" H 3400 7220 50  0000 C CNN
+F 1 "M3" H 3400 7150 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3600 6950 50  0001 C CNN
+F 3 "" H 3600 6950 50  0001 C CNN
+	1    3400 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:R R116
+U 1 1 5944AD42
+P 3400 7200
+F 0 "R116" V 3480 7200 50  0000 C CNN
+F 1 "NC" V 3400 7200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 3330 7200 50  0001 C CNN
+F 3 "" H 3400 7200 50  0001 C CNN
+	1    3400 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:TEST_1P J114
+U 1 1 5944B1CB
+P 4100 6950
+F 0 "J114" H 4100 7220 50  0000 C CNN
+F 1 "M3" H 4100 7150 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 4300 6950 50  0001 C CNN
+F 3 "" H 4300 6950 50  0001 C CNN
+	1    4100 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:R R117
+U 1 1 5944B1D1
+P 4100 7200
+F 0 "R117" V 4180 7200 50  0000 C CNN
+F 1 "NC" V 4100 7200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4030 7200 50  0001 C CNN
+F 3 "" H 4100 7200 50  0001 C CNN
+	1    4100 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:TEST_1P J115
+U 1 1 5944B1D9
+P 3800 6950
+F 0 "J115" H 3800 7220 50  0000 C CNN
+F 1 "M3" H 3800 7150 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 4000 6950 50  0001 C CNN
+F 3 "" H 4000 6950 50  0001 C CNN
+	1    3800 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:R R118
+U 1 1 5944B1DF
+P 3800 7200
+F 0 "R118" V 3880 7200 50  0000 C CNN
+F 1 "NC" V 3800 7200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 3730 7200 50  0001 C CNN
+F 3 "" H 3800 7200 50  0001 C CNN
+	1    3800 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:TEST_1P J117
 U 1 1 5944B659
-P 3000 6950
-F 0 "J117" H 3000 7220 50  0000 C CNN
-F 1 "M3" H 3000 7150 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3200 6950 50  0001 C CNN
-F 3 "" H 3200 6950 50  0001 C CNN
-	1    3000 6950
+P 3600 6950
+F 0 "J117" H 3600 7220 50  0000 C CNN
+F 1 "M3" H 3600 7150 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3_Pad" H 3800 6950 50  0001 C CNN
+F 3 "" H 3800 6950 50  0001 C CNN
+	1    3600 6950
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R120
+L powerboard-rescue:R R120
 U 1 1 5944B65F
-P 3000 7200
-F 0 "R120" V 3080 7200 50  0000 C CNN
-F 1 "NC" V 3000 7200 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2930 7200 50  0001 C CNN
-F 3 "" H 3000 7200 50  0001 C CNN
-	1    3000 7200
+P 3600 7200
+F 0 "R120" V 3680 7200 50  0000 C CNN
+F 1 "NC" V 3600 7200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 3530 7200 50  0001 C CNN
+F 3 "" H 3600 7200 50  0001 C CNN
+	1    3600 7200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR022
+L power1:GND #PWR022
 U 1 1 5944C269
-P 2900 7550
-F 0 "#PWR022" H 2900 7300 50  0001 C CNN
-F 1 "GND" H 2900 7400 50  0000 C CNN
-F 2 "" H 2900 7550 50  0001 C CNN
-F 3 "" H 2900 7550 50  0001 C CNN
-	1    2900 7550
+P 3500 7550
+F 0 "#PWR022" H 3500 7300 50  0001 C CNN
+F 1 "GND" H 3500 7400 50  0000 C CNN
+F 2 "" H 3500 7550 50  0001 C CNN
+F 3 "" H 3500 7550 50  0001 C CNN
+	1    3500 7550
 	1    0    0    -1  
 $EndComp
 Text Label 7100 5050 2    60   ~ 0
@@ -1216,7 +1170,7 @@ extADC_SPI_MOSI
 Text Label 7100 5350 2    60   ~ 0
 extADC_SPI_CS1
 $Comp
-L C C109
+L powerboard-rescue:C C109
 U 1 1 59445B21
 P 7500 4400
 F 0 "C109" H 7525 4500 50  0000 L CNN
@@ -1227,7 +1181,7 @@ F 3 "" H 7500 4400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR023
+L power1:+3V3 #PWR023
 U 1 1 59445E69
 P 7500 4150
 F 0 "#PWR023" H 7500 4000 50  0001 C CNN
@@ -1238,7 +1192,7 @@ F 3 "" H 7500 4150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR024
+L power1:GND #PWR024
 U 1 1 594460BA
 P 7500 4650
 F 0 "#PWR024" H 7500 4400 50  0001 C CNN
@@ -1257,7 +1211,7 @@ Encoder_A+
 Text Label 9800 4600 0    60   ~ 0
 Encoder_A-
 $Comp
-L GNDPWR #PWR025
+L powerboard-rescue:GNDPWR #PWR025
 U 1 1 5945B4C3
 P 1500 3300
 F 0 "#PWR025" H 1500 3100 50  0001 C CNN
@@ -1268,7 +1222,7 @@ F 3 "" H 1500 3250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C110
+L powerboard-rescue:C C110
 U 1 1 595BB78A
 P 3400 6000
 F 0 "C110" H 3425 6100 50  0000 L CNN
@@ -1279,7 +1233,7 @@ F 3 "" H 3400 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C111
+L powerboard-rescue:C C111
 U 1 1 595BBA07
 P 3600 6000
 F 0 "C111" H 3625 6100 50  0000 L CNN
@@ -1290,7 +1244,7 @@ F 3 "" H 3600 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C112
+L powerboard-rescue:C C112
 U 1 1 595BBC76
 P 3800 6000
 F 0 "C112" H 3825 6100 50  0000 L CNN
@@ -1301,7 +1255,7 @@ F 3 "" H 3800 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C113
+L powerboard-rescue:C C113
 U 1 1 595BBEE8
 P 4000 6000
 F 0 "C113" H 4025 6100 50  0000 L CNN
@@ -1312,29 +1266,29 @@ F 3 "" H 4000 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C117
+L powerboard-rescue:C C117
 U 1 1 595BFE17
-P 10450 3500
-F 0 "C117" H 10475 3600 50  0000 L CNN
-F 1 "10n" H 10475 3400 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 10488 3350 50  0001 C CNN
-F 3 "" H 10450 3500 50  0001 C CNN
-	1    10450 3500
+P 10200 3500
+F 0 "C117" H 10225 3600 50  0000 L CNN
+F 1 "10n" H 10225 3400 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 10238 3350 50  0001 C CNN
+F 3 "" H 10200 3500 50  0001 C CNN
+	1    10200 3500
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR026
+L power1:GND #PWR026
 U 1 1 595C0865
-P 10450 3700
-F 0 "#PWR026" H 10450 3450 50  0001 C CNN
-F 1 "GND" H 10450 3550 50  0000 C CNN
-F 2 "" H 10450 3700 50  0001 C CNN
-F 3 "" H 10450 3700 50  0001 C CNN
-	1    10450 3700
+P 10200 3700
+F 0 "#PWR026" H 10200 3450 50  0001 C CNN
+F 1 "GND" H 10200 3550 50  0000 C CNN
+F 2 "" H 10200 3700 50  0001 C CNN
+F 3 "" H 10200 3700 50  0001 C CNN
+	1    10200 3700
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C114
+L powerboard-rescue:C C114
 U 1 1 595C5178
 P 6500 4350
 F 0 "C114" H 6525 4450 50  0000 L CNN
@@ -1345,7 +1299,7 @@ F 3 "" H 6500 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C115
+L powerboard-rescue:C C115
 U 1 1 595C6188
 P 6700 4350
 F 0 "C115" H 6725 4450 50  0000 L CNN
@@ -1356,7 +1310,7 @@ F 3 "" H 6700 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C116
+L powerboard-rescue:C C116
 U 1 1 595C6406
 P 6900 4350
 F 0 "C116" H 6925 4450 50  0000 L CNN
@@ -1367,7 +1321,7 @@ F 3 "" H 6900 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR027
+L power1:GND #PWR027
 U 1 1 595C6646
 P 6700 4600
 F 0 "#PWR027" H 6700 4350 50  0001 C CNN
@@ -1378,7 +1332,7 @@ F 3 "" H 6700 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D101
+L powerboard-rescue:LED D101
 U 1 1 595CC8D4
 P 4550 1600
 F 0 "D101" H 4550 1700 50  0000 C CNN
@@ -1389,18 +1343,18 @@ F 3 "" H 4550 1600 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R125
+L powerboard-rescue:R R125
 U 1 1 595CCB2F
 P 4150 1600
 F 0 "R125" V 4230 1600 50  0000 C CNN
 F 1 "10k" V 4150 1600 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 4080 1600 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4080 1600 50  0001 C CNN
 F 3 "" H 4150 1600 50  0001 C CNN
 	1    4150 1600
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR028
+L power1:GND #PWR028
 U 1 1 595CD2B4
 P 4800 1600
 F 0 "#PWR028" H 4800 1350 50  0001 C CNN
@@ -1411,7 +1365,7 @@ F 3 "" H 4800 1600 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L LED D103
+L powerboard-rescue:LED D103
 U 1 1 595D8360
 P 3700 2750
 F 0 "D103" H 3700 2850 50  0000 C CNN
@@ -1422,7 +1376,7 @@ F 3 "" H 3700 2750 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R127
+L powerboard-rescue:R R127
 U 1 1 595D8366
 P 3300 2750
 F 0 "R127" V 3380 2750 50  0000 C CNN
@@ -1433,7 +1387,7 @@ F 3 "" H 3300 2750 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D102
+L powerboard-rescue:LED D102
 U 1 1 595DA1BD
 P 4550 1850
 F 0 "D102" H 4550 1950 50  0000 C CNN
@@ -1444,7 +1398,7 @@ F 3 "" H 4550 1850 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R126
+L powerboard-rescue:R R126
 U 1 1 595DA1C3
 P 4150 1850
 F 0 "R126" V 4230 1850 50  0000 C CNN
@@ -1455,7 +1409,7 @@ F 3 "" H 4150 1850 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR029
+L power1:GND #PWR029
 U 1 1 595DA1CB
 P 4800 1850
 F 0 "#PWR029" H 4800 1600 50  0001 C CNN
@@ -1466,7 +1420,7 @@ F 3 "" H 4800 1850 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GNDPWR #PWR030
+L powerboard-rescue:GNDPWR #PWR030
 U 1 1 595E8E41
 P 3950 2750
 F 0 "#PWR030" H 3950 2550 50  0001 C CNN
@@ -1477,7 +1431,7 @@ F 3 "" H 3950 2700 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L TEST TP102
+L powerboard-rescue:TEST TP102
 U 1 1 595EBBC5
 P 2300 1950
 F 0 "TP102" H 2300 2250 50  0000 C BNN
@@ -1488,7 +1442,7 @@ F 3 "" H 2300 1950 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L TEST TP101
+L powerboard-rescue:TEST TP101
 U 1 1 595ECBCF
 P 2450 1100
 F 0 "TP101" H 2450 1400 50  0000 C BNN
@@ -1499,7 +1453,7 @@ F 3 "" H 2450 1100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP110
+L powerboard-rescue:TEST TP110
 U 1 1 595EFF6F
 P 6900 3900
 F 0 "TP110" H 6950 4200 50  0000 C BNN
@@ -1510,7 +1464,7 @@ F 3 "" H 6900 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP109
+L powerboard-rescue:TEST TP109
 U 1 1 595FA28E
 P 6700 3900
 F 0 "TP109" H 6700 4200 50  0000 C BNN
@@ -1521,7 +1475,7 @@ F 3 "" H 6700 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP107
+L powerboard-rescue:TEST TP107
 U 1 1 595FA52D
 P 6500 3900
 F 0 "TP107" H 6450 4200 50  0000 C BNN
@@ -1532,7 +1486,7 @@ F 3 "" H 6500 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP105
+L powerboard-rescue:TEST TP105
 U 1 1 595FC3DD
 P 6050 1050
 F 0 "TP105" H 6050 1350 50  0000 C BNN
@@ -1543,7 +1497,7 @@ F 3 "" H 6050 1050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP106
+L powerboard-rescue:TEST TP106
 U 1 1 595FE186
 P 6300 1050
 F 0 "TP106" H 6300 1350 50  0000 C BNN
@@ -1554,7 +1508,7 @@ F 3 "" H 6300 1050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP108
+L powerboard-rescue:TEST TP108
 U 1 1 595FE434
 P 6550 1050
 F 0 "TP108" H 6550 1350 50  0000 C BNN
@@ -1565,7 +1519,7 @@ F 3 "" H 6550 1050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR031
+L power1:GND #PWR031
 U 1 1 595FEF60
 P 6300 1250
 F 0 "#PWR031" H 6300 1000 50  0001 C CNN
@@ -1576,7 +1530,7 @@ F 3 "" H 6300 1250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP111
+L powerboard-rescue:TEST TP111
 U 1 1 596042A2
 P 8000 2800
 F 0 "TP111" H 8000 3100 50  0000 C BNN
@@ -1587,7 +1541,7 @@ F 3 "" H 8000 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP112
+L powerboard-rescue:TEST TP112
 U 1 1 59605ABA
 P 10850 3300
 F 0 "TP112" H 10850 3600 50  0000 C BNN
@@ -1598,7 +1552,7 @@ F 3 "" H 10850 3300 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L TEST TP104
+L powerboard-rescue:TEST TP104
 U 1 1 5962F5D6
 P 5750 1050
 F 0 "TP104" H 5750 1350 50  0000 C BNN
@@ -1609,7 +1563,7 @@ F 3 "" H 5750 1050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TEST TP103
+L powerboard-rescue:TEST TP103
 U 1 1 59630F02
 P 5500 1050
 F 0 "TP103" H 5500 1350 50  0000 C BNN
@@ -1620,7 +1574,7 @@ F 3 "" H 5500 1050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR032
+L power1:+5V #PWR032
 U 1 1 59631168
 P 5500 1250
 F 0 "#PWR032" H 5500 1100 50  0001 C CNN
@@ -1631,7 +1585,7 @@ F 3 "" H 5500 1250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L +3V3 #PWR033
+L power1:+3V3 #PWR033
 U 1 1 5963338F
 P 5750 1250
 F 0 "#PWR033" H 5750 1100 50  0001 C CNN
@@ -1642,7 +1596,7 @@ F 3 "" H 5750 1250 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR034
+L power1:GND #PWR034
 U 1 1 5A146161
 P 2250 2500
 F 0 "#PWR034" H 2250 2250 50  0001 C CNN
@@ -1653,7 +1607,7 @@ F 3 "" H 2250 2500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GNDPWR #PWR035
+L powerboard-rescue:GNDPWR #PWR035
 U 1 1 5A15B162
 P 6300 2200
 F 0 "#PWR035" H 6300 2000 50  0001 C CNN
@@ -1664,7 +1618,7 @@ F 3 "" H 6300 2150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR036
+L power1:GND #PWR036
 U 1 1 5A15B407
 P 5800 2200
 F 0 "#PWR036" H 5800 1950 50  0001 C CNN
@@ -1675,12 +1629,12 @@ F 3 "" H 5800 2200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R122
+L powerboard-rescue:R R122
 U 1 1 5A15B65C
 P 6050 2100
 F 0 "R122" V 6130 2100 50  0000 C CNN
 F 1 "0" V 6050 2100 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 5980 2100 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5980 2100 50  0001 C CNN
 F 3 "" H 6050 2100 50  0001 C CNN
 	1    6050 2100
 	0    -1   -1   0   
@@ -1700,7 +1654,7 @@ $EndSheet
 Text Notes 2700 950  0    49   ~ 0
 Max. input capacity on \nRXSM 28V: 100µF
 $Comp
-L CP C118
+L powerboard-rescue:CP C118
 U 1 1 5A1AEBFA
 P 2450 1350
 F 0 "C118" V 2400 1100 50  0000 L CNN
@@ -1711,7 +1665,7 @@ F 3 "" H 2450 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C119
+L powerboard-rescue:C C119
 U 1 1 5A1AFE99
 P 3000 1350
 F 0 "C119" V 3050 1100 50  0000 L CNN
@@ -1722,29 +1676,29 @@ F 3 "" H 3000 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L D_Zener D104
+L powerboard-rescue:D_Zener D104
 U 1 1 5A1B06A8
 P 3300 1350
 F 0 "D104" H 3300 1450 50  0000 C CNN
 F 1 "SMAJ36A" H 3300 1250 50  0000 C CNN
-F 2 "Diodes_SMD:D_SMB_Standard" H 3300 1350 50  0001 C CNN
+F 2 "Diode_SMD:D_SMA" H 3300 1350 50  0001 C CNN
 F 3 "" H 3300 1350 50  0001 C CNN
 	1    3300 1350
 	0    1    1    0   
 $EndComp
 $Comp
-L CP C120
+L powerboard-rescue:CP C120
 U 1 1 5A1E615A
-P 7550 3150
-F 0 "C120" H 7575 3250 50  0000 L CNN
-F 1 "50SVPK68M" V 7700 2750 50  0000 L CNN
-F 2 "Capacitors_SMD:CP_Elec_8x10.5" H 7588 3000 50  0001 C CNN
-F 3 "" H 7550 3150 50  0001 C CNN
-	1    7550 3150
+P 7350 3150
+F 0 "C120" H 7375 3250 50  0000 L CNN
+F 1 "50SVPK68M" V 7500 2750 50  0000 L CNN
+F 2 "Capacitors_SMD:CP_Elec_8x10.5" H 7388 3000 50  0001 C CNN
+F 3 "" H 7350 3150 50  0001 C CNN
+	1    7350 3150
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C102
+L powerboard-rescue:CP C102
 U 1 1 58C8D570
 P 2750 1350
 F 0 "C102" V 2800 1100 50  0000 L CNN
@@ -1755,18 +1709,18 @@ F 3 "" H 2750 1350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GNDPWR #PWR037
+L powerboard-rescue:GNDPWR #PWR037
 U 1 1 5A1BDD43
-P 3500 7550
-F 0 "#PWR037" H 3500 7350 50  0001 C CNN
-F 1 "GNDPWR" H 3500 7420 50  0000 C CNN
-F 2 "" H 3500 7500 50  0001 C CNN
-F 3 "" H 3500 7500 50  0001 C CNN
-	1    3500 7550
+P 4100 7550
+F 0 "#PWR037" H 4100 7350 50  0001 C CNN
+F 1 "GNDPWR" H 4100 7420 50  0000 C CNN
+F 2 "" H 4100 7500 50  0001 C CNN
+F 3 "" H 4100 7500 50  0001 C CNN
+	1    4100 7550
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C121
+L powerboard-rescue:C C121
 U 1 1 5A1CC079
 P 7350 6050
 F 0 "C121" H 7375 6150 50  0000 L CNN
@@ -1777,7 +1731,7 @@ F 3 "" H 7350 6050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C107
+L powerboard-rescue:C C107
 U 1 1 5A1CC9B5
 P 7100 6050
 F 0 "C107" H 7125 6150 50  0000 L CNN
@@ -1788,7 +1742,7 @@ F 3 "" H 7100 6050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R119
+L powerboard-rescue:R R119
 U 1 1 5A1CEC03
 P 7550 5350
 F 0 "R119" V 7630 5350 50  0000 C CNN
@@ -1799,7 +1753,7 @@ F 3 "" H 7550 5350 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R121
+L powerboard-rescue:R R121
 U 1 1 5A1CFBC0
 P 7800 5450
 F 0 "R121" V 7880 5450 50  0000 C CNN
@@ -1810,7 +1764,7 @@ F 3 "" H 7800 5450 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR038
+L power1:GND #PWR038
 U 1 1 5A1D17CC
 P 7350 6300
 F 0 "#PWR038" H 7350 6050 50  0001 C CNN
@@ -1821,7 +1775,7 @@ F 3 "" H 7350 6300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR039
+L power1:GND #PWR039
 U 1 1 5A1D1AA8
 P 7100 6300
 F 0 "#PWR039" H 7100 6050 50  0001 C CNN
@@ -1836,29 +1790,29 @@ Encoder_A_filter
 Text Label 7800 5250 0    39   ~ 0
 Encoder_B_filter
 $Comp
-L R R123
+L powerboard-rescue:R R123
 U 1 1 5A1E09A0
 P 2250 4450
 F 0 "R123" V 2330 4450 50  0000 C CNN
 F 1 "10k" V 2250 4450 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2180 4450 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2180 4450 50  0001 C CNN
 F 3 "" H 2250 4450 50  0000 C CNN
 	1    2250 4450
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R124
+L powerboard-rescue:R R124
 U 1 1 5A1E1409
 P 2400 4550
 F 0 "R124" V 2480 4550 50  0000 C CNN
 F 1 "10k" V 2400 4550 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2330 4550 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2330 4550 50  0001 C CNN
 F 3 "" H 2400 4550 50  0000 C CNN
 	1    2400 4550
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R128
+L powerboard-rescue:R R128
 U 1 1 5A1E16F3
 P 2550 4650
 F 0 "R128" V 2630 4650 50  0000 C CNN
@@ -1873,15 +1827,15 @@ Wire Wire Line
 Wire Wire Line
 	9600 1900 10300 1900
 Wire Wire Line
-	7850 1350 8050 1350
+	7850 1350 7950 1350
 Wire Wire Line
 	6850 950  7500 950 
 Wire Wire Line
 	7200 1850 7900 1850
 Wire Wire Line
-	8850 6100 8850 6400
+	8850 6100 8850 6300
 Wire Wire Line
-	8200 6300 9500 6300
+	8200 6300 8450 6300
 Wire Wire Line
 	8450 6300 8450 6200
 Wire Wire Line
@@ -1891,11 +1845,11 @@ Connection ~ 8850 6300
 Wire Wire Line
 	9500 6300 9500 6200
 Wire Wire Line
-	9150 5800 9600 5800
+	9150 5800 9500 5800
 Wire Wire Line
 	9500 5800 9500 5900
 Wire Wire Line
-	8100 5800 8550 5800
+	8100 5800 8200 5800
 Wire Wire Line
 	8200 5800 8200 5900
 Wire Wire Line
@@ -1904,11 +1858,11 @@ Connection ~ 8450 5800
 Connection ~ 8200 5800
 Connection ~ 9500 5800
 Wire Wire Line
-	7200 3300 7200 3500
+	7000 3300 7000 3400
 Wire Wire Line
-	6600 2900 6100 2900
+	6400 2900 6300 2900
 Wire Wire Line
-	2150 3650 2350 3650
+	2150 3650 2250 3650
 Wire Wire Line
 	2250 3650 2250 3900
 Connection ~ 2250 3650
@@ -1917,22 +1871,22 @@ Wire Wire Line
 Wire Wire Line
 	2250 1350 2250 1600
 Wire Wire Line
-	6500 3000 6500 2900
-Connection ~ 6500 2900
+	6300 3000 6300 2900
+Connection ~ 6300 2900
 Wire Wire Line
-	6500 3400 7550 3400
+	6300 3400 7000 3400
 Wire Wire Line
-	6500 3400 6500 3300
-Connection ~ 7200 3400
+	6300 3400 6300 3300
+Connection ~ 7000 3400
 Wire Wire Line
-	7100 2900 8450 2900
+	6900 2900 7000 2900
 Wire Wire Line
-	7200 2900 7200 3000
-Connection ~ 7200 2900
+	7000 2900 7000 3000
+Connection ~ 7000 2900
 Wire Wire Line
 	2200 2350 2250 2350
 Wire Wire Line
-	2250 2350 2250 2500
+	2250 2350 2250 2450
 Wire Wire Line
 	2250 2450 2400 2450
 Wire Wire Line
@@ -1941,7 +1895,7 @@ Wire Wire Line
 	2250 2150 2250 2050
 Connection ~ 2250 2450
 Wire Wire Line
-	2300 3000 3100 3000
+	2300 3000 3050 3000
 Wire Wire Line
 	4500 2200 5200 2200
 Wire Wire Line
@@ -1983,7 +1937,7 @@ Wire Wire Line
 Wire Wire Line
 	7200 1750 7900 1750
 Wire Wire Line
-	10200 1700 10200 2100
+	10200 1700 10200 2000
 Wire Wire Line
 	10200 2000 10300 2000
 Wire Wire Line
@@ -1993,7 +1947,7 @@ Wire Wire Line
 	10300 1800 9350 1800
 Connection ~ 7950 1350
 Wire Wire Line
-	7800 950  8250 950 
+	7800 950  7950 950 
 Wire Wire Line
 	8250 950  8250 1050
 Wire Wire Line
@@ -2014,11 +1968,9 @@ Wire Wire Line
 Wire Wire Line
 	9800 5400 10650 5400
 Wire Wire Line
-	9800 4100 10650 4100
+	9800 4100 10500 4100
 Wire Wire Line
-	10650 4200 9800 4200
-Wire Wire Line
-	9800 4300 10650 4300
+	9800 4300 10400 4300
 Wire Wire Line
 	4400 6650 4800 6650
 Wire Wire Line
@@ -2034,7 +1986,7 @@ Wire Wire Line
 Wire Wire Line
 	1150 950  1150 1050
 Wire Wire Line
-	1050 1050 2000 1050
+	1050 1050 1150 1050
 Connection ~ 1150 1050
 Wire Wire Line
 	1050 1150 1800 1150
@@ -2043,17 +1995,17 @@ Wire Wire Line
 Wire Wire Line
 	1150 2350 1150 2250
 Wire Wire Line
-	1050 2250 1900 2250
+	1050 2250 1150 2250
 Connection ~ 1150 2250
 Wire Wire Line
 	2400 2450 2400 2400
 Wire Wire Line
-	2250 2050 2950 2050
+	2250 2050 2400 2050
 Wire Wire Line
-	2400 1950 2400 2100
+	2400 1950 2400 2050
 Connection ~ 2400 2050
 Wire Wire Line
-	2200 1150 3550 1150
+	2200 1150 2450 1150
 Wire Wire Line
 	2000 1050 2000 1150
 Wire Wire Line
@@ -2087,7 +2039,7 @@ Wire Wire Line
 Wire Wire Line
 	1500 3150 1500 3300
 Wire Wire Line
-	1350 3000 1900 3000
+	1350 3000 1850 3000
 Wire Wire Line
 	2050 5100 2600 5100
 Wire Wire Line
@@ -2095,35 +2047,35 @@ Wire Wire Line
 Wire Wire Line
 	2800 5000 2800 5100
 Wire Wire Line
-	2800 5400 2800 5800
+	2800 5400 2800 5650
 Wire Wire Line
-	2600 5400 2600 5800
+	2600 5400 2600 5550
 Wire Wire Line
 	2600 6100 2600 6200
 Wire Wire Line
-	2600 6200 4000 6200
+	2600 6200 2700 6200
 Wire Wire Line
 	2800 6200 2800 6100
 Wire Wire Line
 	2700 6300 2700 6200
 Connection ~ 2700 6200
 Wire Wire Line
-	2800 5650 4100 5650
+	2800 5650 3600 5650
 Connection ~ 2800 5650
 Wire Wire Line
-	2600 5550 4100 5550
+	2600 5550 3400 5550
 Connection ~ 2600 5550
 Wire Wire Line
 	2050 4900 3000 4900
 Wire Wire Line
 	3000 4900 3000 5100
 Wire Wire Line
-	3000 5400 3000 5800
+	3000 5400 3000 5750
 Wire Wire Line
 	3000 6200 3000 6100
 Connection ~ 2800 6200
 Wire Wire Line
-	3000 5750 4100 5750
+	3000 5750 3800 5750
 Connection ~ 3000 5750
 Wire Wire Line
 	5100 5050 5300 5050
@@ -2160,9 +2112,9 @@ Wire Wire Line
 Wire Wire Line
 	10500 3100 10050 3100
 Wire Wire Line
-	2250 1600 3300 1600
+	2250 1600 2450 1600
 Wire Wire Line
-	2450 1500 2450 1700
+	2450 1500 2450 1600
 Connection ~ 2450 1600
 Wire Wire Line
 	5000 1150 4900 1150
@@ -2175,7 +2127,7 @@ Wire Wire Line
 	950  5600 850  5600
 Connection ~ 950  5600
 Wire Wire Line
-	1150 3600 1150 3900
+	1150 3600 1150 3800
 Wire Wire Line
 	1150 3800 850  3800
 Wire Wire Line
@@ -2191,12 +2143,6 @@ Wire Wire Line
 	850  6500 1700 6500
 Wire Wire Line
 	1700 6400 850  6400
-Wire Wire Line
-	850  7300 1700 7300
-Wire Wire Line
-	1700 7200 850  7200
-Wire Wire Line
-	850  7100 1700 7100
 Wire Wire Line
 	850  6900 1700 6900
 Wire Wire Line
@@ -2246,7 +2192,7 @@ Wire Wire Line
 Wire Wire Line
 	850  4100 1700 4100
 Wire Wire Line
-	950  3700 950  7700
+	950  3700 950  4700
 Wire Wire Line
 	950  5100 850  5100
 Connection ~ 950  5100
@@ -2304,11 +2250,11 @@ Wire Wire Line
 Wire Wire Line
 	8000 4500 8100 4500
 Wire Wire Line
-	6600 5800 7800 5800
+	6600 5800 7350 5800
 Wire Wire Line
-	6600 5600 7550 5600
+	6600 5600 7100 5600
 Wire Wire Line
-	10050 3300 10850 3300
+	10050 3300 10200 3300
 Wire Wire Line
 	1500 3150 1350 3150
 Wire Wire Line
@@ -2320,35 +2266,35 @@ Wire Wire Line
 Wire Wire Line
 	3200 4800 3200 5100
 Wire Wire Line
-	4100 5450 3200 5450
+	4100 5450 4000 5450
 Wire Wire Line
-	3200 5400 3200 5800
+	3200 5400 3200 5450
 Connection ~ 3200 5450
 Wire Wire Line
 	3200 6200 3200 6100
 Connection ~ 3000 6200
 Wire Wire Line
-	2600 6950 2600 7050
-Wire Wire Line
-	2600 7350 2600 7450
-Wire Wire Line
-	2800 6950 2800 7050
-Wire Wire Line
-	2800 7350 2800 7450
-Wire Wire Line
-	3500 6950 3500 7050
-Wire Wire Line
-	3000 7450 3000 7350
-Wire Wire Line
 	3200 6950 3200 7050
 Wire Wire Line
-	3200 7450 3200 7350
+	3200 7350 3200 7450
 Wire Wire Line
-	3000 6950 3000 7050
-Connection ~ 2800 7450
-Connection ~ 3000 7450
+	3400 6950 3400 7050
 Wire Wire Line
-	2900 7450 2900 7550
+	3400 7350 3400 7450
+Wire Wire Line
+	4100 6950 4100 7050
+Wire Wire Line
+	3600 7450 3600 7350
+Wire Wire Line
+	3800 6950 3800 7050
+Wire Wire Line
+	3800 7450 3800 7350
+Wire Wire Line
+	3600 6950 3600 7050
+Connection ~ 3400 7450
+Connection ~ 3600 7450
+Wire Wire Line
+	3500 7450 3500 7550
 Wire Wire Line
 	6250 5350 7100 5350
 Wire Wire Line
@@ -2378,7 +2324,7 @@ Wire Wire Line
 Wire Wire Line
 	9100 5000 9700 5000
 Wire Wire Line
-	10550 4900 10650 4900
+	10550 4900 10600 4900
 Wire Wire Line
 	4000 6200 4000 6150
 Connection ~ 3200 6200
@@ -2404,25 +2350,24 @@ Wire Wire Line
 	3400 5550 3400 5850
 Connection ~ 3400 5550
 Wire Wire Line
-	10450 3700 10450 3650
+	10200 3700 10200 3650
 Wire Wire Line
-	10450 3350 10450 3300
-Connection ~ 10450 3300
+	10200 3350 10200 3300
 Wire Wire Line
-	6700 4500 6700 4600
+	6700 4500 6700 4550
 Wire Wire Line
-	6500 4550 6900 4550
+	6500 4550 6700 4550
 Wire Wire Line
 	6500 4550 6500 4500
 Connection ~ 6700 4550
 Wire Wire Line
 	6900 4550 6900 4500
 Wire Wire Line
-	6900 3900 6900 4200
+	6900 3900 6900 3950
 Wire Wire Line
-	6700 3900 6700 4200
+	6700 3900 6700 4050
 Wire Wire Line
-	6500 3900 6500 4200
+	6500 3900 6500 4150
 Wire Wire Line
 	4300 1600 4400 1600
 Wire Wire Line
@@ -2443,15 +2388,14 @@ Connection ~ 6900 3950
 Wire Wire Line
 	6050 1050 6050 1150
 Wire Wire Line
-	6050 1150 6550 1150
+	6050 1150 6300 1150
 Wire Wire Line
-	6300 1050 6300 1250
+	6300 1050 6300 1150
 Wire Wire Line
 	6550 1150 6550 1050
 Connection ~ 6300 1150
 Wire Wire Line
 	8000 2800 8000 2900
-Connection ~ 8000 2900
 Wire Wire Line
 	5750 1250 5750 1050
 Wire Wire Line
@@ -2465,12 +2409,12 @@ Wire Wire Line
 Wire Wire Line
 	6300 2100 6300 2200
 Wire Wire Line
-	1850 3400 2650 3400
+	1850 3400 2100 3400
 Wire Wire Line
 	2100 3300 2100 3400
 Connection ~ 2100 3400
 Wire Wire Line
-	2550 3900 2950 3900
+	2550 3900 2650 3900
 Wire Wire Line
 	2650 3850 2650 3900
 Connection ~ 2650 3900
@@ -2486,7 +2430,7 @@ Wire Wire Line
 	3050 2750 3050 3000
 Connection ~ 3050 3000
 Wire Wire Line
-	1850 2800 1850 3100
+	1850 2800 1850 3000
 Connection ~ 1850 3000
 Wire Wire Line
 	1850 2800 2950 2800
@@ -2497,7 +2441,7 @@ Wire Wire Line
 Wire Wire Line
 	4000 1850 2950 1850
 Wire Wire Line
-	2950 1850 2950 2200
+	2950 1850 2950 2050
 Wire Wire Line
 	2950 2200 3000 2200
 Connection ~ 2950 2050
@@ -2524,18 +2468,18 @@ Wire Wire Line
 	3300 1600 3300 1500
 Connection ~ 3000 1600
 Wire Wire Line
-	2450 1100 2450 1200
+	2450 1100 2450 1150
 Connection ~ 2450 1150
 Wire Wire Line
-	7550 3400 7550 3300
+	7350 3400 7350 3300
 Wire Wire Line
-	7550 3000 7550 2900
-Connection ~ 7550 2900
+	7350 3000 7350 2900
+Connection ~ 7350 2900
 Wire Wire Line
-	2600 7450 3200 7450
-Connection ~ 2900 7450
+	3200 7450 3400 7450
+Connection ~ 3500 7450
 Wire Wire Line
-	3500 7550 3500 7350
+	4100 7550 4100 7350
 Wire Wire Line
 	7550 5200 7550 5050
 Wire Wire Line
@@ -2571,7 +2515,7 @@ Wire Wire Line
 Wire Wire Line
 	1850 4650 2400 4650
 $Comp
-L GND #PWR040
+L power1:GND #PWR040
 U 1 1 5A1E2EA7
 P 2800 4650
 F 0 "#PWR040" H 2800 4400 50  0001 C CNN
@@ -2582,9 +2526,9 @@ F 3 "" H 2800 4650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	2800 4650 2700 4650
+	2800 4650 2750 4650
 Wire Wire Line
-	2750 4650 2750 4450
+	2750 4650 2750 4550
 Wire Wire Line
 	2750 4450 2400 4450
 Connection ~ 2750 4650
@@ -2596,7 +2540,7 @@ Wire Wire Line
 Wire Wire Line
 	1800 3650 1800 3900
 $Comp
-L Q_PMOS_GSD Q103
+L powerboard-rescue:Q_PMOS_GSD Q103
 U 1 1 5A1F95E9
 P 9250 850
 F 0 "Q103" H 9450 900 50  0000 L CNN
@@ -2607,7 +2551,7 @@ F 3 "" H 9250 850 50  0001 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L R R129
+L powerboard-rescue:R R129
 U 1 1 5A1FBE92
 P 8950 1000
 F 0 "R129" V 9030 1000 50  0000 C CNN
@@ -2618,7 +2562,7 @@ F 3 "" H 8950 1000 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	8600 750  9050 750 
+	8600 750  8950 750 
 Wire Wire Line
 	8950 850  8950 750 
 Connection ~ 8950 750 
@@ -2628,14 +2572,14 @@ Wire Wire Line
 	9250 1200 9250 1050
 Connection ~ 9250 1200
 Wire Wire Line
-	10100 750  10100 1500
+	10100 750  10100 1300
 Wire Wire Line
 	10100 750  9450 750 
 Connection ~ 10100 1300
 Text Label 9950 1450 1    60   ~ 0
 Boost24V_EN
 $Comp
-L R R130
+L powerboard-rescue:R R130
 U 1 1 5A203190
 P 9500 1200
 F 0 "R130" V 9580 1200 50  0000 C CNN
@@ -2646,7 +2590,7 @@ F 3 "" H 9500 1200 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	8950 1200 9350 1200
+	8950 1200 9250 1200
 Wire Wire Line
 	9650 1200 9800 1200
 Wire Wire Line
@@ -2655,4 +2599,420 @@ Wire Wire Line
 	9800 850  9950 850 
 Wire Wire Line
 	9950 850  9950 1450
+Wire Wire Line
+	8450 6300 8850 6300
+Wire Wire Line
+	8850 6300 8850 6400
+Wire Wire Line
+	8850 6300 9500 6300
+Wire Wire Line
+	8450 5800 8550 5800
+Wire Wire Line
+	8200 5800 8450 5800
+Wire Wire Line
+	9500 5800 9600 5800
+Wire Wire Line
+	2250 3650 2350 3650
+Wire Wire Line
+	6300 2900 5900 2900
+Wire Wire Line
+	7000 3400 7350 3400
+Wire Wire Line
+	7000 2900 7350 2900
+Wire Wire Line
+	2250 2450 2250 2500
+Wire Wire Line
+	10200 2000 10200 2100
+Wire Wire Line
+	7950 1350 8050 1350
+Wire Wire Line
+	7950 950  8250 950 
+Wire Wire Line
+	1150 1050 2000 1050
+Wire Wire Line
+	1150 2250 1900 2250
+Wire Wire Line
+	2400 2050 2950 2050
+Wire Wire Line
+	2400 2050 2400 2100
+Wire Wire Line
+	2700 6200 2800 6200
+Wire Wire Line
+	2800 5650 2800 5800
+Wire Wire Line
+	2600 5550 2600 5800
+Wire Wire Line
+	2800 6200 3000 6200
+Wire Wire Line
+	3000 5750 3000 5800
+Wire Wire Line
+	2450 1600 2750 1600
+Wire Wire Line
+	2450 1600 2450 1700
+Wire Wire Line
+	950  7600 950  7700
+Wire Wire Line
+	950  5600 950  6000
+Wire Wire Line
+	1150 3800 1150 3900
+Wire Wire Line
+	950  6300 950  6700
+Wire Wire Line
+	950  4700 950  5100
+Wire Wire Line
+	950  5100 950  5600
+Wire Wire Line
+	950  6000 950  6300
+Wire Wire Line
+	950  7000 950  7600
+Wire Wire Line
+	950  6700 950  7000
+Wire Wire Line
+	3200 5450 3200 5800
+Wire Wire Line
+	3000 6200 3200 6200
+Wire Wire Line
+	3400 7450 3500 7450
+Wire Wire Line
+	3600 7450 3800 7450
+Wire Wire Line
+	3200 6200 3400 6200
+Wire Wire Line
+	3400 6200 3600 6200
+Wire Wire Line
+	3600 6200 3800 6200
+Wire Wire Line
+	3800 6200 4000 6200
+Wire Wire Line
+	4000 5450 3200 5450
+Wire Wire Line
+	3800 5750 4100 5750
+Wire Wire Line
+	3600 5650 4100 5650
+Wire Wire Line
+	3400 5550 4100 5550
+Wire Wire Line
+	6700 4550 6700 4600
+Wire Wire Line
+	6700 4550 6900 4550
+Wire Wire Line
+	6500 4150 6500 4200
+Wire Wire Line
+	6700 4050 6700 4200
+Wire Wire Line
+	6900 3950 6900 4200
+Wire Wire Line
+	6300 1150 6550 1150
+Wire Wire Line
+	6300 1150 6300 1250
+Wire Wire Line
+	8000 2900 8450 2900
+Wire Wire Line
+	2100 3400 2650 3400
+Wire Wire Line
+	2650 3900 2950 3900
+Wire Wire Line
+	3050 3000 3100 3000
+Wire Wire Line
+	1850 3000 1900 3000
+Wire Wire Line
+	1850 3000 1850 3100
+Wire Wire Line
+	2950 2050 2950 2200
+Wire Wire Line
+	3500 1150 3550 1150
+Wire Wire Line
+	2750 1150 3000 1150
+Wire Wire Line
+	2750 1600 3000 1600
+Wire Wire Line
+	3000 1150 3300 1150
+Wire Wire Line
+	3300 1150 3500 1150
+Wire Wire Line
+	3000 1600 3300 1600
+Wire Wire Line
+	2450 1150 2750 1150
+Wire Wire Line
+	2450 1150 2450 1200
+Wire Wire Line
+	7350 2900 7650 2900
+Wire Wire Line
+	3500 7450 3600 7450
+Wire Wire Line
+	7100 5600 7550 5600
+Wire Wire Line
+	7350 5800 7800 5800
+Wire Wire Line
+	2750 4650 2700 4650
+Wire Wire Line
+	2750 4550 2750 4450
+Wire Wire Line
+	8950 750  9050 750 
+Wire Wire Line
+	9250 1200 9350 1200
+Wire Wire Line
+	10100 1300 10100 1500
+Wire Wire Line
+	7350 3400 7350 3500
+Connection ~ 7350 3400
+$Comp
+L powerboard-rescue:D_Zener D105
+U 1 1 5C3ED76F
+P 7650 3150
+F 0 "D105" H 7500 3250 50  0000 C CNN
+F 1 "SMAJ36A" H 7900 3250 50  0000 C CNN
+F 2 "Diode_SMD:D_SMA" H 7650 3150 50  0001 C CNN
+F 3 "" H 7650 3150 50  0001 C CNN
+	1    7650 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7650 3300 7650 3400
+Wire Wire Line
+	7650 3400 7350 3400
+Wire Wire Line
+	7650 3000 7650 2900
+Connection ~ 7650 2900
+Wire Wire Line
+	7650 2900 8000 2900
+Connection ~ 8000 2900
+$Comp
+L powerboard-rescue:R R131
+U 1 1 5C48A85D
+P 10650 3550
+F 0 "R131" V 10700 3750 50  0000 C CNN
+F 1 "4k7" V 10650 3550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 10580 3550 50  0001 C CNN
+F 3 "" H 10650 3550 50  0001 C CNN
+	1    10650 3550
+	0    1    1    0   
+$EndComp
+Connection ~ 10200 3300
+Wire Wire Line
+	10200 3300 10850 3300
+$Comp
+L powerboard-rescue:R R132
+U 1 1 5C4BE79C
+P 10650 3650
+F 0 "R132" V 10700 3850 50  0000 C CNN
+F 1 "4k7" V 10650 3650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 10580 3650 50  0001 C CNN
+F 3 "" H 10650 3650 50  0001 C CNN
+	1    10650 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L powerboard-rescue:R R133
+U 1 1 5C4BE86E
+P 10650 3750
+F 0 "R133" V 10700 3950 50  0000 C CNN
+F 1 "4k7" V 10650 3750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 10580 3750 50  0001 C CNN
+F 3 "" H 10650 3750 50  0001 C CNN
+	1    10650 3750
+	0    1    1    0   
+$EndComp
+$Comp
+L power1:+5V #PWR0125
+U 1 1 5C4BF69E
+P 10900 3650
+F 0 "#PWR0125" H 10900 3500 50  0001 C CNN
+F 1 "+5V" V 10900 3850 50  0000 C CNN
+F 2 "" H 10900 3650 50  0000 C CNN
+F 3 "" H 10900 3650 50  0000 C CNN
+	1    10900 3650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10500 3750 10500 4100
+Wire Wire Line
+	10500 3650 10450 3650
+Wire Wire Line
+	10450 3650 10450 4200
+Wire Wire Line
+	10400 4300 10400 3550
+Wire Wire Line
+	10400 3550 10500 3550
+Wire Wire Line
+	10800 3550 10850 3550
+Wire Wire Line
+	10850 3550 10850 3650
+Wire Wire Line
+	10850 3650 10800 3650
+Wire Wire Line
+	10800 3750 10850 3750
+Wire Wire Line
+	10850 3750 10850 3650
+Connection ~ 10850 3650
+Wire Wire Line
+	10850 3650 10900 3650
+Connection ~ 10400 4300
+Connection ~ 10450 4200
+Wire Wire Line
+	10450 4200 9800 4200
+Connection ~ 10500 4100
+Wire Wire Line
+	10450 4200 10650 4200
+Wire Wire Line
+	10500 4100 10650 4100
+Wire Wire Line
+	10400 4300 10650 4300
+$Comp
+L powerboard-rescue:C C123
+U 1 1 5C70CC56
+P 2100 7500
+F 0 "C123" H 2100 7600 50  0000 L CNN
+F 1 "22n" H 2125 7400 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2138 7350 50  0001 C CNN
+F 3 "" H 2100 7500 50  0001 C CNN
+	1    2100 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:C C122
+U 1 1 5C70CF6C
+P 1900 7500
+F 0 "C122" H 1900 7600 50  0000 L CNN
+F 1 "22n" H 1925 7400 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1938 7350 50  0001 C CNN
+F 3 "" H 1900 7500 50  0001 C CNN
+	1    1900 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:C C124
+U 1 1 5C70D046
+P 2300 7500
+F 0 "C124" H 2325 7600 50  0000 L CNN
+F 1 "22n" H 2325 7400 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2338 7350 50  0001 C CNN
+F 3 "" H 2300 7500 50  0001 C CNN
+	1    2300 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L powerboard-rescue:R R134
+U 1 1 5C742E55
+P 2500 7100
+F 0 "R134" V 2450 6850 50  0000 C CNN
+F 1 "470" V 2500 7100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2430 7100 50  0001 C CNN
+F 3 "" H 2500 7100 50  0001 C CNN
+	1    2500 7100
+	0    1    1    0   
+$EndComp
+$Comp
+L powerboard-rescue:R R135
+U 1 1 5C7431F0
+P 2500 7200
+F 0 "R135" V 2450 6950 50  0000 C CNN
+F 1 "470" V 2500 7200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2430 7200 50  0001 C CNN
+F 3 "" H 2500 7200 50  0001 C CNN
+	1    2500 7200
+	0    1    1    0   
+$EndComp
+$Comp
+L powerboard-rescue:R R136
+U 1 1 5C7432CA
+P 2500 7300
+F 0 "R136" V 2450 7050 50  0000 C CNN
+F 1 "470" V 2500 7300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2430 7300 50  0001 C CNN
+F 3 "" H 2500 7300 50  0001 C CNN
+	1    2500 7300
+	0    1    1    0   
+$EndComp
+$Comp
+L power1:GND #PWR0126
+U 1 1 5C74354C
+P 2500 7700
+F 0 "#PWR0126" H 2500 7450 50  0001 C CNN
+F 1 "GND" H 2500 7550 50  0000 C CNN
+F 2 "" H 2500 7700 50  0001 C CNN
+F 3 "" H 2500 7700 50  0001 C CNN
+	1    2500 7700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2500 7700 2300 7700
+Wire Wire Line
+	1900 7700 1900 7650
+Wire Wire Line
+	2100 7650 2100 7700
+Connection ~ 2100 7700
+Wire Wire Line
+	2100 7700 1900 7700
+Wire Wire Line
+	2300 7650 2300 7700
+Connection ~ 2300 7700
+Wire Wire Line
+	2300 7700 2100 7700
+Wire Wire Line
+	850  7100 1900 7100
+Wire Wire Line
+	850  7200 2100 7200
+Wire Wire Line
+	850  7300 2300 7300
+Wire Wire Line
+	1900 7350 1900 7100
+Connection ~ 1900 7100
+Wire Wire Line
+	1900 7100 2350 7100
+Wire Wire Line
+	2300 7350 2300 7300
+Connection ~ 2300 7300
+Wire Wire Line
+	2300 7300 2350 7300
+Wire Wire Line
+	2100 7350 2100 7200
+Connection ~ 2100 7200
+Wire Wire Line
+	2100 7200 2350 7200
+Text Label 2950 7100 2    60   ~ 0
+Hall_U
+Text Label 2950 7200 2    60   ~ 0
+Hall_V
+Text Label 2950 7300 2    60   ~ 0
+Hall_W
+Wire Wire Line
+	2650 7100 2950 7100
+Wire Wire Line
+	2950 7200 2650 7200
+Wire Wire Line
+	2650 7300 2950 7300
+$Comp
+L powerboard-rescue:R R137
+U 1 1 5C9EBBC8
+P 10850 5700
+F 0 "R137" V 10900 5450 50  0000 C CNN
+F 1 "4k7" V 10850 5700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 10780 5700 50  0001 C CNN
+F 3 "" H 10850 5700 50  0001 C CNN
+	1    10850 5700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power1:GND #PWR0127
+U 1 1 5C9EBCD0
+P 11100 5800
+F 0 "#PWR0127" H 11100 5550 50  0001 C CNN
+F 1 "GND" H 11100 5650 50  0000 C CNN
+F 2 "" H 11100 5800 50  0001 C CNN
+F 3 "" H 11100 5800 50  0001 C CNN
+	1    11100 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11100 5800 11100 5700
+Wire Wire Line
+	11100 5700 11000 5700
+Wire Wire Line
+	10700 5700 10600 5700
+Wire Wire Line
+	10600 5700 10600 4900
+Connection ~ 10600 4900
+Wire Wire Line
+	10600 4900 10650 4900
 $EndSCHEMATC

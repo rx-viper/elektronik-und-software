@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 11
 Title "Powerboard 5V regulator"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -61,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L LMZ14203 U201
+L TI-LMZ1xxxx:LMZ14203 U201
 U 1 1 5886813E
 P 5750 3350
 F 0 "U201" H 5950 3100 60  0000 C CNN
@@ -72,7 +26,7 @@ F 3 "" H 5750 3300 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C201
+L powerboard-rescue:CP C201
 U 1 1 58868203
 P 4350 3600
 F 0 "C201" H 4375 3700 50  0000 L CNN
@@ -83,9 +37,11 @@ F 3 "" H 4350 3600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C202
+L powerboard-rescue:C C202
 U 1 1 58868254
 P 4600 3600
+AR Path="/58868254" Ref="C202"  Part="1" 
+AR Path="/5886B9BC/58868254" Ref="C202"  Part="1" 
 F 0 "C202" H 4625 3700 50  0000 L CNN
 F 1 "1µ/40V" V 4550 3250 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805" H 4638 3450 50  0001 C CNN
@@ -94,7 +50,7 @@ F 3 "" H 4600 3600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R201
+L powerboard-rescue:R R201
 U 1 1 588682AE
 P 4800 3600
 F 0 "R201" V 4880 3600 50  0000 C CNN
@@ -105,7 +61,7 @@ F 3 "" H 4800 3600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R203
+L powerboard-rescue:R R203
 U 1 1 588682F3
 P 5100 3350
 F 0 "R203" V 5180 3350 50  0000 C CNN
@@ -116,7 +72,7 @@ F 3 "" H 5100 3350 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R202
+L powerboard-rescue:R R202
 U 1 1 58868335
 P 4800 4100
 F 0 "R202" V 4880 4100 50  0000 C CNN
@@ -127,7 +83,7 @@ F 3 "" H 4800 4100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR041
+L power1:GND #PWR041
 U 1 1 5886836B
 P 5750 4450
 F 0 "#PWR041" H 5750 4200 50  0001 C CNN
@@ -138,9 +94,11 @@ F 3 "" H 5750 4450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C203
+L powerboard-rescue:C C203
 U 1 1 5886861B
 P 6200 4100
+AR Path="/5886861B" Ref="C203"  Part="1" 
+AR Path="/5886B9BC/5886861B" Ref="C203"  Part="1" 
 F 0 "C203" H 6225 4200 50  0000 L CNN
 F 1 "22n" H 6225 4000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6238 3950 50  0001 C CNN
@@ -149,7 +107,7 @@ F 3 "" H 6200 4100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R204
+L powerboard-rescue:R R204
 U 1 1 58868BB2
 P 6500 3700
 F 0 "R204" V 6580 3700 50  0000 C CNN
@@ -160,9 +118,11 @@ F 3 "" H 6500 3700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C204
+L powerboard-rescue:C C204
 U 1 1 58868C01
 P 6700 3700
+AR Path="/58868C01" Ref="C204"  Part="1" 
+AR Path="/5886B9BC/58868C01" Ref="C204"  Part="1" 
 F 0 "C204" H 6725 3800 50  0000 L CNN
 F 1 "22n" H 6725 3600 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6738 3550 50  0001 C CNN
@@ -171,7 +131,7 @@ F 3 "" H 6700 3700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R205
+L powerboard-rescue:R R205
 U 1 1 58868C3C
 P 6600 4100
 F 0 "R205" V 6680 4100 50  0000 C CNN
@@ -182,9 +142,11 @@ F 3 "" H 6600 4100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C205
+L powerboard-rescue:C C205
 U 1 1 58868C81
 P 7350 3500
+AR Path="/58868C81" Ref="C205"  Part="1" 
+AR Path="/5886B9BC/58868C81" Ref="C205"  Part="1" 
 F 0 "C205" H 7375 3600 50  0000 L CNN
 F 1 "10n" H 7375 3400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7388 3350 50  0001 C CNN
@@ -193,7 +155,7 @@ F 3 "" H 7350 3500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C206
+L powerboard-rescue:CP C206
 U 1 1 58868D2E
 P 7600 3500
 F 0 "C206" H 7625 3600 50  0000 L CNN
@@ -297,9 +259,11 @@ Text HLabel 7750 3250 2    60   Input ~ 0
 Connection ~ 4800 3250
 Connection ~ 4800 3350
 $Comp
-L C C207
+L powerboard-rescue:C C207
 U 1 1 5A1C5176
 P 7100 3500
+AR Path="/5A1C5176" Ref="C207"  Part="1" 
+AR Path="/5886B9BC/5A1C5176" Ref="C207"  Part="1" 
 F 0 "C207" H 7125 3600 50  0000 L CNN
 F 1 "1µ" H 7125 3400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7138 3350 50  0001 C CNN

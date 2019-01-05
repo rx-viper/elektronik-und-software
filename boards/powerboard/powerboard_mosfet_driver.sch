@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 11 11
 Title "Powerboard MOSFET Driver"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -61,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L CD40109B U1201
+L cd40109b:CD40109B U1201
 U 1 1 5A170032
 P 5650 3950
 F 0 "U1201" H 5650 3350 60  0000 C CNN
@@ -78,7 +32,7 @@ IN_B
 Text HLabel 4800 4100 0    60   Input ~ 0
 IN_C
 $Comp
-L +3V3 #PWR0119
+L power1:+3V3 #PWR0119
 U 1 1 5A170162
 P 5000 3400
 F 0 "#PWR0119" H 5000 3250 50  0001 C CNN
@@ -89,7 +43,7 @@ F 3 "" H 5000 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +12V #PWR0120
+L power1:+12V #PWR0120
 U 1 1 5A170178
 P 6300 3400
 F 0 "#PWR0120" H 6300 3250 50  0001 C CNN
@@ -106,9 +60,11 @@ OUT_B
 Text HLabel 6300 4050 2    60   Output ~ 0
 OUT_C
 $Comp
-L C C1201
+L powerboard-rescue:C C1201
 U 1 1 5A180FA1
 P 5350 2500
+AR Path="/5A180FA1" Ref="C1201"  Part="1" 
+AR Path="/5A16D393/5A180FA1" Ref="C1201"  Part="1" 
 F 0 "C1201" H 5375 2600 50  0000 L CNN
 F 1 "100n" H 5375 2400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5388 2350 50  0001 C CNN
@@ -117,9 +73,11 @@ F 3 "" H 5350 2500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1202
+L powerboard-rescue:C C1202
 U 1 1 5A181036
 P 5750 2500
+AR Path="/5A181036" Ref="C1202"  Part="1" 
+AR Path="/5A16D393/5A181036" Ref="C1202"  Part="1" 
 F 0 "C1202" H 5775 2600 50  0000 L CNN
 F 1 "100n" H 5775 2400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5788 2350 50  0001 C CNN
@@ -128,7 +86,7 @@ F 3 "" H 5750 2500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR0121
+L power1:+3V3 #PWR0121
 U 1 1 5A1810CD
 P 5350 2250
 F 0 "#PWR0121" H 5350 2100 50  0001 C CNN
@@ -139,7 +97,7 @@ F 3 "" H 5350 2250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +12V #PWR0122
+L power1:+12V #PWR0122
 U 1 1 5A1810E1
 P 5750 2250
 F 0 "#PWR0122" H 5750 2100 50  0001 C CNN
@@ -203,7 +161,7 @@ Wire Wire Line
 Wire Wire Line
 	5000 4300 5100 4300
 $Comp
-L GNDPWR #PWR0123
+L powerboard-rescue:GNDPWR #PWR0123
 U 1 1 5A1C1A43
 P 5550 2850
 F 0 "#PWR0123" H 5550 2650 50  0001 C CNN
@@ -214,7 +172,7 @@ F 3 "" H 5550 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GNDPWR #PWR0124
+L powerboard-rescue:GNDPWR #PWR0124
 U 1 1 5A1C1A67
 P 5000 4500
 F 0 "#PWR0124" H 5000 4300 50  0001 C CNN

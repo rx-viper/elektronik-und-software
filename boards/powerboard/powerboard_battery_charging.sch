@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 11
 Title "Powerboard Battery Charging"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -61,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L LTC4010 U501
+L ltc4010:LTC4010 U501
 U 1 1 58C99575
 P 5950 3550
 F 0 "U501" H 6200 3100 60  0000 C CNN
@@ -72,9 +26,11 @@ F 3 "" H 5950 3550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C501
+L powerboard-rescue:C C501
 U 1 1 58C99739
 P 4100 3800
+AR Path="/58C99739" Ref="C501"  Part="1" 
+AR Path="/58C99165/58C99739" Ref="C501"  Part="1" 
 F 0 "C501" H 4125 3900 50  0000 L CNN
 F 1 "68n" H 4125 3700 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4138 3650 50  0001 C CNN
@@ -83,7 +39,7 @@ F 3 "" H 4100 3800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR058
+L power1:GND #PWR058
 U 1 1 58C99770
 P 3950 4150
 F 0 "#PWR058" H 3950 3900 50  0001 C CNN
@@ -94,7 +50,7 @@ F 3 "" H 3950 4150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR059
+L power1:GND #PWR059
 U 1 1 58C99B11
 P 5300 4350
 F 0 "#PWR059" H 5300 4100 50  0001 C CNN
@@ -105,7 +61,7 @@ F 3 "" H 5300 4350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R506
+L powerboard-rescue:R R506
 U 1 1 58C99B3E
 P 5300 4100
 F 0 "R506" V 5380 4100 50  0000 C CNN
@@ -116,7 +72,7 @@ F 3 "" H 5300 4100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5300 4350 5300 4250
+	5300 4350 5300 4300
 Wire Wire Line
 	5300 3950 5300 3850
 Wire Wire Line
@@ -124,7 +80,7 @@ Wire Wire Line
 Wire Wire Line
 	5300 4300 5200 4300
 Wire Wire Line
-	5200 4300 5200 3350
+	5200 4300 5200 3450
 Wire Wire Line
 	5200 3350 5400 3350
 Connection ~ 5300 4300
@@ -136,7 +92,7 @@ battery
 Wire Wire Line
 	6600 3450 6500 3450
 $Comp
-L INDUCTOR_SMALL L501
+L powerboard-rescue:INDUCTOR_SMALL L501
 U 1 1 58C9A44D
 P 7850 3500
 F 0 "L501" H 7850 3450 50  0000 C CNN
@@ -147,9 +103,9 @@ F 3 "" H 7850 3500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7600 3500 7400 3500
+	7600 3500 7500 3500
 Wire Wire Line
-	7400 3450 7400 3550
+	7400 3450 7400 3500
 Connection ~ 7400 3500
 Wire Wire Line
 	7400 4000 7400 3950
@@ -162,7 +118,7 @@ Wire Wire Line
 Wire Wire Line
 	7000 3350 6500 3350
 $Comp
-L R R507
+L powerboard-rescue:R R507
 U 1 1 58C9A5DA
 P 8200 3850
 F 0 "R507" V 8280 3850 50  0000 C CNN
@@ -175,9 +131,9 @@ $EndComp
 Wire Wire Line
 	8100 3500 8200 3500
 Wire Wire Line
-	8200 3500 8200 3700
+	8200 3500 8200 3600
 Wire Wire Line
-	6600 4250 8900 4250
+	6600 4250 6700 4250
 Wire Wire Line
 	6600 4250 6600 3750
 Wire Wire Line
@@ -190,7 +146,7 @@ Wire Wire Line
 Wire Wire Line
 	8050 3600 8200 3600
 Wire Wire Line
-	8200 4000 8200 4350
+	8200 4000 8200 4250
 Connection ~ 8200 3600
 Text Label 6500 4350 1    60   ~ 0
 bat_sense
@@ -211,9 +167,11 @@ Wire Wire Line
 Wire Wire Line
 	6800 3650 6500 3650
 $Comp
-L C C504
+L powerboard-rescue:C C504
 U 1 1 58C9B1B6
 P 6800 3800
+AR Path="/58C9B1B6" Ref="C504"  Part="1" 
+AR Path="/58C99165/58C9B1B6" Ref="C504"  Part="1" 
 F 0 "C504" H 6825 3900 50  0000 L CNN
 F 1 "100n" H 6825 3700 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6838 3650 50  0001 C CNN
@@ -228,7 +186,7 @@ charge_status
 Wire Wire Line
 	5100 3250 5400 3250
 $Comp
-L CP C503
+L powerboard-rescue:CP C503
 U 1 1 58C9C4F4
 P 5750 2350
 F 0 "C503" H 5775 2450 50  0000 L CNN
@@ -239,7 +197,7 @@ F 3 "" H 5750 2350 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R505
+L powerboard-rescue:R R505
 U 1 1 58C9CAC3
 P 4950 3750
 F 0 "R505" V 5030 3750 50  0000 C CNN
@@ -250,9 +208,11 @@ F 3 "" H 4950 3750 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C502
+L powerboard-rescue:C C502
 U 1 1 58C9CB16
 P 4700 4000
+AR Path="/58C9CB16" Ref="C502"  Part="1" 
+AR Path="/58C99165/58C9CB16" Ref="C502"  Part="1" 
 F 0 "C502" H 4725 4100 50  0000 L CNN
 F 1 "47n" H 4725 3900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4738 3850 50  0001 C CNN
@@ -265,12 +225,12 @@ Wire Wire Line
 Wire Wire Line
 	5400 3650 4700 3650
 Wire Wire Line
-	4700 3650 4700 3850
+	4700 3650 4700 3750
 Wire Wire Line
-	4500 3750 4800 3750
+	4500 3750 4700 3750
 Connection ~ 4700 3750
 $Comp
-L GND #PWR060
+L power1:GND #PWR060
 U 1 1 58C9CC60
 P 4700 4250
 F 0 "#PWR060" H 4700 4000 50  0001 C CNN
@@ -283,7 +243,7 @@ $EndComp
 Wire Wire Line
 	4700 4250 4700 4150
 $Comp
-L R R504
+L powerboard-rescue:R R504
 U 1 1 58C9CCE4
 P 4500 4000
 F 0 "R504" V 4580 4000 50  0000 C CNN
@@ -310,7 +270,7 @@ Connection ~ 6600 2600
 Text Notes 8500 3950 0    49   ~ 0
 Charge current: 2A\nR_sense = 100mV / I_charge\n0.1 ohms = 100mV / 1A
 $Comp
-L GND #PWR061
+L power1:GND #PWR061
 U 1 1 58CF4775
 P 6000 2400
 F 0 "#PWR061" H 6000 2150 50  0001 C CNN
@@ -321,20 +281,20 @@ F 3 "" H 6000 2400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6000 2000 6000 2400
+	6000 2000 6000 2350
 Wire Wire Line
 	6000 2350 5900 2350
 Wire Wire Line
 	5600 2350 5500 2350
 Wire Wire Line
-	5500 2000 5500 2600
+	5500 2000 5500 2350
 Connection ~ 5500 2600
 Wire Wire Line
-	3450 2600 7400 2600
+	3450 2600 5500 2600
 Text HLabel 3700 3550 0    59   Input ~ 0
 charge_enable
 $Comp
-L GND #PWR062
+L power1:GND #PWR062
 U 1 1 58FD411A
 P 5950 4250
 F 0 "#PWR062" H 5950 4000 50  0001 C CNN
@@ -347,7 +307,7 @@ $EndComp
 Wire Wire Line
 	5950 4250 5950 4150
 $Comp
-L D_Schottky D501
+L powerboard-rescue:D_Schottky D501
 U 1 1 58FD4C3D
 P 3300 2600
 F 0 "D501" H 3300 2700 50  0000 C CNN
@@ -360,7 +320,7 @@ $EndComp
 Wire Wire Line
 	3150 2600 2700 2600
 $Comp
-L IRF7343PBF Q503
+L powerboard-rescue:IRF7343PBF Q503
 U 1 1 59433B06
 P 7300 3750
 F 0 "Q503" H 7550 3825 50  0000 L CNN
@@ -371,7 +331,7 @@ F 3 "" H 7300 3750 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L IRF7343PBF Q503
+L powerboard-rescue:IRF7343PBF Q503
 U 2 1 59433B99
 P 7300 3250
 F 0 "Q503" V 7300 2850 50  0000 L CNN
@@ -384,7 +344,7 @@ $EndComp
 Wire Wire Line
 	7000 3200 7100 3200
 Wire Wire Line
-	7500 3450 7500 3550
+	7500 3450 7500 3500
 Connection ~ 7500 3500
 Wire Wire Line
 	7000 3800 7100 3800
@@ -393,11 +353,11 @@ Text Notes 8150 3350 0    60   ~ 0
 Text Label 7600 3500 1    60   ~ 0
 bat_inductor
 Wire Wire Line
-	3700 3550 5400 3550
+	3700 3550 3800 3550
 Wire Wire Line
 	3800 3950 3800 4050
 Wire Wire Line
-	3800 4050 4100 4050
+	3800 4050 3950 4050
 Wire Wire Line
 	4100 4050 4100 3950
 Wire Wire Line
@@ -410,7 +370,7 @@ Wire Wire Line
 	3800 3650 3800 3550
 Connection ~ 3800 3550
 $Comp
-L R R508
+L powerboard-rescue:R R508
 U 1 1 5A1446F4
 P 3800 3800
 F 0 "R508" V 3880 3800 50  0000 C CNN
@@ -421,7 +381,7 @@ F 3 "" H 3800 3800 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR063
+L power1:GND #PWR063
 U 1 1 5A144E6A
 P 7400 4000
 F 0 "#PWR063" H 7400 3750 50  0001 C CNN
@@ -432,7 +392,7 @@ F 3 "" H 7400 4000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR064
+L power1:GND #PWR064
 U 1 1 5A144EA2
 P 6800 4000
 F 0 "#PWR064" H 6800 3750 50  0001 C CNN
@@ -443,7 +403,7 @@ F 3 "" H 6800 4000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR065
+L power1:GND #PWR065
 U 1 1 5A14A095
 P 6600 3450
 F 0 "#PWR065" H 6600 3200 50  0001 C CNN
@@ -454,9 +414,11 @@ F 3 "" H 6600 3450 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L C C506
+L powerboard-rescue:C C506
 U 1 1 5A162346
 P 8600 4500
+AR Path="/5A162346" Ref="C506"  Part="1" 
+AR Path="/58C99165/5A162346" Ref="C506"  Part="1" 
 F 0 "C506" H 8625 4600 50  0000 L CNN
 F 1 "100n" H 8625 4400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 8638 4350 50  0001 C CNN
@@ -470,11 +432,13 @@ Connection ~ 8600 4250
 Wire Wire Line
 	8600 4750 8600 4650
 Wire Wire Line
-	8050 4700 6500 4700
+	8050 4700 6700 4700
 $Comp
-L C C507
+L powerboard-rescue:C C507
 U 1 1 5A163209
 P 6700 4450
+AR Path="/5A163209" Ref="C507"  Part="1" 
+AR Path="/58C99165/5A163209" Ref="C507"  Part="1" 
 F 0 "C507" H 6725 4550 50  0000 L CNN
 F 1 "470n" H 6725 4350 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6738 4300 50  0001 C CNN
@@ -489,9 +453,11 @@ Wire Wire Line
 	6700 4600 6700 4700
 Connection ~ 6700 4700
 $Comp
-L C C508
+L powerboard-rescue:C C508
 U 1 1 5A163915
 P 5750 2000
+AR Path="/5A163915" Ref="C508"  Part="1" 
+AR Path="/58C99165/5A163915" Ref="C508"  Part="1" 
 F 0 "C508" H 5775 2100 50  0000 L CNN
 F 1 "220n" H 5775 1900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5788 1850 50  0001 C CNN
@@ -506,9 +472,11 @@ Connection ~ 6000 2350
 Wire Wire Line
 	6000 2000 5900 2000
 $Comp
-L C C505
+L powerboard-rescue:C C505
 U 1 1 5A15E124
 P 8200 4500
+AR Path="/5A15E124" Ref="C505"  Part="1" 
+AR Path="/58C99165/5A15E124" Ref="C505"  Part="1" 
 F 0 "C505" H 8225 4600 50  0000 L CNN
 F 1 "10µ" H 8225 4400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805" H 8238 4350 50  0001 C CNN
@@ -519,7 +487,7 @@ $EndComp
 Text Notes 4000 5150 0    60   ~ 0
 9 cells: R504 = 65.7k, R505 = 8.2k, R504/R505 = 8.01\n8 cells: R504 = 57.6k, R505 = 8.2k, R504/R505 = 7.02
 $Comp
-L GND #PWR066
+L power1:GND #PWR066
 U 1 1 5A1B3B71
 P 8200 4750
 F 0 "#PWR066" H 8200 4500 50  0001 C CNN
@@ -530,7 +498,7 @@ F 3 "" H 8200 4750 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR067
+L power1:GND #PWR067
 U 1 1 5A1B3BB2
 P 8600 4750
 F 0 "#PWR067" H 8600 4500 50  0001 C CNN
@@ -540,4 +508,46 @@ F 3 "" H 8600 4750 50  0000 C CNN
 	1    8600 4750
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5300 4300 5300 4250
+Wire Wire Line
+	5200 3450 5200 3350
+Wire Wire Line
+	7400 3500 7400 3550
+Wire Wire Line
+	8200 4250 8600 4250
+Wire Wire Line
+	8200 4250 8200 4350
+Wire Wire Line
+	8200 3600 8200 3700
+Wire Wire Line
+	4700 3750 4700 3850
+Wire Wire Line
+	4700 3750 4800 3750
+Wire Wire Line
+	7150 4250 8200 4250
+Wire Wire Line
+	6600 2600 7400 2600
+Wire Wire Line
+	5500 2600 6600 2600
+Wire Wire Line
+	7500 3500 7400 3500
+Wire Wire Line
+	7500 3500 7500 3550
+Wire Wire Line
+	3950 4050 4100 4050
+Wire Wire Line
+	4100 3550 5400 3550
+Wire Wire Line
+	3800 3550 4100 3550
+Wire Wire Line
+	8600 4250 8900 4250
+Wire Wire Line
+	6700 4250 7150 4250
+Wire Wire Line
+	6700 4700 6500 4700
+Wire Wire Line
+	5500 2350 5500 2600
+Wire Wire Line
+	6000 2350 6000 2400
 $EndSCHEMATC

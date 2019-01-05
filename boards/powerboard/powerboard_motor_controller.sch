@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 11
 Title "Powerboard motor controller"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -81,7 +35,7 @@ Motor_W_P
 Text HLabel 3300 3200 0    60   Input ~ 0
 Motor_W_N
 $Comp
-L LED D302
+L powerboard-rescue:LED D302
 U 1 1 59379B27
 P 2750 3350
 F 0 "D302" H 2950 3300 50  0000 C CNN
@@ -92,7 +46,7 @@ F 3 "" H 2750 3350 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D301
+L powerboard-rescue:LED D301
 U 1 1 59379B92
 P 2350 3450
 F 0 "D301" H 2350 3550 50  0000 C CNN
@@ -103,7 +57,7 @@ F 3 "" H 2350 3450 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L +5V #PWR042
+L power1:+5V #PWR042
 U 1 1 59379BBE
 P 1200 3400
 F 0 "#PWR042" H 1200 3250 50  0001 C CNN
@@ -114,7 +68,7 @@ F 3 "" H 1200 3400 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R302
+L powerboard-rescue:R R302
 U 1 1 59379C3A
 P 1950 3350
 F 0 "R302" V 2030 3350 50  0000 C CNN
@@ -125,7 +79,7 @@ F 3 "" H 1950 3350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R301
+L powerboard-rescue:R R301
 U 1 1 59379C8A
 P 1550 3450
 F 0 "R301" V 1630 3450 50  0000 C CNN
@@ -136,7 +90,7 @@ F 3 "" H 1550 3450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR043
+L power1:GND #PWR043
 U 1 1 59379D87
 P 2900 3600
 F 0 "#PWR043" H 2900 3350 50  0001 C CNN
@@ -147,7 +101,7 @@ F 3 "" H 2900 3600 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R303
+L powerboard-rescue:R R303
 U 1 1 59379DA8
 P 3150 3600
 F 0 "R303" V 3230 3600 50  0000 C CNN
@@ -158,7 +112,7 @@ F 3 "" H 3150 3600 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR044
+L power1:GND #PWR044
 U 1 1 5937A00C
 P 5600 5000
 F 0 "#PWR044" H 5600 4750 50  0001 C CNN
@@ -169,7 +123,7 @@ F 3 "" H 5600 5000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR045
+L power1:GND #PWR045
 U 1 1 5937A030
 P 3300 4400
 F 0 "#PWR045" H 3300 4150 50  0001 C CNN
@@ -180,9 +134,11 @@ F 3 "" H 3300 4400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C308
+L powerboard-rescue:C C308
 U 1 1 5937A285
 P 6300 3000
+AR Path="/5937A285" Ref="C308"  Part="1" 
+AR Path="/588899D1/5937A285" Ref="C308"  Part="1" 
 F 0 "C308" H 6325 3100 50  0000 L CNN
 F 1 "100n" H 6325 2900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6338 2850 50  0001 C CNN
@@ -191,9 +147,11 @@ F 3 "" H 6300 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C309
+L powerboard-rescue:C C309
 U 1 1 5937A2ED
 P 6600 3000
+AR Path="/5937A2ED" Ref="C309"  Part="1" 
+AR Path="/588899D1/5937A2ED" Ref="C309"  Part="1" 
 F 0 "C309" H 6625 3100 50  0000 L CNN
 F 1 "100n" H 6625 2900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6638 2850 50  0001 C CNN
@@ -202,9 +160,11 @@ F 3 "" H 6600 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C310
+L powerboard-rescue:C C310
 U 1 1 5937A31D
 P 6900 3000
+AR Path="/5937A31D" Ref="C310"  Part="1" 
+AR Path="/588899D1/5937A31D" Ref="C310"  Part="1" 
 F 0 "C310" H 6925 3100 50  0000 L CNN
 F 1 "100n" H 6925 2900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6938 2850 50  0001 C CNN
@@ -213,7 +173,7 @@ F 3 "" H 6900 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ACS711 U303
+L ACS711:ACS711 U303
 U 1 1 5937A6A5
 P 6200 4750
 F 0 "U303" H 6200 4450 60  0000 C CNN
@@ -224,7 +184,7 @@ F 3 "" H 6200 4750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR046
+L power1:+3V3 #PWR046
 U 1 1 5937A989
 P 6800 4500
 F 0 "#PWR046" H 6800 4350 50  0001 C CNN
@@ -235,7 +195,7 @@ F 3 "" H 6800 4500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR047
+L power1:GND #PWR047
 U 1 1 5937A9B1
 P 6800 5000
 F 0 "#PWR047" H 6800 4750 50  0001 C CNN
@@ -248,7 +208,7 @@ $EndComp
 Text HLabel 6900 4700 2    60   Output ~ 0
 Current
 $Comp
-L GND #PWR048
+L power1:GND #PWR048
 U 1 1 5938B958
 P 3300 2200
 F 0 "#PWR048" H 3300 1950 50  0001 C CNN
@@ -259,9 +219,11 @@ F 3 "" H 3300 2200 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L C C305
+L powerboard-rescue:C C305
 U 1 1 5938BECA
 P 3000 4100
+AR Path="/5938BECA" Ref="C305"  Part="1" 
+AR Path="/588899D1/5938BECA" Ref="C305"  Part="1" 
 F 0 "C305" H 3025 4200 50  0000 L CNN
 F 1 "100n" H 3025 4000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3038 3950 50  0001 C CNN
@@ -270,9 +232,11 @@ F 3 "" H 3000 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C304
+L powerboard-rescue:C C304
 U 1 1 5938BF02
 P 2700 4100
+AR Path="/5938BF02" Ref="C304"  Part="1" 
+AR Path="/588899D1/5938BF02" Ref="C304"  Part="1" 
 F 0 "C304" H 2725 4200 50  0000 L CNN
 F 1 "100n" H 2725 4000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 2738 3950 50  0001 C CNN
@@ -281,7 +245,7 @@ F 3 "" H 2700 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR049
+L power1:GND #PWR049
 U 1 1 5938C0D3
 P 3000 4400
 F 0 "#PWR049" H 3000 4150 50  0001 C CNN
@@ -292,7 +256,7 @@ F 3 "" H 3000 4400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR050
+L power1:GND #PWR050
 U 1 1 5938C102
 P 2700 4400
 F 0 "#PWR050" H 2700 4150 50  0001 C CNN
@@ -309,7 +273,7 @@ VREG
 Text Notes 1100 3900 0    60   ~ 0
 R303: 1.4A current limit
 $Comp
-L GND #PWR051
+L power1:GND #PWR051
 U 1 1 5939C50C
 P 5650 1850
 F 0 "#PWR051" H 5650 1600 50  0001 C CNN
@@ -320,9 +284,11 @@ F 3 "" H 5650 1850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C307
+L powerboard-rescue:C C307
 U 1 1 5939C9A1
 P 5750 1600
+AR Path="/5939C9A1" Ref="C307"  Part="1" 
+AR Path="/588899D1/5939C9A1" Ref="C307"  Part="1" 
 F 0 "C307" H 5775 1700 50  0000 L CNN
 F 1 "1µ" H 5775 1500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5788 1450 50  0001 C CNN
@@ -335,7 +301,7 @@ V_IN
 Text Label 1050 6350 0    60   ~ 0
 V_IN
 $Comp
-L GND #PWR052
+L power1:GND #PWR052
 U 1 1 5939E00D
 P 2750 6950
 F 0 "#PWR052" H 2750 6700 50  0001 C CNN
@@ -346,9 +312,11 @@ F 3 "" H 2750 6950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C303
+L powerboard-rescue:C C303
 U 1 1 5939E4CC
 P 3350 6600
+AR Path="/5939E4CC" Ref="C303"  Part="1" 
+AR Path="/588899D1/5939E4CC" Ref="C303"  Part="1" 
 F 0 "C303" H 3375 6700 50  0000 L CNN
 F 1 "10µ" H 3375 6500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3388 6450 50  0001 C CNN
@@ -357,9 +325,11 @@ F 3 "" H 3350 6600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C301
+L powerboard-rescue:C C301
 U 1 1 5939E5FF
 P 1550 6600
+AR Path="/5939E5FF" Ref="C301"  Part="1" 
+AR Path="/588899D1/5939E5FF" Ref="C301"  Part="1" 
 F 0 "C301" H 1575 6700 50  0000 L CNN
 F 1 "4µ7 0805" H 1575 6500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805" H 1588 6450 50  0001 C CNN
@@ -368,7 +338,7 @@ F 3 "" H 1550 6600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L DRV8332 U302
+L drv8332:DRV8332 U302
 U 1 1 593822E3
 P 4200 2750
 F 0 "U302" H 4550 3400 60  0000 C CNN
@@ -393,7 +363,7 @@ Wire Wire Line
 Wire Wire Line
 	1200 3400 1300 3400
 Wire Wire Line
-	1300 3350 1300 3450
+	1300 3350 1300 3400
 Wire Wire Line
 	1300 3450 1400 3450
 Wire Wire Line
@@ -414,7 +384,7 @@ Wire Wire Line
 Wire Wire Line
 	3400 4050 3300 4050
 Wire Wire Line
-	5600 5000 5600 4800
+	5600 5000 5600 4900
 Wire Wire Line
 	5600 4800 5700 4800
 Wire Wire Line
@@ -436,11 +406,11 @@ Wire Wire Line
 Wire Wire Line
 	6700 4700 6900 4700
 Wire Wire Line
-	4950 2300 8400 2300
+	4950 2300 6300 2300
 Wire Wire Line
-	4950 2400 8400 2400
+	4950 2400 6600 2400
 Wire Wire Line
-	4950 2500 8400 2500
+	4950 2500 6900 2500
 Wire Wire Line
 	6300 3450 6300 3150
 Connection ~ 6300 2300
@@ -456,14 +426,14 @@ Wire Wire Line
 	5300 3200 4950 3200
 Connection ~ 5300 3200
 Wire Wire Line
-	3300 2200 3300 2400
+	3300 2200 3300 2300
 Wire Wire Line
 	3300 2300 3400 2300
 Wire Wire Line
 	3300 2400 3400 2400
 Connection ~ 3300 2300
 Wire Wire Line
-	2600 3750 3400 3750
+	2600 3750 2700 3750
 Wire Wire Line
 	2700 3750 2700 3950
 Wire Wire Line
@@ -479,9 +449,9 @@ Wire Wire Line
 Wire Wire Line
 	5300 3300 4950 3300
 Wire Wire Line
-	5500 1450 5500 1250
+	5500 1450 5500 1350
 Wire Wire Line
-	5300 1350 6250 1350
+	5300 1350 5500 1350
 Connection ~ 5500 1350
 Connection ~ 5300 3100
 Wire Wire Line
@@ -489,18 +459,18 @@ Wire Wire Line
 Wire Wire Line
 	5500 1750 5500 1800
 Wire Wire Line
-	5500 1800 6250 1800
+	5500 1800 5650 1800
 Wire Wire Line
 	5650 1800 5650 1850
 Wire Wire Line
 	5750 1800 5750 1750
 Connection ~ 5650 1800
 Wire Wire Line
-	1050 6350 2350 6350
+	1050 6350 1550 6350
 Wire Wire Line
-	2750 6650 2750 6950
+	2750 6650 2750 6850
 Wire Wire Line
-	1550 6850 4600 6850
+	1550 6850 2750 6850
 Connection ~ 2750 6850
 Wire Wire Line
 	1550 6850 1550 6750
@@ -510,12 +480,12 @@ Connection ~ 1550 6350
 Wire Wire Line
 	3350 6850 3350 6750
 Wire Wire Line
-	3150 6350 5000 6350
+	3150 6350 3350 6350
 Wire Wire Line
 	3350 6350 3350 6450
 Connection ~ 3350 6350
 Wire Wire Line
-	5300 1350 5300 3300
+	5300 1350 5300 3100
 Wire Wire Line
 	6300 3450 4950 3450
 Wire Wire Line
@@ -529,11 +499,11 @@ Wire Wire Line
 Wire Wire Line
 	6300 2850 6300 2300
 Wire Wire Line
-	4950 2650 5450 2650
+	4950 2650 5050 2650
 Wire Wire Line
 	4950 2950 5050 2950
 Wire Wire Line
-	5050 2950 5050 2650
+	5050 2950 5050 2850
 Connection ~ 5050 2650
 Wire Wire Line
 	4950 2750 5050 2750
@@ -544,9 +514,9 @@ Connection ~ 5050 2850
 Wire Wire Line
 	4950 3800 5250 3800
 Wire Wire Line
-	5250 3800 5250 4600
+	5250 3800 5250 3900
 Wire Wire Line
-	5250 4600 5700 4600
+	5250 4600 5600 4600
 Wire Wire Line
 	4950 3900 5250 3900
 Connection ~ 5250 3900
@@ -554,7 +524,7 @@ Wire Wire Line
 	4950 4000 5250 4000
 Connection ~ 5250 4000
 $Comp
-L GND #PWR053
+L power1:GND #PWR053
 U 1 1 59385450
 P 5050 4350
 F 0 "#PWR053" H 5050 4100 50  0001 C CNN
@@ -565,19 +535,19 @@ F 3 "" H 5050 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5050 4350 5050 4150
+	5050 4350 5050 4250
 Wire Wire Line
 	5050 4150 4950 4150
 Wire Wire Line
 	4950 4250 5050 4250
 Connection ~ 5050 4250
 Wire Wire Line
-	3300 4050 3300 4400
+	3300 4050 3300 4150
 Wire Wire Line
 	3300 4150 3400 4150
 Connection ~ 3300 4150
 $Comp
-L L_Small L301
+L powerboard-rescue:L_Small L301
 U 1 1 593942CD
 P 8500 2300
 F 0 "L301" V 8550 2050 50  0000 L CNN
@@ -588,7 +558,7 @@ F 3 "" H 8500 2300 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L L_Small L302
+L powerboard-rescue:L_Small L302
 U 1 1 5939492B
 P 8500 2400
 F 0 "L302" V 8550 2150 50  0000 L CNN
@@ -599,7 +569,7 @@ F 3 "" H 8500 2400 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L L_Small L303
+L powerboard-rescue:L_Small L303
 U 1 1 59394977
 P 8500 2500
 F 0 "L303" V 8550 2250 50  0000 L CNN
@@ -612,9 +582,11 @@ $EndComp
 Text Notes 8150 2200 0    60   ~ 0
 3x Würth 742792515\nWE-CBF SMD-Ferrit
 $Comp
-L C C316
+L powerboard-rescue:C C316
 U 1 1 59394A5C
 P 8800 2750
+AR Path="/59394A5C" Ref="C316"  Part="1" 
+AR Path="/588899D1/59394A5C" Ref="C316"  Part="1" 
 F 0 "C316" V 8850 2800 50  0000 L CNN
 F 1 "100p" V 8850 2500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 8838 2600 50  0001 C CNN
@@ -623,9 +595,11 @@ F 3 "" H 8800 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C317
+L powerboard-rescue:C C317
 U 1 1 59394D20
 P 9100 2750
+AR Path="/59394D20" Ref="C317"  Part="1" 
+AR Path="/588899D1/59394D20" Ref="C317"  Part="1" 
 F 0 "C317" V 9150 2800 50  0000 L CNN
 F 1 "100p" V 9150 2500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 9138 2600 50  0001 C CNN
@@ -634,9 +608,11 @@ F 3 "" H 9100 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C318
+L powerboard-rescue:C C318
 U 1 1 59394D7D
 P 9400 2750
+AR Path="/59394D7D" Ref="C318"  Part="1" 
+AR Path="/588899D1/59394D7D" Ref="C318"  Part="1" 
 F 0 "C318" V 9450 2800 50  0000 L CNN
 F 1 "100p" V 9450 2500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 9438 2600 50  0001 C CNN
@@ -645,11 +621,11 @@ F 3 "" H 9400 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8600 2500 9600 2500
+	8600 2500 8650 2500
 Wire Wire Line
-	9600 2400 8600 2400
+	9600 2400 8950 2400
 Wire Wire Line
-	8600 2300 9600 2300
+	8600 2300 9100 2300
 Wire Wire Line
 	9400 2900 9400 3000
 Wire Wire Line
@@ -675,7 +651,7 @@ Wire Wire Line
 	8950 3000 8950 2400
 Connection ~ 8950 2400
 $Comp
-L D_TVS D304
+L powerboard-rescue:D_TVS D304
 U 1 1 59395CC5
 P 7350 2750
 F 0 "D304" H 7350 2850 50  0000 C CNN
@@ -686,7 +662,7 @@ F 3 "" H 7350 2750 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L D_TVS D305
+L powerboard-rescue:D_TVS D305
 U 1 1 59396C40
 P 7700 2750
 F 0 "D305" H 7700 2850 50  0000 C CNN
@@ -697,7 +673,7 @@ F 3 "" H 7700 2750 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L D_TVS D306
+L powerboard-rescue:D_TVS D306
 U 1 1 59396FB4
 P 8050 2750
 F 0 "D306" H 8050 2850 50  0000 C CNN
@@ -748,9 +724,11 @@ Switching noise filter
 Text Notes 7150 3250 0    60   ~ 0
 Flyback protection\nbidirectional TVS diodes
 $Comp
-L C C313
+L powerboard-rescue:C C313
 U 1 1 59398698
 P 5500 1600
+AR Path="/59398698" Ref="C313"  Part="1" 
+AR Path="/588899D1/59398698" Ref="C313"  Part="1" 
 F 0 "C313" H 5525 1700 50  0000 L CNN
 F 1 "4µ7 0805" V 5450 1150 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5538 1450 50  0001 C CNN
@@ -759,9 +737,11 @@ F 3 "" H 5500 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C314
+L powerboard-rescue:C C314
 U 1 1 59398EA3
 P 6000 1600
+AR Path="/59398EA3" Ref="C314"  Part="1" 
+AR Path="/588899D1/59398EA3" Ref="C314"  Part="1" 
 F 0 "C314" H 6025 1700 50  0000 L CNN
 F 1 "1µ" H 6025 1500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6038 1450 50  0001 C CNN
@@ -770,9 +750,11 @@ F 3 "" H 6000 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C315
+L powerboard-rescue:C C315
 U 1 1 59398F11
 P 6250 1600
+AR Path="/59398F11" Ref="C315"  Part="1" 
+AR Path="/588899D1/59398F11" Ref="C315"  Part="1" 
 F 0 "C315" H 6275 1700 50  0000 L CNN
 F 1 "100n" H 6275 1500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6288 1450 50  0001 C CNN
@@ -793,9 +775,11 @@ Wire Wire Line
 	6000 1750 6000 1800
 Connection ~ 6000 1800
 $Comp
-L C C312
+L powerboard-rescue:C C312
 U 1 1 5939B286
 P 4600 6600
+AR Path="/5939B286" Ref="C312"  Part="1" 
+AR Path="/588899D1/5939B286" Ref="C312"  Part="1" 
 F 0 "C312" H 4625 6700 50  0000 L CNN
 F 1 "100n" H 4625 6500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4638 6450 50  0001 C CNN
@@ -805,9 +789,11 @@ F 3 "" H 4600 6600 50  0001 C CNN
 $EndComp
 Connection ~ 3350 6850
 $Comp
-L C C319
+L powerboard-rescue:C C319
 U 1 1 59453879
 P 7050 5050
+AR Path="/59453879" Ref="C319"  Part="1" 
+AR Path="/588899D1/59453879" Ref="C319"  Part="1" 
 F 0 "C319" H 7075 5150 50  0000 L CNN
 F 1 "1n" H 7075 4950 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7088 4900 50  0001 C CNN
@@ -816,7 +802,7 @@ F 3 "" H 7050 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR054
+L power1:GND #PWR054
 U 1 1 59453906
 P 7050 5300
 F 0 "#PWR054" H 7050 5050 50  0001 C CNN
@@ -833,7 +819,7 @@ Wire Wire Line
 Wire Wire Line
 	7050 4800 7050 4900
 $Comp
-L +12V #PWR055
+L power1:+12V #PWR055
 U 1 1 5A194A5C
 P 5000 6350
 F 0 "#PWR055" H 5000 6200 50  0001 C CNN
@@ -844,7 +830,7 @@ F 3 "" H 5000 6350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +12V #PWR056
+L power1:+12V #PWR056
 U 1 1 5A194AD4
 P 5450 2650
 F 0 "#PWR056" H 5450 2500 50  0001 C CNN
@@ -860,7 +846,7 @@ Wire Wire Line
 	4600 6450 4600 6350
 Connection ~ 4600 6350
 $Comp
-L LM7812CT U301
+L powerboard-rescue:LM7812CT U301
 U 1 1 5A1DB61B
 P 2750 6400
 F 0 "U301" H 2550 6600 50  0000 C CNN
@@ -871,7 +857,7 @@ F 3 "" H 2750 6400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +12V #PWR057
+L power1:+12V #PWR057
 U 1 1 5A1B25BF
 P 2600 3750
 F 0 "#PWR057" H 2600 3600 50  0001 C CNN
@@ -883,9 +869,11 @@ F 3 "" H 2600 3750 50  0001 C CNN
 $EndComp
 Connection ~ 2700 3750
 $Comp
-L C C302
+L powerboard-rescue:C C302
 U 1 1 5A1B517D
 P 4250 6600
+AR Path="/5A1B517D" Ref="C302"  Part="1" 
+AR Path="/588899D1/5A1B517D" Ref="C302"  Part="1" 
 F 0 "C302" H 4275 6700 50  0000 L CNN
 F 1 "100n" H 4275 6500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4288 6450 50  0001 C CNN
@@ -900,9 +888,11 @@ Wire Wire Line
 	4250 6750 4250 6850
 Connection ~ 4250 6850
 $Comp
-L C C306
+L powerboard-rescue:C C306
 U 1 1 5A1B58BC
 P 3900 6600
+AR Path="/5A1B58BC" Ref="C306"  Part="1" 
+AR Path="/588899D1/5A1B58BC" Ref="C306"  Part="1" 
 F 0 "C306" H 3925 6700 50  0000 L CNN
 F 1 "100n" H 3925 6500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3938 6450 50  0001 C CNN
@@ -916,4 +906,96 @@ Connection ~ 3900 6350
 Wire Wire Line
 	3900 6750 3900 6850
 Connection ~ 3900 6850
+Wire Wire Line
+	1300 3400 1300 3450
+Wire Wire Line
+	5600 4900 5600 4800
+Wire Wire Line
+	5600 4600 5700 4600
+Wire Wire Line
+	6300 2300 7700 2300
+Wire Wire Line
+	6600 2400 7350 2400
+Wire Wire Line
+	6900 2500 7150 2500
+Wire Wire Line
+	5300 3200 5300 3300
+Wire Wire Line
+	3300 2300 3300 2400
+Wire Wire Line
+	5500 1350 5500 1250
+Wire Wire Line
+	5500 1350 5750 1350
+Wire Wire Line
+	5300 3100 5300 3200
+Wire Wire Line
+	5650 1800 5750 1800
+Wire Wire Line
+	2750 6850 2750 6950
+Wire Wire Line
+	2750 6850 3350 6850
+Wire Wire Line
+	1550 6350 2350 6350
+Wire Wire Line
+	3350 6350 3900 6350
+Wire Wire Line
+	5050 2650 5450 2650
+Wire Wire Line
+	5050 2750 5050 2650
+Wire Wire Line
+	5050 2850 5050 2750
+Wire Wire Line
+	5250 3900 5250 4000
+Wire Wire Line
+	5250 4000 5250 4600
+Wire Wire Line
+	5050 4250 5050 4150
+Wire Wire Line
+	3300 4150 3300 4400
+Wire Wire Line
+	8650 2500 9400 2500
+Wire Wire Line
+	8800 2400 8600 2400
+Wire Wire Line
+	9100 2300 9250 2300
+Wire Wire Line
+	8950 2400 8800 2400
+Wire Wire Line
+	7150 2500 8050 2500
+Wire Wire Line
+	7350 2400 7500 2400
+Wire Wire Line
+	7500 2400 8400 2400
+Wire Wire Line
+	7700 2300 7850 2300
+Wire Wire Line
+	9250 2300 9600 2300
+Wire Wire Line
+	9400 2500 9600 2500
+Wire Wire Line
+	7850 2300 8400 2300
+Wire Wire Line
+	8050 2500 8400 2500
+Wire Wire Line
+	5750 1350 6000 1350
+Wire Wire Line
+	6000 1350 6250 1350
+Wire Wire Line
+	5750 1800 6000 1800
+Wire Wire Line
+	6000 1800 6250 1800
+Wire Wire Line
+	3350 6850 3900 6850
+Wire Wire Line
+	4600 6350 5000 6350
+Wire Wire Line
+	2700 3750 3400 3750
+Wire Wire Line
+	4250 6350 4600 6350
+Wire Wire Line
+	4250 6850 4600 6850
+Wire Wire Line
+	3900 6350 4250 6350
+Wire Wire Line
+	3900 6850 4250 6850
 $EndSCHEMATC

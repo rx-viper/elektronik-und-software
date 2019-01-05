@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 7 11
 Title "Powerboard: Heat Probes"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -61,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L GND #PWR079
+L power1:GND #PWR079
 U 1 1 58F51ACB
 P 6250 5800
 F 0 "#PWR079" H 6250 5550 50  0001 C CNN
@@ -84,7 +38,7 @@ Probe3_EN
 Text Label 2800 2450 2    60   ~ 0
 Probe1_EN
 $Comp
-L ACS711 U801
+L ACS711:ACS711 U801
 U 1 1 58F51AD7
 P 5650 2800
 F 0 "U801" H 5650 2500 60  0000 C CNN
@@ -95,7 +49,7 @@ F 3 "" H 5650 2800 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ACS711 U802
+L ACS711:ACS711 U802
 U 1 1 58F51ADE
 P 5650 4250
 F 0 "U802" H 5650 3950 60  0000 C CNN
@@ -106,7 +60,7 @@ F 3 "" H 5650 4250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ACS711 U803
+L ACS711:ACS711 U803
 U 1 1 58F51AE5
 P 5650 5650
 F 0 "U803" H 5650 5350 60  0000 C CNN
@@ -117,7 +71,7 @@ F 3 "" H 5650 5650 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR080
+L power1:GND #PWR080
 U 1 1 58F51AFE
 P 6250 4400
 F 0 "#PWR080" H 6250 4150 50  0001 C CNN
@@ -128,7 +82,7 @@ F 3 "" H 6250 4400 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR081
+L power1:GND #PWR081
 U 1 1 58F51B04
 P 6250 2950
 F 0 "#PWR081" H 6250 2700 50  0001 C CNN
@@ -139,7 +93,7 @@ F 3 "" H 6250 2950 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +3V3 #PWR082
+L power1:+3V3 #PWR082
 U 1 1 58F51B0A
 P 6250 5500
 F 0 "#PWR082" H 6250 5350 50  0001 C CNN
@@ -150,7 +104,7 @@ F 3 "" H 6250 5500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR083
+L power1:+3V3 #PWR083
 U 1 1 58F51B10
 P 6250 4100
 F 0 "#PWR083" H 6250 3950 50  0001 C CNN
@@ -161,7 +115,7 @@ F 3 "" H 6250 4100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR084
+L power1:+3V3 #PWR084
 U 1 1 58F51B16
 P 6250 2650
 F 0 "#PWR084" H 6250 2500 50  0001 C CNN
@@ -178,9 +132,11 @@ Probe2_Current
 Text Label 6350 2750 0    60   ~ 0
 Probe1_Current
 $Comp
-L C C801
+L powerboard-rescue:C C801
 U 1 1 58F51B22
 P 4550 6850
+AR Path="/58F51B22" Ref="C801"  Part="1" 
+AR Path="/58F4FF70/58F51B22" Ref="C801"  Part="1" 
 F 0 "C801" H 4575 6950 50  0000 L CNN
 F 1 "100n" H 4575 6750 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4588 6700 50  0001 C CNN
@@ -189,9 +145,11 @@ F 3 "" H 4550 6850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C802
+L powerboard-rescue:C C802
 U 1 1 58F51B29
 P 4750 6850
+AR Path="/58F51B29" Ref="C802"  Part="1" 
+AR Path="/58F4FF70/58F51B29" Ref="C802"  Part="1" 
 F 0 "C802" H 4775 6950 50  0000 L CNN
 F 1 "100n" H 4775 6750 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4788 6700 50  0001 C CNN
@@ -200,9 +158,11 @@ F 3 "" H 4750 6850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C803
+L powerboard-rescue:C C803
 U 1 1 58F51B30
 P 4950 6850
+AR Path="/58F51B30" Ref="C803"  Part="1" 
+AR Path="/58F4FF70/58F51B30" Ref="C803"  Part="1" 
 F 0 "C803" H 4975 6950 50  0000 L CNN
 F 1 "100n" H 4975 6750 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4988 6700 50  0001 C CNN
@@ -211,7 +171,7 @@ F 3 "" H 4950 6850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR085
+L power1:+3V3 #PWR085
 U 1 1 58F51B37
 P 4750 6600
 F 0 "#PWR085" H 4750 6450 50  0001 C CNN
@@ -222,7 +182,7 @@ F 3 "" H 4750 6600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR086
+L power1:GND #PWR086
 U 1 1 58F51B3D
 P 4750 7100
 F 0 "#PWR086" H 4750 6850 50  0001 C CNN
@@ -233,7 +193,7 @@ F 3 "" H 4750 7100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R801
+L powerboard-rescue:R R801
 U 1 1 58F51B4A
 P 3050 2450
 F 0 "R801" V 3130 2450 50  0000 C CNN
@@ -244,7 +204,7 @@ F 3 "" H 3050 2450 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R802
+L powerboard-rescue:R R802
 U 1 1 58F51B58
 P 3050 3900
 F 0 "R802" V 3130 3900 50  0000 C CNN
@@ -255,7 +215,7 @@ F 3 "" H 3050 3900 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R803
+L powerboard-rescue:R R803
 U 1 1 58F51B66
 P 3050 5300
 F 0 "R803" V 3130 5300 50  0000 C CNN
@@ -288,7 +248,7 @@ Text HLabel 9150 3000 0    60   Input ~ 0
 Text HLabel 9150 3800 0    60   Input ~ 0
 24V_BAT_3
 $Comp
-L CSD17501Q5A Q801
+L powerboard-rescue:CSD17501Q5A Q801
 U 1 1 5940F127
 P 3600 2150
 F 0 "Q801" H 3400 2450 50  0000 L CNN
@@ -416,7 +376,7 @@ Wire Wire Line
 	3700 2450 3700 2550
 Connection ~ 3700 2550
 $Comp
-L CSD17501Q5A Q802
+L powerboard-rescue:CSD17501Q5A Q802
 U 1 1 59410A63
 P 3600 3600
 F 0 "Q802" H 3400 3900 50  0000 L CNN
@@ -427,7 +387,7 @@ F 3 "" V 3600 3600 50  0001 L CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L CSD17501Q5A Q803
+L powerboard-rescue:CSD17501Q5A Q803
 U 1 1 59410B41
 P 3600 5000
 F 0 "Q803" H 3400 5300 50  0000 L CNN
@@ -492,9 +452,11 @@ Probe2
 Text Label 3900 4600 0    60   ~ 0
 Probe3
 $Comp
-L C C805
+L powerboard-rescue:C C805
 U 1 1 59454BBD
 P 6650 4500
+AR Path="/59454BBD" Ref="C805"  Part="1" 
+AR Path="/58F4FF70/59454BBD" Ref="C805"  Part="1" 
 F 0 "C805" H 6675 4600 50  0000 L CNN
 F 1 "1n" H 6675 4400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6688 4350 50  0001 C CNN
@@ -503,7 +465,7 @@ F 3 "" H 6650 4500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR087
+L power1:GND #PWR087
 U 1 1 59454C59
 P 6650 4700
 F 0 "#PWR087" H 6650 4450 50  0001 C CNN
@@ -520,9 +482,11 @@ Wire Wire Line
 Wire Wire Line
 	6650 4700 6650 4650
 $Comp
-L C C806
+L powerboard-rescue:C C806
 U 1 1 59455035
 P 6650 5900
+AR Path="/59455035" Ref="C806"  Part="1" 
+AR Path="/58F4FF70/59455035" Ref="C806"  Part="1" 
 F 0 "C806" H 6675 6000 50  0000 L CNN
 F 1 "1n" H 6675 5800 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6688 5750 50  0001 C CNN
@@ -531,7 +495,7 @@ F 3 "" H 6650 5900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR088
+L power1:GND #PWR088
 U 1 1 5945503B
 P 6650 6100
 F 0 "#PWR088" H 6650 5850 50  0001 C CNN
@@ -548,9 +512,11 @@ Wire Wire Line
 Wire Wire Line
 	6650 6100 6650 6050
 $Comp
-L C C804
+L powerboard-rescue:C C804
 U 1 1 59455434
 P 6650 3000
+AR Path="/59455434" Ref="C804"  Part="1" 
+AR Path="/58F4FF70/59455434" Ref="C804"  Part="1" 
 F 0 "C804" H 6675 3100 50  0000 L CNN
 F 1 "1n" H 6675 2900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6688 2850 50  0001 C CNN
@@ -559,7 +525,7 @@ F 3 "" H 6650 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR089
+L power1:GND #PWR089
 U 1 1 5945543A
 P 6650 3200
 F 0 "#PWR089" H 6650 2950 50  0001 C CNN
@@ -574,7 +540,7 @@ Wire Wire Line
 Wire Wire Line
 	6650 3200 6650 3150
 $Comp
-L GNDPWR #PWR090
+L powerboard-rescue:GNDPWR #PWR090
 U 1 1 5945C3C7
 P 5050 5900
 F 0 "#PWR090" H 5050 5700 50  0001 C CNN
@@ -585,7 +551,7 @@ F 3 "" H 5050 5850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GNDPWR #PWR091
+L powerboard-rescue:GNDPWR #PWR091
 U 1 1 5945C425
 P 5050 4500
 F 0 "#PWR091" H 5050 4300 50  0001 C CNN
@@ -596,7 +562,7 @@ F 3 "" H 5050 4450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GNDPWR #PWR092
+L powerboard-rescue:GNDPWR #PWR092
 U 1 1 5945C47C
 P 5050 3050
 F 0 "#PWR092" H 5050 2850 50  0001 C CNN
@@ -607,7 +573,7 @@ F 3 "" H 5050 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X01 J810
+L powerboard-rescue:CONN_01X01 J810
 U 1 1 5957F99F
 P 10100 2600
 F 0 "J810" H 10100 2700 50  0000 C CNN
@@ -618,7 +584,7 @@ F 3 "" H 10100 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X01 J811
+L powerboard-rescue:CONN_01X01 J811
 U 1 1 5957FB8A
 P 10100 3400
 F 0 "J811" H 10100 3500 50  0000 C CNN
@@ -629,7 +595,7 @@ F 3 "" H 10100 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X01 J812
+L powerboard-rescue:CONN_01X01 J812
 U 1 1 5957FC02
 P 10100 4200
 F 0 "J812" H 10100 4300 50  0000 C CNN
@@ -652,7 +618,7 @@ Wire Wire Line
 Text Notes 8850 2050 0    60   ~ 0
 Heat probes are directly\nconnected to 24V
 $Comp
-L R R809
+L powerboard-rescue:R R809
 U 1 1 595C8711
 P 9400 3800
 F 0 "R809" V 9480 3800 50  0000 C CNN
@@ -663,7 +629,7 @@ F 3 "" H 9400 3800 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D803
+L powerboard-rescue:LED D803
 U 1 1 595C875E
 P 9650 4000
 F 0 "D803" H 9650 4100 50  0000 C CNN
@@ -674,7 +640,7 @@ F 3 "" H 9650 4000 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R808
+L powerboard-rescue:R R808
 U 1 1 595C8848
 P 9400 3000
 F 0 "R808" V 9480 3000 50  0000 C CNN
@@ -685,7 +651,7 @@ F 3 "" H 9400 3000 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D802
+L powerboard-rescue:LED D802
 U 1 1 595C884E
 P 9650 3200
 F 0 "D802" H 9650 3300 50  0000 C CNN
@@ -696,7 +662,7 @@ F 3 "" H 9650 3200 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R807
+L powerboard-rescue:R R807
 U 1 1 595C89CD
 P 9400 2200
 F 0 "R807" V 9480 2200 50  0000 C CNN
@@ -707,7 +673,7 @@ F 3 "" H 9400 2200 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D801
+L powerboard-rescue:LED D801
 U 1 1 595C89D3
 P 9650 2400
 F 0 "D801" H 9650 2500 50  0000 C CNN
