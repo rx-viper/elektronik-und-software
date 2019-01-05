@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 10 11
 Title "Powerboard: ADC lowpass filters"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -93,7 +47,7 @@ OUT7
 Text HLabel 3950 1550 2    60   Output ~ 0
 OUT0
 $Comp
-L LMV324 U1101
+L powerboard-rescue:LMV324 U1101
 U 1 1 58F76E02
 P 3400 1550
 F 0 "U1101" H 3400 1750 50  0000 L CNN
@@ -104,7 +58,7 @@ F 3 "" H 3450 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LMV324 U1101
+L powerboard-rescue:LMV324 U1101
 U 2 1 58F76F11
 P 3400 2850
 F 0 "U1101" H 3400 3050 50  0000 L CNN
@@ -115,7 +69,7 @@ F 3 "" H 3450 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LMV324 U1101
+L powerboard-rescue:LMV324 U1101
 U 3 1 58F76F3E
 P 3400 4150
 F 0 "U1101" H 3400 4350 50  0000 L CNN
@@ -126,7 +80,7 @@ F 3 "" H 3450 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LMV324 U1101
+L powerboard-rescue:LMV324 U1101
 U 4 1 58F77000
 P 3400 5450
 F 0 "U1101" H 3400 5650 50  0000 L CNN
@@ -137,7 +91,7 @@ F 3 "" H 3450 5650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1105
+L powerboard-rescue:R R1105
 U 1 1 58F7710D
 P 2650 1450
 F 0 "R1105" V 2730 1450 50  0000 C CNN
@@ -148,7 +102,7 @@ F 3 "" H 2650 1450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1101
+L powerboard-rescue:R R1101
 U 1 1 58F771CC
 P 2150 1450
 F 0 "R1101" V 2230 1450 50  0000 C CNN
@@ -159,9 +113,11 @@ F 3 "" H 2150 1450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C1101
+L powerboard-rescue:C C1101
 U 1 1 58F771FE
 P 2900 1700
+AR Path="/58F771FE" Ref="C1101"  Part="1" 
+AR Path="/58F69406/58F771FE" Ref="C1101"  Part="1" 
 F 0 "C1101" H 2750 1800 50  0000 L CNN
 F 1 "220n" H 2700 1600 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 2938 1550 50  0001 C CNN
@@ -170,9 +126,11 @@ F 3 "" H 2900 1700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1105
+L powerboard-rescue:C C1105
 U 1 1 58F77244
 P 3300 1050
+AR Path="/58F77244" Ref="C1105"  Part="1" 
+AR Path="/58F69406/58F77244" Ref="C1105"  Part="1" 
 F 0 "C1105" V 3250 1100 50  0000 L CNN
 F 1 "220n" V 3250 800 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3338 900 50  0001 C CNN
@@ -181,7 +139,7 @@ F 3 "" H 3300 1050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2800 1450 3100 1450
+	2800 1450 2900 1450
 Wire Wire Line
 	2900 1550 2900 1450
 Connection ~ 2900 1450
@@ -192,9 +150,9 @@ Wire Wire Line
 Wire Wire Line
 	3050 1900 3750 1900
 Wire Wire Line
-	3750 1900 3750 1050
+	3750 1900 3750 1550
 Wire Wire Line
-	3700 1550 3950 1550
+	3700 1550 3750 1550
 Wire Wire Line
 	3750 1050 3450 1050
 Connection ~ 3750 1550
@@ -203,10 +161,10 @@ Wire Wire Line
 Wire Wire Line
 	2400 1050 2400 1450
 Wire Wire Line
-	2300 1450 2500 1450
+	2300 1450 2400 1450
 Connection ~ 2400 1450
 $Comp
-L GND #PWR0103
+L power1:GND #PWR0103
 U 1 1 58F77F6F
 P 2900 2000
 F 0 "#PWR0103" H 2900 1750 50  0001 C CNN
@@ -217,14 +175,14 @@ F 3 "" H 2900 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2900 1850 2900 2000
+	2900 1850 2900 1950
 Wire Wire Line
 	2900 1950 3300 1950
 Wire Wire Line
 	3300 1950 3300 1850
 Connection ~ 2900 1950
 $Comp
-L +2V5 #PWR0104
+L power1:+2V5 #PWR0104
 U 1 1 58F781CC
 P 3150 1200
 F 0 "#PWR0104" H 3150 1050 50  0001 C CNN
@@ -239,7 +197,7 @@ Wire Wire Line
 Wire Wire Line
 	3300 1200 3300 1250
 $Comp
-L R R1106
+L powerboard-rescue:R R1106
 U 1 1 58F79702
 P 2650 2750
 F 0 "R1106" V 2730 2750 50  0000 C CNN
@@ -250,7 +208,7 @@ F 3 "" H 2650 2750 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1102
+L powerboard-rescue:R R1102
 U 1 1 58F79708
 P 2150 2750
 F 0 "R1102" V 2230 2750 50  0000 C CNN
@@ -261,9 +219,11 @@ F 3 "" H 2150 2750 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C1102
+L powerboard-rescue:C C1102
 U 1 1 58F7970E
 P 2900 3000
+AR Path="/58F7970E" Ref="C1102"  Part="1" 
+AR Path="/58F69406/58F7970E" Ref="C1102"  Part="1" 
 F 0 "C1102" H 2750 3100 50  0000 L CNN
 F 1 "220n" H 2700 2900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 2938 2850 50  0001 C CNN
@@ -272,9 +232,11 @@ F 3 "" H 2900 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1106
+L powerboard-rescue:C C1106
 U 1 1 58F79714
 P 3300 2350
+AR Path="/58F79714" Ref="C1106"  Part="1" 
+AR Path="/58F69406/58F79714" Ref="C1106"  Part="1" 
 F 0 "C1106" V 3250 2400 50  0000 L CNN
 F 1 "220n" V 3250 2100 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3338 2200 50  0001 C CNN
@@ -283,7 +245,7 @@ F 3 "" H 3300 2350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2800 2750 3100 2750
+	2800 2750 2900 2750
 Wire Wire Line
 	2900 2850 2900 2750
 Connection ~ 2900 2750
@@ -294,9 +256,9 @@ Wire Wire Line
 Wire Wire Line
 	3050 3200 3750 3200
 Wire Wire Line
-	3750 3200 3750 2350
+	3750 3200 3750 2850
 Wire Wire Line
-	3700 2850 3950 2850
+	3700 2850 3750 2850
 Wire Wire Line
 	3750 2350 3450 2350
 Connection ~ 3750 2850
@@ -305,10 +267,10 @@ Wire Wire Line
 Wire Wire Line
 	2400 2350 2400 2750
 Wire Wire Line
-	2300 2750 2500 2750
+	2300 2750 2400 2750
 Connection ~ 2400 2750
 $Comp
-L GND #PWR0105
+L power1:GND #PWR0105
 U 1 1 58F79728
 P 2900 3300
 F 0 "#PWR0105" H 2900 3050 50  0001 C CNN
@@ -319,14 +281,14 @@ F 3 "" H 2900 3300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2900 3150 2900 3300
+	2900 3150 2900 3250
 Wire Wire Line
 	2900 3250 3300 3250
 Wire Wire Line
 	3300 3250 3300 3150
 Connection ~ 2900 3250
 $Comp
-L +2V5 #PWR0106
+L power1:+2V5 #PWR0106
 U 1 1 58F79732
 P 3150 2500
 F 0 "#PWR0106" H 3150 2350 50  0001 C CNN
@@ -341,7 +303,7 @@ Wire Wire Line
 Wire Wire Line
 	3300 2500 3300 2550
 $Comp
-L R R1107
+L powerboard-rescue:R R1107
 U 1 1 58F79AE2
 P 2650 4050
 F 0 "R1107" V 2730 4050 50  0000 C CNN
@@ -352,7 +314,7 @@ F 3 "" H 2650 4050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1103
+L powerboard-rescue:R R1103
 U 1 1 58F79AE8
 P 2150 4050
 F 0 "R1103" V 2230 4050 50  0000 C CNN
@@ -363,9 +325,11 @@ F 3 "" H 2150 4050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C1103
+L powerboard-rescue:C C1103
 U 1 1 58F79AEE
 P 2900 4300
+AR Path="/58F79AEE" Ref="C1103"  Part="1" 
+AR Path="/58F69406/58F79AEE" Ref="C1103"  Part="1" 
 F 0 "C1103" H 2750 4400 50  0000 L CNN
 F 1 "220n" H 2700 4200 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 2938 4150 50  0001 C CNN
@@ -374,9 +338,11 @@ F 3 "" H 2900 4300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1107
+L powerboard-rescue:C C1107
 U 1 1 58F79AF4
 P 3300 3650
+AR Path="/58F79AF4" Ref="C1107"  Part="1" 
+AR Path="/58F69406/58F79AF4" Ref="C1107"  Part="1" 
 F 0 "C1107" V 3250 3700 50  0000 L CNN
 F 1 "220n" V 3250 3400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3338 3500 50  0001 C CNN
@@ -385,7 +351,7 @@ F 3 "" H 3300 3650 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2800 4050 3100 4050
+	2800 4050 2900 4050
 Wire Wire Line
 	2900 4150 2900 4050
 Connection ~ 2900 4050
@@ -396,9 +362,9 @@ Wire Wire Line
 Wire Wire Line
 	3050 4500 3750 4500
 Wire Wire Line
-	3750 4500 3750 3650
+	3750 4500 3750 4150
 Wire Wire Line
-	3700 4150 3950 4150
+	3700 4150 3750 4150
 Wire Wire Line
 	3750 3650 3450 3650
 Connection ~ 3750 4150
@@ -407,10 +373,10 @@ Wire Wire Line
 Wire Wire Line
 	2400 3650 2400 4050
 Wire Wire Line
-	2300 4050 2500 4050
+	2300 4050 2400 4050
 Connection ~ 2400 4050
 $Comp
-L GND #PWR0107
+L power1:GND #PWR0107
 U 1 1 58F79B08
 P 2900 4600
 F 0 "#PWR0107" H 2900 4350 50  0001 C CNN
@@ -421,14 +387,14 @@ F 3 "" H 2900 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2900 4450 2900 4600
+	2900 4450 2900 4550
 Wire Wire Line
 	2900 4550 3300 4550
 Wire Wire Line
 	3300 4550 3300 4450
 Connection ~ 2900 4550
 $Comp
-L +2V5 #PWR0108
+L power1:+2V5 #PWR0108
 U 1 1 58F79B12
 P 3150 3800
 F 0 "#PWR0108" H 3150 3650 50  0001 C CNN
@@ -443,7 +409,7 @@ Wire Wire Line
 Wire Wire Line
 	3300 3800 3300 3850
 $Comp
-L R R1108
+L powerboard-rescue:R R1108
 U 1 1 58F7A003
 P 2650 5350
 F 0 "R1108" V 2730 5350 50  0000 C CNN
@@ -454,7 +420,7 @@ F 3 "" H 2650 5350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1104
+L powerboard-rescue:R R1104
 U 1 1 58F7A009
 P 2150 5350
 F 0 "R1104" V 2230 5350 50  0000 C CNN
@@ -465,9 +431,11 @@ F 3 "" H 2150 5350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C1104
+L powerboard-rescue:C C1104
 U 1 1 58F7A00F
 P 2900 5600
+AR Path="/58F7A00F" Ref="C1104"  Part="1" 
+AR Path="/58F69406/58F7A00F" Ref="C1104"  Part="1" 
 F 0 "C1104" H 2750 5700 50  0000 L CNN
 F 1 "220n" H 2700 5500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 2938 5450 50  0001 C CNN
@@ -476,9 +444,11 @@ F 3 "" H 2900 5600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1108
+L powerboard-rescue:C C1108
 U 1 1 58F7A015
 P 3300 4950
+AR Path="/58F7A015" Ref="C1108"  Part="1" 
+AR Path="/58F69406/58F7A015" Ref="C1108"  Part="1" 
 F 0 "C1108" V 3250 5000 50  0000 L CNN
 F 1 "220n" V 3250 4700 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3338 4800 50  0001 C CNN
@@ -487,7 +457,7 @@ F 3 "" H 3300 4950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2800 5350 3100 5350
+	2800 5350 2900 5350
 Wire Wire Line
 	2900 5450 2900 5350
 Connection ~ 2900 5350
@@ -498,9 +468,9 @@ Wire Wire Line
 Wire Wire Line
 	3050 5800 3750 5800
 Wire Wire Line
-	3750 5800 3750 4950
+	3750 5800 3750 5450
 Wire Wire Line
-	3700 5450 3950 5450
+	3700 5450 3750 5450
 Wire Wire Line
 	3750 4950 3450 4950
 Connection ~ 3750 5450
@@ -509,10 +479,10 @@ Wire Wire Line
 Wire Wire Line
 	2400 4950 2400 5350
 Wire Wire Line
-	2300 5350 2500 5350
+	2300 5350 2400 5350
 Connection ~ 2400 5350
 $Comp
-L GND #PWR0109
+L power1:GND #PWR0109
 U 1 1 58F7A029
 P 2900 5900
 F 0 "#PWR0109" H 2900 5650 50  0001 C CNN
@@ -523,14 +493,14 @@ F 3 "" H 2900 5900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2900 5750 2900 5900
+	2900 5750 2900 5850
 Wire Wire Line
 	2900 5850 3300 5850
 Wire Wire Line
 	3300 5850 3300 5750
 Connection ~ 2900 5850
 $Comp
-L +2V5 #PWR0110
+L power1:+2V5 #PWR0110
 U 1 1 58F7A033
 P 3150 5100
 F 0 "#PWR0110" H 3150 4950 50  0001 C CNN
@@ -553,7 +523,7 @@ Wire Wire Line
 Wire Wire Line
 	1800 1450 2000 1450
 $Comp
-L LMV324 U1102
+L powerboard-rescue:LMV324 U1102
 U 1 1 58F7E23C
 P 8200 1650
 F 0 "U1102" H 8200 1850 50  0000 L CNN
@@ -564,7 +534,7 @@ F 3 "" H 8250 1850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LMV324 U1102
+L powerboard-rescue:LMV324 U1102
 U 2 1 58F7E242
 P 8200 2950
 F 0 "U1102" H 8200 3150 50  0000 L CNN
@@ -575,7 +545,7 @@ F 3 "" H 8250 3150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LMV324 U1102
+L powerboard-rescue:LMV324 U1102
 U 3 1 58F7E248
 P 8200 4250
 F 0 "U1102" H 8200 4450 50  0000 L CNN
@@ -586,7 +556,7 @@ F 3 "" H 8250 4450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LMV324 U1102
+L powerboard-rescue:LMV324 U1102
 U 4 1 58F7E24E
 P 8200 5550
 F 0 "U1102" H 8200 5750 50  0000 L CNN
@@ -597,7 +567,7 @@ F 3 "" H 8250 5750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1113
+L powerboard-rescue:R R1113
 U 1 1 58F7E254
 P 7450 1550
 F 0 "R1113" V 7530 1550 50  0000 C CNN
@@ -608,7 +578,7 @@ F 3 "" H 7450 1550 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1109
+L powerboard-rescue:R R1109
 U 1 1 58F7E25A
 P 6950 1550
 F 0 "R1109" V 7030 1550 50  0000 C CNN
@@ -619,9 +589,11 @@ F 3 "" H 6950 1550 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C1109
+L powerboard-rescue:C C1109
 U 1 1 58F7E260
 P 7700 1800
+AR Path="/58F7E260" Ref="C1109"  Part="1" 
+AR Path="/58F69406/58F7E260" Ref="C1109"  Part="1" 
 F 0 "C1109" H 7550 1900 50  0000 L CNN
 F 1 "220n" H 7500 1700 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7738 1650 50  0001 C CNN
@@ -630,9 +602,11 @@ F 3 "" H 7700 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1113
+L powerboard-rescue:C C1113
 U 1 1 58F7E266
 P 8100 1150
+AR Path="/58F7E266" Ref="C1113"  Part="1" 
+AR Path="/58F69406/58F7E266" Ref="C1113"  Part="1" 
 F 0 "C1113" V 8050 1200 50  0000 L CNN
 F 1 "220n" V 8050 900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 8138 1000 50  0001 C CNN
@@ -641,7 +615,7 @@ F 3 "" H 8100 1150 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7600 1550 7900 1550
+	7600 1550 7700 1550
 Wire Wire Line
 	7700 1650 7700 1550
 Connection ~ 7700 1550
@@ -652,9 +626,9 @@ Wire Wire Line
 Wire Wire Line
 	7850 2000 8550 2000
 Wire Wire Line
-	8550 2000 8550 1150
+	8550 2000 8550 1650
 Wire Wire Line
-	8500 1650 8750 1650
+	8500 1650 8550 1650
 Wire Wire Line
 	8550 1150 8250 1150
 Connection ~ 8550 1650
@@ -663,10 +637,10 @@ Wire Wire Line
 Wire Wire Line
 	7200 1150 7200 1550
 Wire Wire Line
-	7100 1550 7300 1550
+	7100 1550 7200 1550
 Connection ~ 7200 1550
 $Comp
-L GND #PWR0111
+L power1:GND #PWR0111
 U 1 1 58F7E27A
 P 7700 2100
 F 0 "#PWR0111" H 7700 1850 50  0001 C CNN
@@ -677,14 +651,14 @@ F 3 "" H 7700 2100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7700 1950 7700 2100
+	7700 1950 7700 2050
 Wire Wire Line
 	7700 2050 8100 2050
 Wire Wire Line
 	8100 2050 8100 1950
 Connection ~ 7700 2050
 $Comp
-L +2V5 #PWR0112
+L power1:+2V5 #PWR0112
 U 1 1 58F7E284
 P 7950 1300
 F 0 "#PWR0112" H 7950 1150 50  0001 C CNN
@@ -699,7 +673,7 @@ Wire Wire Line
 Wire Wire Line
 	8100 1300 8100 1350
 $Comp
-L R R1114
+L powerboard-rescue:R R1114
 U 1 1 58F7E28C
 P 7450 2850
 F 0 "R1114" V 7530 2850 50  0000 C CNN
@@ -710,7 +684,7 @@ F 3 "" H 7450 2850 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1110
+L powerboard-rescue:R R1110
 U 1 1 58F7E292
 P 6950 2850
 F 0 "R1110" V 7030 2850 50  0000 C CNN
@@ -721,9 +695,11 @@ F 3 "" H 6950 2850 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C1110
+L powerboard-rescue:C C1110
 U 1 1 58F7E298
 P 7700 3100
+AR Path="/58F7E298" Ref="C1110"  Part="1" 
+AR Path="/58F69406/58F7E298" Ref="C1110"  Part="1" 
 F 0 "C1110" H 7550 3200 50  0000 L CNN
 F 1 "220n" H 7500 3000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7738 2950 50  0001 C CNN
@@ -732,9 +708,11 @@ F 3 "" H 7700 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1114
+L powerboard-rescue:C C1114
 U 1 1 58F7E29E
 P 8100 2450
+AR Path="/58F7E29E" Ref="C1114"  Part="1" 
+AR Path="/58F69406/58F7E29E" Ref="C1114"  Part="1" 
 F 0 "C1114" V 8050 2500 50  0000 L CNN
 F 1 "220n" V 8050 2200 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 8138 2300 50  0001 C CNN
@@ -743,7 +721,7 @@ F 3 "" H 8100 2450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7600 2850 7900 2850
+	7600 2850 7700 2850
 Wire Wire Line
 	7700 2950 7700 2850
 Connection ~ 7700 2850
@@ -754,9 +732,9 @@ Wire Wire Line
 Wire Wire Line
 	7850 3300 8550 3300
 Wire Wire Line
-	8550 3300 8550 2450
+	8550 3300 8550 2950
 Wire Wire Line
-	8500 2950 8750 2950
+	8500 2950 8550 2950
 Wire Wire Line
 	8550 2450 8250 2450
 Connection ~ 8550 2950
@@ -765,10 +743,10 @@ Wire Wire Line
 Wire Wire Line
 	7200 2450 7200 2850
 Wire Wire Line
-	7100 2850 7300 2850
+	7100 2850 7200 2850
 Connection ~ 7200 2850
 $Comp
-L GND #PWR0113
+L power1:GND #PWR0113
 U 1 1 58F7E2B2
 P 7700 3400
 F 0 "#PWR0113" H 7700 3150 50  0001 C CNN
@@ -779,14 +757,14 @@ F 3 "" H 7700 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7700 3250 7700 3400
+	7700 3250 7700 3350
 Wire Wire Line
 	7700 3350 8100 3350
 Wire Wire Line
 	8100 3350 8100 3250
 Connection ~ 7700 3350
 $Comp
-L +2V5 #PWR0114
+L power1:+2V5 #PWR0114
 U 1 1 58F7E2BC
 P 7950 2600
 F 0 "#PWR0114" H 7950 2450 50  0001 C CNN
@@ -801,7 +779,7 @@ Wire Wire Line
 Wire Wire Line
 	8100 2600 8100 2650
 $Comp
-L R R1115
+L powerboard-rescue:R R1115
 U 1 1 58F7E2C4
 P 7450 4150
 F 0 "R1115" V 7530 4150 50  0000 C CNN
@@ -812,7 +790,7 @@ F 3 "" H 7450 4150 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1111
+L powerboard-rescue:R R1111
 U 1 1 58F7E2CA
 P 6950 4150
 F 0 "R1111" V 7030 4150 50  0000 C CNN
@@ -823,9 +801,11 @@ F 3 "" H 6950 4150 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C1111
+L powerboard-rescue:C C1111
 U 1 1 58F7E2D0
 P 7700 4400
+AR Path="/58F7E2D0" Ref="C1111"  Part="1" 
+AR Path="/58F69406/58F7E2D0" Ref="C1111"  Part="1" 
 F 0 "C1111" H 7550 4500 50  0000 L CNN
 F 1 "220n" H 7500 4300 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7738 4250 50  0001 C CNN
@@ -834,9 +814,11 @@ F 3 "" H 7700 4400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1115
+L powerboard-rescue:C C1115
 U 1 1 58F7E2D6
 P 8100 3750
+AR Path="/58F7E2D6" Ref="C1115"  Part="1" 
+AR Path="/58F69406/58F7E2D6" Ref="C1115"  Part="1" 
 F 0 "C1115" V 8050 3800 50  0000 L CNN
 F 1 "220n" V 8050 3500 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 8138 3600 50  0001 C CNN
@@ -845,7 +827,7 @@ F 3 "" H 8100 3750 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7600 4150 7900 4150
+	7600 4150 7700 4150
 Wire Wire Line
 	7700 4250 7700 4150
 Connection ~ 7700 4150
@@ -856,9 +838,9 @@ Wire Wire Line
 Wire Wire Line
 	7850 4600 8550 4600
 Wire Wire Line
-	8550 4600 8550 3750
+	8550 4600 8550 4250
 Wire Wire Line
-	8500 4250 8750 4250
+	8500 4250 8550 4250
 Wire Wire Line
 	8550 3750 8250 3750
 Connection ~ 8550 4250
@@ -867,10 +849,10 @@ Wire Wire Line
 Wire Wire Line
 	7200 3750 7200 4150
 Wire Wire Line
-	7100 4150 7300 4150
+	7100 4150 7200 4150
 Connection ~ 7200 4150
 $Comp
-L GND #PWR0115
+L power1:GND #PWR0115
 U 1 1 58F7E2EA
 P 7700 4700
 F 0 "#PWR0115" H 7700 4450 50  0001 C CNN
@@ -881,14 +863,14 @@ F 3 "" H 7700 4700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7700 4550 7700 4700
+	7700 4550 7700 4650
 Wire Wire Line
 	7700 4650 8100 4650
 Wire Wire Line
 	8100 4650 8100 4550
 Connection ~ 7700 4650
 $Comp
-L +2V5 #PWR0116
+L power1:+2V5 #PWR0116
 U 1 1 58F7E2F4
 P 7950 3900
 F 0 "#PWR0116" H 7950 3750 50  0001 C CNN
@@ -903,7 +885,7 @@ Wire Wire Line
 Wire Wire Line
 	8100 3900 8100 3950
 $Comp
-L R R1116
+L powerboard-rescue:R R1116
 U 1 1 58F7E2FC
 P 7450 5450
 F 0 "R1116" V 7530 5450 50  0000 C CNN
@@ -914,7 +896,7 @@ F 3 "" H 7450 5450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R1112
+L powerboard-rescue:R R1112
 U 1 1 58F7E302
 P 6950 5450
 F 0 "R1112" V 7030 5450 50  0000 C CNN
@@ -925,9 +907,11 @@ F 3 "" H 6950 5450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C1112
+L powerboard-rescue:C C1112
 U 1 1 58F7E308
 P 7700 5700
+AR Path="/58F7E308" Ref="C1112"  Part="1" 
+AR Path="/58F69406/58F7E308" Ref="C1112"  Part="1" 
 F 0 "C1112" H 7550 5800 50  0000 L CNN
 F 1 "220n" H 7500 5600 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7738 5550 50  0001 C CNN
@@ -936,9 +920,11 @@ F 3 "" H 7700 5700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1116
+L powerboard-rescue:C C1116
 U 1 1 58F7E30E
 P 8100 5050
+AR Path="/58F7E30E" Ref="C1116"  Part="1" 
+AR Path="/58F69406/58F7E30E" Ref="C1116"  Part="1" 
 F 0 "C1116" V 8050 5100 50  0000 L CNN
 F 1 "220n" V 8050 4800 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 8138 4900 50  0001 C CNN
@@ -947,7 +933,7 @@ F 3 "" H 8100 5050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7600 5450 7900 5450
+	7600 5450 7700 5450
 Wire Wire Line
 	7700 5550 7700 5450
 Connection ~ 7700 5450
@@ -958,9 +944,9 @@ Wire Wire Line
 Wire Wire Line
 	7850 5900 8550 5900
 Wire Wire Line
-	8550 5900 8550 5050
+	8550 5900 8550 5550
 Wire Wire Line
-	8500 5550 8750 5550
+	8500 5550 8550 5550
 Wire Wire Line
 	8550 5050 8250 5050
 Connection ~ 8550 5550
@@ -969,10 +955,10 @@ Wire Wire Line
 Wire Wire Line
 	7200 5050 7200 5450
 Wire Wire Line
-	7100 5450 7300 5450
+	7100 5450 7200 5450
 Connection ~ 7200 5450
 $Comp
-L GND #PWR0117
+L power1:GND #PWR0117
 U 1 1 58F7E322
 P 7700 6000
 F 0 "#PWR0117" H 7700 5750 50  0001 C CNN
@@ -983,14 +969,14 @@ F 3 "" H 7700 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7700 5850 7700 6000
+	7700 5850 7700 5950
 Wire Wire Line
 	7700 5950 8100 5950
 Wire Wire Line
 	8100 5950 8100 5850
 Connection ~ 7700 5950
 $Comp
-L +2V5 #PWR0118
+L power1:+2V5 #PWR0118
 U 1 1 58F7E32C
 P 7950 5200
 F 0 "#PWR0118" H 7950 5050 50  0001 C CNN
@@ -1014,4 +1000,84 @@ Wire Wire Line
 	6600 1550 6800 1550
 Text Notes 4100 6700 0    60   ~ 0
 Sallen-Key low pass filter design tool:\nhttp://sim.okawa-denshi.jp/en/OPstool.php
+Wire Wire Line
+	2900 1450 3100 1450
+Wire Wire Line
+	3750 1550 3750 1050
+Wire Wire Line
+	3750 1550 3950 1550
+Wire Wire Line
+	2400 1450 2500 1450
+Wire Wire Line
+	2900 1950 2900 2000
+Wire Wire Line
+	2900 2750 3100 2750
+Wire Wire Line
+	3750 2850 3750 2350
+Wire Wire Line
+	3750 2850 3950 2850
+Wire Wire Line
+	2400 2750 2500 2750
+Wire Wire Line
+	2900 3250 2900 3300
+Wire Wire Line
+	2900 4050 3100 4050
+Wire Wire Line
+	3750 4150 3750 3650
+Wire Wire Line
+	3750 4150 3950 4150
+Wire Wire Line
+	2400 4050 2500 4050
+Wire Wire Line
+	2900 4550 2900 4600
+Wire Wire Line
+	2900 5350 3100 5350
+Wire Wire Line
+	3750 5450 3750 4950
+Wire Wire Line
+	3750 5450 3950 5450
+Wire Wire Line
+	2400 5350 2500 5350
+Wire Wire Line
+	2900 5850 2900 5900
+Wire Wire Line
+	7700 1550 7900 1550
+Wire Wire Line
+	8550 1650 8550 1150
+Wire Wire Line
+	8550 1650 8750 1650
+Wire Wire Line
+	7200 1550 7300 1550
+Wire Wire Line
+	7700 2050 7700 2100
+Wire Wire Line
+	7700 2850 7900 2850
+Wire Wire Line
+	8550 2950 8550 2450
+Wire Wire Line
+	8550 2950 8750 2950
+Wire Wire Line
+	7200 2850 7300 2850
+Wire Wire Line
+	7700 3350 7700 3400
+Wire Wire Line
+	7700 4150 7900 4150
+Wire Wire Line
+	8550 4250 8550 3750
+Wire Wire Line
+	8550 4250 8750 4250
+Wire Wire Line
+	7200 4150 7300 4150
+Wire Wire Line
+	7700 4650 7700 4700
+Wire Wire Line
+	7700 5450 7900 5450
+Wire Wire Line
+	8550 5550 8550 5050
+Wire Wire Line
+	8550 5550 8750 5550
+Wire Wire Line
+	7200 5450 7300 5450
+Wire Wire Line
+	7700 5950 7700 6000
 $EndSCHEMATC

@@ -1,59 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:powerboard-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:TI-LMZ1xxxx
-LIBS:DRV8816
-LIBS:ACS711
-LIBS:lt1370
-LIBS:lt3757
-LIBS:common_mode_choke
-LIBS:ltc4010
-LIBS:pc3h7
-LIBS:esd_diode_dual
-LIBS:ad7928
-LIBS:references
-LIBS:lt3592
-LIBS:ds26lv32at
-LIBS:drv8312
-LIBS:drv8332
-LIBS:cd40109b
+EESchema Schematic File Version 4
 LIBS:powerboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 11
 Title "Mainboard: RXSM RS422 connection"
 Date "2017-11-23"
-Rev "rev10"
+Rev "rev11"
 Comp "VIPER"
 Comment1 ""
 Comment2 ""
@@ -65,7 +19,7 @@ TX
 Text HLabel 4450 2600 0    60   Output ~ 0
 RX
 $Comp
-L MAX13432EESD U701
+L powerboard-rescue:MAX13432EESD U701
 U 1 1 58FF7E88
 P 5400 2900
 F 0 "U701" H 5050 3550 50  0000 L CNN
@@ -76,7 +30,7 @@ F 3 "" H 5400 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR072
+L power1:GND #PWR072
 U 1 1 58FF7E8F
 P 5550 3700
 F 0 "#PWR072" H 5550 3450 50  0001 C CNN
@@ -87,7 +41,7 @@ F 3 "" H 5550 3700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR073
+L power1:+3V3 #PWR073
 U 1 1 58FF7E95
 P 4750 2400
 F 0 "#PWR073" H 4750 2250 50  0001 C CNN
@@ -98,7 +52,7 @@ F 3 "" H 4750 2400 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +5V #PWR074
+L power1:+5V #PWR074
 U 1 1 58FF7E9B
 P 6150 2300
 F 0 "#PWR074" H 6150 2150 50  0001 C CNN
@@ -109,9 +63,11 @@ F 3 "" H 6150 2300 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C702
+L powerboard-rescue:C C702
 U 1 1 58FF7EA1
 P 6000 2150
+AR Path="/58FF7EA1" Ref="C702"  Part="1" 
+AR Path="/58F29A50/58FF7EA1" Ref="C702"  Part="1" 
 F 0 "C702" H 6025 2250 50  0000 L CNN
 F 1 "1µ" H 6025 2050 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6038 2000 50  0001 C CNN
@@ -120,7 +76,7 @@ F 3 "" H 6000 2150 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L CMC FL701
+L common_mode_choke:CMC FL701
 U 1 1 58FF7EB1
 P 6100 2600
 F 0 "FL701" H 6100 2755 60  0000 C CNB
@@ -133,7 +89,7 @@ F 5 "Passive" H 6330 2890 50  0001 C CNN "Family"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CMC FL702
+L common_mode_choke:CMC FL702
 U 1 1 58FF7EBA
 P 6100 3100
 F 0 "FL702" H 6100 3255 60  0000 C CNB
@@ -148,7 +104,7 @@ $EndComp
 Text Notes 5800 2850 0    39   ~ 0
 2x Farnell #1735590
 $Comp
-L GND #PWR075
+L power1:GND #PWR075
 U 1 1 58FF7EC2
 P 6550 1900
 F 0 "#PWR075" H 6550 1650 50  0001 C CNN
@@ -159,7 +115,7 @@ F 3 "" H 6550 1900 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L ESD_diode_dual D701
+L esd_diode_dual:ESD_diode_dual D701
 U 1 1 58FF7EC8
 P 6400 2150
 F 0 "D701" H 6400 2250 39  0000 C CNN
@@ -170,7 +126,7 @@ F 3 "" H 6400 2150 39  0001 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L ESD_diode_dual D702
+L esd_diode_dual:ESD_diode_dual D702
 U 1 1 58FF7ECF
 P 6700 2150
 F 0 "D702" H 6700 2250 39  0000 C CNN
@@ -181,9 +137,11 @@ F 3 "" H 6700 2150 39  0001 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L C C701
+L powerboard-rescue:C C701
 U 1 1 58FF7ED6
 P 4850 2150
+AR Path="/58FF7ED6" Ref="C701"  Part="1" 
+AR Path="/58F29A50/58FF7ED6" Ref="C701"  Part="1" 
 F 0 "C701" H 4875 2250 50  0000 L CNN
 F 1 "100n" H 4650 2050 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4888 2000 50  0001 C CNN
@@ -192,7 +150,7 @@ F 3 "" H 4850 2150 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR076
+L power1:GND #PWR076
 U 1 1 58FF7EDD
 P 5400 2000
 F 0 "#PWR076" H 5400 1750 50  0001 C CNN
@@ -213,7 +171,7 @@ Y
 Text HLabel 7250 3200 2    60   BiDi ~ 0
 ~Z
 $Comp
-L R R608
+L powerboard-rescue:R R608
 U 1 1 5944BD36
 P 7000 2600
 F 0 "R608" V 7080 2600 50  0000 C CNN
@@ -224,7 +182,7 @@ F 3 "" H 7000 2600 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R607
+L powerboard-rescue:R R607
 U 1 1 5944BEA9
 P 6950 3100
 F 0 "R607" V 7030 3100 50  0000 C CNN
@@ -237,7 +195,7 @@ $EndComp
 Text Notes 6650 2950 0    60   ~ 0
 RS-422\ntermination resistors
 $Comp
-L GND #PWR077
+L power1:GND #PWR077
 U 1 1 5A1882C7
 P 4800 2800
 F 0 "#PWR077" H 4800 2550 50  0001 C CNN
@@ -339,7 +297,7 @@ Wire Wire Line
 	7200 2600 7200 2500
 Connection ~ 7200 2500
 $Comp
-L +3V3 #PWR078
+L power1:+3V3 #PWR078
 U 1 1 5A188E5D
 P 4800 3300
 F 0 "#PWR078" H 4800 3150 50  0001 C CNN
