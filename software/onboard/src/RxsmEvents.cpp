@@ -25,7 +25,7 @@ namespace viper
 namespace onboard
 {
 
-xpcc::ShortPeriodicTimer RxsmEvents::debounceTimer{RxsmEvents::UpdateTimeoutMs};
+xpcc::PeriodicTimer RxsmEvents::debounceTimer{RxsmEvents::UpdateTimeoutMs};
 
 bool RxsmEvents::loChanged{true};
 xpcc::filter::Debounce<uint8_t> RxsmEvents::loFilter{RxsmEvents::DebounceHysteresis};

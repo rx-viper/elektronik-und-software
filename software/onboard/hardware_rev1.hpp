@@ -156,7 +156,8 @@ namespace Ui {
 	using Button1		= GpioInputG13;	// SW1
 	using Button2		= GpioInputG14;	// SW1
 
-	using DebugUartRx	= GpioInputA10;
+	//using DebugUartRx	= GpioInputA10;
+	using DebugUartRx	= GpioOutputA10;
 	using DebugUartTx	= GpioOutputA9;
 	using DebugUart		= Usart1;
 	constexpr uint32_t DebugBaudrate = DebugUart::Baudrate::B115200;
@@ -171,8 +172,10 @@ namespace Ui {
 		Button1::setInput(Gpio::InputType::PullUp);
 		Button2::setInput(Gpio::InputType::PullUp);
 
-		DebugUartRx::connect(DebugUart::Rx);
-		DebugUartTx::connect(DebugUart::Tx);
+		//DebugUartRx::connect(DebugUart::Rx);
+		//DebugUartTx::connect(DebugUart::Tx);
+		DebugUartTx::setOutput(false);
+		DebugUartRx::setOutput(false);
 		DebugUart::initialize<systemClock, DebugBaudrate>(12);
 	}
 }
@@ -300,20 +303,9 @@ namespace Motor {
 	initializeHall()
 	{
 		// Timer is not used for commutation
-		// Bldc motor commutation is done using external gpio pin interrupts
 		HallU::setInput(Gpio::InputType::PullUp);
 		HallV::setInput(Gpio::InputType::PullUp);
 		HallW::setInput(Gpio::InputType::PullUp);
-
-		HallU::setInputTrigger(Gpio::InputTrigger::BothEdges);
-		HallU::enableExternalInterrupt();
-		HallU::enableExternalInterruptVector(HallInterruptPriority);
-		HallV::setInputTrigger(Gpio::InputTrigger::BothEdges);
-		HallV::enableExternalInterrupt();
-		HallV::enableExternalInterruptVector(HallInterruptPriority);
-		HallW::setInputTrigger(Gpio::InputTrigger::BothEdges);
-		HallW::enableExternalInterrupt();
-		HallW::enableExternalInterruptVector(HallInterruptPriority);
 	}
 
 	inline void
@@ -327,7 +319,7 @@ namespace Motor {
 	inline void
 	initializeEndSwich()
 	{
-		EndSwitch::setInput(Gpio::InputType::Floating);
+		EndSwitch::setInput(Gpio::InputType::PullDown);
 	}
 
 	inline void

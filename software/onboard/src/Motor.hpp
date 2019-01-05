@@ -58,7 +58,6 @@ public:
 
 	static void doCommutation();
 
-private:
 	enum class ControllerMode
 	{
 		Disabled,
@@ -67,6 +66,9 @@ private:
 		Position
 	};
 
+	static ControllerMode getMode();
+
+private:
 	enum class PwmMode
 	{
 		Off,
@@ -84,7 +86,7 @@ private:
 
 	static volatile ControllerMode controllerMode;
 	static bool homed;
-	static xpcc::ShortPeriodicTimer controllerTimer;
+	static xpcc::PeriodicTimer controllerTimer;
 	static volatile int16_t currentPwm;
 	static int32_t currentVelocity;
 	static int32_t currentPosition;
@@ -93,8 +95,12 @@ private:
 	static uint16_t lastEncoder;
 
 	static xpcc::Pid<float> positionController;
-	static xpcc::ShortTimeout homingLagTimeout;
+	static xpcc::Timeout homingLagTimeout;
 
+	static constexpr size_t HallValue = 10;
+	static constexpr size_t NumHallAverages = 5;
+	static constexpr uint32_t HallHighThreshold = 4;
+	static xpcc::filter::MovingAverage<uint32_t, NumHallAverages> hallFilter[3];
 
 	static constexpr std::array<OutputSet, 7> outputSets = {{
 		{PwmMode::Off,		PwmMode::Off,		PwmMode::Off},

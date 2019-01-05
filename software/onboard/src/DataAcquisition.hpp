@@ -32,12 +32,17 @@
 #include "Ds1731Sensor.hpp"
 #include "Amsys5915Sensor.hpp"
 
+#include "PauseUart.hpp"
+
 namespace viper
 {
 namespace onboard
 {
 
-using GroundstationCommunicator = Communicator<GroundstationPackets, Board::Rxsm::TelemetryUart>;
+using UartDevice = Board::Rxsm::TelemetryUart;
+using RxsmUart = PauseUart<UartDevice, 2000, 24>;
+
+using GroundstationCommunicator = Communicator<GroundstationPackets, RxsmUart>;
 
 class DataAcquisition
 {
@@ -166,12 +171,12 @@ private:
 	std::array<uint16_t, 4> motorCurrentHS = {};
 	uint8_t motorCurrentHSIndex = 0;
 
-	xpcc::ShortTimeout timeout;
+	xpcc::Timeout timeout;
 
-	xpcc::ShortPeriodicTimer iceTempTimer;
-	xpcc::ShortPeriodicTimer hpTempTimer;
-	xpcc::ShortPeriodicTimer hpDepthTimer;
-	xpcc::ShortPeriodicTimer adcTimer;
+	xpcc::PeriodicTimer iceTempTimer;
+	xpcc::PeriodicTimer hpTempTimer;
+	xpcc::PeriodicTimer hpDepthTimer;
+	xpcc::PeriodicTimer adcTimer;
 
 public:
 	bool testMode = false;

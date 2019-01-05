@@ -26,6 +26,7 @@
 #include "Experiment.hpp"
 #include "Motor.hpp"
 #include "HeatprobeControl.hpp"
+#include "DataAcquisition.hpp"
 
 using viper::onboard::RxsmEvents;
 using viper::onboard::Experiment;
@@ -34,6 +35,7 @@ using viper::onboard::GroundstationCommunicator;
 using viper::onboard::PiCommunicator;
 using viper::onboard::CommunicationFlashWriter;
 using viper::onboard::HeatprobeControl;
+using viper::onboard::RxsmUart;
 
 #include <xpcc/debug/logger.hpp>
 
@@ -71,11 +73,13 @@ main()
 		RxsmEvents::update();
 		Motor::update();
 		HeatprobeControl::update();
+		RxsmUart::update();
 
 		experiment.update();
 		communicator.update();
 		communicationFlashWriter.run();
 		piCommunicator.update();
+		Board::Ui::DebugUartTx::toggle();
 	}
 
 	return 0;

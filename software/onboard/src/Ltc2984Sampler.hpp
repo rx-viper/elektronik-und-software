@@ -82,7 +82,7 @@ private:
 
 	std::array<std::unique_ptr<Ltc2984ThreadBase>, SensorCount> threads;
 	std::array<bool, SensorCount> validData = {};
-	xpcc::ShortTimeout timeout;
+	xpcc::Timeout timeout;
 	bool startNextMeasurement = false;
 
 	Activity activity = Activity::Finished;

@@ -177,6 +177,7 @@ Experiment::run()
 			dataAcquisition.setHighRate();
 			Motor::setPosition(MotorHppmDownPosition);
 			RF_WAIT_UNTIL(Motor::isPositionReached());
+			Motor::disable();
 
 			if(dataAcquisition.testMode == 0) {
 				HeatprobeControl::setOn();

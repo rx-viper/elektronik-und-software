@@ -20,6 +20,7 @@
 
 #include "DataAcquisition.hpp"
 #include "HeatprobeControl.hpp"
+#include "Motor.hpp"
 
 namespace viper
 {
@@ -224,8 +225,12 @@ void DataAcquisition::update()
 	}
 
 	iceTemperatureSampler.update();
-	pressureSampler1.update();
-	pressureSampler2.update();
+
+	if(Motor::getMode() == Motor::ControllerMode::Disabled) {
+		pressureSampler1.update();
+		pressureSampler2.update();
+	}
+
 	/*otherTempSampler1.update();
 	otherTempSampler2.update();
 	otherTempSampler3.update();
