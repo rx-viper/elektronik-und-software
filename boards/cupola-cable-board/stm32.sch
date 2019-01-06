@@ -591,4 +591,6 @@ Wire Wire Line
 	8400 1700 8400 1800
 Wire Wire Line
 	8400 2100 8400 2200
+Text Notes 8550 2050 0    50   ~ 0
+Heater resistor
 $EndSCHEMATC

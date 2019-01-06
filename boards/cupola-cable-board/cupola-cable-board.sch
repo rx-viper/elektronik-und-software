@@ -373,7 +373,7 @@ L Regulator_Linear:TLV75533PDBV U1
 U 1 1 5C33B701
 P 2250 4800
 F 0 "U1" H 2250 5142 50  0000 C CNN
-F 1 "TLV73333PDBV" H 2250 5051 50  0000 C CNN
+F 1 "TLV75533PDBV" H 2250 5051 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2250 5100 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/tlv755p.pdf" H 2250 4800 50  0001 C CNN
 	1    2250 4800
@@ -486,39 +486,6 @@ Connection ~ 1650 4750
 Wire Wire Line
 	1650 4750 1900 4750
 $Comp
-L cupola-cable-board-rescue:CONN_01X06 J8
-U 1 1 5C358FAB
-P 3650 3900
-F 0 "J8" H 3650 4250 50  0000 C CNN
-F 1 "MagnetEncoder0" V 3750 3900 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 3650 3900 50  0001 C CNN
-F 3 "" H 3650 3900 50  0001 C CNN
-	1    3650 3900
-	-1   0    0    1   
-$EndComp
-$Comp
-L cupola-cable-board-rescue:CONN_01X06 J9
-U 1 1 5C359059
-P 4450 3900
-F 0 "J9" H 4450 4250 50  0000 C CNN
-F 1 "MagnetEncoder1" V 4550 3900 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 4450 3900 50  0001 C CNN
-F 3 "" H 4450 3900 50  0001 C CNN
-	1    4450 3900
-	-1   0    0    1   
-$EndComp
-$Comp
-L cupola-cable-board-rescue:CONN_01X06 J10
-U 1 1 5C3590AF
-P 5300 3900
-F 0 "J10" H 5300 4250 50  0000 C CNN
-F 1 "MagnetEncoder2" V 5400 3900 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 5300 3900 50  0001 C CNN
-F 3 "" H 5300 3900 50  0001 C CNN
-	1    5300 3900
-	-1   0    0    1   
-$EndComp
-$Comp
 L power:+5V #PWR011
 U 1 1 5C35D921
 P 4000 4150
@@ -589,9 +556,9 @@ Wire Wire Line
 Wire Wire Line
 	4750 4150 4650 4150
 Wire Wire Line
-	5550 4150 5500 4150
+	5550 4150 5450 4150
 Wire Wire Line
-	5550 4050 5500 4050
+	5550 4050 5450 4050
 Wire Wire Line
 	4750 4050 4650 4050
 Wire Wire Line
@@ -607,9 +574,9 @@ Wire Wire Line
 Wire Wire Line
 	3950 3950 3850 3950
 Wire Wire Line
-	3850 3750 4000 3750
+	3850 3850 4000 3850
 Wire Wire Line
-	4000 3750 4000 3250
+	4000 3850 4000 3250
 Wire Wire Line
 	4000 3250 4700 3250
 Wire Wire Line
@@ -623,13 +590,13 @@ Wire Wire Line
 Wire Wire Line
 	4800 2550 5350 2550
 Wire Wire Line
-	4650 3750 4850 3750
+	4650 3850 4850 3850
 Wire Wire Line
-	4850 3750 4850 2650
+	4850 3850 4850 2650
 Wire Wire Line
 	4850 2650 5350 2650
 Wire Wire Line
-	5500 3950 5600 3950
+	5450 3950 5600 3950
 Wire Wire Line
 	5600 3950 5600 3150
 Wire Wire Line
@@ -645,20 +612,20 @@ Wire Wire Line
 Wire Wire Line
 	5000 3100 5650 3100
 Wire Wire Line
-	5650 3100 5650 3750
+	5650 3100 5650 3850
 Wire Wire Line
-	5650 3750 5500 3750
+	5650 3850 5450 3850
 Text Label 3950 3950 0    50   ~ 0
 Mag0_A
-Text Label 4000 3750 0    50   ~ 0
+Text Label 4000 3850 0    50   ~ 0
 Mag0_B
 Text Label 4800 3950 0    50   ~ 0
 Mag1_A
-Text Label 5650 3750 0    50   ~ 0
+Text Label 5650 3850 0    50   ~ 0
 Mag2_B
 Text Label 5600 3950 0    50   ~ 0
 Mag2_A
-Text Label 4850 3750 0    50   ~ 0
+Text Label 4850 3850 0    50   ~ 0
 Mag1_B
 $Comp
 L power:+5V #PWR016
@@ -834,4 +801,45 @@ Wire Wire Line
 	2000 3650 2250 3650
 Wire Wire Line
 	2000 3750 2250 3750
+$Comp
+L Connector_Generic:Conn_01x04 J8
+U 1 1 5C55F5CA
+P 3650 4050
+F 0 "J8" H 3650 4250 50  0000 C CNN
+F 1 "MagnetEncoder0" H 3700 3700 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3650 4050 50  0001 C CNN
+F 3 "~" H 3650 4050 50  0001 C CNN
+	1    3650 4050
+	-1   0    0    1   
+$EndComp
+NoConn ~ 9150 2100
+NoConn ~ 8650 2100
+NoConn ~ 8650 2750
+NoConn ~ 9150 2750
+Text Notes 9250 2100 0    50   ~ 0
+VCC / GND not connected to avoid loop
+Text Notes 9250 2700 0    50   ~ 0
+VCC / GND not connected to avoid loop
+$Comp
+L Connector_Generic:Conn_01x04 J9
+U 1 1 5C593AA0
+P 4450 4050
+F 0 "J9" H 4450 4250 50  0000 C CNN
+F 1 "MagnetEncoder1" H 4450 3700 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4450 4050 50  0001 C CNN
+F 3 "~" H 4450 4050 50  0001 C CNN
+	1    4450 4050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J10
+U 1 1 5C5A3ABD
+P 5250 4050
+F 0 "J10" H 5250 4250 50  0000 C CNN
+F 1 "MagnetEncoder2" H 5250 3700 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 5250 4050 50  0001 C CNN
+F 3 "~" H 5250 4050 50  0001 C CNN
+	1    5250 4050
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
