@@ -176,8 +176,8 @@ L Mechanical:MountingHole H101
 U 1 1 5C31230C
 P 5800 3950
 F 0 "H101" H 5900 3996 50  0000 L CNN
-F 1 "M2.5" H 5900 3905 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 5800 3950 50  0001 C CNN
+F 1 "M3" H 5900 3905 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5800 3950 50  0001 C CNN
 F 3 "~" H 5800 3950 50  0001 C CNN
 	1    5800 3950
 	1    0    0    -1  
@@ -187,8 +187,8 @@ L Mechanical:MountingHole H102
 U 1 1 5C3123E6
 P 5800 4150
 F 0 "H102" H 5900 4196 50  0000 L CNN
-F 1 "M2.5" H 5900 4105 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 5800 4150 50  0001 C CNN
+F 1 "M3" H 5900 4105 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5800 4150 50  0001 C CNN
 F 3 "~" H 5800 4150 50  0001 C CNN
 	1    5800 4150
 	1    0    0    -1  
