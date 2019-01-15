@@ -47,6 +47,23 @@ X Pin_4 4 -200 -200 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# Connector_TestPoint
+#
+DEF Connector_TestPoint TP 0 30 N N 1 F N
+F0 "TP" 0 270 50 H V C CNN
+F1 "Connector_TestPoint" 0 200 50 H V C CNN
+F2 "" 200 0 50 H I C CNN
+F3 "" 200 0 50 H I C CNN
+$FPLIST
+ Pin*
+ Test*
+$ENDFPLIST
+DRAW
+C 0 130 30 0 1 0 N
+X 1 1 0 0 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Device_C
 #
 DEF Device_C C 0 10 N Y 1 F N
@@ -373,6 +390,20 @@ P 2 0 1 0 -30 50 0 100 N
 P 2 0 1 0 0 0 0 100 N
 P 2 0 1 0 0 100 30 50 N
 X +3V3 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# power_+3.3VP
+#
+DEF power_+3.3VP #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 150 -50 50 H I C CNN
+F1 "power_+3.3VP" 0 100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 3 0 1 0 0 0 0 40 0 40 N
+P 7 0 1 0 20 30 0 40 -20 30 -10 70 10 70 20 30 20 30 N
+X +3.3VP 1 0 0 0 U 50 50 0 0 W N
 ENDDRAW
 ENDDEF
 #
