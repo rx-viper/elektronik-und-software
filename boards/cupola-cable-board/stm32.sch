@@ -25,17 +25,6 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 	1    5450 2900
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+3.3V #PWR027
-U 1 1 5C3149FA
-P 5450 1250
-F 0 "#PWR027" H 5450 1100 50  0001 C CNN
-F 1 "+3.3V" H 5465 1423 50  0000 C CNN
-F 2 "" H 5450 1250 50  0001 C CNN
-F 3 "" H 5450 1250 50  0001 C CNN
-	1    5450 1250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5350 1400 5350 1350
 Wire Wire Line
@@ -234,22 +223,14 @@ Wire Wire Line
 	3350 3000 3600 3000
 Wire Wire Line
 	4150 2300 4750 2300
-Text HLabel 4650 2600 0    50   Output ~ 0
-Sensor0_A
-Wire Wire Line
-	4650 2600 4750 2600
-Text HLabel 4650 2700 0    50   Output ~ 0
-Sensor0_B
-Wire Wire Line
-	4750 2700 4650 2700
 Text HLabel 4650 2800 0    50   Output ~ 0
-Sensor1_A
-Wire Wire Line
-	4750 2800 4650 2800
+Sensor0_A
 Text HLabel 6150 2800 2    50   Output ~ 0
+Sensor0_B
+Text HLabel 4650 2600 0    50   Output ~ 0
+Sensor1_A
+Text HLabel 4650 2700 0    50   Output ~ 0
 Sensor1_B
-Wire Wire Line
-	6150 2800 6050 2800
 Text HLabel 6150 2900 2    50   Output ~ 0
 Sensor2_A
 Text HLabel 6150 3000 2    50   Output ~ 0
@@ -258,17 +239,17 @@ Wire Wire Line
 	6150 2900 6050 2900
 Wire Wire Line
 	6150 3000 6050 3000
-Text HLabel 6150 3100 2    50   Input ~ 0
+Text HLabel 4650 3100 0    50   Input ~ 0
 Sensor0_Motion
-Text HLabel 6150 3200 2    50   Output ~ 0
+Text HLabel 6150 3900 2    50   Output ~ 0
 Sensor0_Cs
 Wire Wire Line
 	6150 3100 6050 3100
 Wire Wire Line
 	6150 3200 6050 3200
-Text HLabel 6150 3300 2    50   Output ~ 0
+Text HLabel 4650 3000 0    50   Output ~ 0
 Sensor0_Sck
-Text HLabel 6600 3400 2    50   BiDi ~ 0
+Text HLabel 6750 4000 2    50   BiDi ~ 0
 Sensor0_Sdio
 $Comp
 L Device:R R3
@@ -276,7 +257,7 @@ U 1 1 5C3767DF
 P 6300 3500
 F 0 "R3" V 6300 3800 50  0000 C CNN
 F 1 "3k3" V 6300 3500 50  0000 C CNN
-F 2 "" V 6230 3500 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6230 3500 50  0001 C CNN
 F 3 "~" H 6300 3500 50  0001 C CNN
 	1    6300 3500
 	0    1    1    0   
@@ -294,11 +275,11 @@ Wire Wire Line
 	6500 3400 6600 3400
 Wire Wire Line
 	6150 3300 6050 3300
-Text HLabel 6150 3600 2    50   Input ~ 0
+Text HLabel 6150 3100 2    50   Input ~ 0
 Sensor1_Motion
 Wire Wire Line
 	6150 3600 6050 3600
-Text HLabel 6150 3900 2    50   Output ~ 0
+Text HLabel 4650 4000 0    50   Output ~ 0
 Sensor2_Cs
 $Comp
 L Device:R R4
@@ -306,7 +287,7 @@ U 1 1 5C379D66
 P 6300 3800
 F 0 "R4" V 6250 3600 50  0000 C CNN
 F 1 "3k3" V 6300 3800 50  0000 C CNN
-F 2 "" V 6230 3800 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6230 3800 50  0001 C CNN
 F 3 "~" H 6300 3800 50  0001 C CNN
 	1    6300 3800
 	0    1    1    0   
@@ -323,7 +304,7 @@ Wire Wire Line
 	6150 3900 6050 3900
 Wire Wire Line
 	6150 3700 6050 3700
-Text HLabel 6750 4000 2    50   BiDi ~ 0
+Text HLabel 4250 4200 0    50   BiDi ~ 0
 Sensor2_Sdio
 Wire Wire Line
 	6700 4000 6750 4000
@@ -334,7 +315,7 @@ U 1 1 5C380F57
 P 6650 4200
 F 0 "J11" H 6622 4130 50  0000 R CNN
 F 1 "SWD" H 6622 4221 50  0000 R CNN
-F 2 "" H 6650 4200 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6650 4200 50  0001 C CNN
 F 3 "~" H 6650 4200 50  0001 C CNN
 	1    6650 4200
 	-1   0    0    1   
@@ -362,11 +343,11 @@ Text Notes 6500 4400 2    50   ~ 0
 SWDIO
 Text Notes 6450 4100 2    50   ~ 0
 SWDCLK
-Text HLabel 4650 3000 0    50   Output ~ 0
+Text HLabel 4650 4100 0    50   Output ~ 0
 Sensor2_Sck
 Wire Wire Line
 	4750 3000 4650 3000
-Text HLabel 4650 3100 0    50   Input ~ 0
+Text HLabel 6150 3600 2    50   Input ~ 0
 Sensor2_Motion
 Text Label 4650 3300 2    50   ~ 0
 DebugUart_Rx
@@ -374,9 +355,9 @@ Text Label 6150 3700 0    50   ~ 0
 DebugUart_Tx
 Wire Wire Line
 	4750 3300 4650 3300
-Text HLabel 4650 4000 0    50   Output ~ 0
+Text HLabel 6150 3200 2    50   Output ~ 0
 Sensor1_Cs
-Text HLabel 4650 4100 0    50   Output ~ 0
+Text HLabel 6150 3300 2    50   Output ~ 0
 Sensor1_Sck
 $Comp
 L Device:R R2
@@ -384,12 +365,12 @@ U 1 1 5C38C57F
 P 4500 4300
 F 0 "R2" V 4550 4500 50  0000 C CNN
 F 1 "3k3" V 4500 4300 50  0000 C CNN
-F 2 "" V 4430 4300 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4430 4300 50  0001 C CNN
 F 3 "~" H 4500 4300 50  0001 C CNN
 	1    4500 4300
 	0    1    1    0   
 $EndComp
-Text HLabel 4250 4200 0    50   BiDi ~ 0
+Text HLabel 6600 3400 2    50   BiDi ~ 0
 Sensor1_Sdio
 Wire Wire Line
 	4750 4000 4650 4000
@@ -406,40 +387,10 @@ Wire Wire Line
 Wire Wire Line
 	4300 4200 4250 4200
 Connection ~ 4300 4200
-$Comp
-L Connector:Conn_01x03_Male J12
-U 1 1 5C39B791
-P 7400 1750
-F 0 "J12" H 7373 1680 50  0000 R CNN
-F 1 "DebugUart" H 7373 1771 50  0000 R CNN
-F 2 "" H 7400 1750 50  0001 C CNN
-F 3 "~" H 7400 1750 50  0001 C CNN
-	1    7400 1750
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR029
-U 1 1 5C39BAC6
-P 7100 1900
-F 0 "#PWR029" H 7100 1650 50  0001 C CNN
-F 1 "GND" H 7105 1727 50  0000 C CNN
-F 2 "" H 7100 1900 50  0001 C CNN
-F 3 "" H 7100 1900 50  0001 C CNN
-	1    7100 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7100 1850 7100 1900
 Text Label 7100 1650 2    50   ~ 0
 DebugUart_Tx
 Text Label 7100 1750 2    50   ~ 0
 DebugUart_Rx
-Wire Wire Line
-	7100 1650 7200 1650
-Wire Wire Line
-	7100 1750 7200 1750
-Wire Wire Line
-	7100 1850 7200 1850
 $Comp
 L Device:C C4
 U 1 1 5C3AB937
@@ -560,7 +511,7 @@ U 1 1 5C46757F
 P 8400 1950
 F 0 "R5" H 8470 1996 50  0000 L CNN
 F 1 "HEAT" V 8400 1850 50  0000 L CNN
-F 2 "" V 8330 1950 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 8330 1950 50  0001 C CNN
 F 3 "~" H 8400 1950 50  0001 C CNN
 	1    8400 1950
 	1    0    0    -1  
@@ -593,4 +544,73 @@ Wire Wire Line
 	8400 2100 8400 2200
 Text Notes 8550 2050 0    50   ~ 0
 Heater resistor
+$Comp
+L power:+3.3V #PWR0106
+U 1 1 5C3C7090
+P 5450 1250
+F 0 "#PWR0106" H 5450 1100 50  0001 C CNN
+F 1 "+3.3V" V 5465 1378 50  0000 L CNN
+F 2 "" H 5450 1250 50  0001 C CNN
+F 3 "" H 5450 1250 50  0001 C CNN
+	1    5450 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 2600 4650 2600
+Wire Wire Line
+	4750 2700 4650 2700
+Wire Wire Line
+	4750 2800 4650 2800
+Wire Wire Line
+	6050 2800 6150 2800
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5C43AB33
+P 7200 1650
+F 0 "TP1" V 7154 1838 50  0000 L CNN
+F 1 "TestPoint" V 7245 1838 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7400 1650 50  0001 C CNN
+F 3 "~" H 7400 1650 50  0001 C CNN
+	1    7200 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5C43AB81
+P 7200 1750
+F 0 "TP2" V 7246 1938 50  0000 L CNN
+F 1 "TestPoint" V 7155 1938 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7400 1750 50  0001 C CNN
+F 3 "~" H 7400 1750 50  0001 C CNN
+	1    7200 1750
+	0    1    -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5C43FFBF
+P 7200 1850
+F 0 "TP3" V 7246 2038 50  0000 L CNN
+F 1 "TestPoint" V 7155 2038 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7400 1850 50  0001 C CNN
+F 3 "~" H 7400 1850 50  0001 C CNN
+	1    7200 1850
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5C43FFF1
+P 7100 1850
+F 0 "#PWR0107" H 7100 1600 50  0001 C CNN
+F 1 "GND" H 7105 1677 50  0000 C CNN
+F 2 "" H 7100 1850 50  0001 C CNN
+F 3 "" H 7100 1850 50  0001 C CNN
+	1    7100 1850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7100 1650 7200 1650
+Wire Wire Line
+	7100 1750 7200 1750
+Wire Wire Line
+	7100 1850 7200 1850
 $EndSCHEMATC
