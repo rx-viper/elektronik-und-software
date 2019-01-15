@@ -20,7 +20,7 @@ U 1 1 5B145D22
 P 1800 1650
 F 0 "J5" H 1800 2000 50  0000 C CNN
 F 1 "Sensor0" V 1900 1650 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1800 1650 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x06_P2.00mm_Vertical" H 1800 1650 50  0001 C CNN
 F 3 "" H 1800 1650 50  0001 C CNN
 	1    1800 1650
 	-1   0    0    1   
@@ -31,7 +31,7 @@ U 1 1 5B145F53
 P 8900 1550
 F 0 "J2" H 8900 1750 50  0000 C CNN
 F 1 "ENC0_OUT" H 8900 1350 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x03_Pitch2.54mm" H 8900 350 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 8900 350 50  0001 C CNN
 F 3 "" H 8900 350 50  0001 C CNN
 	1    8900 1550
 	1    0    0    -1  
@@ -42,7 +42,7 @@ U 1 1 5B1469EF
 P 1800 2600
 F 0 "J6" H 1800 2950 50  0000 C CNN
 F 1 "Sensor1" V 1900 2600 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1800 2600 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x06_P2.00mm_Vertical" H 1800 2600 50  0001 C CNN
 F 3 "" H 1800 2600 50  0001 C CNN
 	1    1800 2600
 	-1   0    0    1   
@@ -53,7 +53,7 @@ U 1 1 5B1469F5
 P 8900 2200
 F 0 "J3" H 8900 2400 50  0000 C CNN
 F 1 "ENC1_OUT" H 8900 2000 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x03_Pitch2.54mm" H 8900 1000 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 8900 1000 50  0001 C CNN
 F 3 "" H 8900 1000 50  0001 C CNN
 	1    8900 2200
 	1    0    0    -1  
@@ -64,21 +64,10 @@ U 1 1 5B146AF0
 P 1800 3500
 F 0 "J7" H 1800 3850 50  0000 C CNN
 F 1 "Sensor2" V 1900 3500 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1800 3500 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x06_P2.00mm_Vertical" H 1800 3500 50  0001 C CNN
 F 3 "" H 1800 3500 50  0001 C CNN
 	1    1800 3500
 	-1   0    0    1   
-$EndComp
-$Comp
-L cupola-cable-board-rescue:CONN_02X03 J4
-U 1 1 5B146AF6
-P 8900 2850
-F 0 "J4" H 8900 3050 50  0000 C CNN
-F 1 "ENC2_OUT" H 8900 2650 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x03_Pitch2.54mm" H 8900 1650 50  0001 C CNN
-F 3 "" H 8900 1650 50  0001 C CNN
-	1    8900 2850
-	1    0    0    -1  
 $EndComp
 $Comp
 L cupola-cable-board-rescue:LED D1
@@ -97,7 +86,7 @@ U 1 1 5B146C7D
 P 7450 4550
 F 0 "J1" H 7450 4700 50  0000 C CNN
 F 1 "LED" V 7550 4550 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 7450 4550 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical" H 7450 4550 50  0001 C CNN
 F 3 "" H 7450 4550 50  0001 C CNN
 	1    7450 4550
 	-1   0    0    1   
@@ -105,23 +94,23 @@ $EndComp
 $Comp
 L cupola-cable-board-rescue:LED D2
 U 1 1 5B146D85
-P 8150 4550
-F 0 "D2" H 8150 4650 50  0000 C CNN
-F 1 "LED" H 8150 4450 50  0000 C CNN
-F 2 "LW_G6SP:LW_G6SP_Handsoldering" H 8150 4550 50  0001 C CNN
-F 3 "" H 8150 4550 50  0001 C CNN
-	1    8150 4550
+P 8150 4950
+F 0 "D2" H 8150 5050 50  0000 C CNN
+F 1 "LED" H 8150 4850 50  0000 C CNN
+F 2 "LW_G6SP:LW_G6SP_Handsoldering" H 8150 4950 50  0001 C CNN
+F 3 "" H 8150 4950 50  0001 C CNN
+	1    8150 4950
 	0    -1   -1   0   
 $EndComp
 $Comp
 L cupola-cable-board-rescue:LED D3
 U 1 1 5B146DC7
-P 8150 4950
-F 0 "D3" H 8150 5050 50  0000 C CNN
-F 1 "LED" H 8150 4850 50  0000 C CNN
-F 2 "LW_G6SP:LW_G6SP_Handsoldering" H 8150 4950 50  0001 C CNN
-F 3 "" H 8150 4950 50  0001 C CNN
-	1    8150 4950
+P 8150 4550
+F 0 "D3" H 8150 4650 50  0000 C CNN
+F 1 "LED" H 8150 4450 50  0000 C CNN
+F 2 "LW_G6SP:LW_G6SP_Handsoldering" H 8150 4550 50  0001 C CNN
+F 3 "" H 8150 4550 50  0001 C CNN
+	1    8150 4550
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -186,12 +175,12 @@ $EndComp
 $Comp
 L power:+3.3V #PWR03
 U 1 1 5C4283E3
-P 2200 1900
-F 0 "#PWR03" H 2200 1750 50  0001 C CNN
-F 1 "+3.3V" V 2215 2028 50  0000 L CNN
-F 2 "" H 2200 1900 50  0001 C CNN
-F 3 "" H 2200 1900 50  0001 C CNN
-	1    2200 1900
+P 2250 2850
+F 0 "#PWR03" H 2250 2700 50  0001 C CNN
+F 1 "+3.3V" V 2265 2978 50  0000 L CNN
+F 2 "" H 2250 2850 50  0001 C CNN
+F 3 "" H 2250 2850 50  0001 C CNN
+	1    2250 2850
 	0    1    1    0   
 $EndComp
 $Comp
@@ -206,17 +195,6 @@ F 3 "" H 2250 2750 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:+3.3V #PWR05
-U 1 1 5C42C1DA
-P 2250 2850
-F 0 "#PWR05" H 2250 2700 50  0001 C CNN
-F 1 "+3.3V" V 2265 2978 50  0000 L CNN
-F 2 "" H 2250 2850 50  0001 C CNN
-F 3 "" H 2250 2850 50  0001 C CNN
-	1    2250 2850
-	0    1    1    0   
-$EndComp
-$Comp
 L cupola-cable-board-rescue:GND #PWR06
 U 1 1 5C42E9F7
 P 2250 3650
@@ -226,17 +204,6 @@ F 2 "" H 2250 3650 50  0001 C CNN
 F 3 "" H 2250 3650 50  0001 C CNN
 	1    2250 3650
 	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+3.3V #PWR07
-U 1 1 5C42EA4D
-P 2250 3750
-F 0 "#PWR07" H 2250 3600 50  0001 C CNN
-F 1 "+3.3V" V 2265 3878 50  0000 L CNN
-F 2 "" H 2250 3750 50  0001 C CNN
-F 3 "" H 2250 3750 50  0001 C CNN
-	1    2250 3750
-	0    1    1    0   
 $EndComp
 Wire Wire Line
 	3100 1400 3100 1850
@@ -442,7 +409,7 @@ U 1 1 5C3463A1
 P 1400 4750
 F 0 "R1" V 1300 4750 50  0000 C CNN
 F 1 "0" V 1400 4750 50  0000 C CNN
-F 2 "" V 1330 4750 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1330 4750 50  0001 C CNN
 F 3 "~" H 1400 4750 50  0001 C CNN
 	1    1400 4750
 	0    1    1    0   
@@ -630,18 +597,14 @@ Mag1_B
 $Comp
 L power:+5V #PWR016
 U 1 1 5C355EED
-P 8500 1350
-F 0 "#PWR016" H 8500 1200 50  0001 C CNN
-F 1 "+5V" H 8515 1523 50  0000 C CNN
-F 2 "" H 8500 1350 50  0001 C CNN
-F 3 "" H 8500 1350 50  0001 C CNN
-	1    8500 1350
+P 8550 2700
+F 0 "#PWR016" H 8550 2550 50  0001 C CNN
+F 1 "+5V" H 8565 2873 50  0000 C CNN
+F 2 "" H 8550 2700 50  0001 C CNN
+F 3 "" H 8550 2700 50  0001 C CNN
+	1    8550 2700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8500 1350 8500 1450
-Wire Wire Line
-	8500 1450 8650 1450
 Wire Wire Line
 	8400 1650 8400 1800
 Wire Wire Line
@@ -673,16 +636,14 @@ Wire Wire Line
 $Comp
 L power:GND #PWR017
 U 1 1 5C38BFCF
-P 9250 1450
-F 0 "#PWR017" H 9250 1200 50  0001 C CNN
-F 1 "GND" V 9255 1322 50  0000 R CNN
-F 2 "" H 9250 1450 50  0001 C CNN
-F 3 "" H 9250 1450 50  0001 C CNN
-	1    9250 1450
+P 9250 2750
+F 0 "#PWR017" H 9250 2500 50  0001 C CNN
+F 1 "GND" V 9255 2622 50  0000 R CNN
+F 2 "" H 9250 2750 50  0001 C CNN
+F 3 "" H 9250 2750 50  0001 C CNN
+	1    9250 2750
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	9250 1450 9150 1450
 Wire Wire Line
 	7950 2100 8550 2100
 Wire Wire Line
@@ -712,11 +673,11 @@ Wire Wire Line
 Wire Wire Line
 	9300 2200 9150 2200
 Wire Wire Line
-	7950 2600 8550 2600
+	7950 2600 8500 2600
 Wire Wire Line
-	8550 2600 8550 2850
+	8500 2600 8500 2850
 Wire Wire Line
-	8550 2850 8650 2850
+	8500 2850 8650 2850
 Wire Wire Line
 	7950 2800 8450 2800
 Wire Wire Line
@@ -807,18 +768,18 @@ U 1 1 5C55F5CA
 P 3650 4050
 F 0 "J8" H 3650 4250 50  0000 C CNN
 F 1 "MagnetEncoder0" H 3700 3700 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3650 4050 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical" H 3650 4050 50  0001 C CNN
 F 3 "~" H 3650 4050 50  0001 C CNN
 	1    3650 4050
 	-1   0    0    1   
 $EndComp
 NoConn ~ 9150 2100
 NoConn ~ 8650 2100
-NoConn ~ 8650 2750
-NoConn ~ 9150 2750
+NoConn ~ 8650 1450
+NoConn ~ 9150 1450
 Text Notes 9250 2100 0    50   ~ 0
 VCC / GND not connected to avoid loop
-Text Notes 9250 2700 0    50   ~ 0
+Text Notes 9250 1450 0    50   ~ 0
 VCC / GND not connected to avoid loop
 $Comp
 L Connector_Generic:Conn_01x04 J9
@@ -826,7 +787,7 @@ U 1 1 5C593AA0
 P 4450 4050
 F 0 "J9" H 4450 4250 50  0000 C CNN
 F 1 "MagnetEncoder1" H 4450 3700 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4450 4050 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical" H 4450 4050 50  0001 C CNN
 F 3 "~" H 4450 4050 50  0001 C CNN
 	1    4450 4050
 	-1   0    0    1   
@@ -837,9 +798,169 @@ U 1 1 5C5A3ABD
 P 5250 4050
 F 0 "J10" H 5250 4250 50  0000 C CNN
 F 1 "MagnetEncoder2" H 5250 3700 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 5250 4050 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical" H 5250 4050 50  0001 C CNN
 F 3 "~" H 5250 4050 50  0001 C CNN
 	1    5250 4050
 	-1   0    0    1   
 $EndComp
+$Comp
+L Regulator_Linear:TLV75533PDBV U3
+U 1 1 5C5C58CC
+P 2250 5950
+F 0 "U3" H 2250 6292 50  0000 C CNN
+F 1 "TLV75533PDBV" H 2250 6201 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2250 6250 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv755p.pdf" H 2250 5950 50  0001 C CNN
+	1    2250 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C12
+U 1 1 5C5C58D2
+P 1650 6100
+F 0 "C12" H 1765 6146 50  0000 L CNN
+F 1 "1u" H 1765 6055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1688 5950 50  0001 C CNN
+F 3 "~" H 1650 6100 50  0001 C CNN
+	1    1650 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C13
+U 1 1 5C5C58D8
+P 2800 6100
+F 0 "C13" H 2915 6146 50  0000 L CNN
+F 1 "1u" H 2915 6055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2838 5950 50  0001 C CNN
+F 3 "~" H 2800 6100 50  0001 C CNN
+	1    2800 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 5850 1900 5850
+Wire Wire Line
+	1900 5850 1900 5900
+Wire Wire Line
+	1900 5950 1950 5950
+Connection ~ 1900 5900
+Wire Wire Line
+	1900 5900 1900 5950
+Wire Wire Line
+	2250 6250 2250 6300
+Wire Wire Line
+	2250 6300 1650 6300
+Wire Wire Line
+	2800 6250 2800 6300
+Wire Wire Line
+	2800 6300 2250 6300
+Connection ~ 2250 6300
+Wire Wire Line
+	2800 5950 2800 5850
+Wire Wire Line
+	2800 5850 2550 5850
+$Comp
+L power:GND #PWR0101
+U 1 1 5C5C58EA
+P 2250 6350
+F 0 "#PWR0101" H 2250 6100 50  0001 C CNN
+F 1 "GND" H 2255 6177 50  0000 C CNN
+F 2 "" H 2250 6350 50  0001 C CNN
+F 3 "" H 2250 6350 50  0001 C CNN
+	1    2250 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 6350 2250 6300
+$Comp
+L Device:R R7
+U 1 1 5C5C58F1
+P 1400 5900
+F 0 "R7" V 1300 5900 50  0000 C CNN
+F 1 "0" V 1400 5900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1330 5900 50  0001 C CNN
+F 3 "~" H 1400 5900 50  0001 C CNN
+	1    1400 5900
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 5C5C58F7
+P 1150 5800
+F 0 "#PWR0102" H 1150 5650 50  0001 C CNN
+F 1 "+5V" H 1165 5973 50  0000 C CNN
+F 2 "" H 1150 5800 50  0001 C CNN
+F 3 "" H 1150 5800 50  0001 C CNN
+	1    1150 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 5800 1150 5900
+Wire Wire Line
+	1150 5900 1250 5900
+Wire Wire Line
+	2800 5850 2800 5750
+Connection ~ 2800 5850
+Wire Wire Line
+	1650 6250 1650 6300
+Wire Wire Line
+	1550 5900 1650 5900
+Wire Wire Line
+	1650 5950 1650 5900
+Connection ~ 1650 5900
+Wire Wire Line
+	1650 5900 1900 5900
+Text Notes 3000 5700 0    50   ~ 0
+Second 3.3V rail (3V3)\nfor Sensor0, Sensor2
+Text Notes 600  3150 0    50   ~ 0
+Separate supply rail +3V3\nfor Sensor0, Sensor2
+$Comp
+L power:+3.3VP #PWR0103
+U 1 1 5C3C7B48
+P 2800 5750
+F 0 "#PWR0103" H 2950 5700 50  0001 C CNN
+F 1 "+3.3VP" H 2820 5893 50  0000 C CNN
+F 2 "" H 2800 5750 50  0001 C CNN
+F 3 "" H 2800 5750 50  0001 C CNN
+	1    2800 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3VP #PWR0104
+U 1 1 5C3C7C2C
+P 2200 1900
+F 0 "#PWR0104" H 2350 1850 50  0001 C CNN
+F 1 "+3.3VP" V 2220 1998 50  0000 L CNN
+F 2 "" H 2200 1900 50  0001 C CNN
+F 3 "" H 2200 1900 50  0001 C CNN
+	1    2200 1900
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3VP #PWR0105
+U 1 1 5C3C7D7E
+P 2250 3750
+F 0 "#PWR0105" H 2400 3700 50  0001 C CNN
+F 1 "+3.3VP" V 2270 3848 50  0000 L CNN
+F 2 "" H 2250 3750 50  0001 C CNN
+F 3 "" H 2250 3750 50  0001 C CNN
+	1    2250 3750
+	0    1    1    0   
+$EndComp
+$Comp
+L cupola-cable-board-rescue:CONN_02X03 J4
+U 1 1 5B146AF6
+P 8900 2850
+F 0 "J4" H 8900 3050 50  0000 C CNN
+F 1 "ENC2_OUT" H 8900 2650 50  0000 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 8900 1650 50  0001 C CNN
+F 3 "" H 8900 1650 50  0001 C CNN
+	1    8900 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 2700 8550 2750
+Wire Wire Line
+	8550 2750 8650 2750
+Wire Wire Line
+	9250 2750 9150 2750
 $EndSCHEMATC
