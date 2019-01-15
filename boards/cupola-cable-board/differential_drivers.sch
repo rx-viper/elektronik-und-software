@@ -20,7 +20,7 @@ U 1 1 5C4741B0
 P 850 1050
 F 0 "C10" H 965 1096 50  0000 L CNN
 F 1 "100n" H 965 1005 50  0000 L CNN
-F 2 "" H 888 900 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 888 900 50  0001 C CNN
 F 3 "~" H 850 1050 50  0001 C CNN
 	1    850  1050
 	1    0    0    -1  
@@ -31,7 +31,7 @@ U 1 1 5C474216
 P 1250 1050
 F 0 "C11" H 1365 1096 50  0000 L CNN
 F 1 "100n" H 1365 1005 50  0000 L CNN
-F 2 "" H 1288 900 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1288 900 50  0001 C CNN
 F 3 "~" H 1250 1050 50  0001 C CNN
 	1    1250 1050
 	1    0    0    -1  
@@ -55,25 +55,25 @@ Wire Wire Line
 	850  1200 850  1250
 Wire Wire Line
 	850  1250 1050 1250
-Text HLabel 2200 1450 0    50   Input ~ 0
+Text HLabel 2200 1850 0    50   Input ~ 0
 In0_A
-Text HLabel 2200 1650 0    50   Input ~ 0
+Text HLabel 2200 2050 0    50   Input ~ 0
 In0_B
-Text HLabel 3000 850  2    50   Output ~ 0
+Text HLabel 3050 1450 2    50   Output ~ 0
 Out0_A
-Text HLabel 3000 950  2    50   Output ~ 0
+Text HLabel 3050 1550 2    50   Output ~ 0
 Out0_A*
-Text HLabel 3000 1150 2    50   Output ~ 0
+Text HLabel 3050 1750 2    50   Output ~ 0
 Out0_B
-Text HLabel 3000 1250 2    50   Output ~ 0
+Text HLabel 3050 1850 2    50   Output ~ 0
 Out0_B*
-Text HLabel 3000 1450 2    50   Output ~ 0
+Text HLabel 3050 850  2    50   Output ~ 0
 Out1_A
-Text HLabel 3000 1550 2    50   Output ~ 0
+Text HLabel 3050 950  2    50   Output ~ 0
 Out1_A*
-Text HLabel 3000 1750 2    50   Output ~ 0
+Text HLabel 3050 1150 2    50   Output ~ 0
 Out1_B
-Text HLabel 3000 1850 2    50   Output ~ 0
+Text HLabel 3050 1250 2    50   Output ~ 0
 Out1_B*
 Text HLabel 4700 850  2    50   Output ~ 0
 Out2_A
@@ -83,9 +83,9 @@ Text HLabel 4700 1150 2    50   Output ~ 0
 Out2_B
 Text HLabel 4700 1250 2    50   Output ~ 0
 Out2_B*
-Text HLabel 2200 1850 0    50   Input ~ 0
+Text HLabel 2200 1450 0    50   Input ~ 0
 In1_A
-Text HLabel 2200 2050 0    50   Input ~ 0
+Text HLabel 2200 1650 0    50   Input ~ 0
 In1_B
 Text HLabel 3850 1450 0    50   Input ~ 0
 In2_A
@@ -97,7 +97,7 @@ U 1 1 5C3317C7
 P 2600 1450
 F 0 "IC1" H 2600 2275 50  0000 C CNN
 F 1 "AM26C31M" H 2600 2184 50  0000 C CNN
-F 2 "agg:SOIC-16" H 2400 650 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 2400 650 50  0001 L CNN
 F 3 "http://www.ti.com.cn/cn/lit/ds/symlink/am26c31.pdf" H 2400 550 50  0001 L CNN
 F 4 "4975637" H 2400 450 50  0001 L CNN "Farnell"
 	1    2600 1450
@@ -109,7 +109,7 @@ U 1 1 5C331A81
 P 4250 1450
 F 0 "IC2" H 4250 2275 50  0000 C CNN
 F 1 "AM26C31M" H 4250 2184 50  0000 C CNN
-F 2 "agg:SOIC-16" H 4050 650 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 4050 650 50  0001 L CNN
 F 3 "http://www.ti.com.cn/cn/lit/ds/symlink/am26c31.pdf" H 4050 550 50  0001 L CNN
 F 4 "4975637" H 4050 450 50  0001 L CNN "Farnell"
 	1    4250 1450
@@ -173,49 +173,12 @@ F 3 "" H 2200 850 50  0001 C CNN
 	1    2200 850 
 	0    -1   -1   0   
 $EndComp
-$Comp
-L power:+5V #PWR036
-U 1 1 5C334668
-P 2200 1150
-F 0 "#PWR036" H 2200 1000 50  0001 C CNN
-F 1 "+5V" V 2215 1278 50  0000 L CNN
-F 2 "" H 2200 1150 50  0001 C CNN
-F 3 "" H 2200 1150 50  0001 C CNN
-	1    2200 1150
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2300 850  2200 850 
 Wire Wire Line
 	2300 950  2200 950 
 Wire Wire Line
-	2300 1150 2200 1150
-Wire Wire Line
 	2200 1250 2300 1250
-Wire Wire Line
-	2900 850  3000 850 
-Wire Wire Line
-	3000 950  2900 950 
-Wire Wire Line
-	3000 1150 2900 1150
-Wire Wire Line
-	2900 1250 3000 1250
-Wire Wire Line
-	3000 1450 2900 1450
-Wire Wire Line
-	3000 1550 2900 1550
-Wire Wire Line
-	2900 1750 3000 1750
-Wire Wire Line
-	3000 1850 2900 1850
-Wire Wire Line
-	2300 1450 2200 1450
-Wire Wire Line
-	2300 1650 2200 1650
-Wire Wire Line
-	2200 1850 2300 1850
-Wire Wire Line
-	2300 2050 2200 2050
 $Comp
 L power:GND #PWR042
 U 1 1 5C3408B1
@@ -238,17 +201,6 @@ Wire Wire Line
 Connection ~ 3900 1950
 Wire Wire Line
 	3900 1950 3900 2050
-$Comp
-L power:+5V #PWR040
-U 1 1 5C342B58
-P 3850 1150
-F 0 "#PWR040" H 3850 1000 50  0001 C CNN
-F 1 "+5V" V 3865 1278 50  0000 L CNN
-F 2 "" H 3850 1150 50  0001 C CNN
-F 3 "" H 3850 1150 50  0001 C CNN
-	1    3850 1150
-	0    -1   -1   0   
-$EndComp
 $Comp
 L power:+5V #PWR038
 U 1 1 5C342B77
@@ -287,8 +239,6 @@ Wire Wire Line
 Wire Wire Line
 	3850 950  3950 950 
 Wire Wire Line
-	3950 1150 3850 1150
-Wire Wire Line
 	3850 1250 3950 1250
 Wire Wire Line
 	3950 1450 3850 1450
@@ -308,7 +258,7 @@ U 1 1 5C46DD85
 P 5650 1150
 F 0 "R6" H 5720 1196 50  0000 L CNN
 F 1 "HEAT" V 5650 1050 50  0000 L CNN
-F 2 "" V 5580 1150 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5580 1150 50  0001 C CNN
 F 3 "~" H 5650 1150 50  0001 C CNN
 	1    5650 1150
 	1    0    0    -1  
@@ -339,4 +289,65 @@ Wire Wire Line
 	5650 1300 5650 1400
 Wire Wire Line
 	5650 900  5650 1000
+Wire Wire Line
+	2300 1450 2200 1450
+Wire Wire Line
+	2200 1650 2300 1650
+Wire Wire Line
+	2300 1850 2200 1850
+Wire Wire Line
+	2200 2050 2300 2050
+Wire Wire Line
+	2900 850  3050 850 
+Wire Wire Line
+	3050 950  2900 950 
+Wire Wire Line
+	2900 1150 3050 1150
+Wire Wire Line
+	3050 1250 2900 1250
+Wire Wire Line
+	2900 1450 3050 1450
+Wire Wire Line
+	3050 1550 2900 1550
+Wire Wire Line
+	3050 1750 2900 1750
+Wire Wire Line
+	2900 1850 3050 1850
+$Comp
+L Device:R R8
+U 1 1 5C428362
+P 6000 1150
+F 0 "R8" H 6070 1196 50  0000 L CNN
+F 1 "HEAT" V 6000 1050 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5930 1150 50  0001 C CNN
+F 3 "~" H 6000 1150 50  0001 C CNN
+	1    6000 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR05
+U 1 1 5C428368
+P 6000 900
+F 0 "#PWR05" H 6000 750 50  0001 C CNN
+F 1 "+5V" H 6015 1073 50  0000 C CNN
+F 2 "" H 6000 900 50  0001 C CNN
+F 3 "" H 6000 900 50  0001 C CNN
+	1    6000 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5C42836E
+P 6000 1400
+F 0 "#PWR07" H 6000 1150 50  0001 C CNN
+F 1 "GND" H 6005 1227 50  0000 C CNN
+F 2 "" H 6000 1400 50  0001 C CNN
+F 3 "" H 6000 1400 50  0001 C CNN
+	1    6000 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 1300 6000 1400
+Wire Wire Line
+	6000 900  6000 1000
 $EndSCHEMATC
