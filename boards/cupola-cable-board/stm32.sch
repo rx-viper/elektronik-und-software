@@ -609,8 +609,8 @@ Wire Wire Line
 	7100 1750 7200 1750
 Wire Wire Line
 	7100 1850 7200 1850
-Text Label 6150 4100 0    50   ~ 0
+Text Label 6200 4300 0    50   ~ 0
 SWCLK
-Text Label 6150 4300 0    50   ~ 0
+Text Label 6200 4100 0    50   ~ 0
 SWDIO
 $EndSCHEMATC
