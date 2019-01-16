@@ -26,14 +26,14 @@ F 3 "" H 1800 1650 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L cupola-cable-board-rescue:CONN_02X03 J2
+L Connector_Generic:Conn_02x03_Odd_Even J2
 U 1 1 5B145F53
-P 8900 1550
-F 0 "J2" H 8900 1750 50  0000 C CNN
-F 1 "ENC0_OUT" H 8900 1350 50  0000 C CNN
-F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 8900 350 50  0001 C CNN
-F 3 "" H 8900 350 50  0001 C CNN
-	1    8900 1550
+P 8850 1550
+F 0 "J2" H 8850 1750 50  0000 C CNN
+F 1 "ENC0_OUT" H 8850 1350 50  0000 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 8850 350 50  0001 C CNN
+F 3 "" H 8850 350 50  0001 C CNN
+	1    8850 1550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -46,17 +46,6 @@ F 2 "Connector_PinHeader_2.00mm:PinHeader_1x06_P2.00mm_Vertical" H 1800 2600 50 
 F 3 "" H 1800 2600 50  0001 C CNN
 	1    1800 2600
 	-1   0    0    1   
-$EndComp
-$Comp
-L cupola-cable-board-rescue:CONN_02X03 J3
-U 1 1 5B1469F5
-P 8900 2200
-F 0 "J3" H 8900 2400 50  0000 C CNN
-F 1 "ENC1_OUT" H 8900 2000 50  0000 C CNN
-F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 8900 1000 50  0001 C CNN
-F 3 "" H 8900 1000 50  0001 C CNN
-	1    8900 2200
-	1    0    0    -1  
 $EndComp
 $Comp
 L cupola-cable-board-rescue:CONN_01X06 J7
@@ -597,12 +586,12 @@ Mag1_B
 $Comp
 L power:+5V #PWR016
 U 1 1 5C355EED
-P 8550 2700
-F 0 "#PWR016" H 8550 2550 50  0001 C CNN
-F 1 "+5V" H 8565 2873 50  0000 C CNN
-F 2 "" H 8550 2700 50  0001 C CNN
-F 3 "" H 8550 2700 50  0001 C CNN
-	1    8550 2700
+P 8550 1400
+F 0 "#PWR016" H 8550 1250 50  0001 C CNN
+F 1 "+5V" H 8565 1573 50  0000 C CNN
+F 2 "" H 8550 1400 50  0001 C CNN
+F 3 "" H 8550 1400 50  0001 C CNN
+	1    8550 1400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -636,12 +625,12 @@ Wire Wire Line
 $Comp
 L power:GND #PWR017
 U 1 1 5C38BFCF
-P 9250 2750
-F 0 "#PWR017" H 9250 2500 50  0001 C CNN
-F 1 "GND" V 9255 2622 50  0000 R CNN
-F 2 "" H 9250 2750 50  0001 C CNN
-F 3 "" H 9250 2750 50  0001 C CNN
-	1    9250 2750
+P 9250 1450
+F 0 "#PWR017" H 9250 1200 50  0001 C CNN
+F 1 "GND" V 9255 1322 50  0000 R CNN
+F 2 "" H 9250 1450 50  0001 C CNN
+F 3 "" H 9250 1450 50  0001 C CNN
+	1    9250 1450
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -773,13 +762,9 @@ F 3 "~" H 3650 4050 50  0001 C CNN
 	1    3650 4050
 	-1   0    0    1   
 $EndComp
-NoConn ~ 9150 2100
-NoConn ~ 8650 2100
-NoConn ~ 8650 1450
-NoConn ~ 9150 1450
-Text Notes 9250 2100 0    50   ~ 0
+Text Notes 9400 2950 0    50   ~ 0
 VCC / GND not connected to avoid loop
-Text Notes 9250 1450 0    50   ~ 0
+Text Notes 9400 2300 0    50   ~ 0
 VCC / GND not connected to avoid loop
 $Comp
 L Connector_Generic:Conn_01x04 J9
@@ -946,21 +931,142 @@ F 3 "" H 2250 3750 50  0001 C CNN
 	1    2250 3750
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	8550 1400 8550 1450
+Wire Wire Line
+	8550 1450 8650 1450
+Wire Wire Line
+	9250 1450 9150 1450
 $Comp
-L cupola-cable-board-rescue:CONN_02X03 J4
-U 1 1 5B146AF6
-P 8900 2850
-F 0 "J4" H 8900 3050 50  0000 C CNN
-F 1 "ENC2_OUT" H 8900 2650 50  0000 C CNN
-F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 8900 1650 50  0001 C CNN
-F 3 "" H 8900 1650 50  0001 C CNN
-	1    8900 2850
+L Connector_Generic:Conn_02x02_Odd_Even J3
+U 1 1 5C44DA4C
+P 8850 2200
+F 0 "J3" H 8900 2417 50  0000 C CNN
+F 1 "ENC1_OUT" H 8900 2326 50  0000 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_2x02_P2.00mm_Vertical" H 8850 2200 50  0001 C CNN
+F 3 "~" H 8850 2200 50  0001 C CNN
+	1    8850 2200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8550 2700 8550 2750
-Wire Wire Line
-	8550 2750 8650 2750
-Wire Wire Line
-	9250 2750 9150 2750
+$Comp
+L Connector_Generic:Conn_02x02_Odd_Even J4
+U 1 1 5C44DB2B
+P 8850 2850
+F 0 "J4" H 8900 3067 50  0000 C CNN
+F 1 "ENC2_OUT" H 8900 2976 50  0000 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_2x02_P2.00mm_Vertical" H 8850 2850 50  0001 C CNN
+F 3 "~" H 8850 2850 50  0001 C CNN
+	1    8850 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H103
+U 1 1 5C44E99F
+P 6200 5900
+F 0 "H103" H 6300 5946 50  0000 L CNN
+F 1 "M3" H 6300 5855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6200 5900 50  0001 C CNN
+F 3 "~" H 6200 5900 50  0001 C CNN
+	1    6200 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H104
+U 1 1 5C44ECE5
+P 6200 6100
+F 0 "H104" H 6300 6146 50  0000 L CNN
+F 1 "M3" H 6300 6055 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6200 6100 50  0001 C CNN
+F 3 "~" H 6200 6100 50  0001 C CNN
+	1    6200 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H105
+U 1 1 5C44ED27
+P 6200 6300
+F 0 "H105" H 6300 6346 50  0000 L CNN
+F 1 "M3" H 6300 6255 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6200 6300 50  0001 C CNN
+F 3 "~" H 6200 6300 50  0001 C CNN
+	1    6200 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H102
+U 1 1 5C44ED6B
+P 6200 5700
+F 0 "H102" H 6300 5746 50  0000 L CNN
+F 1 "M3" H 6300 5655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6200 5700 50  0001 C CNN
+F 3 "~" H 6200 5700 50  0001 C CNN
+	1    6200 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H101
+U 1 1 5C44EDD5
+P 6200 5500
+F 0 "H101" H 6300 5546 50  0000 L CNN
+F 1 "M3" H 6300 5455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6200 5500 50  0001 C CNN
+F 3 "~" H 6200 5500 50  0001 C CNN
+	1    6200 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H108
+U 1 1 5C44F1A6
+P 6850 5900
+F 0 "H108" H 6950 5946 50  0000 L CNN
+F 1 "M3" H 6950 5855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6850 5900 50  0001 C CNN
+F 3 "~" H 6850 5900 50  0001 C CNN
+	1    6850 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H109
+U 1 1 5C44F1AD
+P 6850 6100
+F 0 "H109" H 6950 6146 50  0000 L CNN
+F 1 "M3" H 6950 6055 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6850 6100 50  0001 C CNN
+F 3 "~" H 6850 6100 50  0001 C CNN
+	1    6850 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H110
+U 1 1 5C44F1B4
+P 6850 6300
+F 0 "H110" H 6950 6346 50  0000 L CNN
+F 1 "M3" H 6950 6255 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6850 6300 50  0001 C CNN
+F 3 "~" H 6850 6300 50  0001 C CNN
+	1    6850 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H107
+U 1 1 5C44F1BB
+P 6850 5700
+F 0 "H107" H 6950 5746 50  0000 L CNN
+F 1 "M3" H 6950 5655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6850 5700 50  0001 C CNN
+F 3 "~" H 6850 5700 50  0001 C CNN
+	1    6850 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H106
+U 1 1 5C44F1C2
+P 6850 5500
+F 0 "H106" H 6950 5546 50  0000 L CNN
+F 1 "M3" H 6950 5455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 6850 5500 50  0001 C CNN
+F 3 "~" H 6850 5500 50  0001 C CNN
+	1    6850 5500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

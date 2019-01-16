@@ -1,4 +1,4 @@
 (sym_lib_table
   (lib (name cupola-cable-board-rescue)(type Legacy)(uri ${KIPRJMOD}/cupola-cable-board-rescue.lib)(options "")(descr ""))
-  (lib (name am26c31)(type Legacy)(uri /home/christopher/rexus-viper-elektronik2/boards/cupola-cable-board/am26c31.lib)(options "")(descr ""))
+  (lib (name am26c31)(type Legacy)(uri ${KIPRJMOD}/am26c31.lib)(options "")(descr ""))
 )

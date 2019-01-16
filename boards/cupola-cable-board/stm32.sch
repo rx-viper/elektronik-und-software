@@ -339,10 +339,6 @@ Wire Wire Line
 	6150 4200 6150 4300
 Wire Wire Line
 	6150 4300 6450 4300
-Text Notes 6500 4400 2    50   ~ 0
-SWDIO
-Text Notes 6450 4100 2    50   ~ 0
-SWDCLK
 Text HLabel 4650 4100 0    50   Output ~ 0
 Sensor2_Sck
 Wire Wire Line
@@ -567,9 +563,9 @@ $Comp
 L Connector:TestPoint TP1
 U 1 1 5C43AB33
 P 7200 1650
-F 0 "TP1" V 7154 1838 50  0000 L CNN
-F 1 "TestPoint" V 7245 1838 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7400 1650 50  0001 C CNN
+F 0 "TP1" V 7200 1850 50  0000 L CNN
+F 1 "TX" V 7200 2100 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 7400 1650 50  0001 C CNN
 F 3 "~" H 7400 1650 50  0001 C CNN
 	1    7200 1650
 	0    1    1    0   
@@ -578,9 +574,9 @@ $Comp
 L Connector:TestPoint TP2
 U 1 1 5C43AB81
 P 7200 1750
-F 0 "TP2" V 7246 1938 50  0000 L CNN
-F 1 "TestPoint" V 7155 1938 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7400 1750 50  0001 C CNN
+F 0 "TP2" V 7200 1950 50  0000 L CNN
+F 1 "RX" V 7200 2200 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 7400 1750 50  0001 C CNN
 F 3 "~" H 7400 1750 50  0001 C CNN
 	1    7200 1750
 	0    1    -1   0   
@@ -589,9 +585,9 @@ $Comp
 L Connector:TestPoint TP3
 U 1 1 5C43FFBF
 P 7200 1850
-F 0 "TP3" V 7246 2038 50  0000 L CNN
-F 1 "TestPoint" V 7155 2038 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7400 1850 50  0001 C CNN
+F 0 "TP3" V 7200 2050 50  0000 L CNN
+F 1 "GND" V 7200 2300 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 7400 1850 50  0001 C CNN
 F 3 "~" H 7400 1850 50  0001 C CNN
 	1    7200 1850
 	0    1    -1   0   
@@ -613,4 +609,8 @@ Wire Wire Line
 	7100 1750 7200 1750
 Wire Wire Line
 	7100 1850 7200 1850
+Text Label 6150 4100 0    50   ~ 0
+SWCLK
+Text Label 6150 4300 0    50   ~ 0
+SWDIO
 $EndSCHEMATC
