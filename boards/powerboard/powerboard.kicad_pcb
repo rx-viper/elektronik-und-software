@@ -5,7 +5,7 @@
     (drawings 35)
     (tracks 3489)
     (zones 0)
-    (modules 269)
+    (modules 268)
     (nets 191)
   )
 
@@ -1087,23 +1087,6 @@
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-  )
-
-  (module Mounting_Holes:MountingHole_3.2mm_M3_Pad locked (layer F.Cu) (tedit 56D1B4CB) (tstamp 5A238E84)
-    (at 65.786 26.71)
-    (descr "Mounting Hole 3.2mm, M3")
-    (tags "mounting hole 3.2mm m3")
-    (path /5944AD3C)
-    (fp_text reference J113 (at 0 -4.2) (layer F.SilkS) hide
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_text value M3 (at 0 4.2) (layer F.Fab)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_circle (center 0 0) (end 3.2 0) (layer Cmts.User) (width 0.15))
-    (fp_circle (center 0 0) (end 3.45 0) (layer F.CrtYd) (width 0.05))
-    (pad 1 thru_hole circle (at 0 0) (size 6.4 6.4) (drill 3.2) (layers *.Cu *.Mask)
-      (net 130 "Net-(J113-Pad1)"))
   )
 
   (module Capacitors_SMD:C_0805 (layer B.Cu) (tedit 5A1B1EB3) (tstamp 59414A95)
