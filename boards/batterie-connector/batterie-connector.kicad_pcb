@@ -10,6 +10,13 @@
   )
 
   (page A4)
+  (title_block
+    (title Battery-Connector)
+    (date 2019-01-01)
+    (rev rev3)
+    (company VIPER)
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)
@@ -104,8 +111,8 @@
     (add_net /PLUS)
   )
 
-  (module MountingHole:MountingHole_3.2mm_M3_Pad_Via (layer F.Cu) (tedit 5C40CDB6) (tstamp 5C593FE4)
-    (at 156 65.5)
+  (module MountingHole:MountingHole_3.2mm_M3_Pad_Via (layer F.Cu) (tedit 5C40CDB6) (tstamp 5C426445)
+    (at 155 65.5)
     (descr "Mounting Hole 3.2mm, M3")
     (tags "mounting hole 3.2mm m3")
     (path /5C40C4BA)
@@ -179,7 +186,7 @@
   )
 
   (module MountingHole:MountingHole_3.2mm_M3_Pad_Via (layer F.Cu) (tedit 5C40CDB1) (tstamp 5C593FD4)
-    (at 127 65.5)
+    (at 128 65.5)
     (descr "Mounting Hole 3.2mm, M3")
     (tags "mounting hole 3.2mm m3")
     (path /5C40C3DD)
@@ -235,7 +242,19 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 2.7 2.7) (drill 2.7) (layers *.Cu *.Mask))
   )
 
-  (gr_text rev2 (at 147 64.75 90) (layer F.SilkS) (tstamp 5C426272)
+  (dimension 12 (width 0.3) (layer Dwgs.User)
+    (gr_text "12,000 mm" (at 126 51.9) (layer Dwgs.User)
+      (effects (font (size 1.5 1.5) (thickness 0.3)))
+    )
+    (feature1 (pts (xy 132 59) (xy 132 53.413579)))
+    (feature2 (pts (xy 120 59) (xy 120 53.413579)))
+    (crossbar (pts (xy 120 54) (xy 132 54)))
+    (arrow1a (pts (xy 132 54) (xy 130.873496 54.586421)))
+    (arrow1b (pts (xy 132 54) (xy 130.873496 53.413579)))
+    (arrow2a (pts (xy 120 54) (xy 121.126504 54.586421)))
+    (arrow2b (pts (xy 120 54) (xy 121.126504 53.413579)))
+  )
+  (gr_text rev3 (at 147 64.75 90) (layer F.SilkS) (tstamp 5C426272)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
   (gr_text "battery\nconnector" (at 139 63.5 180) (layer F.SilkS)
@@ -243,18 +262,6 @@
   )
   (gr_text rx-viper (at 156.75 77.25 90) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
-  )
-  (dimension 13 (width 0.3) (layer Dwgs.User)
-    (gr_text "13,000 mm" (at 126.5 51.9) (layer Dwgs.User)
-      (effects (font (size 1.5 1.5) (thickness 0.3)))
-    )
-    (feature1 (pts (xy 133 59) (xy 133 53.413579)))
-    (feature2 (pts (xy 120 59) (xy 120 53.413579)))
-    (crossbar (pts (xy 120 54) (xy 133 54)))
-    (arrow1a (pts (xy 133 54) (xy 131.873496 54.586421)))
-    (arrow1b (pts (xy 133 54) (xy 131.873496 53.413579)))
-    (arrow2a (pts (xy 120 54) (xy 121.126504 54.586421)))
-    (arrow2b (pts (xy 120 54) (xy 121.126504 53.413579)))
   )
   (dimension 13 (width 0.3) (layer Dwgs.User)
     (gr_text "13,000 mm" (at 156.5 51.9) (layer Dwgs.User)
@@ -368,15 +375,15 @@
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 139.25 60) (xy 139.25 78.5) (xy 147.5 78.5) (xy 147.5 71.5) (xy 148 71)
+        (xy 139.25 60) (xy 139.25 75) (xy 147.5 75) (xy 147.5 71.5) (xy 148 71)
         (xy 163.5 71) (xy 163.5 60)
       )
     )
     (filled_polygon
       (pts
-        (xy 162.060785 60.853253) (xy 162.112314 60.887684) (xy 162.146747 60.939216) (xy 162.150001 60.955576) (xy 162.15 70.75)
+        (xy 162.060785 60.853253) (xy 162.112314 60.887684) (xy 162.146747 60.939216) (xy 162.150001 60.955576) (xy 162.150001 70.75)
         (xy 148 70.75) (xy 147.904329 70.76903) (xy 147.823223 70.823223) (xy 147.323223 71.323223) (xy 147.26903 71.404329)
-        (xy 147.25 71.5) (xy 147.25 78.25) (xy 139.5 78.25) (xy 139.5 70.464645) (xy 139.57 70.29565)
+        (xy 147.25 71.5) (xy 147.25 74.75) (xy 139.5 74.75) (xy 139.5 70.464645) (xy 139.57 70.29565)
         (xy 139.57 68.70435) (xy 139.5 68.535355) (xy 139.5 60.85) (xy 162.044429 60.85)
       )
     )
@@ -388,15 +395,15 @@
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 139.25 60) (xy 139.25 78.5) (xy 147.5 78.5) (xy 147.5 71.5) (xy 148 71)
+        (xy 139.25 60) (xy 139.25 75) (xy 147.5 75) (xy 147.5 71.5) (xy 148 71)
         (xy 163.5 71) (xy 163.5 60)
       )
     )
     (filled_polygon
       (pts
-        (xy 162.060785 60.853253) (xy 162.112314 60.887684) (xy 162.146747 60.939216) (xy 162.150001 60.955576) (xy 162.15 70.75)
+        (xy 162.060785 60.853253) (xy 162.112314 60.887684) (xy 162.146747 60.939216) (xy 162.150001 60.955576) (xy 162.150001 70.75)
         (xy 148 70.75) (xy 147.904329 70.76903) (xy 147.823223 70.823223) (xy 147.323223 71.323223) (xy 147.26903 71.404329)
-        (xy 147.25 71.5) (xy 147.25 78.25) (xy 139.5 78.25) (xy 139.5 70.464645) (xy 139.57 70.29565)
+        (xy 147.25 71.5) (xy 147.25 74.75) (xy 139.5 74.75) (xy 139.5 70.464645) (xy 139.57 70.29565)
         (xy 139.57 68.70435) (xy 139.5 68.535355) (xy 139.5 60.85) (xy 162.044429 60.85)
       )
     )
@@ -408,14 +415,14 @@
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 138.75 60) (xy 138.75 78.5) (xy 130.5 78.5) (xy 130.5 71.5) (xy 130 71)
+        (xy 138.75 60) (xy 138.75 75) (xy 130.5 75) (xy 130.5 71.5) (xy 130 71)
         (xy 117 71) (xy 117 60)
       )
     )
     (filled_polygon
       (pts
-        (xy 138.5 68.535355) (xy 138.43 68.70435) (xy 138.43 70.29565) (xy 138.5 70.464645) (xy 138.5 78.25)
-        (xy 130.75 78.25) (xy 130.75 71.5) (xy 130.73097 71.404329) (xy 130.676777 71.323223) (xy 130.176777 70.823223)
+        (xy 138.5 68.535355) (xy 138.43 68.70435) (xy 138.43 70.29565) (xy 138.5 70.464645) (xy 138.5 74.75)
+        (xy 130.75 74.75) (xy 130.75 71.5) (xy 130.73097 71.404329) (xy 130.676777 71.323223) (xy 130.176777 70.823223)
         (xy 130.095671 70.76903) (xy 130 70.75) (xy 120.85 70.75) (xy 120.85 60.955571) (xy 120.853253 60.939215)
         (xy 120.887684 60.887686) (xy 120.939216 60.853253) (xy 120.955571 60.85) (xy 138.5 60.85)
       )
@@ -428,14 +435,14 @@
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 138.75 60) (xy 138.75 78.5) (xy 130.5 78.5) (xy 130.5 71.5) (xy 130 71)
+        (xy 138.75 60) (xy 138.75 75) (xy 130.5 75) (xy 130.5 71.5) (xy 130 71)
         (xy 117 71) (xy 117 60)
       )
     )
     (filled_polygon
       (pts
-        (xy 138.5 68.535355) (xy 138.43 68.70435) (xy 138.43 70.29565) (xy 138.5 70.464645) (xy 138.5 78.25)
-        (xy 130.75 78.25) (xy 130.75 71.5) (xy 130.73097 71.404329) (xy 130.676777 71.323223) (xy 130.176777 70.823223)
+        (xy 138.5 68.535355) (xy 138.43 68.70435) (xy 138.43 70.29565) (xy 138.5 70.464645) (xy 138.5 74.75)
+        (xy 130.75 74.75) (xy 130.75 71.5) (xy 130.73097 71.404329) (xy 130.676777 71.323223) (xy 130.176777 70.823223)
         (xy 130.095671 70.76903) (xy 130 70.75) (xy 120.85 70.75) (xy 120.85 60.955571) (xy 120.853253 60.939215)
         (xy 120.887684 60.887686) (xy 120.939216 60.853253) (xy 120.955571 60.85) (xy 138.5 60.85)
       )
@@ -464,12 +471,44 @@
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 118 59) (xy 131.5 59) (xy 131.5 70.5) (xy 118 70.5)
+        (xy 118 59) (xy 132 59) (xy 132 70.5) (xy 118 70.5)
       )
     )
     (filled_polygon
       (pts
-        (xy 131.25 70.25) (xy 118.25 70.25) (xy 118.25 59.25) (xy 131.25 59.25)
+        (xy 131.75 70.25) (xy 118.25 70.25) (xy 118.25 59.25) (xy 131.75 59.25)
+      )
+    )
+  )
+  (zone (net 0) (net_name "") (layer B.Mask) (tstamp 5C426560) (hatch edge 0.508)
+    (priority 1)
+    (connect_pads yes (clearance 0.5))
+    (min_thickness 0.5)
+    (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
+    (polygon
+      (pts
+        (xy 118 59) (xy 132 59) (xy 132 70.5) (xy 118 70.5)
+      )
+    )
+    (filled_polygon
+      (pts
+        (xy 131.75 70.25) (xy 118.25 70.25) (xy 118.25 59.25) (xy 131.75 59.25)
+      )
+    )
+  )
+  (zone (net 0) (net_name "") (layer B.Mask) (tstamp 5C42656A) (hatch edge 0.508)
+    (priority 1)
+    (connect_pads yes (clearance 0.5))
+    (min_thickness 0.5)
+    (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
+    (polygon
+      (pts
+        (xy 150 59) (xy 164.5 59) (xy 164.5 70.5) (xy 150 70.5)
+      )
+    )
+    (filled_polygon
+      (pts
+        (xy 164.25 70.25) (xy 150.25 70.25) (xy 150.25 59.25) (xy 164.25 59.25)
       )
     )
   )
