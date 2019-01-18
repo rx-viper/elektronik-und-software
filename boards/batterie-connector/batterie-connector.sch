@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:batterie-connector-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -90,4 +91,15 @@ Text Label 2850 3600 0    50   ~ 0
 PLUS
 Text Label 2850 3700 0    50   ~ 0
 MINUS
+$Comp
+L Mechanical:MountingHole H101
+U 1 1 5C41F0AA
+P 5000 3650
+F 0 "H101" H 5100 3696 50  0000 L CNN
+F 1 "M2.5" H 5100 3605 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5_DIN965" H 5000 3650 50  0001 C CNN
+F 3 "~" H 5000 3650 50  0001 C CNN
+	1    5000 3650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
