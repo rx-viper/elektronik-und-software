@@ -7,6 +7,7 @@
   </repositories>
   <options>
     <option name="modm:build:project.name">test_blink</option>
+    <option name="modm:build:openocd.cfg">../openocd.cfg</option>
     <option name="modm:target">stm32f410cbt</option>
   </options>
   <modules>
