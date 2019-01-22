@@ -18,7 +18,10 @@
 
 #include <modm/platform.hpp>
 #include <modm/debug/logger.hpp>
+
 #include "../hardware.hpp"
+
+#include <modm/driver/encoder/encoder_slave.hpp>
 
 // Set the log level
 #undef  MODM_LOG_LEVEL
@@ -39,6 +42,10 @@ main()
 	Board::initializeMcu();
 	Board::initializeAllPeripherals();
 
+	modm::EncoderSlave<modm::platform::GpioA1, modm::platform::GpioA2> encoderSlave;
+
+	encoderSlave.setPosition(42);
+
 	while (1)
 	{
 	    // Change MODM_LOG_LEVEL above to enable or disable these messages
@@ -47,6 +54,7 @@ main()
 	    MODM_LOG_WARNING << "warning" << modm::endl;
 	    MODM_LOG_ERROR   << "error"   << modm::endl;
 	    modm::delayMilliseconds(500);
+	    encoderSlave.update();
 	}
 
 	return 0;

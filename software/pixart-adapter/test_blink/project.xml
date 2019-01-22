@@ -19,6 +19,9 @@
     <module>modm:platform:spi:2</module>
     <module>modm:platform:spi:5</module>
     <module>modm:platform:uart:1</module>
+
+    <module>modm:driver:encoder.slave</module>
+
     <module>modm:build:scons</module>
     <module>modm:debug</module>
   </modules>
