@@ -101,6 +101,61 @@ namespace DebugUart {
 	}
 }
 
+
+namespace Sensors {
+	static constexpr uint32_t SpiBaudrate = 781'250;
+
+	struct Sensor0 {
+		using Spi		= SpiMaster5;
+		using Sck		= GpioB0;
+		using Miso		= GpioA12;
+		using Mosi		= GpioA10;
+		using Cs		= GpioA11;
+		using Motion	= GpioB1;
+	};
+
+	struct Sensor1 {
+		using Spi		= SpiMaster1;
+		using Sck		= GpioOutputA5;
+		using Miso		= GpioInputA6;
+		using Mosi		= GpioOutputA7;
+		using Cs		= GpioOutputA4;
+		using Motion	= GpioInputA3;
+	};
+
+	struct Sensor2 {
+		using Spi		= SpiMaster2;
+		using Sck		= GpioOutputB13;
+		using Miso		= GpioInputB14;
+		using Mosi		= GpioOutputB15;
+		using Cs		= GpioOutputB12;
+		using Motion	= GpioInputA8;
+	};
+
+
+	template<class SpiStruct, uint32_t SpiBaudrate>
+	inline void
+	spiMasterInitialize()
+	{
+		SpiStruct::Spi::template connect<
+			SpiStruct::Sck::template Sck,
+			SpiStruct::Mosi::template Mosi,
+			SpiStruct::Miso::template Miso >();
+		SpiStruct::Spi::template initialize<systemClock, SpiBaudrate>();
+
+		SpiStruct::Cs::setOutput(Gpio::OutputType::PushPull);
+		SpiStruct::Motion::setInput(Gpio::InputType::Floating);
+	}
+
+	inline void
+	initialize()
+	{
+		spiMasterInitialize<Sensor0, SpiBaudrate>();
+		spiMasterInitialize<Sensor1, SpiBaudrate>();
+		spiMasterInitialize<Sensor2, SpiBaudrate>();
+	}
+}
+
 inline void
 initializeMcu()
 {
@@ -112,7 +167,7 @@ inline void
 initializeAllPeripherals()
 {
 	DebugUart::initialize();
-	// ...
+	Sensors::initialize();
 }
 
 }
