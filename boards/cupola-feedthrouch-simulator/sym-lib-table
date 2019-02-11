@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name DB_high_density)(type Legacy)(uri /home/rchojetzki/dev/rexus-viper-elektronik/boards/cupola-feedthrouch-simulator/DB_high_density.lib)(options "")(descr ""))
+)
