@@ -1,9 +1,9 @@
-(kicad_pcb (version 20171130) (host pcbnew 5.0.2-4.fc29)
+(kicad_pcb (version 20171130) (host pcbnew 5.0.0-4.fc29)
 
   (general
     (thickness 1.6)
     (drawings 52)
-    (tracks 686)
+    (tracks 690)
     (zones 0)
     (modules 16)
     (nets 184)
@@ -43,7 +43,7 @@
     (user_trace_width 0.75)
     (user_trace_width 1)
     (user_trace_width 2)
-    (trace_clearance 0.2)
+    (trace_clearance 0.175)
     (zone_clearance 0.508)
     (zone_45_only no)
     (trace_min 0.2)
@@ -66,8 +66,8 @@
     (mod_text_width 0.15)
     (pad_size 1.524 1.524)
     (pad_drill 0.762)
-    (pad_to_mask_clearance 0.051)
-    (solder_mask_min_width 0.25)
+    (pad_to_mask_clearance 0.1)
+    (solder_mask_min_width 0.1)
     (aux_axis_origin 0 0)
     (visible_elements FFFFFF7F)
     (pcbplotparams
@@ -285,7 +285,7 @@
   (net 183 "Net-(J15-Pad0)")
 
   (net_class Default "This is the default net class."
-    (clearance 0.2)
+    (clearance 0.175)
     (trace_width 0.25)
     (via_dia 0.8)
     (via_drill 0.4)
@@ -2717,5 +2717,9 @@
   (segment (start 100.899958 71.393852) (end 98.756076 69.24997) (width 0.25) (layer B.Cu) (net 169))
   (segment (start 37.999999 68.699999) (end 37.5 68.2) (width 0.25) (layer B.Cu) (net 169))
   (segment (start 89.74 141.85) (end 93.790044 137.799956) (width 0.25) (layer B.Cu) (net 169))
+  (segment (start 123.755001 145.269999) (end 125.755 143.27) (width 0.25) (layer F.Cu) (net 183))
+  (segment (start 120.775 148.25) (end 123.755001 145.269999) (width 0.25) (layer F.Cu) (net 183))
+  (segment (start 78.655 143.27) (end 83.635 148.25) (width 0.25) (layer F.Cu) (net 183))
+  (segment (start 83.635 148.25) (end 120.775 148.25) (width 0.25) (layer F.Cu) (net 183))
 
 )
