@@ -1,5 +1,37 @@
-EESchema Schematic File Version 4
-EELAYER 26 0
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:d-sub_high-pin-count
+LIBS:DB
+LIBS:wiring-diagram-cache
+EELAYER 25 0
 EELAYER END
 $Descr User 16535 39331
 encoding utf-8
@@ -14,7 +46,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L wiring-diagram-rescue:DB9_FEMALE J102_mainboard
+L DB9_FEMALE J102_mainboard
 U 1 1 5953828C
 P 2600 3250
 F 0 "J102_mainboard" H 2600 3800 50  0000 C CNN
@@ -43,7 +75,7 @@ temp_SDA
 Text Label 2950 2850 0    60   ~ 0
 temp_GND
 $Comp
-L wiring-diagram-rescue:DB9_FEMALE J103_mainboard
+L DB9_FEMALE J103_mainboard
 U 1 1 5953BEB8
 P 2500 23500
 F 0 "J103_mainboard" H 2500 24050 50  0000 C CNN
@@ -60,7 +92,7 @@ raspi_RX
 Text Label 2850 23800 0    60   ~ 0
 cam_GND
 $Comp
-L DB:DB_26 U1201_mainboard
+L DB_26 U1201_mainboard
 U 1 1 5953C94B
 P 2450 8150
 F 0 "U1201_mainboard" H 2450 6800 60  0000 C CNN
@@ -71,7 +103,7 @@ F 3 "" H 3650 8150 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X04_MALE J1_pressure-sensor
+L CONN_01X04_MALE J1_pressure-sensor
 U 1 1 595383DD
 P 10500 4700
 F 0 "J1_pressure-sensor" H 10500 5075 50  0000 C CNN
@@ -118,7 +150,7 @@ enc3_B-
 Text Label 2900 7750 0    60   ~ 0
 enc3_GND
 $Comp
-L DB:DB_78 U202_mainboard
+L DB_78 U202_mainboard
 U 1 1 59546962
 P 2400 13750
 F 0 "U202_mainboard" H 2400 9450 60  0000 C CNN
@@ -131,7 +163,7 @@ $EndComp
 Text Notes 1500 13400 1    60   ~ 0
 Temperature sensor connectors
 $Comp
-L DB:DB_44 U201_mainboard
+L DB_44 U201_mainboard
 U 1 1 59546FD6
 P 2450 20450
 F 0 "U201_mainboard" H 2450 18100 60  0000 C CNN
@@ -142,7 +174,7 @@ F 3 "" H 3650 20450 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:DB25_FEMALE J201_mainboard
+L DB25_FEMALE J201_mainboard
 U 1 1 59548AFB
 P 2550 5250
 F 0 "J201_mainboard" H 2550 6600 50  0000 C CNN
@@ -155,7 +187,7 @@ $EndComp
 Text Notes 900  2500 0    60   ~ 0
 BOARD: mainboard
 $Comp
-L wiring-diagram-rescue:DB15_MALE J101_powerboard
+L DB15_MALE J101_powerboard
 U 1 1 59552ADF
 P 2650 29600
 F 0 "J101_powerboard" H 2670 30450 50  0000 C CNN
@@ -188,7 +220,7 @@ RXSM_B(inverted)
 Text Label 3100 30100 0    60   ~ 0
 RXSM_Z(inverted)
 $Comp
-L wiring-diagram-rescue:DB9_FEMALE J103_powerboard
+L DB9_FEMALE J103_powerboard
 U 1 1 59556B6B
 P 2600 31200
 F 0 "J103_powerboard" H 2600 31750 50  0000 C CNN
@@ -203,7 +235,7 @@ camera-light_LED_OUT
 Text Label 3000 31100 0    60   ~ 0
 camera-light_GND
 $Comp
-L wiring-diagram-rescue:DB15_FEMALE J104_powerboard
+L DB15_FEMALE J104_powerboard
 U 1 1 595585AE
 P 2600 32950
 F 0 "J104_powerboard" H 2620 33800 50  0000 C CNN
@@ -238,7 +270,7 @@ motor-hall_V
 Text Label 3000 33450 0    60   ~ 0
 motor-hall_W
 $Comp
-L wiring-diagram-rescue:DB25_FEMALE J801_powerboard
+L DB25_FEMALE J801_powerboard
 U 1 1 5955DA13
 P 2650 27200
 F 0 "J801_powerboard" H 2650 28550 50  0000 C CNN
@@ -263,7 +295,7 @@ probe_2
 Text Label 3100 26400 0    60   ~ 0
 probe_3
 $Comp
-L wiring-diagram-rescue:CONN_01X02 P1_camera-light_1
+L CONN_01X02 P1_camera-light_1
 U 1 1 59540207
 P 11000 31050
 F 0 "P1_camera-light_1" V 11100 30800 50  0000 C CNN
@@ -276,7 +308,7 @@ $EndComp
 Text Notes 10750 30850 0    60   ~ 0
 BOARD: camera-light
 $Comp
-L wiring-diagram-rescue:CONN_01X02 P2_camera-light_1
+L CONN_01X02 P2_camera-light_1
 U 1 1 59540A79
 P 11350 31050
 F 0 "P2_camera-light_1" V 11450 30800 50  0000 C CNN
@@ -291,7 +323,7 @@ Text Notes 10950 30950 0    60   ~ 0
 Text Notes 11300 30950 0    60   ~ 0
 +
 $Comp
-L wiring-diagram-rescue:CONN_01X02 P1_camera-light_?
+L CONN_01X02 P1_camera-light_?
 U 1 1 59542D60
 P 12750 31050
 F 0 "P1_camera-light_?" V 12850 30800 50  0000 C CNN
@@ -304,7 +336,7 @@ $EndComp
 Text Notes 12500 30850 0    60   ~ 0
 BOARD: camera-light
 $Comp
-L wiring-diagram-rescue:CONN_01X02 P2_camera-light_?
+L CONN_01X02 P2_camera-light_?
 U 1 1 59542D69
 P 13100 31050
 F 0 "P2_camera-light_?" V 13200 30800 50  0000 C CNN
@@ -319,7 +351,7 @@ Text Notes 12700 30950 0    60   ~ 0
 Text Notes 13050 30950 0    60   ~ 0
 +
 $Comp
-L wiring-diagram-rescue:CONN_01X02 P1_camera-light_?
+L CONN_01X02 P1_camera-light_?
 U 1 1 595431FD
 P 14550 31050
 F 0 "P1_camera-light_?" V 14650 30800 50  0000 C CNN
@@ -332,7 +364,7 @@ $EndComp
 Text Notes 14300 30850 0    60   ~ 0
 BOARD: camera-light
 $Comp
-L wiring-diagram-rescue:CONN_01X02 P2_camera-light_?
+L CONN_01X02 P2_camera-light_?
 U 1 1 59543206
 P 14900 31050
 F 0 "P2_camera-light_?" V 15000 30800 50  0000 C CNN
@@ -347,7 +379,7 @@ Text Notes 14500 30950 0    60   ~ 0
 Text Notes 14850 30950 0    60   ~ 0
 +
 $Comp
-L wiring-diagram-rescue:CONN_01X08 J1_motor
+L CONN_01X08 J1_motor
 U 1 1 59543EDC
 P 15200 32700
 F 0 "J1_motor" H 15200 33150 50  0000 C CNN
@@ -358,7 +390,7 @@ F 3 "" H 15200 32700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X02 J1_endswitch
+L CONN_01X02 J1_endswitch
 U 1 1 59544789
 P 13950 33050
 F 0 "J1_endswitch" H 13950 33200 50  0000 C CNN
@@ -375,7 +407,7 @@ motor-hall_5V
 Text Label 3000 32250 0    60   ~ 0
 motor-hall_GND
 $Comp
-L wiring-diagram-rescue:CONN_01X10 J1_motor-encoder
+L CONN_01X10 J1_motor-encoder
 U 1 1 5954944C
 P 12850 34250
 F 0 "J1_motor-encoder" V 12950 34550 50  0000 C CNN
@@ -396,7 +428,7 @@ motor-encoder_GND
 Text Notes 12150 34500 0    60   ~ 0
 Motor-Encoder MR Typ-M, 201937
 $Comp
-L wiring-diagram-rescue:CONN_01X04_MALE J1_temperature-sensor-DS4
+L CONN_01X04_MALE J1_temperature-sensor-DS4
 U 1 1 5955935F
 P 10500 1550
 F 0 "J1_temperature-sensor-DS4" H 10500 1925 50  0000 C CNN
@@ -409,7 +441,7 @@ $EndComp
 Text Notes 10000 2350 1    60   ~ 0
 BOARD: temperature-sensor-DS1731
 $Comp
-L wiring-diagram-rescue:CONN_01X04_MALE J1_temperature-sensor-DS3
+L CONN_01X04_MALE J1_temperature-sensor-DS3
 U 1 1 59559F83
 P 9100 1550
 F 0 "J1_temperature-sensor-DS3" H 9100 1925 50  0000 C CNN
@@ -422,7 +454,7 @@ $EndComp
 Text Notes 8600 2350 1    60   ~ 0
 BOARD: temperature-sensor-DS1731
 $Comp
-L wiring-diagram-rescue:CONN_01X04_MALE J1_temperature-sensor-DS2
+L CONN_01X04_MALE J1_temperature-sensor-DS2
 U 1 1 5955AE90
 P 7650 1550
 F 0 "J1_temperature-sensor-DS2" H 7650 1925 50  0000 C CNN
@@ -435,7 +467,7 @@ $EndComp
 Text Notes 7150 2350 1    60   ~ 0
 BOARD: temperature-sensor-DS1731
 $Comp
-L wiring-diagram-rescue:CONN_01X04_MALE J1_temperature-sensor-DS1
+L CONN_01X04_MALE J1_temperature-sensor-DS1
 U 1 1 5955B334
 P 6200 1550
 F 0 "J1_temperature-sensor-DS1" H 6200 1925 50  0000 C CNN
@@ -476,7 +508,7 @@ t6_RTD6_D
 Text Label 2950 5250 0    60   ~ 0
 GND
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J1_ltc3757_GND_1
+L CONN_01X01 J1_ltc3757_GND_1
 U 1 1 5957BB15
 P 5850 36950
 F 0 "J1_ltc3757_GND_1" H 5850 37050 50  0000 C CNN
@@ -487,7 +519,7 @@ F 3 "" H 5850 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J2_ltc3757_ENABLE_1
+L CONN_01X01 J2_ltc3757_ENABLE_1
 U 1 1 5957C7AA
 P 5650 36950
 F 0 "J2_ltc3757_ENABLE_1" H 5650 37050 50  0000 C CNN
@@ -498,7 +530,7 @@ F 3 "" H 5650 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J3_ltc3757_BAT_1
+L CONN_01X01 J3_ltc3757_BAT_1
 U 1 1 5957C85F
 P 5450 36950
 F 0 "J3_ltc3757_BAT_1" H 5450 37050 50  0000 C CNN
@@ -509,7 +541,7 @@ F 3 "" H 5450 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J4_ltc3757_24V_1
+L CONN_01X01 J4_ltc3757_24V_1
 U 1 1 5957CCBD
 P 5250 36950
 F 0 "J4_ltc3757_24V_1" H 5250 37050 50  0000 C CNN
@@ -520,7 +552,7 @@ F 3 "" H 5250 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J9_ltc3757_GND_1
+L CONN_01X01 J9_ltc3757_GND_1
 U 1 1 5957D1B2
 P 5050 36950
 F 0 "J9_ltc3757_GND_1" H 5050 37050 50  0000 C CNN
@@ -533,7 +565,7 @@ $EndComp
 Text Notes 4950 37650 1    60   ~ 0
 BOARD: lt3757-boost-converter
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J110_powerboard
+L CONN_01X01 J110_powerboard
 U 1 1 595851EC
 P 2700 34700
 F 0 "J110_powerboard" H 2700 34800 50  0000 C CNN
@@ -544,7 +576,7 @@ F 3 "" H 2700 34700 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J106_powerboard?
+L CONN_01X01 J106_powerboard?
 U 1 1 595856A2
 P 2700 35500
 F 0 "J106_powerboard?" H 2700 35600 50  0000 C CNN
@@ -555,7 +587,7 @@ F 3 "" H 2700 35500 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J119_powerboard?
+L CONN_01X01 J119_powerboard?
 U 1 1 595857A0
 P 2700 35100
 F 0 "J119_powerboard?" H 2700 35200 50  0000 C CNN
@@ -566,7 +598,7 @@ F 3 "" H 2700 35100 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J107_powerboard?
+L CONN_01X01 J107_powerboard?
 U 1 1 595858A4
 P 2700 35700
 F 0 "J107_powerboard?" H 2700 35800 50  0000 C CNN
@@ -577,7 +609,7 @@ F 3 "" H 2700 35700 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J108_powerboard?
+L CONN_01X01 J108_powerboard?
 U 1 1 5958592A
 P 2700 35900
 F 0 "J108_powerboard?" H 2700 36000 50  0000 C CNN
@@ -588,7 +620,7 @@ F 3 "" H 2700 35900 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J109_powerboard?
+L CONN_01X01 J109_powerboard?
 U 1 1 595859B3
 P 2700 36100
 F 0 "J109_powerboard?" H 2700 36200 50  0000 C CNN
@@ -611,7 +643,7 @@ boost_ENABLE
 Text Label 2950 34700 0    60   ~ 0
 bat_RAW
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J1_ltc3757_GND_2
+L CONN_01X01 J1_ltc3757_GND_2
 U 1 1 595940FB
 P 7550 36950
 F 0 "J1_ltc3757_GND_2" H 7550 37050 50  0000 C CNN
@@ -622,7 +654,7 @@ F 3 "" H 7550 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J2_ltc3757_ENABLE_2
+L CONN_01X01 J2_ltc3757_ENABLE_2
 U 1 1 59594101
 P 7350 36950
 F 0 "J2_ltc3757_ENABLE_2" H 7350 37050 50  0000 C CNN
@@ -633,7 +665,7 @@ F 3 "" H 7350 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J3_ltc3757_BAT_2
+L CONN_01X01 J3_ltc3757_BAT_2
 U 1 1 59594107
 P 7150 36950
 F 0 "J3_ltc3757_BAT_2" H 7150 37050 50  0000 C CNN
@@ -644,7 +676,7 @@ F 3 "" H 7150 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J4_ltc3757_24V_2
+L CONN_01X01 J4_ltc3757_24V_2
 U 1 1 5959410D
 P 6950 36950
 F 0 "J4_ltc3757_24V_2" H 6950 37050 50  0000 C CNN
@@ -655,7 +687,7 @@ F 3 "" H 6950 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J9_ltc3757_GND_2
+L CONN_01X01 J9_ltc3757_GND_2
 U 1 1 59594113
 P 6750 36950
 F 0 "J9_ltc3757_GND_2" H 6750 37050 50  0000 C CNN
@@ -668,7 +700,7 @@ $EndComp
 Text Notes 6650 37650 1    60   ~ 0
 BOARD: lt3757-boost-converter
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J1_ltc3757_GND_3
+L CONN_01X01 J1_ltc3757_GND_3
 U 1 1 59594774
 P 9300 36950
 F 0 "J1_ltc3757_GND_3" H 9300 37050 50  0000 C CNN
@@ -679,7 +711,7 @@ F 3 "" H 9300 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J2_ltc3757_ENABLE_3
+L CONN_01X01 J2_ltc3757_ENABLE_3
 U 1 1 5959477A
 P 9100 36950
 F 0 "J2_ltc3757_ENABLE_3" H 9100 37050 50  0000 C CNN
@@ -690,7 +722,7 @@ F 3 "" H 9100 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J3_ltc3757_BAT_3
+L CONN_01X01 J3_ltc3757_BAT_3
 U 1 1 59594780
 P 8900 36950
 F 0 "J3_ltc3757_BAT_3" H 8900 37050 50  0000 C CNN
@@ -701,7 +733,7 @@ F 3 "" H 8900 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J4_ltc3757_24V_3
+L CONN_01X01 J4_ltc3757_24V_3
 U 1 1 59594786
 P 8700 36950
 F 0 "J4_ltc3757_24V_3" H 8700 37050 50  0000 C CNN
@@ -712,7 +744,7 @@ F 3 "" H 8700 36950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J9_ltc3757_GND_3
+L CONN_01X01 J9_ltc3757_GND_3
 U 1 1 5959478C
 P 8500 36950
 F 0 "J9_ltc3757_GND_3" H 8500 37050 50  0000 C CNN
@@ -725,7 +757,7 @@ $EndComp
 Text Notes 8400 37650 1    60   ~ 0
 BOARD: lt3757-boost-converter
 $Comp
-L wiring-diagram-rescue:CONN_01X02 J1_battery
+L CONN_01X02 J1_battery
 U 1 1 5959BD39
 P 10300 34750
 F 0 "J1_battery" H 10300 34900 50  0000 C CNN
@@ -742,7 +774,7 @@ bat_10V
 Text Label 9700 34800 0    60   ~ 0
 bat_GND
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J111_powerboard?
+L CONN_01X01 J111_powerboard?
 U 1 1 595BC2B1
 P 2700 34900
 F 0 "J111_powerboard?" H 2700 35000 50  0000 C CNN
@@ -755,7 +787,7 @@ $EndComp
 Text Label 2950 34900 0    60   ~ 0
 bat_GND
 $Comp
-L wiring-diagram-rescue:CONN_01X01 J119_powerboard?
+L CONN_01X01 J119_powerboard?
 U 1 1 595BE4A4
 P 2700 35300
 F 0 "J119_powerboard?" H 2700 35400 50  0000 C CNN
@@ -768,7 +800,7 @@ $EndComp
 Text Label 2950 35300 0    60   ~ 0
 boost_10V
 $Comp
-L wiring-diagram-rescue:DB25_MALE J2_piboard
+L DB25_MALE J2_piboard
 U 1 1 59562DD6
 P 6100 29250
 F 0 "J2_piboard" H 6100 30600 50  0000 C CNN
@@ -811,7 +843,7 @@ cam_GND
 Text Label 7300 29600 3    60   ~ 0
 cam_5V
 $Comp
-L wiring-diagram-rescue:CONN_01X04 J1_cam
+L CONN_01X04 J1_cam
 U 1 1 595662F3
 P 11700 28900
 F 0 "J1_cam" H 11700 29150 50  0000 C CNN
@@ -824,7 +856,7 @@ $EndComp
 Text Notes 11450 28550 0    60   ~ 0
 IDS uEye XS
 $Comp
-L wiring-diagram-rescue:CONN_01X08 J1_flir
+L CONN_01X08 J1_flir
 U 1 1 59567202
 P 11950 29950
 F 0 "J1_flir" H 11950 30400 50  0000 C CNN
@@ -849,7 +881,7 @@ pi-board_GND
 Text Label 3000 31200 0    60   ~ 0
 lens-heater_OUT
 $Comp
-L wiring-diagram-rescue:DB15_FEMALE JF1_01
+L DB15_FEMALE JF1_01
 U 1 1 59F74587
 P 8800 7650
 F 0 "JF1_01" H 8820 8500 50  0000 C CNN
@@ -860,7 +892,7 @@ F 3 "" H 8800 7650 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L wiring-diagram-rescue:DB15_FEMALE JF1_02
+L DB15_FEMALE JF1_02
 U 1 1 59F74C18
 P 8800 9450
 F 0 "JF1_02" H 8820 10300 50  0000 C CNN
@@ -871,7 +903,7 @@ F 3 "" H 8800 9450 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L wiring-diagram-rescue:DB15_FEMALE JF1_03
+L DB15_FEMALE JF1_03
 U 1 1 59F75319
 P 8800 11250
 F 0 "JF1_03" H 8820 12100 50  0000 C CNN
@@ -882,7 +914,7 @@ F 3 "" H 8800 11250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X15 JF1_01H
+L CONN_01X15 JF1_01H
 U 1 1 59F763B6
 P 8250 7650
 F 0 "JF1_01H" H 8250 8450 50  0000 C CNN
@@ -893,7 +925,7 @@ F 3 "" H 8250 7650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X15 JF1_02H
+L CONN_01X15 JF1_02H
 U 1 1 59F764AD
 P 8250 9450
 F 0 "JF1_02H" H 8250 10250 50  0000 C CNN
@@ -904,7 +936,7 @@ F 3 "" H 8250 9450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X15 JF1_03H
+L CONN_01X15 JF1_03H
 U 1 1 59F76986
 P 8250 11300
 F 0 "JF1_03H" H 8250 12100 50  0000 C CNN
@@ -915,7 +947,7 @@ F 3 "" H 8250 11300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X36 J?
+L CONN_01X36 J?
 U 1 1 59F77C1B
 P 4300 11800
 F 0 "J?" H 4300 13650 50  0000 C CNN
@@ -926,7 +958,7 @@ F 3 "" H 4300 11800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X36 J?
+L CONN_01X36 J?
 U 1 1 59F7E888
 P 4700 15400
 F 0 "J?" H 4700 17250 50  0000 C CNN
@@ -937,7 +969,7 @@ F 3 "" H 4700 15400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X36 J?
+L CONN_01X36 J?
 U 1 1 59F84598
 P 4300 20200
 F 0 "J?" H 4300 22050 50  0000 C CNN
@@ -948,7 +980,7 @@ F 3 "" H 4300 20200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X02 J1_heatprobe_3
+L CONN_01X02 J1_heatprobe_3
 U 1 1 59F99D0D
 P 9850 7000
 F 0 "J1_heatprobe_3" H 9850 7150 50  0000 C CNN
@@ -961,7 +993,7 @@ $EndComp
 Text Notes 9500 6800 0    60   ~ 0
 FREEK Kleinheizpatrone 24V
 $Comp
-L wiring-diagram-rescue:CONN_01X02 J1_heatprobe_?
+L CONN_01X02 J1_heatprobe_?
 U 1 1 59FA3693
 P 9850 8800
 F 0 "J1_heatprobe_?" H 9850 8950 50  0000 C CNN
@@ -974,7 +1006,7 @@ $EndComp
 Text Notes 9500 8600 0    60   ~ 0
 FREEK Kleinheizpatrone 24V
 $Comp
-L wiring-diagram-rescue:CONN_01X02 J1_heatprobe_?
+L CONN_01X02 J1_heatprobe_?
 U 1 1 59FA4030
 P 9850 10600
 F 0 "J1_heatprobe_?" H 9850 10750 50  0000 C CNN
@@ -987,7 +1019,7 @@ $EndComp
 Text Notes 9500 10400 0    60   ~ 0
 FREEK Kleinheizpatrone 24V
 $Comp
-L wiring-diagram-rescue:CONN_02X03 J1_optical-distance_3
+L CONN_02X03 J1_optical-distance_3
 U 1 1 59FA65C1
 P 11050 7950
 F 0 "J1_optical-distance_3" H 11050 8150 50  0000 C CNN
@@ -1002,7 +1034,7 @@ BOARD: optical-distance
 Text Notes 9500 7900 0    60   ~ 0
 MR-518G
 $Comp
-L wiring-diagram-rescue:CONN_01X04 J1_RTD_3
+L CONN_01X04 J1_RTD_3
 U 1 1 59FA8012
 P 9850 8200
 F 0 "J1_RTD_3" H 9850 8450 50  0000 C CNN
@@ -1013,7 +1045,7 @@ F 3 "" H 9850 8200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_02X03 J1_optical-distance_?
+L CONN_02X03 J1_optical-distance_?
 U 1 1 59FA97E7
 P 11050 9750
 F 0 "J1_optical-distance_?" H 11050 9950 50  0000 C CNN
@@ -1028,7 +1060,7 @@ BOARD: optical-distance
 Text Notes 9500 9700 0    60   ~ 0
 MR-518G
 $Comp
-L wiring-diagram-rescue:CONN_01X04 J1_RTD_?
+L CONN_01X04 J1_RTD_?
 U 1 1 59FA9807
 P 9850 10000
 F 0 "J1_RTD_?" H 9850 10250 50  0000 C CNN
@@ -1039,7 +1071,7 @@ F 3 "" H 9850 10000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_02X03 J1_optical-distance_?
+L CONN_02X03 J1_optical-distance_?
 U 1 1 59FAA015
 P 11050 11550
 F 0 "J1_optical-distance_?" H 11050 11750 50  0000 C CNN
@@ -1054,7 +1086,7 @@ BOARD: optical-distance
 Text Notes 9500 11500 0    60   ~ 0
 MR-518G
 $Comp
-L wiring-diagram-rescue:CONN_01X04 J1_RTD_?
+L CONN_01X04 J1_RTD_?
 U 1 1 59FAA035
 P 9850 11800
 F 0 "J1_RTD_?" H 9850 12050 50  0000 C CNN
@@ -1069,7 +1101,7 @@ Cupola-Feedthrough1
 Text Notes 8800 4050 3    60   ~ 0
 BOARD: pressure-sensor
 $Comp
-L wiring-diagram-rescue:CONN_01X04_MALE J1_pressure-sensor?
+L CONN_01X04_MALE J1_pressure-sensor?
 U 1 1 5A01A174
 P 9250 4700
 F 0 "J1_pressure-sensor?" H 9250 5075 50  0000 C CNN
@@ -1080,7 +1112,7 @@ F 3 "" H 9250 5000 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L wiring-diagram-rescue:DB15_FEMALE JF1_?
+L DB15_FEMALE JF1_?
 U 1 1 5A020FE0
 P 8550 29300
 F 0 "JF1_?" H 8570 30150 50  0000 C CNN
@@ -1091,7 +1123,7 @@ F 3 "" H 8550 29300 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L wiring-diagram-rescue:DB15_FEMALE JF1_?
+L DB15_FEMALE JF1_?
 U 1 1 5A020FE6
 P 8550 31100
 F 0 "JF1_?" H 8570 31950 50  0000 C CNN
@@ -1102,7 +1134,7 @@ F 3 "" H 8550 31100 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L wiring-diagram-rescue:DB15_FEMALE JF1_?
+L DB15_FEMALE JF1_?
 U 1 1 5A020FEC
 P 8550 32950
 F 0 "JF1_?" H 8570 33800 50  0000 C CNN
@@ -1113,7 +1145,7 @@ F 3 "" H 8550 32950 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X15 JF1_01H?
+L CONN_01X15 JF1_01H?
 U 1 1 5A020FF2
 P 8000 29300
 F 0 "JF1_01H?" H 8000 30100 50  0000 C CNN
@@ -1124,7 +1156,7 @@ F 3 "" H 8000 29300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X15 JF1_02H?
+L CONN_01X15 JF1_02H?
 U 1 1 5A020FF8
 P 8000 31100
 F 0 "JF1_02H?" H 8000 31900 50  0000 C CNN
@@ -1135,7 +1167,7 @@ F 3 "" H 8000 31100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wiring-diagram-rescue:CONN_01X15 JF1_03H?
+L CONN_01X15 JF1_03H?
 U 1 1 5A020FFE
 P 8000 32950
 F 0 "JF1_03H?" H 8000 33750 50  0000 C CNN
@@ -1196,7 +1228,7 @@ Wire Wire Line
 Wire Wire Line
 	3050 28900 3050 29000
 Wire Wire Line
-	2950 29000 3050 29000
+	2950 29000 3650 29000
 Connection ~ 3050 29000
 Wire Wire Line
 	2950 29100 3650 29100
@@ -1217,7 +1249,7 @@ Wire Wire Line
 Wire Wire Line
 	2950 30100 3650 30100
 Wire Wire Line
-	2950 30300 3050 30300
+	2950 30300 3650 30300
 Wire Wire Line
 	3050 30300 3050 30200
 Wire Wire Line
@@ -1254,7 +1286,7 @@ Wire Notes Line
 Wire Wire Line
 	2950 26300 3050 26300
 Wire Wire Line
-	3050 26100 3050 26200
+	3050 26100 3050 26400
 Connection ~ 3050 26400
 Wire Wire Line
 	2950 26200 3050 26200
@@ -1265,7 +1297,7 @@ Connection ~ 3050 26200
 Wire Wire Line
 	2950 26500 3050 26500
 Wire Wire Line
-	3050 26500 3050 26600
+	3050 26500 3050 26800
 Connection ~ 3050 26800
 Wire Wire Line
 	2950 26600 3050 26600
@@ -1276,7 +1308,7 @@ Connection ~ 3050 26700
 Wire Wire Line
 	2950 26900 3050 26900
 Wire Wire Line
-	3050 26900 3050 27000
+	3050 26900 3050 27200
 Connection ~ 3050 27200
 Wire Wire Line
 	2950 27000 3050 27000
@@ -1287,7 +1319,7 @@ Connection ~ 3050 27100
 Wire Wire Line
 	2950 27300 3050 27300
 Wire Wire Line
-	3050 27300 3050 27400
+	3050 27300 3050 27600
 Connection ~ 3050 27600
 Wire Wire Line
 	2950 27400 3050 27400
@@ -1298,7 +1330,7 @@ Connection ~ 3050 27500
 Wire Wire Line
 	2950 27700 3050 27700
 Wire Wire Line
-	3050 27700 3050 27800
+	3050 27700 3050 28000
 Connection ~ 3050 28000
 Wire Wire Line
 	2950 27800 3050 27800
@@ -1309,7 +1341,7 @@ Connection ~ 3050 27900
 Wire Wire Line
 	2950 28100 3050 28100
 Wire Wire Line
-	3050 28100 3050 28200
+	3050 28100 3050 28400
 Connection ~ 3050 28400
 Wire Wire Line
 	2950 28300 3050 28300
@@ -1415,11 +1447,11 @@ Wire Wire Line
 Wire Wire Line
 	13300 33000 13300 32750
 Wire Wire Line
-	13300 32750 12500 32750
+	13300 32750 8850 32750
 Wire Wire Line
 	13200 32850 8850 32850
 Wire Wire Line
-	3750 2900 6500 2900
+	3750 2900 11050 2900
 Wire Notes Line
 	10000 2350 10950 2350
 Wire Notes Line
@@ -1505,11 +1537,11 @@ Connection ~ 8800 2700
 Connection ~ 9200 2600
 Connection ~ 9400 2900
 Wire Wire Line
-	3450 2600 6300 2600
+	3450 2600 11050 2600
 Wire Wire Line
-	3550 2700 5900 2700
+	3550 2700 11050 2700
 Wire Wire Line
-	3650 2800 6100 2800
+	3650 2800 11050 2800
 Connection ~ 10600 2600
 Connection ~ 10200 2700
 Connection ~ 10400 2800
@@ -1545,7 +1577,7 @@ Wire Notes Line
 Wire Notes Line
 	6050 37650 6050 36450
 Wire Wire Line
-	2900 35500 5650 35500
+	2900 35500 9100 35500
 Wire Wire Line
 	2900 35700 5250 35700
 Wire Wire Line
@@ -1589,17 +1621,17 @@ Wire Notes Line
 Wire Wire Line
 	4100 31100 4100 31800
 Wire Wire Line
-	8850 31800 10550 31800
+	8850 31800 15600 31800
 Wire Wire Line
 	10800 31000 10550 31000
 Wire Wire Line
-	10550 31000 10550 31100
+	10550 31000 10550 31800
 Connection ~ 10550 31800
 Connection ~ 10550 31100
 Wire Wire Line
 	11550 31000 11800 31000
 Wire Wire Line
-	11800 30650 11800 31000
+	11800 30650 11800 31100
 Connection ~ 11800 30650
 Wire Wire Line
 	11800 31100 11550 31100
@@ -1607,7 +1639,7 @@ Connection ~ 11800 31000
 Wire Wire Line
 	12550 31000 12300 31000
 Wire Wire Line
-	12300 31000 12300 31100
+	12300 31000 12300 31800
 Connection ~ 12300 31800
 Wire Wire Line
 	12550 31100 12300 31100
@@ -1615,7 +1647,7 @@ Connection ~ 12300 31100
 Wire Wire Line
 	13300 31100 13600 31100
 Wire Wire Line
-	13600 31100 13600 31000
+	13600 31100 13600 30650
 Connection ~ 13600 30650
 Wire Wire Line
 	13300 31000 13600 31000
@@ -1623,14 +1655,14 @@ Connection ~ 13600 31000
 Wire Wire Line
 	15100 31100 15450 31100
 Wire Wire Line
-	15450 31100 15450 31000
+	15450 31100 15450 30650
 Wire Wire Line
 	15100 31000 15450 31000
 Connection ~ 15450 31000
 Wire Wire Line
 	14350 31000 14000 31000
 Wire Wire Line
-	14000 31000 14000 31100
+	14000 31000 14000 31800
 Connection ~ 14000 31800
 Wire Wire Line
 	14350 31100 14000 31100
@@ -1652,7 +1684,7 @@ Wire Wire Line
 Wire Wire Line
 	9300 36750 9300 35100
 Wire Wire Line
-	9300 35100 8500 35100
+	9300 35100 2900 35100
 Wire Wire Line
 	7550 36750 7550 35100
 Connection ~ 7550 35100
@@ -1671,7 +1703,7 @@ Connection ~ 5050 35100
 Wire Wire Line
 	8900 36750 8900 35300
 Wire Wire Line
-	8900 35300 7150 35300
+	8900 35300 2900 35300
 Wire Wire Line
 	7150 36750 7150 35300
 Connection ~ 7150 35300
@@ -1747,7 +1779,7 @@ Wire Notes Line
 Wire Notes Line
 	10450 6800 9500 6800
 Wire Wire Line
-	9650 6950 9300 6950
+	9650 6950 9100 6950
 Wire Wire Line
 	9300 6950 9300 7050
 Wire Wire Line
@@ -1758,7 +1790,7 @@ Wire Wire Line
 Wire Wire Line
 	9400 7050 9400 7150
 Wire Wire Line
-	9400 7150 9300 7150
+	9400 7150 9100 7150
 Wire Wire Line
 	9300 7150 9300 7250
 Wire Wire Line
@@ -1773,7 +1805,7 @@ Wire Notes Line
 Wire Notes Line
 	10450 8600 9500 8600
 Wire Wire Line
-	9650 8750 9300 8750
+	9650 8750 9100 8750
 Wire Wire Line
 	9300 8750 9300 8850
 Wire Wire Line
@@ -1784,7 +1816,7 @@ Wire Wire Line
 Wire Wire Line
 	9400 8850 9400 8950
 Wire Wire Line
-	9400 8950 9300 8950
+	9400 8950 9100 8950
 Wire Wire Line
 	9300 8950 9300 9050
 Wire Wire Line
@@ -1799,7 +1831,7 @@ Wire Notes Line
 Wire Notes Line
 	10450 10400 9500 10400
 Wire Wire Line
-	9650 10550 9300 10550
+	9650 10550 9100 10550
 Wire Wire Line
 	9300 10550 9300 10650
 Wire Wire Line
@@ -1810,7 +1842,7 @@ Wire Wire Line
 Wire Wire Line
 	9400 10650 9400 10750
 Wire Wire Line
-	9400 10750 9300 10750
+	9400 10750 9100 10750
 Wire Wire Line
 	9300 10750 9300 10850
 Wire Wire Line
@@ -2169,23 +2201,23 @@ Wire Wire Line
 Wire Wire Line
 	7900 6950 7900 7050
 Wire Wire Line
-	6950 7050 7900 7050
+	6950 7050 8050 7050
 Wire Wire Line
 	8050 7150 7900 7150
 Wire Wire Line
 	7900 7150 7900 7250
 Wire Wire Line
-	7050 7250 7900 7250
+	7050 7250 8050 7250
 Connection ~ 7900 7050
 Connection ~ 7900 7250
 Wire Wire Line
-	8050 8850 7850 8850
+	8050 8850 7150 8850
 Wire Wire Line
-	7250 9050 7850 9050
+	7250 9050 8050 9050
 Wire Wire Line
-	8050 10700 7850 10700
+	8050 10700 7350 10700
 Wire Wire Line
-	8050 10900 7850 10900
+	8050 10900 7450 10900
 Wire Wire Line
 	8050 10800 7850 10800
 Wire Wire Line
@@ -2208,13 +2240,13 @@ Wire Wire Line
 Connection ~ 7850 9050
 Connection ~ 15450 30650
 Wire Wire Line
-	2900 3350 8950 3350
+	2900 3350 11050 3350
 Wire Wire Line
-	11050 3450 10800 3450
+	11050 3450 2900 3450
 Wire Wire Line
-	2900 3550 9350 3550
+	2900 3550 11050 3550
 Wire Wire Line
-	11050 3650 10400 3650
+	11050 3650 2900 3650
 Connection ~ 10200 3350
 Connection ~ 10400 3650
 Wire Wire Line
@@ -2290,7 +2322,7 @@ Wire Wire Line
 Wire Wire Line
 	10450 31700 10450 30650
 Wire Wire Line
-	10450 30650 11800 30650
+	10450 30650 15600 30650
 Wire Wire Line
 	10550 31100 10800 31100
 Wire Wire Line
@@ -2348,9 +2380,9 @@ Wire Wire Line
 Wire Wire Line
 	4800 30800 6400 30800
 Wire Wire Line
-	6400 30800 6400 29600
+	6400 30800 6400 29550
 Wire Wire Line
-	6200 29550 6200 29600
+	6200 29550 6200 30700
 Wire Wire Line
 	6200 30700 4700 30700
 Wire Wire Line
@@ -2432,191 +2464,31 @@ Wire Wire Line
 Wire Wire Line
 	4300 23900 4300 30100
 Wire Wire Line
-	2950 28400 3050 28400
+	2950 28400 7450 28400
 Wire Wire Line
 	7450 28400 7450 10900
 Wire Wire Line
-	7350 28000 3050 28000
+	7350 28000 2950 28000
 Wire Wire Line
 	7350 10700 7350 28000
 Wire Wire Line
-	7250 27600 3050 27600
+	7250 27600 2950 27600
 Wire Wire Line
 	7250 9050 7250 27600
 Wire Wire Line
-	7150 27200 3050 27200
+	7150 27200 2950 27200
 Wire Wire Line
 	7150 8850 7150 27200
 Wire Wire Line
-	7050 26800 3050 26800
+	7050 26800 2950 26800
 Wire Wire Line
 	7050 7250 7050 26800
 Wire Wire Line
-	6950 26400 3050 26400
+	6950 26400 2950 26400
 Wire Wire Line
 	6950 7050 6950 26400
 Wire Notes Line
 	3900 2500 3900 25500
 Wire Notes Line
 	3900 36250 3900 25750
-Wire Wire Line
-	3050 29000 3650 29000
-Wire Wire Line
-	3050 30300 3650 30300
-Wire Wire Line
-	3050 26400 2950 26400
-Wire Wire Line
-	3050 26300 3050 26400
-Wire Wire Line
-	3050 26200 3050 26300
-Wire Wire Line
-	3050 26800 2950 26800
-Wire Wire Line
-	3050 26600 3050 26700
-Wire Wire Line
-	3050 26700 3050 26800
-Wire Wire Line
-	3050 27200 2950 27200
-Wire Wire Line
-	3050 27000 3050 27100
-Wire Wire Line
-	3050 27100 3050 27200
-Wire Wire Line
-	3050 27600 2950 27600
-Wire Wire Line
-	3050 27400 3050 27500
-Wire Wire Line
-	3050 27500 3050 27600
-Wire Wire Line
-	3050 28000 2950 28000
-Wire Wire Line
-	3050 27800 3050 27900
-Wire Wire Line
-	3050 27900 3050 28000
-Wire Wire Line
-	3050 28400 7450 28400
-Wire Wire Line
-	3050 28300 3050 28400
-Wire Wire Line
-	3050 28200 3050 28300
-Wire Wire Line
-	12500 32750 8850 32750
-Wire Wire Line
-	6100 2800 7550 2800
-Wire Wire Line
-	5900 2700 7350 2700
-Wire Wire Line
-	6500 2900 7950 2900
-Wire Wire Line
-	6300 2600 7750 2600
-Wire Wire Line
-	7950 2900 9400 2900
-Wire Wire Line
-	7750 2600 9200 2600
-Wire Wire Line
-	7550 2800 9000 2800
-Wire Wire Line
-	7350 2700 8800 2700
-Wire Wire Line
-	9000 2800 10400 2800
-Wire Wire Line
-	8800 2700 10200 2700
-Wire Wire Line
-	9200 2600 10600 2600
-Wire Wire Line
-	9400 2900 10800 2900
-Wire Wire Line
-	10600 2600 11050 2600
-Wire Wire Line
-	10200 2700 11050 2700
-Wire Wire Line
-	10400 2800 11050 2800
-Wire Wire Line
-	10800 2900 11050 2900
-Wire Wire Line
-	10550 31800 12300 31800
-Wire Wire Line
-	10550 31100 10550 31800
-Wire Wire Line
-	11800 30650 13600 30650
-Wire Wire Line
-	11800 31000 11800 31100
-Wire Wire Line
-	12300 31800 14000 31800
-Wire Wire Line
-	12300 31100 12300 31800
-Wire Wire Line
-	13600 30650 15450 30650
-Wire Wire Line
-	13600 31000 13600 30650
-Wire Wire Line
-	15450 31000 15450 30650
-Wire Wire Line
-	14000 31800 15600 31800
-Wire Wire Line
-	14000 31100 14000 31800
-Wire Wire Line
-	5650 35500 7350 35500
-Wire Wire Line
-	7350 35500 9100 35500
-Wire Wire Line
-	7550 35100 6750 35100
-Wire Wire Line
-	6750 35100 5850 35100
-Wire Wire Line
-	8500 35100 7550 35100
-Wire Wire Line
-	5850 35100 5050 35100
-Wire Wire Line
-	5050 35100 2900 35100
-Wire Wire Line
-	7150 35300 5450 35300
-Wire Wire Line
-	5450 35300 2900 35300
-Wire Wire Line
-	6400 29600 6400 29550
-Wire Wire Line
-	6200 29600 6200 30700
-Wire Wire Line
-	9300 6950 9100 6950
-Wire Wire Line
-	9300 7150 9100 7150
-Wire Wire Line
-	9300 8750 9100 8750
-Wire Wire Line
-	9300 8950 9100 8950
-Wire Wire Line
-	9300 10550 9100 10550
-Wire Wire Line
-	9300 10750 9100 10750
-Wire Wire Line
-	7900 7050 8050 7050
-Wire Wire Line
-	7900 7250 8050 7250
-Wire Wire Line
-	7850 10900 7450 10900
-Wire Wire Line
-	7850 10700 7350 10700
-Wire Wire Line
-	7850 8850 7150 8850
-Wire Wire Line
-	7850 9050 8050 9050
-Wire Wire Line
-	15450 30650 15600 30650
-Wire Wire Line
-	10200 3350 11050 3350
-Wire Wire Line
-	10400 3650 9150 3650
-Wire Wire Line
-	10600 3550 11050 3550
-Wire Wire Line
-	10800 3450 9550 3450
-Wire Wire Line
-	8950 3350 10200 3350
-Wire Wire Line
-	9150 3650 2900 3650
-Wire Wire Line
-	9350 3550 10600 3550
-Wire Wire Line
-	9550 3450 2900 3450
 $EndSCHEMATC
