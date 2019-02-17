@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name wiring-diagram-rescue)(type Legacy)(uri ${KIPRJMOD}/wiring-diagram-rescue.lib)(options "")(descr ""))
+  (lib (name d-sub_high-pin-count)(type Legacy)(uri /home/rchojetzki/dev/rexus-viper-elektronik/boards/mainboard/lib/d-sub_high-pin-count.lib)(options "")(descr ""))
+  (lib (name DB)(type Legacy)(uri /home/rchojetzki/dev/rexus-viper-elektronik/boards/mainboard/lib/DB.lib)(options "")(descr ""))
+)
