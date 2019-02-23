@@ -64,9 +64,7 @@ struct systemClock {
 			ClockControl::PllSource::Hse,
 			12,		// 12MHz / M=12 -> 1MHz
 			100,	// 1MHz * N=100 -> 100MHz
-			2,		// 100MHz / P=2 -> 50MHz = F_cpu
-			4,		// 100MHz / Q=4 -> 25MHz = F_rng
-			2		// 100MHz / R=2 -> 50MHz = F_i2s
+			2		// 100MHz / P=2 -> 50MHz = F_cpu
 		);
 		ClockControl::setFlashLatency(Frequency);
 
@@ -101,12 +99,11 @@ namespace DebugUart {
 	}
 }
 
-
 namespace Sensors {
 	static constexpr uint32_t SpiBaudrate = 781'250;
 
 	struct Sensor0 {
-		using Spi		= SpiMaster5;
+		using Spi		= SpiBidiMaster5;
 		using Sck		= GpioB0;
 		using Miso		= GpioA12;
 		using Mosi		= GpioA10;
@@ -115,21 +112,21 @@ namespace Sensors {
 	};
 
 	struct Sensor1 {
-		using Spi		= SpiMaster1;
-		using Sck		= GpioOutputA5;
-		using Miso		= GpioInputA6;
-		using Mosi		= GpioOutputA7;
-		using Cs		= GpioOutputA4;
-		using Motion	= GpioInputA3;
+		using Spi		= SpiBidiMaster1;
+		using Sck		= GpioA5;
+		using Miso		= GpioA6;
+		using Mosi		= GpioA7;
+		using Cs		= GpioA4;
+		using Motion	= GpioA3;
 	};
 
 	struct Sensor2 {
-		using Spi		= SpiMaster2;
-		using Sck		= GpioOutputB13;
-		using Miso		= GpioInputB14;
-		using Mosi		= GpioOutputB15;
-		using Cs		= GpioOutputB12;
-		using Motion	= GpioInputA8;
+		using Spi		= SpiBidiMaster2;
+		using Sck		= GpioB13;
+		using Miso		= GpioB14;
+		using Mosi		= GpioB15;
+		using Cs		= GpioB12;
+		using Motion	= GpioA8;
 	};
 
 
@@ -139,8 +136,7 @@ namespace Sensors {
 	{
 		SpiStruct::Spi::template connect<
 			SpiStruct::Sck::template Sck,
-			SpiStruct::Mosi::template Mosi,
-			SpiStruct::Miso::template Miso >();
+			SpiStruct::Mosi::template Mosi >();
 		SpiStruct::Spi::template initialize<systemClock, SpiBaudrate>();
 
 		SpiStruct::Cs::setOutput(Gpio::OutputType::PushPull);
