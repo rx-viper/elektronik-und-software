@@ -25,6 +25,7 @@ namespace {
 	constexpr std::array<uint8_t, 4> outputStates = {0b00, 0b10, 0b11, 0b01};
 	std::atomic<int32_t> increments[3];
 	uint8_t state[3] = {};
+	modm::pat9125el::Motion2D position[3] = {};
 
 	SensorThread<Board::Sensors::Sensor0> sensor0;
 	SensorThread<Board::Sensors::Sensor1> sensor1;
@@ -49,9 +50,10 @@ namespace {
 	void processSensor(Sensor& sensor, int id)
 	{
 		if(sensor.hasMoved()) {
-			const auto position = sensor.readPosition();
-			MODM_LOG_INFO << "Position " << id << ": " << position.x << ", " << position.y << modm::endl;	
-			increments[id] += position.y;
+			const auto movement = sensor.readMovement();
+			position[id] += movement;
+			MODM_LOG_INFO << "Position " << id << ": " << position[id].x << ", " << position[id].y << ": " << modm::endl;	
+			increments[id] += movement.y;
 		}
 
 		sensor.update();
@@ -94,10 +96,14 @@ doEncoderOutput()
 	}
 }
 
-MODM_ISR(TIM11)
+MODM_ISR(TIM1_TRG_COM_TIM11)
 {
+	Timer11::acknowledgeInterruptFlags(Timer11::InterruptFlag::Update);
 	doEncoderOutput<SensorOutput0>();
 	doEncoderOutput<SensorOutput1>();
 	doEncoderOutput<SensorOutput2>();
+	//SensorOutput0::Port::toggle();
+	//SensorOutput1::Port::toggle();
+	//SensorOutput2::Port::toggle();
 }
 
