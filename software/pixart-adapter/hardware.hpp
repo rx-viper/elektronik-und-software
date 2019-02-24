@@ -22,6 +22,7 @@
 #include <modm/platform.hpp>
 #include <modm/architecture/interface/clock.hpp>
 #include <modm/platform/clock/clock.hpp>
+#include <modm/platform/gpio/software_port.hpp>
 
 using namespace modm::platform;
 
@@ -152,6 +153,30 @@ namespace Sensors {
 	}
 }
 
+namespace EncoderOutputs {
+	using Timer = Timer11;
+	using Port0 = SoftwareGpioPort<GpioOutputC15, GpioOutputA0>;
+	using Port1 = SoftwareGpioPort<GpioOutputC13, GpioOutputC14>;
+	using Port2 = SoftwareGpioPort<GpioOutputA1, GpioOutputA2>;
+
+	inline void
+	initialize()
+	{
+		Timer::enable();
+		Timer::setMode(Timer::Mode::UpCounter);
+
+		Timer::setPrescaler(1);
+		Timer::setOverflow(5000);
+		Timer::applyAndReset();
+		// start the timer
+		Timer::start();
+		Timer::enableInterrupt(Timer::Interrupt::Update);
+		Timer::enableInterruptVector(true, 5 /* priority */);
+	}
+
+}
+
+
 inline void
 initializeMcu()
 {
@@ -164,6 +189,7 @@ initializeAllPeripherals()
 {
 	DebugUart::initialize();
 	Sensors::initialize();
+	EncoderOutputs::initialize();
 }
 
 }
