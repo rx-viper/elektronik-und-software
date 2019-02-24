@@ -35,11 +35,10 @@ public:
 
 	bool hasMoved() const;
 
-	auto readPosition() -> modm::pat9125el::Motion2D;
+	auto readMovement() -> modm::pat9125el::Motion2D;
 
 private:
 	bool moved = false;
-	modm::pat9125el::Motion2D position = {};
 	modm::Timeout timeout;
 
 	using Spi = typename SensorConfig::Spi;

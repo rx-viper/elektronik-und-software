@@ -45,9 +45,7 @@ bool SensorThread<SensorConfig>::update()
 	{
 		RF_CALL_BLOCKING(sensor.readData());
 		if(sensor.hasMoved()) {
-			position += sensor.getData();
 			moved = true;
-			sensor.resetMoved();
 		}
 		PT_YIELD();
 	}
@@ -62,8 +60,10 @@ bool SensorThread<SensorConfig>::hasMoved() const
 }
 
 template<typename SensorConfig>
-auto SensorThread<SensorConfig>::readPosition() -> modm::pat9125el::Motion2D
+auto SensorThread<SensorConfig>::readMovement() -> modm::pat9125el::Motion2D
 {
 	moved = false;
-	return position;
+	const auto returnValue = sensor.getData();
+	sensor.resetMoved();
+	return returnValue;
 }
