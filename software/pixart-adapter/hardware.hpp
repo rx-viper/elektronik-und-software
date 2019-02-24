@@ -162,6 +162,10 @@ namespace EncoderOutputs {
 	inline void
 	initialize()
 	{
+		Port0::setOutput();
+		Port1::setOutput();
+		Port2::setOutput();
+
 		Timer::enable();
 		Timer::setMode(Timer::Mode::UpCounter);
 
