@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <iostream>
+#include <array>
 
 #include "ExperimentStatus.hpp"
 
@@ -40,20 +41,26 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	ui->iceTemperatureWidget2->setIceTemperatures(status.iceTemperatures(1));
 	ui->iceTemperatureWidget3->setIceTemperatures(status.iceTemperatures(2));
 
-	ui->hpDepthGraphic1->setHeatProbePenDepth(status.heatProbeDepth(0));
-	ui->penetrationDepth1->display(QString::number(status.heatProbeDepth(0), 'f', 1));
-	ui->hpDepthGraphic2->setHeatProbePenDepth(status.heatProbeDepth(1));
-	ui->penetrationDepth2->display(QString::number(status.heatProbeDepth(1), 'f', 1));
-	ui->hpDepthGraphic3->setHeatProbePenDepth(status.heatProbeDepth(2));
-	ui->penetrationDepth3->display(QString::number(status.heatProbeDepth(2), 'f', 1));
+	constexpr auto depthScaleFactor = 44.0 / 1300.0;
+	const std::array<double, 3> hpDepths = {
+		-depthScaleFactor * int16_t(status.heatProbeDepth(2)),
+		-depthScaleFactor * int16_t(status.heatProbeDepth(1)),
+		depthScaleFactor * int16_t(status.heatProbeDepth(0))
+	};
+	ui->hpDepthGraphic1->setHeatProbePenDepth(hpDepths[0]);
+	ui->penetrationDepth1->display(QString::number(hpDepths[0], 'f', 2));
+	ui->hpDepthGraphic2->setHeatProbePenDepth(hpDepths[1]);
+	ui->penetrationDepth2->display(QString::number(hpDepths[1], 'f', 2));
+	ui->hpDepthGraphic3->setHeatProbePenDepth(hpDepths[2]);
+	ui->penetrationDepth3->display(QString::number(hpDepths[2], 'f', 2));
 
-	ui->hpCurrent1->display(QString::number(status.heatProbeCurrent(0)));
-	ui->hpCurrent2->display(QString::number(status.heatProbeCurrent(1)));
-	ui->hpCurrent3->display(QString::number(status.heatProbeCurrent(2)));
+	ui->hpCurrent1->display(QString::number(status.heatProbeCurrent(0)/1000.0, 'f', 3));
+	ui->hpCurrent2->display(QString::number(status.heatProbeCurrent(1)/1000.0, 'f', 3));
+	ui->hpCurrent3->display(QString::number(status.heatProbeCurrent(2)/1000.0, 'f', 3));
 
-	ui->hpVoltage1->display(QString::number(status.heatProbeVoltage(0)));
-	ui->hpVoltage2->display(QString::number(status.heatProbeVoltage(1)));
-	ui->hpVoltage3->display(QString::number(status.heatProbeVoltage(2)));
+	ui->hpVoltage1->display(QString::number(status.heatProbeVoltage(0)/1000.0, 'f', 3));
+	ui->hpVoltage2->display(QString::number(status.heatProbeVoltage(1)/1000.0, 'f', 3));
+	ui->hpVoltage3->display(QString::number(status.heatProbeVoltage(2)/1000.0, 'f', 3));
 
 	ui->hpTemp1->display(QString::number(status.heatProbeTemperature(0), 'f', 1));
 	ui->hpTemp2->display(QString::number(status.heatProbeTemperature(1), 'f', 1));
@@ -114,9 +121,9 @@ void MainWindow::updateUI(const ExperimentStatus& status)
 	//std::cout << status.heatProbeDepth(0) << std::endl;
 	//std::cout << status.heatProbeDepth(1) << std::endl;
 	//std::cout << status.heatProbeDepth(2) << std::endl;
-	ui->hpDepthGraphic1->setHeatProbePenDepth(52.f * status.heatProbeDepth(0) / 640.f);
-	ui->hpDepthGraphic2->setHeatProbePenDepth(52.f * status.heatProbeDepth(1) / 640.f);
-	ui->hpDepthGraphic3->setHeatProbePenDepth(52.f * status.heatProbeDepth(2) / 640.f);
+	//ui->hpDepthGraphic1->setHeatProbePenDepth(52.f * status.heatProbeDepth(0) / 640.f);
+	//ui->hpDepthGraphic2->setHeatProbePenDepth(52.f * status.heatProbeDepth(1) / 640.f);
+	//ui->hpDepthGraphic3->setHeatProbePenDepth(52.f * status.heatProbeDepth(2) / 640.f);
 }
 
 void MainWindow::setSerialConnected(bool connected)
