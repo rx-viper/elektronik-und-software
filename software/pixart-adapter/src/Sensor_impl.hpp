@@ -39,7 +39,7 @@ bool SensorThread<SensorConfig>::update()
 	}
 	MODM_LOG_INFO << "Ping successful" << modm::endl;
 
-	RF_CALL_BLOCKING(sensor.configure(0x14, 0x14));
+	RF_CALL_BLOCKING(sensor.configure(0x64, 0x64));
 
 	while (true)
 	{
