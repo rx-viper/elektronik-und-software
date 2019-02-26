@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library>
+  <repositories>
+    <repository>
+      <path>../../../../modm/repo.lb</path>
+    </repository>
+  </repositories>
+  <options>
+    <option name="modm:build:project.name">test_blink</option>
+    <option name="modm:build:openocd.cfg">../openocd.cfg</option>
+    <option name="modm:target">stm32f410cbt</option>
+  </options>
+  <modules>
+    <module>modm:architecture:clock</module>
+    <module>modm:platform:clock</module>
+    <module>modm:platform:core</module>
+    <module>modm:platform:gpio</module>
+    <module>modm:platform:spi:1</module>
+    <module>modm:platform:spi:2</module>
+    <module>modm:platform:spi:5</module>
+    <module>modm:platform:uart:1</module>
+
+    <module>modm:driver:encoder.slave</module>
+
+    <module>modm:build:scons</module>
+    <module>modm:debug</module>
+  </modules>
+</library>

@@ -1,0 +1,15 @@
+# modm
+*/build
+*/modm
+*/SConstruct
+*/project.xml.log
+
+# scons
+*.sconsign.dblite
+
+# qtcreator
+*.config
+*.creator
+*.creator.user
+*.files
+*.includes
