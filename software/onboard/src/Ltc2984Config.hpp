@@ -65,7 +65,7 @@ namespace onboard
 				);
 
 		static constexpr auto RsenseChannel = xpcc::ltc2984::Channel::Ch2;
-		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(2000*1024);
+		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(1000*1024);
 	};
 
 	template<>
@@ -92,7 +92,7 @@ namespace onboard
 				);
 
 		static constexpr auto RsenseChannel = xpcc::ltc2984::Channel::Ch2;
-		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(2000*1024);
+		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(1000*1024);
 	};
 
 	template<>
@@ -119,7 +119,7 @@ namespace onboard
 				);
 
 		static constexpr auto RsenseChannel = xpcc::ltc2984::Channel::Ch2;
-		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(2000*1024);
+		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(1000*1024);
 	};
 
 	template<>
@@ -146,7 +146,7 @@ namespace onboard
 				);
 
 		static constexpr auto RsenseChannel = xpcc::ltc2984::Channel::Ch2;
-		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(2000*1024);
+		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(1000*1024);
 	};
 
 	template<>
@@ -173,7 +173,7 @@ namespace onboard
 				);
 
 		static constexpr auto RsenseChannel = xpcc::ltc2984::Channel::Ch2;
-		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(2000*1024);
+		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(1000*1024);
 	};
 
 	template<>
@@ -200,7 +200,7 @@ namespace onboard
 				);
 
 		static constexpr auto RsenseChannel = xpcc::ltc2984::Channel::Ch2;
-		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(2000*1024);
+		static constexpr auto RsenseResistance = xpcc::ltc2984::Configuration::Rsense::Resistance_t(1000*1024);
 	};
 }
 }
