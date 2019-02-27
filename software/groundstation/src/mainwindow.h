@@ -29,16 +29,19 @@ public:
 public slots:
 	void updateUI(const ExperimentStatus& status);
 	void setSerialConnected(bool connected);
+	void setDbConnected(bool connected);
 
 signals:
 	void connectSerialClicked();
 	void connectDbClicked();
 	void testOnClicked();
 	void testOffClicked();
+	void closeWindow();
 
 private:
 	Ui::MainWindow* ui;
 	BackendConfigWidget* backendConfigWidget;
+	void closeEvent(QCloseEvent* e) override;
 };
 
 }
