@@ -291,9 +291,8 @@ void StorageDatabase::logBattVoltageLS(uint32_t seq, uint16_t value, const QDate
 	queryBattVoltage.bindValue(0, value);
 	if(!queryBattVoltage.exec()) {
 		errorStrings.append(db.lastError().text());
-		std::cout << db.lastError().text().toLocal8Bit().constData() << std::endl << queryBattVoltage.lastError().text().toLocal8Bit().constData() << std::endl;
-		std::cout << queryBattVoltage.lastQuery().toLocal8Bit().constData() << std::endl;
-		exit(1);
+		//std::cout << db.lastError().text().toLocal8Bit().constData() << std::endl << queryBattVoltage.lastError().text().toLocal8Bit().constData() << std::endl;
+		//std::cout << queryBattVoltage.lastQuery().toLocal8Bit().constData() << std::endl;
 	}
 }
 
