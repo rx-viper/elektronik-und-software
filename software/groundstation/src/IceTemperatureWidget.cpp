@@ -55,4 +55,6 @@ void IceTemperatureWidget::setIceTemperatures(const viper::IceTemperatures& iceT
 	colorMap->rescaleDataRange();
 	// rescale the key (x) and value (y) axes so the whole color map is visible:
 	customPlot->rescaleAxes();
+
+	update();
 }
