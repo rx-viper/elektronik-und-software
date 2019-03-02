@@ -47,7 +47,7 @@ void IceTemperatureWidget::setIceTemperatures(const viper::IceTemperatures& iceT
 {
 	for(int x=0; x<3; ++x) {
 		for(int y=0; y<3; ++y) {
-			float temp = iceTemperatures(x, y) / 1024.f;
+			float temp = iceTemperatures(x, 2 - y) / 1024.f;
 			colorMap->data()->setCell(x, y, temp);
 		}
 	}
@@ -56,5 +56,5 @@ void IceTemperatureWidget::setIceTemperatures(const viper::IceTemperatures& iceT
 	// rescale the key (x) and value (y) axes so the whole color map is visible:
 	customPlot->rescaleAxes();
 
-	update();
+	customPlot->replot();
 }
