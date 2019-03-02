@@ -1,6 +1,7 @@
 #include "PacketDispatcher.hpp"
 #include "Application.hpp"
 #include "ExperimentStatus.hpp"
+#include "IscaMapping.hpp"
 
 namespace viper
 {
@@ -9,34 +10,29 @@ PacketDispatcher::PacketDispatcher(Application& app_) : app{app_}, experimentSta
 {
 }
 
+void PacketDispatcher::processIceTemperatures(const std::array<int32_t, 27>& temperatures)
+{
+	std::array<IceTemperatures, 3> iceTemperatures;
+	for (int i = 0; i < 27; ++i) {
+		const auto [iceSample, sensor] = IscaMapping[i];
+		iceTemperatures[iceSample](sensor) = temperatures[i];
+	}
+
+	experimentStatus.updateIceTemperatures(iceTemperatures);
+}
+
 void PacketDispatcher::operator()(const IceTemperatureLS& data)
 {
 	static_assert(data.temperatures.size() == 27, "Unexpected ice temp data size");
 
-	// 9 temperature values per ice container
-	const int32_t* dataPtr{data.temperatures.data()};
-	const auto* ice0Temp = dataPtr + 0;
-	const auto* ice1Temp = dataPtr + 9;
-	const auto* ice2Temp = dataPtr + 18;
-
-	std::array<IceTemperatures, 3> iceTemperatures{{ice0Temp, ice1Temp, ice2Temp}};
-
-	experimentStatus.updateIceTemperatures(iceTemperatures);
+	processIceTemperatures(data.temperatures);
 }
 
 void PacketDispatcher::operator()(const IceTemperatureHS& data)
 {
 	static_assert(data.temperatures.size() == 27, "Unexpected ice temp data size");
 
-	// 9 temperature values per ice container
-	const int32_t* dataPtr{data.temperatures.data()};
-	const auto* ice0Temp = dataPtr + 0;
-	const auto* ice1Temp = dataPtr + 9;
-	const auto* ice2Temp = dataPtr + 18;
-
-	std::array<IceTemperatures, 3> iceTemperatures{{ice0Temp, ice1Temp, ice2Temp}};
-
-	experimentStatus.updateIceTemperatures(iceTemperatures);
+	processIceTemperatures(data.temperatures);
 }
 
 void PacketDispatcher::operator()(const PressureLS& pressures)

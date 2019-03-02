@@ -33,6 +33,16 @@ int32_t IceTemperatures::operator()(uint8_t x, uint8_t y) const
 	return data[x + 3 * y];
 }
 
+int32_t& IceTemperatures::operator()(uint8_t index)
+{
+	return data.at(index);
+}
+
+int32_t IceTemperatures::operator()(uint8_t index) const
+{
+	return data.at(index);
+}
+
 void IceTemperatures::checkIndex(uint8_t x, uint8_t y)
 {
 	if(x >= 3 || y >= 3) {

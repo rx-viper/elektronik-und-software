@@ -22,6 +22,8 @@ public:
 	int32_t& operator()(uint8_t x, uint8_t y);
 	int32_t operator()(uint8_t x, uint8_t y) const;
 
+	int32_t& operator()(uint8_t index);
+	int32_t operator()(uint8_t index) const;
 private:
 	static void checkIndex(uint8_t x, uint8_t y);
 	std::array<int32_t, 9> data;
