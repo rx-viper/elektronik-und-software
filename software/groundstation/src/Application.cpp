@@ -16,6 +16,8 @@ Application::Application(int& argc, char** argv, QSqlDatabase& qdb)
 	connect(&mainWindow, SIGNAL(testOnClicked()), this, SLOT(testOnButtonClicked()));
 	connect(&mainWindow, SIGNAL(testOffClicked()), this, SLOT(testOffButtonClicked()));
 
+	connect(&mainWindow, SIGNAL(closeWindow()), &iceTempWindow, SLOT(close()));
+
 	connect(&communicator, SIGNAL(logRawData(QByteArray,QDateTime)), &db, SLOT(logRawData(QByteArray,QDateTime)));
 
 	// TODO: remove hardcoded static backend
@@ -112,8 +114,9 @@ void Application::connectDbButtonClicked()
 {
 	if(!db.isOpen()) {
 		if(!db.open()) {
-			QMessageBox::critical(&mainWindow, "Database Error",  "Unable to connect to Database: " + db.lastError());
+			QMessageBox::critical(&mainWindow, "Database Error",  "Unable to connect to Database. Is the database up and running?");
 		}
+		mainWindow.setDbConnected(true);
 	}
 	else {
 		QStringList errors = db.getErrors();

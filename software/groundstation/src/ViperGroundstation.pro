@@ -8,7 +8,7 @@ QT       += core gui serialport printsupport network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++14
+QMAKE_CXXFLAGS += -std=c++1z
 
 TARGET = groundstationTest
 TEMPLATE = app
@@ -101,7 +101,8 @@ HEADERS  += mainwindow.h \
     communcation/SerialPortConfigWidget.hpp \
     IceTemperatureWindow.hpp \
     StorageDatabase.hpp \
-    PacketDatabaseWriter.hpp
+    PacketDatabaseWriter.hpp \
+    IscaMapping.hpp
 
 HEADERS += $$COMMUNICATION_HEADERS
 

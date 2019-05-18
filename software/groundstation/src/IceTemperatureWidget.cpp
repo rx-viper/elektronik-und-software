@@ -24,14 +24,11 @@ IceTemperatureWidget::IceTemperatureWidget(QWidget* parent) : QWidget(parent)
 	colorScale->setType(QCPAxis::atRight); // scale shall be vertical bar with tick/axis labels right (actually atRight is already the default)
 	colorMap->setColorScale(colorScale); // associate the color map with the color scale
 	colorScale->axis()->setLabel("Temperature [°C]");
-
+	colorScale->setDataRange(QCPRange(-80, 60));
 	// set the color gradient of the color map to one of the presets:
 	colorMap->setGradient(QCPColorGradient::gpThermal);
 	// we could have also created a QCPColorGradient instance and added own colors to
 	// the gradient, see the documentation of QCPColorGradient for what's possible.
-
-	// rescale the data dimension (color) such that all data points lie in the span visualized by the color gradient:
-	colorMap->rescaleDataRange();
 
 	// make sure the axis rect and color scale synchronize their bottom and top margins (so they line up):
 	QCPMarginGroup *marginGroup = new QCPMarginGroup(customPlot);
@@ -47,12 +44,12 @@ void IceTemperatureWidget::setIceTemperatures(const viper::IceTemperatures& iceT
 {
 	for(int x=0; x<3; ++x) {
 		for(int y=0; y<3; ++y) {
-			float temp = iceTemperatures(x, y) / 1024.f;
+			float temp = iceTemperatures(x, 2 - y) / 1024.f;
 			colorMap->data()->setCell(x, y, temp);
 		}
 	}
-	// rescale the data dimension (color) such that all data points lie in the span visualized by the color gradient:
-	colorMap->rescaleDataRange();
 	// rescale the key (x) and value (y) axes so the whole color map is visible:
 	customPlot->rescaleAxes();
+
+	customPlot->replot();
 }

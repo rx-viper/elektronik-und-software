@@ -18,7 +18,7 @@ PacketDatabaseWriter::PacketDatabaseWriter(StorageDatabase& db) : db{db}
 	CONNECT(logBattVoltageHS(uint32_t,std::array<uint16_t, 4>,QDateTime));
 	CONNECT(logBattVoltageLS(uint32_t,uint16_t,QDateTime));
 	CONNECT(logMotorCurrentHS(uint32_t,std::array<uint16_t, 4>,QDateTime));
-	CONNECT(logBattVoltageLS(uint32_t,uint16_t,QDateTime));
+	CONNECT(logMotorCurrentLS(uint32_t, uint16_t, QDateTime));
 }
 
 void PacketDatabaseWriter::operator()(const IceTemperatureLS& data)

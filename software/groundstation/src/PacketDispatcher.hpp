@@ -3,6 +3,7 @@
 
 #include "Packets.hpp"
 #include "MeasurementData.hpp"
+#include "IscaMapping.hpp"
 
 using viper::packet::IceTemperatureLS;
 using viper::packet::IceTemperatureHS;
@@ -54,6 +55,8 @@ public:
 	void operator()(const TestMode& mode){ (void)mode; }
 
 private:
+	void processIceTemperatures(const std::array<int32_t, 27>& temperatures);
+
 	Application& app;
 	ExperimentStatus& experimentStatus;
 };

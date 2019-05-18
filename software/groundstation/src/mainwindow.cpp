@@ -138,4 +138,19 @@ void MainWindow::setSerialConnected(bool connected)
 	}
 }
 
+void MainWindow::setDbConnected(bool connected)
+{
+	if(connected) {
+		ui->connectDbButton->setText("Database connected");
+	} else {
+		ui->connectDbButton->setText("&Connect Database");
+	}
+}
+
+void MainWindow::closeEvent(QCloseEvent* e)
+{
+	emit closeWindow();
+	e->accept();
+}
+
 }
